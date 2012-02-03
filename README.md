@@ -11,6 +11,7 @@ NOTE: This theme is currently beta quality software. It is not yet ready for pro
 TO DO LIST
 ==========
 
++ Currently requires a WP menu called "Main Menu" assigned to the "Top Menu" in Admin > Appearance > Menus. Fix this. 
 + Clean up code.
 + Footer widgets
 + Shortcodes for buttons, labels, tables, alerts, wells/panels, scaffolding, modals, tooltips, popovers, tabs...

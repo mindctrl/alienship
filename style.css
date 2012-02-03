@@ -1,0 +1,365 @@
+/*
+Theme Name: Alien Ship
+Theme URI: http://www.johnparris.com/alien-ship-framework-and-theme-for-wordpress/
+Author: John Parris
+Author URI: http://www.johnparris.com/
+Description: Alien Ship is an HTML5 framework and responsive starter theme for WordPress.
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Tags:
+*/
+
+/* =Navigation and dropdowns
+----------------------------------------------- */
+
+/* Remove the rounded edges from the navbar */
+.navbar-inner {
+  border-radius: 0px 0px 0px 0px;
+}
+
+/* Dropdown menu subs */
+.sub-menu {
+  position: absolute;
+  top: 40px;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  max-width: 220px;
+  _width: 160px;
+  padding: 4px 0;
+  margin: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  zoom: 1;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+}
+.sub-menu .divider {
+  height: 1px;
+  margin: 5px 1px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+.dropdown.open .dropdown-toggle {
+  color: #ffffff;
+  background: #ccc;
+  background: rgba(0, 0, 0, 0.3);
+}
+.dropdown.open .sub-menu {
+  display: block;
+}
+
+.sub-menu a {
+display: block;
+padding: 3px 15px;
+clear: both;
+font-weight: normal;
+line-height: 18px;
+color: #555;
+white-space: nowrap;
+}
+
+.sub-menu li > a:hover, .sub-menu .active > a, .sub-menu .active > a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #0088cc;
+}
+.navbar .sub-menu li {
+    list-style: none;
+}
+
+.navbar .sub-menu:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+  left: 9px;
+}
+.navbar .sub-menu:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  position: absolute;
+  top: -6px;
+  left: 10px;
+}
+.navbar .nav .dropdown-toggle .caret, .navbar .nav .open.dropdown .caret {
+  border-top-color: #fff;
+}
+
+/* Allows dropdown sub-menus to overflow over the black header bar and into the body, otherwise they get clipped */
+div.nav-collapse.in.collapse {
+  overflow: visible;
+}
+
+/* Originally had .navbar .nav > li > a.dropdown-toggle:after . Shortened for now since there are no conflicts
+   This displays the arrow to indicate a menu item has subs and is a dropdown  */
+a.dropdown-toggle:after {
+  display: inline-block;
+  width: 0;    
+  height: 0;
+  text-indent: -99999px;
+  *text-indent: 0;
+  vertical-align: top;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #999999;
+  color: #999999;
+  margin-left: 2px;
+  margin-top: 8px;
+  content: "\2193";
+  overflow: hidden;
+}
+
+/* Changes color of dropdown menu arrow indicator on hover/focus/active */
+a.dropdown-toggle:hover:after,
+a.dropdown-toggle:focus:after,
+a.dropdown-toggle:active:after {
+  display: inline-block;
+  width: 0;    
+  height: 0;
+  text-indent: -99999px;
+  *text-indent: 0;
+  vertical-align: top;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #FFFFFF;
+  margin-left: 2px;
+  margin-top: 8px;
+  content: "\2193";
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.dropdown .caret {
+  margin-top: 8px;
+  margin-left: 2px;
+}
+
+.navbar .nav .active .caret {
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+.navbar .nav .open > .dropdown-toggle, .navbar .nav .active > .dropdown-toggle, .navbar .nav .open.active > .dropdown-toggle {
+  background-color: transparent;
+}
+
+.navbar .nav.pull-right .sub-menu {
+  right: 0;
+}
+.navbar .nav.pull-right .sub-menu:before {
+  left: auto;
+  right: 12px;
+}
+.navbar .nav.pull-right .sub-menu:after {
+  left: auto;
+  right: 13px;
+}
+
+
+/* Various design elements
+-------------------------- */
+/* The content wrapper home page called in index.php */
+#content {
+    background: none repeat scroll 0 0 #E3E3E3;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #C0C0C0;
+    clear: both;
+    margin-bottom: 15px;
+    overflow: hidden; 
+    padding: 15px 15px 15px 15px;
+}
+
+/* The article wrapper called through the theme to display the content of a post/page/whatever */
+article {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #C0C0C0;
+    clear: both;
+    margin-bottom: 15px;
+    overflow: hidden; 
+    padding: 15px 15px 15px 15px;
+}
+
+/* Hide the nav above the #content wrapper. "Older entries / Newer entries". Didn't yank function from code because might be used later. */
+#nav-above {
+  display: none;
+}
+
+/* Set margin for page wrapper. Includes masthead and content wrapper */
+#page {
+  margin-left: 18px;
+}
+
+/* Hack to space out left sidebar from main wrapper. Will change this later. */
+.leftsidebar-margin {
+  margin-right: 40px;
+}
+
+/* hgroup is the header area that contains the site title and description. this adds a thin line below it for separation from main content */
+hgroup {
+	border-bottom: solid 1px #ccc;
+}
+
+mark, ins {
+        background: #fff9c0;
+        text-decoration: none;
+}
+
+p {
+  margin-bottom: 1.625em;
+}
+
+p img {
+  margin-bottom: 0.5em; /* a small bottom margin prevents content floating under images */
+}
+
+img[class*="align"], img[class*="wp-image-"], #content .gallery .gallery-icon img {
+    border: 1px solid #DDDDDD;
+    padding: 6px;
+} 
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+}
+
+h3, h4, h5, h6 {
+    line-height: 36px;
+}
+
+.entry-content h1,
+.entry-content h2,
+.comment-content h1,
+.comment-content h2 {
+        color: #000;
+        font-weight: bold;
+        margin: 0 0 .8125em;
+}
+
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+        height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+p img,
+.wp-caption {
+        margin-top: 0.4em;
+}
+.wp-caption {
+        background: #eee;
+        margin-bottom: 1.625em;
+        max-width: 96%;
+        padding: 9px;
+}
+.wp-caption img {
+        display: block;
+        margin: 0 auto;
+        max-width: 98%;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+        color: #666;
+        font-family: Georgia, serif;
+        font-size: 12px;
+}
+.wp-caption .wp-caption-text {
+        margin-bottom: 0.6em;
+        padding: 10px 0 5px 40px;
+        position: relative;
+}
+.wp-caption .wp-caption-text:before {
+        color: #666;
+        content: '\2014';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: bold;
+        margin-right: 5px;
+        position: absolute;
+        left: 10px;
+        top: 7px;
+}
+
+
+/* Put a border above copyright info in footer. Center info. Pad it. */
+.site-info {
+	border-top: solid 1px #ccc;
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+/* Alignment */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.625em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.625em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.alignleft,
+img.alignright,
+img.aligncenter {
+        margin-bottom: 1.625em;
+}
+
+.entry-content img,
+.comment-content img,
+.widget img {
+        max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Search widget */
+#searchsubmit {
+	display: none;
+}

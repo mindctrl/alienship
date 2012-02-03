@@ -1,0 +1,9 @@
+== Changelog ==
+
+
+Version 0.1 - February 2, 2012
+------------------------------
+
+First beta release
+
+

@@ -1,0 +1,61 @@
+/* Previously used styles that I'm not quite ready to permanently delete */
+
+/* Unused for now
+.navbar-inner {
+    background-color: #2C2C2C;
+    background-image: -moz-linear-gradient(center top , #333333, #222222);
+    background-repeat: repeat-x;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    border-radius: 0px 0px 0px 0px;
+} */
+
+/* Unused for now. Supposedly changes position to accomodate for WP admin bar
+.navbar-relative {
+  position: relative;
+  width: 100%;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+} */
+
+/* Unused for now. Related to navbar-relative
+.dropdown {
+  position: relative;
+} */
+
+/* Swapping out styles: replacing 'active' with 'current-menu-item'
+----------------------------------------------------------------------------------------*/
+/* Ganked from Rachel Baker. Not using it currently.
+.navbar .nav .current-menu-item > a {
+color: white;
+text-decoration: none;
+background-color: #222;
+background-color: rgba(0, 0, 0, 0.5);
+} */
+
+/* Swapping out styles: replacing '.dropdown-menu' with 'sub-menu' 
+----------------------------------------------------------------------------------------*/
+/* .navbar .sub-menu {
+  top: 41px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+} */
+
+/* Pad the div.container-fluid to give more white space around the edges */
+/* .container-fluid {
+    padding-left: 50px;
+    padding-right: 30px;
+} */
+
+/* footer.entry-meta is the are below a post that list the post's categories, tags, etc. This padding spaces it out from a post that may come below
+footer.entry-meta {
+  padding-bottom: .6em;
+  border-bottom: solid 1px #ccc;
+} */
+
+/* Spaces out area above a post */
+/* header.entry-header {
+     padding-top: 1.5em;
+} */
+

@@ -13,6 +13,7 @@ TO DO LIST
 
 + Currently requires a WP menu called "Main Menu" assigned to the "Top Menu" in Admin > Appearance > Menus. Fix this. 
 + Clean up code.
++ Separate loop from markup
 + Footer widgets
 + Shortcodes for buttons, labels, tables, alerts, wells/panels, scaffolding, modals, tooltips, popovers, tabs...
 + Theme options page

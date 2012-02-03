@@ -23,7 +23,8 @@
 // Adding the class "dropdown" to li elements with submenus  //	
 jQuery(document).ready(function(){
 jQuery("ul.sub-menu").parent().addClass("dropdown");
-jQuery("ul#menu-main-menu li.dropdown a").addClass("dropdown-toggle");
+// jQuery("ul#menu-main-menu li.dropdown a").addClass("dropdown-toggle");
+jQuery("[id^=menu-] li.dropdown a").addClass("dropdown-toggle");
 jQuery("ul.sub-menu li a").removeClass("dropdown-toggle");
   });
 </script>

@@ -52,7 +52,7 @@ Authors
 + http://github.com/mindctrl
 
 
-Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme, and everyone else who has contributed to both and to the included libraries and assets.
+Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme, and everyone else who has contributed to both and to the included libraries and assets. Thanks to Rachel Baker for various CSS bits and examples.
 
 
 

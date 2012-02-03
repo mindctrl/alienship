@@ -12,14 +12,13 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" role="contentinfo">
-      <!-- <article id="footerwidget" class="container-fluid"> -->
-        <?php dynamic_sidebar("Footer"); ?>
-          
+    <?php dynamic_sidebar("Footer"); ?>
+
     <div class="row-fluid">
 		  <div class="site-info">
 			  <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
 		  </div><!-- .site-info -->
-    </div><!-- row -->
+    </div><!-- row-fluid -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

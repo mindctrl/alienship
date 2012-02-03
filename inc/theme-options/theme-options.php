@@ -1,17 +1,17 @@
 <?php
 /**
- * _s Theme Options
+ * Alien Ship Theme Options
  *
  * @package Alien Ship
  * @since Alien Ship 0.1
  */
 
 /**
- * Register the form setting for our _s_options array.
+ * Register the form setting for our alienship_options array.
  *
  * This function is attached to the admin_init action hook.
  *
- * This call to register_setting() registers a validation callback, _s_theme_options_validate(),
+ * This call to register_setting() registers a validation callback, alienship_theme_options_validate(),
  * which is used when the option is saved, to ensure that our option values are complete, properly
  * formatted, and safe.
  *
@@ -19,16 +19,16 @@
  *
  * @since Alien Ship 0.1
  */
-function _s_theme_options_init() {
+function alienship_theme_options_init() {
 
 	// If we have no options in the database, let's add them now.
-	if ( false === _s_get_theme_options() )
-		add_option( '_s_theme_options', _s_get_default_theme_options() );
+	if ( false === alienship_get_theme_options() )
+		add_option( 'alienship_theme_options', alienship_get_default_theme_options() );
 
 	register_setting(
-		'_s_options',       // Options group, see settings_fields() call in _s_theme_options_render_page()
-		'_s_theme_options', // Database option, see _s_get_theme_options()
-		'_s_theme_options_validate' // The sanitization callback, see _s_theme_options_validate()
+		'alienship_options',       // Options group, see settings_fields() call in alienship_theme_options_render_page()
+		'alienship_theme_options', // Database option, see alienship_get_theme_options()
+		'alienship_theme_options_validate' // The sanitization callback, see alienship_theme_options_validate()
 	);
 
 	// Register our settings field group
@@ -36,38 +36,38 @@ function _s_theme_options_init() {
 		'general', // Unique identifier for the settings section
 		'', // Section title (we don't want one)
 		'__return_false', // Section callback (we don't want anything)
-		'theme_options' // Menu slug, used to uniquely identify the page; see _s_theme_options_add_page()
+		'theme_options' // Menu slug, used to uniquely identify the page; see alienship_theme_options_add_page()
 	);
 
 	// Register our individual settings fields
 	add_settings_field(
 		'sample_checkbox', // Unique identifier for the field for this section
-		__( 'Sample Checkbox', '_s' ), // Setting field label
-		'_s_settings_field_sample_checkbox', // Function that renders the settings field
-		'theme_options', // Menu slug, used to uniquely identify the page; see _s_theme_options_add_page()
+		__( 'Sample Checkbox', 'alienship' ), // Setting field label
+		'alienship_settings_field_sample_checkbox', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see alienship_theme_options_add_page()
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 	);
 
-	add_settings_field( 'sample_text_input', __( 'Sample Text Input', '_s' ), '_s_settings_field_sample_text_input', 'theme_options', 'general' );
-	add_settings_field( 'sample_select_options', __( 'Sample Select Options', '_s' ), '_s_settings_field_sample_select_options', 'theme_options', 'general' );
-	add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', '_s' ), '_s_settings_field_sample_radio_buttons', 'theme_options', 'general' );
-	add_settings_field( 'sample_textarea', __( 'Sample Textarea', '_s' ), '_s_settings_field_sample_textarea', 'theme_options', 'general' );
+	add_settings_field( 'sample_text_input', __( 'Sample Text Input', 'alienship' ), 'alienship_settings_field_sample_text_input', 'theme_options', 'general' );
+	add_settings_field( 'sample_select_options', __( 'Sample Select Options', 'alienship' ), 'alienship_settings_field_sample_select_options', 'theme_options', 'general' );
+	add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', 'alienship' ), 'alienship_settings_field_sample_radio_buttons', 'theme_options', 'general' );
+	add_settings_field( 'sample_textarea', __( 'Sample Textarea', 'alienship' ), 'alienship_settings_field_sample_textarea', 'theme_options', 'general' );
 }
-add_action( 'admin_init', '_s_theme_options_init' );
+add_action( 'admin_init', 'alienship_theme_options_init' );
 
 /**
- * Change the capability required to save the '_s_options' options group.
+ * Change the capability required to save the 'alienship_options' options group.
  *
- * @see _s_theme_options_init() First parameter to register_setting() is the name of the options group.
- * @see _s_theme_options_add_page() The edit_theme_options capability is used for viewing the page.
+ * @see alienship_theme_options_init() First parameter to register_setting() is the name of the options group.
+ * @see alienship_theme_options_add_page() The edit_theme_options capability is used for viewing the page.
  *
  * @param string $capability The capability used for the page, which is manage_options by default.
  * @return string The capability to actually use.
  */
-function _s_option_page_capability( $capability ) {
+function alienship_option_page_capability( $capability ) {
 	return 'edit_theme_options';
 }
-add_filter( 'option_page_capability__s_options', '_s_option_page_capability' );
+add_filter( 'option_page_capability_alienship_options', 'alienship_option_page_capability' );
 
 /**
  * Add our theme options page to the admin menu, including some help documentation.
@@ -76,86 +76,86 @@ add_filter( 'option_page_capability__s_options', '_s_option_page_capability' );
  *
  * @since Alien Ship 0.1
  */
-function _s_theme_options_add_page() {
+function alienship_theme_options_add_page() {
 	$theme_page = add_theme_page(
-		__( 'Theme Options', '_s' ),   // Name of page
-		__( 'Theme Options', '_s' ),   // Label in menu
+		__( 'Theme Options', 'alienship' ),   // Name of page
+		__( 'Theme Options', 'alienship' ),   // Label in menu
 		'edit_theme_options',                    // Capability required
 		'theme_options',                         // Menu slug, used to uniquely identify the page
-		'_s_theme_options_render_page' // Function that renders the options page
+		'alienship_theme_options_render_page' // Function that renders the options page
 	);
 
 	if ( ! $theme_page )
 		return;
 }
-add_action( 'admin_menu', '_s_theme_options_add_page' );
+add_action( 'admin_menu', 'alienship_theme_options_add_page' );
 
 /**
- * Returns an array of sample select options registered for _s.
+ * Returns an array of sample select options registered for alienship.
  *
  * @since Alien Ship 0.1
  */
-function _s_sample_select_options() {
+function alienship_sample_select_options() {
 	$sample_select_options = array(
 		'0' => array(
 			'value' =>	'0',
-			'label' => __( 'Zero', '_s' )
+			'label' => __( 'Zero', 'alienship' )
 		),
 		'1' => array(
 			'value' =>	'1',
-			'label' => __( 'One', '_s' )
+			'label' => __( 'One', 'alienship' )
 		),
 		'2' => array(
 			'value' => '2',
-			'label' => __( 'Two', '_s' )
+			'label' => __( 'Two', 'alienship' )
 		),
 		'3' => array(
 			'value' => '3',
-			'label' => __( 'Three', '_s' )
+			'label' => __( 'Three', 'alienship' )
 		),
 		'4' => array(
 			'value' => '4',
-			'label' => __( 'Four', '_s' )
+			'label' => __( 'Four', 'alienship' )
 		),
 		'5' => array(
 			'value' => '3',
-			'label' => __( 'Five', '_s' )
+			'label' => __( 'Five', 'alienship' )
 		)
 	);
 
-	return apply_filters( '_s_sample_select_options', $sample_select_options );
+	return apply_filters( 'alienship_sample_select_options', $sample_select_options );
 }
 
 /**
- * Returns an array of sample radio options registered for _s.
+ * Returns an array of sample radio options registered for alienship.
  *
  * @since Alien Ship 0.1
  */
-function _s_sample_radio_buttons() {
+function alienship_sample_radio_buttons() {
 	$sample_radio_buttons = array(
 		'yes' => array(
 			'value' => 'yes',
-			'label' => __( 'Yes', '_s' )
+			'label' => __( 'Yes', 'alienship' )
 		),
 		'no' => array(
 			'value' => 'no',
-			'label' => __( 'No', '_s' )
+			'label' => __( 'No', 'alienship' )
 		),
 		'maybe' => array(
 			'value' => 'maybe',
-			'label' => __( 'Maybe', '_s' )
+			'label' => __( 'Maybe', 'alienship' )
 		)
 	);
 
-	return apply_filters( '_s_sample_radio_buttons', $sample_radio_buttons );
+	return apply_filters( 'alienship_sample_radio_buttons', $sample_radio_buttons );
 }
 
 /**
- * Returns the default options for _s.
+ * Returns the default options for alienship.
  *
  * @since Alien Ship 0.1
  */
-function _s_get_default_theme_options() {
+function alienship_get_default_theme_options() {
 	$default_theme_options = array(
 		'sample_checkbox' => 'off',
 		'sample_text_input' => '',
@@ -164,27 +164,27 @@ function _s_get_default_theme_options() {
 		'sample_textarea' => '',
 	);
 
-	return apply_filters( '_s_default_theme_options', $default_theme_options );
+	return apply_filters( 'alienship_default_theme_options', $default_theme_options );
 }
 
 /**
- * Returns the options array for _s.
+ * Returns the options array for alienship.
  *
  * @since Alien Ship 0.1
  */
-function _s_get_theme_options() {
-	return get_option( '_s_theme_options', _s_get_default_theme_options() );
+function alienship_get_theme_options() {
+	return get_option( 'alienship_theme_options', alienship_get_default_theme_options() );
 }
 
 /**
  * Renders the sample checkbox setting field.
  */
-function _s_settings_field_sample_checkbox() {
-	$options = _s_get_theme_options();
+function alienship_settings_field_sample_checkbox() {
+	$options = alienship_get_theme_options();
 	?>
 	<label for"sample-checkbox">
-		<input type="checkbox" name="_s_theme_options[sample_checkbox]" id="sample-checkbox" <?php checked( 'on', $options['sample_checkbox'] ); ?> />
-		<?php _e( 'A sample checkbox.', '_s' );  ?>
+		<input type="checkbox" name="alienship_theme_options[sample_checkbox]" id="sample-checkbox" <?php checked( 'on', $options['sample_checkbox'] ); ?> />
+		<?php _e( 'A sample checkbox.', 'alienship' );  ?>
 	</label>
 	<?php
 }
@@ -192,27 +192,27 @@ function _s_settings_field_sample_checkbox() {
 /**
  * Renders the sample text input setting field.
  */
-function _s_settings_field_sample_text_input() {
-	$options = _s_get_theme_options();
+function alienship_settings_field_sample_text_input() {
+	$options = alienship_get_theme_options();
 	?>
-	<input type="text" name="_s_theme_options[sample_text_input]" id="sample-text-input" value="<?php echo esc_attr( $options['sample_text_input'] ); ?>" />
-	<label class="description" for="sample-text-input"><?php _e( 'Sample text input', '_s' ); ?></label>
+	<input type="text" name="alienship_theme_options[sample_text_input]" id="sample-text-input" value="<?php echo esc_attr( $options['sample_text_input'] ); ?>" />
+	<label class="description" for="sample-text-input"><?php _e( 'Sample text input', 'alienship' ); ?></label>
 	<?php
 }
 
 /**
  * Renders the sample select options setting field.
  */
-function _s_settings_field_sample_select_options() {
-	$options = _s_get_theme_options();
+function alienship_settings_field_sample_select_options() {
+	$options = alienship_get_theme_options();
 	?>
-	<select name="_s_theme_options[sample_select_options]" id="sample-select-options">
+	<select name="alienship_theme_options[sample_select_options]" id="sample-select-options">
 		<?php
 			$selected = $options['sample_select_options'];
 			$p = '';
 			$r = '';
 
-			foreach ( _s_sample_select_options() as $option ) {
+			foreach ( alienship_sample_select_options() as $option ) {
 				$label = $option['label'];
 				if ( $selected == $option['value'] ) // Make default first in list
 					$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
@@ -222,7 +222,7 @@ function _s_settings_field_sample_select_options() {
 			echo $p . $r;
 		?>
 	</select>
-	<label class="description" for="sample_theme_options[selectinput]"><?php _e( 'Sample select input', '_s' ); ?></label>
+	<label class="description" for="sample_theme_options[selectinput]"><?php _e( 'Sample select input', 'alienship' ); ?></label>
 	<?php
 }
 
@@ -231,14 +231,14 @@ function _s_settings_field_sample_select_options() {
  *
  * @since Alien Ship 0.1
  */
-function _s_settings_field_sample_radio_buttons() {
-	$options = _s_get_theme_options();
+function alienship_settings_field_sample_radio_buttons() {
+	$options = alienship_get_theme_options();
 
-	foreach ( _s_sample_radio_buttons() as $button ) {
+	foreach ( alienship_sample_radio_buttons() as $button ) {
 	?>
 	<div class="layout">
 		<label class="description">
-			<input type="radio" name="_s_theme_options[sample_radio_buttons]" value="<?php echo esc_attr( $button['value'] ); ?>" <?php checked( $options['sample_radio_buttons'], $button['value'] ); ?> />
+			<input type="radio" name="alienship_theme_options[sample_radio_buttons]" value="<?php echo esc_attr( $button['value'] ); ?>" <?php checked( $options['sample_radio_buttons'], $button['value'] ); ?> />
 			<?php echo $button['label']; ?>
 		</label>
 	</div>
@@ -249,29 +249,29 @@ function _s_settings_field_sample_radio_buttons() {
 /**
  * Renders the sample textarea setting field.
  */
-function _s_settings_field_sample_textarea() {
-	$options = _s_get_theme_options();
+function alienship_settings_field_sample_textarea() {
+	$options = alienship_get_theme_options();
 	?>
-	<textarea class="large-text" type="text" name="_s_theme_options[sample_textarea]" id="sample-textarea" cols="50" rows="10" /><?php echo esc_textarea( $options['sample_textarea'] ); ?></textarea>
-	<label class="description" for="sample-textarea"><?php _e( 'Sample textarea', '_s' ); ?></label>
+	<textarea class="large-text" type="text" name="alienship_theme_options[sample_textarea]" id="sample-textarea" cols="50" rows="10" /><?php echo esc_textarea( $options['sample_textarea'] ); ?></textarea>
+	<label class="description" for="sample-textarea"><?php _e( 'Sample textarea', 'alienship' ); ?></label>
 	<?php
 }
 
 /**
- * Returns the options array for _s.
+ * Returns the options array for alienship.
  *
  * @since Alien Ship 0.1
  */
-function _s_theme_options_render_page() {
+function alienship_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Theme Options', '_s' ), get_current_theme() ); ?></h2>
+		<h2><?php printf( __( '%s Theme Options', 'alienship' ), get_current_theme() ); ?></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
 			<?php
-				settings_fields( '_s_options' );
+				settings_fields( 'alienship_options' );
 				do_settings_sections( 'theme_options' );
 				submit_button();
 			?>
@@ -283,13 +283,13 @@ function _s_theme_options_render_page() {
 /**
  * Sanitize and validate form input. Accepts an array, return a sanitized array.
  *
- * @see _s_theme_options_init()
+ * @see alienship_theme_options_init()
  * @todo set up Reset Options action
  *
  * @since Alien Ship 0.1
  */
-function _s_theme_options_validate( $input ) {
-	$output = $defaults = _s_get_default_theme_options();
+function alienship_theme_options_validate( $input ) {
+	$output = $defaults = alienship_get_default_theme_options();
 
 	// The sample checkbox should either be on or off
 	if ( ! isset( $input['sample_checkbox'] ) )
@@ -301,16 +301,16 @@ function _s_theme_options_validate( $input ) {
 		$output['sample_text_input'] = wp_filter_nohtml_kses( $input['sample_text_input'] );
 
 	// The sample select option must actually be in the array of select options
-	if ( array_key_exists( $input['sample_select_options'], _s_sample_select_options() ) )
+	if ( array_key_exists( $input['sample_select_options'], alienship_sample_select_options() ) )
 		$output['sample_select_options'] = $input['sample_select_options'];
 
 	// The sample radio button value must be in our array of radio button values
-	if ( isset( $input['sample_radio_buttons'] ) && array_key_exists( $input['sample_radio_buttons'], _s_sample_radio_buttons() ) )
+	if ( isset( $input['sample_radio_buttons'] ) && array_key_exists( $input['sample_radio_buttons'], alienship_sample_radio_buttons() ) )
 		$output['sample_radio_buttons'] = $input['sample_radio_buttons'];
 
 	// The sample textarea must be safe text with the allowed tags for posts
 	if ( isset( $input['sample_textarea'] ) )
 		$output['sample_textarea'] = wp_filter_post_kses($input['sample_textarea'] );
 
-	return apply_filters( '_s_theme_options_validate', $output, $input, $defaults );
+	return apply_filters( 'alienship_theme_options_validate', $output, $input, $defaults );
 }

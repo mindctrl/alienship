@@ -31,14 +31,14 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 <!-- Load Bootstrap CSS. Javascript is loaded in functions.php -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_directory');?>/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_directory');?>/css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_directory');?>/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_directory');?>/css/bootstrap-responsive.min.css">
 <!-- End of Bootstrap CSS -->
 
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
@@ -84,8 +84,8 @@
 
 <!-- Load Primary Menu
 	<nav role="navigation" class="site-navigation">
-		<h1 class="assistive-text"><?php _e( 'Main menu', '_s' ); ?></h1>
-		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
+		<h1 class="assistive-text"><?php _e( 'Main menu', 'alienship' ); ?></h1>
+		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'alienship' ); ?>"><?php _e( 'Skip to content', 'alienship' ); ?></a></div>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav>
 End Primary Menu -->	

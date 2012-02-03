@@ -1,6 +1,6 @@
 <?php
 /**
- * _s functions and definitions
+ * Alien Ship functions and definitions
  *
  * @package Alien Ship
  * @since Alien Ship 0.1
@@ -14,7 +14,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
-if ( ! function_exists( '_s_setup' ) ):
+if ( ! function_exists( 'alienship_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -24,7 +24,7 @@ if ( ! function_exists( '_s_setup' ) ):
  *
  * @since Alien Ship 0.1
  */
-function _s_setup() {
+function alienship_setup() {
 
 	/**
 	 * Custom template tags for this theme.
@@ -49,10 +49,10 @@ function _s_setup() {
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files
+	 * If you're building a theme based on alienship, use a find and replace
+	 * to change 'alienship' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
@@ -68,10 +68,10 @@ function _s_setup() {
 	 * This theme uses wp_nav_menu() in two locations.
 	 */
 	/** register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_s' ),
+		'primary' => __( 'Primary Menu', 'alienship' ),
 	) ); */
 	register_nav_menus( array(
-		'top' => __( 'Top Menu', '_s' ),
+		'top' => __( 'Top Menu', 'alienship' ),
 	) );
 
 
@@ -80,25 +80,34 @@ function _s_setup() {
 	 */
 	add_theme_support( 'post-formats', array( 'aside', ) );
 }
-endif; // _s_setup
-add_action( 'after_setup_theme', '_s_setup' );
+endif; // alienship_setup
+add_action( 'after_setup_theme', 'alienship_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  *
  * @since Alien Ship 0.1
  */
-function _s_widgets_init() {
+function alienship_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar', '_s' ),
+		'name' => __( 'Sidebar', 'alienship' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer', 'alienship' ),
+		'id' => 'footer-1',
+		'before_widget' => '<div class="span4">',
+		'after_widget' => "</div>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 }
-add_action( 'init', '_s_widgets_init' );
+add_action( 'init', 'alienship_widgets_init' );
 
 function bootstrapwp_js_loader() {
 		wp_enqueue_script('prettify.js', get_template_directory_uri().'/docs/assets/js/google-code-prettify/prettify.js', array('jquery'),'1.0', true );

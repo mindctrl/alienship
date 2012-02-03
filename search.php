@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'alienship' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header>
 
 				<?php alienship_content_nav( 'nav-above' ); ?>
@@ -33,11 +33,11 @@ get_header(); ?>
 
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', '_s' ); ?></h1>
+						<h1 class="entry-title"><?php _e( 'Nothing Found', 'alienship' ); ?></h1>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', '_s' ); ?></p>
+						<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'alienship' ); ?></p>
 						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->

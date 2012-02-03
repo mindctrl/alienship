@@ -13,18 +13,18 @@
  *
  * @since Alien Ship 0.1
  */
-function _s_page_menu_args( $args ) {
+function alienship_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', '_s_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'alienship_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
  *
  * @since Alien Ship 0.1
  */
-function _s_body_classes( $classes ) {
+function alienship_body_classes( $classes ) {
 	// Adds a class of single-author to blogs with only 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -32,14 +32,14 @@ function _s_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', '_s_body_classes' );
+add_filter( 'body_class', 'alienship_body_classes' );
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  *
  * @since Alien Ship 0.1
  */
-function _s_enhanced_image_navigation( $url, $id ) {
+function alienship_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
 
@@ -49,4 +49,4 @@ function _s_enhanced_image_navigation( $url, $id ) {
 
 	return $url;
 }
-add_filter( 'attachment_link', '_s_enhanced_image_navigation', 10, 2 );
+add_filter( 'attachment_link', 'alienship_enhanced_image_navigation', 10, 2 );

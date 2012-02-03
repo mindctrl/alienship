@@ -14,14 +14,13 @@ TO DO LIST
 + Level 3 dropdowns do not work as expected
 + Clean up code
 + Separate loop from markup
-+ Footer widgets
 + Shortcodes for buttons, labels, tables, alerts, wells/panels, scaffolding, modals, tooltips, popovers, tabs...
++ Featured slider/carousel
 + Theme options page
 + Options to include each JS plugin/feature
 + Header image option
 + Color options
 + Configurable footer text
-+ Featured slider/carousel
 + Layout options for index, archive, etc. List, Tile, etc.
 + Breadcrumbs
 + Option to hide "Comments Closed" message

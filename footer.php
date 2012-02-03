@@ -12,9 +12,14 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" role="contentinfo">
-		<div class="site-info">
-			<?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
-		</div><!-- .site-info -->
+      <!-- <article id="footerwidget" class="container-fluid"> -->
+        <?php dynamic_sidebar("Footer"); ?>
+          
+    <div class="row-fluid">
+		  <div class="site-info">
+			  <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
+		  </div><!-- .site-info -->
+    </div><!-- row -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
@@ -26,6 +31,8 @@ jQuery("ul.sub-menu").parent().addClass("dropdown");
 // jQuery("ul#menu-main-menu li.dropdown a").addClass("dropdown-toggle");
 jQuery("[id^=menu-] li.dropdown a").addClass("dropdown-toggle");
 jQuery("ul.sub-menu li a").removeClass("dropdown-toggle");
+// jQuery("ul.sub-menu li").removeClass("dropdown");
+// jQuery("ul.sub-menu li ul.sub-menu").siblings('a').addClass("dropdown-toggle");
   });
 </script>
 <script type="text/javascript">

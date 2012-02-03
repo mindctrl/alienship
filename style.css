@@ -190,9 +190,9 @@ a.dropdown-toggle:active:after {
     border-radius: 5px 5px 5px 5px;
     border: 1px solid #C0C0C0;
     clear: both;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     overflow: hidden; 
-    padding: 15px 15px 15px 15px;
+    padding: 10px 10px 10px 10px;
 }
 
 /* The article wrapper called through the theme to display the content of a post/page/whatever */
@@ -201,7 +201,7 @@ article {
     border-radius: 5px 5px 5px 5px;
     border: 1px solid #C0C0C0;
     clear: both;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     overflow: hidden; 
     padding: 15px 15px 15px 15px;
 }
@@ -213,7 +213,7 @@ article {
 
 /* Set margin for page wrapper. Includes masthead and content wrapper */
 #page {
-  margin-left: 18px;
+  margin-left: 15px;
 }
 
 /* Hack to space out left sidebar from main wrapper. Will change this later. */

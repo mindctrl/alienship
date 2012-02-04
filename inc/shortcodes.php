@@ -12,7 +12,7 @@
 function alienship_button($atts, $content = null) {
    extract(shortcode_atts(array('link' => '#', 'type' => 'btn'), $atts));
    if ($type != "btn") {
-   return '<a class="btn btn-'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';   	
+   return '<a class="btn btn-'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
    } else {
    return '<a class="'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
    }
@@ -23,9 +23,21 @@ add_shortcode('button', 'alienship_button');
 function alienship_largebutton($atts, $content = null) {
    extract(shortcode_atts(array('link' => '#', 'type' => 'btn'), $atts));
    if ($type != "btn") {
-   return '<a class="btn btn-large btn-'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';   	
+   return '<a class="btn btn-large btn-'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
    } else {
    return '<a class="btn btn-large" href="'.$link.'">' . do_shortcode($content) . '</a>';
    }
 }
 add_shortcode('largebutton', 'alienship_largebutton');
+
+/* =Labels
+----------------------------------------------- */
+function alienship_label($atts, $content = null) {
+   extract(shortcode_atts(array('type' => 'label'), $atts));
+   if ($type != "label") {
+   return '<span class="label label-'.$type.'">' . do_shortcode($content) . '</span>';
+   } else {
+   return '<span class="'.$type.'">' . do_shortcode($content) . '</span>';
+   }
+}
+add_shortcode('label', 'alienship_label');

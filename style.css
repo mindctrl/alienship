@@ -111,7 +111,7 @@ white-space: nowrap;
 }
 
 /* Allows dropdown sub-menus to overflow over the black header bar and into the body, otherwise they get clipped */
-div.nav-collapse.in.collapse {
+div.nav-collapse.in {
   overflow: visible;
 }
 
@@ -350,6 +350,10 @@ img.aligncenter {
 .comment-content img,
 .widget img {
         max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
+}
+
+.footerwidget {
+  padding: 0px 0px 15px 0px;
 }
 
 /* =Widgets

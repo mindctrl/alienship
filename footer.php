@@ -10,9 +10,11 @@
 ?>
 
 	</div><!-- #main -->
-
-	<footer id="colophon" role="contentinfo">
+  <div class="row-fluid footerwidget">
     <?php dynamic_sidebar("Footer"); ?>
+  </div>
+	<footer id="colophon" role="contentinfo">
+
 
     <div class="row-fluid">
 		  <div class="site-info">
@@ -27,11 +29,8 @@
 // Adding the class "dropdown" to li elements with submenus  //	
 jQuery(document).ready(function(){
 jQuery("ul.sub-menu").parent().addClass("dropdown");
-// jQuery("ul#menu-main-menu li.dropdown a").addClass("dropdown-toggle");
 jQuery("[id^=menu-] li.dropdown a").addClass("dropdown-toggle");
 jQuery("ul.sub-menu li a").removeClass("dropdown-toggle");
-// jQuery("ul.sub-menu li").removeClass("dropdown");
-// jQuery("ul.sub-menu li ul.sub-menu").siblings('a').addClass("dropdown-toggle");
   });
 </script>
 <script type="text/javascript">

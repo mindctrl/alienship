@@ -9,6 +9,15 @@
     border-radius: 0px 0px 0px 0px;
 } */
 
+/* div.nav-collapse.collapse.in {
+  overflow: visible;
+} */
+
+/* div.collapse.in {
+  height:auto !important;
+  overflow: visible;
+} */
+
 /* Unused for now. Supposedly changes position to accomodate for WP admin bar
 .navbar-relative {
   position: relative;

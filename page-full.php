@@ -3,11 +3,6 @@
  * Template Name: Full width
  * The template for displaying full-width pages.
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
  * @package Alien Ship
  * @since Alien Ship 0.1
  */

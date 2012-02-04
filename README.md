@@ -36,6 +36,7 @@ Known issues
 ------------
 
 + Alignment issues on the "Images Test" post.
++ A menu must be assigned to the Top Menu in Admin > Appearances > Menus for the navbar and dropdowns to display properly.
 
 Have a bug? Please create an issue here on GitHub!
 

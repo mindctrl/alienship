@@ -15,6 +15,7 @@ TO DO LIST
 + Separate loop from markup
 + Shortcodes for buttons, labels, tables, alerts, wells/panels, scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
++ Add a utility/footer menu and maybe a menu that lives below the masthead and above content.
 + Theme options page
 + Options to include each JS plugin/feature
 + Header image option

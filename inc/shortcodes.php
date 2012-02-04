@@ -41,3 +41,10 @@ function alienship_label($atts, $content = null) {
    }
 }
 add_shortcode('label', 'alienship_label');
+
+/* =Wells
+----------------------------------------------- */
+function alienship_well($atts, $content = null) {
+   return '<div class="well">' . do_shortcode($content) .'</div>';
+}
+add_shortcode('well', 'alienship_well');

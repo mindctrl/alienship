@@ -13,7 +13,7 @@ TO DO LIST
 
 + Clean up code
 + Separate loop from markup
-+ Shortcodes for buttons, labels, tables, alerts, wells/panels, scaffolding, modals, tooltips, popovers, tabs...
++ Shortcodes for ~~buttons~~, ~~labels~~, tables, alerts, ~~wells/panels~~, scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
 + Add a utility/footer menu and maybe a menu that lives below the masthead and above content.
 + Theme options page

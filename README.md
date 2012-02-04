@@ -11,7 +11,6 @@ NOTE: This theme is currently beta quality software. It is not yet ready for pro
 TO DO LIST
 ==========
 
-+ Level 3 dropdowns do not work as expected
 + Clean up code
 + Separate loop from markup
 + Shortcodes for buttons, labels, tables, alerts, wells/panels, scaffolding, modals, tooltips, popovers, tabs...

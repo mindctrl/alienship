@@ -49,5 +49,15 @@ function alienship_well($atts, $content = null) {
 }
 add_shortcode('well', 'alienship_well');
 
-/* =Alerts
+/* =Alerts - Types are 'info', 'error', 'success', and unspecified(which displays a default color). Specify a heading text. See example.
+ *  Example: [alert type="success" heading="Congrats!"]You won the lottery![/alert]
 ----------------------------------------------- */
+function alienship_alert($atts, $content = null) {
+   extract(shortcode_atts(array('type' => 'alert', 'heading' => ''), $atts));
+   if ($type != "alert") {
+   return '<div class="alert alert-'.$type.'"><a class="close">x</a><strong>'. do_shortcode($heading) .'</strong> ' . do_shortcode($content) . '</div>';
+   } else {
+   return '<div class="'.$type.'"><a class="close">x</a><h4 class="alert-heading">'. do_shortcode($heading) .'</h4>' . do_shortcode($content) . '</div>';
+   }
+}
+add_shortcode('alert', 'alienship_alert');

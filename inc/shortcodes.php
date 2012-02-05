@@ -57,7 +57,7 @@ function alienship_alert($atts, $content = null) {
    if ($type != "alert") {
    return '<div class="alert alert-'.$type.'"><a class="close">x</a><strong>'. do_shortcode($heading) .'</strong> ' . do_shortcode($content) . '</div>';
    } else {
-   return '<div class="'.$type.'"><a class="close">x</a><h4 class="alert-heading">'. do_shortcode($heading) .'</h4>' . do_shortcode($content) . '</div>';
+   return '<div class="'.$type.'"><a class="close">x</a><strong>'. do_shortcode($heading) .'</strong>' . do_shortcode($content) . '</div>';
    }
 }
 add_shortcode('alert', 'alienship_alert');

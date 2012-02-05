@@ -25,7 +25,7 @@ function alienship_largebutton($atts, $content = null) {
    if ($type != "btn") {
    return '<a class="btn btn-large btn-'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
    } else {
-   return '<a class="btn btn-large" href="'.$link.'">' . do_shortcode($content) . '</a>';
+   return '<a class="'.$type.' '.$type.'-large" href="'.$link.'">' . do_shortcode($content) . '</a>';
    }
 }
 add_shortcode('largebutton', 'alienship_largebutton');
@@ -48,3 +48,6 @@ function alienship_well($atts, $content = null) {
    return '<div class="well">' . do_shortcode($content) .'</div>';
 }
 add_shortcode('well', 'alienship_well');
+
+/* =Alerts
+----------------------------------------------- */

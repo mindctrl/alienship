@@ -12,7 +12,6 @@ Tags:
 
 /* =Navigation and dropdowns
 ----------------------------------------------- */
-
 /* Remove the rounded edges from the navbar */
 .navbar-inner {
   border-radius: 0px 0px 0px 0px;
@@ -192,7 +191,7 @@ a.dropdown-toggle:active:after {
     clear: both;
     margin-bottom: 10px;
     overflow: hidden; 
-    padding: 10px 10px 10px 10px;
+    padding: 7px 7px 7px 7px;
 }
 
 /* The article wrapper called through the theme to display the content of a post/page/whatever */
@@ -212,9 +211,9 @@ article {
 }
 
 /* Set margin for page wrapper. Includes masthead and content wrapper */
-#page {
+/* #page {
   margin-left: 15px;
-}
+} */
 
 /* Hack to space out left sidebar from main wrapper. Will change this later. */
 .leftsidebar-margin {
@@ -305,7 +304,6 @@ p img,
         top: 7px;
 }
 
-
 /* Put a border above copyright info in footer. Center info. Pad it. */
 .site-info {
 	border-top: solid 1px #ccc;
@@ -353,7 +351,8 @@ img.aligncenter {
 }
 
 .footerwidget {
-  padding: 0px 0px 15px 0px;
+margin-left: 15px;
+padding: 0px 0px 15px 0px;
 }
 
 /* =Widgets

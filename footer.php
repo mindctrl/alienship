@@ -10,20 +10,22 @@
 ?>
 
 	</div><!-- #main -->
+  
+</div><!-- #page -->
+<div class="container-fluid">
   <div class="row-fluid footerwidget">
     <?php dynamic_sidebar("Footer"); ?>
   </div>
-	<footer id="colophon" role="contentinfo">
+</div>
+  <footer id="colophon" role="contentinfo">
 
 
     <div class="row-fluid">
-		  <div class="site-info">
-			  <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
-		  </div><!-- .site-info -->
+      <div class="site-info">
+        <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
+      </div><!-- .site-info -->
     </div><!-- row-fluid -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
+  </footer><!-- #colophon -->
 
 <script type="text/javascript">
 // Adding the class "dropdown" to li elements with submenus  //	

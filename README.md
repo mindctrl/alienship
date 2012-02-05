@@ -11,6 +11,7 @@ NOTE: This theme is currently beta quality software. It is not yet ready for pro
 TO DO LIST
 ==========
 
++ Fix left sidebar filth
 + Clean up code
 + Separate loop from markup
 + Shortcodes for ~~buttons~~, ~~labels~~, tables, alerts, ~~wells/panels~~, scaffolding, modals, tooltips, popovers, tabs...
@@ -26,7 +27,8 @@ TO DO LIST
 + Option to hide "Comments Closed" message
 + Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom, hide)
 + Analytics option
-
++ Avatar and author bio display
++ Documentation
 
 
 

@@ -55,9 +55,9 @@ add_shortcode('well', 'alienship_well');
 function alienship_alert($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'alert', 'heading' => ''), $atts));
    if ($type != "alert") {
-   return '<div class="alert alert-'.$type.'"><a class="close">x</a><strong>'. do_shortcode($heading) .'</strong> ' . do_shortcode($content) . '</div>';
+   return '<div class="alert alert-'.$type.'"><a data-dismiss="alert" class="close">x</a><strong>'. do_shortcode($heading) .'</strong> ' . do_shortcode($content) . '</div>';
    } else {
-   return '<div class="'.$type.'"><a class="close">x</a><strong>'. do_shortcode($heading) .'</strong>' . do_shortcode($content) . '</div>';
+   return '<div class="'.$type.'"><a data-dismiss="alert" class="close">x</a><strong>'. do_shortcode($heading) .'</strong>' . do_shortcode($content) . '</div>';
    }
 }
 add_shortcode('alert', 'alienship_alert');

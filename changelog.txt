@@ -8,7 +8,7 @@ Fixed dropdown menu naming requirement.
 Added footer sidebar
 Fixed dropdown menu collapse bug when resizing browser
 Fixed dropdown caret indicator
-Added shortcakes for buttons, labels, wells, and alerts
+Added shortcodes for buttons, labels, wells, and alerts
 
 
 Version 0.1 - February 2, 2012

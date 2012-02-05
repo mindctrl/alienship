@@ -3,7 +3,7 @@
  * Alien Ship shortcodes
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.2
  */
 
 /* =Buttons

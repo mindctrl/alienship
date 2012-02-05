@@ -10,31 +10,31 @@
 ?>
 
 	</div><!-- #main -->
-  
 </div><!-- #page -->
 <div class="container-fluid">
   <div class="row-fluid footerwidget">
     <?php dynamic_sidebar("Footer"); ?>
   </div>
 </div>
-  <footer id="colophon" role="contentinfo">
 
-
-    <div class="row-fluid">
-      <div class="site-info">
-        <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
-      </div><!-- .site-info -->
-    </div><!-- row-fluid -->
-  </footer><!-- #colophon -->
+<footer id="colophon" role="contentinfo">
+  <div class="row-fluid">
+    <div class="site-info">
+      <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
+    </div><!-- .site-info -->
+  </div><!-- row-fluid -->
+</footer><!-- #colophon -->
 
 <script type="text/javascript">
 // Adding the class "dropdown" to li elements with submenus  //	
 jQuery(document).ready(function(){
 jQuery("ul.sub-menu").parent().addClass("dropdown");
 jQuery("[id^=menu-] li.dropdown a").addClass("dropdown-toggle");
+jQuery('.dropdown-toggle').append('<b class="caret"></b>');
 jQuery("ul.sub-menu li a").removeClass("dropdown-toggle");
-  });
+});
 </script>
+
 <script type="text/javascript">
 jQuery(document).ready(function(){
  // Don't FORGET: replace all $ with jQuery to prevent conflicts //
@@ -42,7 +42,8 @@ jQuery('a.dropdown-toggle')
 .attr('data-toggle', 'dropdown');
   });
 </script>
-  <script type="text/javascript">
+
+<script type="text/javascript">
 jQuery(document).ready(function(){
  // Loaded for javascript Demo page - I prefer it when demos actually work, don't you?  //	
  // Don't FORGET: replace all $ with jQuery to prevent conflicts //
@@ -75,6 +76,7 @@ jQuery(function () {
       })
   });
 </script>
+
 <script type="text/javascript">
 jQuery(document).ready(function(){
  // Don't FORGET: replace all $ with jQuery to prevent conflicts //
@@ -84,8 +86,6 @@ jQuery(document).ready(function(){
       })
   });
 </script>
-
-
 
 <?php wp_footer(); ?>
 

@@ -12,7 +12,6 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -34,6 +33,7 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
 
 	?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 <!-- Load Bootstrap CSS. Javascript is loaded in functions.php -->
@@ -66,28 +66,20 @@
           <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
           <div class="nav-collapse">
             <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav' ) ); ?>
-          </div>
-        </div>
-    </div>
-  </div>
+          </div><!-- /nav-collapse -->
+        </div><!-- /container-fluid -->
+    </div><!-- /navbar-inner -->
+  </div><!-- /navbar -->
 <!-- End Top Menu -->
 
 <!-- Site title and description in masthead -->
 <div id="page" class="container-fluid hfeed">
-	<?php do_action( 'before' ); ?>
+  <?php do_action( 'before' ); ?>
 	<header id="masthead" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup><br />
+	  <hgroup>
+	    <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	  </hgroup><br />
 <!-- End Site title and description in masthead -->
-
-<!-- Load Primary Menu
-	<nav role="navigation" class="site-navigation">
-		<h1 class="assistive-text"><?php _e( 'Main menu', 'alienship' ); ?></h1>
-		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'alienship' ); ?>"><?php _e( 'Skip to content', 'alienship' ); ?></a></div>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-	</nav>
-End Primary Menu -->	
-	</header><!-- #masthead -->
-	<div id="main">
+    </header><!-- #masthead -->
+  <div id="main">

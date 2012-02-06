@@ -67,13 +67,17 @@ add_shortcode('label', 'alienship_label');
 
 /* =Panels
 ----------------------------------------------- 
-* [panel] shortcode.
-* Example: [panel]Your panel text here.[/panel] */
-function alienship_panel($atts, $content = null) {
-   return '<div class="panel">' . do_shortcode($content) .'</div>';
+* [panel] shortcode. Columns defaults to 6. You can specify columns in the shortcode.
+* Example: [panel columns="4"]Your panel text here.[/panel] */
+function alienship_panel( $atts, $content = null ) {
+   extract(shortcode_atts(array('columns' => '6'), $atts));
+   $span = '"span';
+   if ($columns) {
+   $span .= ''.$columns.'"';
+}
+   return '<p><div class='.$span.' style="margin-left: 0px"><div class="panel">' . do_shortcode($content) . '</div></div><div class="clear"></div></p>';
 }
 add_shortcode('panel', 'alienship_panel');
-
 
 
 /* =Wells

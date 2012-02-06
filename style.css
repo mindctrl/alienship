@@ -146,7 +146,7 @@ div.nav-collapse.in {
 -------------------------- */
 /* The content wrapper home page called in index.php */
 #content {
-    background: none repeat scroll 0 0 #E3E3E3;
+    background: none repeat scroll 0 0 #E6E6E6;
     border-radius: 5px 5px 5px 5px;
     border: 1px solid #C0C0C0;
     clear: both;
@@ -157,7 +157,7 @@ div.nav-collapse.in {
 
 /* The article wrapper called through the theme to display the content of a post/page/whatever */
 article {
-    background: none repeat scroll 0 0 #F5F5F5;
+    background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 5px 5px 5px 5px;
     border: 1px solid #C0C0C0;
     clear: both;
@@ -336,6 +336,15 @@ padding: 0px 0px 15px 0px;
   border-color: rgba(0, 0, 0, 0.15);
 }
 
+/* Clear */
+.clear {
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
 
 /* =Widgets
 ----------------------------------------------- */

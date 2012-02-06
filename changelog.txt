@@ -1,14 +1,15 @@
 == Changelog ==
 
 
-Version 0.2 - February 5, 2012
+Version 0.2 - February 6, 2012
 ------------------------------
 
 Fixed dropdown menu naming requirement.
-Added footer sidebar
-Fixed dropdown menu collapse bug when resizing browser
-Fixed dropdown caret indicator
+Added footer sidebar.
+Fixed dropdown menu collapse bug when resizing browser.
+Fixed dropdown caret indicator.
 Added shortcodes for alerts, buttons, labels, panels, and wells.
+Removed left sidebar page template for now.
 
 
 Version 0.1 - February 2, 2012

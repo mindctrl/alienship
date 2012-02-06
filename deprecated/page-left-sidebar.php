@@ -8,6 +8,7 @@
 ?>
 <?php get_header(); ?>
 <!-- Main -->
+
   <div class="row-fluid">
     <div class="span2 leftsidebar-margin">
 

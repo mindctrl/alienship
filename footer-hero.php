@@ -12,6 +12,7 @@
 <footer id="colophon" role="contentinfo">
   <div class="row-fluid">
     <div class="site-info">
+      <?php edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">', ' - </span>' ); ?>
       <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
     </div><!-- .site-info -->
   </div><!-- row-fluid -->

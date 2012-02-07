@@ -13,26 +13,26 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
+  /*
+   * Print the <title> tag based on what is being viewed.
+   */
+  global $page, $paged;
 
-	wp_title( '|', true, 'right' );
+  wp_title( '|', true, 'right' );
 
-	// Add the blog name.
-	bloginfo( 'name' );
+  // Add the blog name.
+  bloginfo( 'name' );
 
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
+  // Add the blog description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) )
+    echo " | $site_description";
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
+  // Add a page number if necessary:
+  if ( $paged >= 2 || $page >= 2 )
+    echo ' | ' . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
 
-	?></title>
+  ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
@@ -55,7 +55,7 @@
 
 
 <!-- Load Top Menu -->
-	<div class="navbar" data-scrollspy="scrollspy">
+  <div class="navbar" data-scrollspy="scrollspy">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -67,13 +67,12 @@
           <div class="nav-collapse">
             <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav' ) ); ?>
           </div><!-- /nav-collapse -->
-        </div><!-- /container-fluid -->
+        </div><!-- /container -->
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
 <!-- End Top Menu -->
 
 <!-- Site title and description in masthead -->
-<div id="page" class="container-fluid hfeed">
+<!-- <div id="page" class="container-fluid hfeed"> -->
   <?php do_action( 'before' ); ?>
-
   <div id="main">

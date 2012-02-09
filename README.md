@@ -23,15 +23,14 @@ Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme,
 TO DO LIST
 ==========
 
-+ Move shared header and footer elements to inc/ for easier template updates *FINISH THIS*
-+ Move ALO Easymail CSS out to a custom file. Set up custom.css to allow for custom css that won't get zapped on upgrade. Put in .gitignore?
++ Finish moving shared elements to inc/ for easier template updates
 + Redo mobile menu
 + Set up framework
 + Clean up code
 + Separate loop from markup
 + Shortcodes for ~~buttons~~, ~~labels~~, ~~alerts~~, ~~wells/panels~~, scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
-+ Add a utility/footer menu and maybe a menu that lives below the masthead and above content
++ ~~Add a utility/footer menu~~ and maybe a menu that lives below the masthead and above content
 + Theme options page
 + Options to include each JS plugin/feature
 + Header image option

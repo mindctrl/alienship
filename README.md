@@ -23,6 +23,9 @@ Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme,
 TO DO LIST
 ==========
 
++ Move shared header and footer elements to inc/ for easier template updates *FINISH THIS*
++ Move ALO Easymail CSS out to a custom file. Set up custom.css to allow for custom css that won't get zapped on upgrade. Put in .gitignore?
++ Redo mobile menu
 + Set up framework
 + Clean up code
 + Separate loop from markup

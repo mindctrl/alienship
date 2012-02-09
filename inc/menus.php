@@ -4,4 +4,5 @@
  */
  register_nav_menus( array(
    'top' => __( 'Top Menu', 'alienship' ),
+   'bottom' => __('Bottom Menu', 'alienship')
  ) );

@@ -141,6 +141,27 @@ div.nav-collapse.in {
   right: 13px;
 }
 
+/* Footer Nav - Admin > Appearance > Menus > Bottom Menu*/
+.footer-section { padding-bottom: 10px; padding-top: 20px; font-size: 1.3rem; font-weight: normal; }
+.footer-nav li { display: block; float: right; padding-left: 3%; margin-bottom: 0; }
+
+@media only screen and (max-width: 767px) {
+ul.footer-nav.mobile, dl.nav.mobile { width: auto; margin: 20px -20px 40px; height: auto; border-bottom: 1px solid #ccc; }
+ul.footer-nav.mobile li { float: none; height: auto; padding-right: 0; }
+dl.nav.mobile dt { display: none; }
+dl.nav.mobile dd { float: none; height: auto; }
+ul.footer-nav.mobile li a:hover { color: #ffffff; background-color: #0088CC; }
+ul.footer-nav.mobile li a, dl.nav.mobile dd a { display: block; width: auto; height: auto; padding: 18px 20px; line-height: 1; border: solid 0 #ccc; border-width: 1px 0 0; margin: 0; color: #555; font-size: 15px; font-size: 1.5rem; -webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+
+ul.footer-nav.mobile li a.active, dl.nav.mobile dd a.active { height: auto; margin: 0; border-width: 1px 0 0; }
+
+ul.footer-nav.mobile li.current-menu-item a, dl.nav.mobile dd.current-menu-item a, .nice.tabs.mobile dd.current-menu-item a { border: none; background: #00a6fc; color: #fff; margin: 0; position: static; top: 0px; height: auto; }
+}
+
 
 /* Various design elements
 -------------------------- */
@@ -170,16 +191,6 @@ article {
 #nav-above {
   display: none;
 }
-
-/* Set margin for page wrapper. Includes masthead and content wrapper */
-/* #page {
-  margin-left: 15px;
-} */
-
-/* Hack to space out left sidebar from main wrapper. Will change this later. */
-/* .leftsidebar-margin {
-  margin-right: 40px;
-} */
 
 /* hgroup is the header area that contains the site title and description. this adds a thin line below it for separation from main content */
 hgroup {
@@ -265,10 +276,11 @@ p img,
         top: 7px;
 }
 
-/* Put a border above copyright info in footer. Center info. Pad it. */
-.site-info {
+/* Put a border above copyright info and bottom menu in footer. Center info. Pad it. */
+
+footer {
 	border-top: solid 1px #ccc;
-	padding: 5px 0px 5px 0px;
+	padding: 7px 0px 7px 0px;
 	text-align: center;
 }
 
@@ -321,7 +333,10 @@ padding: 0px 0px 15px 0px;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background: -moz-linear-gradient(center top, #f5f5f5 0%, #f4f4f4 100%) repeat scroll 0 0 transparent;
+/*  background: -moz-linear-gradient(center top, #E6F0FA 0%, #CCE2F5 100%) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E6F0FA), to(#CCE2F5), color-stop(0.5, #CCE2F5)); */
+  background: -moz-linear-gradient(center top, #EEEEEE 0%, #E6E6E6 100%) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#E6E6E6), color-stop(0.5, #E6E6E6));
   border: 1px solid #eee;
   border: 1px solid rgba(0, 0, 0, 0.05);
   -webkit-border-radius: 4px;
@@ -356,4 +371,121 @@ padding: 0px 0px 15px 0px;
 /* Search widget */
 #searchsubmit {
 	display: none;
+}
+
+/* -------------------------------------------------- 
+  :: Mobile Visibility Affordances. Credit to
+  :: ZURB Foundation
+---------------------------------------------------*/
+  
+  
+  .show-on-phones { display: none !important; } 
+  .show-on-tablets { display: none !important; }
+  .show-on-desktops { display: block !important; }
+  
+  .hide-on-phones { display: block !important; }  
+  .hide-on-tablets { display: block !important; }
+  .hide-on-desktops { display: none !important; }
+  
+  @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px) {
+    .hide-on-phones { display: block !important; }
+    .hide-on-tablets { display: none !important; }
+    .hide-on-desktops { display: block !important; }
+    
+    .show-on-phones { display: none !important; }
+    .show-on-tablets { display: block !important; }
+    .show-on-desktops { display: none !important; }
+  }
+  
+  /* Modernizr-enabled tablet targeting */
+  @media only screen and (max-width: 1280px) and (min-width: 768px) {
+    .touch .hide-on-phones { display: block !important; }
+    .touch .hide-on-tablets { display: none !important; }
+    .touch .hide-on-desktops { display: block !important; }
+    
+    .touch .show-on-phones { display: none !important; }
+    .touch .show-on-tablets { display: block !important; }
+    .touch .show-on-desktops { display: none !important; }
+  }
+  
+    
+  @media only screen and (max-width: 767px) {
+    .hide-on-phones { display: none !important; }
+    .hide-on-tablets { display: block !important; }
+    .hide-on-desktops { display: block !important; }
+    
+    .show-on-phones { display: block !important; }
+    .show-on-tablets { display: none !important; }
+    .show-on-desktops { display: none !important; }
+
+    input[class*="input-text"],
+    select[class*="input-text"],
+    textarea[class*="input-text"],
+    .uneditable-input {
+    display: block;
+    width: 100%;
+    height: 28px;
+    /* Make inputs at least the height of their button counterpart */
+  
+    /* Makes inputs behave like true block-level elements */
+  
+    -webkit-box-sizing: border-box;
+    /* Older Webkit */
+  
+    -moz-box-sizing: border-box;
+    /* Older FF */
+  
+    -ms-box-sizing: border-box;
+    /* IE8 */
+  
+    box-sizing: border-box;
+    /* CSS3 spec*/
+    }
+    .input-prepend input[class*="input-text"], .input-append input[class*="input-text"] {
+    width: auto;
+    }
+    .form-horizontal .control-group > label {
+    float: none;
+    width: auto;
+    padding-top: 0;
+    text-align: left;
+    }
+
+    .hero-unit {
+      padding: 5px;
+      margin-bottom: 20px;
+      background-color: #f5f5f5;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+    }
+    .hero-unit h1 {
+      margin-bottom: 0;
+      font-size: 50px;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .hero-unit p {
+      padding: 1px;
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 27px;
+    }
+  }
+  /* Specific overrides for elements that require something other than display: block */
+  
+  table.show-on-desktops { display: table !important; }
+  table.hide-on-phones { display: table !important; } 
+  table.hide-on-tablets { display: table !important; }
+  
+  @media only screen and (max-width: 1280px) and (min-width: 768px) {
+    .touch table.hide-on-phones { display: table !important; }
+    .touch table.hide-on-desktops { display: table !important; }
+    .touch table.show-on-tablets { display: table !important; }
+   }
+
+  @media only screen and (max-width: 767px) {
+    table.hide-on-tablets { display: table !important; }
+    table.hide-on-desktops { display: table !important; }
+    table.show-on-phones { display: table !important; }
 }

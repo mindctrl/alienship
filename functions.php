@@ -94,3 +94,12 @@ add_action( 'after_setup_theme', 'alienship_setup' );
       * Load Bootstrap javascript
       */
       require( get_template_directory() .'/inc/bootstrap-js.php');
+
+// Uncomment the following section to set a custom logo on the login page //
+// Custom login logo for wp-admin screen //
+//	function pic_custom_login_logo() {
+//    	echo '<style type="text/css">
+//        h1 a { background-image:url('.get_bloginfo('template_directory').'/img/custom-logo.png) !important; }
+//    	</style>';
+//	}
+// add_action('login_head', 'pic_custom_login_logo');

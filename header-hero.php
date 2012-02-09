@@ -36,12 +36,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-<!-- Load Bootstrap CSS. Javascript is loaded in functions.php -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_directory');?>/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_directory');?>/css/bootstrap-responsive.min.css">
-<!-- End of Bootstrap CSS -->
+<?php /* Load Bootstrap CSS */
+ require( get_template_directory() . '/inc/bootstrap-css.php' );
+ ?>
 
-<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -49,6 +48,12 @@
 
 <?php wp_head(); ?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<?php
+// <!--  Check for custom.css and if it exists, load it. -->
+$customcss = (get_stylesheet_directory()).'/custom/custom.css';
+if(file_exists($customcss)){
+echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css"  />';
+} ?>
 </head>
 
 <body <?php body_class(); ?> onload="prettyPrint()">
@@ -72,7 +77,5 @@
   </div><!-- /navbar -->
 <!-- End Top Menu -->
 
-<!-- Site title and description in masthead -->
-<!-- <div id="page" class="container-fluid hfeed"> -->
   <?php do_action( 'before' ); ?>
   <div id="main">

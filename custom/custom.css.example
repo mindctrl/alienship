@@ -1,0 +1,13 @@
+/*
+ * Put your custom CSS in here to avoid it being overwritten by updates.
+ *
+ * Rename this file to custom.css and place it in the custom folder. 
+ * /alienship/custom/custom.css
+ *
+ * @package Alien Ship
+ * @since Alien Ship 0.2
+ *
+ */
+ .customtest {
+ 	font-weight: bold;
+ }

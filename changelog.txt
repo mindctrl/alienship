@@ -4,12 +4,22 @@
 Version 0.2 - February 6, 2012
 ------------------------------
 
-Fixed dropdown menu naming requirement.
-Added footer sidebar.
-Fixed dropdown menu collapse bug when resizing browser.
-Fixed dropdown caret indicator.
-Added shortcodes for alerts, buttons, labels, panels, and wells.
-Removed left sidebar page template for now.
+- Fixed dropdown menu naming requirement.
+- Added footer sidebar area.
+- Fixed dropdown menu collapse bug when resizing browser.
+- Fixed dropdown caret indicator.
+- Added shortcodes for alerts, buttons, labels, panels, and wells.
+- Removed left sidebar page template for now.
+- Added Hero page template with Hero Widgets area.
+- Added CSS classes show-on-phones, show-on-tablets, show-on-desktops, hide-on-phones, hide-on-tablets, hide-on-desktops to do exactly what it sounds like they do. Credit goes to Zurb and their Foundation framework.
+- Added bottom navigation menu.
+- Changed margins and font sizes for hero-unit class when on mobiles and tablets.
+- Added support for custom/custom.css to allow for custom CSS that won't get killed on upgrades for those who don't or can't do child themes.
+- Framework prep work (lots to do here. just getting started): 
+ -- Moved sidebar functions to inc/sidebars.php
+ -- Moved loading of Bootstrap javascript to inc/bootstrap-js.php
+ -- Moved menu registration to inc/menus.php
+
 
 
 Version 0.1 - February 2, 2012

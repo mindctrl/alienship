@@ -5,7 +5,7 @@
  * @since Alien Ship 0.1
  */
 function bootstrap_js_loader() {
-  wp_enqueue_script('prettify.js', get_template_directory_uri().'/docs/assets/js/google-code-prettify/prettify.js', array('jquery'),'1.0', true );
+  wp_enqueue_script('prettify.js', get_template_directory_uri().'/js/prettify.js', array('jquery'),'1.0', true );
   wp_enqueue_script('transition.js', get_template_directory_uri().'/js/bootstrap-transition.js', array('jquery'),'1.0', true );
   wp_enqueue_script('alert.js', get_template_directory_uri().'/js/bootstrap-alert.js', array('jquery'),'1.0', true );
   wp_enqueue_script('modal.js', get_template_directory_uri().'/js/bootstrap-modal.js', array('jquery'),'1.0', true );

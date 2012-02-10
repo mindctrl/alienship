@@ -15,9 +15,11 @@ Version 0.2 - February 6, 2012
 - Added bottom navigation menu.
 - Changed margins and font sizes for hero-unit class when on mobiles and tablets.
 - Added support for custom/custom.css to allow for custom CSS that won't get killed on upgrades for those who don't or can't do child themes.
+- Changed default admin footer text to match front end.
 - Framework prep work (lots to do here. just getting started): 
  -- Moved sidebar functions to inc/sidebars.php
  -- Moved loading of Bootstrap javascript to inc/bootstrap-js.php
+ -- Moved loading of jQuery dropdown toggle code to inc/bootstrap-js.php
  -- Moved menu registration to inc/menus.php
 
 

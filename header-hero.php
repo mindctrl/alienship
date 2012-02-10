@@ -12,6 +12,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+<!-- Try overriding IE9 "Display all websites in Compatibility View" option -->
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
 <title><?php
   /*
    * Print the <title> tag based on what is being viewed.

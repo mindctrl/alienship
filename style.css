@@ -278,7 +278,7 @@ p img,
 
 /* Put a border above copyright info and bottom menu in footer. Center info. Pad it. */
 
-footer {
+body > footer {
 	border-top: solid 1px #ccc;
 	padding: 7px 0px 7px 0px;
 	text-align: center;

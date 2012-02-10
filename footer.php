@@ -27,33 +27,13 @@
     </div>
   </div><!-- row-fluid -->
 </footer><!-- #colophon -->
-
+ 
 <script type="text/javascript">
-// Adding the class "dropdown" to li elements with submenus  //	
-  jQuery(document).ready(function(){
-  jQuery("ul.sub-menu").parent().addClass("dropdown");
-  jQuery("[id^=menu-] li.dropdown a").addClass("dropdown-toggle");
-  jQuery("ul.sub-menu li a").removeClass("dropdown-toggle");
-  jQuery('.dropdown-toggle').append('<b class="caret"></b>');
-  });
-</script>
-
-<script type="text/javascript">
-  jQuery(document).ready(function(){
-  // Don't FORGET: replace all $ with jQuery to prevent conflicts //
-  jQuery('a.dropdown-toggle')
-  .attr('data-toggle', 'dropdown');
-  });
-</script>
-
-<script type="text/javascript">
-  jQuery(document).ready(function(){
-  // Don't FORGET: replace all $ with jQuery to prevent conflicts //
-  jQuery(function () {
-  // jQuery(".tablesorter-example").tablesorter({ sortList: [[1,0]] });
-  jQuery('.dropdown-toggle').dropdown();
-  })
-  });
+// Enable Bootstrap popover //
+jQuery(function() {
+    // jQuery('a[rel].btn').popover();
+    jQuery("a[rel='popover']").popover();
+});
 </script>
 
 <?php wp_footer(); ?>

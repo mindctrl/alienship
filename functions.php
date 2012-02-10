@@ -74,6 +74,17 @@ function alienship_setup() {
 	 */
 	 require( get_template_directory() .'/inc/menus.php' );
 
+	/** 
+     * Register sidebars
+     */
+     require( get_template_directory() .'/inc/sidebars.php' );
+
+    /** 
+     * Load Bootstrap javascript
+     */
+     require( get_template_directory() .'/inc/bootstrap-js.php');
+
+
 
 	/**
 	 * Add support for the Aside and Gallery Post Formats
@@ -84,16 +95,16 @@ endif; // alienship_setup
 add_action( 'after_setup_theme', 'alienship_setup' );
 
 
-    /** 
-     * Register sidebars
-     */
-     require( get_template_directory() .'/inc/sidebars.php' );
+
+/**
+ * Change footer text in admin dashboard
+ */
+function change_footer_content () {
+    echo 'Copyright &copy ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.';
+}
+add_filter('admin_footer_text', 'change_footer_content');
 
 
-     /** 
-      * Load Bootstrap javascript
-      */
-      require( get_template_directory() .'/inc/bootstrap-js.php');
 
 // Uncomment the following section to set a custom logo on the login page //
 // Custom login logo for wp-admin screen //

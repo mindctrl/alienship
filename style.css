@@ -18,7 +18,8 @@ Tags:
 }
 
 /* Dropdown menu subs */
-.sub-menu, ul.children {
+.sub-menu,
+ul.children {
   position: absolute;
   top: 40px;
   z-index: 1000;
@@ -48,7 +49,9 @@ Tags:
   *border-right-width: 2px;
   *border-bottom-width: 2px;
 }
-.sub-menu .divider, ul.children .divider {
+
+.sub-menu .divider,
+ul.children .divider {
   height: 1px;
   margin: 5px 1px;
   overflow: hidden;
@@ -61,11 +64,14 @@ Tags:
   background: #ccc;
   background: rgba(0, 0, 0, 0.3);
 }
-.dropdown.open .sub-menu, .dropdown.open .children {
+
+.dropdown.open .sub-menu,
+.dropdown.open .children {
   display: block;
 }
 
-.sub-menu a, ul.children a {
+.sub-menu a,
+ul.children a {
 display: block;
 padding: 3px 15px;
 clear: both;
@@ -85,11 +91,13 @@ white-space: nowrap;
   text-decoration: none;
   background-color: #0088cc;
 }
+
 .navbar .sub-menu li, .navbar .children li {
     list-style: none;
 }
 
-.navbar .sub-menu:before, .navbar .children:before {
+.navbar .sub-menu:before,
+.navbar .children:before {
   content: '';
   display: inline-block;
   border-left: 7px solid transparent;
@@ -100,7 +108,9 @@ white-space: nowrap;
   top: -7px;
   left: 9px;
 }
-.navbar .sub-menu:after, .navbar .children:after {
+
+.navbar .sub-menu:after,
+.navbar .children:after {
   content: '';
   display: inline-block;
   border-left: 6px solid transparent;
@@ -110,7 +120,9 @@ white-space: nowrap;
   top: -6px;
   left: 10px;
 }
-.navbar .nav .dropdown-toggle .caret, .navbar .nav .open.dropdown .caret {
+
+.navbar .nav .dropdown-toggle .caret,
+.navbar .nav .open.dropdown .caret {
   border-top-color: #fff;
 }
 
@@ -130,7 +142,9 @@ div.nav-collapse.in {
   opacity: 1;
 }
 
-.navbar .nav .open > .dropdown-toggle, .navbar .nav .active > .dropdown-toggle, .navbar .nav .open.active > .dropdown-toggle {
+.navbar .nav .open > .dropdown-toggle,
+.navbar .nav .active > .dropdown-toggle,
+.navbar .nav .open.active > .dropdown-toggle {
   background-color: transparent;
 }
 
@@ -146,30 +160,94 @@ div.nav-collapse.in {
   right: 13px;
 }
 
-/* Footer Nav - Admin > Appearance > Menus > Bottom Menu*/
-.footer-section { padding-bottom: 10px; padding-top: 20px; font-size: 1.3rem; font-weight: normal; }
-.footer-nav li { display: block; float: right; padding-left: 3%; margin-bottom: 0; }
-
-@media only screen and (max-width: 767px) {
-ul.footer-nav.mobile, dl.nav.mobile { width: auto; margin: 20px -20px 40px; height: auto; border-bottom: 1px solid #ccc; }
-ul.footer-nav.mobile li { float: none; height: auto; padding-right: 0; }
-dl.nav.mobile dt { display: none; }
-dl.nav.mobile dd { float: none; height: auto; }
-ul.footer-nav.mobile li a:hover { color: #ffffff; background-color: #0088CC; }
-ul.footer-nav.mobile li a, dl.nav.mobile dd a { display: block; width: auto; height: auto; padding: 18px 20px; line-height: 1; border: solid 0 #ccc; border-width: 1px 0 0; margin: 0; color: #555; font-size: 15px; font-size: 1.5rem; -webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
--webkit-border-radius: 0;
--moz-border-radius: 0;
-border-radius: 0;
+/* Footer Nav - Admin > Appearance > Menus > Bottom Menu */
+.footer-section {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  font-size: 1.3rem;
+  font-weight: normal;
 }
 
-ul.footer-nav.mobile li a.active, dl.nav.mobile dd a.active { height: auto; margin: 0; border-width: 1px 0 0; }
+.footer-nav li {
+  display: block;
+  float: right;
+  padding-left: 3%;
+  margin-bottom: 0;
+}
 
-ul.footer-nav.mobile li.current-menu-item a, dl.nav.mobile dd.current-menu-item a, .nice.tabs.mobile dd.current-menu-item a { border: none; background: #00a6fc; color: #fff; margin: 0; position: static; top: 0px; height: auto; }
+/* Mobile Footer Nav */
+@media only screen and (max-width: 767px) {
+ul.footer-nav.mobile,
+dl.nav.mobile {
+  width: auto;
+  margin: 20px -20px 40px;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+ul.footer-nav.mobile li {
+  float: none;
+  height: auto;
+  padding-right: 0;
+}
+
+dl.nav.mobile dt {
+  display: none;
+}
+
+dl.nav.mobile dd {
+  float: none;
+  height: auto;
+}
+
+ul.footer-nav.mobile li a:hover {
+  color: #ffffff;
+  background-color: #0088CC;
+  text-decoration: none;
+}
+
+ul.footer-nav.mobile li a,
+dl.nav.mobile dd a {
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 18px 20px;
+  line-height: 1;
+  border: solid 0 #ccc;
+  border-width: 1px 0 0;
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+  font-size: 1.5rem;
+  -webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+ul.footer-nav.mobile li a.active,
+dl.nav.mobile dd a.active {
+  height: auto;
+  margin: 0;
+  border-width: 1px 0 0;
+}
+
+ul.footer-nav.mobile li.current-menu-item a,
+dl.nav.mobile dd.current-menu-item a,
+.nice.tabs.mobile dd.current-menu-item a {
+  border: none;
+  background: #00a6fc;
+  color: #fff;
+  margin: 0;
+  position: static;
+  top: 0px;
+  height: auto;
+  }
 }
 
 
 /* Various design elements
 -------------------------- */
+
 /* The content wrapper home page called in index.php */
 #content {
     background: none repeat scroll 0 0 #E6E6E6;
@@ -181,7 +259,7 @@ ul.footer-nav.mobile li.current-menu-item a, dl.nav.mobile dd.current-menu-item 
     padding: 7px 7px 7px 7px;
 }
 
-/* The article wrapper called through the theme to display the content of a post/page/whatever */
+/* The article wrapper that displays the content of a post/page/whatever */
 article {
     background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 5px 5px 5px 5px;
@@ -202,9 +280,10 @@ hgroup {
 	border-bottom: solid 1px #ccc;
 }
 
-mark, ins {
-        background: #fff9c0;
-        text-decoration: none;
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
 }
 
 p {
@@ -215,9 +294,11 @@ p img {
   margin-bottom: 0.5em; /* a small bottom margin prevents content floating under images */
 }
 
-img[class*="align"], img[class*="wp-image-"], #content .gallery .gallery-icon img {
-    border: 1px solid #DDDDDD;
-    padding: 6px;
+img[class*="align"],
+img[class*="wp-image-"],
+#content .gallery .gallery-icon img {
+  border: 1px solid #DDDDDD;
+  padding: 6px;
 } 
 
 h1, h2, h3, h4, h5, h6 {
@@ -228,79 +309,97 @@ h3, h4, h5, h6 {
     line-height: 36px;
 }
 
+/* Post/page and comment content */
 .entry-content h1,
 .entry-content h2,
 .comment-content h1,
 .comment-content h2 {
-        color: #000;
-        font-weight: bold;
-        margin: 0 0 .8125em;
+  color: #000;
+  font-weight: bold;
+  margin: 0 0 .8125em;
 }
 
+/* Fluid images for posts, comments, and widgets */
+.entry-content img,
+.comment-content img,
+.widget img {
+  max-width: 97.5%;
+}
+
+/* The post/page title. Pad the bottom */
 h1.entry-title {
   padding-bottom: 5px;
 }
 
+/* Remove color and underlining from post/page title link */
 .entry-title a {
   text-decoration: none;
   color: #000000;
 }
 
+/* Pads the paging links within a post or page */
 .page-links {
   padding: 7px 0;
 }
 
+/* The meta data displayed with a post. */
 footer.entry-meta {
   padding-top: 7px;
   border-top: 1px solid #CCCCCC;
 }
 
+/* Make sure images with WordPress-added height and width attributes are scaled correctly */
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
-        height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+  height: auto;
 }
 
 p img,
 .wp-caption {
-        margin-top: 0.4em;
+  margin-top: 0.4em;
 }
+
+/* WordPress image captions */
 .wp-caption {
-        background: #eee;
-        margin-bottom: 1.625em;
-        max-width: 96%;
-        padding: 9px;
+  background: #eee;
+  margin-bottom: 1.625em;
+  max-width: 96%;
+  padding: 9px;
 }
+
 .wp-caption img {
-        display: block;
-        margin: 0 auto;
-        max-width: 98%;
+  display: block;
+  margin: 0 auto;
+  max-width: 98%;
 }
+
 .wp-caption .wp-caption-text,
 .gallery-caption {
-        color: #666;
-        font-family: Georgia, serif;
-        font-size: 12px;
+  color: #666;
+  font-family: Georgia, serif;
+  font-size: 12px;
 }
+
 .wp-caption .wp-caption-text {
-        margin-bottom: 0.6em;
-        padding: 10px 0 5px 40px;
-        position: relative;
+  margin-bottom: 0.6em;
+  padding: 10px 0 5px 40px;
+  position: relative;
 }
+
 .wp-caption .wp-caption-text:before {
-        color: #666;
-        content: '\2014';
-        font-size: 14px;
-        font-style: normal;
-        font-weight: bold;
-        margin-right: 5px;
-        position: absolute;
-        left: 10px;
-        top: 7px;
+  color: #666;
+  content: '\2014';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  margin-right: 5px;
+  position: absolute;
+  left: 10px;
+  top: 7px;
 }
 
 /* Put a border above copyright info and bottom menu in footer. Center info. Pad it. */
-
 body > footer {
 	border-top: solid 1px #ccc;
 	padding: 7px 0px 7px 0px;
@@ -337,18 +436,7 @@ body > footer {
 img.alignleft,
 img.alignright,
 img.aligncenter {
-        margin-bottom: 1.625em;
-}
-
-.entry-content img,
-.comment-content img,
-.widget img {
-        max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
-}
-
-.footerwidget {
-margin-left: 15px;
-padding: 0px 0px 15px 0px;
+  margin-bottom: 1.625em;
 }
 
 /* Panels inspired by Zurb Foundation */
@@ -356,8 +444,6 @@ padding: 0px 0px 15px 0px;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-/*  background: -moz-linear-gradient(center top, #E6F0FA 0%, #CCE2F5 100%) repeat scroll 0 0 transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#E6F0FA), to(#CCE2F5), color-stop(0.5, #CCE2F5)); */
   background: -moz-linear-gradient(center top, #EEEEEE 0%, #E6E6E6 100%) repeat scroll 0 0 transparent;
   background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#E6E6E6), color-stop(0.5, #E6E6E6));
   border: 1px solid #eee;
@@ -369,6 +455,7 @@ padding: 0px 0px 15px 0px;
   -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
+
 .panel blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
@@ -376,12 +463,12 @@ padding: 0px 0px 15px 0px;
 
 /* Clear */
 .clear {
-    clear: both;
-    display: block;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
 }
 
 /* =Widgets
@@ -396,119 +483,215 @@ padding: 0px 0px 15px 0px;
 	display: none;
 }
 
+.footerwidget {
+  margin-left: 15px;
+  padding: 0px 0px 15px 0px;
+}
+
 /* -------------------------------------------------- 
   :: Mobile Visibility Affordances. Credit to
   :: ZURB Foundation
 ---------------------------------------------------*/
+
+.show-on-phones {
+  display: none !important;
+} 
+
+.show-on-tablets {
+  display: none !important;
+}
+
+.show-on-desktops {
+  display: block !important;
+}
   
+.hide-on-phones {
+  display: block !important;
+}  
+
+.hide-on-tablets {
+  display: block !important;
+}
+
+.hide-on-desktops {
+  display: none !important;
+}
   
-  .show-on-phones { display: none !important; } 
-  .show-on-tablets { display: none !important; }
-  .show-on-desktops { display: block !important; }
-  
-  .hide-on-phones { display: block !important; }  
-  .hide-on-tablets { display: block !important; }
-  .hide-on-desktops { display: none !important; }
-  
-  @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px) {
-    .hide-on-phones { display: block !important; }
-    .hide-on-tablets { display: none !important; }
-    .hide-on-desktops { display: block !important; }
-    
-    .show-on-phones { display: none !important; }
-    .show-on-tablets { display: block !important; }
-    .show-on-desktops { display: none !important; }
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px) {
+  .hide-on-phones {
+    display: block !important;
   }
+
+  .hide-on-tablets {
+    display: none !important;
+  }
+
+  .hide-on-desktops {
+    display: block !important;
+  }
+    
+  .show-on-phones {
+    display: none !important;
+  }
+  
+  .show-on-tablets {
+    display: block !important;
+  }
+
+  .show-on-desktops {
+    display: none !important;
+  }
+}
   
   /* Modernizr-enabled tablet targeting */
-  @media only screen and (max-width: 1280px) and (min-width: 768px) {
-    .touch .hide-on-phones { display: block !important; }
-    .touch .hide-on-tablets { display: none !important; }
-    .touch .hide-on-desktops { display: block !important; }
-    
-    .touch .show-on-phones { display: none !important; }
-    .touch .show-on-tablets { display: block !important; }
-    .touch .show-on-desktops { display: none !important; }
+@media only screen and (max-width: 1280px) and (min-width: 768px) {
+  .touch .hide-on-phones {
+    display: block !important;
   }
+
+  .touch .hide-on-tablets {
+    display: none !important;
+  }
+
+  .touch .hide-on-desktops {
+    display: block !important;
+  }
+    
+  .touch .show-on-phones {
+    display: none !important;
+  }
+
+  .touch .show-on-tablets {
+    display: block !important;
+  }
+
+  .touch .show-on-desktops {
+    display: none !important;
+  }
+}
   
     
-  @media only screen and (max-width: 767px) {
-    .hide-on-phones { display: none !important; }
-    .hide-on-tablets { display: block !important; }
-    .hide-on-desktops { display: block !important; }
-    
-    .show-on-phones { display: block !important; }
-    .show-on-tablets { display: none !important; }
-    .show-on-desktops { display: none !important; }
+@media only screen and (max-width: 767px) {
+  .hide-on-phones {
+    display: none !important;
+  }
 
-    input[class*="input-text"],
-    select[class*="input-text"],
-    textarea[class*="input-text"],
-    .uneditable-input {
+  .hide-on-tablets {
+    display: block !important;
+  }
+
+  .hide-on-desktops {
+    display: block !important;
+  }
+    
+  .show-on-phones {
+    display: block !important;
+  }
+
+  .show-on-tablets {
+    display: none !important;
+  }
+
+  .show-on-desktops {
+    display: none !important;
+  }
+
+  input[class*="input-text"],
+  select[class*="input-text"],
+  textarea[class*="input-text"],
+  .uneditable-input {
     display: block;
     width: 100%;
     height: 28px;
-    /* Make inputs at least the height of their button counterpart */
-  
-    /* Makes inputs behave like true block-level elements */
-  
+  /* Make inputs at least the height of their button counterpart */
+
+  /* Makes inputs behave like true block-level elements */
+
     -webkit-box-sizing: border-box;
-    /* Older Webkit */
-  
+  /* Older Webkit */
+
     -moz-box-sizing: border-box;
-    /* Older FF */
-  
+  /* Older FF */
+
     -ms-box-sizing: border-box;
-    /* IE8 */
-  
+  /* IE8 */
+
     box-sizing: border-box;
-    /* CSS3 spec*/
-    }
-    .input-prepend input[class*="input-text"], .input-append input[class*="input-text"] {
+  /* CSS3 spec*/
+  }
+
+  .input-prepend input[class*="input-text"], .input-append input[class*="input-text"] {
     width: auto;
-    }
-    .form-horizontal .control-group > label {
+  }
+
+  .form-horizontal .control-group > label {
     float: none;
     width: auto;
     padding-top: 0;
     text-align: left;
-    }
-
-    .hero-unit {
-      padding: 5px;
-      margin-bottom: 20px;
-      background-color: #f5f5f5;
-      -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-      border-radius: 6px;
-    }
-    .hero-unit h1 {
-      margin-bottom: 0;
-      font-size: 50px;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-    .hero-unit p {
-      padding: 1px;
-      font-size: 18px;
-      font-weight: 200;
-      line-height: 27px;
-    }
   }
+
+  .hero-unit {
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+  }
+
+  .hero-unit h1 {
+    margin-bottom: 0;
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .hero-unit p {
+    padding: 1px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 27px;
+  }
+}
   /* Specific overrides for elements that require something other than display: block */
   
-  table.show-on-desktops { display: table !important; }
-  table.hide-on-phones { display: table !important; } 
-  table.hide-on-tablets { display: table !important; }
-  
-  @media only screen and (max-width: 1280px) and (min-width: 768px) {
-    .touch table.hide-on-phones { display: table !important; }
-    .touch table.hide-on-desktops { display: table !important; }
-    .touch table.show-on-tablets { display: table !important; }
-   }
+table.show-on-desktops {
+  display: table !important;
+}
 
-  @media only screen and (max-width: 767px) {
-    table.hide-on-tablets { display: table !important; }
-    table.hide-on-desktops { display: table !important; }
-    table.show-on-phones { display: table !important; }
+table.hide-on-phones {
+  display: table !important;
+} 
+
+table.hide-on-tablets {
+  display: table !important;
+}
+  
+@media only screen and (max-width: 1280px) and (min-width: 768px) {
+  .touch table.hide-on-phones {
+    display: table !important;
+  }
+
+  .touch table.hide-on-desktops {
+    display: table !important;
+  }
+
+  .touch table.show-on-tablets {
+    display: table !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  table.hide-on-tablets {
+    display: table !important;
+  }
+
+  table.hide-on-desktops {
+    display: table !important;
+  }
+
+  table.show-on-phones {
+    display: table !important;
+  }
 }

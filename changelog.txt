@@ -5,6 +5,7 @@ Version 0.3 - February
 ------------------------------
 - Top Menu: Fixed problem with menu not displaying properly and dropdowns not working if WordPress was falling back on the wp_page_menu when a menu wasn't assigned in Admin > Appearance > Menus. Added jQuery code to js/alienship_dropdown-toggle.js to fix.
 - Bottom Menu: If no menu is assigned in Admin > Appearance > Menus, the menu is not displayed. This keeps the default wp_page_menu from display and looking like crap. It's generally too big for this area. The Bottom Menu is meant to be small.
+- Allow child themes.
 
 
 

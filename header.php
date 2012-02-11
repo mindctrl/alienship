@@ -53,7 +53,7 @@
 <?php
 // <!--  Check for custom.css and if it exists, load it. -->
 $customcss = (get_stylesheet_directory()).'/custom/custom.css';
-if(file_exists($customcss)){
+if(file_exists($customcss) && !is_child_theme()){
 echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css"  />';
 } ?>
 

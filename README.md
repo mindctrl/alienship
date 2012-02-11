@@ -1,21 +1,9 @@
 ALIEN SHIP WORDPRESS FRAMEWORK
 =============================
 
-Alien Ship is an HTML5 framework and responsive starter theme for WordPress designed to kickstart development. It uses Twitter's Bootstrap version 2.0. It comes with core HTML, CSS, and Javascript for type, form, grids, navigation, buttons, dropdown menus, and more. It includes a number of shortcodes to enable quick place of buttons, forms, grids, etc. For more information and documentation, access the Wiki.
+Alien Ship is an HTML5 responsive starter theme for WordPress. It uses Twitter's Bootstrap version 2.0. It comes with core HTML, CSS, and Javascript for type, form, grids, navigation, buttons, dropdown menus, and more. It includes a number of shortcodes to enable quick place of buttons, forms, grids, etc. For more information and documentation, access the Wiki.
 
 NOTE: This theme is currently beta quality software. It is not yet ready for production. If you would like to contribute, please fork it and submit your pull requests. Thanks!
-
-
-
-
-Authors
--------
-
-**mindctrl**
-+ http://github.com/mindctrl
-
-
-Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme, and everyone else who has contributed to both and to the included libraries and assets. Thanks to Rachel Baker for various CSS bits and examples.
 
 
 
@@ -37,6 +25,7 @@ TO DO LIST
 + Header image option
 + Color options
 + Configurable footer text
++ Include phpmailer rewrite code and add to options page.
 + Layout options for index, archive, etc. List, Tile, etc.
 + Breadcrumbs
 + Option to hide "Comments Closed" message
@@ -47,6 +36,7 @@ TO DO LIST
 
 
 
+
 BUG TRACKER
 ===========
 
@@ -54,12 +44,22 @@ Known issues
 ------------
 
 + Alignment issues on the "Images Test" post.
-+ A menu must be assigned to both Top Menu and Bottom Menu in Admin > Appearances > Menus for the navbars and dropdowns to display properly.
 
 Have a bug? Please create an issue here on GitHub!
 
 https://github.com/mindctrl/alienship/issues
 
+
+
+
+Authors
+-------
+
+**mindctrl**
++ http://github.com/mindctrl
+
+
+Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme, and everyone else who has contributed to both and to the included libraries and assets. Thanks to Rachel Baker for various CSS and JS code.
 
 
 

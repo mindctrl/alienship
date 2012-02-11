@@ -18,7 +18,7 @@ Tags:
 }
 
 /* Dropdown menu subs */
-.sub-menu {
+.sub-menu, ul.children {
   position: absolute;
   top: 40px;
   z-index: 1000;
@@ -48,7 +48,7 @@ Tags:
   *border-right-width: 2px;
   *border-bottom-width: 2px;
 }
-.sub-menu .divider {
+.sub-menu .divider, ul.children .divider {
   height: 1px;
   margin: 5px 1px;
   overflow: hidden;
@@ -61,11 +61,11 @@ Tags:
   background: #ccc;
   background: rgba(0, 0, 0, 0.3);
 }
-.dropdown.open .sub-menu {
+.dropdown.open .sub-menu, .dropdown.open .children {
   display: block;
 }
 
-.sub-menu a {
+.sub-menu a, ul.children a {
 display: block;
 padding: 3px 15px;
 clear: both;
@@ -75,16 +75,21 @@ color: #555;
 white-space: nowrap;
 }
 
-.sub-menu li > a:hover, .sub-menu .active > a, .sub-menu .active > a:hover {
+.sub-menu li > a:hover,
+.sub-menu .active > a,
+.sub-menu .active > a:hover,
+.children li > a:hover,
+.children .active > a,
+.children .active > a:hover {
   color: #fff;
   text-decoration: none;
   background-color: #0088cc;
 }
-.navbar .sub-menu li {
+.navbar .sub-menu li, .navbar .children li {
     list-style: none;
 }
 
-.navbar .sub-menu:before {
+.navbar .sub-menu:before, .navbar .children:before {
   content: '';
   display: inline-block;
   border-left: 7px solid transparent;
@@ -95,7 +100,7 @@ white-space: nowrap;
   top: -7px;
   left: 9px;
 }
-.navbar .sub-menu:after {
+.navbar .sub-menu:after, .navbar .children:after {
   content: '';
   display: inline-block;
   border-left: 6px solid transparent;

@@ -39,7 +39,7 @@ function alienship_setup() {
 	/**
 	 * Custom functions that act independently of the theme templates
 	 */
-	//require( get_template_directory() . '/inc/tweaks.php' );
+	require( get_template_directory() . '/inc/tweaks.php' );
 
 	/**
 	 * Custom Theme Options
@@ -75,14 +75,14 @@ function alienship_setup() {
 	 require( get_template_directory() .'/inc/menus.php' );
 
 	/** 
-     * Register sidebars
-     */
-     require( get_template_directory() .'/inc/sidebars.php' );
+   * Register sidebars
+   */
+   require( get_template_directory() .'/inc/sidebars.php' );
 
-    /** 
-     * Load Bootstrap javascript
-     */
-     require( get_template_directory() .'/inc/bootstrap-js.php');
+  /** 
+   * Load Bootstrap javascript
+   */
+   require( get_template_directory() .'/inc/bootstrap-js.php');
 
 
 
@@ -96,13 +96,15 @@ add_action( 'after_setup_theme', 'alienship_setup' );
 
 
 
+if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
 /**
  * Change footer text in admin dashboard
  */
-function change_footer_content () {
+  function alienship_change_admin_footer_content () {
     echo 'Copyright &copy ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.';
+  }
 }
-add_filter('admin_footer_text', 'change_footer_content');
+add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 
 
 

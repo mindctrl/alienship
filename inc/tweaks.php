@@ -19,12 +19,25 @@ function alienship_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'alienship_page_menu_args' );
 
+
+
+/** Tweak wp_page_menu output to add <ul class="nav"> to first <ul> occurrence
+ *  
+ * @since Alien Ship 0.3
+ */
+function alienship_add_page_menu_class($ulclass) {
+return preg_replace('/<ul>/', '<ul class="nav">', $ulclass, 1);
+}
+add_filter('wp_page_menu','alienship_add_page_menu_class');
+
+
+
 /**
  * Adds custom classes to the array of body classes.
  *
  * @since Alien Ship 0.1
  */
-function alienship_body_classes( $classes ) {
+/* function alienship_body_classes( $classes ) {
 	// If this isn't a post or a page we'll add the convenient .indexed class
 	if ( ! is_singular() ) {
 		$classes[] = 'indexed';
@@ -37,13 +50,13 @@ function alienship_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'alienship_body_classes' );
-
+*/
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  *
  * @since Alien Ship 0.1
  */
-function alienship_enhanced_image_navigation( $url, $id ) {
+/* function alienship_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
 
@@ -53,4 +66,4 @@ function alienship_enhanced_image_navigation( $url, $id ) {
 
 	return $url;
 }
-add_filter( 'attachment_link', 'alienship_enhanced_image_navigation', 10, 2 );
+add_filter( 'attachment_link', 'alienship_enhanced_image_navigation', 10, 2 ); */

@@ -23,7 +23,7 @@
       <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
     </div><!-- .span5 -->
     <div class="span6">
-      <?php wp_nav_menu(array('theme_location' => 'bottom', 'container' => false, 'menu_class' => 'footer-nav mobile')); ?>
+      <?php if ( has_nav_menu( 'bottom' ) ) { wp_nav_menu(array('theme_location' => 'bottom', 'container' => false, 'menu_class' => 'footer-nav mobile')); } ?>
     </div>
   </div><!-- row-fluid -->
 </footer><!-- #colophon -->

@@ -5,6 +5,7 @@
  * @since Alien Ship 0.1
  */
 function bootstrap_js_loader() {
+  // Core Bootstrap plugins
   wp_enqueue_script('prettify.js', get_template_directory_uri().'/js/prettify.js', array('jquery'),'1.0', true );
   wp_enqueue_script('transition.js', get_template_directory_uri().'/js/bootstrap-transition.js', array('jquery'),'1.0', true );
   wp_enqueue_script('alert.js', get_template_directory_uri().'/js/bootstrap-alert.js', array('jquery'),'1.0', true );
@@ -18,6 +19,11 @@ function bootstrap_js_loader() {
   wp_enqueue_script('collapse.js', get_template_directory_uri().'/js/bootstrap-collapse.js', array('jquery'),'1.0', true );        
   wp_enqueue_script('carousel.js', get_template_directory_uri().'/js/bootstrap-carousel.js', array('jquery'),'1.0', true );    
   wp_enqueue_script('typeahead.js', get_template_directory_uri().'/js/bootstrap-typeahead.js', array('jquery'),'1.0', true );
-  wp_enqueue_script('html5.js', get_template_directory_uri().'/js/html5.js', array('jquery'),'1.0', true );
 }
 add_action('wp_enqueue_scripts', 'bootstrap_js_loader');
+
+function bootstrap_dropdown_helper() {
+  // Add toggles to dropdown menus.
+  wp_enqueue_script('alienship_dropdown-toggle.js', get_template_directory_uri().'/js/alienship_dropdown-toggle.js', array('jquery'), '1.0', true );
+}
+add_action('wp_enqueue_scripts', 'bootstrap_dropdown_helper');

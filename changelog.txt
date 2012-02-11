@@ -1,6 +1,13 @@
 == Changelog ==
 
 
+Version 0.3 - February
+------------------------------
+- Top Menu: Fixed problem with menu not displaying properly and dropdowns not working if WordPress was falling back on the wp_page_menu when a menu wasn't assigned in Admin > Appearance > Menus. Added jQuery code to js/alienship_dropdown-toggle.js to fix.
+- Bottom Menu: If no menu is assigned in Admin > Appearance > Menus, the menu is not displayed. This keeps the default wp_page_menu from display and looking like crap. It's generally too big for this area. The Bottom Menu is meant to be small.
+
+
+
 Version 0.2 - February 6, 2012
 ------------------------------
 
@@ -11,7 +18,7 @@ Version 0.2 - February 6, 2012
 - Added shortcodes for alerts, buttons, labels, panels, and wells.
 - Removed left sidebar page template for now.
 - Added Hero page template with Hero Widgets area.
-- Added CSS classes show-on-phones, show-on-tablets, show-on-desktops, hide-on-phones, hide-on-tablets, hide-on-desktops to do exactly what it sounds like they do. Credit goes to Zurb and their Foundation framework.
+- Added CSS classes show-on-phones, show-on-tablets, show-on-desktops, hide-on-phones, hide-on-tablets, hide-on-desktops to do exactly what it sounds like they do. Credit goes to Zurb and their Foundation framework. Will be cleaning this up a bit later.
 - Added bottom navigation menu.
 - Changed margins and font sizes for hero-unit class when on mobiles and tablets.
 - Added support for custom/custom.css to allow for custom CSS that won't get killed on upgrades for those who don't or can't do child themes.

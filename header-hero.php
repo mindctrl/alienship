@@ -49,13 +49,19 @@
 <![endif]-->
 
 <?php wp_head(); ?>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+<?php if (is_child_theme()) { ?>
+  <!-- Include Child theme CSS file -->
+  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
+  <?php } ?>
 <?php
 // <!--  Check for custom.css and if it exists, load it. -->
 $customcss = (get_stylesheet_directory()).'/custom/custom.css';
 if(file_exists($customcss) && !is_child_theme()){
-echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css"  />';
+echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css" />';
 } ?>
+
 </head>
 
 <body <?php body_class(); ?> onload="prettyPrint()">

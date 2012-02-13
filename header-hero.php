@@ -74,7 +74,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar-text">Menu</span>
           <span class="icon-bar"></span>
           </a>
           <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>

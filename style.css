@@ -26,7 +26,7 @@ ul.children {
   float: left;
   display: none;
   min-width: 160px;
-  max-width: 220px;
+  /* max-width: 220px; */
   _width: 160px;
   padding: 4px 0;
   margin: 0;
@@ -175,6 +175,23 @@ div.nav-collapse.in {
   margin-bottom: 0;
 }
 
+.btn-navbar .icon-bar {
+  width: 35px;
+}
+
+.btn-navbar .icon-bar-text {
+  color: #F5F5F5;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  width: auto;
+  text-shadow: 0 0 0em;
+}
+
+.btn-navbar > a.btn {
+  text-shadow: 0px;
+}
+
 /* Mobile Footer Nav */
 @media only screen and (max-width: 767px) {
 ul.footer-nav.mobile,
@@ -217,7 +234,8 @@ dl.nav.mobile dd a {
   margin: 0;
   color: #555;
   font-size: 15px;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  font-size: 1.0rem;
   -webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -568,6 +586,7 @@ img.aligncenter {
   .touch .show-on-desktops {
     display: none !important;
   }
+
 }
   
     
@@ -653,6 +672,7 @@ img.aligncenter {
     font-weight: 200;
     line-height: 27px;
   }
+
 }
   /* Specific overrides for elements that require something other than display: block */
   
@@ -693,5 +713,28 @@ table.hide-on-tablets {
 
   table.show-on-phones {
     display: table !important;
+  }
+
+}
+
+@media only screen and (max-width: 980px) {
+  .navbar .nav > li > a, .navbar .dropdown-menu a {
+    font-size: 18px;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 15px 20px;
+  }
+
+  .sub-menu a,
+  ul.children a {
+    display: block;
+    padding: 15px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    font-size: 18px;
+    font-size: 1rem;
+    color: #555;
+    white-space: nowrap;
   }
 }

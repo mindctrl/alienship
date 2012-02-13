@@ -12,8 +12,9 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<!-- Try overriding IE9 "Display all websites in Compatibility View" option -->
-<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<!-- Try overriding IE8/9 "Display all websites in Compatibility View" option -->
+<!--[if IE 8]> <meta http-equiv="X-UA-Compatible" content="IE=8" /> <![endif]-->
+<!--[if IE 9]> <meta http-equiv="X-UA-Compatible" content="IE=9" /> <![endif]-->
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -65,23 +66,23 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 </head>
 
 <body <?php body_class(); ?> onload="prettyPrint()">
-  <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 
 <!-- Load Top Menu -->
-	<div class="navbar" data-scrollspy="scrollspy">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <div class="navbar" data-scrollspy="scrollspy">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
+          <span class="icon-bar-text">Menu</span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-          <div class="nav-collapse">
-            <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav' ) ); ?>
-          </div><!-- /nav-collapse -->
-        </div><!-- /container-fluid -->
+        </a>
+        <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        <div class="nav-collapse">
+          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav' ) ); ?>
+        </div><!-- /nav-collapse -->
+      </div><!-- /container -->
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
 <!-- End Top Menu -->

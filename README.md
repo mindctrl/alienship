@@ -13,7 +13,6 @@ TO DO LIST
 
 + Clean up footer.php jQuery.
 + Finish moving shared elements to inc/ for easier template updates
-+ Redo mobile menu
 + Set up framework
 + Clean up code
 + Separate loop from markup

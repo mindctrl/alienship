@@ -7,7 +7,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
-    <h1 class="entry-title"><a class="entry-title" title="<?php the_title();?>" rel="permalink" href="<?php the_permalink();?>"><?php the_title(); ?></a></h1>
+    <h1 class="entry-title"><a class="entry-title" title="<?php the_title();?>" rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?></a></h1>
   </header><!-- .entry-header -->
 
   <div class="entry-content">

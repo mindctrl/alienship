@@ -33,4 +33,4 @@ function alienship_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 }
-add_action( 'init', 'alienship_widgets_init' );
+add_action( 'widgets_init', 'alienship_widgets_init' );

@@ -71,11 +71,16 @@ add_shortcode('label', 'alienship_label');
 * Example: [panel columns="4"]Your panel text here.[/panel] */
 function alienship_panel( $atts, $content = null ) {
    extract(shortcode_atts(array('columns' => '6'), $atts));
+   $gridsize = '12';
    $span = '"span';
-   if ($columns) {
+   if ($columns != "12") {
    $span .= ''.$columns.'"';
-}
-   return '<p><div class='.$span.' style="margin-left: 0px"><div class="panel">' . do_shortcode($content) . '</div></div><div class="clear"></div></p>';
+   $spanfollow .= $gridsize - $columns;
+   return '<p><div class="row-fluid"><div class='.$span.'><div class="panel">' . do_shortcode($content) . '</div></div><div class="span'.$spanfollow.'">&nbsp;</div></div><div class="clear"></div></p>'; }
+   else {
+      $span .= ''.$columns.'"';
+      return '<p><div class="row-fluid"><div class='.$span.'><div class="panel">' . do_shortcode($content) . '</div></div></div><div class="clear"></div></p>';
+   }
 }
 add_shortcode('panel', 'alienship_panel');
 

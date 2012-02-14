@@ -71,6 +71,12 @@ a.dropdown-toggle:active:after {
   position: relative;
 } */
 
+/* Allows dropdown sub-menus to overflow over the black header bar and into the body, otherwise they get clipped
+div.nav-collapse.in {
+  overflow: visible;
+} */
+
+
 /* Swapping out styles: replacing 'active' with 'current-menu-item'
 ----------------------------------------------------------------------------------------*/
 /* Ganked from Rachel Baker. Not using it currently.

@@ -85,7 +85,6 @@ function alienship_setup() {
    require( get_template_directory() .'/inc/bootstrap-js.php');
 
 
-
 	/**
 	 * Add support for the Aside and Gallery Post Formats
 	 */

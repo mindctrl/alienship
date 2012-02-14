@@ -75,7 +75,7 @@ function alienship_panel( $atts, $content = null ) {
    $span = '"span';
    if ($columns != "12") {
    $span .= ''.$columns.'"';
-   $spanfollow .= $gridsize - $columns;
+   $spanfollow = $gridsize - $columns;
    return '<p><div class="row-fluid"><div class='.$span.'><div class="panel">' . do_shortcode($content) . '</div></div><div class="span'.$spanfollow.'">&nbsp;</div></div><div class="clear"></div></p>'; }
    else {
       $span .= ''.$columns.'"';

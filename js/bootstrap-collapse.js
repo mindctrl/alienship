@@ -82,9 +82,7 @@
         , complete = function () {
             if (startEvent == 'show') that.reset()
             that.$element.trigger(completeEvent)
-            that.$element
-              .trigger(startEvent)
-              [method]('collapse')
+            
           }
 
       this.$element

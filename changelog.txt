@@ -9,6 +9,9 @@ Version 0.3 - February
 - Redid the Top Menu in responsive mode. This is probably only temporary, as I'm still not happy with it. It is more touch friendly, though. Added a the word "Menu" to the button. Increased font size and spacing of dropdown items. Removed bold text.
 - Kinda changed up the item above this one. Fixed Top Menu dropdown issue in responsive mode by changing classes with jQuery, from sub-menu to dropdown-menu. Auto-expands dropdown menus now and displays in a nested view.
 - Fixed padding/overflow issue with [panel] shortcode.
+- Breadcrumbs
+- Minor cosmetics
+- Cleaned up old CSS
 
 
 

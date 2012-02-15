@@ -26,8 +26,7 @@ TO DO LIST
 + Configurable footer text
 + Include phpmailer rewrite code and add to options page.
 + Layout options for index, archive, etc. List, Tile, etc.
-+ Breadcrumbs
-+ Option to hide "Comments Closed" message
++ Make breadcrumbs optional
 + Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom, hide)
 + Analytics option
 + Avatar and author bio display

@@ -42,6 +42,11 @@ function alienship_setup() {
 	require( get_template_directory() . '/inc/tweaks.php' );
 
 	/**
+	 * Breadcrumbs
+	 */
+	require( get_template_directory() . '/inc/breadcrumbs.php');
+
+	/**
 	 * Custom Theme Options
 	 */
 	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
@@ -106,8 +111,7 @@ if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
 add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 
 
-
-// Uncomment the following section to set a custom logo on the login page //
+// Uncomment the following section, or add it to your child theme's functions.php, to set a custom logo on the login page //
 // Custom login logo for wp-admin screen //
 //	function pic_custom_login_logo() {
 //    	echo '<style type="text/css">

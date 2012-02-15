@@ -3,7 +3,7 @@
  * Alien Ship Theme Options
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 
 /**
@@ -17,7 +17,7 @@
  *
  * We also use this function to add our theme option if it doesn't already exist.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_theme_options_init() {
 
@@ -70,11 +70,11 @@ function alienship_option_page_capability( $capability ) {
 add_filter( 'option_page_capability_alienship_options', 'alienship_option_page_capability' );
 
 /**
- * Add our theme options page to the admin menu, including some help documentation.
+ * Add our theme options page to the admin menu.
  *
  * This function is attached to the admin_menu action hook.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_theme_options_add_page() {
 	$theme_page = add_theme_page(
@@ -84,16 +84,13 @@ function alienship_theme_options_add_page() {
 		'theme_options',                         // Menu slug, used to uniquely identify the page
 		'alienship_theme_options_render_page' // Function that renders the options page
 	);
-
-	if ( ! $theme_page )
-		return;
 }
 add_action( 'admin_menu', 'alienship_theme_options_add_page' );
 
 /**
  * Returns an array of sample select options registered for alienship.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_sample_select_options() {
 	$sample_select_options = array(
@@ -129,7 +126,7 @@ function alienship_sample_select_options() {
 /**
  * Returns an array of sample radio options registered for alienship.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_sample_radio_buttons() {
 	$sample_radio_buttons = array(
@@ -153,7 +150,7 @@ function alienship_sample_radio_buttons() {
 /**
  * Returns the default options for alienship.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_get_default_theme_options() {
 	$default_theme_options = array(
@@ -170,7 +167,7 @@ function alienship_get_default_theme_options() {
 /**
  * Returns the options array for alienship.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_get_theme_options() {
 	return get_option( 'alienship_theme_options', alienship_get_default_theme_options() );
@@ -229,7 +226,7 @@ function alienship_settings_field_sample_select_options() {
 /**
  * Renders the radio options setting field.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_settings_field_sample_radio_buttons() {
 	$options = alienship_get_theme_options();
@@ -260,7 +257,7 @@ function alienship_settings_field_sample_textarea() {
 /**
  * Returns the options array for alienship.
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_theme_options_render_page() {
 	?>
@@ -286,7 +283,7 @@ function alienship_theme_options_render_page() {
  * @see alienship_theme_options_init()
  * @todo set up Reset Options action
  *
- * @since Alien Ship 0.1
+ * @since Alien Ship 0.3
  */
 function alienship_theme_options_validate( $input ) {
 	$output = $defaults = alienship_get_default_theme_options();

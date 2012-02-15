@@ -17,46 +17,10 @@ Tags:
   border-radius: 0px 0px 0px 0px;
 }
 
-/* Dropdown menu subs */
+/* Hide sub-menu until switched out to dropdown-menu by jQuery */
 .sub-menu,
 ul.children {
-  position: absolute;
-  top: 40px;
-  z-index: 1000;
-  float: left;
   display: none;
-  min-width: 160px;
-  /* max-width: 220px; */
-  _width: 160px;
-  padding: 4px 0;
-  margin: 0;
-  list-style: none;
-  background-color: #ffffff;
-  border-color: #ccc;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-style: solid;
-  border-width: 1px;
-  -webkit-border-radius: 0 0 5px 5px;
-  -moz-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  zoom: 1;
-  *border-right-width: 2px;
-  *border-bottom-width: 2px;
-}
-
-.sub-menu .divider,
-ul.children .divider {
-  height: 1px;
-  margin: 5px 1px;
-  overflow: hidden;
-  background-color: #e5e5e5;
-  border-bottom: 1px solid #ffffff;
 }
 
 .dropdown.open .dropdown-toggle {
@@ -68,57 +32,6 @@ ul.children .divider {
 .dropdown.open .sub-menu,
 .dropdown.open .children {
   display: block;
-}
-
-.sub-menu a,
-ul.children a {
-display: block;
-padding: 3px 15px;
-clear: both;
-font-weight: normal;
-line-height: 18px;
-color: #555;
-white-space: nowrap;
-}
-
-.sub-menu li > a:hover,
-.sub-menu .active > a,
-.sub-menu .active > a:hover,
-.children li > a:hover,
-.children .active > a,
-.children .active > a:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #0088cc;
-}
-
-.navbar .sub-menu li, .navbar .children li {
-    list-style: none;
-}
-
-.navbar .sub-menu:before,
-.navbar .children:before {
-  content: '';
-  display: inline-block;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #ccc;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: -7px;
-  left: 9px;
-}
-
-.navbar .sub-menu:after,
-.navbar .children:after {
-  content: '';
-  display: inline-block;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #fff;
-  position: absolute;
-  top: -6px;
-  left: 10px;
 }
 
 .navbar .nav .dropdown-toggle .caret,
@@ -492,9 +405,14 @@ img.aligncenter {
 	margin: 0 0 1.5em;
 }
 
-/* Search widget */
+/* Hide search widget submit button */
 #searchsubmit {
 	display: none;
+}
+
+/* Shorten the search widget input */
+input#s {
+  width: 95%;
 }
 
 .footerwidget {
@@ -686,16 +604,4 @@ table.hide-on-tablets {
     padding: 15px 20px;
   }
 
-  .sub-menu a,
-  ul.children a {
-    display: block;
-    padding: 15px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: 18px;
-    font-size: 18px;
-    font-size: 1rem;
-    color: #555;
-    white-space: nowrap;
-  }
 }

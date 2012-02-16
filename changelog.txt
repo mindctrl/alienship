@@ -18,6 +18,7 @@ Version 0.3 - February
 - Cleaned up header output - /inc/cleanup.php
 - Improved child theme friendliness.
 - Changed post tag and post category display. Now uses the Bootstrap label to wrap each category and/or tag.
+- Added search box on right side of top nav bar.
 - Started adding hooks to various locations throughout the templates.
 
 

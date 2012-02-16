@@ -81,6 +81,11 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
         <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         <div class="nav-collapse">
           <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
+          <form role="search" class="navbar-search pull-right" action="http://localdev.johnparris.com:10080/theme/" id="searchform" method="get">
+            <label class="assistive-text" for="s">Search</label>
+            <input type="text" placeholder="Search ..." id="s" name="s" class="search-query">
+            <input type="submit" value="Search" id="searchsubmit" name="submit" class="btn btn-primary">
+          </form>
         </div><!-- /nav-collapse -->
       </div><!-- /container -->
     </div><!-- /navbar-inner -->

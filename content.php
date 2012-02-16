@@ -28,21 +28,6 @@
 		</div><!-- .entry-meta -->
 	  <?php endif; ?>
 
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'alienship' ) );
-				if ( $categories_list && alienship_categorized_blog() ) :
-			?>
-
-			<?php alienship_post_categories(); // display the post categories ?>
-
-			<?php endif; // End if categories ?>
-
-			<?php	alienship_post_tags(); // display the post tags ?>
-
-		<?php endif; // End if 'post' == get_post_type() ?>
-
 		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?></span>
 		<span class="sep"> | </span>

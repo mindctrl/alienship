@@ -16,8 +16,9 @@
     <?php dynamic_sidebar("Footer"); ?>
   </div>
 </div>
-
+<?php alienship_footer_before(); ?>
 <footer id="colophon" role="contentinfo">
+  <?php alienship_footer_inside(); ?>
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span5">
@@ -29,7 +30,7 @@
     </div><!-- row-fluid -->
   </div><!-- container-fluid -->
 </footer><!-- #colophon -->
- 
+<?php alienship_footer_after(); ?>
 <script type="text/javascript">
 // Enable Bootstrap popover //
 jQuery(function() {
@@ -39,6 +40,8 @@ jQuery(function() {
 </script>
 
 <?php wp_footer(); ?>
+<?php alienship_footer(); ?>
+<?php echo $wpdb->num_queries; ?> <?php _e('queries'); ?>. <?php timer_stop(1); ?> <?php _e('seconds'); ?>
 
 </body>
 </html>

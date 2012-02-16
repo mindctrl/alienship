@@ -8,11 +8,11 @@
 
 /**
  * Set the content width based on the theme's design and stylesheet.
- *
  * @since Alien Ship 0.1
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 940; /* pixels */
+
 
 if ( ! function_exists( 'alienship_setup' ) ):
 /**
@@ -21,30 +21,37 @@ if ( ! function_exists( 'alienship_setup' ) ):
  * Note that this function is hooked into the after_setup_theme hook, which runs
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
- *
  * @since Alien Ship 0.1
  */
 function alienship_setup() {
 
-	/**
-	 * Custom template tags for this theme.
-	 */
-	require( get_template_directory() . '/inc/template-tags.php' );
+	/* Custom template tags for this theme. */
+	require_once locate_template('/inc/template-tags.php');
 
-	/**
-	 * Shortcodes
-	 */
-	require( get_template_directory() . '/inc/shortcodes.php' );
+	/* Clean up header output */
+	require_once locate_template('/inc/cleanup.php');
 
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	require( get_template_directory() . '/inc/tweaks.php' );
+	/* Hooks */
+	require_once locate_template('/inc/hooks.php');
 
-	/**
-	 * Breadcrumbs
-	 */
-	require( get_template_directory() . '/inc/breadcrumbs.php');
+	/* Register the navigation menus. */
+	require_once locate_template('/inc/menus.php');
+
+	/* Register sidebars */
+  require_once locate_template('/inc/sidebars.php');
+
+	/* Shortcodes */
+	require_once locate_template('/inc/shortcodes.php');
+
+	/* Custom functions that act independently of the theme templates */
+	require_once locate_template('/inc/tweaks.php');
+
+	/* Breadcrumbs */
+	require_once locate_template('/inc/breadcrumbs.php');
+
+	/* Load Bootstrap javascript */
+  require_once locate_template('/inc/bootstrap-js.php');
+
 
 	/**
 	 * Custom Theme Options
@@ -75,22 +82,6 @@ function alienship_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
-	 * Register the navigation menus.
-	 */
-	 require( get_template_directory() .'/inc/menus.php' );
-
-	/** 
-   * Register sidebars
-   */
-   require( get_template_directory() .'/inc/sidebars.php' );
-
-  /** 
-   * Load Bootstrap javascript
-   */
-   require( get_template_directory() .'/inc/bootstrap-js.php');
-
-
-	/**
 	 * Add support for the Aside and Gallery Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', ) );
@@ -99,11 +90,10 @@ endif; // alienship_setup
 add_action( 'after_setup_theme', 'alienship_setup' );
 
 
-
-if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
 /**
  * Change footer text in admin dashboard
  */
+if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
   function alienship_change_admin_footer_content () {
     echo 'Copyright &copy ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.';
   }

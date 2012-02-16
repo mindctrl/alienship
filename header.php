@@ -43,18 +43,10 @@
  require( get_template_directory() . '/inc/bootstrap-css.php' );
  ?>
 
-<?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-
-<?php wp_head(); ?>
-
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 <?php if (is_child_theme()) { ?>
   <!-- Include Child theme CSS file -->
-  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
   <?php } ?>
 <?php
 // <!--  Check for custom.css and if it exists, load it. -->
@@ -62,6 +54,15 @@ $customcss = (get_stylesheet_directory()).'/custom/custom.css';
 if(file_exists($customcss) && !is_child_theme()){
 echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css" />';
 } ?>
+
+<?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<?php alienship_head(); ?>
+<?php wp_head(); ?>
 
 </head>
 
@@ -89,6 +90,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 <!-- Site title and description in masthead -->
 <div id="page" class="container-fluid hfeed">
   <?php do_action( 'before' ); ?>
+  <?php alienship_header_before(); ?>
 	<header id="masthead" role="banner">
 	  <hgroup>
 	    <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

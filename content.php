@@ -34,22 +34,13 @@
 				$categories_list = get_the_category_list( __( ', ', 'alienship' ) );
 				if ( $categories_list && alienship_categorized_blog() ) :
 			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'alienship' ), $categories_list ); ?>
-			</span>
-			<span class="sep"> | </span>
+
+			<?php alienship_post_categories(); // display the post categories ?>
+
 			<?php endif; // End if categories ?>
 
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'alienship' ) );
-				if ( $tags_list ) :
-			?>
-			<span class="tag-links">
-				<?php printf( __( 'Tagged %1$s', 'alienship' ), $tags_list ); ?>
-			</span>
-			<span class="sep"> | </span>
-			<?php endif; // End if $tags_list ?>
+			<?php	alienship_post_tags(); // display the post tags ?>
+
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>

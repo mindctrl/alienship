@@ -14,8 +14,10 @@ TO DO LIST
 + Clean up footer.php jQuery.
 + Finish moving shared elements to inc/ for easier template updates
 + Set up framework
-+ Clean up code
++ Clean up code and fix validation issues
 + Separate loop from markup
++ Make tags have label class so they have the Bootstrap label appearance?
++ Style comment buttons and other buttons to have Bootstrap button styles?
 + Shortcodes for ~~buttons~~, ~~labels~~, ~~alerts~~, ~~wells/panels~~, scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
 + ~~Add a utility/footer menu~~ and maybe a menu that lives below the masthead and above content
@@ -26,7 +28,7 @@ TO DO LIST
 + Configurable footer text
 + Include phpmailer rewrite code and add to options page.
 + Layout options for index, archive, etc. List, Tile, etc.
-+ Make breadcrumbs optional
++ Make breadcrumbs optional and fix validation problems.
 + Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom, hide)
 + Analytics option
 + Avatar and author bio display

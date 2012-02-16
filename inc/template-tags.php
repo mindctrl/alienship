@@ -161,3 +161,50 @@ function alienship_category_transient_flusher() {
 }
 add_action( 'edit_category', 'alienship_category_transient_flusher' );
 add_action( 'save_post', 'alienship_category_transient_flusher' );
+
+/**
+ * Customize the list of categories and tags displayed on index and on a post
+ * @since Alien Ship 0.3
+ */
+function alienship_post_tags() {
+  global $alienship_design;
+  $post_tags = get_the_tags();
+  if ($post_tags) {
+    echo "\t<span class=\"tag-links\">" . __('Tagged:', 'alienship') . "\n";
+    $num_tags = count($post_tags);
+    $tag_count = 1;
+    $nofollow = ' nofollow'; // tell search engines to not index tag url
+    foreach ($post_tags as $tag) {
+    $html_before = "\t\t\t\t\t<a href=\"" . get_tag_link($tag->term_id) . "\" rel=\"tag$nofollow\" class=\"label\">";
+    $html_after = '</a>';
+    if ($tag_count < $num_tags)
+      $sep = "\n";
+    elseif ($tag_count == $num_tags)
+    $sep = "\n";
+    echo $html_before . $tag->name . $html_after . $sep;
+    $tag_count++;
+    }
+    echo "\t\t\t\t</span>\n";
+  }
+}
+
+function alienship_post_categories() {
+  global $alienship_design;
+  $post_categories = get_the_category();
+  if ($post_categories) {
+    echo "\t<span class=\"cat-links\">" . __('Posted in:', 'alienship') . "\n";
+    $num_categories = count($post_categories);
+    $category_count = 1;
+    foreach ($post_categories as $category) {
+    $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" rel=\"category tag\" class=\"label\">";
+    $html_after = '</a>';
+    if ($category_count < $num_categories)
+      $sep = "\n";
+    elseif ($category_count == $num_categories)
+    $sep = "\n";
+    echo $html_before . $category->name . $html_after . $sep;
+    $category_count++;
+    }
+    echo "\t\t\t</span>\n";
+  }
+}

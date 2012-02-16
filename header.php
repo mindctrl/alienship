@@ -68,11 +68,10 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 <body <?php body_class(); ?> onload="prettyPrint()">
   <!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-
 <!-- Load Top Menu -->
   <div class="navbar">
     <div class="navbar-inner">
-      <div class="container">
+      <div class="container-fluid">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar-text">Menu</span>
@@ -80,7 +79,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
         </a>
         <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         <div class="nav-collapse">
-          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav' ) ); ?>
+          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
         </div><!-- /nav-collapse -->
       </div><!-- /container -->
     </div><!-- /navbar-inner -->
@@ -96,5 +95,6 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	  </hgroup><br />
 <!-- End Site title and description in masthead -->
-    </header><!-- #masthead -->
+  </header><!-- #masthead -->
   <div id="main">
+    <?php if (function_exists('alienship_breadcrumbs')) alienship_breadcrumbs(); ?>

@@ -71,7 +71,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 <!-- Load Top Menu -->
   <div class="navbar" data-scrollspy="scrollspy">
       <div class="navbar-inner">
-        <div class="container">
+        <div class="container-fluid">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar-text">Menu</span>
@@ -79,7 +79,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
           </a>
           <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
           <div class="nav-collapse">
-            <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav' ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
           </div><!-- /nav-collapse -->
         </div><!-- /container -->
     </div><!-- /navbar-inner -->

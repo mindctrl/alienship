@@ -12,7 +12,9 @@ Version 0.3 - February
 - Breadcrumbs
 - Minor cosmetics
 - Cleaned up old CSS
-
+- Added block grids, courtesy of Zurb Foundation.
+- Added Custom Walker for Top Nav and a fallback function to create/display a blank menu if a custom menu is not set. Disabled jQuery code that built the dropdown elements.
+- Removed self-closing tags that don't need it in HTML5.
 
 
 Version 0.2 - February 6, 2012

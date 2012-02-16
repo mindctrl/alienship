@@ -1,7 +1,8 @@
 /* Adding the class "dropdown" to li elements with submenus  */	
 jQuery(document).ready(function(){
-  jQuery("ul.sub-menu").addClass("dropdown-menu").removeClass("sub-menu"); // switch sub-menu to dropdown-menu
-  jQuery("ul.children").addClass("dropdown-menu").removeClass("children"); // switch wp_page_menu children to dropdown-menu
+// The following two lines are deprecated and are now handled in inc/tweaks.php
+//  jQuery("ul.sub-menu").addClass("dropdown-menu").removeClass("sub-menu"); // switch sub-menu to dropdown-menu
+//  jQuery("ul.children").addClass("dropdown-menu").removeClass("children"); // switch wp_page_menu children to dropdown-menu
   jQuery("ul.dropdown-menu").parent().addClass("dropdown"); //add dropdown to top-level li.
   jQuery("[id^=menu-] li.dropdown a").addClass("dropdown-toggle"); //add dropdown-toggle to top-level menu item
   jQuery("ul.nav li.dropdown a").addClass("dropdown-toggle"); // add dropdown-toggle to wp_page_menu output

@@ -8,29 +8,15 @@
  * @since Alien Ship 0.1
  */
 
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- *
- * @since Alien Ship 0.1
- */
-function alienship_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
+
+/*  @since Alien Ship 0.3
+ * We don't need to self-close these tags in html5: <img>, <input> */
+function alienship_remove_self_closing_tags($input) {
+  return str_replace(' />', '>', $input);
 }
-add_filter( 'wp_page_menu_args', 'alienship_page_menu_args' );
-
-
-
-/** Tweak wp_page_menu output to add <ul class="nav"> to first <ul> occurrence
- *  
- * @since Alien Ship 0.3
- */
-function alienship_add_page_menu_class($ulclass) {
-return preg_replace('/<ul>/', '<ul class="nav">', $ulclass, 1);
-}
-add_filter('wp_page_menu','alienship_add_page_menu_class');
-
-
+add_filter('get_avatar', 'alienship_remove_self_closing_tags');
+add_filter('comment_id_fields', 'alienship_remove_self_closing_tags');
+add_filter('post_thumbnail_html', 'alienship_remove_self_closing_tags');
 
 /**
  * Adds custom classes to the array of body classes.

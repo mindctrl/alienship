@@ -41,7 +41,6 @@ jQuery(function() {
 
 <?php wp_footer(); ?>
 <?php alienship_footer(); ?>
-<?php echo $wpdb->num_queries; ?> <?php _e('queries'); ?>. <?php timer_stop(1); ?> <?php _e('seconds'); ?>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* =============================================================
- * bootstrap-collapse.js v2.0.0
+ * bootstrap-collapse.js v2.0.1
  * http://twitter.github.com/bootstrap/javascript.html#collapse
  * =============================================================
  * Copyright 2012 Twitter, Inc.
@@ -82,7 +82,6 @@
         , complete = function () {
             if (startEvent == 'show') that.reset()
             that.$element.trigger(completeEvent)
-            
           }
 
       this.$element
@@ -134,4 +133,4 @@
     })
   })
 
-}( window.jQuery )
+}( window.jQuery );

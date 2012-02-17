@@ -45,7 +45,7 @@ get_header(); ?>
 			<?php endif; ?>
 
     		</div>
-    		<div class="span2 offset1">
+    		<div class="span3">
     		<?php get_sidebar(); ?>
 		</div>
     	</div>

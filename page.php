@@ -26,7 +26,7 @@ get_header(); ?>
             <?php endwhile; // end of the loop. ?>
 
     </div>
-    <div class="span2 offset1">
+    <div class="span3">
 
         <?php get_sidebar(); ?>
 

@@ -47,8 +47,8 @@ get_header(); ?>
 			</div><!-- #content -->
 		</section><!-- #primary -->
 </div><!-- span9 -->
-<div class="span2 offset1">
+<div class="span3">
 <?php get_sidebar(); ?>
-</div><!-- span2 -->
+</div><!-- span3 -->
 </div><!-- row -->
 <?php get_footer(); ?>

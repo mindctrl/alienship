@@ -175,14 +175,14 @@ dl.nav.mobile dd.current-menu-item a,
 -------------------------- */
 
 /* The content wrapper home page called in index.php */
-#content {
-    background: none repeat scroll 0 0 #E6E6E6;
-    border-radius: 5px 5px 5px 5px;
-    border: 1px solid #C0C0C0;
-    clear: both;
-    margin-bottom: 10px;
-    overflow: hidden; 
-    padding: 7px 7px 7px 7px;
+#main {
+  background: none repeat scroll 0 0 #EEEEEE;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #C0C0C0;
+  clear: both;
+  margin-bottom: 10px;
+  overflow: hidden; 
+  padding: 7px 7px 7px 7px;
 }
 
 /* The article wrapper that displays the content of a post/page/whatever */
@@ -196,6 +196,12 @@ article {
     padding: 15px 15px 15px 15px;
 }
 
+aside.widget {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #C0C0C0;
+  border-radius: 5px 5px 5px 5px;
+  padding: 7px;
+}
 /* Hide the nav above the #content wrapper. "Older entries / Newer entries". Didn't yank function from code because might be used later. */
 #nav-above {
   display: none;
@@ -236,6 +242,10 @@ h3, h4, h5, h6 {
 }
 
 /* Post/page and comment content */
+.entry-content {
+  padding-bottom: 25px;
+}
+
 .entry-content h1,
 .entry-content h2,
 .comment-content h1,

@@ -103,5 +103,6 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 	  </hgroup><br />
 <!-- End Site title and description in masthead -->
   </header><!-- #masthead -->
+  <?php if (function_exists('alienship_breadcrumbs')) alienship_breadcrumbs(); ?>
   <div id="main">
-    <?php if (function_exists('alienship_breadcrumbs')) alienship_breadcrumbs(); ?>
+  

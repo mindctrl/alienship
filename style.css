@@ -12,6 +12,10 @@ Tags:
 
 /* =Navigation and dropdowns
 ----------------------------------------------- */
+/* body.logged-in > div.navbar-fixed-top {
+  margin-top:28px;
+} */
+
 /* Remove the rounded edges from the navbar */
 .navbar-inner {
   border-radius: 0px 0px 0px 0px;
@@ -202,6 +206,7 @@ aside.widget {
   border-radius: 5px 5px 5px 5px;
   padding: 7px;
 }
+
 /* Hide the nav above the #content wrapper. "Older entries / Newer entries". Didn't yank function from code because might be used later. */
 #nav-above {
   display: none;
@@ -373,6 +378,11 @@ img.alignleft,
 img.alignright,
 img.aligncenter {
   margin-bottom: 1.625em;
+}
+
+.cat-links > a.label,
+.tag-links > a.label {
+  text-transform: uppercase;
 }
 
 /* Panels inspired by Zurb Foundation */

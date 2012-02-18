@@ -16,7 +16,6 @@ TO DO LIST
 + Set up framework
 + Clean up code and fix validation issues
 + Separate loop from markup
-+ Make tags have label class so they have the Bootstrap label appearance?
 + Style comment buttons and other buttons to have Bootstrap button styles?
 + Shortcodes for ~~buttons~~, ~~labels~~, ~~alerts~~, ~~wells/panels~~, scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel

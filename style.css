@@ -180,32 +180,38 @@ dl.nav.mobile dd.current-menu-item a,
 
 /* The content wrapper home page called in index.php */
 #main {
-  background: none repeat scroll 0 0 #EEEEEE;
+  /* background: none repeat scroll 0 0 #EEEEEE;
   border-radius: 5px 5px 5px 5px;
-  border: 1px solid #C0C0C0;
+  border: 1px solid #C0C0C0; */
   clear: both;
   margin-bottom: 10px;
   overflow: hidden; 
-  padding: 7px 7px 7px 7px;
+  /* padding: 7px 7px 7px 7px; */
 }
 
 /* The article wrapper that displays the content of a post/page/whatever */
 article {
-    background: none repeat scroll 0 0 #FFFFFF;
+    /* background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 5px 5px 5px 5px;
-    border: 1px solid #C0C0C0;
+    border: 1px solid #C0C0C0; */
     clear: both;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 25px;
     overflow: hidden; 
-    padding: 15px 15px 15px 15px;
+    /* padding: 15px 15px 15px 15px; */
 }
 
-aside.widget {
+article > .entry-content p {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+/* aside.widget {
   background: none repeat scroll 0 0 #FFFFFF;
   border: 1px solid #C0C0C0;
   border-radius: 5px 5px 5px 5px;
   padding: 7px;
-}
+} */
 
 /* Hide the nav above the #content wrapper. "Older entries / Newer entries". Didn't yank function from code because might be used later. */
 #nav-above {
@@ -248,7 +254,7 @@ h3, h4, h5, h6 {
 
 /* Post/page and comment content */
 .entry-content {
-  padding-bottom: 25px;
+  padding: 15px 0 25px;
 }
 
 .entry-content h1,
@@ -284,9 +290,14 @@ h1.entry-title {
 }
 
 /* The meta data displayed with a post. */
-footer.entry-meta {
+/* footer.entry-meta {
   padding-top: 7px;
   border-top: 1px solid #CCCCCC;
+} */
+
+footer.entry-meta {
+  font-size: 11px;
+  margin-bottom: 7px;
 }
 
 /* Make sure images with WordPress-added height and width attributes are scaled correctly */

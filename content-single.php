@@ -28,8 +28,7 @@
 
       alienship_post_categories(); // display the post categories
       alienship_post_tags(); // display the post tags
-		?>
-
-		<?php edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link"> | ', '</span>' ); ?>
+		  edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link"> | ', '</span>' ); // display the edit link
+    ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -12,6 +12,7 @@ TO DO LIST
 ----------
 
 + Clean up footer.php jQuery.
++ Clean up comments.php.
 + Finish moving shared elements to inc/ for easier template updates
 + Set up framework
 + Clean up code and fix validation issues

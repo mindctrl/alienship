@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
  * handled by a callback to alienship_comment() which is
- * located in the functions.php file.
+ * located in the inc/template-tags.php file.
  *
  * @package Alien Ship
  * @since Alien Ship 0.1

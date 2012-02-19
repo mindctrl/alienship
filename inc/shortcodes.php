@@ -12,7 +12,7 @@
 function alienship_alert($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'alert', 'heading' => ''), $atts));
    if ($type != "alert") {
-   return '<div class="alert alert-'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">x</a><strong>'. do_shortcode($heading) .'</strong> ' . do_shortcode($content) . '</div>';
+   return '<div class="alert alert-'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">x</a><strong>'. do_shortcode($heading) .'</strong><p> ' . do_shortcode($content) . '</p></div>';
    } else {
    return '<div class="'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">x</a><strong>'. do_shortcode($heading) .'</strong>' . do_shortcode($content) . '</div>';
    }
@@ -76,10 +76,10 @@ function alienship_panel( $atts, $content = null ) {
    if ($columns != "12") {
    $span .= ''.$columns.'"';
    $spanfollow = $gridsize - $columns;
-   return '<p><div class="row-fluid"><div class='.$span.'><div class="panel">' . do_shortcode($content) . '</div></div><div class="span'.$spanfollow.'">&nbsp;</div></div><div class="clear"></div></p>'; }
+   return '<div class="row-fluid"><div class='.$span.'><div class="panel"><p>' . do_shortcode($content) . '</p></div></div><div class="span'.$spanfollow.'">&nbsp;</div></div><div class="clear"></div>'; }
    else {
       $span .= ''.$columns.'"';
-      return '<p><div class="row-fluid"><div class='.$span.'><div class="panel">' . do_shortcode($content) . '</div></div></div><div class="clear"></div></p>';
+      return '<div class="row-fluid"><div class='.$span.'><div class="panel"><p>' . do_shortcode($content) . '</p></div></div></div><div class="clear"></div>';
    }
 }
 add_shortcode('panel', 'alienship_panel');

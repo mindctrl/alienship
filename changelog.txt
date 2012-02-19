@@ -21,7 +21,10 @@ Version 0.3 - February
 - Removed display of categories and tags on index page. It's just too busy. I might make this optional later.
 - Added rel="nofollow" to post tags.
 - Added search box on right side of top nav bar.
+- Changed layout again, opting for something cleaner and less boxy.
 - Started adding hooks to various locations throughout the templates.
+- Removed old CSS from style.css.
+- Fixed shortcode issue that was causing HTML5 validation issues in some cases.
 
 
 Version 0.2 - February 6, 2012

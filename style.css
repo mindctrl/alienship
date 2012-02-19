@@ -21,55 +21,23 @@ Tags:
   border-radius: 0px 0px 0px 0px;
 }
 
-/* Hide sub-menu until switched out to dropdown-menu by jQuery */
-.sub-menu,
-ul.children {
-  display: none;
+/* Change width of responsive menu button to match width of "Menu" text */
+.btn-navbar .icon-bar {
+  width: 35px;
 }
 
-.dropdown.open .dropdown-toggle {
-  color: #ffffff;
-  background: #ccc;
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.dropdown.open .sub-menu,
-.dropdown.open .children {
+/* Style "Menu" text in responsive menu button */
+.btn-navbar .icon-bar-text {
+  color: #F5F5F5;
   display: block;
+  text-align: center;
+  vertical-align: middle;
+  width: auto;
+  text-shadow: 0 0 0em;
 }
 
-.navbar .nav .dropdown-toggle .caret,
-.navbar .nav .open.dropdown .caret {
-  border-top-color: #fff;
-}
-
-.dropdown .caret {
-  margin-top: 8px;
-  margin-left: 2px;
-}
-
-.navbar .nav .active .caret {
-  filter: alpha(opacity=100);
-  -moz-opacity: 1;
-  opacity: 1;
-}
-
-.navbar .nav .open > .dropdown-toggle,
-.navbar .nav .active > .dropdown-toggle,
-.navbar .nav .open.active > .dropdown-toggle {
-  background-color: transparent;
-}
-
-.navbar .nav.pull-right .sub-menu {
-  right: 0;
-}
-.navbar .nav.pull-right .sub-menu:before {
-  left: auto;
-  right: 12px;
-}
-.navbar .nav.pull-right .sub-menu:after {
-  left: auto;
-  right: 13px;
+.btn-navbar > a.btn {
+  text-shadow: 0px;
 }
 
 /* Footer Nav - Admin > Appearance > Menus > Bottom Menu */
@@ -85,23 +53,6 @@ ul.children {
   float: right;
   padding-left: 3%;
   margin-bottom: 0;
-}
-
-.btn-navbar .icon-bar {
-  width: 35px;
-}
-
-.btn-navbar .icon-bar-text {
-  color: #F5F5F5;
-  display: block;
-  text-align: center;
-  vertical-align: middle;
-  width: auto;
-  text-shadow: 0 0 0em;
-}
-
-.btn-navbar > a.btn {
-  text-shadow: 0px;
 }
 
 /* Mobile Footer Nav */
@@ -290,11 +241,6 @@ h1.entry-title {
 }
 
 /* The meta data displayed with a post. */
-/* footer.entry-meta {
-  padding-top: 7px;
-  border-top: 1px solid #CCCCCC;
-} */
-
 footer.entry-meta {
   font-size: 12px;
   margin-bottom: 7px;
@@ -391,12 +337,24 @@ img.aligncenter {
   margin-bottom: 1.625em;
 }
 
+/* Transform text to uppercase on the post category and tag labels/links */
 .cat-links > a.label,
 .tag-links > a.label {
   text-transform: uppercase;
 }
 
-/* Panels inspired by Zurb Foundation */
+/* Clear */
+.clear {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+/* Panels inspired by Zurb Foundation
+--------------------------------------- */
 .panel {
   min-height: 20px;
   padding: 19px;
@@ -417,16 +375,6 @@ img.aligncenter {
 .panel blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
-}
-
-/* Clear */
-.clear {
-  clear: both;
-  display: block;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
 }
 
 /* =Widgets
@@ -560,6 +508,7 @@ input#s {
     display: none !important;
   }
 
+  /* Change Hero styling to better fit on mobile devices */
   .hero-unit {
     padding: 5px;
     margin-bottom: 20px;
@@ -628,6 +577,7 @@ table.hide-on-tablets {
 }
 
 @media only screen and (max-width: 980px) {
+  /* Improve font size and spacing on dropdown menu on mobile/tablets */
   .navbar .nav > li > a, .navbar .dropdown-menu a {
     font-size: 18px;
     font-size: 1rem;

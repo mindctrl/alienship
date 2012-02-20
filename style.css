@@ -20,6 +20,11 @@ Tags:
 .navbar-inner {
   border-radius: 0px 0px 0px 0px;
 }
+/* Sets navbar container width to auto everywhere instead of just in responsive area */
+.navbar .container {
+  width: auto;
+  padding: 0;
+}
 
 /* Change width of responsive menu button to match width of "Menu" text */
 .btn-navbar .icon-bar {

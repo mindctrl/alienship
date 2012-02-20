@@ -17,8 +17,8 @@
 
   <footer class="entry-meta">
     <div class="entry-meta">
-	  <?php alienship_posted_on(); ?>
-	</div><!-- .entry-meta -->
+	   <?php alienship_posted_on(); ?>
+	  </div><!-- .entry-meta -->
     <?php
       /* translators: used between list items, there is a space after the comma */
       $category_list = get_the_category_list( __( ', ', 'alienship' ) );

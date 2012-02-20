@@ -170,7 +170,7 @@ function alienship_post_tags() {
   global $alienship_design;
   $post_tags = get_the_tags();
   if ($post_tags) {
-    echo "\t<span class=\"tag-links\">" . __('Tagged:', 'alienship') . "\n";
+    echo "\t<span class=\"tag-links\">&nbsp;<i class=\"icon-tags\" title=\"Tags\"></i>&nbsp;\n";
     $num_tags = count($post_tags);
     $tag_count = 1;
     $nofollow = ' nofollow'; // tell search engines to not index tag url
@@ -192,11 +192,12 @@ function alienship_post_categories() {
   global $alienship_design;
   $post_categories = get_the_category();
   if ($post_categories) {
-    echo "\t<span class=\"cat-links\">" . __('Posted in:', 'alienship') . "\n";
+    echo "\t<span class=\"cat-links\"><i class=\"icon-folder-open\" title=\"Categories\"></i>&nbsp;\n";
     $num_categories = count($post_categories);
     $category_count = 1;
     foreach ($post_categories as $category) {
-    $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" rel=\"category tag\" class=\"label\">";
+    // "category tag" is only proposed at this point - $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" rel=\"category tag\" class=\"label\">";
+    $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" class=\"label\">";
     $html_after = '</a>';
     if ($category_count < $num_categories)
       $sep = "\n";

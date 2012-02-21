@@ -134,6 +134,10 @@ dl.nav.mobile dd.current-menu-item a,
 /* Various design elements
 -------------------------- */
 
+.sticky, .bypostauthor {
+  
+}
+
 /* The content wrapper home page called in index.php */
 #main {
   clear: both;

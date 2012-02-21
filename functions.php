@@ -52,17 +52,14 @@ function alienship_setup() {
 	/* Load Bootstrap javascript */
   require_once locate_template('/inc/bootstrap-js.php');
 
-
-	/**
-	 * Custom Theme Options
-	 */
+	/* Custom Theme Options */
 	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
 
-	/**
-	 * WordPress.com-specific functions and definitions
-	 */
+	
+	/* WordPress.com-specific functions and definitions */
 	//require( get_template_directory() . '/inc/wpcom.php' );
 
+	
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
@@ -76,23 +73,24 @@ function alienship_setup() {
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
+	
+	/* Add default posts and comments RSS feed links to head */
 	add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Add support for the Aside and Gallery Post Formats
-	 */
-	add_theme_support( 'post-formats', array( 'aside', ) );
+
+	/* Add support for post-thumbnails */
+	add_theme_support('post-thumbnails');
+
+
+	/* Add support for post formats. To be styled in later release. */
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ));
+
 }
 endif; // alienship_setup
 add_action( 'after_setup_theme', 'alienship_setup' );
 
 
-/**
- * Change footer text in admin dashboard
- */
+/* Change footer text in admin dashboard */
 if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
   function alienship_change_admin_footer_content () {
     echo 'Copyright &copy ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.';

@@ -18,6 +18,9 @@ add_filter('get_avatar', 'alienship_remove_self_closing_tags');
 add_filter('comment_id_fields', 'alienship_remove_self_closing_tags');
 add_filter('post_thumbnail_html', 'alienship_remove_self_closing_tags');
 
+/* Uncomment the following line to disable admin bar display on front end for all users. */
+// add_filter('show_admin_bar', '__return_false');
+
 /**
  * Adds custom classes to the array of body classes.
  *

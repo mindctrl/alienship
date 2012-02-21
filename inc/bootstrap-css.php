@@ -7,6 +7,6 @@
  */
 ?>
 <!-- Load Bootstrap CSS. Javascript is loaded in functions.php -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_directory');?>/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_directory');?>/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/css/bootstrap-responsive.min.css">
 <!-- End of Bootstrap CSS -->

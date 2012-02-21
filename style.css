@@ -136,38 +136,23 @@ dl.nav.mobile dd.current-menu-item a,
 
 /* The content wrapper home page called in index.php */
 #main {
-  /* background: none repeat scroll 0 0 #EEEEEE;
-  border-radius: 5px 5px 5px 5px;
-  border: 1px solid #C0C0C0; */
   clear: both;
   margin-bottom: 10px;
   overflow: hidden; 
-  /* padding: 7px 7px 7px 7px; */
 }
 
 /* The article wrapper that displays the content of a post/page/whatever */
 article {
-    /* background: none repeat scroll 0 0 #FFFFFF;
-    border-radius: 5px 5px 5px 5px;
-    border: 1px solid #C0C0C0; */
     clear: both;
     border-bottom: 1px solid #CCCCCC;
     margin-bottom: 25px;
     overflow: hidden; 
-    /* padding: 15px 15px 15px 15px; */
 }
 
 article > .entry-content p {
   font-size: 14px;
   line-height: 150%;
 }
-
-/* aside.widget {
-  background: none repeat scroll 0 0 #FFFFFF;
-  border: 1px solid #C0C0C0;
-  border-radius: 5px 5px 5px 5px;
-  padding: 7px;
-} */
 
 /* Hide the nav above the #content wrapper. "Older entries / Newer entries". Didn't yank function from code because might be used later. */
 #nav-above {
@@ -189,15 +174,18 @@ p {
   margin-bottom: 1.625em;
 }
 
+/* a small bottom margin prevents content floating under images */
 p img {
-  margin-bottom: 0.5em; /* a small bottom margin prevents content floating under images */
+  margin-bottom: 0.5em;
 }
 
 img[class*="align"],
 img[class*="wp-image-"],
+img[class*="attachment-"],
 #content .gallery .gallery-icon img {
   border: 1px solid #DDDDDD;
   padding: 6px;
+  height: auto;
 } 
 
 h1, h2, h3, h4, h5, h6 {
@@ -249,13 +237,6 @@ h1.entry-title {
 footer.entry-meta {
   font-size: 12px;
   margin-bottom: 7px;
-}
-
-/* Make sure images with WordPress-added height and width attributes are scaled correctly */
-img[class*="align"],
-img[class*="wp-image-"],
-img[class*="attachment-"] {
-  height: auto;
 }
 
 p img,
@@ -336,10 +317,21 @@ body > footer {
   margin-right: auto;
 }
 
-img.alignleft,
-img.alignright,
+img.alignright {
+  float:right;
+  margin: 0 0 1em 1em;
+}
+
+img.alignleft {
+  float:left;
+  margin:0 1em 1em 0;
+}
+
 img.aligncenter {
-  margin-bottom: 1.625em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
 }
 
 /* Transform text to uppercase on the post category and tag labels/links */
@@ -625,7 +617,7 @@ table.hide-on-tablets {
   }
   
   .block-grid.two-up {
-    margin-left: -4%
+    margin-left: -4%;
   }
   
   .block-grid.two-up > li {
@@ -634,7 +626,7 @@ table.hide-on-tablets {
   }
   
   .block-grid.three-up {
-    margin-left: -2%
+    margin-left: -2%;
   }
 
   .block-grid.three-up > li {
@@ -643,7 +635,7 @@ table.hide-on-tablets {
   }
   
   .block-grid.four-up {
-    margin-left: -2%
+    margin-left: -2%;
   }
 
   .block-grid.four-up > li {
@@ -652,7 +644,7 @@ table.hide-on-tablets {
   }
   
   .block-grid.five-up {
-    margin-left: -1.5%
+    margin-left: -1.5%;
   }
 
   .block-grid.five-up > li {

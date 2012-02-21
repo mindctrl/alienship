@@ -1,7 +1,7 @@
 Alien Ship WordPress Theme
 --------------------------
 
-Alien Ship is an HTML5 responsive starter theme for WordPress. It uses Twitter's Bootstrap version 2.x. It comes with core HTML, CSS, and Javascript for type, form, grids, navigation, buttons, dropdown menus, and more. It includes a number of shortcodes to enable quick place of buttons, forms, grids, etc. For more information and documentation, access the Wiki.
+Alien Ship is an HTML5 responsive starter theme for WordPress. It uses Twitter's Bootstrap version 2.x. It comes with core HTML, CSS, and Javascript for type, form, grids, navigation, buttons, dropdown menus, and more. It includes a number of shortcodes to enable quick placement of buttons, labels, alerts, panels, wells, etc. For more information and documentation, access the Wiki.
 
 NOTE: This theme is currently beta quality software. It is not yet ready for production. If you would like to contribute, please fork it and submit your pull requests. Thanks!
 
@@ -16,9 +16,9 @@ Task List
 + Set up framework
 + Clean up code and fix validation issues
 + Separate loop from markup
-+ Shortcodes for ~~buttons~~, ~~labels~~, ~~alerts~~, ~~wells/panels~~, scaffolding, modals, tooltips, popovers, tabs...
++ Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
-+ ~~Add a utility/footer menu~~ and maybe a menu that lives below the masthead and above content
++ Maybe add a menu that lives below the masthead and above content
 + Theme options page
 + Options to include each JS plugin/feature
 + Header image option

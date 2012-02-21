@@ -11,7 +11,6 @@ NOTE: This theme is currently beta quality software. It is not yet ready for pro
 TO DO LIST
 ----------
 
-+ Style buttons and fields in comments.php. Add icons to input fields.
 + Clean up footer.php jQuery.
 + Finish moving shared elements to inc/ for easier template updates
 + Set up framework
@@ -27,7 +26,7 @@ TO DO LIST
 + Configurable footer text
 + Include phpmailer rewrite code and add to options page.
 + Layout options for index, archive, etc. List, Tile, etc.
-+ Make breadcrumbs optional and fix validation problems.
++ Make breadcrumbs optional.
 + Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom, hide)
 + Analytics option
 + Avatar and author bio display

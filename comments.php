@@ -108,7 +108,7 @@
 
   <label for="comment" class="control-label"><?php _e('Comment', 'alienship'); ?></label>
   <div class="input-prepend">
-  <span class="add-on"><i class="icon-comment"></i> </span><textarea name="comment" id="comment" class="input-xlarge" tabindex="4"></textarea>
+  <span class="add-on"><i class="icon-comment"></i> </span><textarea name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
   </div><!-- /input-prepend -->
 
   <input name="submit" class="btn btn-primary" type="submit" id="submit" tabindex="5" value="<?php _e('Submit Comment', 'alienship'); ?>">

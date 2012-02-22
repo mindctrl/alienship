@@ -146,7 +146,7 @@ dl.nav.mobile dd.current-menu-item a,
 }
 
 /* The article wrapper that displays the content of a post/page/whatever */
-article {
+div#content > article {
     clear: both;
     border-bottom: 1px solid #CCCCCC;
     margin-bottom: 25px;
@@ -299,6 +299,45 @@ body > footer {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
+}
+
+/* Style comment reply link as a button */
+.comment-reply-link {
+  background-color: #006DCC;
+  background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-radius: 4px 4px 4px 4px;
+  border-style: solid;
+  border-width: 1px;
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 4px 10px;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Hover effect for comment reply button */
+.comment-reply-link:hover {
+  background-color: #0044CC;
+  background-position: 0 -15px;
+  -moz-transition: background-position 0.1s linear 0s;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Pad the comment list */
+div.reply, .commentlist {
+  padding-bottom: 25px;
 }
 
 /* Alignment */

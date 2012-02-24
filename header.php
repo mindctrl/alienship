@@ -102,7 +102,27 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	  </hgroup><br />
 <!-- End Site title and description in masthead -->
+    <?php if ( has_nav_menu('main') ) { ?>
+<!-- Main menu -->
+    <div id="main-nav">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span></span>
+            <span class="icon-bar-text">Menu</span>
+            <span></span>
+            </a>
+            <div class="nav-collapse">
+            <?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false )); ?>
+            </div><!-- .nav-collapse -->
+          </div><!-- .container -->
+        </div><!-- .navbar-inner -->
+      </div><!-- .navbar -->
+    </div><!-- #main-nav -->
+<!-- End Main menu -->
+    <?php } ?>
   </header><!-- #masthead -->
-  <?php if (function_exists('alienship_breadcrumbs')) alienship_breadcrumbs(); ?>
+    <?php if (function_exists('alienship_breadcrumbs')) alienship_breadcrumbs(); ?>
   <div id="main">
   

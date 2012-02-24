@@ -18,7 +18,7 @@ Task List
 + Separate loop from markup
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
-+ Maybe add a menu that lives below the masthead and above content
++ Add a menu that lives below the masthead and above content - style using .navbar-main, round out edges, different colors.
 + Theme options page
 + Options to include each JS plugin/feature
 + Header image option

@@ -4,12 +4,13 @@
  */
  register_nav_menus( array(
    'top' => __( 'Top Menu', 'alienship' ),
+   'main' => __( 'Main Menu', 'alienship' ),
    'bottom' => __('Bottom Menu', 'alienship')
  ) );
 
 
  /* Custom Walker stuff - Credit to Roots Theme  */
- class alienship_Nav_Walker extends Walker_Nav_Menu {
+ /* class alienship_Nav_Walker extends Walker_Nav_Menu {
   function check_current($val) {
     return preg_match('/(current-)/', $val);
   }
@@ -46,7 +47,7 @@
 
     $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
   }
-}
+} */
 
 /* Custom Walker for Top Menu */
 class alienship_Navbar_Nav_Walker extends Walker_Nav_Menu {
@@ -147,6 +148,8 @@ function alienship_menu_fallback() {
   if (! has_nav_menu('top') && ! is_nav_menu( 'Blank Top Menu' )) {
     $locations['top'] = wp_create_nav_menu('Blank Top Menu', array('slug' => 'top'));
     set_theme_mod('nav_menu_locations', $locations);
-  }
+  } else {
+  $locations['top'] = 'Blank Top Menu';
   set_theme_mod('nav_menu_locations', $locations);
+  }
 }

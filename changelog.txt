@@ -3,7 +3,6 @@
 
 Version 0.3 - February
 ------------------------------
-- Top Menu: Fixed problem with menu not displaying properly and dropdowns not working if WordPress was falling back on the wp_page_menu when a menu wasn't assigned in Admin > Appearance > Menus. Added jQuery code to js/alienship_dropdown-toggle.js to fix.
 - Bottom Menu: If no menu is assigned in Admin > Appearance > Menus, the menu is not displayed. This keeps the default wp_page_menu from display and looking like crap. That menu is usually too big for this area. The Bottom Menu is meant to be small. This gives the option of not displaying the menu at all. Good if you're doing menu related things in the footer widgets and don't need it.
 - Allow child themes.
 - Redid the Top Menu in responsive mode. This is probably only temporary, as I'm still not happy with it. It is more touch friendly, though. Added a the word "Menu" to the button. Increased font size and spacing of dropdown items. Removed bold text.
@@ -26,6 +25,8 @@ Version 0.3 - February
 - Removed old CSS from style.css.
 - Fixed shortcode issue that was causing HTML5 validation issues in some cases.
 - Styled comment boxes and buttons
+- Added "Main Menu" that displays below site masthead and above page content.
+- Adding white space on sides of page wrapper.
 
 
 Version 0.2 - February 6, 2012

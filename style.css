@@ -20,11 +20,11 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
 .navbar-inner {
   border-radius: 0px 0px 0px 0px;
 }
-/* Sets navbar container width to auto everywhere instead of just in responsive area */
+/* Sets navbar container width to auto everywhere instead of just in responsive area 
 .navbar .container {
   width: auto;
   padding: 0;
-}
+} */
 
 /* Change width of responsive menu button to match width of "Menu" text */
 .btn-navbar .icon-bar {
@@ -136,6 +136,11 @@ dl.nav.mobile dd.current-menu-item a,
 
 .sticky, .bypostauthor {
   
+}
+
+#page {
+  margin: 25px auto;
+  max-width: 1000px;
 }
 
 /* The content wrapper home page called in index.php */
@@ -616,7 +621,7 @@ table.hide-on-tablets {
 
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 979px) {
   /* Improve font size and spacing on dropdown menu on mobile/tablets */
   .navbar .nav > li > a, .navbar .dropdown-menu a {
     font-size: 18px;

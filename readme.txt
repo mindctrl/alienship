@@ -11,6 +11,7 @@ NOTE: This theme is currently beta quality software. It is not yet ready for pro
 Task List
 ---------
 
++ Style Main Menu.
 + Clean up footer.php jQuery.
 + Finish moving shared elements to inc/ for easier template updates
 + Set up framework
@@ -18,7 +19,6 @@ Task List
 + Separate loop from markup
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
-+ Add a menu that lives below the masthead and above content - style using .navbar-main, round out edges, different colors.
 + Theme options page
 + Options to include each JS plugin/feature
 + Header image option
@@ -37,6 +37,8 @@ Task List
 
 Known Issues
 ------------
+
++ You can't really have a Top Menu and a Main Menu at the same time if you're using responsive layout. This is because they both use the same styling and the responsive button and javascript toggles both menus. This is actually on purpose as an option is coming that will enable either the Top Menu or the Main Menu. Both won't be an option. So for now, if you're using responsive, you need to make a choice of Top or Main. I might change this in later versions to enable two menus, but the current styling doesn't really work well for the user experience. It's just awkward to have two menu buttons without any other indicators as to the difference. Still thinking about this one.
 
 Have a bug? Please create an issue here on GitHub!
 

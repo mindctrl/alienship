@@ -6,6 +6,11 @@
  * @since Alien Ship 0.2
  */
 
+/* Allow shortcodes in widgets */
+add_filter('widget_text', 'do_shortcode');
+
+
+
 /* =Alerts - Types are 'info', 'error', 'success', and unspecified(which displays a default color). Specify a heading text. See example.
  *  Example: [alert type="success" heading="Congrats!"]You won the lottery![/alert]
 ----------------------------------------------- */

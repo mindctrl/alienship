@@ -53,11 +53,11 @@ function alienship_setup() {
   require_once locate_template('/inc/bootstrap-js.php');
 
 	/* Custom Theme Options */
-	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+	// require_once locate_template('/inc/theme-options/theme-options.php');
 
 	
 	/* WordPress.com-specific functions and definitions */
-	//require( get_template_directory() . '/inc/wpcom.php' );
+	//require_once locate_template('/inc/wpcom.php');
 
 	
 	/**

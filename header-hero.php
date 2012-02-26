@@ -40,7 +40,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 <?php /* Load Bootstrap CSS */
- require( get_template_directory() . '/inc/bootstrap-css.php' );
+ require_once locate_template('/inc/bootstrap-css.php');
  ?>
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />

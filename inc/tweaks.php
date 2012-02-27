@@ -31,7 +31,7 @@ add_filter('post_thumbnail_html', 'alienship_remove_self_closing_tags');
 	if ( ! is_singular() ) {
 		$classes[] = 'indexed';
 	}
-	// Adds a class of single-author to blogs with only 1 published author
+	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}

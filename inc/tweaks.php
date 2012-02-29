@@ -32,6 +32,18 @@ add_action( 'template_redirect', 'alienship_nice_search_redirect' );
 
 
 
+function alienship_search_query($escaped = true) {
+  $query = apply_filters('alienship_search_query', get_query_var('s'));
+  if ($escaped) {
+      $query = esc_attr($query);
+  }
+  return urldecode($query);
+}
+add_filter('get_search_query', 'alienship_search_query');
+
+
+
+
 /* Uncomment the following line to disable admin bar display on front end for all users. */
 // add_filter('show_admin_bar', '__return_false');
 

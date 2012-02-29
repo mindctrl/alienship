@@ -4,8 +4,9 @@
  * @since Alien Ship 0.1
  */
 ?>
-
+<?php alienship_post_before(); ?>
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <?php alienship_post_inside_before(); ?>
   <header class="entry-header">
     <h1 class="entry-title"><a class="entry-title" title="<?php the_title();?>" rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?></a></h1>
   </header><!-- .entry-header -->
@@ -31,4 +32,6 @@
 		  edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link"> | ', '</span>' ); // display the edit link
     ?>
 	</footer><!-- .entry-meta -->
+  <?php alienship_post_inside_after(); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+<?php alienship_post_after(); ?>

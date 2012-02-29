@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-
+<?php alienship_content_before(); ?>
 	<div id="primary">
 		<div class="row-fluid">
 			<div id="content" role="main" class="span9">
@@ -41,11 +41,15 @@ get_header(); ?>
 
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
-
+		<?php alienship_content_after(); ?>
 		</div><!-- #content -->
-		<div class="span3">
+		<?php alienship_sidebar_before(); ?>
+		<div id="sidebar" class="span3">
+			<?php alienship_sidebar_inside_before(); ?>
 			<?php get_sidebar(); ?>
-		</div>
+			<?php alienship_sidebar_inside_after(); ?>
+		</div><!-- #sidebar -->
+		<?php alienship_sidebar_after(); ?>
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

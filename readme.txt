@@ -19,7 +19,6 @@ Task List
 + Finish moving shared elements to inc/ for easier template updates
 + Set up framework
 + Clean up code and fix validation issues
-+ Separate loop from markup
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel
 + Style each post format (future release)

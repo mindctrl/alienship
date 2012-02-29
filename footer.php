@@ -10,6 +10,7 @@
 ?>
 
 	</div><!-- #main -->
+  <?php alienship_main_after(); ?>
 </div><!-- #page -->
 <div class="container-fluid">
   <div class="row-fluid footerwidget">

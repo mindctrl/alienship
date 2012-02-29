@@ -8,20 +8,22 @@
  */
 
 get_header(); ?>
-
+  <?php alienship_content_before(); ?>
 		<div id="primary">
 			<div id="content" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
-
+					<?php alienship_loop_before(); ?>
 					<?php get_template_part( 'content', 'page' ); ?>
-
+					<?php alienship_loop_after(); ?>
 					<?php comments_template( '', true ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
+      <?php alienship_content_after(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
-
+<?php alienship_sidebar_before(); ?>
 <?php get_sidebar(); ?>
+<?php alienship_sidebar_after(); ?>
 <?php get_footer(); ?>

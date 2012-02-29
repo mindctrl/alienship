@@ -12,6 +12,7 @@ get_header(); ?>
 
 		<section id="primary">
 			<div class="row-fluid">
+			<?php alienship_content_before(); ?>
 			<div id="content" role="main" class="span9">
 
 			<?php if ( have_posts() ) : ?>
@@ -65,7 +66,7 @@ get_header(); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
+					<?php alienship_loop_before(); ?>
 					<?php
 						/* Include the Post-Format-specific template for the content.
 						 * If you want to overload this in a child theme then include a file
@@ -73,7 +74,7 @@ get_header(); ?>
 						 */
 						get_template_part( 'content', get_post_format() );
 					?>
-
+					<?php alienship_loop_after(); ?>
 				<?php endwhile; ?>
 
 				<?php alienship_content_nav( 'nav-below' ); ?>
@@ -92,12 +93,16 @@ get_header(); ?>
 				</article><!-- #post-0 -->
 
 			<?php endif; ?>
-
+			<?php alienship_content_after(); ?>
 			</div><!-- #content -->
-			<div class="span3">
+			<?php alienship_sidebar_before(); ?>
+			<div id="sidebar" class="span3">
+				<?php alienship_sidebar_inside_before(); ?>
 				<?php get_sidebar(); ?>
-				</div>
-			</div>
+				<?php alienship_sidebar_inside_after(); ?>
+				</div><!-- #sidebar -->
+				<?php alienship_sidebar_after(); ?>
+			</div><!-- .row-fluid -->
 		</section><!-- #primary -->
 
 <?php get_footer(); ?>

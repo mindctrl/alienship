@@ -14,23 +14,27 @@
 get_header(); ?>
 
 <!-- Main -->
+  <?php alienship_content_before(); ?>
   <div class="row-fluid">
-    <div class="span9">
+    <div id="content" class="span9">
 
         <?php while ( have_posts() ) : the_post(); ?>
-
+            <?php alienship_loop_before(); ?>
             <?php get_template_part( 'content', 'page' ); ?>
-
+            <?php alienship_loop_after(); ?>
             <?php comments_template( '', true ); ?>
 
             <?php endwhile; // end of the loop. ?>
 
-    </div>
-    <div class="span3">
-
+    <?php alienship_content_after(); ?>
+    </div><!-- #content -->
+    <?php alienship_sidebar_before(); ?>
+    <div id="sidebar" class="span3">
+    <?php alienship_sidebar_inside_before(); ?>
         <?php get_sidebar(); ?>
-
-    </div>
-  </div>
+    <?php alienship_sidebar_inside_after(); ?>
+    </div><!-- #sidebar -->
+    <?php alienship_sidebar_after(); ?>
+  </div><!-- .row-fluid -->
 
         <?php get_footer(); ?>

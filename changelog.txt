@@ -27,6 +27,9 @@ Version 0.3 - February
 - Styled comment boxes and buttons
 - Added "Main Menu" that displays below site masthead and above page content.
 - Adding white space on sides of page wrapper.
+- Allow shortcodes in widgets.
+- Fixed search in navbar.
+
 
 
 Version 0.2 - February 6, 2012

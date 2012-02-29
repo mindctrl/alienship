@@ -10,6 +10,7 @@ get_header(); ?>
 	<div class="row-fluid">
 		<div class="span9">
 		<section id="primary">
+			<?php alienship_content_before(); ?>
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -22,9 +23,9 @@ get_header(); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
+					<?php alienship_loop_before(); ?>
 					<?php get_template_part( 'content', 'search' ); ?>
-
+					<?php alienship_loop_after(); ?>
 				<?php endwhile; ?>
 
 				<?php alienship_content_nav( 'nav-below' ); ?>
@@ -44,11 +45,16 @@ get_header(); ?>
 
 			<?php endif; ?>
 
+			<?php alienship_content_after(); ?>
 			</div><!-- #content -->
 		</section><!-- #primary -->
 </div><!-- span9 -->
-<div class="span3">
-<?php get_sidebar(); ?>
-</div><!-- span3 -->
-</div><!-- row -->
+<?php alienship_sidebar_before(); ?>
+<div id="sidebar" class="span3">
+	<?php alienship_sidebar_inside_before(); ?>
+	<?php get_sidebar(); ?>
+	<?php alienship_sidebar_inside_after(); ?>
+</div><!-- #sidebar -->
+<?php alienship_sidebar_after(); ?>
+</div><!-- .row-fluid -->
 <?php get_footer(); ?>

@@ -54,6 +54,9 @@
         echo $before . get_the_title() . $after;
       }
 
+    } elseif ( is_search() ) {
+      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
       echo $before . $post_type->labels->singular_name . $after;
@@ -79,9 +82,6 @@
       $breadcrumbs = array_reverse($breadcrumbs);
       foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
       echo $before . get_the_title() . $after;
-
-    } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
 
     } elseif ( is_tag() ) {
       echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;

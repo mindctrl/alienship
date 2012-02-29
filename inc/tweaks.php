@@ -18,8 +18,24 @@ add_filter('get_avatar', 'alienship_remove_self_closing_tags');
 add_filter('comment_id_fields', 'alienship_remove_self_closing_tags');
 add_filter('post_thumbnail_html', 'alienship_remove_self_closing_tags');
 
+
+
+/* Pretty search URL. Changes /?s=foo to /search/foo. http://txfx.net/wordpress-plugins/nice-search/
+ * @since Alien Ship 0.3 */
+function alienship_nice_search_redirect() {
+  if ( is_search() && strpos( $_SERVER['REQUEST_URI'], '/wp-admin/' ) === false && strpos( $_SERVER['REQUEST_URI'], '/search/' ) === false ) {
+    wp_redirect( home_url( '/search/' . str_replace( array( ' ', '%20' ),  array( '+', '+' ), get_query_var( 's' ) ) ) );
+    exit();
+  }
+}
+add_action( 'template_redirect', 'alienship_nice_search_redirect' );
+
+
+
 /* Uncomment the following line to disable admin bar display on front end for all users. */
 // add_filter('show_admin_bar', '__return_false');
+
+
 
 /**
  * Adds custom classes to the array of body classes.
@@ -40,6 +56,9 @@ add_filter('post_thumbnail_html', 'alienship_remove_self_closing_tags');
 }
 add_filter( 'body_class', 'alienship_body_classes' );
 */
+
+
+
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  *

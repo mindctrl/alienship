@@ -26,9 +26,26 @@ add_shortcode('alert', 'alienship_alert');
 
 
 
+/* =Badges
+----------------------------------------------- 
+* [badge] shortcode. Options for type are default, success, warning, error, info, and inverse. If a type of not specified, default is used. 
+* Example: [badge type="important"]1[/badge] */
+function alienship_badge($atts, $content = null) {
+   extract(shortcode_atts(array('type' => 'badge'), $atts));
+   if ($type != "badge") {
+   return '<span class="badge badge-'.$type.'">' . do_shortcode($content) . '</span>';
+   } else {
+   return '<span class="'.$type.'">' . do_shortcode($content) . '</span>';
+   }
+}
+add_shortcode('badge', 'alienship_badge');
+
+
+
+
 /* =Buttons
 ----------------------------------------------- */
-/* [button] shortcode. Options for type= are "primary", "info", "success", "warning", "danger"
+/* [button] shortcode. Options for type= are "primary", "info", "success", "warning", "danger", and "inverse".
  * Options for size are mini, small, medium and large. If none is specified it defaults to medium size.
  * Example: [button type="info" size="large" link="http://yourlink.com"]Button Text[/button] */
 function alienship_button($atts, $content = null) {
@@ -54,7 +71,7 @@ add_shortcode('button', 'alienship_button');
 
 /* =Labels
 ----------------------------------------------- 
-* [label] shortcode. Options for type= are "important", "info", "success", and "warning". If you don't specify a type there is a default style. 
+* [label] shortcode. Options for type= are "default", important", "info", "success", "warning", and "inverse". If a type of not specified, default is used. 
 * Example: [label type="important"]Label text[/label] */
 function alienship_label($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'label'), $atts));

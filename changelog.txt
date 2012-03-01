@@ -29,6 +29,7 @@ Version 0.3 - February
 - Adding white space on sides of page wrapper.
 - Allow shortcodes in widgets.
 - Fixed search in navbar.
+- Removed largebutton shortcode and added size parameter to button shortcode.
 
 
 

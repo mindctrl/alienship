@@ -29,28 +29,26 @@ add_shortcode('alert', 'alienship_alert');
 /* =Buttons
 ----------------------------------------------- */
 /* [button] shortcode. Options for type= are "primary", "info", "success", "warning", "danger"
- *  Example: [button type="info" link="http://yourlink.com"]Button Text[/button] */
+ * Options for size are mini, small, medium and large. If none is specified it defaults to medium size.
+ * Example: [button type="info" size="large" link="http://yourlink.com"]Button Text[/button] */
 function alienship_button($atts, $content = null) {
-   extract(shortcode_atts(array('link' => '#', 'type' => 'btn'), $atts));
-   if ($type != "btn") {
-   return '<a class="btn btn-'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
+   extract(shortcode_atts(array('link' => '#', 'type' => '', 'size' => 'medium'), $atts));
+   
+   if (empty($type)) {
+    $type = "btn";
    } else {
-   return '<a class="'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
+    $type = "btn btn-" . $type;
    }
+
+   if ($size == "medium") {
+    $size = "";
+   } else {
+    $size = "btn-" . $size;
+   }
+
+   return '<a class="'.$type.' '.$size.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('button', 'alienship_button');
-
-/* [largebutton] shortcode. Options for type= are "primary", "info", "success", "warning", "danger"
- *  Example: [largebutton type="info" link="http://yourlink.com"]Large Button Text[/largebutton] */
-function alienship_largebutton($atts, $content = null) {
-   extract(shortcode_atts(array('link' => '#', 'type' => 'btn'), $atts));
-   if ($type != "btn") {
-   return '<a class="btn btn-large btn-'.$type.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
-   } else {
-   return '<a class="'.$type.' '.$type.'-large" href="'.$link.'">' . do_shortcode($content) . '</a>';
-   }
-}
-add_shortcode('largebutton', 'alienship_largebutton');
 
 
 

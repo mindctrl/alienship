@@ -17,9 +17,9 @@ add_filter('widget_text', 'do_shortcode');
 function alienship_alert($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'alert', 'heading' => ''), $atts));
    if ($type != "alert") {
-   return '<div class="alert alert-'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">x</a><strong>'. do_shortcode($heading) .'</strong><p> ' . do_shortcode($content) . '</p></div>';
+   return '<div class="alert alert-'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>'. do_shortcode($heading) .'</strong><p> ' . do_shortcode($content) . '</p></div>';
    } else {
-   return '<div class="'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">x</a><strong>'. do_shortcode($heading) .'</strong>' . do_shortcode($content) . '</div>';
+   return '<div class="'.$type.' fade in"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>'. do_shortcode($heading) .'</strong>' . do_shortcode($content) . '</div>';
    }
 }
 add_shortcode('alert', 'alienship_alert');

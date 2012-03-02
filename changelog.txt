@@ -21,7 +21,7 @@ Version 0.3 - February
 - Added rel="nofollow" to post tags.
 - Added search box on right side of top nav bar.
 - Changed layout again, opting for something cleaner and less boxy.
-- Started adding hooks to various locations throughout the templates.
+- Added hooks to various locations throughout the templates.
 - Removed old CSS from style.css.
 - Fixed shortcode issue that was causing HTML5 validation issues in some cases.
 - Styled comment boxes and buttons
@@ -30,6 +30,7 @@ Version 0.3 - February
 - Allow shortcodes in widgets.
 - Fixed search in navbar.
 - Removed largebutton shortcode and added size parameter to button shortcode.
+- Added shortcode for badges.
 
 
 

@@ -14,10 +14,8 @@ Task List
 ---------
 
 + Style Main Menu.
-+ Finish hooks.
 + Clean up footer.php jQuery.
 + Finish moving shared elements to inc/ for easier template updates
-+ Set up framework
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Featured slider/carousel

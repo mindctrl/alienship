@@ -1,8 +1,6 @@
 <?php
 // header*.php
 function alienship_head() { do_action('alienship_head'); }
-function alienship_stylesheets() { do_action('alienship_stylesheets'); } // Not completed
-function alienship_wrap_before() { do_action('alienship_wrap_before'); } // Not completed
 function alienship_header_before() { do_action('alienship_header_before'); }
 function alienship_header_inside() { do_action('alienship_header_inside'); }
 function alienship_header_after() { do_action('alienship_header_after'); }

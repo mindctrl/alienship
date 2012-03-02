@@ -1,7 +1,7 @@
 == Changelog ==
 
 
-Version 0.3 - February
+Version 0.3 - March 1, 2012
 ------------------------------
 - Bottom Menu: If no menu is assigned in Admin > Appearance > Menus, the menu is not displayed. This keeps the default wp_page_menu from display and looking like crap. That menu is usually too big for this area. The Bottom Menu is meant to be small. This gives the option of not displaying the menu at all. Good if you're doing menu related things in the footer widgets and don't need it.
 - Allow child themes.

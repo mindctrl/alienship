@@ -175,7 +175,7 @@ function alienship_post_tags() {
     $tag_count = 1;
     $nofollow = ' nofollow'; // tell search engines to not index tag url
     foreach ($post_tags as $tag) {
-    $html_before = "\t\t\t\t\t<a href=\"" . get_tag_link($tag->term_id) . "\" rel=\"tag$nofollow\" class=\"label\">";
+    $html_before = "\t\t\t\t\t<a href=\"" . get_tag_link($tag->term_id) . "\" rel=\"tag$nofollow\" class=\"label label-info\">";
     $html_after = '</a>';
     if ($tag_count < $num_tags)
       $sep = "\n";
@@ -197,7 +197,7 @@ function alienship_post_categories() {
     $category_count = 1;
     foreach ($post_categories as $category) {
     // "category tag" is only proposed at this point - $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" rel=\"category tag\" class=\"label\">";
-    $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" class=\"label\">";
+    $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" class=\"label label-info\">";
     $html_after = '</a>';
     if ($category_count < $num_categories)
       $sep = "\n";

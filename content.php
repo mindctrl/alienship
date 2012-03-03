@@ -27,7 +27,7 @@
 		<div class="entry-meta">
 			<?php alienship_posted_on(); ?>
 			<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-			<span class="comments-link"><span class="sep"> | </span><?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?></span>
+			<span class="comments-link"><span class="sep">&nbsp;&nbsp;</span><i class="icon-comment"></i>&nbsp;<?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?>&nbsp;</span>
 			<?php endif; ?>
 			<?php edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); ?>
 		</div><!-- .entry-meta -->

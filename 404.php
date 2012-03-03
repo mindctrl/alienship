@@ -25,7 +25,7 @@ get_header(); ?>
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<div class="widget">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'alienship' ); ?></h2>
+						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'alienship' ); ?></h2>
 						<ul>
 						<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
 						</ul>

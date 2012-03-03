@@ -17,9 +17,9 @@ if ( ! function_exists( 'alienship_content_nav' ) ):
 function alienship_content_nav( $nav_id ) {
 	global $wp_query;
 
-	$nav_class = 'site-navigation paging-navigation';
+	$nav_class = 'site-navigation paging-navigation pager';
 	if ( is_single() )
-		$nav_class = 'site-navigation post-navigation';
+		$nav_class = 'site-navigation post-navigation pager';
 
 	?>
 	
@@ -28,17 +28,17 @@ function alienship_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'alienship' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'alienship' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous pull-left">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'alienship' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next pull-right">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'alienship' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'alienship' ) ); ?></div>
+		<div class="nav-previous pull-left"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'alienship' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'alienship' ) ); ?></div>
+		<div class="nav-next pull-right"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'alienship' ) ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -111,7 +111,7 @@ if ( ! function_exists( 'alienship_posted_on' ) ) :
  * @since Alien Ship 0.1
  */
 function alienship_posted_on() {
-	printf( __( 'Published: <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'alienship' ),
+	printf( __( '<i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="sep">&nbsp; &nbsp;</span><span class="byline"><span class="sep">&nbsp; &nbsp;</span><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a><span class="sep">&nbsp; &nbsp;</span></span></span>', 'alienship' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -170,7 +170,7 @@ function alienship_post_tags() {
   global $alienship_design;
   $post_tags = get_the_tags();
   if ($post_tags) {
-    echo "\t<span class=\"tag-links\">&nbsp;<i class=\"icon-tags\" title=\"Tags\"></i>&nbsp;\n";
+    echo "\t<span class=\"tag-links\"><span class=\"sep\">&nbsp; &nbsp;</span><i class=\"icon-tags\" title=\"Tags\"></i>&nbsp;\n";
     $num_tags = count($post_tags);
     $tag_count = 1;
     $nofollow = ' nofollow'; // tell search engines to not index tag url
@@ -206,6 +206,6 @@ function alienship_post_categories() {
     echo $html_before . $category->name . $html_after . $sep;
     $category_count++;
     }
-    echo "\t\t\t</span>\n";
+    echo "\t\t\t</span><span class=\"sep\">&nbsp; &nbsp;</span>\n";
   }
 }

@@ -9,6 +9,9 @@
   <?php alienship_post_inside_before(); ?>
   <header class="entry-header">
     <h1 class="entry-title"><a class="entry-title" title="<?php the_title();?>" rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?></a></h1>
+    <div class="entry-meta">
+     <?php alienship_posted_on(); ?>
+    </div><!-- .entry-meta -->
   </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -17,9 +20,6 @@
   </div><!-- .entry-content -->
 
   <footer class="entry-meta">
-    <div class="entry-meta">
-	   <?php alienship_posted_on(); ?>
-	  </div><!-- .entry-meta -->
     <?php
       /* translators: used between list items, there is a space after the comma */
       $category_list = get_the_category_list( __( ', ', 'alienship' ) );

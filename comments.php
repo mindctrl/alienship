@@ -35,10 +35,10 @@
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above">
+		<nav id="comment-nav-above" class="pager">
 			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'alienship' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
+			<div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
+			<div class="nav-next pull-right"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -55,10 +55,10 @@
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below">
+		<nav id="comment-nav-below" class="pager">
 			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'alienship' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
+			<div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
+			<div class="nav-next pull-right"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 

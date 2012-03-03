@@ -160,7 +160,7 @@ dl.nav.mobile dd.current-menu-item a,
 div#content > article {
     clear: both;
     border-bottom: 1px solid #CCCCCC;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     overflow: hidden; 
 }
 
@@ -213,7 +213,7 @@ h3, h4, h5, h6 {
 
 /* Post/page and comment content */
 .entry-content {
-  padding: 15px 0 25px;
+  padding: 15px 0;
 }
 
 .entry-content h1,
@@ -248,10 +248,17 @@ h1.entry-title {
   padding: 7px 0;
 }
 
-/* The meta data displayed with a post. */
+/* Meta data displayed within a post header */
+header .entry-meta {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* The meta data displayed within a post footer. */
 footer.entry-meta {
-  font-size: 12px;
+  font-size: 11px;
   margin-bottom: 7px;
+  text-transform: uppercase;
 }
 
 p img,

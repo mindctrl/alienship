@@ -1,31 +1,38 @@
 == Changelog ==
 
 
+Version 0.4 - March
+---------------------
+- Fixed footer widget text-align.
+- Styled previous and next links for index, posts, and comments.
+- Styled post meta data with icons. Changed font. Repositioned.
+
+
 Version 0.3 - March 1, 2012
 ------------------------------
-- Bottom Menu: If no menu is assigned in Admin > Appearance > Menus, the menu is not displayed. This keeps the default wp_page_menu from display and looking like crap. That menu is usually too big for this area. The Bottom Menu is meant to be small. This gives the option of not displaying the menu at all. Good if you're doing menu related things in the footer widgets and don't need it.
+- Bottom Menu: If no menu is assigned in Admin > Appearance > Menus, no default menu is displayed. This keeps the default wp_page_menu from displaying and looking like crap. That menu is usually too big for this area. The Bottom Menu is meant to be small. This gives the option of not displaying the menu at all. Good if you’re doing menu related things in the footer widgets and don’t need it.
 - Allow child themes.
-- Redid the Top Menu in responsive mode. This is probably only temporary, as I'm still not happy with it. It is more touch friendly, though. Added a the word "Menu" to the button. Increased font size and spacing of dropdown items. Removed bold text.
-- Kinda changed up the item above this one. Fixed Top Menu dropdown issue in responsive mode by changing classes with jQuery, from sub-menu to dropdown-menu. Auto-expands dropdown menus now and displays in a nested view.
-- Fixed padding/overflow issue with [panel] shortcode.
+- Redid the Top Menu in responsive mode to be more touch friendly. Increased font size and spacing of dropdown items. Removed bold text. Added the word “Menu” to the button to make it more obvious what it actually is to people who’ve never seen it before.
+- Fixed Top Menu dropdown issue in responsive mode. Auto-expands dropdown menus now and displays in a nested view.
+- Fixed padding/overflow issue with panel shortcode.
 - Breadcrumbs
 - Minor cosmetics
 - Cleaned up old CSS
 - Added block grids, courtesy of Zurb Foundation.
-- Added Custom Walker for Top Nav and a fallback function to create/display a blank menu if a custom menu is not set. Disabled jQuery code that built the dropdown elements.
-- Removed self-closing tags that don't need it in HTML5.
-- Cleaned up header output - /inc/cleanup.php
+- Added Custom Walker for Top Nav and a fallback function to create/display a blank menu if a custom menu is not set. Removed jQuery code that built the dropdown elements.
+- Removed self-closing tags that don’t need it in HTML5.
+- Cleaned up header output via inc/cleanup.php
 - Improved child theme friendliness.
 - Changed post tag and post category display. Now uses the Bootstrap label to wrap each category and/or tag.
-- Removed display of categories and tags on index page. It's just too busy. I might make this optional later.
-- Added rel="nofollow" to post tags.
+- Removed display of categories and tags on index page. It’s just too busy. I might make this optional later.
+- Added rel=”nofollow” to post tags.
 - Added search box on right side of top nav bar.
 - Changed layout again, opting for something cleaner and less boxy.
 - Added hooks to various locations throughout the templates.
 - Removed old CSS from style.css.
 - Fixed shortcode issue that was causing HTML5 validation issues in some cases.
 - Styled comment boxes and buttons
-- Added "Main Menu" that displays below site masthead and above page content.
+- Added “Main Menu” that displays below site masthead and above page content.
 - Adding white space on sides of page wrapper.
 - Allow shortcodes in widgets.
 - Fixed search in navbar.

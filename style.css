@@ -26,12 +26,6 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
   border-radius: 4px;
 }
 
-/* Sets navbar container width to auto everywhere instead of just in responsive area 
-.navbar .container {
-  width: auto;
-  padding: 0;
-} */
-
 /* Change width of responsive menu button to match width of "Menu" text */
 .btn-navbar .icon-bar {
   width: 35px;
@@ -108,7 +102,6 @@ dl.nav.mobile dd a {
   margin: 0;
   color: #555;
   font-size: 15px;
-  /* font-size: 1.5rem; */
   font-size: 1.0rem;
   -webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
   -webkit-border-radius: 0;
@@ -159,7 +152,6 @@ dl.nav.mobile dd.current-menu-item a,
 /* The article wrapper that displays the content of a post/page/whatever */
 div#content > article {
     clear: both;
-    /* border-bottom: 1px solid #EEEEEE; */
     margin: 18px 0;
     padding-bottom: 30px;
     overflow: hidden; 

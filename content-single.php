@@ -16,7 +16,7 @@
 
   <div class="entry-content">
     <?php the_content(); ?>
-	<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'alienship' ), 'after' => '</div>' ) ); ?>
+    <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'alienship' ), 'after' => '</div>' ) ); ?>
   </div><!-- .entry-content -->
 
   <footer class="entry-meta">
@@ -29,7 +29,7 @@
 
       alienship_post_categories(); // display the post categories
       alienship_post_tags(); // display the post tags
-		  edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link"> | ', '</span>' ); // display the edit link
+		  edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); // display the edit link
     ?>
 	</footer><!-- .entry-meta -->
   <?php alienship_post_inside_after(); ?>

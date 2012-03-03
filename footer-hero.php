@@ -14,7 +14,7 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span5">
-        <?php edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">', ' - </span>' ); ?>
+        <?php edit_post_link( __( 'Edit page', 'alienship' ), '<span class="edit-link"><i class="icon-pencil"></i>&nbsp;', ' - </span>' ); ?>
         <?php echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; ?>
       </div><!-- span5 -->
       <div class="span6">

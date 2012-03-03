@@ -159,7 +159,7 @@ dl.nav.mobile dd.current-menu-item a,
 /* The article wrapper that displays the content of a post/page/whatever */
 div#content > article {
     clear: both;
-    border-bottom: 1px solid #EEEEEE;
+    /* border-bottom: 1px solid #EEEEEE; */
     margin: 18px 0;
     padding-bottom: 30px;
     overflow: hidden; 
@@ -258,7 +258,9 @@ header .entry-meta {
 /* The meta data displayed within a post footer. */
 footer.entry-meta {
   font-size: 11px;
+  border-bottom: 1px solid #EEEEEE;
   margin-bottom: 7px;
+  padding-bottom: 15px;
   text-transform: uppercase;
 }
 

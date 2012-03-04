@@ -12,9 +12,6 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
 
 /* =Navigation and dropdowns
 ----------------------------------------------- */
-/* body.logged-in > div.navbar-fixed-top {
-  margin-top:28px;
-} */
 
 /* Remove the rounded edges from the navbar */
 .navbar-inner {
@@ -230,10 +227,9 @@ h1.entry-title {
   padding-bottom: 5px;
 }
 
-/* Remove color and underlining from post/page title link */
-.entry-title a {
+/* Remove hover underlining from post/page title link */
+.entry-title a:hover {
   text-decoration: none;
-  color: #000000;
 }
 
 /* Pads the paging links within a post or page */

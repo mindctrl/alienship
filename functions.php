@@ -99,6 +99,10 @@ if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
 add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 
 
+/* Stop WordPress from adding those annoying closing paragraph tags */
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
 // Uncomment the following section, or add it to your child theme's functions.php, to set a custom logo on the login page //
 // Custom login logo for wp-admin screen //
 //	function pic_custom_login_logo() {

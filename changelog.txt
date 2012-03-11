@@ -3,9 +3,16 @@
 
 Version 0.4 - March
 ---------------------
+- Updated Bootstrap.
 - Fixed footer widget text-align.
 - Styled previous and next links for index, posts, and comments.
 - Styled post meta data with icons. Changed font. Repositioned.
+- Styled comment/leave a comment link with icon.
+- Styled Edit post/page link.
+- Minor cosmetic changes.
+- Removed black font on title links
+- Tweaked Hero template.
+- Started adding post format styling. Added quote post format.
 
 
 Version 0.3 - March 1, 2012

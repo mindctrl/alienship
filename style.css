@@ -13,6 +13,16 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
 /* =Navigation and dropdowns
 ----------------------------------------------- */
 
+/* body.logged-in > div.navbar-fixed-top {
+margin-top:28px;
+} */
+
+body.logged-in > div #page,
+body.logged-in > div.navbar-fixed-top {
+    position: relative !important;
+    top: 28px !important;
+}
+
 /* Remove the rounded edges from the navbar */
 .navbar-inner {
   border-radius: 0px 0px 0px 0px;
@@ -135,7 +145,7 @@ dl.nav.mobile dd.current-menu-item a,
 }
 
 #page {
-  margin: 25px auto;
+  margin: 45px auto;
   max-width: 1000px;
 }
 
@@ -210,16 +220,21 @@ h3, h4, h5, h6 {
 .entry-content h2,
 .comment-content h1,
 .comment-content h2 {
-  color: #000;
   font-weight: bold;
   margin: 0 0 .8125em;
+}
+
+/* Remove margins from page-header that get set above if used inside a post/page */
+.page-header h1,
+.page-header h2 {
+  margin: 0;
 }
 
 /* Fluid images for posts, comments, and widgets */
 .entry-content img,
 .comment-content img,
 .widget img {
-  max-width: 97.5%;
+  max-width: 100%;
 }
 
 /* The post/page title. Pad the bottom */
@@ -327,9 +342,9 @@ body > footer {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
   color: white;
   cursor: pointer;
-  font-size: 13px;
-  line-height: 18px;
-  padding: 4px 10px;
+  font-size: 11px;
+  line-height: 14px;
+  padding: 2px 6px;
   text-align: center;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -632,7 +647,34 @@ table.hide-on-tablets {
     font-weight: normal;
     padding: 15px 20px;
   }
+  /* Fix navbar top margin in responsive when admin bar is showing */
+  body.logged-in > div.navbar-fixed-top {
+    margin-top: 0px;
+  }
 }
+
+/* Override default Bootstrap body padding and navbar margins */
+@media (max-width: 767px) {
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .navbar {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /* Pad the #page */
+  #page,
+  body.page-template-page-hero-php > #main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* div.nav-collapse > ul.nav,
+  div.nav-collapse > form.navbar-search {
+    position: relative;
+    bottom: 28px;
+  } */
+} 
 
 /*  --------------------------------------------------
   :: Block grids - Thanks to Zurb Foundation

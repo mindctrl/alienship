@@ -123,6 +123,22 @@ function alienship_posted_on() {
 }
 endif;
 
+if ( ! function_exists( 'alienship_quote_posted_on' ) ) :
+/**
+ * Prints HTML with date posted information for the quote post format.
+ *
+ * @since Alien Ship 0.1
+ */
+function alienship_quote_posted_on() {
+  printf( __( '<i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'alienship' ),
+    esc_url( get_permalink() ),
+    esc_attr( get_the_time() ),
+    esc_attr( get_the_date( 'c' ) ),
+    esc_html( get_the_date() )
+  );
+}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category
  *

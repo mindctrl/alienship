@@ -16,14 +16,11 @@ get_header('hero'); ?>
     <?php alienship_loop_after(); ?>
     <?php endwhile; // end of the loop. ?>
   </div><!-- /hero-unit -->
-  </div><!-- /container -->
-
-<div class="container">
-  <!-- Row of columns -->
   <div class="row">
     <?php get_sidebar('hero'); ?><p>&nbsp;</p>
     <div class="clear"></div>
   </div><!-- /row -->
-  </div><!-- #container -->
-      </div><!-- /container -->
+  </div><!-- /container -->
+
+</div><!-- #main -->
 <?php get_footer('hero'); ?>

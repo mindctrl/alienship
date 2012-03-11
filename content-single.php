@@ -9,9 +9,6 @@
   <?php alienship_post_inside_before(); ?>
   <header class="entry-header">
     <h1 class="entry-title"><a class="entry-title" title="<?php the_title();?>" rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?></a></h1>
-    <div class="entry-meta">
-     <?php alienship_posted_on(); ?>
-    </div><!-- .entry-meta -->
   </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -20,7 +17,9 @@
   </div><!-- .entry-content -->
 
   <footer class="entry-meta">
-    <?php
+    <div class="entry-meta">
+      <?php alienship_posted_on(); ?>
+      <?php
       /* translators: used between list items, there is a space after the comma */
       $category_list = get_the_category_list( __( ', ', 'alienship' ) );
 
@@ -31,6 +30,7 @@
       alienship_post_tags(); // display the post tags
 		  edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); // display the edit link
     ?>
+    </div><!-- .entry-meta -->
 	</footer><!-- .entry-meta -->
   <?php alienship_post_inside_after(); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

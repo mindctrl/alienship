@@ -26,6 +26,19 @@
 	  <?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php alienship_posted_on(); ?>
+
+			<?php
+			if ( is_single() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$category_list = get_the_category_list( __( ', ', 'alienship' ) );
+
+			/* translators: used between list items, there is a space after the comma */
+			$tag_list = get_the_tag_list( '', ', ' );
+
+			alienship_post_categories(); // display the post categories
+			alienship_post_tags(); // display the post tags
+			} // end if ( is_single() ) ?>
+
 			<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 			<span class="comments-link"><span class="sep">&nbsp;&nbsp;</span><i class="icon-comment"></i>&nbsp;<?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?>&nbsp;</span>
 			<?php endif; ?>

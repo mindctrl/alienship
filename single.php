@@ -17,7 +17,7 @@ get_header(); ?>
 
 					<?php alienship_content_nav( 'nav-above' ); ?>
 					<?php alienship_loop_before(); ?>
-					<?php get_template_part( 'content', 'single' ); ?>
+					<?php get_template_part( 'content', get_post_format() ); ?>
 					<?php alienship_loop_after(); ?>
 					<?php alienship_content_nav( 'nav-below' ); ?>
 

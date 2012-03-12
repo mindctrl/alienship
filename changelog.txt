@@ -13,6 +13,9 @@ Version 0.4 - March
 - Removed black font on title links
 - Tweaked Hero template.
 - Started adding post format styling. Added quote post format.
+- Added Theme Options page. Kudos to Devin Price for a great options framework. http://www.wptheming.com
+- Added option to enable/disable breadcrumb navigation.
+- Added featured posts and related options in theme options panel. Featured posts are displayed in a slider at the top of the index page. This is the Bootstrap Carousel in action.
 
 
 Version 0.3 - March 1, 2012

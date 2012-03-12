@@ -203,6 +203,13 @@ img[class*="attachment-"],
   height: auto;
 } 
 
+/* Fix carousel images */
+.carousel-inner > .item > a > img {
+  border: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
     clear: both;
 }

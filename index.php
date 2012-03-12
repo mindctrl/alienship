@@ -15,6 +15,36 @@ get_header(); ?>
 
 				<?php alienship_content_nav( 'nav-above' ); ?>
 
+      <?php if (of_get_option('alienship_featured_posts',1) ) { ?>
+      <!-- Featured listings -->
+      <div class="row-fluid">
+      <div class="span12">
+        <div id="featured-carousel" class="carousel slide">
+          <div class="carousel-inner">
+
+            <?php $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' );
+            while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
+
+            <?php get_template_part( 'content', 'featured' ); ?>
+
+            <?php endwhile; ?>
+          </div><!-- .carousel-inner -->
+          <a class="left carousel-control" href="#featured-carousel" data-slide="prev">&lsaquo;</a>
+          <a class="right carousel-control" href="#featured-carousel" data-slide="next">&rsaquo;</a>
+        </div><!-- #featured-carousel -->
+      </div><!-- .span12 -->
+      </div><!-- .row-fluid -->
+      <script type="text/javascript">
+        jQuery(function() {
+          // Activate the first carousel item //
+          jQuery("div.item:first").addClass("active");
+          // Start the Carousel //
+          jQuery('.carousel').carousel();
+        });
+      </script>
+      <!-- End featured listings -->
+      <?php } ?>
+
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php alienship_loop_before(); ?>

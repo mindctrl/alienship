@@ -52,10 +52,9 @@ function alienship_setup() {
 	/* Load Bootstrap javascript */
   require_once locate_template('/inc/bootstrap-js.php');
 
-	/* Custom Theme Options */
-	// require_once locate_template('/inc/theme-options/theme-options.php');
+  /* Load theme options framework */
+  require_once locate_template('/inc/options-panel.php');
 
-	
 	/* WordPress.com-specific functions and definitions */
 	//require_once locate_template('/inc/wpcom.php');
 

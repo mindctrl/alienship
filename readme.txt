@@ -13,6 +13,7 @@ NOTE: This theme is currently beta quality software. It is not yet ready for pro
 Task List
 ---------
 
++ Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
 + Style Main Menu.
 + Clean up footer.php jQuery.
 + Finish moving shared elements to inc/ for easier template updates
@@ -27,7 +28,7 @@ Task List
 + Configurable footer text
 + Include phpmailer rewrite code and add to options page.
 + Layout options for index, archive, etc. List, Tile, etc.
-+ Make breadcrumbs optional. Add custom taxonomies to breadcrumb code.
++ Add custom taxonomies to breadcrumb code.
 + Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom, hide)
 + Analytics option
 + Avatar and author bio display

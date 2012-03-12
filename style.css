@@ -417,6 +417,40 @@ img.aligncenter {
   width: 0;
 }
 
+/* Post formats
+------------------------------------ */
+
+/* Quote post format */
+div.format-quote {
+    background: url("img/quote-format.jpg") no-repeat scroll left top, url("img/quote-format-watermark.jpg") no-repeat scroll right bottom transparent;
+}
+
+div.format-quote > .entry-content {
+  padding: 45px 0;
+  margin-bottom: 75px;
+}
+
+div.format-quote > .entry-content > .entry-meta {
+  float: left;
+  left: 70px;
+  bottom: 35px;
+  margin: 0;
+  position: relative;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+div.format-quote > .entry-content > blockquote {
+  border-left: 2px solid #EEEEEE;
+  margin: 0 0 18px 2px;
+}
+
+article.format-quote cite {
+    font-size: 14px;
+}
+
+
+
 /* Panels inspired by Zurb Foundation
 --------------------------------------- */
 .panel {

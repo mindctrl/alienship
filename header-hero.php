@@ -66,7 +66,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 
 </head>
 
-<body <?php body_class(); ?> onload="prettyPrint()">
+<body <?php body_class(); ?>>
 
 
 <!-- Load Top Menu -->

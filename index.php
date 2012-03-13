@@ -15,7 +15,7 @@ get_header(); ?>
 
 				<?php alienship_content_nav( 'nav-above' ); ?>
 
-      <?php if (of_get_option('alienship_featured_posts',1) ) { ?>
+      <?php if ( of_get_option('alienship_featured_posts',1) ) { ?>
       <!-- Featured listings -->
       <div class="row-fluid">
       <div class="span12">
@@ -45,8 +45,29 @@ get_header(); ?>
       <!-- End featured listings -->
       <?php } ?>
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+        <?php 
+        /* Check to see if we should duplicate featured posts in the body
+         *
+         * Do not display */
+        if ( of_get_option('alienship_featured_posts_show_dupes',0) == 0 ) {
+          $args = array(
+            'tag__not_in' => array ( of_get_option('alienship_featured_posts_tag') )
+            );
+          $query = new WP_Query( $args );
+
+        } else {
+
+          /* Duplicate featured posts in the body */
+          $args = array(
+            'post_status' => 'publish'
+            );
+          $query = new WP_Query( $args );
+          
+        } ?>
+
+        <?php /* Start the Loop */ ?>
+
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php alienship_loop_before(); ?>
 					<?php
 						/* Include the Post-Format-specific template for the content.

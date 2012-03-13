@@ -25,23 +25,6 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	
-	// Test data
-	$test_array = array("one" => "One","two" => "Two","three" => "Three","four" => "Four","five" => "Five");
-
-	// Number array
-	$number_array = array("1" => "One","2" => "Two","3" => "Three","4" => "Four","5" => "Five");
-	
-	// Multicheck Array
-	$multicheck_array = array("one" => "French Toast", "two" => "Pancake", "three" => "Omelette", "four" => "Crepe", "five" => "Waffle");
-	
-	// Multicheck Defaults
-	$multicheck_defaults = array("one" => "1","five" => "1");
-	
-	// Background Defaults
-	
-	$background_defaults = array('color' => '', 'image' => '', 'repeat' => 'repeat','position' => 'top center','attachment'=>'scroll');
-	
-	
 	// Pull all the categories into an array
 	$options_categories = array();  
 	$options_categories_obj = get_categories();
@@ -97,6 +80,13 @@ function optionsframework_options() {
 						"std" => "3",
 						"type" => "radio",
 						"options" => array("1" => "One","2" => "Two","3" => "Three","4" => "Four","5" => "Five"));
+
+	$options[] = array( "name" => "Duplicate featured posts",
+						"desc" => "Show posts from the featured content section in the rest of the body. Default is Hide.",
+						"id" => "alienship_featured_posts_show_dupes",
+						"std" => "0",
+						"type" => "radio",
+						"options" => array("1" => "Show duplicate posts","0" => "Hide duplicate posts"));
 
 	$options[] = array( "name" => "Featured post image width",
 						"desc" => "Enter the width (in pixels) you want the featured images to be. Default is 745 pixels.",

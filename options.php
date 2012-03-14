@@ -114,20 +114,24 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Javascript plugins",
 						"type" => "heading");
 
+	$options[] = array( "name" => "Javascript Plugins Information",
+						"desc" => "Read the description provided with each plugin. Some of these plugins require another plugin to function properly (Example: Carousel requires Transitions for the animation to work). Disable any plugins that you aren't using.",
+						"type" => "info");
+
 	$options[] = array( "name" => "Transitions",
-	"desc" => "For simple transition effects, include bootstrap-transition.js once to slide in modals or fade out alerts. Required for animation in plugins.",
+	"desc" => "Transitions are used to animate things such as the carousel, modals, fade out alerts, etc. * Required for animation in plugins.",
 	"id" => "alienship_transitions_plugin",
 	"std" => "1",
 	"type" => "checkbox");
 
 	$options[] = array( "name" => "Alerts",
-	"desc" => "The alert plugin is a tiny class for adding close functionality to alerts.",
+	"desc" => "The alert plugin is a tiny class for adding close functionality to alerts. * Requires Transitions if you want them to fade out on close.",
 	"id" => "alienship_alerts_plugin",
 	"std" => "1",
 	"type" => "checkbox");
 
 	$options[] = array( "name" => "Modals",
-	"desc" => "Message boxes that slide down and fade in from the top of the page. Default setting is disabled.",
+	"desc" => "Message boxes that slide down and fade in from the top of the page. Default setting is disabled. * Requires Transitions to function properly.",
 	"id" => "alienship_modals_plugin",
 	"std" => "0",
 	"type" => "checkbox");

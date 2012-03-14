@@ -18,7 +18,9 @@
 
   <footer class="entry-meta">
     <div class="entry-meta">
+      <?php if (of_get_option('alienship_published_date',1) ) { // Show published date? ?>
       <?php alienship_posted_on(); ?>
+      <?php } // published date ?>
       <?php
       /* translators: used between list items, there is a space after the comma */
       $category_list = get_the_category_list( __( ', ', 'alienship' ) );
@@ -26,8 +28,12 @@
       /* translators: used between list items, there is a space after the comma */
       $tag_list = get_the_tag_list( '', ', ' );
 
-      alienship_post_categories(); // display the post categories
-      alienship_post_tags(); // display the post tags
+      if (of_get_option('alienship_post_categories',1) ) { // Show post categories?
+        alienship_post_categories();
+      } // post categories
+      if (of_get_option('alienship_post_tags',1) ) { // Show post tags?
+        alienship_post_tags();
+      } // post tags
 		  edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); // display the edit link
     ?>
     </div><!-- .entry-meta -->

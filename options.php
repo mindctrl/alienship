@@ -87,6 +87,46 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 
+	$options[] = array( "name" => "Post Meta Information",
+						"desc" => "Post meta information - published date, author, categories, and tags - is displayed on each post to provide your readers with information. Use the options below to control what is displayed.",
+						"type" => "info");
+
+	$options[] = array( "name" => "Show published date and author?",
+						"desc" => "Displays the date the article was posted and the author that posted it. Default is show. Uncheck this box to hide post published date and post author.",
+						"id" => "alienship_published_date",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show post categories?",
+						"desc" => "Displays the categories in which a post was published. Default is show. Uncheck this box to hide post categories.",
+						"id" => "alienship_post_categories",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show post tags?",
+						"desc" => "Displays the tags attached to a post. Default is show. Uncheck this box to hide post tags.",
+						"id" => "alienship_post_tags",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show link for # of comments / Leave a comment?",
+						"desc" => "Displays the number of comments and/or a Leave a comment message on posts. Default is show. Uncheck this box to hide.",
+						"id" => "alienship_post_comments_link",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show content navigation above posts?",
+						"desc" => "Displays links to next and previous posts above the current post. Default is hide. Check this box to show content nav above posts.",
+						"id" => "alienship_content_nav_above",
+						"std" => "0",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show content navigation below posts?",
+						"desc" => "Displays links to next and previous posts below the current post. Default is show. Uncheck this box to hide content nav above posts.",
+						"id" => "alienship_content_nav_below",
+						"std" => "1",
+						"type" => "checkbox");
+
 
 	// Featured Posts tab
 	$options[] = array( "name" => "Featured Posts",

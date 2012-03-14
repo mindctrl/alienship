@@ -15,11 +15,16 @@ get_header(); ?>
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php alienship_content_nav( 'nav-above' ); ?>
+					<?php if ( of_get_option('alienship_content_nav_above', '1') ) { ?>
+						<?php	alienship_content_nav( 'nav-above' ); ?>
+					<?php } ?>
+
 					<?php alienship_loop_before(); ?>
 					<?php get_template_part( 'content', get_post_format() ); ?>
 					<?php alienship_loop_after(); ?>
+					<?php if ( of_get_option('alienship_content_nav_below', '1') ) { ?>
 					<?php alienship_content_nav( 'nav-below' ); ?>
+					<?php } ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template

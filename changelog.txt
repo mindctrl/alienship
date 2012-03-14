@@ -21,6 +21,8 @@ Version 0.4 - March
 - Added option to hide/show site name in Top Menu navbar.
 - Added option to hide/show search bar in Top Menu navbar.
 - Added option to hide/show site name and description below Top Menu navbar.
+- Added option to hide/show post meta (date, author, categories, tags, comment link)
+- Added option to hide/show content navigation above/below posts.
 
 
 Version 0.3 - March 1, 2012

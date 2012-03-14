@@ -145,7 +145,7 @@ dl.nav.mobile dd.current-menu-item a,
 }
 
 #page {
-  margin: 45px auto;
+  margin: 20px auto;
   max-width: 1000px;
 }
 
@@ -167,11 +167,6 @@ div#content > article {
 article > .entry-content p {
   font-size: 14px;
   line-height: 150%;
-}
-
-/* Hide the nav above the #content wrapper. "Older entries / Newer entries". Didn't yank function from code because might be used later. */
-#nav-above {
-  display: none;
 }
 
 /* hgroup is the header area that contains the site title and description. this adds a thin line below it for separation from main content */

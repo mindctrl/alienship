@@ -18,6 +18,9 @@ Version 0.4 - March
 - Added featured posts and related options in theme options panel. Featured posts are displayed in a slider at the top of the index page. This is the Bootstrap Carousel in action.
 - Added options to enable/disable each Bootstrap Javascript plugin.
 - Added option to enable/disable responsive design.
+- Added option to hide/show site name in Top Menu navbar.
+- Added option to hide/show search bar in Top Menu navbar.
+- Added option to hide/show site name and description below Top Menu navbar.
 
 
 Version 0.3 - March 1, 2012

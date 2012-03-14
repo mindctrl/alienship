@@ -36,11 +36,12 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
 
 	?></title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 <?php /* Load Bootstrap CSS */
- require_once locate_template('/inc/bootstrap-css.php');
+  require_once locate_template('/inc/bootstrap-css.php');
  ?>
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
@@ -78,7 +79,9 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
           <span class="icon-bar-text">Menu</span>
           <span></span>
         </a>
+        <?php if (of_get_option('alienship_name_in_navbar',1) ) { // Show site name in navbar? ?>
         <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        <?php } // site name in navbar ?>
         <div class="nav-collapse">
           <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
           <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
@@ -100,10 +103,12 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
   <?php alienship_header_before(); ?>
 	<header id="masthead" role="banner">
     <?php alienship_header_inside(); ?>
+    <?php if (of_get_option('alienship_name_and_desc_below_navbar',1) ) { // Show site name and description below navbar? ?>
 	  <hgroup>
 	    <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		  <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	  </hgroup><br />
+    <?php } // site name and desc ?>
 <!-- End Site title and description in masthead -->
     <?php if ( has_nav_menu('main') ) { ?>
 <!-- Main menu -->

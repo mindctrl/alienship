@@ -52,13 +52,14 @@ function optionsframework_options() {
 	$imagepath =  get_bloginfo('stylesheet_directory') . '/img/';
 		
 	$options = array();
-		
-	$options[] = array( "name" => "Basic Settings",
+
+	// Display Settings tab		
+	$options[] = array( "name" => "Design Options",
 						"type" => "heading");
 
-	$options[] = array( "name" => "Enable Breadcrumb Navigation?",
-						"desc" => "Default is enabled. Uncheck this box to turn off breadcrumbs.",
-						"id" => "alienship_breadcrumbs",
+	$options[] = array( "name" => "Show site name in Top Menu navigation bar?",
+						"desc" => "Default is enabled. Uncheck this box to hide site name in Top Menu navigation bar.",
+						"id" => "alienship_name_in_navbar",
 						"std" => "1",
 						"type" => "checkbox");
 
@@ -67,12 +68,30 @@ function optionsframework_options() {
 						"id" => "alienship_search_bar",
 						"std" => "1",
 						"type" => "checkbox");
+							
+	$options[] = array( "name" => "Show site name and description below Top Menu navigation bar?",
+						"desc" => "Default is enabled. Uncheck this box to turn it off.",
+						"id" => "alienship_name_and_desc_below_navbar",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Enable Breadcrumb Navigation?",
+						"desc" => "Default is enabled. Uncheck this box to turn off breadcrumbs.",
+						"id" => "alienship_breadcrumbs",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Enable Responsive Design?",
 						"desc" => "Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don't need it, uncheck this box to turn it off.",
 						"id" => "alienship_responsive",
 						"std" => "1",
 						"type" => "checkbox");
+
+
+	// Featured Posts tab
+	$options[] = array( "name" => "Featured Posts",
+						"type" => "heading");
+
 							
 	$options[] = array( "name" => "Enable Featured Posts?",
 						"desc" => "Default is disabled. Check this box to turn them on. Select a tag below to determine which posts are displayed in the featured slider.",

@@ -78,7 +78,9 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
           <span class="icon-bar-text">Menu</span>
           <span></span>
           </a>
+          <?php if (of_get_option('alienship_name_in_navbar',1) ) { // Show site name in navbar? ?>
           <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+          <?php } // site name in navbar ?>
           <div class="nav-collapse">
             <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
             <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>

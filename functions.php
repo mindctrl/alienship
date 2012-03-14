@@ -104,9 +104,9 @@ add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 
 // Uncomment the following section, or add it to your child theme's functions.php, to set a custom logo on the login page //
 // Custom login logo for wp-admin screen //
-//	function pic_custom_login_logo() {
+//	function alienship_custom_login_logo() {
 //    	echo '<style type="text/css">
 //        h1 a { background-image:url('.get_bloginfo('template_directory').'/img/custom-logo.png) !important; }
 //    	</style>';
 //	}
-// add_action('login_head', 'pic_custom_login_logo');
+// add_action('login_head', 'alienship_custom_login_logo');

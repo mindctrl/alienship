@@ -15,9 +15,8 @@
     <div class="row-fluid">
       <div class="span5">
         <?php edit_post_link( __( 'Edit page', 'alienship' ), '<span class="edit-link"><i class="icon-pencil"></i>&nbsp;', ' - </span>' ); ?>
-        <?php $custom_footer_text = of_get_option('alienship_custom_footer_text');
-          if ( $custom_footer_text != "" ) {
-          echo $custom_footer_text;
+        <?php if ( of_get_option('alienship_custom_footer_toggle', 1) ) {
+          echo '' . of_get_option('alienship_custom_footer_text') . '';
         } else {
           echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
       </div><!-- span5 -->

@@ -18,6 +18,7 @@
 #optionsframework p {
 	margin-bottom:0;
 	padding-bottom:10px;
+	line-height: 16px;
 }
 #optionsframework .section {
 	padding:10px 10px 20px;
@@ -241,4 +242,10 @@
 }
 #optionsframework .section:after {
 	clear: both;
+}
+
+/* Custom edits */
+#optionsframework > form > .group > .section-info > h4.heading {
+	font-size: 1.75em;
+	color: #0088CC;
 }

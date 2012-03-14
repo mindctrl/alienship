@@ -57,6 +57,18 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Design Options",
 						"type" => "heading");
 
+
+	// Navigation elements
+	$options[] = array( "name" => "Navigation Elements",
+						"desc" => "Options related to navigation.",
+						"type" => "info");
+
+	$options[] = array( "name" => "Show Breadcrumb Navigation?",
+						"desc" => "Default is show. Uncheck this box to hide breadcrumbs.",
+						"id" => "alienship_breadcrumbs",
+						"std" => "1",
+						"type" => "checkbox");
+
 	$options[] = array( "name" => "Show site name in Top Menu navigation bar?",
 						"desc" => "Default is enabled. Uncheck this box to hide site name in Top Menu navigation bar.",
 						"id" => "alienship_name_in_navbar",
@@ -68,11 +80,35 @@ function optionsframework_options() {
 						"id" => "alienship_search_bar",
 						"std" => "1",
 						"type" => "checkbox");
-							
+
+	$options[] = array( "name" => "Show content navigation above posts?",
+						"desc" => "Displays links to next and previous posts above the current post and above the posts on the index page. Default is hide. Check this box to show content nav above posts.",
+						"id" => "alienship_content_nav_above",
+						"std" => "0",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show content navigation below posts?",
+						"desc" => "Displays links to next and previous posts below the current post and below the posts on the index page. Default is show. Uncheck this box to hide content nav above posts.",
+						"id" => "alienship_content_nav_below",
+						"std" => "1",
+						"type" => "checkbox");
+
+
+	// Miscellaneous text options
+	$options[] = array( "name" => "Miscellaneous Text",
+						"desc" => "Miscellaneous text items, such as site name and description and custom footer text.",
+						"type" => "info");
+
 	$options[] = array( "name" => "Show site name and description below Top Menu navigation bar?",
 						"desc" => "Default is enabled. Uncheck this box to turn it off.",
 						"id" => "alienship_name_and_desc_below_navbar",
 						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show custom footer text?",
+						"desc" => "Default is disabled. Uncheck this box to use custom footer text. Fill in your text below.",
+						"id" => "alienship_custom_footer_toggle",
+						"std" => "0",
 						"type" => "checkbox");
 
 	$options[] = array( "name" => "Custom footer text",
@@ -80,18 +116,6 @@ function optionsframework_options() {
 						"id" => "alienship_custom_footer_text",
 						"std" => "",
 						"type" => "text");
-
-	$options[] = array( "name" => "Show Breadcrumb Navigation?",
-						"desc" => "Default is show. Uncheck this box to hide breadcrumbs.",
-						"id" => "alienship_breadcrumbs",
-						"std" => "1",
-						"type" => "checkbox");
-
-	$options[] = array( "name" => "Enable Responsive Design?",
-						"desc" => "Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don't need it, uncheck this box to turn it off.",
-						"id" => "alienship_responsive",
-						"std" => "1",
-						"type" => "checkbox");
 
 	$options[] = array( "name" => "Post Meta Information",
 						"desc" => "Post meta information - published date, author, categories, and tags - is displayed on each post to provide your readers with information. Use the options below to control what is displayed.",
@@ -121,18 +145,15 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 
-	$options[] = array( "name" => "Show content navigation above posts?",
-						"desc" => "Displays links to next and previous posts above the current post and above the posts on the index page. Default is hide. Check this box to show content nav above posts.",
-						"id" => "alienship_content_nav_above",
-						"std" => "0",
-						"type" => "checkbox");
+	$options[] = array( "name" => "Miscellaneous",
+						"desc" => "Miscellaneous design options.",
+						"type" => "info");
 
-	$options[] = array( "name" => "Show content navigation below posts?",
-						"desc" => "Displays links to next and previous posts below the current post and below the posts on the index page. Default is show. Uncheck this box to hide content nav above posts.",
-						"id" => "alienship_content_nav_below",
+	$options[] = array( "name" => "Enable Responsive Design?",
+						"desc" => "Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don't need it, uncheck this box to turn it off.",
+						"id" => "alienship_responsive",
 						"std" => "1",
 						"type" => "checkbox");
-
 
 	// Featured Posts tab
 	$options[] = array( "name" => "Featured Posts",

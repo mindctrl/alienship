@@ -14,6 +14,7 @@ add_filter('widget_text', 'do_shortcode');
 /* =Alerts - Types are 'info', 'error', 'success', and unspecified(which displays a default color). Specify a heading text. See example.
  *  Example: [alert type="success" heading="Congrats!"]You won the lottery![/alert]
 ----------------------------------------------- */
+if ( ! function_exists( 'alienship_alert' ) ):
 function alienship_alert($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'alert', 'heading' => ''), $atts));
    if ($type != "alert") {
@@ -23,6 +24,7 @@ function alienship_alert($atts, $content = null) {
    }
 }
 add_shortcode('alert', 'alienship_alert');
+endif;
 
 
 
@@ -30,6 +32,7 @@ add_shortcode('alert', 'alienship_alert');
 ----------------------------------------------- 
 * [badge] shortcode. Options for type are default, success, warning, error, info, and inverse. If a type of not specified, default is used. 
 * Example: [badge type="important"]1[/badge] */
+if ( ! function_exists( 'alienship_badge' ) ):
 function alienship_badge($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'badge'), $atts));
    if ($type != "badge") {
@@ -39,7 +42,7 @@ function alienship_badge($atts, $content = null) {
    }
 }
 add_shortcode('badge', 'alienship_badge');
-
+endif;
 
 
 
@@ -48,6 +51,7 @@ add_shortcode('badge', 'alienship_badge');
 /* [button] shortcode. Options for type= are "primary", "info", "success", "warning", "danger", and "inverse".
  * Options for size are mini, small, medium and large. If none is specified it defaults to medium size.
  * Example: [button type="info" size="large" link="http://yourlink.com"]Button Text[/button] */
+if ( ! function_exists( 'alienship_button' ) ):
 function alienship_button($atts, $content = null) {
    extract(shortcode_atts(array('link' => '#', 'type' => '', 'size' => 'medium'), $atts));
    
@@ -66,6 +70,7 @@ function alienship_button($atts, $content = null) {
    return '<a class="'.$type.' '.$size.'" href="'.$link.'">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('button', 'alienship_button');
+endif;
 
 
 
@@ -73,6 +78,7 @@ add_shortcode('button', 'alienship_button');
 ----------------------------------------------- 
 * [label] shortcode. Options for type= are "default", important", "info", "success", "warning", and "inverse". If a type of not specified, default is used. 
 * Example: [label type="important"]Label text[/label] */
+if ( ! function_exists( 'alienship_label' ) ):
 function alienship_label($atts, $content = null) {
    extract(shortcode_atts(array('type' => 'label'), $atts));
    if ($type != "label") {
@@ -82,6 +88,7 @@ function alienship_label($atts, $content = null) {
    }
 }
 add_shortcode('label', 'alienship_label');
+endif;
 
 
 
@@ -89,6 +96,7 @@ add_shortcode('label', 'alienship_label');
 ----------------------------------------------- 
 * [panel] shortcode. Columns defaults to 6. You can specify columns in the shortcode.
 * Example: [panel columns="4"]Your panel text here.[/panel] */
+if ( ! function_exists( 'alienship_panel' ) ):
 function alienship_panel( $atts, $content = null ) {
    extract(shortcode_atts(array('columns' => '6'), $atts));
    $gridsize = '12';
@@ -103,13 +111,17 @@ function alienship_panel( $atts, $content = null ) {
    }
 }
 add_shortcode('panel', 'alienship_panel');
+endif;
+
 
 
 /* =Wells
 -----------------------------------------------
 * [well] shortcode.
 * Example: [well]Your text here.[/well] */
+if ( ! function_exists( 'alienship_well' ) ):
 function alienship_well($atts, $content = null) {
    return '<div class="well">' . do_shortcode($content) .'</div>';
 }
 add_shortcode('well', 'alienship_well');
+endif;

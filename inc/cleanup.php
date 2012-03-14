@@ -5,12 +5,15 @@
  * @since Alien Ship 0.3
  */
 
+if ( ! function_exists( 'alienship_noindex' ) ):
 function alienship_noindex() {
   if (get_option('blog_public') === '0') {
     echo '<meta name="robots" content="noindex,nofollow">', "\n";
   }
 }
+endif;
 
+if ( ! function_exists( 'alienship_head_cleanup' ) ):
 function alienship_head_cleanup() {
   remove_action('wp_head', 'feed_links', 2);
   remove_action('wp_head', 'feed_links_extra', 3);
@@ -25,5 +28,5 @@ function alienship_head_cleanup() {
   remove_action('wp_head', 'noindex', 1);
   add_action('wp_head', 'alienship_noindex');
 }
-
 add_action('init', 'alienship_head_cleanup');
+endif;

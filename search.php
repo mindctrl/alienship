@@ -19,7 +19,9 @@ get_header(); ?>
 					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'alienship' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header>
 
+				<?php if ( of_get_option('alienship_content_nav_above', '1') ) { ?>
 				<?php alienship_content_nav( 'nav-above' ); ?>
+				<?php } ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -28,7 +30,9 @@ get_header(); ?>
 					<?php alienship_loop_after(); ?>
 				<?php endwhile; ?>
 
+				<?php if ( of_get_option('alienship_content_nav_below', '1') ) { ?>
 				<?php alienship_content_nav( 'nav-below' ); ?>
+				<?php } ?>
 
 			<?php else : ?>
 

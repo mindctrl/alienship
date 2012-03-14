@@ -178,8 +178,10 @@ function alienship_category_transient_flusher() {
 add_action( 'edit_category', 'alienship_category_transient_flusher' );
 add_action( 'save_post', 'alienship_category_transient_flusher' );
 
+
+if ( ! function_exists( 'alienship_post_tags' ) ):
 /**
- * Customize the list of categories and tags displayed on index and on a post
+ * Customize the list of tags displayed on index and on a post
  * @since Alien Ship 0.3
  */
 function alienship_post_tags() {
@@ -203,7 +205,14 @@ function alienship_post_tags() {
     echo "\t\t\t\t</span>\n";
   }
 }
+endif;
 
+
+if ( ! function_exists( 'alienship_post_categories' ) ):
+/** 
+ * Customize the list of categories displayed on index and on a post
+ * @since Alien Ship 0.3
+ */
 function alienship_post_categories() {
   global $alienship_design;
   $post_categories = get_the_category();
@@ -225,3 +234,4 @@ function alienship_post_categories() {
     echo "\t\t\t</span><span class=\"sep\">&nbsp; &nbsp;</span>\n";
   }
 }
+endif;

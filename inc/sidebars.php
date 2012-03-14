@@ -5,6 +5,7 @@
  * @package Alien Ship
  * @since Alien Ship 0.1
  */
+if ( ! function_exists( 'alienship_widgets_init' ) ):
 function alienship_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'alienship' ),
@@ -34,3 +35,4 @@ function alienship_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'alienship_widgets_init' );
+endif;

@@ -5,6 +5,7 @@
  * @package Alien Ship
  * @since Alien Ship 0.3
  */
+if ( ! function_exists( 'alienship_breadcrumbs' ) ):
 
  function alienship_breadcrumbs() {
 
@@ -105,3 +106,4 @@
 
   }
 } // end alienship_breadcrumbs()
+endif;

@@ -11,17 +11,19 @@
 
 /*  @since Alien Ship 0.3
  * We don't need to self-close these tags in html5: <img>, <input> */
+if ( ! function_exists( 'alienship_remove_self_closing_tags' ) ):
 function alienship_remove_self_closing_tags($input) {
   return str_replace(' />', '>', $input);
 }
 add_filter('get_avatar', 'alienship_remove_self_closing_tags');
 add_filter('comment_id_fields', 'alienship_remove_self_closing_tags');
 add_filter('post_thumbnail_html', 'alienship_remove_self_closing_tags');
-
+endif;
 
 
 /* Pretty search URL. Changes /?s=foo to /search/foo. http://txfx.net/wordpress-plugins/nice-search/
  * @since Alien Ship 0.3 */
+if ( ! function_exists( 'alienship_nice_search_redirect' ) ):
 function alienship_nice_search_redirect() {
   if ( is_search() && strpos( $_SERVER['REQUEST_URI'], '/wp-admin/' ) === false && strpos( $_SERVER['REQUEST_URI'], '/search/' ) === false ) {
     wp_redirect( home_url( '/search/' . str_replace( array( ' ', '%20' ),  array( '+', '+' ), get_query_var( 's' ) ) ) );
@@ -29,9 +31,11 @@ function alienship_nice_search_redirect() {
   }
 }
 add_action( 'template_redirect', 'alienship_nice_search_redirect' );
+endif;
 
 
 
+if ( ! function_exists( 'alienship_search_query' ) ):
 function alienship_search_query($escaped = true) {
   $query = apply_filters('alienship_search_query', get_query_var('s'));
   if ($escaped) {
@@ -40,7 +44,7 @@ function alienship_search_query($escaped = true) {
   return urldecode($query);
 }
 add_filter('get_search_query', 'alienship_search_query');
-
+endif;
 
 
 

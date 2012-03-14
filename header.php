@@ -81,11 +81,13 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
         <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         <div class="nav-collapse">
           <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
+          <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
           <form role="search" class="navbar-search pull-right" action="<?php echo site_url(); ?>" id="searchform" method="get">
             <label class="assistive-text" for="s">Search</label>
             <input type="text" placeholder="Search ..." id="s" name="s" class="search-query">
             <input type="submit" value="Search" id="searchsubmit" name="submit" class="btn btn-primary">
           </form>
+          <?php } // end if search bar ?>
         </div><!-- /nav-collapse -->
       </div><!-- /container -->
     </div><!-- /navbar-inner -->

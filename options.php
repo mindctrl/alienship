@@ -57,8 +57,14 @@ function optionsframework_options() {
 						"type" => "heading");
 
 	$options[] = array( "name" => "Enable Breadcrumb Navigation?",
-						"desc" => "Default is enabled. Uncheck this box to turn them off.",
+						"desc" => "Default is enabled. Uncheck this box to turn off breadcrumbs.",
 						"id" => "alienship_breadcrumbs",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show search bar in Top Menu navigation bar?",
+						"desc" => "Default is enabled. Uncheck this box to turn it off.",
+						"id" => "alienship_search_bar",
 						"std" => "1",
 						"type" => "checkbox");
 

@@ -44,6 +44,10 @@ jQuery(function() {
 });
 </script>
 
+<?php if ( of_get_option('alienship_analytics', '1') ) {
+  echo '' . of_get_option('alienship_analytics_code') . '';
+} ?>
+
 <?php wp_footer(); ?>
 <?php alienship_footer(); ?>
 

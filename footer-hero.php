@@ -28,6 +28,18 @@
   </div><!-- container-fluid -->
 </footer><!-- #colophon -->
 <?php alienship_footer_after(); ?>
+<script type="text/javascript">
+// Enable Bootstrap popover //
+jQuery(function() {
+    // jQuery('a[rel].btn').popover();
+    jQuery("a[rel='popover']").popover();
+});
+</script>
+
+<?php if ( of_get_option('alienship_analytics', '1') ) {
+  echo '' . of_get_option('alienship_analytics_code') . '';
+} ?>
+
 <?php wp_footer('hero'); ?>
 <?php alienship_footer(); ?>
 </body>

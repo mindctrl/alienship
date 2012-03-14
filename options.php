@@ -262,5 +262,23 @@ function optionsframework_options() {
 	"type" => "checkbox");
 
 
+
+	/* Advanced Settings tab */
+	$options[] = array( "name" => "Advanced Settings",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Enable analytics?",
+	"desc" => "If you use an analytics product such as Google Analytics or Piwik, you can add your tracking code below. If you use a separate plugin for analytics, you can ignore this section.",
+	"id" => "alienship_analytics",
+	"std" => "0",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Analytics code",
+						"desc" => "Enter your analytics tracking code here (WITH the &lt;script&gt; and &lt;/script&gt; tags). Note: Any text you include here will be included in your pages, EVEN IF IT IS INCORRECT. Double check your code! If the analytics option is not enabled above, this text will be ignored.",
+						"id" => "alienship_analytics_code",
+						"std" => "",
+						"type" => "textarea");
+
+
 	return $options;
 }

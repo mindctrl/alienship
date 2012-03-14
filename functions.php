@@ -98,6 +98,31 @@ if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
 add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 
 
+/*
+ * Allow embed and script tags in theme options textareas
+ */
+add_action('admin_init','optionscheck_change_sanitize', 100);
+
+function optionscheck_change_sanitize() {
+    remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+    add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
+}
+function custom_sanitize_textarea($input) {
+    global $allowedposttags;
+    $custom_allowedtags["embed"] = array(
+      "src" => array(),
+      "type" => array(),
+      "allowfullscreen" => array(),
+      "allowscriptaccess" => array(),
+      "height" => array(),
+          "width" => array()
+      );
+      $custom_allowedtags["script"] = array();
+      $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
+      $output = wp_kses( $input, $custom_allowedtags);
+    return $output;
+}
+
 /* Stop WordPress from adding those annoying closing paragraph tags */
 // remove_filter( 'the_content', 'wpautop' );
 // remove_filter( 'the_excerpt', 'wpautop' );

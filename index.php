@@ -13,7 +13,9 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
+        <?php if ( of_get_option('alienship_content_nav_above', '1') ) { ?>
 				<?php alienship_content_nav( 'nav-above' ); ?>
+        <?php } ?>
 
       <?php if ( of_get_option('alienship_featured_posts',1) ) { ?>
       <!-- Featured listings -->
@@ -78,9 +80,11 @@ get_header(); ?>
 					?>
 					<?php alienship_loop_after(); ?>
 				<?php endwhile; ?>
-				
-				<?php alienship_content_nav( 'nav-below' ); ?>
 
+        <?php if ( of_get_option('alienship_content_nav_below', '1') ) { ?>
+				<?php alienship_content_nav( 'nav-below' ); ?>
+        <?php } ?>
+        
 			<?php else : ?>
 
 				<article id="post-0" class="post no-results not-found">

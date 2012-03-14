@@ -75,8 +75,8 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 
-	$options[] = array( "name" => "Enable Breadcrumb Navigation?",
-						"desc" => "Default is enabled. Uncheck this box to turn off breadcrumbs.",
+	$options[] = array( "name" => "Show Breadcrumb Navigation?",
+						"desc" => "Default is show. Uncheck this box to hide breadcrumbs.",
 						"id" => "alienship_breadcrumbs",
 						"std" => "1",
 						"type" => "checkbox");
@@ -116,13 +116,13 @@ function optionsframework_options() {
 						"type" => "checkbox");
 
 	$options[] = array( "name" => "Show content navigation above posts?",
-						"desc" => "Displays links to next and previous posts above the current post. Default is hide. Check this box to show content nav above posts.",
+						"desc" => "Displays links to next and previous posts above the current post and above the posts on the index page. Default is hide. Check this box to show content nav above posts.",
 						"id" => "alienship_content_nav_above",
 						"std" => "0",
 						"type" => "checkbox");
 
 	$options[] = array( "name" => "Show content navigation below posts?",
-						"desc" => "Displays links to next and previous posts below the current post. Default is show. Uncheck this box to hide content nav above posts.",
+						"desc" => "Displays links to next and previous posts below the current post and below the posts on the index page. Default is show. Uncheck this box to hide content nav above posts.",
 						"id" => "alienship_content_nav_below",
 						"std" => "1",
 						"type" => "checkbox");

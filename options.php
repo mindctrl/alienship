@@ -268,7 +268,7 @@ function optionsframework_options() {
 						"type" => "heading");
 
 	$options[] = array( "name" => "Enable analytics?",
-	"desc" => "If you use an analytics product such as Google Analytics or Piwik, you can add your tracking code below. If you use a separate plugin for analytics, you can ignore this section.",
+	"desc" => "If you use an analytics product such as Google Analytics or Piwik, you can add your tracking code below. If you use a separate plugin for analytics, you can ignore this section. Default setting is disabled.",
 	"id" => "alienship_analytics",
 	"std" => "0",
 	"type" => "checkbox");

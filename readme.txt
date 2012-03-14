@@ -16,7 +16,6 @@ Task List
 + Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
 + Style Main Menu.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
-+ Clean up footer.php jQuery.
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Style each post format (future release)
@@ -27,7 +26,6 @@ Task List
 + Layout options for index, archive, etc. List, Tile, etc.
 + Add custom taxonomies to breadcrumb code.
 + Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom)
-+ Analytics option
 + Avatar and author bio display
 + Option to display dropdown menus on hover
 + Documentation

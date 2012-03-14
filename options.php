@@ -47,6 +47,7 @@ function optionsframework_options() {
     	$options_pages[$page->ID] = $page->post_title;
 	}
 		
+
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_bloginfo('stylesheet_directory') . '/img/';
 		
@@ -58,6 +59,12 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Enable Breadcrumb Navigation?",
 						"desc" => "Default is enabled. Uncheck this box to turn them off.",
 						"id" => "alienship_breadcrumbs",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Enable Responsive Design?",
+						"desc" => "Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don't need it, uncheck this box to turn it off.",
+						"id" => "alienship_responsive",
 						"std" => "1",
 						"type" => "checkbox");
 							
@@ -101,6 +108,84 @@ function optionsframework_options() {
 						"std" => "350",
 						"class" => "mini",
 						"type" => "text");
+
+
+	/* Javascript plugin heading */
+	$options[] = array( "name" => "Javascript plugins",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Transitions",
+	"desc" => "For simple transition effects, include bootstrap-transition.js once to slide in modals or fade out alerts. Required for animation in plugins.",
+	"id" => "alienship_transitions_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Alerts",
+	"desc" => "The alert plugin is a tiny class for adding close functionality to alerts.",
+	"id" => "alienship_alerts_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Modals",
+	"desc" => "Message boxes that slide down and fade in from the top of the page. Default setting is disabled.",
+	"id" => "alienship_modals_plugin",
+	"std" => "0",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Dropdown Menus",
+	"desc" => "Add dropdown menus in the navbar, tabs, and pills.",
+	"id" => "alienship_dropdowns_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Scrollspy",
+	"desc" => "Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position. Default setting is disabled.",
+	"id" => "alienship_scrollspy_plugin",
+	"std" => "0",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Tabs",
+	"desc" => "Make tabs and pills more useful by allowing them to toggle through tabbable panes of content.",
+	"id" => "alienship_tabs_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Tooltips",
+	"desc" => "Tooltips that use CSS3 for animations and data-attributes for local title storage.",
+	"id" => "alienship_tooltips_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Popovers",
+	"desc" => "Add small overlays of content, like those on the iPad, to any element for housing secondary information. * Requires Tooltips.",
+	"id" => "alienship_popovers_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Buttons",
+	"desc" => "Do more with buttons. Control button states or create groups of buttons for more components like toolbars.",
+	"id" => "alienship_buttons_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Collapse",
+	"desc" => "Get base styles and flexible support for collapsible components like accordions and navigation.",
+	"id" => "alienship_collapse_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Carousel",
+	"desc" => "Create a merry-go-round of any content you wish to provide in an interactive slideshow of content. * Required for Featured Posts.",
+	"id" => "alienship_carousel_plugin",
+	"std" => "1",
+	"type" => "checkbox");
+
+	$options[] = array( "name" => "Typeahead",
+	"desc" => "A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input. Default setting is disabled.",
+	"id" => "alienship_typeahead_plugin",
+	"std" => "0",
+	"type" => "checkbox");
+
 
 	return $options;
 }

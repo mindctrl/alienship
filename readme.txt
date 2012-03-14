@@ -15,17 +15,13 @@ Task List
 
 + Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
 + Style Main Menu.
++ Style search results page. Example: gallery shows title and meta, with no content/thumbs.
 + Clean up footer.php jQuery.
-+ Finish moving shared elements to inc/ for easier template updates
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
-+ Featured slider/carousel
 + Style each post format (future release)
-+ Theme options page
-+ Options to include each JS plugin/feature
 + Header image option
 + Color options
-+ Configurable footer text
 + Include phpmailer rewrite code and add to options page.
 + Layout options for index, archive, etc. List, Tile, etc.
 + Add custom taxonomies to breadcrumb code.

@@ -75,6 +75,12 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 
+	$options[] = array( "name" => "Custom footer text",
+						"desc" => "Enter the text here that you would like displayed at the bottom of your site. To revert to the default footer text, empty this box and click Save Options.",
+						"id" => "alienship_custom_footer_text",
+						"std" => "",
+						"type" => "text");
+
 	$options[] = array( "name" => "Show Breadcrumb Navigation?",
 						"desc" => "Default is show. Uncheck this box to hide breadcrumbs.",
 						"id" => "alienship_breadcrumbs",

@@ -43,17 +43,20 @@ function alienship_setup() {
 	/* Shortcodes */
 	require_once locate_template('/inc/shortcodes.php');
 
-	/* Custom functions that act independently of the theme templates */
-	require_once locate_template('/inc/tweaks.php');
-
 	/* Breadcrumbs */
 	require_once locate_template('/inc/breadcrumbs.php');
 
   /* Load theme options framework */
   require_once locate_template('/inc/options-panel.php');
 
+  /* Custom functions that act independently of the theme templates */
+  require_once locate_template('/inc/tweaks.php');
+
 	/* Load Bootstrap javascript */
   require_once locate_template('/inc/bootstrap-js.php');
+
+  /* PHPMailer rewrite */
+  require_once locate_template('/inc/phpmailer-rewrite.php');
 
 	/* WordPress.com-specific functions and definitions */
 	//require_once locate_template('/inc/wpcom.php');
@@ -104,34 +107,25 @@ add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 add_action('admin_init','optionscheck_change_sanitize', 100);
 
 function optionscheck_change_sanitize() {
-    remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
-    add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
+  remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+  add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
 }
 function custom_sanitize_textarea($input) {
-    global $allowedposttags;
-    $custom_allowedtags["embed"] = array(
-      "src" => array(),
-      "type" => array(),
-      "allowfullscreen" => array(),
-      "allowscriptaccess" => array(),
-      "height" => array(),
-          "width" => array()
-      );
-      $custom_allowedtags["script"] = array();
-      $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
-      $output = wp_kses( $input, $custom_allowedtags);
-    return $output;
+  global $allowedposttags;
+  $custom_allowedtags["embed"] = array(
+    "src" => array(),
+    "type" => array(),
+    "allowfullscreen" => array(),
+    "allowscriptaccess" => array(),
+    "height" => array(),
+        "width" => array()
+    );
+    $custom_allowedtags["script"] = array();
+    $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
+    $output = wp_kses( $input, $custom_allowedtags);
+  return $output;
 }
 
 /* Stop WordPress from adding those annoying closing paragraph tags */
 // remove_filter( 'the_content', 'wpautop' );
 // remove_filter( 'the_excerpt', 'wpautop' );
-
-// Uncomment the following section, or add it to your child theme's functions.php, to set a custom logo on the login page //
-// Custom login logo for wp-admin screen //
-//	function alienship_custom_login_logo() {
-//    	echo '<style type="text/css">
-//        h1 a { background-image:url('.get_bloginfo('template_directory').'/img/custom-logo.png) !important; }
-//    	</style>';
-//	}
-// add_action('login_head', 'alienship_custom_login_logo');

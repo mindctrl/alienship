@@ -46,7 +46,33 @@ function alienship_search_query($escaped = true) {
 add_filter('get_search_query', 'alienship_search_query');
 endif;
 
+/* Custom permalink for login page image */
+if ( ! function_exists( 'alienship_custom_login_image_link' ) ) {
+  function alienship_custom_login_image_link() {
+    return get_site_url();
+  }
+  add_filter('login_headerurl', 'alienship_custom_login_image_link');
+}
 
+/* Custom title for login page image */
+if ( ! function_exists( 'alienship_custom_login_image_title' ) ) {
+  function alienship_custom_login_image_title() {
+    return esc_attr(get_bloginfo('name'));
+  }
+  add_filter('login_headertitle', 'alienship_custom_login_image_title');
+}
+
+/* Custom login logo for wp-admin screen */
+if ( ! function_exists( 'alienship_custom_login_image' ) ) {
+  if ( of_get_option( 'alienship_custom_login_image',1 ) ) {
+    function alienship_custom_login_image() {
+      echo '<style type="text/css">
+      .login h1 a { background-image:url( "'.of_get_option( 'alienship_custom_login_image_file' ).'" ) !important; }
+      </style>';
+    }
+  }
+  add_action('login_head', 'alienship_custom_login_image');
+}
 
 /* Uncomment the following line to disable admin bar display on front end for all users. */
 // add_filter('show_admin_bar', '__return_false');

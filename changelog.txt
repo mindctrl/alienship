@@ -1,9 +1,16 @@
 == Changelog ==
 
 
-Version 0.4 - March
----------------------
-- Updated Bootstrap.
+Version .5 - March XX, 2012
+---------------------------
+- Added ability to customize outgoing email headers.
+- Added option to specify custom image on login page.
+
+
+
+Version 0.4 - March 15, 2012
+----------------------------
+- Updated Bootstrap to version 2.02.
 - Fixed footer widget text-align.
 - Styled previous and next links for index, posts, and comments.
 - Styled post meta data with icons. Changed font. Repositioned.
@@ -29,7 +36,7 @@ Version 0.4 - March
 
 
 Version 0.3 - March 1, 2012
-------------------------------
+---------------------------
 - Bottom Menu: If no menu is assigned in Admin > Appearance > Menus, no default menu is displayed. This keeps the default wp_page_menu from displaying and looking like crap. That menu is usually too big for this area. The Bottom Menu is meant to be small. This gives the option of not displaying the menu at all. Good if you’re doing menu related things in the footer widgets and don’t need it.
 - Allow child themes.
 - Redid the Top Menu in responsive mode to be more touch friendly. Increased font size and spacing of dropdown items. Removed bold text. Added the word “Menu” to the button to make it more obvious what it actually is to people who’ve never seen it before.

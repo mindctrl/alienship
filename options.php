@@ -60,7 +60,7 @@ function optionsframework_options() {
 
 	// Navigation elements
 	$options[] = array( "name" => "Navigation Elements",
-						"desc" => "",
+						"desc" => " ",
 						"type" => "info");
 
 	$options[] = array( "name" => "Show Breadcrumb Navigation?",
@@ -92,7 +92,6 @@ function optionsframework_options() {
 						"id" => "alienship_content_nav_below",
 						"std" => "1",
 						"type" => "checkbox");
-
 
 	// Miscellaneous text options
 	$options[] = array( "name" => "Miscellaneous Text",
@@ -148,6 +147,17 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Miscellaneous",
 						"desc" => "Miscellaneous design options.",
 						"type" => "info");
+
+	$options[] = array( "name" => "Enable custom image on login page?",
+						"desc" => "Enable this option and upload an image below to display a custom image on the login/register page. This replaces the default WordPress image. Default is disabled.",
+						"id" => "alienship_custom_login_image",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Upload a custom image for the login page",
+						"desc" => "Upload an image to use as a custom image on the login/register page. FOR BEST RESULTS: upload an image that is 274 x 63 pixels.",
+						"id" => "alienship_custom_login_image_file",
+						"type" => "upload");
 
 	$options[] = array( "name" => "Enable Responsive Design?",
 						"desc" => "Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don't need it, uncheck this box to turn it off.",
@@ -211,76 +221,76 @@ function optionsframework_options() {
 						"type" => "info");
 
 	$options[] = array( "name" => "Transitions",
-	"desc" => "Transitions are used to animate things such as the carousel, modals, fade out alerts, etc. * Required for animation in plugins.",
-	"id" => "alienship_transitions_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Transitions are used to animate things such as the carousel, modals, fade out alerts, etc. * Required for animation in plugins.",
+						"id" => "alienship_transitions_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Alerts",
-	"desc" => "The alert plugin is a tiny class for adding close functionality to alerts. * Requires Transitions if you want them to fade out on close.",
-	"id" => "alienship_alerts_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "The alert plugin is a tiny class for adding close functionality to alerts. * Requires Transitions if you want them to fade out on close.",
+						"id" => "alienship_alerts_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Modals",
-	"desc" => "Message boxes that slide down and fade in from the top of the page. Default setting is disabled. * Requires Transitions to function properly.",
-	"id" => "alienship_modals_plugin",
-	"std" => "0",
-	"type" => "checkbox");
+						"desc" => "Message boxes that slide down and fade in from the top of the page. Default setting is disabled. * Requires Transitions to function properly.",
+						"id" => "alienship_modals_plugin",
+						"std" => "0",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Dropdown Menus",
-	"desc" => "Add dropdown menus in the navbar, tabs, and pills.",
-	"id" => "alienship_dropdowns_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Add dropdown menus in the navbar, tabs, and pills.",
+						"id" => "alienship_dropdowns_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Scrollspy",
-	"desc" => "Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position. Default setting is disabled.",
-	"id" => "alienship_scrollspy_plugin",
-	"std" => "0",
-	"type" => "checkbox");
+						"desc" => "Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position. Default setting is disabled.",
+						"id" => "alienship_scrollspy_plugin",
+						"std" => "0",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Tabs",
-	"desc" => "Make tabs and pills more useful by allowing them to toggle through tabbable panes of content.",
-	"id" => "alienship_tabs_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Make tabs and pills more useful by allowing them to toggle through tabbable panes of content.",
+						"id" => "alienship_tabs_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Tooltips",
-	"desc" => "Tooltips that use CSS3 for animations and data-attributes for local title storage.",
-	"id" => "alienship_tooltips_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Tooltips that use CSS3 for animations and data-attributes for local title storage.",
+						"id" => "alienship_tooltips_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Popovers",
-	"desc" => "Add small overlays of content, like those on the iPad, to any element for housing secondary information. * Requires Tooltips.",
-	"id" => "alienship_popovers_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Add small overlays of content, like those on the iPad, to any element for housing secondary information. * Requires Tooltips.",
+						"id" => "alienship_popovers_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Buttons",
-	"desc" => "Do more with buttons. Control button states or create groups of buttons for more components like toolbars.",
-	"id" => "alienship_buttons_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Do more with buttons. Control button states or create groups of buttons for more components like toolbars.",
+						"id" => "alienship_buttons_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Collapse",
-	"desc" => "Get base styles and flexible support for collapsible components like accordions and navigation.",
-	"id" => "alienship_collapse_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Get base styles and flexible support for collapsible components like accordions and navigation.",
+						"id" => "alienship_collapse_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Carousel",
-	"desc" => "Create a merry-go-round of any content you wish to provide in an interactive slideshow of content. * Required for Featured Posts.",
-	"id" => "alienship_carousel_plugin",
-	"std" => "1",
-	"type" => "checkbox");
+						"desc" => "Create a merry-go-round of any content you wish to provide in an interactive slideshow of content. * Required for Featured Posts.",
+						"id" => "alienship_carousel_plugin",
+						"std" => "1",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Typeahead",
-	"desc" => "A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input. Default setting is disabled.",
-	"id" => "alienship_typeahead_plugin",
-	"std" => "0",
-	"type" => "checkbox");
+						"desc" => "A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input. Default setting is disabled.",
+						"id" => "alienship_typeahead_plugin",
+						"std" => "0",
+						"type" => "checkbox");
 
 
 
@@ -288,11 +298,48 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Advanced Settings",
 						"type" => "heading");
 
+	$options[] = array( "name" => "Customize outgoing emails",
+						"desc" => "This section allows you to override the default WordPress settings for outgoing email sender information. Instead of an email coming from \"WordPress\", you can make it say anything you want. You can do the same with the sender email address and the return address used if any problems occur during delivery. The default setting is enabled, and it uses your site name as the From Name and your Site Admin email address as the From address and Return Path. You can change these defaults below. If you disable this area your site will send with the WordPress defaults.",
+						"type" => "info");
+
+	$options[] = array( "name" => "Enable custom sender features?",
+						"desc" => "Turn on the custom sender features. Unless you specify custom values below, this tells Alien Ship to send emails that use your site name in the From field and your site admin email as the sender and return addresses. To set your own custom information, select the box below and type in your own values. Default setting is enabled.",
+						"id" => "alienship_phpmailer_rewrite",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Enable customized sender information?",
+						"desc" => "This allows you to customize the sender information of emails coming from your site. You must turn on \"Enable custom sender features\" above for this to work. NOTE: If you enable this option, fill in ALL fields below - otherwise your email may not work properly. Default setting is disabled.",
+						"id" => "alienship_phpmailer_rewrite_custom",
+						"std" => "0",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "From Name",
+						"desc" => "Enter the name you want to use in the From: field.",
+						"id" => "alienship_phpmailer_rewrite_custom_from_name",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "From Email Address",
+						"desc" => "Enter the Sender email address you want to use in the From: field.",
+						"id" => "alienship_phpmailer_rewrite_custom_from_email",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "Return Email Address",
+						"desc" => "Enter the return email address you want to use in case a problem happens during delivery.",
+						"id" => "alienship_phpmailer_rewrite_custom_sender",
+						"std" => "",
+						"type" => "text");
+
+	$options[] = array( "name" => "Analytics",
+						"type" => "info");
+
 	$options[] = array( "name" => "Enable analytics?",
-	"desc" => "If you use an analytics product such as Google Analytics or Piwik, you can add your tracking code below. If you use a separate plugin for analytics, you can ignore this section. Default setting is disabled.",
-	"id" => "alienship_analytics",
-	"std" => "0",
-	"type" => "checkbox");
+						"desc" => "If you use an analytics product such as Google Analytics or Piwik, you can add your tracking code below. If you use a separate plugin for analytics, you can ignore this section. Default setting is disabled.",
+						"id" => "alienship_analytics",
+						"std" => "0",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Analytics code",
 						"desc" => "Enter your analytics tracking code here (WITH the &lt;script&gt; and &lt;/script&gt; tags). Note: Any text you include here will be included in your pages, EVEN IF IT IS INCORRECT. Double check your code! If the analytics option is not enabled above, this text will be ignored.",

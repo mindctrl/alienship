@@ -17,6 +17,11 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
 margin-top:28px;
 } */
 
+/* Temp fix for bug introduced in Bootstrap 2.02 */
+.add-on {
+  margin-bottom: 9px;
+}
+
 body.logged-in > div #page,
 body.logged-in > div.navbar-fixed-top {
     position: relative !important;

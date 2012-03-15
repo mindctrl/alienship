@@ -60,7 +60,7 @@ function optionsframework_options() {
 
 	// Navigation elements
 	$options[] = array( "name" => "Navigation Elements",
-						"desc" => "Options related to navigation.",
+						"desc" => "",
 						"type" => "info");
 
 	$options[] = array( "name" => "Show Breadcrumb Navigation?",

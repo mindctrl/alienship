@@ -17,15 +17,15 @@ get_header(); ?>
 				<?php alienship_content_nav( 'nav-above' ); ?>
         <?php } ?>
 
-      <?php if ( of_get_option('alienship_featured_posts',1) ) { ?>
+<?php if ( of_get_option('alienship_featured_posts',1) ) { ?>
+  <?php $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
+  <?php if ( $featured_query->have_posts() ) { ?>
       <!-- Featured listings -->
       <div class="row-fluid">
       <div class="span12">
         <div id="featured-carousel" class="carousel slide">
           <div class="carousel-inner">
-
-            <?php $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' );
-            while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
+            <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
 
             <?php get_template_part( 'content', 'featured' ); ?>
 
@@ -44,8 +44,9 @@ get_header(); ?>
           jQuery('.carousel').carousel();
         });
       </script>
+      <?php } // if(have_posts()) ?>
       <!-- End featured listings -->
-      <?php } ?>
+      <?php } // if (of_get_option('alienship_featured_posts',1) ) ?>
 
         <?php 
         /* Check to see if we should duplicate featured posts in the body

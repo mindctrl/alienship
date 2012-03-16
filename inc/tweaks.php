@@ -34,7 +34,6 @@ add_action( 'template_redirect', 'alienship_nice_search_redirect' );
 endif;
 
 
-
 if ( ! function_exists( 'alienship_search_query' ) ):
 function alienship_search_query($escaped = true) {
   $query = apply_filters('alienship_search_query', get_query_var('s'));
@@ -45,6 +44,13 @@ function alienship_search_query($escaped = true) {
 }
 add_filter('get_search_query', 'alienship_search_query');
 endif;
+
+
+
+/* 
+ * Custom image, link, and title on login/register page
+ * ----------------------------------------------------
+ */
 
 /* Custom permalink for login page image */
 if ( ! function_exists( 'alienship_custom_login_image_link' ) ) {
@@ -74,8 +80,11 @@ if ( ! function_exists( 'alienship_custom_login_image' ) ) {
   add_action('login_head', 'alienship_custom_login_image');
 }
 
-/* Uncomment the following line to disable admin bar display on front end for all users. */
-// add_filter('show_admin_bar', '__return_false');
+
+/* Option to disable admin bar display on front end for all users. */
+if ( of_get_option( 'alienship_disable_admin_bar',1 ) ) {
+  add_filter('show_admin_bar', '__return_false');
+}
 
 
 

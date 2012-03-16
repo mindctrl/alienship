@@ -22,12 +22,10 @@ Task List
 + Make sure strings are translatable.
 + Header image option
 + Color options
-+ Include phpmailer rewrite code and add to options page.
 + Layout options for index, archive, etc. List, Tile, etc.
 + Add custom taxonomies to breadcrumb code.
 + Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom)
 + Avatar and author bio display
-+ Option to display dropdown menus on hover
 + Documentation
 
 

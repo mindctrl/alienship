@@ -60,7 +60,7 @@ function optionsframework_options() {
 
 	// Navigation elements
 	$options[] = array( "name" => "Navigation Elements",
-						"desc" => " ",
+						"desc" => "Breadcrumb navigation, content navigation, and top navbar design options",
 						"type" => "info");
 
 	$options[] = array( "name" => "Show Breadcrumb Navigation?",
@@ -159,6 +159,12 @@ function optionsframework_options() {
 						"id" => "alienship_custom_login_image_file",
 						"type" => "upload");
 
+	$options[] = array( "name" => "Hide admin bar for all users?",
+						"desc" => "Enable this option to hide the WordPress admin bar on the front end for all users (including admins). Default setting is disabled.",
+						"id" => "alienship_disable_admin_bar",
+						"std" => "0",
+						"type" => "checkbox");
+
 	$options[] = array( "name" => "Enable Responsive Design?",
 						"desc" => "Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don't need it, uncheck this box to turn it off.",
 						"id" => "alienship_responsive",
@@ -169,15 +175,18 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Featured Posts",
 						"type" => "heading");
 
+	$options[] = array( "name" => "Featured Posts Information",
+						"desc" => "This feature displays certain posts in a photo slider at the top of your post index. This is a good way to make special content stand out. You can feature any post here, according to the criteria you choose below. Don't forget to assign featured images to your posts in the post editor!",
+						"type" => "info");
 							
 	$options[] = array( "name" => "Enable Featured Posts?",
-						"desc" => "Default is disabled. Check this box to turn them on. Select a tag below to determine which posts are displayed in the featured slider.",
+						"desc" => "Check this box to turn on featured posts functionality. Set the options below to determine how your featured posts will work. Default is disabled.",
 						"id" => "alienship_featured_posts",
 						"std" => "0",
 						"type" => "checkbox");
 
 	$options[] = array( "name" => "Featured Posts Tag",
-						"desc" => "The tag you select here determines which posts show in the featured posts slider.",
+						"desc" => "The tag you select here determines which posts show in the featured posts slider. Example: if you were to select the moo tag, posts tagged with moo would be displayed in your slider. Don't forget to attach your featured images in the post editor!",
 						"id" => "alienship_featured_posts_tag",
 						"type" => "select",
 						"class" => "mini",
@@ -299,7 +308,7 @@ function optionsframework_options() {
 						"type" => "heading");
 
 	$options[] = array( "name" => "Customize outgoing emails",
-						"desc" => "This section allows you to override the default WordPress settings for outgoing email sender information. Instead of an email coming from \"WordPress\", you can make it say anything you want. You can do the same with the sender email address and the return address used if any problems occur during delivery. The default setting is enabled, and it uses your site name as the From Name and your Site Admin email address as the From address and Return Path. You can change these defaults below. If you disable this area your site will send with the WordPress defaults.",
+						"desc" => "This section allows you to override the default WordPress settings for outgoing email sender information. Instead of an email coming from \"WordPress\", you can make it say anything you want. You can do the same with the sender email address, and the return address that is used if any problems occur during delivery. The default setting is enabled, and it uses your site name as the From Name and your Site Admin email address as the From address and Return Path. You can change these defaults below. If you disable this feature your site will send emails using the WordPress defaults.",
 						"type" => "info");
 
 	$options[] = array( "name" => "Enable custom sender features?",
@@ -333,7 +342,8 @@ function optionsframework_options() {
 						"type" => "text");
 
 	$options[] = array( "name" => "Analytics",
-						"type" => "info");
+						"type" => "info",
+						"desc" => "Track your site traffic.");
 
 	$options[] = array( "name" => "Enable analytics?",
 						"desc" => "If you use an analytics product such as Google Analytics or Piwik, you can add your tracking code below. If you use a separate plugin for analytics, you can ignore this section. Default setting is disabled.",

@@ -21,6 +21,7 @@ Task List
 + Style each post format (future release)
 + Make sure strings are translatable.
 + Header image option
++ Font options
 + Color options
 + Layout options for index, archive, etc. List, Tile, etc.
 + Add custom taxonomies to breadcrumb code.

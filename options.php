@@ -105,13 +105,13 @@ function optionsframework_options() {
 						"type" => "checkbox");
 
 	$options[] = array( "name" => "Show custom footer text?",
-						"desc" => "Default is disabled. Uncheck this box to use custom footer text. Fill in your text below.",
+						"desc" => "Default is disabled. Check this box to use custom footer text. Fill in your text below.",
 						"id" => "alienship_custom_footer_toggle",
 						"std" => "0",
 						"type" => "checkbox");
 
 	$options[] = array( "name" => "Custom footer text",
-						"desc" => "Enter the text here that you would like displayed at the bottom of your site. To revert to the default footer text, empty this box and click Save Options.",
+						"desc" => "Enter the text here that you would like displayed at the bottom of your site. This setting will be ignored if you do not enable \"Show custom footer text\" above.",
 						"id" => "alienship_custom_footer_text",
 						"std" => "",
 						"type" => "text");
@@ -308,7 +308,7 @@ function optionsframework_options() {
 						"type" => "heading");
 
 	$options[] = array( "name" => "Customize outgoing emails",
-						"desc" => "This section allows you to override the default WordPress settings for outgoing email sender information. Instead of an email coming from \"WordPress\", you can make it say anything you want. You can do the same with the sender email address, and the return address that is used if any problems occur during delivery. The default setting is enabled, and it uses your site name as the From Name and your Site Admin email address as the From address and Return Path. You can change these defaults below. If you disable this feature your site will send emails using the WordPress defaults.",
+						"desc" => "This section allows you to override the default WordPress settings for outgoing email sender information. Instead of an email coming from \"WordPress\", you can make it say anything you want. You can do the same with the sender email address, and the return address that is used if any problems occur during delivery. \r\n &nbsp;\r\nThe default setting is enabled, and it uses your site name as the From Name and your Site Admin email address as the From address and Return Path. You can change these defaults below. If you disable this feature your site will send emails using the WordPress defaults.",
 						"type" => "info");
 
 	$options[] = array( "name" => "Enable custom sender features?",

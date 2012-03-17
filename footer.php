@@ -23,7 +23,7 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span5">
-        <?php if ( of_get_option('alienship_custom_footer_toggle', 1) ) {
+        <?php if ( of_get_option('alienship_custom_footer_toggle') ) {
         echo '' . of_get_option('alienship_custom_footer_text') . '';
         } else {
           echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
@@ -43,7 +43,7 @@ jQuery(function() {
 });
 </script>
 
-<?php if ( of_get_option('alienship_analytics', 1) ) {
+<?php if ( of_get_option('alienship_analytics') ) {
   echo '' . of_get_option('alienship_analytics_code') . '';
 } ?>
 

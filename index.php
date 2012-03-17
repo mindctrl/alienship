@@ -13,11 +13,11 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-        <?php if ( of_get_option('alienship_content_nav_above', '1') ) { ?>
+        <?php if ( of_get_option('alienship_content_nav_above') ) { ?>
 				<?php alienship_content_nav( 'nav-above' ); ?>
         <?php } ?>
 
-<?php if ( of_get_option('alienship_featured_posts',1) ) { ?>
+<?php if ( of_get_option('alienship_featured_posts') ) { ?>
   <?php $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
   <?php if ( $featured_query->have_posts() ) { ?>
       <!-- Featured listings -->
@@ -46,7 +46,7 @@ get_header(); ?>
       </script>
       <?php } // if(have_posts()) ?>
       <!-- End featured listings -->
-      <?php } // if (of_get_option('alienship_featured_posts',1) ) ?>
+      <?php } // if (of_get_option('alienship_featured_posts') ) ?>
 
         <?php 
         /* Check to see if we should duplicate featured posts in the body
@@ -82,7 +82,7 @@ get_header(); ?>
 					<?php alienship_loop_after(); ?>
 				<?php endwhile; ?>
 
-        <?php if ( of_get_option('alienship_content_nav_below', '1') ) { ?>
+        <?php if ( of_get_option('alienship_content_nav_below',1) ) { ?>
 				<?php alienship_content_nav( 'nav-below' ); ?>
         <?php } ?>
         

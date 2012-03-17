@@ -151,7 +151,7 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Enable custom image on login page?",
 						"desc" => "Enable this option and upload an image below to display a custom image on the login/register page. This replaces the default WordPress image. Default is disabled.",
 						"id" => "alienship_custom_login_image",
-						"std" => "1",
+						"std" => "0",
 						"type" => "checkbox");
 
 	$options[] = array( "name" => "Upload a custom image for the login page",

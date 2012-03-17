@@ -69,20 +69,20 @@ if ( ! function_exists( 'alienship_custom_login_image_title' ) ) {
 }
 
 /* Custom login logo for wp-admin screen */
-if ( ! function_exists( 'alienship_custom_login_image' ) ) {
-  if ( of_get_option( 'alienship_custom_login_image',1 ) ) {
+if ( of_get_option( 'alienship_custom_login_image' ) ) {
+  if ( ! function_exists( 'alienship_custom_login_image' ) ) {
     function alienship_custom_login_image() {
       echo '<style type="text/css">
       .login h1 a { background-image:url( "'.of_get_option( 'alienship_custom_login_image_file' ).'" ) !important; }
       </style>';
     }
   }
-  add_action('login_head', 'alienship_custom_login_image');
+add_action('login_head', 'alienship_custom_login_image');
 }
 
 
 /* Option to disable admin bar display on front end for all users. */
-if ( of_get_option( 'alienship_disable_admin_bar',1 ) ) {
+if ( of_get_option( 'alienship_disable_admin_bar' ) ) {
   add_filter('show_admin_bar', '__return_false');
 }
 

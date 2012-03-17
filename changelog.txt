@@ -6,6 +6,10 @@ Version .5 - March XX, 2012
 - Added ability to customize outgoing email headers.
 - Added option to specify custom image on login page.
 - Added option to disable admin bar on the front end for all users.
+- Fixed default options issues/quirks.
+- Added option to hide admin bar on front end for all users.
+- Removed WordPress logo and dropdown menu from the admin bar.
+
 
 
 

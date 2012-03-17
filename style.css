@@ -4,7 +4,7 @@ Theme URI: http://www.johnparris.com/alienship/
 Author: John Parris
 Author URI: http://www.johnparris.com/alienship/
 Description: Alien Ship is an HTML5 responsive starter theme for WordPress.
-Version: 0.4
+Version: 0.51
 License: GNU General Public License
 License URI: license.txt
 Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-language-support, microformats, featured-images, post-formats
@@ -150,7 +150,7 @@ dl.nav.mobile dd.current-menu-item a,
 }
 
 #page {
-  margin: 20px auto;
+  margin: 30px auto;
   max-width: 1000px;
 }
 
@@ -503,115 +503,10 @@ input#s {
   padding: 0px 0px 25px 0px;
 }
 
-/* -------------------------------------------------- 
-  :: Mobile Visibility Affordances. Credit to
-  :: ZURB Foundation
----------------------------------------------------*/
-
-.show-on-phones {
-  display: none !important;
-} 
-
-.show-on-tablets {
-  display: none !important;
-}
-
-.show-on-desktops {
-  display: block !important;
-}
   
-.hide-on-phones {
-  display: block !important;
-}  
-
-.hide-on-tablets {
-  display: block !important;
-}
-
-.hide-on-desktops {
-  display: none !important;
-}
-  
-@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px) {
-  .hide-on-phones {
-    display: block !important;
-  }
-
-  .hide-on-tablets {
-    display: none !important;
-  }
-
-  .hide-on-desktops {
-    display: block !important;
-  }
-    
-  .show-on-phones {
-    display: none !important;
-  }
-  
-  .show-on-tablets {
-    display: block !important;
-  }
-
-  .show-on-desktops {
-    display: none !important;
-  }
-}
-  
-  /* Modernizr-enabled tablet targeting */
-@media only screen and (max-width: 1280px) and (min-width: 768px) {
-  .touch .hide-on-phones {
-    display: block !important;
-  }
-
-  .touch .hide-on-tablets {
-    display: none !important;
-  }
-
-  .touch .hide-on-desktops {
-    display: block !important;
-  }
-    
-  .touch .show-on-phones {
-    display: none !important;
-  }
-
-  .touch .show-on-tablets {
-    display: block !important;
-  }
-
-  .touch .show-on-desktops {
-    display: none !important;
-  }
-
-}
-  
-    
+/* Responsive layout
+---------------------------------------------- */
 @media only screen and (max-width: 767px) {
-  .hide-on-phones {
-    display: none !important;
-  }
-
-  .hide-on-tablets {
-    display: block !important;
-  }
-
-  .hide-on-desktops {
-    display: block !important;
-  }
-    
-  .show-on-phones {
-    display: block !important;
-  }
-
-  .show-on-tablets {
-    display: none !important;
-  }
-
-  .show-on-desktops {
-    display: none !important;
-  }
-
   /* Change Hero styling to better fit on mobile devices */
   .hero-unit {
     padding: 5px;
@@ -637,49 +532,7 @@ input#s {
   }
 
 }
-  /* Specific overrides for elements that require something other than display: block */
   
-table.show-on-desktops {
-  display: table !important;
-}
-
-table.hide-on-phones {
-  display: table !important;
-} 
-
-table.hide-on-tablets {
-  display: table !important;
-}
-  
-@media only screen and (max-width: 1280px) and (min-width: 768px) {
-  .touch table.hide-on-phones {
-    display: table !important;
-  }
-
-  .touch table.hide-on-desktops {
-    display: table !important;
-  }
-
-  .touch table.show-on-tablets {
-    display: table !important;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  table.hide-on-tablets {
-    display: table !important;
-  }
-
-  table.hide-on-desktops {
-    display: table !important;
-  }
-
-  table.show-on-phones {
-    display: table !important;
-  }
-
-}
-
 @media only screen and (max-width: 979px) {
   /* Improve font size and spacing on dropdown menu on mobile/tablets */
   .navbar .nav > li > a, .navbar .dropdown-menu a {

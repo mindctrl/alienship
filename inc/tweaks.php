@@ -50,6 +50,7 @@ endif;
 /* 
  * Custom image, link, and title on login/register page
  * ----------------------------------------------------
+ * @since Alien Ship .50
  */
 
 /* Custom permalink for login page image */
@@ -81,13 +82,17 @@ add_action('login_head', 'alienship_custom_login_image');
 }
 
 
-/* Option to disable admin bar display on front end for all users. */
+/* Option to disable admin bar display on front end for all users.
+ * @since Alien Ship .50 
+ */
 if ( of_get_option( 'alienship_disable_admin_bar' ) ) {
   add_filter('show_admin_bar', '__return_false');
 }
 
 
-/* Remove WordPress logo and dropdown menu from admin bar */
+/* Remove WordPress logo and dropdown menu from admin bar
+ * @since Alien Ship .50
+ */
 if ( ! function_exists( 'alienship_remove_admin_bar_logo') ) {
   function alienship_remove_admin_bar_logo() {
     global $wp_admin_bar;

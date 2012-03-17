@@ -1,7 +1,7 @@
 == Changelog ==
 
 
-Version .5 - March XX, 2012
+Beta Version .51 - March 17, 2012
 ---------------------------
 - Added ability to customize outgoing email headers.
 - Added option to specify custom image on login page.
@@ -9,6 +9,7 @@ Version .5 - March XX, 2012
 - Fixed default options issues/quirks.
 - Added option to hide admin bar on front end for all users.
 - Removed WordPress logo and dropdown menu from the admin bar.
+- Removed show-on-* and hide-on-* classes since Bootstrap now includes similar functionality with visible-* and hidden-*
 
 
 

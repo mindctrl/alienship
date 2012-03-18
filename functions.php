@@ -135,7 +135,7 @@ function alienship_admin_notice_menus() {
     /* Check that we're an admin, that we're on the menus page, and that the user hasn't already ignored the message */
   if ( current_user_can('administrator') && $pagenow =='nav-menus.php' && ! get_user_meta($user_id, 'alienship_admin_notice_menus_ignore_notice') ) {
     echo '<div class="updated"><p>';
-    printf(__('Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide Notice</a>'), '?alienship_admin_notice_menus_ignore=0');
+    printf(__('Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Also, the nested menus only go one level deep (Parent > Sub item and NOT Parent > Sub item > Sub sub item. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide Notice</a>'), '?alienship_admin_notice_menus_ignore=0');
     echo "</p></div>";
   }
 }

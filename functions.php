@@ -104,12 +104,12 @@ add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 /*
  * Allow embed and script tags in theme options textareas
  */
-add_action('admin_init','optionscheck_change_sanitize', 100);
-
 function optionscheck_change_sanitize() {
   remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
   add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
 }
+add_action('admin_init','optionscheck_change_sanitize', 100);
+
 function custom_sanitize_textarea($input) {
   global $allowedposttags;
   $custom_allowedtags["embed"] = array(
@@ -125,6 +125,32 @@ function custom_sanitize_textarea($input) {
     $output = wp_kses( $input, $custom_allowedtags);
   return $output;
 }
+
+
+/* Display a notice about menu functionality */
+function alienship_admin_notice_menus() {
+  global $current_user ;
+  global $pagenow;
+    $user_id = $current_user->ID;
+    /* Check that we're an admin, that we're on the menus page, and that the user hasn't already ignored the message */
+  if ( current_user_can('administrator') && $pagenow =='nav-menus.php' && ! get_user_meta($user_id, 'alienship_admin_notice_menus_ignore_notice') ) {
+    echo '<div class="updated"><p>';
+    printf(__('Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide Notice</a>'), '?alienship_admin_notice_menus_ignore=0');
+    echo "</p></div>";
+  }
+}
+add_action('admin_notices', 'alienship_admin_notice_menus');
+
+function alienship_admin_notice_menus_ignore() {
+  global $current_user;
+    $user_id = $current_user->ID;
+    /* If user clicks to ignore the notice, add that to their user meta */
+    if ( isset($_GET['alienship_admin_notice_menus_ignore']) && '0' == $_GET['alienship_admin_notice_menus_ignore'] ) {
+      add_user_meta($user_id, 'alienship_admin_notice_menus_ignore_notice', 'true', true);
+  }
+}
+add_action('admin_init', 'alienship_admin_notice_menus_ignore');
+
 
 /* Stop WordPress from adding those annoying closing paragraph tags */
 // remove_filter( 'the_content', 'wpautop' );

@@ -1,4 +1,4 @@
-== Changelog ==
+== Change log ==
 
 
 Beta Version .52 - March 17, 2012
@@ -11,6 +11,7 @@ Beta Version .52 - March 17, 2012
 - Removed show-on-* and hide-on-* classes since Bootstrap now includes similar functionality with visible-* and hidden-*
 - Added option to show/hide posts categories and tags on the index/posts page. Separated this from the previous option which was global.
 - Fixed paging problem.
+- Added admin notice about menu functionality.
 
 
 

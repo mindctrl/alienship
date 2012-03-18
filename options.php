@@ -132,9 +132,21 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 
+	$options[] = array( "name" => "Show post categories on the index/posts page?",
+						"desc" => "Displays the post categories on the index/posts page - as defined in Settings > Reading. Default is show. Uncheck this box to hide post categories on the index/posts page.",
+						"id" => "alienship_post_categories_posts_page",
+						"std" => "1",
+						"type" => "checkbox");
+
 	$options[] = array( "name" => "Show post tags?",
 						"desc" => "Displays the tags attached to a post. Default is show. Uncheck this box to hide post tags.",
 						"id" => "alienship_post_tags",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show post tags on the index/posts page?",
+						"desc" => "Displays the post tags on the index/posts page - as defined in Settings > Reading. Default is show. Uncheck this box to hide post tags on the index/posts page.",
+						"id" => "alienship_post_tags_posts_page",
 						"std" => "1",
 						"type" => "checkbox");
 

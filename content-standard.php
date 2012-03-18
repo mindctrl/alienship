@@ -8,7 +8,7 @@
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php alienship_post_inside_before(); ?>
   <header class="entry-header">
-    <h1 class="entry-title"><a class="entry-title" title="<?php the_title();?>" rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?></a></h1>
+    <h2 class="entry-title"><a class="entry-title" title="<?php the_title();?>" rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
   </header><!-- .entry-header -->
 
   <div class="entry-content">

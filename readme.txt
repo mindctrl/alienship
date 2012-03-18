@@ -12,6 +12,7 @@ Task List
 ---------
 
 + Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
++ For clarification: Add notice/docs about parent menu items not being clickable.
 + Style Main Menu.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues

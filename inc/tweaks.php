@@ -25,7 +25,7 @@ endif;
  * @since Alien Ship 0.3 */
 if ( ! function_exists( 'alienship_nice_search_redirect' ) ):
 function alienship_nice_search_redirect() {
-  if ( is_search() && strpos( $_SERVER['REQUEST_URI'], '/wp-admin/' ) === false && strpos( $_SERVER['REQUEST_URI'], '/search/' ) === false ) {
+  if ( is_search() && get_option('permalink_structure') != '' && strpos( $_SERVER['REQUEST_URI'], '/wp-admin/' ) === false && strpos( $_SERVER['REQUEST_URI'], '/search/' ) === false ) {
     wp_redirect( home_url( '/search/' . str_replace( array( ' ', '%20' ),  array( '+', '+' ), get_query_var( 's' ) ) ) );
     exit();
   }

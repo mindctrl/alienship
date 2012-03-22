@@ -63,7 +63,8 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 
 <?php alienship_head(); ?>
 <?php wp_head(); ?>
-
+<?php /* Custom fonts */
+  require_once locate_template('/inc/typography.php'); ?>
 </head>
 
 <body <?php body_class(); ?>>

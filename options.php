@@ -46,7 +46,6 @@ function optionsframework_options() {
 	foreach ($options_pages_obj as $page) {
     	$options_pages[$page->ID] = $page->post_title;
 	}
-		
 
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_bloginfo('stylesheet_directory') . '/img/';
@@ -56,6 +55,24 @@ function optionsframework_options() {
 	// Display Settings tab		
 	$options[] = array( "name" => "Design Options",
 						"type" => "heading");
+
+
+	// Typography
+	$options[] = array( "name" => "Typography",
+						"desc" => "Choose the fonts you want to use on your site",
+						"type" => "info");
+
+	$options[] = array( "name" => "Body Text Font",
+						"desc" => "The font used to display text in the main body of the site. The default setting is Helvetica Neue, size 13px, normal, color #333333.",
+						"id" => "alienship_body_font",
+						"std" => array('size' => '13px','face' => 'Helvetica Neue','style' => 'normal','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Page / Post Paragraph Font",
+						"desc" => "The font used in page / post paragraphs. The default setting is Helvetica Neue, size 14px, normal, color #333333.",
+						"id" => "alienship_post_paragraph_font",
+						"std" => array('size' => '14px','face' => 'Helvetica Neue','style' => 'normal','color' => '#333333'),
+						"type" => "typography");
 
 
 	// Navigation elements
@@ -98,11 +115,13 @@ function optionsframework_options() {
 						"desc" => "Miscellaneous text items, such as site name and description and custom footer text.",
 						"type" => "info");
 
-	$options[] = array( "name" => "Show site name and description below Top Menu navigation bar?",
+	/* Disabled for now. Functionality is used in the Appearance > Header screen
+	 * $options[] = array( "name" => "Show site name and description below Top Menu navigation bar?",
 						"desc" => "Default is enabled. Uncheck this box to turn it off.",
 						"id" => "alienship_name_and_desc_below_navbar",
 						"std" => "1",
 						"type" => "checkbox");
+	 */
 
 	$options[] = array( "name" => "Show custom footer text?",
 						"desc" => "Default is disabled. Check this box to use custom footer text. Fill in your text below.",
@@ -371,4 +390,21 @@ function optionsframework_options() {
 
 
 	return $options;
+
 }
+
+function alienship_recognized_font_faces( $value ) {
+    return array(
+			'Helvetica Neue' => 'Helvetica Neue, Helvetica*',
+			'OpenSansRegular' => 'Open Sans, sans-serif',
+			'FreightSansProBookRegular' => 'Freight Sans',
+			'ProximaNovaRegular' => 'Proxima Nova',
+			'arial' => 'Arial',
+			'verdana'   => 'Verdana, Geneva',
+			'trebuchet' => 'Trebuchet',
+			'georgia'   => 'Georgia',
+			'times'     => 'Times New Roman',
+			'tahoma'    => 'Tahoma, Geneva',
+    );
+}
+add_filter( 'of_recognized_font_faces', 'alienship_recognized_font_faces' );

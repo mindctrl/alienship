@@ -92,6 +92,29 @@ endif;
 
 
 
+/* =Login form and shortcode
+------------------------------------------------
+* [loginform] shortcode. Options are redirect="http://your-url-here.com". If redirect is not set, it returns to the current page.
+* Example: [loginform redirect="http://www.site.com"] */
+function alienship_login_form( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'redirect' => ''
+    ), $atts ) );
+ 
+  if (!is_user_logged_in()) {
+      if($redirect) {
+          $redirect_url = $redirect;
+      } else {
+          $redirect_url = get_permalink();
+      }
+      $form = wp_login_form(array('echo' => false, 'redirect' => $redirect_url ));
+      return $form;
+  }
+}
+add_shortcode('loginform', 'alienship_login_form');
+
+
+
 /* =Panels
 ----------------------------------------------- 
 * [panel] shortcode. Columns defaults to 6. You can specify columns in the shortcode.

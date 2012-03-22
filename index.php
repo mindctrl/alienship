@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	    <div class="row-fluid">
+	    <div id="main-row" class="row-fluid">
 	    	<?php alienship_content_before(); ?>
     		<div id="content" role="main" class="span9">
 

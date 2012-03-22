@@ -64,11 +64,12 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 
 <?php alienship_head(); ?>
 <?php wp_head(); ?>
-
+<?php /* Custom fonts */
+  require_once locate_template('/inc/typography.php'); ?>
 </head>
 
 <body <?php body_class(); ?>>
-  <!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 <!-- Load Top Menu -->
   <div class="navbar">
@@ -103,12 +104,30 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
   <?php alienship_header_before(); ?>
 	<header id="masthead" role="banner">
     <?php alienship_header_inside(); ?>
-    <?php if (of_get_option('alienship_name_and_desc_below_navbar',1) ) { // Show site name and description below navbar? ?>
-	  <hgroup>
-	    <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		  <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-	  </hgroup><br />
-    <?php } // site name and desc ?>
+      <hgroup>
+        <h1 id="site-title" class="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+        <h2 id="site-description" class="site-description"><?php bloginfo( 'description' ); ?></h2>
+      </hgroup>
+<?php 
+  // Check to see if the header image has been removed
+  $header_image = get_header_image();
+  if ( ! empty( $header_image ) ) :
+?>
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+  <?php
+    // The header image
+    // Check if this is a post or page, if it has a thumbnail, and if it's a big one
+    if ( is_singular() &&
+        has_post_thumbnail( $post->ID ) &&
+        ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH, HEADER_IMAGE_WIDTH ) ) ) && $image[1] >= HEADER_IMAGE_WIDTH ) :
+      // Houston, we have a new header image!
+      echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+    else : ?>
+    <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" class="header-image" alt="" />
+  <?php endif; // end check for featured image or standard header ?>
+</a>
+<?php endif; // end check for removed header image ?>
+
 <!-- End Site title and description in masthead -->
     <?php if ( has_nav_menu('main') ) { ?>
 <!-- Main menu -->

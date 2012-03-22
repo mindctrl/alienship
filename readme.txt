@@ -12,16 +12,17 @@ Task List
 ---------
 
 + Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
-+ For clarification: Add notice/docs about parent menu items not being clickable.
 + Account dropdown at top right? Login/Register/Profile.
 + Login redirect options.
++ CSS print rules.
++ Look at integrating Font Awesome?
++ Make sticky posts stick on category archives. Why doesn't WP do this by default?
 + Style Main Menu.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Style each post format (future release)
 + Make sure strings are translatable.
-+ Header image option
 + Font options
 + Color options
 + Layout options for index, archive, etc. List, Tile, etc.
@@ -30,6 +31,12 @@ Task List
 + Avatar and author bio display
 + Documentation
 
+
+Ideas
+-----
+
++ Comment search
++ Advanced search (by category, author, etc.)
 
 
 

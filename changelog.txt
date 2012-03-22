@@ -1,8 +1,20 @@
 == Change log ==
 
 
+Beta Version .53 - March 21, 2012
+---------------------------------
+- Added header image support. Much of this code was borrowed from the Twenty Eleven theme. The header image size is 1000 x 288 pixels. It supports adding custom header images to your site. You can specify a certain image, or randomly rotate images on each page load. If you attach a featured image to a post, and it's at least as big as the 1000 x 288 image size, the image will override the global header image setting and always be displayed on that post. This feature is accessible in Admin > Appearance > Header.
+- NOTE: Since the above header image support uses built-in WordPress functions that also display the Site Title and Site Description in the header, the option to toggle Site Title/Description has been removed from the Alien Ship Theme Options page located at Theme Options > Design Options. The option to control the display of Site Title and Site Description are now located under Appearance > Header.
+- Added loginform shortcode. Supports a redirect parameter. If redirect is not set, it returns to the current page. Usage: [loginform redirect="http://www.johnparris.com/alienship"]. If user is logged in, it shows nothing.
+- Added font options.
+- Added media query to reduce H* headers on mobile devices.
+
+
+
+
+
 Beta Version .52 - March 17, 2012
----------------------------
+---------------------------------
 - Added ability to customize outgoing email headers.
 - Added option to specify custom image on login page.
 - Added option to disable admin bar on the front end for all users.

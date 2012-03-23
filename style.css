@@ -257,6 +257,7 @@ img.wp-post-image {
 /* Fix carousel images */
 .carousel-inner > .item > a > img {
   border: 0;
+  border-radius: 0;
   padding: 0;
   max-width: 100%;
 }

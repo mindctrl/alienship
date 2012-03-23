@@ -11,7 +11,7 @@
     <?php alienship_post_inside_before(); ?>
 
     <div class="format-quote">
-    <div class="entry-content"><div class="entry-meta"><?php alienship_quote_posted_on(); ?></div>
+      <div class="entry-content">
       <blockquote>
         <p><?php the_content(); ?></p>
       </blockquote>
@@ -21,6 +21,9 @@
 
     <footer class="entry-meta">
       <div class="entry-meta">
+        <?php if (of_get_option('alienship_published_date',1) ) { // Show published date? ?>
+        <?php alienship_posted_on(); ?>
+        <?php } // published date ?>
         <?php
         if ( is_single() ) {
         /* translators: used between list items, there is a space after the comma */

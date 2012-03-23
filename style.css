@@ -243,6 +243,8 @@ img.header-image,
 img.wp-post-image {
   margin: 0 0 20px 0;
   max-width: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.45);
@@ -475,7 +477,7 @@ img.aligncenter {
 
 /* Quote post format */
 div.format-quote {
-    background: url("img/quote-format.jpg") no-repeat scroll left top, url("img/quote-format-watermark.jpg") no-repeat scroll right bottom transparent;
+    background: url("img/quote.png") no-repeat scroll left top;
 }
 
 div.format-quote > .entry-content {
@@ -493,15 +495,23 @@ div.format-quote > .entry-content > .entry-meta {
   text-transform: uppercase;
 }
 
+article.format-quote cite {
+    margin-top: 10px;
+    font-style: italic;
+}
+
 div.format-quote > .entry-content > blockquote {
   border-left: 2px solid #EEEEEE;
-  margin: 0 0 18px 2px;
+  margin: 0 0 18px 20px;
 }
 
-article.format-quote cite {
-    font-size: 14px;
+div.format-quote p {
+  font-family: Georgia, Serif;
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 23px;
+  margin-bottom: 10px;
 }
-
 
 
 /* Panels inspired by Zurb Foundation

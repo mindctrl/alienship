@@ -553,6 +553,10 @@ div.format-quote p {
 	margin: 0 0 1.5em;
 }
 
+.widget select {
+  max-width: 100%;
+}
+
 /* Hide search widget submit button */
 #searchsubmit {
 	display: none;

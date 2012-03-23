@@ -1,6 +1,16 @@
 == Change log ==
 
 
+Beta Version .54 - March XX, 2012
+---------------------------------
+- Restyled quote post format.
+- Fixed carousel images issues.
+- Made archive.php and author.php aware of show/hide nav above/below settings.
+- Fixed width issue on select elements in sidebar.
+
+
+
+
 Beta Version .53 - March 21, 2012
 ---------------------------------
 - Added header image support. Much of this code was borrowed from the Twenty Eleven theme. The header image size is 1000 x 288 pixels. It supports adding custom header images to your site. You can specify a certain image, or randomly rotate images on each page load. If you attach a featured image to a post, and it's at least as big as the 1000 x 288 image size, the image will override the global header image setting and always be displayed on that post. This feature is accessible in Admin > Appearance > Header.

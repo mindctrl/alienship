@@ -9,7 +9,7 @@
 #optionsframework {
 	position:relative;
 	z-index: 0;
-	max-width:780px;
+	max-width:980px;
 	background:#fff;
 }
 #optionsframework h3 {
@@ -87,11 +87,17 @@
 	float:left
 }
 #optionsframework .controls .of-typography-face {
-	width:100px;
+	width:120px;
 	margin-left:5px;
 	float:left
 }
 #optionsframework .controls .of-typography-style {
+	width:80px;
+	margin-left:5px;
+	margin-right:5px;
+	float:left
+}
+#optionsframework .controls .of-typography-weight {
 	width:80px;
 	margin-left:5px;
 	margin-right:5px;

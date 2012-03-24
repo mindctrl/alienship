@@ -226,9 +226,17 @@ function optionsframework_fields() {
 			$output .= '</select>';
 
 			// Font Weight
-			$output .= '<select class="of-typography of-typography-style" name="'.$option_name.'['.$value['id'].'][style]" id="'. $value['id'].'_style">';
+			$output .= '<select class="of-typography of-typography-weight" name="' . esc_attr( $option_name . '[' . $value['id'] . '][weight]' ) . '" id="' . esc_attr( $value['id'] . '_weight' ) . '">';
+
+			$weights = of_recognized_font_weights();
+			foreach ( $weights as $key => $weight ) {
+				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['weight'], $key, false ) . '>' . $weight .'</option>';
+			}
+			$output .= '</select>';
 
 			// Font Style
+			$output .= '<select class="of-typography of-typography-style" name="' . esc_attr( $option_name . '[' . $value['id'] . '][style]' ) . '" id="' . esc_attr( $value['id'] . '_style' ) . '">';
+
 			$styles = of_recognized_font_styles();
 			foreach ( $styles as $key => $style ) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['style'], $key, false ) . '>'. $style .'</option>';

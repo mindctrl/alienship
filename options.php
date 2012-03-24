@@ -53,26 +53,8 @@ function optionsframework_options() {
 	$options = array();
 
 	// Display Settings tab		
-	$options[] = array( "name" => "Design Options",
+	$options[] = array( "name" => "Display Options",
 						"type" => "heading");
-
-
-	// Typography
-	$options[] = array( "name" => "Typography",
-						"desc" => "Choose the fonts you want to use on your site",
-						"type" => "info");
-
-	$options[] = array( "name" => "Body Text Font",
-						"desc" => "The font used to display text in the main body of the site. The default setting is Helvetica Neue, size 13px, normal, color #333333.",
-						"id" => "alienship_body_font",
-						"std" => array('size' => '13px','face' => 'Helvetica Neue','style' => 'normal','color' => '#333333'),
-						"type" => "typography");
-
-	$options[] = array( "name" => "Page / Post Paragraph Font",
-						"desc" => "The font used in page / post paragraphs. The default setting is Helvetica Neue, size 14px, normal, color #333333.",
-						"id" => "alienship_post_paragraph_font",
-						"std" => array('size' => '14px','face' => 'Helvetica Neue','style' => 'normal','color' => '#333333'),
-						"type" => "typography");
 
 
 	// Navigation elements
@@ -85,6 +67,17 @@ function optionsframework_options() {
 						"id" => "alienship_breadcrumbs",
 						"std" => "1",
 						"type" => "checkbox");
+
+	/* $options[] = array( "name" => "Show logo image in Top Menu navigation bar?",
+						"desc" => "Check this box to show a logo image in the Top Menu navigation bar. Upload your logo image below. Default is disabled.",
+						"id" => "alienship_logo_in_navbar",
+						"std" => "0",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Upload a logo image for the Top Menu navigation bar.",
+						"desc" => "Upload an image to use as a logo image in the Top Menu navigation bar. Note: You must enable the option above for this image to be displayed. FOR BEST RESULTS: upload an image that isn't too large.",
+						"id" => "alienship_logo_in_navbar_file",
+						"type" => "upload"); */
 
 	$options[] = array( "name" => "Show site name in Top Menu navigation bar?",
 						"desc" => "Default is enabled. Uncheck this box to hide site name in Top Menu navigation bar.",
@@ -202,6 +195,64 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 
+
+	// Typography
+	$options[] = array( "name" => "Typography",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Typography",
+						"desc" => "Choose the fonts you want to use on your site. NOTE: Some fonts aren't available in all styles, such as 'lighter'.",
+						"type" => "info");
+
+	$options[] = array( "name" => "Heading Font - h1",
+						"desc" => "The font used to display h1 headings. The default setting is Helvetica Neue, size 30px, bold, normal, color #333333.",
+						"id" => "alienship_h1_font",
+						"std" => array('size' => '30px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'bold','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Heading Font - h2",
+						"desc" => "The font used to display h2 headings. The default setting is Helvetica Neue, size 24px, bold, normal, color #333333.",
+						"id" => "alienship_h2_font",
+						"std" => array('size' => '24px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'bold','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Heading Font - h3",
+						"desc" => "The font used to display h3 headings. The default setting is Helvetica Neue, size 18px, bold, normal, color #333333.",
+						"id" => "alienship_h3_font",
+						"std" => array('size' => '18px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'bold','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Heading Font - h4",
+						"desc" => "The font used to display h4 headings. The default setting is Helvetica Neue, size 14px, bold, normal, color #333333.",
+						"id" => "alienship_h4_font",
+						"std" => array('size' => '14px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'bold','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Heading Font - h5",
+						"desc" => "The font used to display h5 headings. The default setting is Helvetica Neue, size 12px, bold, normal, color #333333.",
+						"id" => "alienship_h5_font",
+						"std" => array('size' => '12px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'bold','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Heading Font - h6",
+						"desc" => "The font used to display h6 headings. The default setting is Helvetica Neue, size 11px, bold, normal, color #333333.",
+						"id" => "alienship_h6_font",
+						"std" => array('size' => '11px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'bold','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Body Text Font",
+						"desc" => "The font used to display text in the main body of the site. The default setting is Helvetica Neue, size 13px, normal, color #333333.",
+						"id" => "alienship_body_font",
+						"std" => array('size' => '13px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#333333'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Page / Post Paragraph Font",
+						"desc" => "The font used in page / post paragraphs. The default setting is Helvetica Neue, size 14px, normal, color #333333.",
+						"id" => "alienship_post_paragraph_font",
+						"std" => array('size' => '14px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#333333'),
+						"type" => "typography");
+
+
 	// Featured Posts tab
 	$options[] = array( "name" => "Featured Posts",
 						"type" => "heading");
@@ -252,8 +303,8 @@ function optionsframework_options() {
 						"type" => "text");
 
 
-	/* Javascript plugin heading */
-	$options[] = array( "name" => "Javascript plugins",
+	/* Theme plugin heading */
+	$options[] = array( "name" => "Theme Plugins",
 						"type" => "heading");
 
 	$options[] = array( "name" => "Javascript Plugins Information",
@@ -335,7 +386,7 @@ function optionsframework_options() {
 
 
 	/* Advanced Settings tab */
-	$options[] = array( "name" => "Advanced Settings",
+	$options[] = array( "name" => "Advanced",
 						"type" => "heading");
 
 	$options[] = array( "name" => "Customize outgoing emails",
@@ -393,12 +444,12 @@ function optionsframework_options() {
 
 }
 
+/* Customize and extend the tyopgraphy options. Support for more font faces, and separation of weights and styles. */
 function alienship_recognized_font_faces( $value ) {
     return array(
 			'Helvetica Neue' => 'Helvetica Neue, Helvetica*',
-			'OpenSansRegular' => 'Open Sans, sans-serif',
-			'FreightSansProBookRegular' => 'Freight Sans',
-			'ProximaNovaRegular' => 'Proxima Nova',
+			'Open Sans' => 'Open Sans, sans-serif',
+			'Cabin' => 'Cabin',
 			'arial' => 'Arial',
 			'verdana'   => 'Verdana, Geneva',
 			'trebuchet' => 'Trebuchet',
@@ -408,3 +459,52 @@ function alienship_recognized_font_faces( $value ) {
     );
 }
 add_filter( 'of_recognized_font_faces', 'alienship_recognized_font_faces' );
+
+
+function of_recognized_font_weights() {
+	$default = array(
+		'normal'      => 'Normal',
+		'bold'        => 'Bold',
+		'lighter'				=> 'Lighter',
+		);
+	return apply_filters( 'of_recognized_font_weights', $default );
+}
+
+
+function alienship_recognized_font_styles( $value ) {
+    return array(
+			'normal' => 'Normal',
+			'italic' => 'Italic',
+    );
+}
+add_filter( 'of_recognized_font_styles', 'alienship_recognized_font_styles' );
+
+
+function alienship_sanitize_typography( $input ) {
+	$output = wp_parse_args( $input, array(
+		'size'  => '',
+		'face'  => '',
+		'style' => '',
+		'weight' => '',
+		'color' => ''
+	) );
+
+	$output['size']  = apply_filters( 'of_font_size', $output['size'] );
+	$output['face']  = apply_filters( 'of_font_face', $output['face'] );
+	$output['style'] = apply_filters( 'of_font_style', $output['style'] );
+	$output['weight'] = apply_filters( 'of_font_weight', $output['weight'] );
+	$output['color'] = apply_filters( 'of_color', $output['color'] );
+
+	return $output;
+}
+add_filter( 'of_sanitize_typography', 'alienship_sanitize_typography' );
+
+
+function of_sanitize_font_weight( $value ) {
+	$recognized = of_recognized_font_weights();
+	if ( array_key_exists( $value, $recognized ) ) {
+		return $value;
+	}
+	return apply_filters( 'of_default_font_weight', current( $recognized ) );
+}
+add_filter( 'of_font_weight', 'of_sanitize_font_weight' );

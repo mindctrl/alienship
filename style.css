@@ -13,27 +13,66 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
 /* Fonts
 ---------------------------- */
 @font-face {
-    font-family: 'OpenSansRegular';
-    src: url('inc/fonts/OpenSans-Regular.woff') format('woff');
-    src: url('inc/fonts/OpenSans-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'Open Sans';
+    font-weight: lighter;
     font-style: normal;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url('inc/fonts/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'ProximaNovaRegular';
-    src: url('inc/fonts/proxima-nova-normal-400.woff') format('woff');
-    src: url('inc/fonts/proxima-nova-normal-400.ttf') format('truetype');
+    font-family: 'Open Sans';
     font-weight: normal;
     font-style: normal;
+    src: local('Open Sans'), local('OpenSans'), url('inc/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'FreightSansProBookRegular';
-    src: url('inc/fonts/freight-sans-pro-normal-400.woff') format('woff');
-    src: url('inc/fonts/freight-sans-pro-normal-400.ttf') format('truetype');
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-style: normal;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('inc/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-style: italic;
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), url('inc/fonts/OpenSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-style: italic;
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('inc/fonts/OpenSans-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cabin';
     font-weight: normal;
     font-style: normal;
+    src: local('Cabin'), local('Cabin'), url('inc/fonts/Cabin-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-weight: bold;
+    font-style: normal;
+    src: local('Cabin Bold'), local('Cabin-Bold'), url('inc/fonts/Cabin-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-weight: normal;
+    font-style: italic;
+    src: local('Cabin Italic'), local('Cabin-Italic'), url('inc/fonts/Cabin-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-weight: bold;
+    font-style: italic;
+    src: local('Cabin Bold Italic'), local('Cabin-BoldItalic'), url('inc/fonts/Cabin-BoldItalic.ttf') format('truetype');
 }
 
 /* =Navigation and dropdowns
@@ -553,8 +592,9 @@ div.format-quote p {
 	margin: 0 0 1.5em;
 }
 
-.widget select {
-  max-width: 100%;
+.widget select,
+.widget input {
+  max-width: 95%;
 }
 
 /* Hide search widget submit button */

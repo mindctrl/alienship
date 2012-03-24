@@ -11,8 +11,12 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
++ Update screenshots.
++ Cabin font.
++ Clean up font extensions code.
 + Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
 + Account dropdown at top right? Login/Register/Profile.
++ Option to load minified/combined js and css?
 + Login redirect options.
 + CSS print rules.
 + Look at integrating Font Awesome?
@@ -23,7 +27,6 @@ Task List
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Style each post format (future release)
 + Make sure strings are translatable.
-+ Font options
 + Color options
 + Layout options for index, archive, etc. List, Tile, etc.
 + Add custom taxonomies to breadcrumb code.

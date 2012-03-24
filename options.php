@@ -447,15 +447,15 @@ function optionsframework_options() {
 /* Customize and extend the tyopgraphy options. Support for more font faces, and separation of weights and styles. */
 function alienship_recognized_font_faces( $value ) {
     return array(
-			'Helvetica Neue' => 'Helvetica Neue, Helvetica*',
-			'Open Sans' => 'Open Sans, sans-serif',
-			'Cabin' => 'Cabin',
-			'arial' => 'Arial',
-			'verdana'   => 'Verdana, Geneva',
-			'trebuchet' => 'Trebuchet',
-			'georgia'   => 'Georgia',
-			'times'     => 'Times New Roman',
-			'tahoma'    => 'Tahoma, Geneva',
+			'Helvetica Neue, Helvetica, sans-serif' => 'Helvetica Neue, Helvetica, sans-serif',
+			'Open Sans, sans-serif' => 'Open Sans, sans-serif',
+			'Cabin, sans-serif' => 'Cabin, sans-serif',
+			'Arial, Helvetica, sans-serif' => 'Arial, Helvetica, sans-serif',
+			'Verdana, Geneva, sans-serif'   => 'Verdana, Geneva, sans-serif',
+			'Trebuchet, sans-serif' => 'Trebuchet, sans-serif',
+			'Georgia, serif'   => 'Georgia, serif',
+			'Times, Times New Romain, serif'     => 'Times New Roman, serif',
+			'Tahoma, Geneva, sans-serif'    => 'Tahoma, Geneva, sans-serif',
     );
 }
 add_filter( 'of_recognized_font_faces', 'alienship_recognized_font_faces' );

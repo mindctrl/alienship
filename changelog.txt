@@ -8,7 +8,7 @@ Beta Version .54 - March 23, 2012
 - Made archive.php and author.php aware of show/hide nav above/below settings.
 - Fixed width issue on select elements in sidebar.
 - Cleaned up, extended, and customized the typography area. Added support for separated styles and weights in the options framework and added new selector in Theme Options. Added new Typography settings tab in Theme Options. * More work to do here.
-- Add Cabin font.
+- Added Cabin font.
 - Added login form widget.
 
 

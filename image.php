@@ -82,8 +82,7 @@ get_header(); ?>
 						</div><!-- .entry-attachment -->
 
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'alienship' ), 'after' => '</div>' ) ); ?>
-
+						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="btn-group">', 'link_before' => '<button class="btn">', 'link_after' => '</button>', 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-meta">

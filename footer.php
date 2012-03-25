@@ -11,12 +11,13 @@
 
 	</div><!-- #main -->
   <?php alienship_main_after(); ?>
+  <div id="footer-container" class="container-fluid">
+    <div id="footer-row" class="row-fluid footerwidget">
+      <?php dynamic_sidebar("Footer"); ?>
+    </div><!-- #footer-row -->
+  </div><!-- #footer-container -->
+
 </div><!-- #page -->
-<div class="container-fluid">
-  <div class="row-fluid footerwidget">
-    <?php dynamic_sidebar("Footer"); ?>
-  </div>
-</div>
 <?php alienship_footer_before(); ?>
 <footer id="colophon" role="contentinfo">
   <?php alienship_footer_inside(); ?>

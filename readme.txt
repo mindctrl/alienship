@@ -12,16 +12,16 @@ Task List
 ---------
 
 + Update screenshots.
-+ Cabin font.
-+ Clean up font extensions code.
++ Featured Posts option: thumbnail grid.
 + Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
++ Style "Read more" for excerpts. btn btn-mini. icon-arrow-right
++ Add register, profile, etc. links to login form widget.
 + Account dropdown at top right? Login/Register/Profile.
++ Clean up font extensions code.
 + Option to load minified/combined js and css?
-+ Login redirect options.
 + CSS print rules.
 + Look at integrating Font Awesome?
 + Make sticky posts stick on category archives. Why doesn't WP do this by default?
-+ Style Main Menu.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...

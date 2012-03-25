@@ -1,5 +1,17 @@
 == Change log ==
 
+Beta Version .54 - March XX, 2012
+---------------------------------
+- Fixed footer widget alignment annoyance.
+- Styled avatar images.
+- Styled Pages links on posts with more than one page.
+- Styled "Read More" links.
+- Changed breadcrumbs to show name instead of singular name on custom post types.
+- Styled avatar images.
+
+
+
+
 
 Beta Version .54 - March 23, 2012
 ---------------------------------

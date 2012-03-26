@@ -355,6 +355,28 @@ h1.entry-title {
   padding: 7px 0;
 }
 
+/* Page links */
+.pagination li.active {
+  -moz-border-bottom-colors: none;
+    -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+    background-color: #EEEEEE;
+  }
+
+.pagination li.active:first-child,
+.pagination > ul > a:first-child {
+  border-left-width: 1px;
+}
+
 /* Meta data displayed within a post header */
 header .entry-meta {
   text-transform: uppercase;

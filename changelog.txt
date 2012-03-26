@@ -1,6 +1,6 @@
 == Change log ==
 
-Beta Version .54 - March XX, 2012
+Beta Version .55 - March XX, 2012
 ---------------------------------
 - Fixed footer widget alignment annoyance.
 - Styled avatar images.

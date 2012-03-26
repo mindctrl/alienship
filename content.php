@@ -18,7 +18,7 @@
 	<?php else : ?>
 	<div class="entry-content">
 		<?php the_content( __( '<button class="btn btn-mini">Read More <i class="icon-arrow-right"></i></button>', 'alienship' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="btn-group">', 'link_before' => '<button class="btn">', 'link_after' => '</button>', 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

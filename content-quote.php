@@ -15,7 +15,7 @@
       <blockquote>
         <p><?php the_content(); ?></p>
       </blockquote>
-      <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="btn-group">', 'link_before' => '<button class="btn">', 'link_after' => '</button>', 'after' => '</div>' ) ); ?>
+      <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
     </div><!-- .entry-content -->
     </div><!-- .format-quote -->
 

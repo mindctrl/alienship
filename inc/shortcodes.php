@@ -74,6 +74,84 @@ endif;
 
 
 
+/* =Featured Posts Carousel
+----------------------------------------------- 
+* [featured-posts] shortcode. Options are tag, max, width, and height. Defaults: tag="featured" max="3" width="745" height="350".
+* Example: [featured-posts tag="featured" max="3"] This will feature up to 3 posts tagged "featured". */
+if ( ! function_exists( 'alienship_featured_posts_shortcode' ) ):
+function alienship_featured_posts_shortcode( $atts, $content = null ) {
+  extract(shortcode_atts(array('tag' => '', 'max' => '', 'width' => '', 'height' => ''), $atts));
+
+  if (empty($tag)) {
+    $tag = "featured";
+  } else {
+    $tag = ''. $tag .'';
+  }
+
+  if (empty($max)) {
+    $max = "3";
+  } else {
+    $max = ''. $max .'';
+  }
+
+  if (empty($width)) {
+    $width = "745";
+  } else {
+    $width = ''.$width.'';
+  }
+
+  if (empty($height)) {
+    $height = "350";
+  } else {
+    $height = ''.$height.'';
+  }
+  
+  $query = 'posts_per_page=' . absint( $max );
+  $query .= '&tag=' . $tag;
+  $featured_query_shortcode = new WP_Query( $query );
+  if ( $featured_query_shortcode->have_posts() ) { ?>
+
+    <!-- Featured listings -->
+    <div style="width:<?php echo $width;?>px; max-width: 100%">
+    <div class="row-fluid">
+    <div class="span12">
+      <div id="featured-carousel-shortcode" class="carousel slide">
+        <div class="carousel-inner">
+          <?php while ( $featured_query_shortcode->have_posts() ) : $featured_query_shortcode->the_post(); ?>
+
+          <div class="item">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_the_post_thumbnail( ''. $featured_query_shortcode->post->ID .'', array($width, $height), array('title' => "" )); ?></a>
+            <div class="carousel-caption">
+              <h4><?php the_title(); ?></h4>
+            </div><!-- .carousel-caption -->
+          </div><!-- .item -->
+
+        <?php endwhile; ?>
+        </div><!-- .carousel-inner -->
+        <a class="left carousel-control" href="#featured-carousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#featured-carousel" data-slide="next">&rsaquo;</a>
+      </div><!-- #featured-carousel -->
+    </div><!-- .span12 -->
+    </div><!-- .row-fluid -->
+    </div>
+    <div class="clear">&nbsp;</div>
+    <script type="text/javascript">
+      jQuery(function() {
+        // Activate the first carousel item //
+        jQuery("div#featured-carousel-shortcode").children("div.carousel-inner").children("div.item:first").addClass("active");
+        // Start the Carousel //
+        jQuery('.carousel').carousel();
+      });
+    </script>
+    <?php } // if(have_posts()) ?>
+    <!-- End featured listings -->
+<?php wp_reset_query();
+}
+add_shortcode('featured-posts', 'alienship_featured_posts_shortcode');
+endif;
+
+
+
 /* =Labels
 ----------------------------------------------- 
 * [label] shortcode. Options for type= are "default", important", "info", "success", "warning", and "inverse". If a type of not specified, default is used. 
@@ -92,7 +170,7 @@ endif;
 
 
 
-/* =Login form and shortcode
+/* =Login form shortcode
 ------------------------------------------------
 * [loginform] shortcode. Options are redirect="http://your-url-here.com". If redirect is not set, it returns to the current page.
 * Example: [loginform redirect="http://www.site.com"] */
@@ -112,6 +190,7 @@ function alienship_login_form( $atts, $content = null ) {
   }
 }
 add_shortcode('loginform', 'alienship_login_form');
+
 
 
 

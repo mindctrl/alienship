@@ -69,7 +69,6 @@
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<div class="alert alert-block fade in">
-    	<a class="close" data-dismiss="alert">&times;</a>
 			<p class="nocomments"><?php _e( 'Comments are closed.', 'alienship' ); ?></p>
 		</div>
 	<?php endif; ?>

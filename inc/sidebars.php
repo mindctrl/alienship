@@ -33,6 +33,15 @@ function alienship_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+  register_sidebar( array(
+    'name' => __( 'Footer 2', 'alienship' ),
+    'id' => 'footer-2',
+    'before_widget' => '<div class="span4">',
+    'after_widget' => "</div>",
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+  ) );
 }
 add_action( 'widgets_init', 'alienship_widgets_init' );
 endif;

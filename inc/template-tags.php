@@ -73,7 +73,7 @@ function alienship_comment( $comment, $args, $depth ) {
 			<footer>
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'alienship' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+          <?php printf( __( '%s', 'alienship' ), sprintf( '<cite class="name">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'alienship' ); ?></em>
@@ -235,3 +235,21 @@ function alienship_post_categories() {
   }
 }
 endif;
+
+
+if ( ! function_exists('alienship_header_title_and_description') ):
+/**
+ * Display site title and description below Top Menu navbar
+ * @since Alien Ship .55
+ */
+function alienship_header_title_and_description() {
+  $home_url = esc_url( home_url( '/' ) );
+  $site_name = esc_attr( get_bloginfo( 'name', 'display' ) );
+  $site_description = get_bloginfo( 'description' );
+  echo <<<TITLE_AND_DESC
+    <hgroup>
+      <h1 id="site-title" class="site-title"><span><a href="{$home_url}" title="{$site_name}" rel="home">{$site_name}</a></span></h1>
+      <h2 id="site-description" class="site-description">{$site_description}</h2>
+    </hgroup>
+TITLE_AND_DESC;
+} endif;

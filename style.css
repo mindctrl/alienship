@@ -210,9 +210,107 @@ dl.nav.mobile dd.current-menu-item a,
 /* Various design elements
 -------------------------- */
 
-.sticky, .bypostauthor {
+.sticky {
   
 }
+
+/* Style the comments
+ ---------------------------------------*/
+ #comments {
+  border-top: 1px solid #EEEEEE;
+  margin: 40px 0 0;
+  padding: 40px 0 0;
+ }
+
+#comments .comment.thread-even {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+#comments cite {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#comments .comment-meta {
+  font-size: 12px;
+}
+
+/* Style comment reply link as a button */
+.comment-reply-link {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #F5F5F5;
+  background-image: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6);
+  background-repeat: repeat-x;
+  border-color: #CCCCCC #CCCCCC #B3B3B3;
+  border-radius: 4px 4px 4px 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 14px;
+  margin-bottom: 0;
+  padding: 2px 6px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+}
+
+/* Hover effect for comment reply button */
+.comment-reply-link:hover {
+  background-color: #E6E6E6;
+  background-position: 0 -15px;
+  -moz-transition: background-position 0.1s linear 0s;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Pad the comment list */
+div.reply,
+.commentlist {
+  padding-bottom: 7px;
+}
+
+article.comment {
+  padding: 7px;
+  margin-bottom: 20px;
+}
+
+div.comment-author {
+  margin-bottom: 7px;
+}
+
+div.comment-content {
+  margin-top: 7px;
+}
+
+div.comment-author > img.avatar {
+  margin-right: 10px;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #DDDDDD;
+  padding: 3px;
+  vertical-align: middle;
+}
+
+#comments ul.children li {
+  list-style-type: none;
+  border-top: 1px solid #E6E6E6;
+}
+
+/* Highlight comments made by the post author */
+.bypostauthor > article.comment {
+  border-left: 4px solid rgba(184, 0, 0, .6);
+  padding-left: 12px;
+}
+/* End of comments */
 
 #page {
   margin: 0px auto;
@@ -448,45 +546,6 @@ body > footer {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
-}
-
-/* Style comment reply link as a button */
-.comment-reply-link {
-  background-color: #006DCC;
-  background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
-  background-repeat: repeat-x;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  border-radius: 4px 4px 4px 4px;
-  border-style: solid;
-  border-width: 1px;
-  -moz-border-bottom-colors: none;
-  -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-  color: white;
-  cursor: pointer;
-  font-size: 11px;
-  line-height: 14px;
-  padding: 2px 6px;
-  text-align: center;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
-/* Hover effect for comment reply button */
-.comment-reply-link:hover {
-  background-color: #0044CC;
-  background-position: 0 -15px;
-  -moz-transition: background-position 0.1s linear 0s;
-  color: #FFFFFF;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
-/* Pad the comment list */
-div.reply, .commentlist {
-  padding-bottom: 25px;
 }
 
 /* Alignment */

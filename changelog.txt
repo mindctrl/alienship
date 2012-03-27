@@ -8,6 +8,10 @@ Beta Version .55 - March XX, 2012
 - Styled "Read More" links.
 - Changed breadcrumbs to show name instead of singular name on custom post types.
 - Styled avatar images.
+- Added function for displaying site title and description.
+- Changed styling of comments.
+- Added featured posts shortcode.
+- Added Footer 2 widget area.
 
 
 

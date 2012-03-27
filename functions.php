@@ -157,3 +157,17 @@ add_action('admin_init', 'alienship_admin_notice_menus_ignore');
 /* Stop WordPress from adding those annoying closing paragraph tags */
 // remove_filter( 'the_content', 'wpautop' );
 // remove_filter( 'the_excerpt', 'wpautop' );
+
+
+/* Allow PHP in widgets
+ * Used for testing. Potentially dangerous. Uncomment at your own risk. */
+/* function alienship_execute_php_in_widgets($html){
+     if(strpos($html,"<"."?php")!==false){
+          ob_start();
+          eval("?".">".$html);
+          $html=ob_get_contents();
+          ob_end_clean();
+     }
+     return $html;
+}
+add_filter('widget_text','alienship_execute_php_in_widgets',100); */

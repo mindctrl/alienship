@@ -15,6 +15,9 @@
     <div id="footer-row" class="row-fluid footerwidget">
       <?php dynamic_sidebar("Footer"); ?>
     </div><!-- #footer-row -->
+    <div id="footer2-row" class="row-fluid footerwidget">
+      <?php dynamic_sidebar("Footer 2"); ?>
+    </div><!-- #footer2-row -->
   </div><!-- #footer-container -->
 
 </div><!-- #page -->

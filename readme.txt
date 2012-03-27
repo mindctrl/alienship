@@ -11,21 +11,20 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Update screenshots.
 + Featured Posts option: thumbnail grid.
-+ Make more use of Bootstrap styles. Example: post pagination (wp_link_pages).
-+ Style "Read more" for excerpts. btn btn-mini. icon-arrow-right
++ Change child theming config. Ditch the child theme check and forced load of parent style.css. Remove child theme requirement for custom.css loading.
++ Look at integrating Font Awesome?
++ Style each post format (future release)
++ Update screenshots.
 + Add register, profile, etc. links to login form widget.
 + Account dropdown at top right? Login/Register/Profile.
 + Clean up font extensions code.
 + Option to load minified/combined js and css?
 + CSS print rules.
-+ Look at integrating Font Awesome?
 + Make sticky posts stick on category archives. Why doesn't WP do this by default?
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
-+ Style each post format (future release)
 + Make sure strings are translatable.
 + Color options
 + Layout options for index, archive, etc. List, Tile, etc.

@@ -222,7 +222,7 @@ dl.nav.mobile dd.current-menu-item a,
   padding: 40px 0 0;
  }
 
-#comments .comment.thread-even {
+#comments .comment.thread-even > article {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
@@ -280,7 +280,7 @@ div.reply,
 }
 
 article.comment {
-  padding: 7px 7px 7px 15px;
+  padding: 7px;
   margin-bottom: 20px;
 }
 
@@ -293,11 +293,15 @@ div.comment-content {
 }
 
 div.comment-author > img.avatar {
-  margin-right: 10px;
+  margin-right: 0.846em;
   background: none repeat scroll 0 0 #FFFFFF;
-  border: 1px solid #DDDDDD;
+  /* border: 1px solid #DDDDDD; */
   padding: 3px;
   vertical-align: middle;
+}
+
+#comments ul.children {
+  margin-left: 20px;
 }
 
 #comments ul.children li {
@@ -307,9 +311,13 @@ div.comment-author > img.avatar {
 
 /* Highlight comments made by the post author */
 .bypostauthor > article.comment {
-  background: none repeat scroll 0 0 rgba(217, 237, 247, 0.5);
-  border-left: 4px solid rgba(0, 136, 204, 0.3);
-  padding-left: 15px;
+  background: none repeat scroll 0 0 rgba(70, 165, 70, 0.17);
+  /* border-left: 4px solid rgba(0, 136, 204, 0.3); */
+  padding-left: 10px;
+}
+
+.bypostauthor article img.avatar {
+  border-bottom: 3px solid #46A546;
 }
 /* End of comments */
 

@@ -10,7 +10,7 @@ get_header(); ?>
 	    <div id="main-row" class="row-fluid">
 	    	<?php alienship_content_before(); ?>
     		<div id="content" role="main" class="span9">
-
+ 
 			<?php if ( have_posts() ) : ?>
 
         <?php if ( of_get_option('alienship_content_nav_above') ) { ?>

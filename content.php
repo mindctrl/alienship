@@ -25,18 +25,11 @@
 	<footer class="entry-meta">
 	  <?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php if (of_get_option('alienship_published_date',1) ) { // Show published date? ?>
-			<?php alienship_posted_on(); ?>
-			<?php } // published date ?>
 			<?php
-				if (of_get_option('alienship_post_categories_posts_page',1) ) { // Show post categories?
-					alienship_post_categories(); // display the post categories
-				} // post categories
-				if (of_get_option('alienship_post_tags_posts_page',1) ) { // Show post tags?
-					alienship_post_tags(); // display the post tags
-				} // post tags
-			 ?>
-			<?php if (of_get_option('alienship_post_comments_link',1) ) { // Show comment link? ?>
+			if (of_get_option('alienship_published_date',1) ) { alienship_posted_on(); } // Show published date?
+    	if (of_get_option('alienship_post_categories',1) && is_single() || of_get_option('alienship_post_categories_posts_page',1) && !is_single() ) { alienship_post_categories(); } // show post categories?
+    	if (of_get_option('alienship_post_tags',1) && is_single() || of_get_option('alienship_post_tags_posts_page',1) && !is_single() ) { alienship_post_tags(); } // show post tags?
+			if (of_get_option('alienship_post_comments_link',1) ) { // Show comment link? ?>
 			<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 			<span class="comments-link"><span class="sep">&nbsp;&nbsp;</span><i class="icon-comment"></i>&nbsp;<?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?>&nbsp;</span>
 			<?php endif; ?>

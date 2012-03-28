@@ -7,38 +7,27 @@
  */
 ?>
   <?php alienship_post_before(); ?>
-  <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <article class="format-quote" role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php alienship_post_inside_before(); ?>
-
-    <div class="format-quote">
-      <div class="entry-content">
+    <div class="entry-content">
       <blockquote>
         <p><?php the_content(); ?></p>
       </blockquote>
       <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
     </div><!-- .entry-content -->
-    </div><!-- .format-quote -->
 
     <footer class="entry-meta">
-      <div class="entry-meta">
-        <?php if (of_get_option('alienship_published_date',1) ) { // Show published date? ?>
-        <?php alienship_posted_on(); ?>
-        <?php } // published date ?>
-        <?php
-        if ( is_single() ) {
-        /* translators: used between list items, there is a space after the comma */
-        $category_list = get_the_category_list( __( ', ', 'alienship' ) );
-
-        /* translators: used between list items, there is a space after the comma */
-        $tag_list = get_the_tag_list( '', ', ' );
-
-        alienship_post_categories(); // display the post categories
-        alienship_post_tags(); // display the post tags
-        } // end if ( is_single() )
-        edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); // display the edit link
-        ?>
-      </div><!-- .entry-meta -->
-  </footer><!-- .entry-meta -->
+    <?php
+    if (of_get_option('alienship_published_date',1) ) { alienship_posted_on(); } // show published date?
+    if (of_get_option('alienship_post_categories',1) && is_single() || of_get_option('alienship_post_categories_posts_page',1) && !is_single() ) { alienship_post_categories(); } // show post categories?
+    if (of_get_option('alienship_post_tags',1) && is_single() || of_get_option('alienship_post_tags_posts_page',1) && !is_single() ) { alienship_post_tags(); } // show post tags?
+    if (of_get_option('alienship_post_comments_link',1) ) { // Show comment link? ?>
+      <?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
+      <span class="comments-link"><span class="sep">&nbsp;&nbsp;</span><i class="icon-comment"></i>&nbsp;<?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?>&nbsp;</span>
+      <?php endif; ?>
+    <?php } // show comment link ?>
+    <?php edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); // display the edit link ?>
+    </footer><!-- .entry-meta -->
   <?php alienship_post_inside_after(); ?>
   </article><!-- #post -->
   <?php alienship_post_after(); ?>

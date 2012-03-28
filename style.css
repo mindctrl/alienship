@@ -612,23 +612,13 @@ img.aligncenter {
 ------------------------------------ */
 
 /* Quote post format */
-div.format-quote {
+article.format-quote {
     background: url("img/quote.png") no-repeat scroll left top;
 }
 
-div.format-quote > .entry-content {
+article.format-quote .entry-content {
   padding: 40px 0;
   margin-bottom: 75px;
-}
-
-div.format-quote > .entry-content > .entry-meta {
-  float: left;
-  left: 70px;
-  bottom: 35px;
-  margin: 0;
-  position: relative;
-  font-size: 11px;
-  text-transform: uppercase;
 }
 
 article.format-quote cite {
@@ -636,12 +626,12 @@ article.format-quote cite {
     font-style: italic;
 }
 
-div.format-quote > .entry-content > blockquote {
+article.format-quote blockquote {
   border-left: 2px solid #EEEEEE;
   margin: 0 0 18px 20px;
 }
 
-div.format-quote p {
+article.format-quote blockquote p {
   font-family: Georgia, Serif;
   font-size: 1.2em;
   font-style: italic;

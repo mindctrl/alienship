@@ -295,7 +295,6 @@ div.comment-content {
 div.comment-author > img.avatar {
   margin-right: 0.846em;
   background: none repeat scroll 0 0 #FFFFFF;
-  /* border: 1px solid #DDDDDD; */
   padding: 3px;
   vertical-align: middle;
 }
@@ -311,13 +310,12 @@ div.comment-author > img.avatar {
 
 /* Highlight comments made by the post author */
 .bypostauthor > article.comment {
-  background: none repeat scroll 0 0 rgba(70, 165, 70, 0.17);
-  /* border-left: 4px solid rgba(0, 136, 204, 0.3); */
+  background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
   padding-left: 10px;
 }
 
 .bypostauthor article img.avatar {
-  border-bottom: 3px solid #46A546;
+  border-bottom: 4px solid #46A546;
 }
 /* End of comments */
 

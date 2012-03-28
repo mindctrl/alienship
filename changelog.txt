@@ -3,7 +3,7 @@
 Beta Version .56 - March XX, 2012
 ---------------------------------
 - Again with the comment style tweaks.
-
+- Added content-none.php template to reduce dupe code in archive.php, author.php, index.php, and search.php.
 
 
 

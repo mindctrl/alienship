@@ -202,10 +202,9 @@ function optionsframework_options() {
 						"type" => "checkbox");
 
 
-	// Colors and Fonts
 
 	// Colors
-	$options[] = array( "name" => "Colors and Fonts",
+	$options[] = array( "name" => "Colors",
 						"type" => "heading");
 
 	$options[] = array( "name" => "Colors",
@@ -213,7 +212,7 @@ function optionsframework_options() {
 						"type" => "info");
 
 	$options[] = array( "name" => "Enable Custom Colors?",
-						"desc" => "Check this box to turn on custom colors. Set the colors below. Default is disabled.",
+						"desc" => "Check this box to turn on custom colors. Set the colors below. If this option is not enabled, all settings below will be ignored. Default setting is disabled.",
 						"id" => "alienship_enable_custom_colors",
 						"std" => "0",
 						"type" => "checkbox");
@@ -294,10 +293,22 @@ function optionsframework_options() {
 						"std" => "#CCCCCC",
 						"class" => "hidden",
 						"type" => "color");
+
+
 	//Fonts
+
+	$options[] = array( "name" => "Fonts",
+						"type" => "heading");
+
 	$options[] = array( "name" => "Fonts",
 						"desc" => "Choose the fonts you want to use on your site. NOTE: Some fonts aren't available in all styles, such as 'lighter'.",
 						"type" => "info");
+
+	$options[] = array( "name" => "Enable Custom Fonts?",
+						"desc" => "Check this box to turn on custom font options. Set the fonts below. NOTE: If this option is not enabled, all settings below will be ignored. Default setting is disabled.",
+						"id" => "alienship_enable_custom_fonts",
+						"std" => "0",
+						"type" => "checkbox");
 
 	$options[] = array( "name" => "Heading Font - h1",
 						"desc" => "The font used to display h1 headings. The default setting is Helvetica Neue, size 30px, bold, normal, color #333333.",

@@ -314,7 +314,7 @@ div.comment-author > img.avatar {
   padding-left: 10px;
 }
 
-.bypostauthor article img.avatar {
+.bypostauthor > article img.avatar {
   border-bottom: 4px solid #46A546;
 }
 /* End of comments */

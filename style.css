@@ -438,6 +438,11 @@ h3, h4, h5, h6 {
   margin: 0;
 }
 
+.page-header .taxonomy-description p {
+  margin: 10px 3px;
+  font-size: 1.15em;
+}
+
 /* Fluid images for posts, comments, and widgets */
 .entry-content img,
 .comment-content img,

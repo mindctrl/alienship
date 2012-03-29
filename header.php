@@ -71,6 +71,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 <body <?php body_class(); ?>>
 <!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
+<?php if ( of_get_option('alienship_show_top_navbar',1) ) { ?>
 <!-- Load Top Menu -->
   <div class="navbar">
     <div class="navbar-inner">
@@ -97,6 +98,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
 <!-- End Top Menu -->
+<?php } // if of_get_option('alienship_show_top_navbar') ?>
 
 <!-- Site title and description in masthead -->
 <div id="page" class="container-fluid hfeed">
@@ -139,6 +141,13 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
             </a>
             <div class="nav-collapse">
             <?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false )); ?>
+            <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
+            <form role="search" class="navbar-search pull-right" action="<?php echo site_url(); ?>" id="searchform" method="get">
+              <label class="assistive-text" for="s">Search</label>
+              <input type="text" placeholder="Search ..." id="s" name="s" class="search-query">
+              <input type="submit" value="Search" id="searchsubmit" name="submit" class="btn btn-primary">
+            </form>
+            <?php } // end if search bar ?>
             </div><!-- .nav-collapse -->
           </div><!-- .container -->
         </div><!-- .navbar-inner -->

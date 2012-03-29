@@ -4,6 +4,11 @@ Beta Version .56 - March XX, 2012
 ---------------------------------
 - Again with the comment style tweaks.
 - Added content-none.php template to reduce dupe code in archive.php, author.php, index.php, and search.php.
+- Cleaned up template parts.
+- Fixed issues related to showing post cats/tags on posts/page of posts.
+- Minor style adjustments.
+- Added option to completely disable Top Menu navbar.
+- Added search bar to Main Menu (if enabled in options).
 
 
 

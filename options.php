@@ -59,14 +59,8 @@ function optionsframework_options() {
 
 	// Navigation elements
 	$options[] = array( "name" => "Navigation Elements",
-						"desc" => "Breadcrumb navigation, content navigation, and top navbar design options",
+						"desc" => "Top navbar, breadcrumb navigation, and content navigation design options",
 						"type" => "info");
-
-	$options[] = array( "name" => "Show Breadcrumb Navigation?",
-						"desc" => "Default is show. Uncheck this box to hide breadcrumbs.",
-						"id" => "alienship_breadcrumbs",
-						"std" => "1",
-						"type" => "checkbox");
 
 	/* $options[] = array( "name" => "Show logo image in Top Menu navigation bar?",
 						"desc" => "Check this box to show a logo image in the Top Menu navigation bar. Upload your logo image below. Default is disabled.",
@@ -79,6 +73,12 @@ function optionsframework_options() {
 						"id" => "alienship_logo_in_navbar_file",
 						"type" => "upload"); */
 
+	$options[] = array( "name" => "Show Top Menu navigation bar?",
+						"desc" => "Displays the top navbar on your site, even if there's no menu assigned in Appearance > Menu. Uncheck this box to hide it. Default is enabled.",
+						"id" => "alienship_show_top_navbar",
+						"std" => "1",
+						"type" => "checkbox");
+
 	$options[] = array( "name" => "Show site name in Top Menu navigation bar?",
 						"desc" => "Default is enabled. Uncheck this box to hide site name in Top Menu navigation bar.",
 						"id" => "alienship_name_in_navbar",
@@ -88,6 +88,12 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Show search bar in Top Menu navigation bar?",
 						"desc" => "Default is enabled. Uncheck this box to turn it off.",
 						"id" => "alienship_search_bar",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show Breadcrumb Navigation?",
+						"desc" => "Default is show. Uncheck this box to hide breadcrumbs.",
+						"id" => "alienship_breadcrumbs",
 						"std" => "1",
 						"type" => "checkbox");
 
@@ -196,11 +202,100 @@ function optionsframework_options() {
 						"type" => "checkbox");
 
 
-	// Typography
-	$options[] = array( "name" => "Typography",
+	// Colors and Fonts
+
+	// Colors
+	$options[] = array( "name" => "Colors and Fonts",
 						"type" => "heading");
 
-	$options[] = array( "name" => "Typography",
+	$options[] = array( "name" => "Colors",
+						"desc" => "Choose the colors you want to use on your site.",
+						"type" => "info");
+
+	$options[] = array( "name" => "Enable Custom Colors?",
+						"desc" => "Check this box to turn on custom colors. Set the colors below. Default is disabled.",
+						"id" => "alienship_enable_custom_colors",
+						"std" => "0",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Link color",
+						"desc" => "The color of links (the &lt;a&gt; element). The default setting #0088CC.",
+						"id" => "alienship_color_link",
+						"std" => "#0088CC",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Link hover color",
+						"desc" => "The color of all your links when you hover the mouse over them. The default setting #005580.",
+						"id" => "alienship_color_link_hover",
+						"std" => "#005580",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar link color",
+						"desc" => "The color of links in the navbar. The default setting #999999.",
+						"id" => "alienship_color_navbar_link",
+						"std" => "#999999",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar link hover color",
+						"desc" => "The color of links in the navbar when you hover the mouse over them. The default setting #FFFFFF.",
+						"id" => "alienship_color_navbar_link_hover",
+						"std" => "#FFFFFF",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar active link text color",
+						"desc" => "The color of the text in active links in the navbar. The default setting #FFFFFF.",
+						"id" => "alienship_color_navbar_link_active",
+						"std" => "#FFFFFF",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar active link background color",
+						"desc" => "The background color of active links in the navbar. The default setting #222222.",
+						"id" => "alienship_color_navbar_link_active_bg",
+						"std" => "#222222",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar background gradient color # 1",
+						"desc" => "If your browser supports it, the Top Menu navbar is displayed with a gradient effect from top to bottom. This option sets the top of the gradient. The default setting #333333.",
+						"id" => "alienship_color_navbar_color1",
+						"std" => "#333333",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar background gradient color # 2",
+						"desc" => "If your browser supports it, the Top Menu navbar is displayed with a gradient effect from top to bottom. This option sets the bottom of the gradient. The default setting #222222.",
+						"id" => "alienship_color_navbar_color2",
+						"std" => "#222222",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar search box background color",
+						"desc" => "The color of the search box in the top navbar. The default setting #626262.",
+						"id" => "alienship_color_navbar_search_bg",
+						"std" => "#626262",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar search box background color when focused",
+						"desc" => "The color of the search box when it's in focus. The default setting #FFFFFF.",
+						"id" => "alienship_color_navbar_search_bg_focused",
+						"std" => "#FFFFFF",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Top Menu navigation bar search box placeholder text color",
+						"desc" => "The color of the default placeholder text in the search bar. The default setting #CCCCCC.",
+						"id" => "alienship_color_navbar_search_placeholder",
+						"std" => "#CCCCCC",
+						"class" => "hidden",
+						"type" => "color");
+	//Fonts
+	$options[] = array( "name" => "Fonts",
 						"desc" => "Choose the fonts you want to use on your site. NOTE: Some fonts aren't available in all styles, such as 'lighter'.",
 						"type" => "info");
 

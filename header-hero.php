@@ -69,7 +69,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 
 <body <?php body_class(); ?>>
 
-
+<?php if ( of_get_option('alienship_show_top_navbar',1) ) { ?>
 <!-- Load Top Menu -->
   <div class="navbar">
       <div class="navbar-inner">
@@ -96,6 +96,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
 <!-- End Top Menu -->
+<?php } // if of_get_option('alienship_show_top_navbar') ?>
 
   <?php do_action( 'before' ); ?>
   <?php alienship_header_before(); ?>

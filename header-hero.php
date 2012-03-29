@@ -40,16 +40,13 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 <?php /* Load Bootstrap CSS */
- require_once locate_template('/inc/bootstrap-css.php');
- ?>
+  require_once locate_template('/inc/bootstrap-css.php');
+?>
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-<?php if (is_child_theme()) { ?>
-  <!-- Include Child theme CSS file -->
-  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
-  <?php } ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
+
 <?php
-// <!--  Check for custom.css and if it exists, load it. -->
+// <!--  Check for custom.css and if it exists and we're not using a child theme, load it. -->
 $customcss = (get_stylesheet_directory()).'/custom/custom.css';
 if(file_exists($customcss) && !is_child_theme()){
 echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css" />';
@@ -68,6 +65,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 </head>
 
 <body <?php body_class(); ?>>
+<!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 <?php if ( of_get_option('alienship_show_top_navbar',1) ) { ?>
 <!-- Load Top Menu -->

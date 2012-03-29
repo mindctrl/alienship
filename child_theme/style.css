@@ -1,0 +1,24 @@
+/*
+Theme Name: Alien Ship Starter Child Theme
+Description: Child theme for the Alien Ship theme 
+Version: 1.0
+Author: John Parris
+Author URI: http://www.johnparris.com/alienship/
+Template: alienship
+*/
+
+/*
+This is a starter style.css file for your Alien Ship child theme. Place it in your
+child theme's directory and activate it in the WordPress admin panel. For more
+information about creating your own child theme, visit the following web page:
+http://codex.wordpress.org/Child_Themes
+*/
+
+/*
+---------------------------------------------------------------------
+Import Alien Ship's style.css file. If you don't want to import
+any of Alien Ship's styles, delete the import line below and
+write your own. Either way, put your child theme styles in this file.
+---------------------------------------------------------------------
+*/
+@import url("../alienship/style.css");

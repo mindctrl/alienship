@@ -12,7 +12,9 @@ Task List
 ---------
 
 + Featured Posts option: thumbnail grid.
-+ Change child theming config. Ditch the child theme check and forced load of parent style.css. Remove child theme requirement for custom.css loading.
++ Fix Top and Main menu conflicts in responsive.
++ Check breadcrumb attachment code. Error on view?
++ Add image meta widget to image template.
 + Look at integrating Font Awesome?
 + Style each post format (future release)
 + Update screenshots.

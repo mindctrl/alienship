@@ -1,6 +1,6 @@
 == Change log ==
 
-Beta Version .56 - March XX, 2012
+Beta Version .56 - March 29, 2012
 ---------------------------------
 - Again with the comment style tweaks.
 - Added content-none.php template to reduce dupe code in archive.php, author.php, index.php, and search.php.
@@ -9,6 +9,9 @@ Beta Version .56 - March XX, 2012
 - Minor style adjustments.
 - Added option to completely disable Top Menu navbar.
 - Added search bar to Main Menu (if enabled in options).
+- Started working on color options.
+- Changed Alien Ship to use the preferred child theme method. You must now @import the Alien Ship style.css in your child theme if you want to use Alien Ship's styles. A starter child theme style.css is now located in the alienship/child_theme folder.
+
 
 
 

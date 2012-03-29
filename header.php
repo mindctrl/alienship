@@ -36,21 +36,17 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
 
 	?></title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 <?php /* Load Bootstrap CSS */
   require_once locate_template('/inc/bootstrap-css.php');
- ?>
+?>
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-<?php if (is_child_theme()) { ?>
-  <!-- Include Child theme CSS file -->
-  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
-  <?php } ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
+
 <?php
-// <!--  Check for custom.css and if it exists, load it. -->
+// <!--  Check for custom.css and if it exists and we're not using a child theme, load it. -->
 $customcss = (get_stylesheet_directory()).'/custom/custom.css';
 if(file_exists($customcss) && !is_child_theme()){
 echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css" />';

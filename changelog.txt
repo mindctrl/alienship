@@ -1,5 +1,12 @@
 == Change log ==
 
+Beta Version .57 - March XX, 2012
+---------------------------------
+- Fixed options bug when saving options on a site with no tags. Thanks to Jason Loftis for reporting this one.
+
+
+
+
 Beta Version .56 - March 29, 2012
 ---------------------------------
 - Again with the comment style tweaks.
@@ -11,6 +18,7 @@ Beta Version .56 - March 29, 2012
 - Added search bar to Main Menu (if enabled in options).
 - Started working on color options.
 - Changed Alien Ship to use the preferred child theme method. You must now @import the Alien Ship style.css in your child theme if you want to use Alien Ship's styles. A starter child theme style.css is now located in the alienship/child_theme folder.
+- Added missing comment link in content-standard.php.
 
 
 

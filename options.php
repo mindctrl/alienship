@@ -35,6 +35,7 @@ function optionsframework_options() {
 	// Pull all the tags into an array
 	$options_tags = array();
 	$options_tags_obj = get_tags( array('hide_empty' => false) );
+	$options_tags[''] = 'Select a tag:';
 	foreach ($options_tags_obj as $tag) {
 			$options_tags[$tag->term_id] = $tag->name;
 	}

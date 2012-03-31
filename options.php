@@ -218,6 +218,13 @@ function optionsframework_options() {
 						"std" => "0",
 						"type" => "checkbox");
 
+	$options[] = array( "name" => "Body background color",
+						"desc" => "The background color of the whole web page. The default setting #FFFFFF.",
+						"id" => "alienship_color_body_bg",
+						"std" => "#FFFFFF",
+						"class" => "hidden",
+						"type" => "color");
+
 	$options[] = array( "name" => "Link color",
 						"desc" => "The color of links (the &lt;a&gt; element). The default setting #0088CC.",
 						"id" => "alienship_color_link",
@@ -292,6 +299,20 @@ function optionsframework_options() {
 						"desc" => "The color of the default placeholder text in the search bar. The default setting #CCCCCC.",
 						"id" => "alienship_color_navbar_search_placeholder",
 						"std" => "#CCCCCC",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Sidebar background color",
+						"desc" => "The background color of widget areas. The default setting #F5F5F5.",
+						"id" => "alienship_color_sidebar_bg",
+						"std" => "#F5F5F5",
+						"class" => "hidden",
+						"type" => "color");
+
+	$options[] = array( "name" => "Post separator color",
+						"desc" => "The thin line that separates posts from other posts on the page of posts and from the comments on a single post view. The default setting #EEEEEE.",
+						"id" => "alienship_color_footer_entry_meta_border",
+						"std" => "#EEEEEE",
 						"class" => "hidden",
 						"type" => "color");
 

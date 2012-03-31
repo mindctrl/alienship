@@ -13,9 +13,12 @@ Task List
 
 + Featured Posts option: thumbnail grid.
 + Fix Top and Main menu conflicts in responsive.
-+ Check breadcrumb attachment code. Error on view?
++ HTML5 validation on post pagination links.
++ Change older/newer paging at top/bottom to next/previous and change left/right alignment.
++ Finish color options - wells, panels, hero unit, button themes, navbar dropdowns, nav lists, etc.
 + Add image meta widget to image template.
-+ Look at integrating Font Awesome?
++ More widget areas? Page widget template. 404 page widget. 
++ Look at integrating Font Awesome? (future release)
 + Style each post format (future release)
 + Update screenshots.
 + Add register, profile, etc. links to login form widget.
@@ -28,10 +31,7 @@ Task List
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Make sure strings are translatable.
-+ Color options
 + Layout options for index, archive, etc. List, Tile, etc.
-+ Add custom taxonomies to breadcrumb code.
-+ Post display options: Timestamp/Category/Tags/Author/Comment link (Top, bottom)
 + Avatar and author bio display
 + Documentation
 
@@ -63,7 +63,7 @@ Authors
 + http://github.com/mindctrl
 
 
-Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme, and everyone else who has contributed to both and to the included libraries and assets. Thanks to Rachel Baker for breadcrumbs and various inspirations.
+Thanks to the original authors of Twitter's Bootstrap and Automattic's _s theme, and everyone else who has contributed to both and to the included libraries and assets.
 
 
 

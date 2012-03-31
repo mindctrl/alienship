@@ -9,6 +9,7 @@ if ( ! function_exists( 'alienship_widgets_init' ) ):
 function alienship_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'alienship' ),
+    'description' => __( 'The main widget area displayed in the sidebar.', 'alienship' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -18,6 +19,7 @@ function alienship_widgets_init() {
 
 	register_sidebar( array(
 		'name' => __( 'Hero Widgets', 'alienship' ),
+    'description' => __( 'Displayed on pages created with the Hero template', 'alienship' ),
 		'id' => 'herowidgets-1',
 		'before_widget' => '<div class="span4">',
 		'after_widget' => "</div>",
@@ -27,6 +29,7 @@ function alienship_widgets_init() {
 
 	register_sidebar( array(
 		'name' => __( 'Footer', 'alienship' ),
+    'description' => __( 'The footer widget area displayed after all content.', 'alienship' ),
 		'id' => 'footer-1',
 		'before_widget' => '<div class="span4">',
 		'after_widget' => "</div>",
@@ -36,6 +39,7 @@ function alienship_widgets_init() {
 
   register_sidebar( array(
     'name' => __( 'Footer 2', 'alienship' ),
+    'description' => __( 'The second footer widget area, displayed below the Footer widget area.', 'alienship' ),
     'id' => 'footer-2',
     'before_widget' => '<div class="span4">',
     'after_widget' => "</div>",

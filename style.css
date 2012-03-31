@@ -419,6 +419,10 @@ h3, h4, h5, h6 {
     line-height: 36px;
 }
 
+.alert strong {
+  font-size: 1.15em;
+}
+
 /* Post/page and comment content */
 .entry-content {
   padding: 15px 0;
@@ -438,6 +442,7 @@ h3, h4, h5, h6 {
   margin: 0;
 }
 
+/* Space out the archives descriptions from the names */
 .page-header .taxonomy-description p {
   margin: 10px 3px;
   font-size: 1.15em;

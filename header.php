@@ -154,7 +154,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
   </header><!-- #masthead -->
   <?php alienship_header_after(); ?>
 
-  <?php if ( of_get_option('alienship_breadcrumbs',1) && !is_home() ) { alienship_breadcrumbs(); } ?>
+  <?php if ( function_exists(alienship_breadcrumbs) && !is_home() ) { alienship_breadcrumbs(); } ?>
 
   <?php alienship_main_before(); ?>
   <div id="main">

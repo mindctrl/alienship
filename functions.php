@@ -46,11 +46,13 @@ function alienship_setup() {
   /* Header image */
   require_once locate_template('/inc/header-image.php');
 
-	/* Breadcrumbs */
-	require_once locate_template('/inc/breadcrumbs.php');
-
-  /* Load theme options framework */
+    /* Load theme options framework */
   require_once locate_template('/inc/options-panel.php');
+
+  /* Breadcrumbs */
+  if ( of_get_option('alienship_breadcrumbs',1) ) {
+    require_once locate_template('/inc/breadcrumbs.php');
+  }
 
   /* Custom functions that act independently of the theme templates */
   require_once locate_template('/inc/tweaks.php');

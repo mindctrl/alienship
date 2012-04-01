@@ -3,6 +3,9 @@
 Beta Version .57 - March XX, 2012
 ---------------------------------
 - Fixed options bug when saving options on a site with no tags. Thanks to Jason Loftis for reporting this one.
+- Added more color options.
+- Replaced breadcrumb code with Justin Tadlock's breadcrumb plugin.
+- Changed the way of doing title attribute on links per: http://en.wp.obenland.it/titles-as-attributes-the-right-way/
 
 
 

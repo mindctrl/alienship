@@ -3,6 +3,12 @@
 Beta Version .58 - April xx, 2012
 ---------------------------------
 - Added alienship_locate_template_uri function to improve child theme functionality. Checks the child theme before the parent theme for file existence and returns the appropriate URI. Updated inc/bootstrap-css.php to use this function. You can now use your own custom Bootstrap CSS files in your child theme by just dropping them in your child theme's css/ directory.
+- Fixed bug where posts tagged with the featured posts tag where not displaying in the index when featured posts were disabled.
+- Changed page max-width from 1000px to 940px.
+- Changed header image width from 1000 to 940, to match the page max-width.
+- Updated Bootstrap to 2.0.3-wip as of 4/3/2012.
+- As a result of Bootstrap update, changed default color of site name and site description in navbar from #FFFFFF to #999999.
+- Minor style update for Footer menu.
 
 
 

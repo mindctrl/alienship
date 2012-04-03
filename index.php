@@ -52,7 +52,7 @@ get_header(); ?>
         /* Check to see if we should duplicate featured posts in the body
          *
          * Do not display */
-        if ( of_get_option('alienship_featured_posts_show_dupes') == "0" ) {
+        if ( of_get_option('alienship_featured_posts') && of_get_option('alienship_featured_posts_show_dupes') == "0" ) {
           $args = array(
             'tag__not_in' => array ( of_get_option('alienship_featured_posts_tag') ),
             'paged' => $paged
@@ -61,7 +61,7 @@ get_header(); ?>
 
         } else {
 
-          /* Duplicate featured posts in the body */
+          /* Duplicate featured posts (Show all posts) */
           $args = array(
             'post_status' => 'publish',
             'paged' => $paged

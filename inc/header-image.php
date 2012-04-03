@@ -15,7 +15,7 @@
 
   /* The height and width of your custom header.
    * Add a filter to alienship_header_image_width and alienship_header_image_height to change these values. */
-  define( 'HEADER_IMAGE_WIDTH', apply_filters( 'alienship_header_image_width', 1000 ) );
+  define( 'HEADER_IMAGE_WIDTH', apply_filters( 'alienship_header_image_width', 940 ) );
   define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'alienship_header_image_height', 288 ) );
 
   /* We'll be using post thumbnails for custom header images on posts and pages.

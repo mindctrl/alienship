@@ -107,11 +107,13 @@ add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 
 
 /*
- * Allow embed and script tags in theme options textareas
+ * Allow "a", "embed" and "script" tags in theme options textareas
  */
 function optionscheck_change_sanitize() {
   remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
   add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
+  remove_filter( 'of_sanitize_text', 'sanitize_text_field' );
+  add_filter( 'of_sanitize_text', 'custom_sanitize_text' );
 }
 add_action('admin_init','optionscheck_change_sanitize', 100);
 
@@ -125,7 +127,24 @@ function custom_sanitize_textarea($input) {
     "height" => array(),
         "width" => array()
     );
+  $custom_allowedtags["a"] = array(
+    "href" => array(),
+    "target" => array(),
+    "id" => array(),
+    "class" => array() );
     $custom_allowedtags["script"] = array();
+    $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
+    $output = wp_kses( $input, $custom_allowedtags);
+  return $output;
+}
+
+function custom_sanitize_text($input) {
+  global $allowedposttags;
+  $custom_allowedtags["a"] = array(
+    "href" => array(),
+    "target" => array(),
+    "id" => array(),
+    "class" => array() );
     $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
     $output = wp_kses( $input, $custom_allowedtags);
   return $output;
@@ -156,7 +175,7 @@ function alienship_admin_notice_menus_ignore() {
 }
 add_action('admin_init', 'alienship_admin_notice_menus_ignore');
 
-
+/* Function to show/hide the color options */
 if ( ! function_exists( 'alienship_options_scripts' ) ):
 function alienship_options_scripts() { ?>
   <script type="text/javascript">

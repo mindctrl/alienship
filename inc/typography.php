@@ -10,6 +10,9 @@ $alienship_h3_font = of_get_option('alienship_h3_font');
 $alienship_h4_font = of_get_option('alienship_h4_font');
 $alienship_h5_font = of_get_option('alienship_h5_font');
 $alienship_h6_font = of_get_option('alienship_h6_font');
+$alienship_site_name_navbar_font = of_get_option('alienship_site_name_navbar_font');
+$alienship_site_desc_navbar_font = of_get_option('alienship_site_desc_navbar_font');
+
 if ($alienship_body_font) {
   echo '<style type="text/css">
   body,
@@ -88,6 +91,26 @@ if ($alienship_body_font) {
     font-weight: ' . $alienship_h6_font['weight'] .';
     font-size: ' . $alienship_h6_font['size'] .';
     color: ' . $alienship_h6_font['color'] .'; }';
+  }
+
+  if ($alienship_site_name_navbar_font && of_get_option('alienship_name_in_navbar',1) ) {
+    echo "\r\n  ";
+    echo '.navbar .brand {
+    font-family: ' . $alienship_site_name_navbar_font['face'] .';
+    font-style: ' . $alienship_site_name_navbar_font['style'] .';
+    font-weight: ' . $alienship_site_name_navbar_font['weight'] .';
+    font-size: ' . $alienship_site_name_navbar_font['size'] .';
+    color: ' . $alienship_site_name_navbar_font['color'] .'; }';
+  }
+
+  if ($alienship_site_desc_navbar_font && of_get_option('alienship_desc_in_navbar') ) {
+    echo "\r\n  ";
+    echo '.navbar .brand-desc {
+    font-family: ' . $alienship_site_desc_navbar_font['face'] .';
+    font-style: ' . $alienship_site_desc_navbar_font['style'] .';
+    font-weight: ' . $alienship_site_desc_navbar_font['weight'] .';
+    font-size: ' . $alienship_site_desc_navbar_font['size'] .';
+    color: ' . $alienship_site_desc_navbar_font['color'] .'; }';
   }
   echo "\r\n";
   echo '</style>';

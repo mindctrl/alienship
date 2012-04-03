@@ -1,12 +1,17 @@
 == Change log ==
 
-Beta Version .57 - March XX, 2012
+Beta Version .571 - April 2, 2012
 ---------------------------------
 - Fixed options bug when saving options on a site with no tags. Thanks to Jason Loftis for reporting this one.
 - Added more color options.
 - Replaced breadcrumb code with Justin Tadlock's breadcrumb plugin.
 - Don't load breadcrumb code at all if not enabled.
 - Changed the way of doing title attribute on links per: http://en.wp.obenland.it/titles-as-attributes-the-right-way/
+- Added option to display site description in navbar. If enabled, it pulls the navbar menu to the right to make room. The description is also hidden on mobile devices in the interest of space and clean display.
+- Added option to set font on site title and description in navbar.
+- Reduce font sizes on mobile.
+- Allow links in custom footer text.
+- Apply color styles to responsive navbar.
 
 
 

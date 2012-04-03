@@ -86,6 +86,12 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 
+	$options[] = array( "name" => "Show site description in Top Menu navigation bar?",
+						"desc" => "Check this box to show site description in Top Menu navigation bar. NOTE: Enabling this option will shift your nav menu to the right to make room for the site description. Site description is hidden on mobile devices. Default setting is disabled.",
+						"id" => "alienship_desc_in_navbar",
+						"std" => "0",
+						"type" => "checkbox");
+
 	$options[] = array( "name" => "Show search bar in Top Menu navigation bar?",
 						"desc" => "Default is enabled. Uncheck this box to turn it off.",
 						"id" => "alienship_search_bar",
@@ -380,6 +386,17 @@ function optionsframework_options() {
 						"std" => array('size' => '14px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#333333'),
 						"type" => "typography");
 
+	$options[] = array( "name" => "Site Name in Navigation Bar",
+						"desc" => "The font used for the site name displayed in the navigation bar. The default setting is Helvetica Neue, size 20px, normal, color #FFFFFF.",
+						"id" => "alienship_site_name_navbar_font",
+						"std" => array('size' => '20px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#FFFFFF'),
+						"type" => "typography");
+
+	$options[] = array( "name" => "Site Description in Navigation Bar",
+						"desc" => "The font used for the site description displayed in the navigation bar. The default setting is Helvetica Neue, size 13px, normal, color #FFFFFF.",
+						"id" => "alienship_site_desc_navbar_font",
+						"std" => array('size' => '13px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#FFFFFF'),
+						"type" => "typography");
 
 	// Featured Posts tab
 	$options[] = array( "name" => "Featured Posts",

@@ -387,15 +387,15 @@ function optionsframework_options() {
 						"type" => "typography");
 
 	$options[] = array( "name" => "Site Name in Navigation Bar",
-						"desc" => "The font used for the site name displayed in the navigation bar. The default setting is Helvetica Neue, size 20px, normal, color #FFFFFF.",
+						"desc" => "The font used for the site name displayed in the navigation bar. The default setting is Helvetica Neue, size 20px, normal, color #999999.",
 						"id" => "alienship_site_name_navbar_font",
-						"std" => array('size' => '20px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#FFFFFF'),
+						"std" => array('size' => '20px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#999999'),
 						"type" => "typography");
 
 	$options[] = array( "name" => "Site Description in Navigation Bar",
-						"desc" => "The font used for the site description displayed in the navigation bar. The default setting is Helvetica Neue, size 13px, normal, color #FFFFFF.",
+						"desc" => "The font used for the site description displayed in the navigation bar. The default setting is Helvetica Neue, size 13px, normal, color #999999.",
 						"id" => "alienship_site_desc_navbar_font",
-						"std" => array('size' => '13px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#FFFFFF'),
+						"std" => array('size' => '13px','face' => 'Helvetica Neue','style' => 'normal','weight' => 'normal','color' => '#999999'),
 						"type" => "typography");
 
 	// Featured Posts tab

@@ -85,12 +85,18 @@ class alienship_Widget_Login extends WP_Widget {
 				echo get_avatar( $user_ID );
 
 			/* Show logged in text if any is written. */
-			if ( !empty( $logged_in_text ) )
+			if ( !empty( $logged_in_text ) ):
 				global $current_user; get_currentuserinfo(); ?>
-				<br><br>
-				<p><?php echo $logged_in_text; ?>
+				<p style="margin-top: 7px;"><?php echo $logged_in_text; ?>
 				<a title="Edit your profile" href="<?php echo admin_url( 'profile.php' )?>"> <?php printf( $current_user->display_name ); ?></a>
-				<br><a href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout">Logout</a></p> <?php
+				<br><a id="logout-link-widget" href="<?php echo esc_url( wp_logout_url( $_SERVER['REQUEST_URI'] ) ); ?>" title="Logout">Logout</a></p> <?php endif; ?>
+				<?php
+				if ( empty( $logged_in_text ) ):
+					global $current_user; get_currentuserinfo();?>
+					<p style="margin-top: 7px;">
+					<a title="Edit your profile" href="<?php echo admin_url( 'profile.php' )?>"> <?php printf( $current_user->display_name ); ?></a>
+					<br><a id="logout-link-widget" href="<?php echo esc_url( wp_logout_url( $_SERVER['REQUEST_URI'] ) ); ?>" title="Logout">Logout</a></p> <?php endif; ?>
+					<?php
 		}
 
 		/* If the current user is not logged in. */
@@ -102,12 +108,11 @@ class alienship_Widget_Login extends WP_Widget {
 
 			/* Show logged out text if any is written. */
 			if ( $logged_out_text ) ?>
-			<br><br>
-			<p><?php echo $logged_out_text; ?></p>
+			<p style="margin-top: 7px;"><?php echo $logged_out_text; ?></p>
 			<?php
 			/* Output the login form. */
 			echo '<div class="alienship-login-form">' . alienship_wp_login_form( $args ) . '</div>';
-			wp_register('', '');
+			wp_register('<span class="register-link-widget">', '</span>');
 		}
 
 		/* Close the theme's widget wrapper. */

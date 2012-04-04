@@ -15,13 +15,14 @@ Task List
 + Fix Top and Main menu conflicts in responsive.
 + HTML5 validation on post pagination links.
 + Change older/newer paging at top/bottom to next/previous and change left/right alignment.
-+ Finish color options - wells, panels, hero unit, button themes, navbar dropdowns, nav lists, etc.
++ Option to display excerpt or full content on archives.
++ Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
 + Add image meta widget to image template.
++ Include improved widgets (Widgets Reloaded).
 + More widget areas? Page widget template. 404 page widget. 
 + Look at integrating Font Awesome? (future release)
 + Style each post format (future release)
 + Update screenshots.
-+ Add register, profile, etc. links to login form widget.
 + Account dropdown at top right? Login/Register/Profile.
 + Clean up font extensions code.
 + Option to load minified/combined js and css?

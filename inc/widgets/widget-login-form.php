@@ -86,7 +86,11 @@ class alienship_Widget_Login extends WP_Widget {
 
 			/* Show logged in text if any is written. */
 			if ( !empty( $logged_in_text ) )
-				echo do_shortcode( shortcode_unautop( wpautop( $logged_in_text ) ) );
+				global $current_user; get_currentuserinfo(); ?>
+				<br><br>
+				<p><?php echo $logged_in_text; ?>
+				<a title="Edit your profile" href="<?php echo admin_url( 'profile.php' )?>"> <?php printf( $current_user->display_name ); ?></a>
+				<br><a href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout">Logout</a></p> <?php
 		}
 
 		/* If the current user is not logged in. */
@@ -97,11 +101,13 @@ class alienship_Widget_Login extends WP_Widget {
 				echo get_avatar( $user_ID );
 
 			/* Show logged out text if any is written. */
-			if ( $logged_out_text )
-				echo do_shortcode( shortcode_unautop( wpautop( $logged_out_text ) ) );
-
+			if ( $logged_out_text ) ?>
+			<br><br>
+			<p><?php echo $logged_out_text; ?></p>
+			<?php
 			/* Output the login form. */
 			echo '<div class="alienship-login-form">' . alienship_wp_login_form( $args ) . '</div>';
+			wp_register('', '');
 		}
 
 		/* Close the theme's widget wrapper. */
@@ -167,7 +173,7 @@ class alienship_Widget_Login extends WP_Widget {
 			'value_username' => '',
 			'show_avatar' => true,
 			'logged_out_text' => esc_html__( 'Please log into the site.', 'alienship' ),
-			'logged_in_text' => esc_html__( 'You are currently logged in.', 'alienship' )
+			'logged_in_text' => esc_html__( 'Logged in as', 'alienship' )
 		);
 
 		/* Merge the user-selected arguments with the defaults. */

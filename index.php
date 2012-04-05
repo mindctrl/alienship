@@ -17,36 +17,10 @@ get_header(); ?>
 				<?php alienship_content_nav( 'nav-above' ); ?>
         <?php } ?>
 
-<?php if ( of_get_option('alienship_featured_posts') ) { ?>
-  <?php $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
-  <?php if ( $featured_query->have_posts() ) { ?>
-      <!-- Featured listings -->
-      <div class="row-fluid">
-      <div class="span12">
-        <div id="featured-carousel" class="carousel slide">
-          <div class="carousel-inner">
-            <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
-
-            <?php get_template_part( 'content', 'featured' ); ?>
-
-            <?php endwhile; ?>
-          </div><!-- .carousel-inner -->
-          <a class="left carousel-control" href="#featured-carousel" data-slide="prev">&lsaquo;</a>
-          <a class="right carousel-control" href="#featured-carousel" data-slide="next">&rsaquo;</a>
-        </div><!-- #featured-carousel -->
-      </div><!-- .span12 -->
-      </div><!-- .row-fluid -->
-      <script type="text/javascript">
-        jQuery(function() {
-          // Activate the first carousel item //
-          jQuery("div.item:first").addClass("active");
-          // Start the Carousel //
-          jQuery('.carousel').carousel();
-        });
-      </script>
-      <?php } // if(have_posts()) ?>
-      <!-- End featured listings -->
-      <?php } // if (of_get_option('alienship_featured_posts') ) ?>
+<?php if ( of_get_option('alienship_featured_posts') ) {
+  if ( of_get_option('alienship_featured_posts_display_type',1) == "1" ) { alienship_featured_posts_slider(); 
+    } else { alienship_featured_posts_grid(); }
+  } // if (of_get_option('alienship_featured_posts') ) ?>
 
         <?php 
         /* Check to see if we should duplicate featured posts in the body
@@ -72,7 +46,7 @@ get_header(); ?>
 
         <?php /* Start the Loop */ ?>
 
-				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 					<?php alienship_loop_before(); ?>
 					<?php
 						/* Include the Post-Format-specific template for the content.

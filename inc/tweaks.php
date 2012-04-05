@@ -102,6 +102,14 @@ if ( ! function_exists( 'alienship_remove_admin_bar_logo') ) {
 add_action('wp_before_admin_bar_render', 'alienship_remove_admin_bar_logo', 0);
 
 
+/* Change default length of excerpt 
+function alienship_custom_excerpt_length( $length ) {
+        return 20;
+}
+add_filter( 'excerpt_length', 'alienship_custom_excerpt_length', 999 );
+
+*/
+
 /**
  * Adds custom classes to the array of body classes.
  *

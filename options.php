@@ -412,6 +412,13 @@ function optionsframework_options() {
 						"std" => "0",
 						"type" => "checkbox");
 
+	$options[] = array( "name" => "Display Featured Posts in a slider or in a grid?",
+						"desc" => "Displays your featured posts in either a photo slider or a block grid. The default setting is Slider.",
+						"id" => "alienship_featured_posts_display_type",
+						"std" => "1",
+						"type" => "radio",
+						"options" => array("1" => "Slider","0" => "Grid"));
+
 	$options[] = array( "name" => "Featured Posts Tag",
 						"desc" => "The tag you select here determines which posts show in the featured posts slider. Example: if you were to select the moo tag, posts tagged with moo would be displayed in your slider. Don't forget to attach your featured images in the post editor!",
 						"id" => "alienship_featured_posts_tag",

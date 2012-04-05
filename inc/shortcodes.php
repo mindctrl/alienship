@@ -106,17 +106,19 @@ function alienship_featured_posts_shortcode( $atts, $content = null ) {
     $height = ''.$height.'';
   }
   
-  $query = 'posts_per_page=' . absint( $max );
-  $query .= '&tag=' . $tag;
-  $featured_query_shortcode = new WP_Query( $query );
+  $featuredquery = 'posts_per_page=' . absint( $max );
+  $featuredquery .= '&tag=' . $tag;
+  $featured_query_shortcode = new WP_Query( $featuredquery );
+  
   if ( $featured_query_shortcode->have_posts() ) { ?>
-
+  <?php // ob_start(); ?>
     <!-- Featured listings -->
     <div style="width:<?php echo $width;?>px; max-width: 100%">
     <div class="row-fluid">
     <div class="span12">
       <div id="featured-carousel-shortcode" class="carousel slide">
         <div class="carousel-inner">
+
           <?php while ( $featured_query_shortcode->have_posts() ) : $featured_query_shortcode->the_post(); ?>
 
           <div class="item">
@@ -128,9 +130,9 @@ function alienship_featured_posts_shortcode( $atts, $content = null ) {
 
         <?php endwhile; ?>
         </div><!-- .carousel-inner -->
-        <a class="left carousel-control" href="#featured-carousel" data-slide="prev">&lsaquo;</a>
-        <a class="right carousel-control" href="#featured-carousel" data-slide="next">&rsaquo;</a>
-      </div><!-- #featured-carousel -->
+        <a class="left carousel-control" href="#featured-carousel-shortcode" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#featured-carousel-shortcode" data-slide="next">&rsaquo;</a>
+      </div><!-- #featured-carousel-shortcode -->
     </div><!-- .span12 -->
     </div><!-- .row-fluid -->
     </div>
@@ -143,9 +145,11 @@ function alienship_featured_posts_shortcode( $atts, $content = null ) {
         jQuery('.carousel').carousel();
       });
     </script>
+<?php // $content = ob_get_contents(); ob_end_clean(); ?>
     <?php } // if(have_posts()) ?>
     <!-- End featured listings -->
 <?php wp_reset_query();
+    // return $content;
 }
 add_shortcode('featured-posts', 'alienship_featured_posts_shortcode');
 endif;

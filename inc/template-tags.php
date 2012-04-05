@@ -253,3 +253,64 @@ function alienship_header_title_and_description() {
     </hgroup>
 TITLE_AND_DESC;
 } endif;
+
+
+
+if ( ! function_exists('alienship_featured_posts_grid') ):
+/**
+ * Display featured posts in a grid
+ * @since Alien Ship .59
+ */
+function alienship_featured_posts_grid() {
+  $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
+  <?php if ( $featured_query->have_posts() ) {
+  echo "\t<ul id=\"featured-posts-grid\" class=\"block-grid mobile two-up\">"; ?>
+
+  <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>  
+
+    <?php get_template_part( 'content', 'fp-grid' ); ?>
+
+  <?php endwhile; ?>
+  <?php echo "</ul>";
+  }
+}
+endif;
+
+
+if ( ! function_exists('alienship_featured_posts_slider') ):
+/**
+ * Display featured posts in a slider
+ * @since Alien Ship .59 (The function. The feature @since Alien Ship .4)
+ */
+function alienship_featured_posts_slider() {
+  $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
+  <?php if ( $featured_query->have_posts() ) {
+    echo "\t<div class=\"row-fluid\">";
+      echo "\t<div class=\"span12\">";
+        echo "\t<div id=\"featured-carousel\" class=\"carousel slide\">";
+          echo "\t<div class=\"carousel-inner\">"; ?>
+            <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
+
+            <?php get_template_part( 'content', 'featured' ); ?>
+
+            <?php endwhile; ?>
+          <?php echo "\t</div><!-- .carousel-inner -->"; ?>
+          <?php echo "\t<a class=\"left carousel-control\" href=\"#featured-carousel\" data-slide=\"prev\">&lsaquo;</a>";
+          echo "\t<a class=\"right carousel-control\" href=\"#featured-carousel\" data-slide=\"next\">&rsaquo;</a>";
+        echo "\t</div><!-- #featured-carousel -->";
+      echo "\t</div><!-- .span12 -->";
+    echo "\t</div><!-- .row-fluid -->"; ?>
+      <script type="text/javascript">
+        jQuery(function() {
+          // Activate the first carousel item //
+          jQuery("div.item:first").addClass("active");
+          // Start the Carousel //
+          jQuery('.carousel').carousel();
+        });
+      </script>
+      <?php } // if(have_posts()) ?>
+      <!-- End featured listings -->
+<?php }
+
+
+endif;

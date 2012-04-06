@@ -11,7 +11,8 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Featured Posts option: thumbnail grid.
++ Finish up Featured Posts grid.
++ Style sticky posts.
 + Fix Top and Main menu conflicts in responsive.
 + HTML5 validation on post pagination links.
 + Change older/newer paging at top/bottom to next/previous and change left/right alignment.

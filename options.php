@@ -403,7 +403,7 @@ function optionsframework_options() {
 						"type" => "heading");
 
 	$options[] = array( "name" => "Featured Posts Information",
-						"desc" => "This feature displays certain posts in a photo slider at the top of your post index. This is a good way to make special content stand out. You can feature any post here, according to the criteria you choose below. Don't forget to assign featured images to your posts in the post editor!",
+						"desc" => "This feature displays certain posts in a photo slider or in a block grid at the top of your post index. This is a good way to make special content stand out. You can feature any post here, according to the criteria you choose below. Don't forget to assign featured images to your posts in the post editor!",
 						"type" => "info");
 							
 	$options[] = array( "name" => "Enable Featured Posts?",
@@ -420,14 +420,14 @@ function optionsframework_options() {
 						"options" => array("1" => "Slider","0" => "Grid"));
 
 	$options[] = array( "name" => "Featured Posts Tag",
-						"desc" => "The tag you select here determines which posts show in the featured posts slider. Example: if you were to select the moo tag, posts tagged with moo would be displayed in your slider. Don't forget to attach your featured images in the post editor!",
+						"desc" => "The tag you select here determines which posts show in the featured posts slider or grid. Example: if you were to select the moo tag, posts tagged with moo would be displayed. Don't forget to attach your featured images in the post editor!",
 						"id" => "alienship_featured_posts_tag",
 						"type" => "select",
 						"class" => "mini",
 						"options" => $options_tags);
 
 	$options[] = array( "name" => "Maximum # of Featured Posts to display",
-						"desc" => "Select the maximum number of posts you want to display in the featured posts slider. The default is three.",
+						"desc" => "Select the maximum number of posts you want to display in the featured posts slider or grid. The default is three. NOTE: The grid displays two posts per row. For best results, select an even number here.",
 						"id" => "alienship_featured_posts_maxnum",
 						"std" => "3",
 						"type" => "radio",
@@ -439,6 +439,10 @@ function optionsframework_options() {
 						"std" => "0",
 						"type" => "radio",
 						"options" => array("1" => "Show duplicate posts","0" => "Hide duplicate posts"));
+
+	$options[] = array( "name" => "Featured Posts Images",
+						"desc" => "A note about images: For best results, all of your images should be the same size (preferably the size you set below). If they are not the same size, your content will not look as good. For example: the photo slider will display images of varying sizes, but when it does the slider resizes itself between each slide. The grid will not display evenly if images are different sizes.",
+						"type" => "info");
 
 	$options[] = array( "name" => "Featured post image width",
 						"desc" => "Enter the width (in pixels) you want the featured images to be. Default is 745 pixels.",

@@ -17,10 +17,10 @@ get_header(); ?>
 				<?php alienship_content_nav( 'nav-above' ); ?>
         <?php } ?>
 
-<?php if ( of_get_option('alienship_featured_posts') ) {
-  if ( of_get_option('alienship_featured_posts_display_type',1) == "1" ) { alienship_featured_posts_slider(); 
-    } else { alienship_featured_posts_grid(); }
-  } // if (of_get_option('alienship_featured_posts') ) ?>
+        <?php if ( of_get_option('alienship_featured_posts') ) {
+          if ( of_get_option('alienship_featured_posts_display_type',1) == "1" ) { alienship_featured_posts_slider(); 
+            } else { alienship_featured_posts_grid(); }
+          } // if (of_get_option('alienship_featured_posts') ) ?>
 
         <?php 
         /* Check to see if we should duplicate featured posts in the body

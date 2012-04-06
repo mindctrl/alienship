@@ -1,8 +1,19 @@
 == Change log ==
 
-Beta Version .582 - April x, 2012
+Beta Version .591 - April 6, 2012
+---------------------------------
+- Tweaked Featured Post grid
+
+
+
+
+
+Beta Version .59 - April 5, 2012
 ---------------------------------
 - Updated login form widget to display current user name if logged in. Name links to user profile page. Displays register link if not logged in and registration is enabled.
+- Improved featured posts shortcode. Fixed bug.
+- Moved featured posts slider code into alienship_featured_posts_slider function.
+- Pass #1 on featured posts grid. Enable in Theme Options. More work to be done here.
 
 
 
@@ -17,7 +28,7 @@ Beta Version .581 - April 3, 2012
 - Updated Bootstrap to 2.0.3-wip as of 4/3/2012.
 - As a result of Bootstrap update, changed default color of site name and site description in navbar from #FFFFFF to #999999.
 - Minor style update for Footer menu.
--
+
 
 
 

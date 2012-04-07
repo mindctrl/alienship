@@ -104,33 +104,33 @@ function alienship_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for alienship_comment()
 
+
+
+if ( ! function_exists( 'alienship_post_author' ) ) :
+/**
+ * Prints HTML with meta information for the current post's author.
+ *
+ * @since Alien Ship 0.59
+ */
+function alienship_post_author() {
+  printf( __( '<span class="byline"><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a><span class="sep">&nbsp; &nbsp; &nbsp;</span></span></span>', 'alienship' ),
+    esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+    esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
+    esc_html( get_the_author() )
+  );
+}
+endif;
+
+
+
 if ( ! function_exists( 'alienship_posted_on' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with date posted information for the current post.
  *
  * @since Alien Ship 0.1
  */
 function alienship_posted_on() {
-	printf( __( '<i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="sep">&nbsp; &nbsp;</span><span class="byline"><span class="sep">&nbsp; &nbsp;</span><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a><span class="sep">&nbsp; &nbsp;</span></span></span>', 'alienship' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
-		esc_html( get_the_author() )
-	);
-}
-endif;
-
-if ( ! function_exists( 'alienship_quote_posted_on' ) ) :
-/**
- * Prints HTML with date posted information for the quote post format.
- *
- * @since Alien Ship 0.1
- */
-function alienship_quote_posted_on() {
-  printf( __( '<i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'alienship' ),
+  printf( __( '<i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="sep">&nbsp; &nbsp; &nbsp;</span>', 'alienship' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
@@ -138,6 +138,7 @@ function alienship_quote_posted_on() {
   );
 }
 endif;
+
 
 /**
  * Returns true if a blog has more than 1 category
@@ -202,7 +203,7 @@ function alienship_post_tags() {
     echo $html_before . $tag->name . $html_after . $sep;
     $tag_count++;
     }
-    echo "\t\t\t\t</span>\n";
+    echo "\t\t\t</span><span class=\"sep\">&nbsp; &nbsp;</span>\n";
   }
 }
 endif;

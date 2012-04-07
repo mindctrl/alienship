@@ -145,8 +145,14 @@ function optionsframework_options() {
 						"desc" => "Post meta information - published date, author, categories, and tags - is displayed on each post to provide your readers with information. Use the options below to control what is displayed.",
 						"type" => "info");
 
-	$options[] = array( "name" => "Show published date and author?",
-						"desc" => "Displays the date the article was posted and the author that posted it. Default is show. Uncheck this box to hide post published date and post author.",
+	$options[] = array( "name" => "Show post author?",
+						"desc" => "Displays the post author. Default is show. Uncheck this box to hide the post author.",
+						"id" => "alienship_post_author",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Show published date?",
+						"desc" => "Displays the date the article was posted. Default is show. Uncheck this box to hide post published date.",
 						"id" => "alienship_published_date",
 						"std" => "1",
 						"type" => "checkbox");

@@ -19,6 +19,7 @@
   <footer class="entry-meta">
   <?php
   if (of_get_option('alienship_published_date',1) ) { alienship_posted_on(); } // show published date?
+  if (of_get_option('alienship_post_author',1) ) { alienship_post_author(); } // Show post author?
   if (of_get_option('alienship_post_categories',1) && is_single() || of_get_option('alienship_post_categories_posts_page',1) && !is_single() ) { alienship_post_categories(); } // show post categories?
   if (of_get_option('alienship_post_tags',1) && is_single() || of_get_option('alienship_post_tags_posts_page',1) && !is_single() ) { alienship_post_tags(); } // show post tags?
   if (of_get_option('alienship_post_comments_link',1) ) { // Show comment link? ?>

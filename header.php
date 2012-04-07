@@ -139,12 +139,12 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
       <div class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse-main">
             <span></span>
             <span class="icon-bar-text">Menu</span>
             <span></span>
             </a>
-            <div class="nav-collapse">
+            <div class="nav-collapse-main">
             <?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false )); ?>
             <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
             <form role="search" class="navbar-search pull-right" action="<?php echo site_url(); ?>" id="searchform" method="get">

@@ -12,9 +12,9 @@ Task List
 ---------
 
 + Style sticky posts.
-+ Fix Top and Main menu conflicts in responsive.
 + HTML5 validation on post pagination links.
 + Option to display excerpt or full content on archives.
++ Option for displaying post meta per post type (standard, quote, featured, etc.)
 + Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
 + Add image meta widget to image template.
 + Include improved widgets (Widgets Reloaded).

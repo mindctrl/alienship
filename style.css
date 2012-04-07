@@ -146,6 +146,34 @@ body.logged-in > div.navbar-fixed-top {
   margin-bottom: 0;
 }
 
+/* Main Menu */
+.nav-collapse-main.collapse{height:auto;}
+
+@media (max-width: 480px) {
+  .nav-collapse-main {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 979px) {
+  .navbar .nav-collapse-main {
+    clear: left;
+  }
+  .nav-collapse-main,
+  .nav-collapse-main.collapse {
+    overflow: hidden;
+    height: 0;
+  }
+}
+
+@media (min-width: 980px) {
+  .nav-collapse-main.collapse {
+  height: auto !important;
+  overflow: visible !important;
+  }
+}
+/* End of Main Menu */
+
 /* Mobile Footer Nav */
 @media only screen and (max-width: 767px) {
 ul.footer-nav.mobile,

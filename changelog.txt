@@ -1,6 +1,13 @@
 == Change log ==
 
-Beta Version .591 - April 6, 2012
+Beta Version .593 - April 7, 2012
+---------------------------------
+- Resolved conflict with Top and Main menus being active at the same time in responsive mode. You can now use both at the same time if you wish.
+- 
+
+
+
+Beta Version .592 - April 6, 2012
 ---------------------------------
 - Tweaked Featured Post grid
 - Separated the option for display post author and published date into two options, and created alienship_post_author function for the author display option.
@@ -23,7 +30,7 @@ Beta Version .59 - April 5, 2012
 Beta Version .581 - April 3, 2012
 ---------------------------------
 - Added alienship_locate_template_uri function to improve child theme functionality. Checks the child theme before the parent theme for file existence and returns the appropriate URI. Updated inc/bootstrap-css.php to use this function. You can now use your own custom Bootstrap CSS files in your child theme by just dropping them in your child theme's css/ directory.
-- Fixed bug where posts tagged with the featured posts tag where not displaying in the index when featured posts were disabled.
+- Fixed bug where posts tagged with the featured posts tag were not displaying in the index when featured posts were disabled.
 - Changed page max-width from 1000px to 940px.
 - Changed header image width from 1000 to 940, to match the page max-width.
 - Updated Bootstrap to 2.0.3-wip as of 4/3/2012.

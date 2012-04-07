@@ -3,8 +3,9 @@
 Beta Version .591 - April 6, 2012
 ---------------------------------
 - Tweaked Featured Post grid
-
-
+- Separated the option for display post author and published date into two options, and created alienship_post_author function for the author display option.
+- Added alienship_archive_page_title function to display page title on archive (categories, tags, author, day/month/year)
+- Cleaned up some code.
 
 
 

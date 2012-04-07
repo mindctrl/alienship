@@ -13,9 +13,7 @@ get_header(); ?>
  
 			<?php if ( have_posts() ) : ?>
 
-        <?php if ( of_get_option('alienship_content_nav_above') ) { ?>
-				<?php alienship_content_nav( 'nav-above' ); ?>
-        <?php } ?>
+        <?php if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts? ?>
 
         <?php if ( of_get_option('alienship_featured_posts') ) {
           if ( of_get_option('alienship_featured_posts_display_type',1) == "1" ) { alienship_featured_posts_slider(); 
@@ -61,9 +59,7 @@ get_header(); ?>
 					<?php alienship_loop_after(); ?>
 				<?php endwhile; ?>
 
-        <?php if ( of_get_option('alienship_content_nav_below',1) ) { ?>
-				<?php alienship_content_nav( 'nav-below' ); ?>
-        <?php } ?>
+        <?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts? ?>
         
 			<?php else : ?>
 

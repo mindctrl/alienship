@@ -11,11 +11,9 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Finish up Featured Posts grid.
 + Style sticky posts.
 + Fix Top and Main menu conflicts in responsive.
 + HTML5 validation on post pagination links.
-+ Change older/newer paging at top/bottom to next/previous and change left/right alignment.
 + Option to display excerpt or full content on archives.
 + Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
 + Add image meta widget to image template.

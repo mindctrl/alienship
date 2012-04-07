@@ -15,9 +15,7 @@ get_header(); ?>
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php if ( of_get_option('alienship_content_nav_above') ) { ?>
-						<?php	alienship_content_nav( 'nav-above' ); ?>
-					<?php } ?>
+					<?php if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts? ?>
 
 					<?php alienship_loop_before(); ?>
 					<?php $format = get_post_format();
@@ -25,9 +23,7 @@ get_header(); ?>
 						$format = 'standard';
 						get_template_part( 'content', $format ); ?>
 					<?php alienship_loop_after(); ?>
-					<?php if ( of_get_option('alienship_content_nav_below',1) ) { ?>
-					<?php alienship_content_nav( 'nav-below' ); ?>
-					<?php } ?>
+					<?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts? ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template

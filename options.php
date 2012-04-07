@@ -437,7 +437,7 @@ function optionsframework_options() {
 						"id" => "alienship_featured_posts_maxnum",
 						"std" => "3",
 						"type" => "radio",
-						"options" => array("1" => "One","2" => "Two","3" => "Three","4" => "Four","5" => "Five"));
+						"options" => array("1" => "One","2" => "Two","3" => "Three","4" => "Four","5" => "Five","6" => "Six"));
 
 	$options[] = array( "name" => "Duplicate featured posts",
 						"desc" => "Show posts from the featured content section in the rest of the body. Default is Hide.",

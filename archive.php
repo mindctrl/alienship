@@ -29,7 +29,10 @@ get_header(); ?>
 						 * If you want to overload this in a child theme then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'content', get_post_format() ); ?>
+						$format = get_post_format();
+            if ( false === $format )
+            $format = 'standard';
+						get_template_part( 'content', $format ); ?>
 					<?php alienship_loop_after(); ?>
 				<?php endwhile; ?>
 			<?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } ?>

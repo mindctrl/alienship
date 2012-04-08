@@ -141,9 +141,16 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "text");
 
-	$options[] = array( "name" => "Post Meta Information",
-						"desc" => "Post meta information - published date, author, categories, and tags - is displayed on each post to provide your readers with information. Use the options below to control what is displayed.",
+	$options[] = array( "name" => "Posts and Pages",
+						"desc" => "Options related to the display of posts and pages, like excerpts and post meta information (published date, author, categories, and tags - is displayed on each post to provide your readers with information). Use the options below to control what is displayed.",
 						"type" => "info");
+
+	$options[] = array( "name" => "Display full content or excerpts on index and archive type pages?",
+						"desc" => "Excerpt shows a short snippet of your post, and full content shows it all. The default setting is Show entire post.",
+						"id" => "alienship_archive_display",
+						"std" => "full",
+						"type" => "radio",
+						"options" => array("full" => "Show entire post","excerpt" => "Show post excerpt"));
 
 	$options[] = array( "name" => "Show post author?",
 						"desc" => "Displays the post author. Default is show. Uncheck this box to hide the post author.",

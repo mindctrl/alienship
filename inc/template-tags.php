@@ -8,6 +8,23 @@
  * @since Alien Ship 0.1
  */
 
+if ( ! function_exists('alienship_excerpt_or_content') ):
+/** 
+ * Displays post content or excerpt
+ * @since Alien Ship .593
+ */
+function alienship_excerpt_or_content() {
+  if ( !is_singular() && of_get_option('alienship_archive_display', "full") == "excerpt" ) {
+    the_excerpt();
+  } else {
+    the_content();
+  }
+}
+add_action('alienship_content', 'alienship_excerpt_or_content');
+endif;
+
+
+
 if ( ! function_exists( 'alienship_content_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable

@@ -11,7 +11,7 @@
     <?php alienship_post_inside_before(); ?>
     <div class="entry-content">
       <blockquote>
-        <p><?php the_content(); ?></p>
+        <p><?php alienship_content(); ?></p>
       </blockquote>
       <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
     </div><!-- .entry-content -->

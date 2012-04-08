@@ -31,8 +31,8 @@ function alienship_setup() {
 	/* Clean up header output */
 	require_once locate_template('/inc/cleanup.php');
 
-	/* Hooks */
-	require_once locate_template('/inc/hooks.php');
+  /* Hooks */
+  require_once locate_template('/inc/hooks.php');
 
 	/* Register the navigation menus. */
 	require_once locate_template('/inc/menus.php');

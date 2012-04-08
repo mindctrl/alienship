@@ -7,6 +7,7 @@ function alienship_header_after() { do_action('alienship_header_after'); }
 
 // 404.php, archive.php, author.php content*.php index.php, page*.php, search.php, single.php
 function alienship_content_before() { do_action('alienship_content_before'); }
+function alienship_content() { do_action('alienship_content'); }
 function alienship_content_after() { do_action('alienship_content_after'); }
 function alienship_main_before() { do_action('alienship_main_before'); }
 function alienship_main_after() { do_action('alienship_main_after'); }

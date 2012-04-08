@@ -13,7 +13,6 @@ Task List
 
 + Style sticky posts.
 + HTML5 validation on post pagination links.
-+ Option to display excerpt or full content on archives.
 + Option for displaying post meta per post type (standard, quote, featured, etc.)
 + Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
 + Add image meta widget to image template.

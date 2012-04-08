@@ -3,7 +3,8 @@
 Beta Version .593 - April 7, 2012
 ---------------------------------
 - Resolved conflict with Top and Main menus being active at the same time in responsive mode. You can now use both at the same time if you wish.
-- 
+- Added alienship_content hook, and replaced the_content with the new alienship_content hook.
+- Added option to display excerpt or full content on index and archive type pages. Default is show entire post.
 
 
 

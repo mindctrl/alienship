@@ -52,7 +52,6 @@
 /* Custom Walker for Top Menu */
 class alienship_Navbar_Nav_Walker extends Walker_Nav_Menu {
   function check_current($val) {
-    // return preg_match('/(current-)|active|dropdown/', $val);
     return preg_match('/(current-)|current_page_parent|active|dropdown/', $val);
   }
 

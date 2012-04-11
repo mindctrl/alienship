@@ -52,7 +52,8 @@
 /* Custom Walker for Top Menu */
 class alienship_Navbar_Nav_Walker extends Walker_Nav_Menu {
   function check_current($val) {
-    return preg_match('/(current-)|active|dropdown/', $val);
+    // return preg_match('/(current-)|active|dropdown/', $val);
+    return preg_match('/(current-)|current_page_parent|active|dropdown/', $val);
   }
 
   function start_lvl(&$output, $depth) {
@@ -69,6 +70,11 @@ class alienship_Navbar_Nav_Walker extends Walker_Nav_Menu {
     $class_names = $value = '';
 
     $classes = empty($item->classes) ? array() : (array) $item->classes;
+
+    if (in_array('current_page_parent', $classes)) {
+      $classes[] = 'active';
+    }
+
     if ($args->has_children) {
       $classes[]      = 'dropdown';
       $li_attributes .= ' data-dropdown="dropdown"';

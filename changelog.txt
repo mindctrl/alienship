@@ -1,5 +1,13 @@
 == Change log ==
 
+Beta Version .594 - April 10, 2012
+----------------------------------
+- Added support for sticky posts in archives.
+- Add 'active' class to current_page_parent menu items. Fixes issue of 'active' not getting assigned to parent menu item when a page is being used as the front page. Thanks to Ben Word at Roots Theme for this (and the entire walker).
+
+
+
+
 Beta Version .593 - April 7, 2012
 ---------------------------------
 - Resolved conflict with Top and Main menus being active at the same time in responsive mode. You can now use both at the same time if you wish.

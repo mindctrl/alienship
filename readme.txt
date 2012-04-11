@@ -19,15 +19,12 @@ Task List
 + More widget areas? Page widget template. 404 page widget. 
 + Look at integrating Font Awesome? (future release)
 + Style each post format (future release)
-+ Update screenshots.
 + Account dropdown at top right? Login/Register/Profile.
 + Clean up font extensions code.
 + CSS print rules.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues
-+ Shortcodes for scaffolding, modals, tooltips, popovers, tabs...
 + Make sure strings are translatable.
-+ Layout options for index, archive, etc. List, Tile, etc.
 + Avatar and author bio display
 + Documentation
 
@@ -42,8 +39,6 @@ Ideas
 
 Known Issues
 ------------
-
-+ You can't really have a Top Menu and a Main Menu at the same time if you're using responsive layout. This is because they both use the same styling and the responsive button and javascript toggles both menus. This is actually on purpose as an option is coming that will enable either the Top Menu or the Main Menu. Both won't be an option. So for now, if you're using responsive, you need to make a choice of Top or Main. I might change this in later versions to enable two menus, but the current styling doesn't really work well for the user experience. It's just awkward to have two menu buttons without any other indicators as to the difference. Still thinking about this one.
 
 Have a bug? Please create an issue here on GitHub!
 

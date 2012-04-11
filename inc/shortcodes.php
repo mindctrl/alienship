@@ -111,7 +111,6 @@ function alienship_featured_posts_shortcode( $atts, $content = null ) {
   $featured_query_shortcode = new WP_Query( $featuredquery );
   
   if ( $featured_query_shortcode->have_posts() ) { ?>
-  <?php // ob_start(); ?>
     <!-- Featured listings -->
     <div style="width:<?php echo $width;?>px; max-width: 100%">
     <div class="row-fluid">
@@ -145,11 +144,9 @@ function alienship_featured_posts_shortcode( $atts, $content = null ) {
         jQuery('.carousel').carousel();
       });
     </script>
-<?php // $content = ob_get_contents(); ob_end_clean(); ?>
     <?php } // if(have_posts()) ?>
     <!-- End featured listings -->
 <?php wp_reset_query();
-    // return $content;
 }
 add_shortcode('featured-posts', 'alienship_featured_posts_shortcode');
 endif;

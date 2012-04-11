@@ -384,3 +384,84 @@ endif;
 
 
 
+if ( ! function_exists('alienship_archive_sticky_posts') ):
+/**
+ * Display sticky posts
+ * @since Alien Ship .594
+ */
+function alienship_archive_sticky_posts() {
+  $sticky = get_option( 'sticky_posts' );
+  if ( ! empty( $sticky ) ) {
+    global $do_not_duplicate;
+    global $page, $paged;
+    $do_not_duplicate = array();
+
+    if (is_category() ) {
+      $cat_ID = get_query_var('cat');
+      $sticky_args = array (
+        'post__in' => $sticky,
+        'cat' => $cat_ID,
+        'post_status' => 'publish',
+        'paged' => $paged
+      );
+
+    } elseif (is_tag() ) {
+      $current_tag = single_tag_title("", false);
+        $sticky_args = array(
+          'post__in' => $sticky,
+          'tag_slug__in' => array($current_tag),
+          'post_status' => 'publish',
+          'paged' => $paged
+        );
+    }
+
+  $sticky_posts = new WP_Query( $sticky_args );
+    if ( $sticky_posts->have_posts() ):
+      global $post;
+      while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
+        $do_not_duplicate[] = $post->ID;
+        $format = get_post_format();
+        if ( false === $format )
+        $format = 'standard';
+        get_template_part( 'content', $format );
+      endwhile;
+    endif; // if have posts
+  } //if not empty sticky
+} 
+endif;
+
+
+
+if ( ! function_exists('alienship_archive_get_posts') ):
+/**
+ * Display archive posts and exclude sticky posts
+ * @since Alien Ship .594
+ */
+function alienship_archive_get_posts() {
+  global $do_not_duplicate;
+  global $page, $paged;
+  if ( is_category() ) {
+    $cat_ID = get_query_var('cat');
+    $args = array(
+      'cat' => $cat_ID,
+      'post_status' => 'publish',
+      'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
+      'ignore_sticky_posts' => 1,
+      'paged' => $paged
+      );
+    $wp_query = new WP_Query( $args );
+  } elseif (is_tag() ) {
+      $current_tag = single_tag_title("", false);
+      $args = array(
+        'tag_slug__in' => array($current_tag),
+        'post_status' => 'publish',
+        'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
+        'ignore_sticky_posts' => 1,
+        'paged' => $paged
+        );
+      $wp_query = new WP_Query( $args );
+  } else {
+      new WP_Query();
+  }
+}
+endif;

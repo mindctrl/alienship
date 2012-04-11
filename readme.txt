@@ -15,7 +15,6 @@ Task List
 + HTML5 validation on post pagination links.
 + Option for displaying post meta per post type (standard, quote, featured, etc.)
 + Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
-+ Add image meta widget to image template.
 + Include improved widgets (Widgets Reloaded).
 + More widget areas? Page widget template. 404 page widget. 
 + Look at integrating Font Awesome? (future release)
@@ -23,9 +22,7 @@ Task List
 + Update screenshots.
 + Account dropdown at top right? Login/Register/Profile.
 + Clean up font extensions code.
-+ Option to load minified/combined js and css?
 + CSS print rules.
-+ Make sticky posts stick on category archives. Why doesn't WP do this by default?
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues
 + Shortcodes for scaffolding, modals, tooltips, popovers, tabs...

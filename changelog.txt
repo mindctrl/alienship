@@ -1,4 +1,9 @@
 == Change log ==
+Version .61 - April 11, 2012
+----------------------------
+- Fix bug with sticky posts on archives.
+
+
 
 Version .60 - April 11, 2012
 ----------------------------

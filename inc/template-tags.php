@@ -419,7 +419,7 @@ function alienship_archive_sticky_posts() {
     if ( $sticky_posts->have_posts() ):
       global $post;
       while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
-        $do_not_duplicate[] = $post->ID;
+        array_push($do_not_duplicate, $post->ID);
         $format = get_post_format();
         if ( false === $format )
         $format = 'standard';

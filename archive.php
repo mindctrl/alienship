@@ -16,8 +16,6 @@ get_header(); ?>
 			<div id="content" role="main" class="span9">
 			<?php alienship_archive_page_title();	?>
 			<?php 
-      // global $wp_query;
-      // $temp = $wp_query;
       alienship_archive_sticky_posts(); // sticky post query ?>
 			<?php if ( have_posts() ) : ?>
 				
@@ -26,19 +24,19 @@ get_header(); ?>
 				<?php if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } ?>
 
 				<?php // do the main query without stickies
-         // $wp_query = $temp;
-        if ( is_category() ) {
+        $sticky = get_option( 'sticky_posts' );
+        if ( is_category() && ! empty($sticky) ) {
 					$cat_ID = get_query_var('cat');
         	$args = array(
         		'cat' => $cat_ID,
             'post_status' => 'publish',
-            'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
+            'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts')),
             'ignore_sticky_posts' => 1,
             'paged' => $paged
             );
         	$wp_query = new WP_Query( $args );
         }
-        elseif (is_tag() ) {
+        elseif (is_tag() && ! empty($sticky) ) {
           $current_tag = single_tag_title("", false);
           $args = array(
             'tag_slug__in' => array($current_tag),

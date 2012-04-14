@@ -16,63 +16,99 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
     font-family: 'Open Sans';
     font-weight: lighter;
     font-style: normal;
-    src: local('Open Sans Light'), local('OpenSans-Light'), url('inc/fonts/OpenSans-Light.ttf') format('truetype');
+    src: url('inc/fonts/opensans/OpenSans-Light.eot');
+    src: url('inc/fonts/opensans/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/opensans/OpenSans-Light.woff') format('woff'),
+         url('inc/fonts/opensans/OpenSans-Light.ttf') format('truetype'),
+         url('inc/fonts/opensans/OpenSans-Light.svg#OpenSansLight') format('svg');
 }
 
 @font-face {
     font-family: 'Open Sans';
+    src: url('inc/fonts/opensans/OpenSans-Regular.eot');
+    src: url('inc/fonts/opensans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/opensans/OpenSans-Regular.woff') format('woff'),
+         url('inc/fonts/opensans/OpenSans-Regular.ttf') format('truetype'),
+         url('inc/fonts/opensans/OpenSans-Regular.svg#OpenSansRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-    src: local('Open Sans'), local('OpenSans'), url('inc/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-weight: bold;
     font-style: normal;
-    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('inc/fonts/OpenSans-Bold.ttf') format('truetype');
+    src: url('inc/fonts/opensans/OpenSans-Bold.eot');
+    src: url('inc/fonts/opensans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/opensans/OpenSans-Bold.woff') format('woff'),
+         url('inc/fonts/opensans/OpenSans-Bold.ttf') format('truetype'),
+         url('inc/fonts/opensans/OpenSans-Bold.svg#OpenSansBold') format('svg');
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-weight: normal;
     font-style: italic;
-    src: local('Open Sans Italic'), local('OpenSans-Italic'), url('inc/fonts/OpenSans-Italic.ttf') format('truetype');
+    src: url('inc/fonts/opensans/OpenSans-Italic.eot');
+    src: url('inc/fonts/opensans/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/opensans/OpenSans-Italic.woff') format('woff'),
+         url('inc/fonts/opensans/OpenSans-Italic.ttf') format('truetype'),
+         url('inc/fonts/opensans/OpenSans-Italic.svg#OpenSansItalic') format('svg');
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-weight: bold;
     font-style: italic;
-    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('inc/fonts/OpenSans-BoldItalic.ttf') format('truetype');
+    src: url('inc/fonts/opensans/OpenSans-BoldItalic.eot');
+    src: url('inc/fonts/opensans/OpenSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/opensans/OpenSans-BoldItalic.woff') format('woff'),
+         url('inc/fonts/opensans/OpenSans-BoldItalic.ttf') format('truetype'),
+         url('inc/fonts/opensans/OpenSans-BoldItalic.svg#OpenSansBoldItalic') format('svg');
 }
 
 @font-face {
     font-family: 'Cabin';
     font-weight: normal;
     font-style: normal;
-    src: local('Cabin'), local('Cabin'), url('inc/fonts/Cabin-Regular.ttf') format('truetype');
+    src: url('inc/fonts/cabin/Cabin-Regular.eot');
+    src: url('inc/fonts/cabin/Cabin-Regular.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/cabin/Cabin-Regular.woff') format('woff'),
+         url('inc/fonts/cabin/Cabin-Regular.ttf') format('truetype'),
+         url('inc/fonts/cabin/Cabin-Regular.svg#CabinRegular') format('svg');
 }
 
 @font-face {
     font-family: 'Cabin';
     font-weight: bold;
     font-style: normal;
-    src: local('Cabin Bold'), local('Cabin-Bold'), url('inc/fonts/Cabin-Bold.ttf') format('truetype');
+    src: url('inc/fonts/cabin/Cabin-Bold.eot');
+    src: url('inc/fonts/cabin/Cabin-Bold.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/cabin/Cabin-Bold.woff') format('woff'),
+         url('inc/fonts/cabin/Cabin-Bold.ttf') format('truetype'),
+         url('inc/fonts/cabin/Cabin-Bold.svg#CabinBold') format('svg');
 }
 
 @font-face {
     font-family: 'Cabin';
     font-weight: normal;
     font-style: italic;
-    src: local('Cabin Italic'), local('Cabin-Italic'), url('inc/fonts/Cabin-Italic.ttf') format('truetype');
+    src: url('inc/fonts/cabin/Cabin-Italic.eot');
+    src: url('inc/fonts/cabin/Cabin-Italic.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/cabin/Cabin-Italic.woff') format('woff'),
+         url('inc/fonts/cabin/Cabin-Italic.ttf') format('truetype'),
+         url('inc/fonts/cabin/Cabin-Italic.svg#CabinItalic') format('svg');
 }
 
 @font-face {
     font-family: 'Cabin';
     font-weight: bold;
     font-style: italic;
-    src: local('Cabin Bold Italic'), local('Cabin-BoldItalic'), url('inc/fonts/Cabin-BoldItalic.ttf') format('truetype');
+    src: url('inc/fonts/cabin/Cabin-BoldItalic.eot');
+    src: url('inc/fonts/cabin/Cabin-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('inc/fonts/cabin/Cabin-BoldItalic.woff') format('woff'),
+         url('inc/fonts/cabin/Cabin-BoldItalic.ttf') format('truetype'),
+         url('inc/fonts/cabin/Cabin-BoldItalic.svg#CabinBoldItalic') format('svg');
 }
 
 /* =Navigation and dropdowns
@@ -129,6 +165,11 @@ body.logged-in > div.navbar-fixed-top {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 14px;
+}
+
+/* Numbered page navigation*/
+#numbered-nav-below {
+  text-align: center;
 }
 
 /* Footer Nav - Admin > Appearance > Menus > Bottom Menu */
@@ -927,7 +968,7 @@ input#s {
 
   .block-grid.three-up > li {
     margin-left: 2%;
-    width: 31.3%;
+    width: 31.2%;
   }
   
   .block-grid.four-up {

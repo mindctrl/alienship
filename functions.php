@@ -11,7 +11,7 @@
  * @since Alien Ship 0.1
  */
 if ( ! isset( $content_width ) )
-	$content_width = 940; /* pixels */
+  $content_width = 940; /* pixels */
 
 
 if ( ! function_exists( 'alienship_setup' ) ):
@@ -25,23 +25,23 @@ if ( ! function_exists( 'alienship_setup' ) ):
  */
 function alienship_setup() {
 
-	/* Custom template tags for this theme. */
-	require_once locate_template('/inc/template-tags.php');
+  /* Custom template tags for this theme. */
+  require_once locate_template('/inc/template-tags.php');
 
-	/* Clean up header output */
-	require_once locate_template('/inc/cleanup.php');
+  /* Clean up header output */
+  require_once locate_template('/inc/cleanup.php');
 
   /* Hooks */
   require_once locate_template('/inc/hooks.php');
 
-	/* Register the navigation menus. */
-	require_once locate_template('/inc/menus.php');
+  /* Register the navigation menus. */
+  require_once locate_template('/inc/menus.php');
 
-	/* Register sidebars */
+  /* Register sidebars */
   require_once locate_template('/inc/sidebars.php');
 
-	/* Shortcodes */
-	require_once locate_template('/inc/shortcodes.php');
+  /* Shortcodes */
+  require_once locate_template('/inc/shortcodes.php');
 
   /* Header image */
   require_once locate_template('/inc/header-image.php');
@@ -57,40 +57,40 @@ function alienship_setup() {
   /* Custom functions that act independently of the theme templates */
   require_once locate_template('/inc/tweaks.php');
 
-	/* Load Bootstrap javascript */
+  /* Load Bootstrap javascript */
   require_once locate_template('/inc/bootstrap-js.php');
 
   /* PHPMailer rewrite */
   require_once locate_template('/inc/phpmailer-rewrite.php');
 
-	/* WordPress.com-specific functions and definitions */
-	//require_once locate_template('/inc/wpcom.php');
-
-	
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on alienship, use a find and replace
-	 * to change 'alienship' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
-
-	
-	/* Add default posts and comments RSS feed links to head */
-	add_theme_support( 'automatic-feed-links' );
+  /* WordPress.com-specific functions and definitions */
+  //require_once locate_template('/inc/wpcom.php');
 
 
-	/* Add support for post-thumbnails */
-	add_theme_support('post-thumbnails');
+  /**
+   * Make theme available for translation
+   * Translations can be filed in the /languages/ directory
+   * If you're building a theme based on alienship, use a find and replace
+   * to change 'alienship' to the name of your theme in all the template files
+   */
+  load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
+
+  $locale = get_locale();
+  $locale_file = get_template_directory() . "/languages/$locale.php";
+  if ( is_readable( $locale_file ) )
+  	require_once( $locale_file );
+
+  
+  /* Add default posts and comments RSS feed links to head */
+  add_theme_support( 'automatic-feed-links' );
 
 
-	/* Add support for post formats. To be styled in later release. */
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ));
+  /* Add support for post-thumbnails */
+  add_theme_support('post-thumbnails');
+
+
+  /* Add support for post formats. To be styled in later release. */
+  add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ));
 
 }
 endif; // alienship_setup
@@ -226,6 +226,43 @@ function alienship_locate_template_uri( $template_names ) {
  return $located;
 }
 endif;
+
+
+
+/**
+ * Alien Ship RSS Feed Dashboard Widget
+ *
+ * Retrieve the latest news from Alien Ship home page
+ *
+ * @since Alien Ship .63
+ *
+ */
+function alienship_rss_dashboard_widget() {
+  if ( function_exists('fetch_feed') ) {
+    include_once (ABSPATH . WPINC . '/feed.php'); // include the required file
+    $feed = fetch_feed('http://www.johnparris.com/alienship/feed/rss/'); // specify the source feed
+    $limit = $feed->get_item_quantity(3); // specify number of items
+    $items = $feed->get_items(0, $limit); // create an array of items
+  }
+  if ( $limit == 0 ) echo '<div>The RSS Feed is either empty or currently unavailable.</div>'; // fallback message
+  else foreach ($items as $item) : ?>
+
+  <h4 style="margin-bottom: 0;">
+  <a href="<?php echo $item->get_permalink(); ?>" title="<?php echo $item->get_date('j F Y @ g:i a'); ?>" target="_blank">
+  <?php echo $item->get_title(); ?>
+  </a>
+  </h4>
+  <p style="margin-top: 0.5em;">
+  <?php echo substr($item->get_description(), 0, 200); ?>
+  </p>
+  <?php endforeach;
+}
+/* Load custom dashboard widget
+ * Add your custom widget functions here to have them load. */
+function alienship_custom_dashboard_widgets() {
+  wp_add_dashboard_widget('alienship_rss_dashboard_widget', 'Alien Ship News', 'alienship_rss_dashboard_widget');
+}
+add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
 
 
 /* Stop WordPress from adding those annoying closing paragraph tags */

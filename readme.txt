@@ -11,16 +11,20 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
++ Test <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
++ Add grid support to featured posts shortcode.
 + Style sticky posts.
 + HTML5 validation on post pagination links.
++ Finish larger glyphs.
++ Clean up font extensions code. The of_font_size thing. Clean up options.php and such.
 + Option for displaying post meta per post type (standard, quote, featured, etc.)
++ Post templates.
 + Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
 + Include improved widgets (Widgets Reloaded).
 + More widget areas? Page widget template. 404 page widget. 
 + Look at integrating Font Awesome? (future release)
 + Style each post format (future release)
 + Account dropdown at top right? Login/Register/Profile.
-+ Clean up font extensions code.
 + CSS print rules.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues

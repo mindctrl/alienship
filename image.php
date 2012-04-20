@@ -34,8 +34,14 @@ get_header(); ?>
 						</div><!-- .entry-meta -->
 
 						<nav id="image-navigation">
-							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'alienship' ) ); ?></span>
-							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'alienship' ) ); ?></span>
+							<ul class="pager">
+								<li>
+									<?php previous_image_link( false, __( '&larr; Previous', 'alienship' ) ); ?>
+								</li>
+								<li>
+									<?php next_image_link( false, __( 'Next &rarr;', 'alienship' ) ); ?>
+								</li>
+							</ul>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
 

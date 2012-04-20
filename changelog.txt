@@ -1,8 +1,18 @@
 == Change log ==
 
+Version .63 - April 20, 2012
+----------------------------
+- Added Alien Ship RSS feed admin dashboard widget.
+- Updated 404 template and 404 breadcrumb messages to non-geek speak.
+- Added a numbered page nav function, which isn't currently being used, but will be in near future.
+- Updated page nav style on image template.
+- Minor housekeeping.
+
+
+
 Version .62 - April 14, 2012
 ----------------------------
-- Improved cross-browser font compatibility with fonts included with theme.
+- Improved cross-browser font compatibility for fonts included with theme.
 
 
 

@@ -24,7 +24,6 @@
 
 	<footer class="entry-meta">
 	  <?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
 			<?php
 			if (of_get_option('alienship_published_date',1) ) { alienship_posted_on(); } // Show published date?
 			if (of_get_option('alienship_post_author',1) ) { alienship_post_author(); } // Show post author?
@@ -36,7 +35,6 @@
 			<?php endif; ?>
 			<?php } // show comment link ?>
 			<?php edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); ?>
-		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</footer><!-- #entry-meta -->
 	<?php alienship_post_inside_after(); ?>

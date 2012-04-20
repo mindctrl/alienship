@@ -353,7 +353,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
 
 	/* If viewing a 404 error page. */
 	elseif ( is_404() )
-		$trail['trail_end'] = __( '404 Not Found', $textdomain );
+		$trail['trail_end'] = __( 'Content Not Found', $textdomain );
 
 	/* Allow devs to step in and filter the $trail array. */
 	return apply_filters( 'breadcrumb_trail_items', $trail, $args );

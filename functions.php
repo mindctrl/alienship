@@ -240,7 +240,7 @@ endif;
 function alienship_rss_dashboard_widget() {
   if ( function_exists('fetch_feed') ) {
     include_once (ABSPATH . WPINC . '/feed.php'); // include the required file
-    $feed = fetch_feed('http://www.johnparris.com/alienship/feed/rss/'); // specify the source feed
+    $feed = fetch_feed('http://www.johnparris.com/alienship/feed/'); // specify the source feed
     $limit = $feed->get_item_quantity(3); // specify number of items
     $items = $feed->get_items(0, $limit); // create an array of items
   }
@@ -253,7 +253,7 @@ function alienship_rss_dashboard_widget() {
   </a>
   </h4>
   <p style="margin-top: 0.5em;">
-  <?php echo substr($item->get_description(), 0, 200); ?>
+  <?php echo wp_html_excerpt(substr($item->get_description(), 0, 200), 200) . ' [...]'; ?>
   </p>
   <?php endforeach;
 }
@@ -264,6 +264,8 @@ function alienship_custom_dashboard_widgets() {
 }
 add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
 
+/* Set RSS update time to every 6 hours */
+add_filter( 'wp_feed_cache_transient_lifetime', create_function('$a', 'return 21600;') );
 
 /* Stop WordPress from adding those annoying closing paragraph tags */
 // remove_filter( 'the_content', 'wpautop' );

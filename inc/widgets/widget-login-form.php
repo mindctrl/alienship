@@ -89,13 +89,13 @@ class alienship_Widget_Login extends WP_Widget {
 				global $current_user; get_currentuserinfo(); ?>
 				<p style="margin-top: 7px;"><?php echo $logged_in_text; ?>
 				<a title="Edit your profile" href="<?php echo admin_url( 'profile.php' )?>"> <?php printf( $current_user->display_name ); ?></a>
-				<br><a id="logout-link-widget" href="<?php echo esc_url( wp_logout_url( $_SERVER['REQUEST_URI'] ) ); ?>" title="Logout">Logout</a></p> <?php endif; ?>
+				<br><a id="logout-link-widget" href="<?php echo esc_url( wp_logout_url( $_SERVER['REQUEST_URI'] ) ); ?>" title="Sign out">Sign out</a></p> <?php endif; ?>
 				<?php
 				if ( empty( $logged_in_text ) ):
 					global $current_user; get_currentuserinfo();?>
 					<p style="margin-top: 7px;">
 					<a title="Edit your profile" href="<?php echo admin_url( 'profile.php' )?>"> <?php printf( $current_user->display_name ); ?></a>
-					<br><a id="logout-link-widget" href="<?php echo esc_url( wp_logout_url( $_SERVER['REQUEST_URI'] ) ); ?>" title="Logout">Logout</a></p> <?php endif; ?>
+					<br><a id="logout-link-widget" href="<?php echo esc_url( wp_logout_url( $_SERVER['REQUEST_URI'] ) ); ?>" title="Sign out">Sign out</a></p> <?php endif; ?>
 					<?php
 		}
 

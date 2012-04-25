@@ -1,18 +1,16 @@
 <?php
 /**
- * The template for displaying posts in the Quote post format
+ * The template for displaying posts in the Status post format
  *
  * @package Alien Ship
- * @since Alien Ship 0.4
+ * @since Alien Ship 0.64
  */
 ?>
   <?php alienship_post_before(); ?>
   <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php alienship_post_inside_before(); ?>
     <div class="entry-content">
-      <blockquote>
         <p><?php alienship_content(); ?></p>
-      </blockquote>
       <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
     </div><!-- .entry-content -->
 

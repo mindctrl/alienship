@@ -466,6 +466,27 @@ function alienship_archive_get_posts() {
 }
 endif;
 
+
+if ( ! function_exists('alienship_get_first_link') ):
+/** 
+ * Get the first link in a post
+ * Used to link the title to external links on the "Link" post format
+ * @since Alien Ship .64
+ */
+function alienship_get_first_link() {
+  global $link_url;
+  global $post_content;
+  $content = get_the_content();
+  $link_start = stristr($content, "http" );
+  $link_end = stristr($link_start, "\n");
+  if ( ! strlen( $link_end ) == 0 ):
+  $link_url = substr($link_start, 0, -(strlen($link_end) + 1));
+  else:
+  $link_url = $link_start;
+  endif;
+  $post_content = substr($content, strlen($link_url));
+}
+endif;
 /*
 function alienship_page_nav($before = '', $after = '') {
   global $wpdb, $wp_query;

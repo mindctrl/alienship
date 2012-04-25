@@ -1,5 +1,13 @@
 == Change log ==
 
+Version .64 - April 24, 2012
+----------------------------
+- Added support for Status and Link post formats.
+- Fixed issue with double classing on quote post format.
+- Increased padding on dropdown menu items.
+
+
+
 Version .63 - April 20, 2012
 ----------------------------
 - Added Alien Ship RSS feed admin dashboard widget.

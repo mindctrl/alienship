@@ -11,6 +11,7 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
++ Update header image for 3.4
 + Test <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 + Add grid support to featured posts shortcode.
 + Style sticky posts.
@@ -19,6 +20,7 @@ Task List
 + Clean up font extensions code. The of_font_size thing. Clean up options.php and such.
 + Option for displaying post meta per post type (standard, quote, featured, etc.)
 + Post templates.
++ Implement update functionality.
 + Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
 + Include improved widgets (Widgets Reloaded).
 + More widget areas? Page widget template. 404 page widget. 

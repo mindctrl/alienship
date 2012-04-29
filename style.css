@@ -4,7 +4,7 @@ Theme URI: http://www.johnparris.com/alienship/
 Author: John Parris
 Author URI: http://www.johnparris.com/alienship/
 Description: Alien Ship is an HTML5 responsive starter theme for WordPress.
-Version: 0.64
+Version: 0.65
 License: GNU General Public License
 License URI: license.txt
 Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-language-support, microformats, featured-images, post-formats
@@ -144,9 +144,9 @@ body.logged-in > div.navbar-fixed-top {
   color: #F5F5F5;
   display: block;
   text-align: center;
+  text-shadow: 0 0 0em;
   vertical-align: middle;
   width: auto;
-  text-shadow: 0 0 0em;
 }
 
 .btn-navbar > a.btn {
@@ -179,17 +179,17 @@ body.logged-in > div.navbar-fixed-top {
 
 /* Footer Nav - Admin > Appearance > Menus > Bottom Menu */
 .footer-section {
-  padding-bottom: 10px;
-  padding-top: 20px;
   font-size: 1.3rem;
   font-weight: normal;
+  padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 .footer-nav li {
   display: block;
   float: right;
-  padding-left: 3%;
   margin-bottom: 0;
+  padding-left: 3%;
 }
 
 /* Main Menu */
@@ -207,8 +207,8 @@ body.logged-in > div.navbar-fixed-top {
   }
   .nav-collapse-main,
   .nav-collapse-main.collapse {
-    overflow: hidden;
     height: 0;
+    overflow: hidden;
   }
 }
 
@@ -224,11 +224,11 @@ body.logged-in > div.navbar-fixed-top {
 @media only screen and (max-width: 767px) {
 ul.footer-nav.mobile,
 dl.nav.mobile {
-  width: auto;
-  max-width: 100%;
-  margin: 20px -10px 40px;
-  height: auto;
   border-bottom: 1px solid #ccc;
+  height: auto;
+  margin: 20px -10px 40px;
+  max-width: 100%;
+  width: auto;
 }
 ul.footer-nav.mobile li {
   float: none;
@@ -246,47 +246,47 @@ dl.nav.mobile dd {
 }
 
 ul.footer-nav.mobile li a:hover {
-  color: #ffffff;
   background-color: #0088CC;
+  color: #ffffff;
   text-decoration: none;
 }
 
 ul.footer-nav.mobile li a,
 dl.nav.mobile dd a {
-  display: block;
-  width: auto;
-  height: auto;
-  padding: 18px 20px;
-  line-height: 1;
   border: solid 0 #ccc;
-  border-width: 1px 0 0;
-  margin: 0;
-  color: #555;
-  font-size: 15px;
-  font-size: 1.0rem;
   -webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  border-width: 1px 0 0;
+  color: #555;
+  display: block;
+  font-size: 15px;
+  font-size: 1.0rem;
+  height: auto;
+  line-height: 1;
+  margin: 0;
+  padding: 18px 20px;
+  width: auto;
 }
 
 ul.footer-nav.mobile li a.active,
 dl.nav.mobile dd a.active {
+  border-width: 1px 0 0;
   height: auto;
   margin: 0;
-  border-width: 1px 0 0;
 }
 
 ul.footer-nav.mobile li.current-menu-item a,
 dl.nav.mobile dd.current-menu-item a,
 .nice.tabs.mobile dd.current-menu-item a {
-  border: none;
   background: #00a6fc;
+  border: none;
   color: #fff;
+  height: auto;
   margin: 0;
   position: static;
   top: 0px;
-  height: auto;
   }
 }
 /* End of Navigation
@@ -296,7 +296,16 @@ dl.nav.mobile dd.current-menu-item a,
 -------------------------- */
 
 .sticky {
-  
+
+}
+
+ul {
+  list-style: none outside none;
+}
+
+ul,
+ol {
+  margin: 0 0 9px 0;
 }
 
 /* Style the comments
@@ -365,8 +374,8 @@ div.reply,
 }
 
 article.comment {
-  padding: 7px;
   margin-bottom: 20px;
+  padding: 7px;
 }
 
 div.comment-author {
@@ -378,8 +387,8 @@ div.comment-content {
 }
 
 div.comment-author > img.avatar {
-  margin-right: 0.846em;
   background: none repeat scroll 0 0 #FFFFFF;
+  margin-right: 0.846em;
   padding: 3px;
   vertical-align: middle;
 }
@@ -389,8 +398,8 @@ div.comment-author > img.avatar {
 }
 
 #comments ul.children li {
-  list-style-type: none;
   border-top: 1px solid #E6E6E6;
+  list-style-type: none;
 }
 
 /* Highlight comments made by the post author */
@@ -430,13 +439,15 @@ div#content > article {
     clear: both;
     margin: 0 0 18px;
     padding-bottom: 30px;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
+article > .entry-content,
 article > .entry-content p {
   font-family: "Helvetica Neue";
-  font-size: 14px;
-  line-height: 150%;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.625;
 }
 
 /* hgroup is the header area that contains the site title and description. */
@@ -468,35 +479,35 @@ img[class*="wp-image-"],
 img[class*="attachment-"],
 #content .gallery .gallery-icon img {
   border: 1px solid #DDDDDD;
-  padding: 6px;
   height: auto;
+  padding: 6px;
 }
 
 img.wp-post-image {
   border: 0;
-  padding: 0;
   height: auto;
+  padding: 0;
 }
 
 img.header-image,
 img.wp-post-image,
 img.avatar {
-  max-width: 100%;
-  height: auto;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.45);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+  height: auto;
+  max-width: 100%;
 }
 
 /* Fix carousel images */
 .carousel-inner > .item > a > img {
   border: 0;
   border-radius: 0;
-  padding: 0;
   max-width: 100%;
+  padding: 0;
 }
 
 a.carousel-control {
@@ -536,8 +547,8 @@ h3, h4, h5, h6 {
 
 /* Space out the archives descriptions from the names */
 .page-header .taxonomy-description p {
-  margin: 10px 3px;
   font-size: 1.15em;
+  margin: 10px 3px;
 }
 
 /* Fluid images for posts, comments, and widgets */
@@ -564,7 +575,8 @@ h1.entry-title {
 
 /* Page links */
 .pagination li.active {
-  -moz-border-bottom-colors: none;
+    background-color: #EEEEEE;
+    -moz-border-bottom-colors: none;
     -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -576,7 +588,6 @@ h1.entry-title {
     line-height: 34px;
     padding: 0 14px;
     text-decoration: none;
-    background-color: #EEEEEE;
   }
 
 .pagination li.active:first-child,
@@ -592,8 +603,8 @@ header .entry-meta {
 
 /* The meta data displayed within a post footer. */
 footer.entry-meta {
-  font-size: 11px;
   border-bottom: 1px solid #EEEEEE;
+  font-size: 11px;
   margin-bottom: 7px;
   padding-bottom: 15px;
   text-transform: uppercase;
@@ -645,18 +656,18 @@ p img,
 
 /* Featured posts grid */
 ul#featured-posts-grid > li {
-  padding-bottom: 2px;
-  display: block;
-  height: auto;
-  float: left;
-  background-color: #EEEEEE;
-  margin-bottom: 25px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  display: block;
+  height: auto;
+  float: left;
+  background-color: #EEEEEE;
+  margin-bottom: 25px;
+  padding-bottom: 2px;
 }
 
 ul#featured-posts-grid > li > header > h4 {
@@ -664,8 +675,8 @@ ul#featured-posts-grid > li > header > h4 {
 }
 
 div#innergrid {
-  padding: 0 10px 12px;
   height: 85%;
+  padding: 0 10px 12px;
 }
 
 div#innergrid > p {
@@ -681,9 +692,9 @@ div#innergrid > a > img {
 }
 
 .grid-header {
-  text-align: center;
   line-height: 18px;
   padding-bottom: 5px;
+  text-align: center;
 }
 
 #grid-footer-meta {
@@ -799,9 +810,8 @@ article.format-status .entry-content > p {
 /* Panels inspired by Zurb Foundation
 --------------------------------------- */
 .panel {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
+  background: -moz-linear-gradient(center top, #EEEEEE 0%, #E6E6E6 100%) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#E6E6E6), color-stop(0.5, #E6E6E6));
   background-color: #E6E6E6;
   border: 1px solid #eee;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -811,10 +821,11 @@ article.format-status .entry-content > p {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  background: -moz-linear-gradient(center top, #EEEEEE 0%, #E6E6E6 100%) repeat scroll 0 0 transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#E6E6E6), color-stop(0.5, #E6E6E6));
-
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 19px;
 }
+
 .panel blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
@@ -828,6 +839,17 @@ article.format-status .entry-content > p {
 
 .widget {
 	margin: 0 0 1.5em;
+}
+
+.widget a,
+.footerwidget a {
+  line-height: 21px;
+}
+
+.widget a:hover,
+.footerwidget a:hover {
+  background-color: #EEEEEE;
+  text-decoration: none;
 }
 
 .widget select,
@@ -865,7 +887,7 @@ input#s {
 /* End of Widgets
 ---------------------------------------------- */
 
-  
+
 /* Responsive layout
 ---------------------------------------------- */
 @media only screen and (max-width: 480px) {
@@ -880,30 +902,30 @@ input#s {
 @media only screen and (max-width: 767px) {
   /* Change Hero styling to better fit on mobile devices */
   .hero-unit {
-    padding: 5px;
-    margin-bottom: 20px;
     background-color: #f5f5f5;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 5px;
   }
 
   .hero-unit h1 {
-    margin-bottom: 0;
     font-size: 50px;
-    line-height: 1;
     letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 0;
   }
 
   .hero-unit p {
-    padding: 1px;
     font-size: 18px;
     font-weight: 200;
     line-height: 27px;
+    padding: 1px;
   }
 
 }
-  
+
 @media only screen and (max-width: 979px) {
   /* Improve font size and spacing on dropdown menu on mobile/tablets */
   .navbar .nav > li > a, .navbar .dropdown-menu a {
@@ -939,23 +961,23 @@ input#s {
     position: relative;
     bottom: 28px;
   } */
-} 
+}
 
 /*  --------------------------------------------------
   :: Block grids - Thanks to Zurb Foundation
   http://foundation.zurb.com/
-  
+
   These are 2-up, 3-up, 4-up and 5-up ULs, suited
   for repeating blocks of content. Add 'mobile' to
   them to switch them just like the layout grid
   (one item per line) on phones
-  
+
   For IE7/8 compatibility block-grid items need to be
   the same height. You can optionally uncomment the
   lines below to support arbitrary height, but know
   that IE7/8 do not support :nth-child.
   -------------------------------------------------- */
-  
+
   .block-grid {
     display: block;
     overflow: hidden;
@@ -963,26 +985,26 @@ input#s {
 
   .block-grid > li {
     display: block;
-    height: auto;
     float: left;
-    padding: 10px 0;
+    height: auto;
     margin-bottom: 12px;
+    padding: 10px 0;
   }
 
   .block-grid > li > blockquote {
     border-left: none;
     padding: 0 15px;
   }
-  
+
   .block-grid.two-up {
     margin-left: -4%;
   }
-  
+
   .block-grid.two-up > li {
     margin-left: 4%;
     width: 46%;
   }
-  
+
   .block-grid.three-up {
     margin-left: -2%;
   }
@@ -991,7 +1013,7 @@ input#s {
     margin-left: 2%;
     width: 31.2%;
   }
-  
+
   .block-grid.four-up {
     margin-left: -2%;
   }
@@ -1000,7 +1022,7 @@ input#s {
     margin-left: 2%;
     width: 23%;
   }
-  
+
   .block-grid.five-up {
     margin-left: -1.5%;
   }
@@ -1012,8 +1034,8 @@ input#s {
 
 /* --------------------------------------------------
   :: Mobile Block Grids
-  -------------------------------------------------- */ 
-  
+  -------------------------------------------------- */
+
   @media only screen and (max-width: 767px) {
     .block-grid.mobile {
       margin-left: 0;
@@ -1021,7 +1043,7 @@ input#s {
 
     .block-grid.mobile > li {
       float: none;
-      width: 100%;
       margin-left: 0;
+      width: 100%;
     }
   }

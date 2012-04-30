@@ -1,9 +1,17 @@
 == Change log ==
 
+Version .66 - April 29, 2012
+-----------------------------
+- Adjusted widget margins.
+- Fixed bug in sticky posts on custom post type archives.
+
+
+
 Version .65 - April 28, 2012
 ----------------------------
 - Cleaned up style.css ordering.
 - Tweaked list styles
+
 
 
 Version .64 - April 24, 2012

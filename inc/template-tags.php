@@ -9,7 +9,7 @@
  */
 
 if ( ! function_exists('alienship_excerpt_or_content') ):
-/** 
+/**
  * Displays post content or excerpt
  * @since Alien Ship .593
  */
@@ -39,7 +39,7 @@ function alienship_content_nav( $nav_id ) {
 		$nav_class = 'site-navigation post-navigation pager';
 
 	?>
-	
+
 	<nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="assistive-text"><?php _e( 'Post navigation', 'alienship' ); ?></h1>
 
@@ -227,7 +227,7 @@ endif;
 
 
 if ( ! function_exists( 'alienship_post_categories' ) ):
-/** 
+/**
  * Customize the list of categories displayed on index and on a post
  * @since Alien Ship 0.3
  */
@@ -284,7 +284,7 @@ function alienship_featured_posts_grid() {
   <?php if ( $featured_query->have_posts() ) {
   echo "\t<ul id=\"featured-posts-grid\" class=\"block-grid mobile two-up\">"; ?>
 
-  <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>  
+  <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
 
     <?php get_template_part( 'content', 'fp-grid' ); ?>
 
@@ -343,25 +343,25 @@ function alienship_archive_page_title() { ?>
   <?php
   if ( is_category() ) {
     printf( __( 'Category Archives: %s', 'alienship' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-  
+
   } elseif ( is_tag() ) {
     printf( __( 'Tag Archives: %s', 'alienship' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-  
+
   } elseif ( is_author() ) {
     printf( __( 'Author Archives: %s', 'alienship' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
-  
+
   } elseif ( is_day() ) {
     printf( __( 'Daily Archives: %s', 'alienship' ), '<span>' . get_the_date() . '</span>' );
-  
+
   } elseif ( is_month() ) {
     printf( __( 'Monthly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
-  
+
   } elseif ( is_year() ) {
     printf( __( 'Yearly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-  
+
   } else {
     _e( 'Archives', 'alienship' );
-  
+
   } ?>
   </h1>
     <?php
@@ -414,7 +414,7 @@ function alienship_archive_sticky_posts() {
           'paged' => $paged
         );
     }
-
+  if ( ! empty( $sticky_args ) ):
   $sticky_posts = new WP_Query( $sticky_args );
     if ( $sticky_posts->have_posts() ):
       global $post;
@@ -426,8 +426,9 @@ function alienship_archive_sticky_posts() {
         get_template_part( 'content', $format );
       endwhile;
     endif; // if have posts
+    endif; // if ( ! empty( $sticky_args ) )
   } //if not empty sticky
-} 
+}
 endif;
 
 
@@ -468,7 +469,7 @@ endif;
 
 
 if ( ! function_exists('alienship_get_first_link') ):
-/** 
+/**
  * Get the first link in a post
  * Used to link the title to external links on the "Link" post format
  * @since Alien Ship .64

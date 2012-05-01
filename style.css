@@ -299,10 +299,6 @@ dl.nav.mobile dd.current-menu-item a,
 
 }
 
-ul {
-  margin: 0 0 9px 5px;
-}
-
 /* Style the comments
  ---------------------------------------*/
  #comments {
@@ -845,15 +841,23 @@ article.format-status .entry-content > p {
   line-height: 21px;
 }
 
+.widget select,
+.widget input {
+  max-width: 95%;
+}
+
 .widget a:hover,
 .footerwidget a:hover {
   background-color: #EEEEEE;
   text-decoration: none;
 }
 
-.widget select,
-.widget input {
-  max-width: 95%;
+.footerwidget {
+  padding: 0px 0px 25px 0px;
+}
+
+.footerwidget p.entry-title {
+  margin-bottom: 9px;
 }
 
 /* Hide search widget submit button */
@@ -864,10 +868,6 @@ article.format-status .entry-content > p {
 /* Shorten the search widget input */
 input#s {
   width: 95%;
-}
-
-.footerwidget {
-  padding: 0px 0px 25px 0px;
 }
 
 #logout-link-widget {

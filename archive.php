@@ -30,7 +30,7 @@ get_header(); ?>
         	$args = array(
         		'cat' => $cat_ID,
             'post_status' => 'publish',
-            'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts')),
+            'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
             'ignore_sticky_posts' => 1,
             'paged' => $paged
             );

@@ -4,6 +4,7 @@ Version .67 - May 6, 2012
 -------------------------
 - Removed fonts and colors from theme options panel. See http://www.johnparris.com/alienship/thoughts-regarding-colors-and-fonts for explanation.
 - Adjusted spacing on <li> elements.
+- Removed fallback function on top menu. Stops the lame blank menu creation thing.
 
 
 

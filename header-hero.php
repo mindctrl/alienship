@@ -92,9 +92,9 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
             </form>
           <?php } // end if search bar ?>
           <?php if (of_get_option('alienship_desc_in_navbar') ) { // navbar with site desc ?>
-          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav pull-right', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
+          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav pull-right', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
           <?php } else if (! of_get_option('alienship_desc_in_navbar' ) ) { //no site desc ?>
-          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => 'alienship_menu_fallback' ) ); ?>
+          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
           <?php } ?>
         </div><!-- /nav-collapse -->
       </div><!-- /container -->

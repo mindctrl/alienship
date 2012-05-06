@@ -145,16 +145,3 @@ class alienship_Navbar_Nav_Walker extends Walker_Nav_Menu {
     call_user_func_array(array(&$this, 'end_el'), $cb_args);
   }
 }
-
-
-/* Top Menu fallback callback. If no menu is assigned, let's assign one - and optionally create one if needed. */
-function alienship_menu_fallback() {
-  $locations = get_theme_mod('nav_menu_locations');
-  if (! has_nav_menu('top') && ! is_nav_menu( 'Blank Top Menu' )) {
-    $locations['top'] = wp_create_nav_menu('Blank Top Menu', array('slug' => 'top'));
-    set_theme_mod('nav_menu_locations', $locations);
-  } else {
-  $locations['top'] = 'Blank Top Menu';
-  set_theme_mod('nav_menu_locations', $locations);
-  }
-}

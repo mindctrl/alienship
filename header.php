@@ -60,8 +60,6 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 
 <?php alienship_head(); ?>
 <?php wp_head(); ?>
-<?php if ( of_get_option('alienship_enable_custom_fonts') ) { require_once locate_template('/inc/typography.php'); } /* Custom fonts */ ?>
-<?php if ( of_get_option('alienship_enable_custom_colors') ) { require_once locate_template('/inc/colors.php'); } /* Custom colors */ ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -112,7 +110,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 	<header id="masthead" role="banner">
     <?php alienship_header_inside(); ?>
     <?php alienship_header_title_and_description(); ?>
-    <?php 
+    <?php
       // Check to see if the header image has been removed
       $header_image = get_header_image();
       if ( ! empty( $header_image ) ) :
@@ -167,4 +165,3 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 
   <?php alienship_main_before(); ?>
   <div id="main">
-  

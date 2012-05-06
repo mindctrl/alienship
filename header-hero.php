@@ -60,8 +60,6 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 
 <?php alienship_head(); ?>
 <?php wp_head(); ?>
-<?php if ( of_get_option('alienship_enable_custom_fonts') ) { require_once locate_template('/inc/typography.php'); } /* Custom fonts */ ?>
-<?php if ( of_get_option('alienship_enable_custom_colors') ) { require_once locate_template('/inc/colors.php'); } /* Custom colors */ ?>
 </head>
 
 <body <?php body_class(); ?>>

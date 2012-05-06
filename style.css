@@ -441,6 +441,10 @@ article > .entry-content p {
   line-height: 1.625;
 }
 
+.entry-content li {
+  line-height: 1.625;
+}
+
 /* hgroup is the header area that contains the site title and description. */
 hgroup {
 	margin-bottom: 10px;

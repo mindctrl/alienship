@@ -170,31 +170,10 @@ function alienship_admin_notice_menus_ignore() {
 }
 add_action('admin_init', 'alienship_admin_notice_menus_ignore');
 
-/* Function to show/hide the color options */
-if ( ! function_exists( 'alienship_options_scripts' ) ):
-function alienship_options_scripts() { ?>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-
-    jQuery('#alienship_enable_custom_colors').click(function() {
-      jQuery("[id^=section-alienship_color_]").fadeToggle(400);
-    });
-  
-    if (jQuery('#alienship_enable_custom_colors:checked').val() !== undefined) {
-      jQuery("[id^=section-alienship_color_]").show();
-    }
-  
-    });
-  </script>
-
-<?php
-}
-add_action('optionsframework_custom_scripts', 'alienship_options_scripts');
-endif;
 
 /**
  * Snatched from future release code in WordPress repo.
- * 
+ *
  * Retrieve the URI of the highest priority template file that exists.
  *
  * Searches in the stylesheet directory before the template directory so themes

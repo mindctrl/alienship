@@ -137,7 +137,7 @@ function optionsframework_options() {
 						"desc" => "Options related to the display of posts and pages, like excerpts and post meta information (published date, author, categories, and tags - is displayed on each post to provide your readers with information). Use the options below to control what is displayed.",
 						"type" => "info");
 
-	$options[] = array( "name" => "Display full content or excerpts on index and archive type pages?",
+	$options[] = array( "name" => "Display full content or excerpts on index, search, and archive type pages?",
 						"desc" => "Excerpt shows a short snippet of your post, and full content shows it all. The default setting is Show entire post.",
 						"id" => "alienship_archive_display",
 						"std" => "full",

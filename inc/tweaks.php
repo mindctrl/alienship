@@ -47,7 +47,7 @@ endif;
 
 
 
-/* 
+/*
  * Custom image, link, and title on login/register page
  * ----------------------------------------------------
  * @since Alien Ship .50
@@ -83,7 +83,7 @@ add_action('login_head', 'alienship_custom_login_image');
 
 
 /* Option to disable admin bar display on front end for all users.
- * @since Alien Ship .50 
+ * @since Alien Ship .50
  */
 if ( of_get_option( 'alienship_disable_admin_bar' ) ) {
   add_filter('show_admin_bar', '__return_false');
@@ -102,13 +102,23 @@ if ( ! function_exists( 'alienship_remove_admin_bar_logo') ) {
 add_action('wp_before_admin_bar_render', 'alienship_remove_admin_bar_logo', 0);
 
 
-/* Change default length of excerpt 
+
+/* Style the excerpt continuation */
+function alienship_excerpt_more($more) {
+       global $post;
+  return ' ... <a href="'. get_permalink($post->ID) . '">'. __( 'Continue Reading ', 'alienship' ) .' &rarr;</a>';
+}
+add_filter('excerpt_more', 'alienship_excerpt_more');
+
+
+
+/* Change default length of excerpt
 function alienship_custom_excerpt_length( $length ) {
         return 20;
 }
 add_filter( 'excerpt_length', 'alienship_custom_excerpt_length', 999 );
-
 */
+
 
 /**
  * Adds custom classes to the array of body classes.

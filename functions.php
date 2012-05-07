@@ -241,9 +241,6 @@ add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
 /* Set RSS update time to every 6 hours */
 add_filter( 'wp_feed_cache_transient_lifetime', create_function('$a', 'return 21600;') );
 
-/* Stop WordPress from adding those annoying closing paragraph tags */
-// remove_filter( 'the_content', 'wpautop' );
-// remove_filter( 'the_excerpt', 'wpautop' );
 
 
 /* Allow PHP in widgets

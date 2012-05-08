@@ -146,6 +146,17 @@ function custom_sanitize_text($input) {
 }
 
 
+
+/* Only show WordPress update nag to admins */
+function alienship_proper_update_nag() {
+  if ( !current_user_can( 'manage_options' ) ) {
+    remove_action ( 'admin_notices', 'update_nag', 3 );
+  }
+}
+add_action ( 'admin_notices', 'alienship_proper_update_nag', 1 );
+
+
+
 /* Display a notice about menu functionality */
 function alienship_admin_notice_menus() {
   global $current_user ;

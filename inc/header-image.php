@@ -1,42 +1,57 @@
 <?php
+/* Custom Header Support
+ *
+ * @since Alien Ship .53
+ *
+ * Credit to WordPress team for code used from Twenty Eleven and P2 themes.
+ */
 
-  /* Custom Header Support
-   *
-   * @since Alien Ship .53
-   *
-   * Credit to WordPress team and Twenty Eleven theme for concept and borrowed code
-   */
+/**
+ * Setup the WordPress core custom header feature.
+ *
+ * Use add_theme_support to register support for WordPress 3.4+
+ * as well as provide backward compatibility for previous versions.
+ * Use feature detection of get_custom_header() which was introduced
+ * in WordPress 3.4.
+ *
+ * @uses alienship_header_style()
+ * @uses alienship_admin_header_style()
+ * @uses alienship_admin_header_image()
+ *
+ * @package Alien Ship
+ * @since Alien Ship .69
+ */
 
-  /*  The default header text color */
-  define( 'HEADER_TEXTCOLOR', '000' );
+function alienship_setup_custom_header() {
+  $args = array(
+    'width'                   => 940,
+    'height'                  => 288,
+    'default-image'           => '',
+    'default-text-color'      => '333',
+    'header-text'             => 'false',
+    'random-default'          => 'true',
+    'wp-head-callback'        => 'alienship_header_style',
+    'admin-head-callback'     => 'alienship_admin_header_style',
+    'admin-preview-callback'  => 'alienship_admin_header_image',
+  );
 
-  /* By leaving empty, we allow for random image rotation. */
-  define( 'HEADER_IMAGE', '' );
+  $args = apply_filters( 'alienship_custom_header_args', $args );
 
-  /* The height and width of your custom header.
-   * Add a filter to alienship_header_image_width and alienship_header_image_height to change these values. */
-  define( 'HEADER_IMAGE_WIDTH', apply_filters( 'alienship_header_image_width', 940 ) );
-  define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'alienship_header_image_height', 288 ) );
+  if ( function_exists( 'get_custom_header' ) ) {
+    add_theme_support( 'custom-header', $args );
+  } else {
+    /* Compatibility for versions of WordPress prior to 3.4. */
+    define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
+    define( 'HEADER_IMAGE',        $args['default-image'] );
+    define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
+    define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
+    add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
+  }
+}
 
-  /* We'll be using post thumbnails for custom header images on posts and pages.
-   * We want them to be the size of the header image that we just defined
-   * Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php. */
-  set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
-  /* Add Alien Ship's custom image sizes */
-  add_image_size( 'large-feature', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for large feature (header) images
-  add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
 
-  /* Turn on random header image rotation by default. */
-  add_theme_support( 'custom-header', array( 'random-default' => true ) );
-
-  /* Add a way for the custom header to be styled in the admin panel that controls
-   * custom headers. See alienship_admin_header_style(), below. */
-  add_custom_image_header( 'alienship_header_style', 'alienship_admin_header_style', 'alienship_admin_header_image' );
-
-  // ... and thus ends the changeable header business.
-
-  /* Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI. */
+/* Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI. */
   register_default_headers( array(
     'shore' => array(
       'url' => '%s/img/headers/shore.jpg',
@@ -63,6 +78,7 @@
       'description' => __( 'Lanterns', 'alienship' )
     )
   ) );
+
 
 
 if ( ! function_exists( 'alienship_header_style' ) ) :
@@ -104,11 +120,13 @@ function alienship_header_style() {
 }
 endif; // alienship_header_style
 
+
+
 if ( ! function_exists( 'alienship_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_custom_image_header() in alienship_setup().
+ * Referenced via alienship_setup_custom_header and add_custom_image_header().
  *
  * @since Alien Ship .53
  */
@@ -120,7 +138,7 @@ function alienship_admin_header_style() {
   }
   #headimg h1,
   #desc {
-    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   }
   #headimg h1 {
     margin: 0;
@@ -154,27 +172,24 @@ function alienship_admin_header_style() {
 }
 endif; // alienship_admin_header_style
 
+
+
 if ( ! function_exists( 'alienship_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_custom_image_header() in alienship_setup().
+ * Referenced via alienship_setup_custom_header and add_custom_image_header().
  *
  * @since Alien Ship .53
  */
 function alienship_admin_header_image() { ?>
   <div id="headimg">
-    <?php
-    if ( 'blank' == get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) || '' == get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) )
-      $style = ' style="display:none;"';
-    else
-      $style = ' style="color:#' . get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) . ';"';
-    ?>
-    <h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+    <?php $style = ( 'blank' == get_header_textcolor() OR ! get_header_textcolor() ) ? ' style="display: none;"' : ''; ?>
+
+    <h1<?php echo $style; ?>><a id="name" onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
     <div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-    <?php $header_image = get_header_image();
-    if ( ! empty( $header_image ) ) : ?>
-      <img src="<?php echo esc_url( $header_image ); ?>" alt="" />
+    <?php if ( get_header_image() ) : ?>
+      <img src="<?php echo esc_url( get_header_image() ); ?>" alt="" />
     <?php endif; ?>
   </div>
 <?php }

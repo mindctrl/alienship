@@ -11,21 +11,19 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Update header image for 3.4
++ Options for left sidebar and no sidebar.
++ Add support for TinyMCE for Bootstrap elements.
++ Support for a custom.php
 + Test <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 + Add grid support to featured posts shortcode.
 + Style sticky posts.
++ Finish styling each post format. Left to do are: aside, gallery, image, video, audio, and chat.
 + HTML5 validation on post pagination links.
 + Finish larger glyphs.
-+ Clean up font extensions code. The of_font_size thing. Clean up options.php and such.
-+ Option for displaying post meta per post type (standard, quote, featured, etc.)
 + Post templates.
 + Implement update functionality.
-+ Finish color options - wells, panels, hero unit, navbar dropdowns, nav lists, etc.
-+ Include improved widgets (Widgets Reloaded).
-+ More widget areas? Page widget template. 404 page widget. 
++ More widget areas? Page widget template. 404 page widget.
 + Look at integrating Font Awesome? (future release)
-+ Style each post format (future release)
 + Account dropdown at top right? Login/Register/Profile.
 + CSS print rules.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.

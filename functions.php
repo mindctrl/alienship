@@ -45,6 +45,7 @@ function alienship_setup() {
 
   /* Header image */
   require_once locate_template('/inc/header-image.php');
+  alienship_setup_custom_header();
 
     /* Load theme options framework */
   require_once locate_template('/inc/options-panel.php');

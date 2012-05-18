@@ -48,7 +48,7 @@
 				 * to use alienship_comment() to format the comments.
 				 * If you want to overload this in a child theme then you can
 				 * define alienship_comment() and that will be used instead.
-				 * See alienship_comment() in alienship/functions.php for more.
+				 * See alienship_comment() in inc/template-tags.php for more.
 				 */
 				wp_list_comments( array( 'callback' => 'alienship_comment' ) );
 			?>
@@ -65,7 +65,7 @@
 	<?php endif; // have_comments() ?>
 
 	<?php
-		// If comments are closed and there are no comments, let's leave a little note, shall we?
+		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<div class="alert alert-block fade in">
@@ -87,7 +87,7 @@
   <?php if (is_user_logged_in()) { ?>
     <p><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'alienship'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'alienship'); ?>"><?php _e('Log out &raquo;', 'alienship'); ?></a></p>
   <?php } else { ?>
-  
+
     <label for="author" class="control-label"><?php _e('Name', 'alienship'); if ($req) _e(' (required)', 'alienship'); ?></label>
     <div class="input-prepend">
     <span class="add-on"><i class="icon-user"></i> </span><input type="text" class="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?>>

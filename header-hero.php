@@ -57,7 +57,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-
+<link rel="shortcut icon" href="<?php echo alienship_locate_template_uri('/img/favicon.ico'); ?>">
 <?php alienship_head(); ?>
 <?php wp_head(); ?>
 </head>

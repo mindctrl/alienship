@@ -7,10 +7,9 @@
  */
 
 function optionsframework_option_name() {
-	// This gets the theme name from the stylesheet (lowercase and without spaces)
-	$themename = get_theme_data(STYLESHEETPATH . '/style.css');
-	$themename = $themename['Name'];
-	$themename = preg_replace("/\W/", "", strtolower($themename) );
+	// This gets the theme name from the stylesheet
+	$themename = get_option( 'stylesheet' );
+	$themename = preg_replace("/\W/", "_", strtolower($themename) );
 
 	$optionsframework_settings = get_option('optionsframework');
 	$optionsframework_settings['id'] = $themename;

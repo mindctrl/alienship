@@ -11,49 +11,23 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<!-- Try overriding IE8/9 "Display all websites in Compatibility View" option -->
-<!--[if IE 8]> <meta http-equiv="X-UA-Compatible" content="IE=8" /> <![endif]-->
-<!--[if IE 9]> <meta http-equiv="X-UA-Compatible" content="IE=9" /> <![endif]-->
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
-
-	?></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+<?php get_template_part( '/inc/parts/meta' ); ?>
+<?php get_template_part( '/inc/parts/title' ); ?>
 
 <?php /* Load Bootstrap CSS */
-  require_once locate_template('/inc/bootstrap-css.php');
-?>
+require_once locate_template('/inc/bootstrap-css.php'); ?>
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
 
 <?php
-// <!--  Check for custom.css and if it exists and we're not using a child theme, load it. -->
+/* Check for custom.css and if it exists and we're not using a child theme, load it. */
 $customcss = (get_stylesheet_directory()).'/custom/custom.css';
-if(file_exists($customcss) && !is_child_theme()){
-echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css" />';
+if( file_exists( $customcss ) && !is_child_theme()) {
+  echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo ( 'stylesheet_directory' ) . '/custom/custom.css" />';
 } ?>
 
 <?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -65,43 +39,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
 <body <?php body_class(); ?>>
 <!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-<?php if ( of_get_option('alienship_show_top_navbar',1) ) { ?>
-<!-- Load Top Menu -->
-  <div class="navbar">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span></span>
-          <span class="icon-bar-text">Menu</span>
-          <span></span>
-        </a>
-        <?php if (of_get_option('alienship_name_in_navbar',1) ) { // Show site name in navbar? ?>
-        <div id="navbar-brand">
-          <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-          <?php if (of_get_option('alienship_desc_in_navbar') ) { // Show site desc in navbar? ?>
-          <span class="brand-desc hidden-phone"><?php echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?></span>
-          <?php } // alienship_desc_in_navbar ?>
-        </div><!-- /#navbar-brand -->
-        <?php } // site name in navbar ?>
-        <div class="nav-collapse">
-          <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
-            <form role="search" class="navbar-search pull-right" action="<?php echo site_url(); ?>" id="searchform" method="get">
-              <label class="assistive-text" for="s">Search</label>
-              <input type="text" placeholder="Search ..." id="s" name="s" class="search-query">
-              <input type="submit" value="Search" id="searchsubmit" name="submit" class="btn btn-primary">
-            </form>
-          <?php } // end if search bar ?>
-          <?php if (of_get_option('alienship_desc_in_navbar') ) { // navbar with site desc ?>
-          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav pull-right', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
-          <?php } else if (! of_get_option('alienship_desc_in_navbar' ) ) { //no site desc ?>
-          <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
-          <?php } ?>
-        </div><!-- /nav-collapse -->
-      </div><!-- /container -->
-    </div><!-- /navbar-inner -->
-  </div><!-- /navbar -->
-<!-- End Top Menu -->
-<?php } // if of_get_option('alienship_show_top_navbar') ?>
+<?php get_template_part( '/inc/parts/menu', 'top' ); ?>
 
 <!-- Site title and description in masthead -->
 <div id="page" class="container-fluid hfeed">
@@ -121,7 +59,7 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
         // Check if this is a post or page, if it has a thumbnail, and if it's a big one
         if ( is_singular() &&
             has_post_thumbnail( $post->ID ) &&
-            ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH,    HEADER_IMAGE_WIDTH ) ) ) && $image[1] >= HEADER_IMAGE_WIDTH ) :
+            ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH, HEADER_IMAGE_WIDTH ) ) ) && $image[1] >= HEADER_IMAGE_WIDTH ) :
           // Houston, we have a new header image!
           echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
         else : ?>
@@ -131,33 +69,10 @@ echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_bloginfo 
     <?php endif; // end check for removed header image ?>
 
 <!-- End Site title and description in masthead -->
-    <?php if ( has_nav_menu('main') ) { ?>
-<!-- Main menu -->
-    <div id="main-nav">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse-main">
-            <span></span>
-            <span class="icon-bar-text">Menu</span>
-            <span></span>
-            </a>
-            <div class="nav-collapse-main">
-            <?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => false, 'menu_class' => 'nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false )); ?>
-            <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
-            <form role="search" class="navbar-search pull-right" action="<?php echo site_url(); ?>" id="searchform" method="get">
-              <label class="assistive-text" for="s">Search</label>
-              <input type="text" placeholder="Search ..." id="s" name="s" class="search-query">
-              <input type="submit" value="Search" id="searchsubmit" name="submit" class="btn btn-primary">
-            </form>
-            <?php } // end if search bar ?>
-            </div><!-- .nav-collapse -->
-          </div><!-- .container -->
-        </div><!-- .navbar-inner -->
-      </div><!-- .navbar -->
-    </div><!-- #main-nav -->
-<!-- End Main menu -->
-    <?php } ?>
+
+  <?php if ( has_nav_menu('main') ) {
+    get_template_part( '/inc/parts/menu', 'main' );
+  } ?>
   </header><!-- #masthead -->
   <?php alienship_header_after(); ?>
 

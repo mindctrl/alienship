@@ -1,9 +1,9 @@
 == Change log ==
 
-Version .70 - May 28, 2012
+Version .692 - May 29, 2012
 --------------------------
-- Implemented more template parts, which are now located in /alienship/inc/parts/
--
+- Started implementing more template parts, which are now located in /alienship/inc/parts/
+- Made tabs consistent.
 
 
 

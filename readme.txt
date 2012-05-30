@@ -11,7 +11,9 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Options for left sidebar and no sidebar.
++ Options for left sidebar and no sidebar. Make sure markup in search.php, archive.php, etc. match.
++ Option for content and sidebar span size.
++ More framework stuff.
 + Add support for TinyMCE for Bootstrap elements.
 + Support for a custom.php
 + Test <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>

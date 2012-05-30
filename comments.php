@@ -11,78 +11,78 @@
  * @since Alien Ship 0.1
  */
 ?>
-	<div id="comments">
-	<?php if ( post_password_required() ) : ?>
-		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'alienship' ); ?></p>
-	</div><!-- #comments -->
-	<?php
-			/* Stop the rest of comments.php from being processed,
-			 * but don't kill the script entirely -- we still have
-			 * to fully load the template.
-			 */
-			return;
-		endif;
-	?>
+  <div id="comments">
+  <?php if ( post_password_required() ) : ?>
+    <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'alienship' ); ?></p>
+  </div><!-- #comments -->
+  <?php
+      /* Stop the rest of comments.php from being processed,
+       * but don't kill the script entirely -- we still have
+       * to fully load the template.
+       */
+      return;
+    endif;
+  ?>
 
-	<?php // You can start editing here -- including this comment! ?>
+  <?php // You can start editing here -- including this comment! ?>
 
-	<?php if ( have_comments() ) : ?>
-		<h2 id="comments-title">
-			<?php
-				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'alienship' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
-		</h2>
+  <?php if ( have_comments() ) : ?>
+    <h2 id="comments-title">
+      <?php
+        printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'alienship' ),
+          number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+      ?>
+    </h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="pager">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'alienship' ); ?></h1>
-			<div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
-			<div class="nav-next pull-right"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
-		</nav>
-		<?php endif; // check for comment navigation ?>
+    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+    <nav id="comment-nav-above" class="pager">
+      <h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'alienship' ); ?></h1>
+      <div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
+      <div class="nav-next pull-right"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
+    </nav>
+    <?php endif; // check for comment navigation ?>
 
-		<ol class="commentlist">
-			<?php
-				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use alienship_comment() to format the comments.
-				 * If you want to overload this in a child theme then you can
-				 * define alienship_comment() and that will be used instead.
-				 * See alienship_comment() in inc/template-tags.php for more.
-				 */
-				wp_list_comments( array( 'callback' => 'alienship_comment' ) );
-			?>
-		</ol>
+    <ol class="commentlist">
+      <?php
+        /* Loop through and list the comments. Tell wp_list_comments()
+         * to use alienship_comment() to format the comments.
+         * If you want to overload this in a child theme then you can
+         * define alienship_comment() and that will be used instead.
+         * See alienship_comment() in inc/template-tags.php for more.
+         */
+        wp_list_comments( array( 'callback' => 'alienship_comment' ) );
+      ?>
+    </ol>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="pager">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'alienship' ); ?></h1>
-			<div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
-			<div class="nav-next pull-right"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
-		</nav>
-		<?php endif; // check for comment navigation ?>
+    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+    <nav id="comment-nav-below" class="pager">
+      <h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'alienship' ); ?></h1>
+      <div class="nav-previous pull-left"><?php previous_comments_link( __( '&larr; Older Comments', 'alienship' ) ); ?></div>
+      <div class="nav-next pull-right"><?php next_comments_link( __( 'Newer Comments &rarr;', 'alienship' ) ); ?></div>
+    </nav>
+    <?php endif; // check for comment navigation ?>
 
-	<?php endif; // have_comments() ?>
+  <?php endif; // have_comments() ?>
 
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<div class="alert alert-block fade in">
-			<p class="nocomments"><?php _e( 'Comments are closed.', 'alienship' ); ?></p>
-		</div>
-	<?php endif; ?>
+  <?php
+    // If comments are closed and there are comments, let's leave a little note, shall we?
+    if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+  ?>
+    <div class="alert alert-block fade in">
+      <p class="nocomments"><?php _e( 'Comments are closed.', 'alienship' ); ?></p>
+    </div>
+  <?php endif; ?>
 
 
 <?php
-	// If comments are open
-	if (comments_open()) { ?>
+  // If comments are open
+  if (comments_open()) { ?>
   <section id="respond">
     <h3><?php comment_form_title(__('Leave a Reply', 'alienship'), __('Leave a Reply to %s', 'alienship')); ?></h3>
     <p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
     <?php if (get_option('comment_registration') && !is_user_logged_in()) { ?>
       <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'alienship'), wp_login_url(get_permalink())); ?></p>
-   	<?php } else { ?>
+    <?php } else { ?>
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
   <?php if (is_user_logged_in()) { ?>
     <p><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'alienship'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'alienship'); ?>"><?php _e('Log out &raquo;', 'alienship'); ?></a></p>
@@ -98,7 +98,7 @@
     <span class="add-on"><i class="icon-envelope"></i> </span><input type="email" class="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?>>
     </div><!-- /input-prepend -->
 
-		<label for="url" class="control-label"><?php _e('Website', 'alienship'); ?></label>
+    <label for="url" class="control-label"><?php _e('Website', 'alienship'); ?></label>
     <div class="input-prepend">
     <span class="add-on"><i class="icon-home"></i> </span><input type="url" class="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3">
     </div><!-- /input-prepend -->

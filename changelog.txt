@@ -4,6 +4,7 @@ Version .692 - May 29, 2012
 --------------------------
 - Started implementing more template parts, which are now located in /alienship/inc/parts/
 - Made tabs consistent.
+- Updated Bootstrap libraries to latest 2.0.4-wip.
 
 
 

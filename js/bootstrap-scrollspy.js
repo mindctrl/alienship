@@ -18,9 +18,10 @@
  * ============================================================== */
 
 
-!function ( $ ) {
+!function ($) {
 
-  "use strict"
+  "use strict"; // jshint ;_;
+
 
   /* SCROLLSPY CLASS DEFINITION
    * ========================== */
@@ -93,16 +94,15 @@
 
         this.activeTarget = target
 
-        this.$body
-          .find(this.selector).parent('.active')
+        $(this.selector)
+          .parent('.active')
           .removeClass('active')
 
-        active = this.$body
-          .find(this.selector + '[href="' + target + '"]')
+        active = $(this.selector + '[href="' + target + '"]')
           .parent('li')
           .addClass('active')
 
-        if ( active.parent('.dropdown-menu') )  {
+        if (active.parent('.dropdown-menu'))  {
           active = active.closest('li.dropdown').addClass('active')
         }
 
@@ -142,4 +142,4 @@
     })
   })
 
-}( window.jQuery );
+}(window.jQuery);

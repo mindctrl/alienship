@@ -435,7 +435,7 @@ div#content > article {
 
 article > .entry-content,
 article > .entry-content p {
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", Helvetica;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.625;

@@ -16,7 +16,6 @@ Task List
 + More framework stuff.
 + Add support for TinyMCE for Bootstrap elements.
 + Support for a custom.php
-+ Test <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 + Add grid support to featured posts shortcode.
 + Style sticky posts.
 + Finish styling each post format. Left to do are: aside, gallery, image, video, audio, and chat.

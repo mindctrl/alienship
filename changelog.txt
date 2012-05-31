@@ -1,4 +1,11 @@
 == Change log ==
+Version .693 - May 30, 2012
+---------------------------
+- Changed over to using <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+- Added Helvetica font as fallback.
+- Reverted Bootstrap CSS to fix bug with Main menu.
+
+
 
 Version .692 - May 29, 2012
 --------------------------

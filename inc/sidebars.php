@@ -57,7 +57,7 @@ if ( ! function_exists( 'alienship_register_widgets' ) ):
 function alienship_register_widgets() {
 
   /* Load the login form widget file */
-  require_once locate_template('/inc/widgets/widget-login-form.php');
+  locate_template('/inc/widgets/widget-login-form.php', true);
 
   /* Register the login form widget */
   register_widget( 'alienship_Widget_Login' );

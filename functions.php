@@ -26,46 +26,46 @@ if ( ! function_exists( 'alienship_setup' ) ):
 function alienship_setup() {
 
   /* Custom template tags for this theme. */
-  require_once locate_template('/inc/template-tags.php');
+  locate_template('/inc/template-tags.php', true);
 
   /* Clean up header output */
-  require_once locate_template('/inc/cleanup.php');
+  locate_template('/inc/cleanup.php', true);
 
   /* Hooks */
-  require_once locate_template('/inc/hooks.php');
+  locate_template('/inc/hooks.php', true);
 
   /* Register the navigation menus. */
-  require_once locate_template('/inc/menus.php');
+  locate_template('/inc/menus.php', true);
 
   /* Register sidebars */
-  require_once locate_template('/inc/sidebars.php');
+  locate_template('/inc/sidebars.php', true);
 
   /* Shortcodes */
-  require_once locate_template('/inc/shortcodes.php');
+  locate_template('/inc/shortcodes.php', true);
 
   /* Header image */
-  require_once locate_template('/inc/header-image.php');
+  locate_template('/inc/header-image.php', true);
   alienship_setup_custom_header();
 
     /* Load theme options framework */
-  require_once locate_template('/inc/options-panel.php');
+  locate_template('/inc/options-panel.php', true);
 
   /* Breadcrumbs */
   if ( of_get_option('alienship_breadcrumbs',1) ) {
-    require_once locate_template('/inc/breadcrumbs.php');
+    locate_template('/inc/breadcrumbs.php', true);
   }
 
   /* Custom functions that act independently of the theme templates */
-  require_once locate_template('/inc/tweaks.php');
+  locate_template('/inc/tweaks.php', true);
 
   /* Load Bootstrap javascript */
-  require_once locate_template('/inc/bootstrap-js.php');
+  locate_template('/inc/bootstrap-js.php', true);
 
   /* PHPMailer rewrite */
-  require_once locate_template('/inc/phpmailer-rewrite.php');
+  locate_template('/inc/phpmailer-rewrite.php', true);
 
   /* WordPress.com-specific functions and definitions */
-  //require_once locate_template('/inc/wpcom.php');
+  //locate_template('/inc/wpcom.php');
 
 
   /**

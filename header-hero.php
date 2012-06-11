@@ -15,7 +15,7 @@
 <?php get_template_part( '/inc/parts/title' ); ?>
 
 <?php /* Load Bootstrap CSS */
-require_once locate_template('/inc/bootstrap-css.php'); ?>
+locate_template('/inc/bootstrap-css.php', true); ?>
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
 

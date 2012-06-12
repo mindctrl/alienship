@@ -286,7 +286,7 @@ function alienship_featured_posts_grid() {
 
   <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
 
-    <?php get_template_part( 'content', 'fp-grid' ); ?>
+    <?php get_template_part( '/inc/parts/content', 'fp-grid' ); ?>
 
   <?php endwhile; ?>
   <?php echo "</ul>";
@@ -309,7 +309,7 @@ function alienship_featured_posts_slider() {
           echo "\t<div class=\"carousel-inner\">"; ?>
             <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
 
-            <?php get_template_part( 'content', 'featured' ); ?>
+            <?php get_template_part( '/inc/parts/content', 'featured' ); ?>
 
             <?php endwhile; ?>
           <?php echo "\t</div><!-- .carousel-inner -->"; ?>
@@ -423,7 +423,7 @@ function alienship_archive_sticky_posts() {
         $format = get_post_format();
         if ( false === $format )
         $format = 'standard';
-        get_template_part( 'content', $format );
+        get_template_part( '/inc/parts/content', $format );
       endwhile;
     endif; // if have posts
     endif; // if ( ! empty( $sticky_args ) )

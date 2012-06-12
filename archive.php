@@ -62,14 +62,14 @@ get_header(); ?>
             $format = get_post_format();
             if ( false === $format )
             $format = 'standard';
-            get_template_part( 'content', $format ); ?>
+            get_template_part( '/inc/parts/content', $format ); ?>
           <?php alienship_loop_after(); ?>
         <?php endwhile; ?>
       <?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } ?>
 
       <?php else : ?>
 
-      <?php /* No results */ get_template_part( 'content', 'none' ); ?>
+      <?php /* No results */ get_template_part( '/inc/parts/content', 'none' ); ?>
 
       <?php endif; ?>
       <?php alienship_content_after(); ?>

@@ -20,7 +20,7 @@ get_header(); ?>
 
         <?php while ( have_posts() ) : the_post(); ?>
             <?php alienship_loop_before(); ?>
-            <?php get_template_part( 'content', 'page' ); ?>
+            <?php get_template_part( '/inc/parts/content', 'page' ); ?>
             <?php alienship_loop_after(); ?>
             <?php comments_template( '', true ); ?>
 

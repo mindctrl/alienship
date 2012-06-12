@@ -49,7 +49,7 @@ get_header(); ?>
             $format = get_post_format();
             if ( false === $format )
             $format = 'standard';
-            get_template_part( 'content', $format );
+            get_template_part( '/inc/parts/content', $format );
           ?>
           <?php alienship_loop_after(); ?>
         <?php endwhile; ?>
@@ -58,7 +58,7 @@ get_header(); ?>
 
       <?php else : ?>
 
-      <?php /* No results */ get_template_part( 'content', 'none' ); ?>
+      <?php /* No results */ get_template_part( '/inc/parts/content', 'none' ); ?>
 
       <?php endif; ?>
       <?php alienship_content_after(); ?>

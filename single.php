@@ -21,7 +21,7 @@ get_header(); ?>
           <?php $format = get_post_format();
             if ( false === $format )
             $format = 'standard';
-            get_template_part( 'content', $format ); ?>
+            get_template_part( '/inc/parts/content', $format ); ?>
           <?php alienship_loop_after(); ?>
           <?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts? ?>
 

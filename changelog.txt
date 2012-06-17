@@ -1,4 +1,14 @@
 == Change log ==
+Version .70 - June 17, 2012
+----------------------------
+- Cleaned up some code under the hood.
+- Moved template parts to inc/parts folder. ** If you have customized any of the content*.php files in your child theme, you will now need to move them into the inc/parts folder in your child theme.
+- Enabled post thumbnails in excerpts. Post thumbnails will now be displayed in excerpts when the post has a "Featured image" attached in the post editor screen.
+- Increased font size for H1, H2, and H3 on mobile. Previously had them set too small.
+
+
+
+
 Version .693 - May 30, 2012
 ---------------------------
 - Changed over to using <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>

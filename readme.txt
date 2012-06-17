@@ -24,21 +24,12 @@ Task List
 + Post templates.
 + Implement update functionality.
 + More widget areas? Page widget template. 404 page widget.
-+ Look at integrating Font Awesome? (future release)
-+ Account dropdown at top right? Login/Register/Profile.
-+ CSS print rules.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues
 + Make sure strings are translatable.
 + Avatar and author bio display
 + Documentation
 
-
-Ideas
------
-
-+ Comment search
-+ Advanced search (by category, author, etc.)
 
 
 

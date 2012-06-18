@@ -1,4 +1,10 @@
 == Change log ==
+Version .72 - June 18, 2012
+---------------------------
+- Added French translation. Thank you to Mathieu Quentin!
+- Fixed bug (missing quote) in alienship.pot.
+
+
 Version .71 - June 18, 2012
 ---------------------------
 - Added languages/alienship.pot for translation support.

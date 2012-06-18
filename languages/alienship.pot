@@ -1,0 +1,603 @@
+# Copyright (C) 2012 John Parris
+# This file is distributed under the GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Alien Ship 0.70\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/alienship\n"
+"POT-Creation-Date: 2012-06-18 12:11:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try a search or one "
+"of the links below?"
+msgstr ""
+
+#: 404.php:28
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smilie
+#: 404.php:36
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: admin/options-framework.php:239
+msgid "Save Options"
+msgstr ""
+
+#: admin/options-framework.php:240
+msgid "Restore Defaults"
+msgstr ""
+
+#: admin/options-framework.php:240
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: admin/options-framework.php:272
+msgid "Default options restored."
+msgstr ""
+
+#: admin/options-framework.php:313
+msgid "Options saved."
+msgstr ""
+
+#: admin/options-framework.php:371
+msgid "Theme Options"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr ""
+
+#: author.php:29 inc/template-tags.php:356
+msgid "Author Archives: %s"
+msgstr ""
+
+#: comments.php:16
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:32
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39 comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:40 comments.php:60
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:41 comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:81
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:81
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:84
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:88
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr ""
+
+#: comments.php:88
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:88
+msgid "Log out &raquo;"
+msgstr ""
+
+#: comments.php:91
+msgid "Name"
+msgstr ""
+
+#: comments.php:91 comments.php:96
+msgid " (required)"
+msgstr ""
+
+#: comments.php:96
+msgid "Email (will not be published)"
+msgstr ""
+
+#: comments.php:101
+msgid "Website"
+msgstr ""
+
+#: comments.php:108
+msgid "Comment"
+msgstr ""
+
+#: comments.php:113
+msgid "Submit Comment"
+msgstr ""
+
+#: footer-hero.php:17
+msgid "Edit page"
+msgstr ""
+
+#: functions.php:169
+msgid ""
+"Dropdown menus work a little differently in Alien Ship. They do not activate "
+"on mouse hover, but on click instead. This means that the top/parent menu "
+"item does not click through to a page, but only activates the dropdown. "
+"Also, the nested menus only go one level deep (Parent > Sub item and NOT "
+"Parent > Sub item > Sub sub item. Design your menus with this in mind. For "
+"more information, read the <a href=\"http://www.johnparris.com/alienship/"
+"documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a "
+"href=\"%1$s\">Hide this notice</a>"
+msgstr ""
+
+#: image.php:23
+msgid ""
+"Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
+"\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
+"%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+"\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:33 image.php:104 inc/parts/content-link.php:34
+#: inc/parts/content-page.php:20 inc/parts/content-quote.php:29
+#: inc/parts/content-standard.php:30 inc/parts/content-status.php:27
+#: inc/parts/content.php:37
+msgid "Edit"
+msgstr ""
+
+#: image.php:39
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:42
+msgid "Next &rarr;"
+msgstr ""
+
+#: image.php:91 inc/parts/content-link.php:20 inc/parts/content-page.php:19
+#: inc/parts/content-quote.php:16 inc/parts/content-standard.php:16
+#: inc/parts/content-status.php:14 inc/parts/content.php:21
+msgid "Pages:"
+msgstr ""
+
+#: image.php:96
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:98
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:100
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:102
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: inc/breadcrumbs.php:64
+msgid "Home"
+msgstr ""
+
+#: inc/breadcrumbs.php:312
+msgid "g:i a"
+msgstr ""
+
+#: inc/breadcrumbs.php:315
+msgid "Minute %1$s"
+msgstr ""
+
+#: inc/breadcrumbs.php:315
+msgid "i"
+msgstr ""
+
+#: inc/breadcrumbs.php:318
+msgid "g a"
+msgstr ""
+
+#: inc/breadcrumbs.php:329 inc/breadcrumbs.php:335 inc/breadcrumbs.php:340
+#: inc/breadcrumbs.php:345 inc/breadcrumbs.php:410
+msgid "Y"
+msgstr ""
+
+#: inc/breadcrumbs.php:330 inc/breadcrumbs.php:341 inc/breadcrumbs.php:414
+msgid "F"
+msgstr ""
+
+#: inc/breadcrumbs.php:331 inc/breadcrumbs.php:418
+msgid "d"
+msgstr ""
+
+#: inc/breadcrumbs.php:336
+msgid "Week %1$s"
+msgstr ""
+
+#: inc/breadcrumbs.php:336
+msgid "W"
+msgstr ""
+
+#: inc/breadcrumbs.php:352
+msgid "Search results for &quot;%1$s&quot;"
+msgstr ""
+
+#: inc/breadcrumbs.php:356
+msgid "Content Not Found"
+msgstr ""
+
+#: inc/breadcrumbs.php:414
+msgid "F Y"
+msgstr ""
+
+#: inc/breadcrumbs.php:418
+msgid "F j, Y"
+msgstr ""
+
+#. translators: header image description
+#: inc/header-image.php:60
+msgid "Shore"
+msgstr ""
+
+#. translators: header image description
+#: inc/header-image.php:66
+msgid "Trolley"
+msgstr ""
+
+#. translators: header image description
+#: inc/header-image.php:72
+msgid "Chessboard"
+msgstr ""
+
+#. translators: header image description
+#: inc/header-image.php:78
+msgid "Lanterns"
+msgstr ""
+
+#: inc/menus.php:6
+msgid "Top Menu"
+msgstr ""
+
+#: inc/menus.php:7
+msgid "Main Menu"
+msgstr ""
+
+#: inc/menus.php:8
+msgid "Bottom Menu"
+msgstr ""
+
+#: inc/old-breadcrumbs.php:101
+msgid " Page"
+msgstr ""
+
+#: inc/parts/content-featured.php:8 inc/parts/content-fp-grid.php:9
+#: inc/parts/content-fp-grid.php:13 inc/parts/content-link.php:15
+#: inc/parts/content-page.php:13 inc/parts/content-standard.php:11
+#: inc/template-tags.php:20
+msgid "Link to %s"
+msgstr ""
+
+#: inc/parts/content-fp-grid.php:20
+msgid "<span class=\"edit-link\"><i class=\"icon-pencil pull-right\"></i>"
+msgstr ""
+
+#: inc/parts/content-link.php:31 inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27 inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/parts/content-link.php:31 inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27 inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "1 Comment"
+msgstr ""
+
+#: inc/parts/content-link.php:31 inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27 inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "% Comments"
+msgstr ""
+
+#: inc/parts/content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/parts/content-none.php:15
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: inc/parts/content.php:11
+msgid " Link to %s"
+msgstr ""
+
+#: inc/parts/content.php:20
+msgid ""
+"<button class=\"btn btn-mini\">Read More <i class=\"icon-arrow-right\"></i></"
+"button>"
+msgstr ""
+
+#: inc/parts/title.php:30
+msgid "Page %s"
+msgstr ""
+
+#: inc/sidebars.php:11
+msgid "Sidebar"
+msgstr ""
+
+#: inc/sidebars.php:12
+msgid "The main widget area displayed in the sidebar."
+msgstr ""
+
+#: inc/sidebars.php:21
+msgid "Hero Widgets"
+msgstr ""
+
+#: inc/sidebars.php:22
+msgid "Displayed on pages created with the Hero template"
+msgstr ""
+
+#: inc/sidebars.php:31
+msgid "Footer"
+msgstr ""
+
+#: inc/sidebars.php:32
+msgid "The footer widget area displayed after all content."
+msgstr ""
+
+#: inc/sidebars.php:41
+msgid "Footer 2"
+msgstr ""
+
+#: inc/sidebars.php:42
+msgid "The second footer widget area, displayed below the Footer widget area."
+msgstr ""
+
+#: inc/sidebars.php:76 inc/widgets/widget-login-form.php:167
+msgid "Username"
+msgstr ""
+
+#: inc/sidebars.php:77 inc/widgets/widget-login-form.php:168
+msgid "Password"
+msgstr ""
+
+#: inc/sidebars.php:78 inc/widgets/widget-login-form.php:170
+msgid "Remember Me"
+msgstr ""
+
+#: inc/sidebars.php:79 inc/widgets/widget-login-form.php:166
+#: inc/widgets/widget-login-form.php:169
+msgid "Log In"
+msgstr ""
+
+#: inc/template-tags.php:49
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:53
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:54
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:59
+msgid "Next page <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:63
+msgid "<span class=\"meta-nav\">&larr;</span> Previous page"
+msgstr ""
+
+#: inc/template-tags.php:88
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:88 inc/template-tags.php:111
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:98
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:101
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:109
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:138
+msgid ""
+"<span class=\"byline\"><i class=\"icon-user\"></i> <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</"
+"a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:140
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgid ""
+"<i class=\"icon-calendar\" title=\"Published date\"></i> <a href=\"%1$s\" "
+"title=\"%2$s\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
+"time></a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span>"
+msgstr ""
+
+#: inc/template-tags.php:350
+msgid "Category Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:353
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:359
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:362
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:365
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:368 sidebar.php:18
+msgid "Archives"
+msgstr ""
+
+#: inc/tweaks.php:109
+msgid "Continue Reading "
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:23
+msgid "A widget that allows users to log into your site."
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:34
+msgid "Login Form"
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:180
+msgid "Please log into the site."
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:181
+msgid "Logged in as"
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:193
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:243
+msgid "\"Remember me\" checkbox?"
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:247
+msgid "Check \"remember me\"?"
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:251
+msgid "Display avatar?"
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:254
+msgid "Logged out text:"
+msgstr ""
+
+#: inc/widgets/widget-login-form.php:259
+msgid "Logged in text:"
+msgstr ""
+
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr ""
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Alien Ship"
+msgstr ""
+
+#. #-#-#-#-#  alienship.pot (Alien Ship 0.70)  #-#-#-#-#
+#. Theme URI of the plugin/theme
+#. #-#-#-#-#  alienship.pot (Alien Ship 0.70)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.johnparris.com/alienship/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Alien Ship is an HTML5 responsive starter theme for WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "John Parris"
+msgstr ""
+
+#. Tags of the plugin/theme
+msgid ""
+"blue, green, silver, red, orange, white, black, light, dark, one-column, two-"
+"columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-"
+"header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-"
+"language-support, microformats, featured-images, post-formats"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full width. No sidebar."
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full width"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Hero"
+msgstr ""

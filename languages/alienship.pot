@@ -17,9 +17,7 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:21
-msgid ""
-"It looks like nothing was found at this location. Maybe try a search or one "
-"of the links below?"
+msgid "It looks like nothing was found at this location. Maybe try a search or one of the links below?"
 msgstr ""
 
 #: 404.php:28
@@ -80,8 +78,7 @@ msgid "Author Archives: %s"
 msgstr ""
 
 #: comments.php:16
-msgid ""
-"This post is password protected. Enter the password to view any comments."
+msgid "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
 #: comments.php:32
@@ -159,23 +156,11 @@ msgid "Edit page"
 msgstr ""
 
 #: functions.php:169
-msgid ""
-"Dropdown menus work a little differently in Alien Ship. They do not activate "
-"on mouse hover, but on click instead. This means that the top/parent menu "
-"item does not click through to a page, but only activates the dropdown. "
-"Also, the nested menus only go one level deep (Parent > Sub item and NOT "
-"Parent > Sub item > Sub sub item. Design your menus with this in mind. For "
-"more information, read the <a href=\"http://www.johnparris.com/alienship/"
-"documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a "
-"href=\"%1$s\">Hide this notice</a>"
+msgid "Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Also, the nested menus only go one level deep (Parent > Sub item and NOT Parent > Sub item > Sub sub item. Design your menus with this in mind. For more information, read the <a href=\"http://www.johnparris.com/alienship/documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a href=\"%1$s\">Hide this notice</a>"
 msgstr ""
 
 #: image.php:23
-msgid ""
-"Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
-"\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
-"%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
-"\"gallery\">%7$s</a>"
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
 msgstr ""
 
 #: image.php:33 image.php:104 inc/parts/content-link.php:34
@@ -200,23 +185,15 @@ msgid "Pages:"
 msgstr ""
 
 #: image.php:96
-msgid ""
-"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
-"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
-"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
 
 #: image.php:98
-msgid ""
-"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
-"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
-"\">Trackback URL</a>."
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
 
 #: image.php:100
-msgid ""
-"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
-"\" title=\"Post a comment\">post a comment</a>."
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
 
 #: image.php:102
@@ -350,9 +327,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: inc/parts/content-none.php:15
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: inc/parts/content.php:11
@@ -360,9 +335,7 @@ msgid " Link to %s"
 msgstr ""
 
 #: inc/parts/content.php:20
-msgid ""
-"<button class=\"btn btn-mini\">Read More <i class=\"icon-arrow-right\"></i></"
-"button>"
+msgid "<button class=\"btn btn-mini\">Read More <i class=\"icon-arrow-right\"></i></button>"
 msgstr ""
 
 #: inc/parts/title.php:30
@@ -462,10 +435,7 @@ msgid "%1$s at %2$s"
 msgstr ""
 
 #: inc/template-tags.php:138
-msgid ""
-"<span class=\"byline\"><i class=\"icon-user\"></i> <span class=\"author vcard"
-"\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</"
-"a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span></span></span>"
+msgid "<span class=\"byline\"><i class=\"icon-user\"></i> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span></span></span>"
 msgstr ""
 
 #: inc/template-tags.php:140
@@ -473,10 +443,7 @@ msgid "View all posts by %s"
 msgstr ""
 
 #: inc/template-tags.php:155
-msgid ""
-"<i class=\"icon-calendar\" title=\"Published date\"></i> <a href=\"%1$s\" "
-"title=\"%2$s\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
-"time></a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span>"
+msgid "<i class=\"icon-calendar\" title=\"Published date\"></i> <a href=\"%1$s\ title=\"%2$s\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span>"
 msgstr ""
 
 #: inc/template-tags.php:350
@@ -583,11 +550,7 @@ msgid "John Parris"
 msgstr ""
 
 #. Tags of the plugin/theme
-msgid ""
-"blue, green, silver, red, orange, white, black, light, dark, one-column, two-"
-"columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-"
-"header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-"
-"language-support, microformats, featured-images, post-formats"
+msgid "blue, green, silver, red, orange, white, black, light, dark, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-language-support, microformats, featured-images, post-formats"
 msgstr ""
 
 #. Template Name of the plugin/theme

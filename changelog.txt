@@ -1,4 +1,10 @@
 == Change log ==
+Version .71 - June 18, 2012
+---------------------------
+- Added languages/alienship.pot for translation support.
+
+
+
 Version .70 - June 17, 2012
 ----------------------------
 - Cleaned up some code under the hood.

@@ -1,4 +1,10 @@
 == Change log ==
+Version .721 - June 20, 2012
+----------------------------
+- Added Catalan translation. Thanks to JC Julien!
+
+
+
 Version .72 - June 18, 2012
 ---------------------------
 - Added French translation. Thank you to Mathieu Quentin!

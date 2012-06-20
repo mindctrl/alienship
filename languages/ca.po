@@ -1,0 +1,604 @@
+# Copyright (C) 2012 John Parris
+# This file is distributed under the GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Alien Ship 0.72\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/alienship\n"
+"POT-Creation-Date: 2012-06-18 12:11:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-06-21 00:18+0100\n"
+"Last-Translator: cestbibi <jjcjulien@gmail.com>\n"
+"Language-Team: La Colla\n"
+"X-Poedit-Language: Catalan\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ui! No s&apos;ha trobat aquesta p&aacute;gina"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search or one of the links below?"
+msgstr "Sembla que no es va trobar res en aquest lloc. Potser intenta una recerca o un dels enlla&ccedil;os de sota?"
+
+#: 404.php:28
+msgid "Most Used Categories"
+msgstr "Categories m&eacute;s usades"
+
+#. translators: %1$s: smilie
+#: 404.php:36
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Intenta cercar als arxius mensuals. %1$s"
+
+#: admin/options-framework.php:239
+msgid "Save Options"
+msgstr "Desar Opcions"
+
+#: admin/options-framework.php:240
+msgid "Restore Defaults"
+msgstr "Restaurar valors predeterminats"
+
+#: admin/options-framework.php:240
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Premeu D&apos;acord per reiniciar. Qualsevol configuraci&oacute; del tema es perdra!"
+
+#: admin/options-framework.php:272
+msgid "Default options restored."
+msgstr "Les opcions per defecte s&apos;han restaurat."
+
+#: admin/options-framework.php:313
+msgid "Options saved."
+msgstr "Opcions desades."
+
+#: admin/options-framework.php:371
+msgid "Theme Options"
+msgstr "Opcions del Tema"
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr "Contenidor Intern de les Opcions del Framework"
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Pujar"
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Veure Arxiu"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Galeria"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr "Penjat Anteriorment"
+
+#: author.php:29
+#: inc/template-tags.php:356
+msgid "Author Archives: %s"
+msgstr "Arxius de l&apos;Autor: %s"
+
+#: comments.php:16
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Aquesta entrada est&agrave; protegida per contrasenya. Introdu&iuml;u la contrasenya per veure els comentaris."
+
+#: comments.php:32
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un pensament sobre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensaments sobre &ldquo;%2$s&rdquo;"
+
+#: comments.php:39
+#: comments.php:59
+msgid "Comment navigation"
+msgstr "Navegaci&oacute; de comentaris"
+
+#: comments.php:40
+#: comments.php:60
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentaris m&eacute;s antic"
+
+#: comments.php:41
+#: comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr "Comentaris m&eacute;s recents &rarr;"
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: comments.php:81
+msgid "Leave a Reply"
+msgstr "Deixa una Resposta"
+
+#: comments.php:81
+msgid "Leave a Reply to %s"
+msgstr "Deixa una Resposta a %s"
+
+#: comments.php:84
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Has d&apos;estar <a href=\"%s\">connectat </a> per publicar un comentari."
+
+#: comments.php:88
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr "Connectat com <a href=\"%s/wp-admin/profile.php\">%s</a>."
+
+#: comments.php:88
+msgid "Log out of this account"
+msgstr "Sortir d&apos;aquest compte"
+
+#: comments.php:88
+msgid "Log out &raquo;"
+msgstr "Sortir &raquo;"
+
+#: comments.php:91
+msgid "Name"
+msgstr "Nom"
+
+#: comments.php:91
+#: comments.php:96
+msgid " (required)"
+msgstr "(Requerit)"
+
+#: comments.php:96
+msgid "Email (will not be published)"
+msgstr "Correu electr&ograve;nic (no es publicar&agrave;)"
+
+#: comments.php:101
+msgid "Website"
+msgstr "Lloc Web"
+
+#: comments.php:108
+msgid "Comment"
+msgstr "Comentari"
+
+#: comments.php:113
+msgid "Submit Comment"
+msgstr "Envia un Comentari"
+
+#: footer-hero.php:17
+msgid "Edit page"
+msgstr "Edita la p&agrave;gina"
+
+#: functions.php:169
+msgid "Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Also, the nested menus only go one level deep (Parent > Sub item and NOT Parent > Sub item > Sub sub item. Design your menus with this in mind. For more information, read the <a href=\"http://www.johnparris.com/alienship/documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a href=\"%1$s\">Hide this notice</a>"
+msgstr "Els men&uacute;s desplegables treballen una mica diferent en Alien Ship. No s&apos;activen en passar el ratol&iacute; a sobre, per&ograve; fent-i clic a sobre. Aix&ograve; significa que fent clic a la part superior/element del men&uacute; primari, no enlla&ccedil;a a cap p&agrave;gina, per&ograve; nom&eacute;s activa al men&uacute; desplegable. A m&eacute;s, els men&uacute;s imbricats nom&eacute;s van un nivell de profunditat (Pare> Sub item i NO Pares> Sub item> Sub sub item. Dissenya les men&uacute;s amb aix&ograve; en ment. Per obtenir m&eacute;s informaci&oacute;, consulteu la <a href=\"http://www.johnparris.com/alienship/documentation\" target=\"_blank\"> documentaci&oacute; Alien Ship</a> en l&iacute;nia. | <a href=\"%1$s\"> amaga aquest av&iacute;s</a>"
+
+#: image.php:23
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr "Publicat <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> al <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> en <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+
+#: image.php:33
+#: image.php:104
+#: inc/parts/content-link.php:34
+#: inc/parts/content-page.php:20
+#: inc/parts/content-quote.php:29
+#: inc/parts/content-standard.php:30
+#: inc/parts/content-status.php:27
+#: inc/parts/content.php:37
+msgid "Edit"
+msgstr "Edita"
+
+#: image.php:39
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: image.php:42
+msgid "Next &rarr;"
+msgstr "\"Seg&uuml;ent &rarr;"
+
+#: image.php:91
+#: inc/parts/content-link.php:20
+#: inc/parts/content-page.php:19
+#: inc/parts/content-quote.php:16
+#: inc/parts/content-standard.php:16
+#: inc/parts/content-status.php:14
+#: inc/parts/content.php:21
+msgid "Pages:"
+msgstr "P&agrave;gines:"
+
+#: image.php:96
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Publica un comentari</a> or deixa un trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Enlla&ccedil; del Trackback</a>."
+
+#: image.php:98
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Els comentaris estan tancats, per&ograve; podeu deixar un trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Enlla&ccedil; del Trackback</a>."
+
+#: image.php:100
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Els Trackbacks estan tancats, per&ograve; es pot <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">publicar un comentari</a>."
+
+#: image.php:102
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Ambd&oacute;s comentaris i trackbacks estan tancats."
+
+#: inc/breadcrumbs.php:64
+msgid "Home"
+msgstr "Principal"
+
+#: inc/breadcrumbs.php:312
+msgid "g:i a"
+msgstr "g:i a"
+
+#: inc/breadcrumbs.php:315
+msgid "Minute %1$s"
+msgstr "Minut %1$s"
+
+#: inc/breadcrumbs.php:315
+msgid "i"
+msgstr "i"
+
+#: inc/breadcrumbs.php:318
+msgid "g a"
+msgstr "g a"
+
+#: inc/breadcrumbs.php:329
+#: inc/breadcrumbs.php:335
+#: inc/breadcrumbs.php:340
+#: inc/breadcrumbs.php:345
+#: inc/breadcrumbs.php:410
+msgid "Y"
+msgstr "Y"
+
+#: inc/breadcrumbs.php:330
+#: inc/breadcrumbs.php:341
+#: inc/breadcrumbs.php:414
+msgid "F"
+msgstr "F"
+
+#: inc/breadcrumbs.php:331
+#: inc/breadcrumbs.php:418
+msgid "d"
+msgstr "d"
+
+#: inc/breadcrumbs.php:336
+msgid "Week %1$s"
+msgstr "Setmana %1$s"
+
+#: inc/breadcrumbs.php:336
+msgid "W"
+msgstr "W"
+
+#: inc/breadcrumbs.php:352
+msgid "Search results for &quot;%1$s&quot;"
+msgstr "Resultats de la cerca per &quot;%1$s&quot;"
+
+#: inc/breadcrumbs.php:356
+msgid "Content Not Found"
+msgstr "No s&apos;ha trobat Contingu"
+
+#: inc/breadcrumbs.php:414
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/breadcrumbs.php:418
+msgid "F j, Y"
+msgstr "Fj, Y"
+
+#. translators: header image description
+#: inc/header-image.php:60
+msgid "Shore"
+msgstr "Costa"
+
+#. translators: header image description
+#: inc/header-image.php:66
+msgid "Trolley"
+msgstr "Tramvia"
+
+#. translators: header image description
+#: inc/header-image.php:72
+msgid "Chessboard"
+msgstr "Tauler d&apos;escacs"
+
+#. translators: header image description
+#: inc/header-image.php:78
+msgid "Lanterns"
+msgstr "Llanternes"
+
+#: inc/menus.php:6
+msgid "Top Menu"
+msgstr "Men&uacute; Superior"
+
+#: inc/menus.php:7
+msgid "Main Menu"
+msgstr "Men&uacute; Principal"
+
+#: inc/menus.php:8
+msgid "Bottom Menu"
+msgstr "Men&uacute; Inferior"
+
+#: inc/old-breadcrumbs.php:101
+msgid " Page"
+msgstr "P&agrave;gin"
+
+#: inc/parts/content-featured.php:8
+#: inc/parts/content-fp-grid.php:9
+#: inc/parts/content-fp-grid.php:13
+#: inc/parts/content-link.php:15
+#: inc/parts/content-page.php:13
+#: inc/parts/content-standard.php:11
+#: inc/template-tags.php:20
+msgid "Link to %s"
+msgstr "Enlla&ccedil; a %s"
+
+#: inc/parts/content-fp-grid.php:20
+msgid "<span class=\"edit-link\"><i class=\"icon-pencil pull-right\"></i>"
+msgstr "<span class=\"edit-link\"><i class=\"icon-pencil pull-right\"></i>"
+
+#: inc/parts/content-link.php:31
+#: inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27
+#: inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "Leave a comment"
+msgstr "Deixa un comentari"
+
+#: inc/parts/content-link.php:31
+#: inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27
+#: inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "1 Comment"
+msgstr "1 Comentari"
+
+#: inc/parts/content-link.php:31
+#: inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27
+#: inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "% Comments"
+msgstr "% Comentaris"
+
+#: inc/parts/content-none.php:11
+msgid "Nothing Found"
+msgstr "No s&apos;ha trobat res"
+
+#: inc/parts/content-none.php:15
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Sembla que no s&apos;ha trobat el que estabas buscant. Potser una cerca pot ajudar."
+
+#: inc/parts/content.php:11
+msgid " Link to %s"
+msgstr "Enlla&ccedil; a %s"
+
+#: inc/parts/content.php:20
+msgid "<button class=\"btn btn-mini\">Read More <i class=\"icon-arrow-right\"></i></button>"
+msgstr "<button class=\"btn btn-mini\">Llegeix m&eacute;s <i class=\"icon-arrow-right\"></i></button>"
+
+#: inc/parts/title.php:30
+msgid "Page %s"
+msgstr "P&agrave;gina %s"
+
+#: inc/sidebars.php:11
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: inc/sidebars.php:12
+msgid "The main widget area displayed in the sidebar."
+msgstr "L&apos;&agrave;rea giny principal que apareix a la barra lateral."
+
+#: inc/sidebars.php:21
+msgid "Hero Widgets"
+msgstr "Ginis Hero"
+
+#: inc/sidebars.php:22
+msgid "Displayed on pages created with the Hero template"
+msgstr "Es mostra a les p&agrave;gines creades amb la plantilla Hero"
+
+#: inc/sidebars.php:31
+msgid "Footer"
+msgstr "Peu de p&agrave;gina"
+
+#: inc/sidebars.php:32
+msgid "The footer widget area displayed after all content."
+msgstr "El giny de &agrave;rea de peu de p&agrave;gina que apareix despr&eacute;s de tot el contingut."
+
+#: inc/sidebars.php:41
+msgid "Footer 2"
+msgstr "Peu de p&agrave;gina 2"
+
+#: inc/sidebars.php:42
+msgid "The second footer widget area, displayed below the Footer widget area."
+msgstr "La segona &agrave;rea giny de peu de p&agrave;gina, que apareix sota l&apos;&agrave;rea de giny de peu de p&agrave;gina."
+
+#: inc/sidebars.php:76
+#: inc/widgets/widget-login-form.php:167
+msgid "Username"
+msgstr "Nom d&apos;usuari"
+
+#: inc/sidebars.php:77
+#: inc/widgets/widget-login-form.php:168
+msgid "Password"
+msgstr "Contrasenya"
+
+#: inc/sidebars.php:78
+#: inc/widgets/widget-login-form.php:170
+msgid "Remember Me"
+msgstr "Recorda&apos;m"
+
+#: inc/sidebars.php:79
+#: inc/widgets/widget-login-form.php:166
+#: inc/widgets/widget-login-form.php:169
+msgid "Log In"
+msgstr "Accedir"
+
+#: inc/template-tags.php:49
+msgid "Post navigation"
+msgstr "Navegaci&oacute; d&apos;Entrades"
+
+#: inc/template-tags.php:53
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:54
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:59
+msgid "Next page <span class=\"meta-nav\">&rarr;</span>"
+msgstr "P&agrave;gina seg&uuml;ent <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:63
+msgid "<span class=\"meta-nav\">&larr;</span> Previous page"
+msgstr "<span class=\"meta-nav\">&larr;</span> p&agrave;gina anterior"
+
+#: inc/template-tags.php:88
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:88
+#: inc/template-tags.php:111
+msgid "(Edit)"
+msgstr "(Editar)"
+
+#: inc/template-tags.php:98
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:101
+msgid "Your comment is awaiting moderation."
+msgstr "El teu comentari est&agrave; en espera de moderaci&oacute;."
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:109
+msgid "%1$s at %2$s"
+msgstr "%1$s a %2$s"
+
+#: inc/template-tags.php:138
+msgid "<span class=\"byline\"><i class=\"icon-user\"></i> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span></span></span>"
+msgstr "<span class=\"byline\"><i class=\"icon-user\"></i> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span></span></span>"
+
+#: inc/template-tags.php:140
+msgid "View all posts by %s"
+msgstr "Veure totes les entrades de %s"
+
+#: inc/template-tags.php:155
+msgid "<i class=\"icon-calendar\" title=\"Published date\"></i> <a href=\"%1$s\" title=\"%2$s\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span>"
+msgstr "<i class=\"icon-calendar\" title=\"Published date\"></i> <a href=\"%1$s\" title=\"%2$s\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span>"
+
+#: inc/template-tags.php:350
+msgid "Category Archives: %s"
+msgstr "Arxius per categoria: %s"
+
+#: inc/template-tags.php:353
+msgid "Tag Archives: %s"
+msgstr "Arxius per Etiqueta: %s"
+
+#: inc/template-tags.php:359
+msgid "Daily Archives: %s"
+msgstr "Arxius per Dia: %s"
+
+#: inc/template-tags.php:362
+msgid "Monthly Archives: %s"
+msgstr "Arxius per Mes: %s"
+
+#: inc/template-tags.php:365
+msgid "Yearly Archives: %s"
+msgstr "Arxius per Any: %s"
+
+#: inc/template-tags.php:368
+#: sidebar.php:18
+msgid "Archives"
+msgstr "Arxius"
+
+#: inc/tweaks.php:109
+msgid "Continue Reading "
+msgstr "Segueix Llegint"
+
+#: inc/widgets/widget-login-form.php:23
+msgid "A widget that allows users to log into your site."
+msgstr "Un giny que permet als usuaris iniciar sessi&oacute; al teu lloc web."
+
+#: inc/widgets/widget-login-form.php:34
+msgid "Login Form"
+msgstr "Formulari de Connecci&oacute;"
+
+#: inc/widgets/widget-login-form.php:180
+msgid "Please log into the site."
+msgstr "Si us plau, connecteu vos al lloc web."
+
+#: inc/widgets/widget-login-form.php:181
+msgid "Logged in as"
+msgstr "Connectat com"
+
+#: inc/widgets/widget-login-form.php:193
+msgid "Title:"
+msgstr "T&iacute;tol"
+
+#: inc/widgets/widget-login-form.php:243
+msgid "\"Remember me\" checkbox?"
+msgstr "Casella \"Recorda&apos;m\"?"
+
+#: inc/widgets/widget-login-form.php:247
+msgid "Check \"remember me\"?"
+msgstr "Valida \"Recorda&apos;m\"?"
+
+#: inc/widgets/widget-login-form.php:251
+msgid "Display avatar?"
+msgstr "Mostra l&apos;avatar?"
+
+#: inc/widgets/widget-login-form.php:254
+msgid "Logged out text:"
+msgstr "Texte de desconnectat:"
+
+#: inc/widgets/widget-login-form.php:259
+msgid "Logged in text:"
+msgstr "Texte de connectat:"
+
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr "Resultats de la recerca per: %s"
+
+#: searchform.php:10
+#: searchform.php:12
+msgid "Search"
+msgstr "Cercar"
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr "Cercar &hellip;"
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr "Meta"
+
+#. Theme Name of the plugin/theme
+msgid "Alien Ship"
+msgstr "Alien Ship"
+
+#. #-#-#-#-#  alienship.pot (Alien Ship 0.70)  #-#-#-#-#
+#. Theme URI of the plugin/theme
+#. #-#-#-#-#  alienship.pot (Alien Ship 0.70)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.johnparris.com/alienship/"
+msgstr "http://www.johnparris.com/alienship/"
+
+#. Description of the plugin/theme
+msgid "Alien Ship is an HTML5 responsive starter theme for WordPress."
+msgstr "Alienship es un Tema de base HTML5 flexible pel WordPress."
+
+#. Author of the plugin/theme
+msgid "John Parris"
+msgstr "John Parris"
+
+#. Tags of the plugin/theme
+msgid "blue, green, silver, red, orange, white, black, light, dark, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-language-support, microformats, featured-images, post-formats"
+msgstr "blau, verd, platejat, vermell, taronja, blanc, negre, clar, sombre, d&apos;una columna, dues columnes, barra lateral dreta, amplada fixa, amplada flexible, colors personalitzats, cap&ccedil;alera personalitzable , men&uacute; personalitzable, comentaris anidats, llest per traducci&oacute;, entrades destacades, suport per idiomes de dreta a esquerra, microformats, imagtes destacades, formats d&apos;entrada."
+
+#. Template Name of the plugin/theme
+msgid "Full width. No sidebar."
+msgstr "Ample total. Sense barra lateral."
+
+#. Template Name of the plugin/theme
+msgid "Full width"
+msgstr "Ample total"
+
+#. Template Name of the plugin/theme
+msgid "Hero"
+msgstr "Hero"
+

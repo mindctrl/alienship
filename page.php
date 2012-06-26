@@ -16,7 +16,7 @@ get_header(); ?>
 <!-- Main -->
   <?php alienship_content_before(); ?>
   <div class="row-fluid">
-    <div id="content" class="span9">
+    <div id="content" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
 
         <?php while ( have_posts() ) : the_post(); ?>
             <?php alienship_loop_before(); ?>
@@ -29,7 +29,7 @@ get_header(); ?>
     <?php alienship_content_after(); ?>
     </div><!-- #content -->
     <?php alienship_sidebar_before(); ?>
-    <div id="sidebar" class="span3">
+    <div id="sidebar" class="<?php echo apply_filters('alienship_sidebar_container_class', 'span3'); ?>">
     <?php alienship_sidebar_inside_before(); ?>
         <?php get_sidebar(); ?>
     <?php alienship_sidebar_inside_after(); ?>

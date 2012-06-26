@@ -10,7 +10,7 @@ get_header(); ?>
 <?php alienship_content_before(); ?>
   <div id="primary">
     <div class="row-fluid">
-      <div id="content" role="main" class="span9">
+      <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
 
       <article id="post-0" class="post error404 not-found">
         <header class="entry-header">
@@ -44,7 +44,7 @@ get_header(); ?>
     <?php alienship_content_after(); ?>
     </div><!-- #content -->
     <?php alienship_sidebar_before(); ?>
-    <div id="sidebar" class="span3">
+    <div id="sidebar" class="<?php echo apply_filters('alienship_sidebar_container_class', 'span3'); ?>">
       <?php alienship_sidebar_inside_before(); ?>
       <?php get_sidebar(); ?>
       <?php alienship_sidebar_inside_after(); ?>

@@ -1,4 +1,11 @@
 == Change log ==
+Version .731 - June 26, 2012
+----------------------------
+- Updated layouts/sidebar-content.css to properly allow for sidebar/content layout. (Sidebar on left, content on right). Must be included in your child theme.
+- Removed unused layouts.
+
+
+
 Version .73 - June 25, 2012
 ---------------------------
 - Added alienship_content_container_class and alienship_sidebar_container_class filters.

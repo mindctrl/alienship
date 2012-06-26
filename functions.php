@@ -64,10 +64,7 @@ function alienship_setup() {
   /* PHPMailer rewrite */
   locate_template('/inc/phpmailer-rewrite.php', true);
 
-  /* WordPress.com-specific functions and definitions */
-  //locate_template('/inc/wpcom.php');
-
-
+  
   /**
    * Make theme available for translation
    * Translations can be filed in the /languages/ directory
@@ -252,8 +249,6 @@ add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
 
 /* Set RSS update time to every 6 hours */
 add_filter( 'wp_feed_cache_transient_lifetime', create_function('$a', 'return 21600;') );
-
-
 
 /* Allow PHP in widgets
  * Used for testing. Potentially dangerous. Uncomment at your own risk. */

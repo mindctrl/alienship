@@ -60,9 +60,3 @@ function alienship_bootstrap_js_loader() {
 
 }
 add_action('wp_enqueue_scripts', 'alienship_bootstrap_js_loader');
-
-/* Add toggles to dropdown menus. - Currently disabled. Using custom walker instead. */
-/* function bootstrap_dropdown_helper() {
-  wp_enqueue_script('alienship_dropdown-toggle.js', get_template_directory_uri().'/js/alienship_dropdown-toggle.js', array('jquery'), '1.0', true );
-}
-add_action('wp_enqueue_scripts', 'bootstrap_dropdown_helper'); */

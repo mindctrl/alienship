@@ -11,8 +11,7 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Options for left sidebar and no sidebar. Make sure markup in search.php, archive.php, etc. match.
-+ Option for content and sidebar span size.
++ Update content.php to use alienship_content. Move is_search logic into alienship_content. Remove the_excerpt and the_content from content.php
 + More framework stuff.
 + Add support for TinyMCE for Bootstrap elements.
 + Support for a custom.php
@@ -26,7 +25,6 @@ Task List
 + More widget areas? Page widget template. 404 page widget.
 + Style search results page. Example: gallery in results currently shows title and meta, with no content/thumbs.
 + Clean up code and fix validation issues
-+ Make sure strings are translatable.
 + Avatar and author bio display
 + Documentation
 

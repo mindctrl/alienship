@@ -1,0 +1,13 @@
+<?php
+/**
+ * custom_functions.php
+ * File for including custom functions if you are NOT using a child theme.
+ * Useful for those who want to use custom functions without making a child theme.
+ * @since Alien Ship .732
+ */
+/* Example: Change default length of excerpt */
+function alienship_custom_excerpt_length( $length ) {
+        return 40;
+}
+add_filter( 'excerpt_length', 'alienship_custom_excerpt_length', 999 );
+?>

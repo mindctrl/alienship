@@ -111,15 +111,6 @@ function alienship_excerpt_more($more) {
 add_filter('excerpt_more', 'alienship_excerpt_more');
 
 
-
-/* Change default length of excerpt
-function alienship_custom_excerpt_length( $length ) {
-        return 20;
-}
-add_filter( 'excerpt_length', 'alienship_custom_excerpt_length', 999 );
-*/
-
-
 /**
  * Adds custom classes to the array of body classes.
  *

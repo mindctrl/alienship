@@ -90,6 +90,11 @@ endif; // alienship_setup
 add_action( 'after_setup_theme', 'alienship_setup' );
 
 
+if( file_exists( get_template_directory() . '/custom/custom_functions.php' ) && !is_child_theme()) {
+  include_once( get_template_directory() . '/custom/custom_functions.php' );
+}
+
+
 /* Change footer text in admin dashboard */
 if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
   function alienship_change_admin_footer_content () {

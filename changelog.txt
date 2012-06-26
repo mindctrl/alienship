@@ -1,4 +1,12 @@
 == Change log ==
+Version .73 - June 25, 2012
+---------------------------
+- Added alienship_content_container_class and alienship_sidebar_container_class filters.
+- Fixed search.php markup to match rest of templates.
+- Adjusted margins on comments.
+
+
+
 Version .721 - June 20, 2012
 ----------------------------
 - Added Catalan translation. Thanks to JC Julien!

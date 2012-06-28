@@ -135,7 +135,7 @@ if ( ! function_exists( 'alienship_post_author' ) ) :
  * @since Alien Ship 0.59
  */
 function alienship_post_author() {
-  printf( __( '<span class="byline"><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a><span class="sep">&nbsp; &nbsp; &nbsp;</span></span></span>', 'alienship' ),
+  printf( __( apply_filters( 'alienship_post_author_filter', '<span class="byline"><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a><span class="sep">&nbsp; &nbsp; &nbsp;</span></span></span>' ), 'alienship' ),
     esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
     esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
     esc_html( get_the_author() )
@@ -152,7 +152,7 @@ if ( ! function_exists( 'alienship_posted_on' ) ) :
  * @since Alien Ship 0.1
  */
 function alienship_posted_on() {
-  printf( __( '<i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="sep">&nbsp; &nbsp; &nbsp;</span>', 'alienship' ),
+  printf( __( apply_filters( 'alienship_posted_on_filter', '<i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="sep">&nbsp; &nbsp; &nbsp;</span>' ), 'alienship' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
@@ -210,22 +210,22 @@ if ( ! function_exists( 'alienship_post_tags' ) ):
 function alienship_post_tags() {
   global $alienship_design;
   $post_tags = get_the_tags();
-  if ($post_tags) {
-    echo "\t<span class=\"tag-links\"><span class=\"sep\">&nbsp; &nbsp;</span><i class=\"icon-tags\" title=\"Tags\"></i>&nbsp;\n";
-    $num_tags = count($post_tags);
+  if ( $post_tags ) {
+    echo '<span class="tag-links"><span class="sep">&nbsp; &nbsp;</span><i class="icon-tags" title="Tags"></i>&nbsp;' . "\n";
+    $num_tags = count( $post_tags );
     $tag_count = 1;
     $nofollow = ' nofollow'; // tell search engines to not index tag url
-    foreach ($post_tags as $tag) {
-    $html_before = "\t\t\t\t\t<a href=\"" . get_tag_link($tag->term_id) . "\" rel=\"tag$nofollow\" class=\"label label-info\">";
+    foreach( $post_tags as $tag ) {
+    $html_before = '<a href="' . get_tag_link($tag->term_id) . '" rel="tag'.$nofollow.'" class="label label-info">';
     $html_after = '</a>';
-    if ($tag_count < $num_tags)
+    if ( $tag_count < $num_tags )
       $sep = "\n";
-    elseif ($tag_count == $num_tags)
+    elseif ( $tag_count == $num_tags )
     $sep = "\n";
     echo $html_before . $tag->name . $html_after . $sep;
     $tag_count++;
     }
-    echo "\t\t\t</span><span class=\"sep\">&nbsp; &nbsp;</span>\n";
+    echo '</span><span class="sep">&nbsp; &nbsp;</span>' . "\n";
   }
 }
 endif;

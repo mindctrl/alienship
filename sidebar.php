@@ -6,7 +6,7 @@
  * @since Alien Ship 0.1
  */
 ?>
-    <div id="secondary" class="widget-area well" role="complementary">
+    <div id="secondary" class="<?php echo apply_filters('alienship_secondary_container_class', 'widget-area well'); ?>" role="complementary">
       <?php do_action( 'before_sidebar' ); ?>
       <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 

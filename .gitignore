@@ -1,5 +1,6 @@
 # Theme related files
 custom/custom.css
+custom/custom_functions.php
 
 # Numerous always-ignore extensions
 *.diff

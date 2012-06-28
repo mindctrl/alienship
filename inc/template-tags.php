@@ -260,6 +260,20 @@ function alienship_post_categories() {
 endif;
 
 
+if ( ! function_exists( 'alienship_post_comments_link' ) ):
+/**
+ * Display the "Leave a comment" message
+ * @since Alien Ship .74
+ */
+ function alienship_post_comments_link() {
+  if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
+    <span class="comments-link"><span class="sep">&nbsp;&nbsp;</span><i class="icon-comment"></i>&nbsp;<?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?>&nbsp;</span>
+  <?php endif;
+ }
+ endif;
+
+
+
 if ( ! function_exists('alienship_header_title_and_description') ):
 /**
  * Display site title and description below Top Menu navbar

@@ -1,10 +1,18 @@
 == Change log ==
-Version .733 - June 26, 2012
+Version .74 - June 28, 2012
+---------------------------
+- Added filters: alienship_breadcrumb_container_class, alienship_posted_on_filter, and alienship_post_author_filter.
+- Added alienship_post_comments_link function in template-tags.php to reduce duplicate code across content*.php.
+
+
+
+Version .734 - June 26, 2012
 ----------------------------
 - Updated layouts/sidebar-content.css to properly allow for sidebar/content layout. (Sidebar on left, content on right). Must be included in your child theme.
 - Removed unused layouts.
 - Added support for custom/custom_functions.php to allow for custom code when NOT using a child theme.
 - Removed Cabin font.
+- Added textdomain where missing in inc/sidebars.php.
 
 
 

@@ -38,7 +38,9 @@ if( file_exists( get_template_directory() . '/custom/custom.css' ) && !is_child_
 <body <?php body_class(); ?>>
 <!--[if lt IE 8]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-<?php get_template_part( '/inc/parts/menu', 'top' ); ?>
+<?php if ( of_get_option('alienship_show_top_navbar',1) ) {
+  get_template_part( '/inc/parts/menu', 'top' );
+} ?>
 
   <?php do_action( 'before' ); ?>
   <?php alienship_header_before(); ?>

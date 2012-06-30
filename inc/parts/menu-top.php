@@ -6,7 +6,6 @@
  * @since Alien Ship 0.70
  */
 ?>
-<?php if ( of_get_option('alienship_show_top_navbar',1) ) { ?>
 <!-- Load Top Menu -->
   <div class="navbar">
     <div class="navbar-inner">
@@ -42,4 +41,3 @@
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
 <!-- End Top Menu -->
-<?php } // if of_get_option('alienship_show_top_navbar') ?>

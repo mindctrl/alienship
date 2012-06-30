@@ -7,9 +7,8 @@
 <?php alienship_post_before(); ?>
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php alienship_post_inside_before(); ?>
-  <header class="entry-header">
-    <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-  </header><!-- .entry-header -->
+
+  <?php alienship_entry_title(); ?>
 
   <div class="entry-content">
     <?php alienship_content(); ?>

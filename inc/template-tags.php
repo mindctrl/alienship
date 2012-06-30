@@ -30,6 +30,22 @@ endif;
 
 
 
+if ( ! function_exists( 'alienship_entry_title' ) ):
+/**
+ * Set title to H1 if in single view, otherwise set it to H2
+ * @since Alien Ship .75
+ */
+function alienship_entry_title() {
+  if ( is_single() || is_page() ) { ?>
+    <h1 class="entry-title"><?php the_title(); ?></h1>
+    <?php } else { ?>
+    <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <?php }
+}
+endif;
+
+
+
 if ( ! function_exists( 'alienship_content_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable
@@ -69,6 +85,8 @@ function alienship_content_nav( $nav_id ) {
   <?php
 }
 endif; // alienship_content_nav
+
+
 
 if ( ! function_exists( 'alienship_comment' ) ) :
 /**
@@ -507,6 +525,7 @@ function alienship_get_first_link() {
   $post_content = substr($content, strlen($link_url));
 }
 endif;
+
 /*
 function alienship_page_nav($before = '', $after = '') {
   global $wpdb, $wp_query;

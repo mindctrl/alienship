@@ -414,6 +414,20 @@ header#masthead {
   padding-bottom: 20px;
 }
 
+p.site-title {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 36px;
+  margin-bottom: 0;
+}
+
+p.site-description {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36px;
+  margin-bottom: 0;
+}
+
 mark,
 ins {
   background: #fff9c0;

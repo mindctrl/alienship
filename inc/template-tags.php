@@ -62,7 +62,7 @@ function alienship_content_nav( $nav_id ) {
   ?>
 
   <nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-    <h1 class="assistive-text"><?php _e( 'Post navigation', 'alienship' ); ?></h1>
+    <h3 class="assistive-text"><?php _e( 'Post navigation', 'alienship' ); ?></h3>
 
   <?php if ( is_single() ) : // navigation links for single posts ?>
 
@@ -301,12 +301,22 @@ function alienship_header_title_and_description() {
   $home_url = esc_url( home_url( '/' ) );
   $site_name = esc_attr( get_bloginfo( 'name', 'display' ) );
   $site_description = get_bloginfo( 'description' );
+  if ( !is_front_page() || !is_home() ) {
+  echo <<<TITLE_AND_DESC
+    <hgroup>
+      <p id="site-title" class="site-title"><span><a href="{$home_url}" title="{$site_name}" rel="home">{$site_name}</a></span></p>
+      <p id="site-description" class="site-description">{$site_description}</p>
+    </hgroup>
+TITLE_AND_DESC;
+  }
+  else {
   echo <<<TITLE_AND_DESC
     <hgroup>
       <h1 id="site-title" class="site-title"><span><a href="{$home_url}" title="{$site_name}" rel="home">{$site_name}</a></span></h1>
       <h2 id="site-description" class="site-description">{$site_description}</h2>
     </hgroup>
 TITLE_AND_DESC;
+  }
 } endif;
 
 

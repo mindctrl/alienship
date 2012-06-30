@@ -648,6 +648,7 @@ div#innergrid > a > img {
 }
 
 .grid-header {
+  font-size: 14px;
   line-height: 18px;
   padding-bottom: 5px;
   text-align: center;

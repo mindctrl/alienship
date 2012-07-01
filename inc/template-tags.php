@@ -37,9 +37,13 @@ if ( ! function_exists( 'alienship_entry_title' ) ):
  */
 function alienship_entry_title() {
   if ( is_single() || is_page() ) { ?>
-    <h1 class="entry-title"><?php the_title(); ?></h1>
+    <header class="entry-header">
+      <h1 class="entry-title"><?php the_title(); ?></h1>
+    </header><!-- .entry-header -->
     <?php } else { ?>
-    <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <header class="entry-header">
+      <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    </header><!-- .entry-header -->
     <?php }
 }
 endif;

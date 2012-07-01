@@ -4,6 +4,9 @@ function alienship_head() { do_action('alienship_head'); }
 function alienship_header_before() { do_action('alienship_header_before'); }
 function alienship_header_inside() { do_action('alienship_header_inside'); }
 function alienship_header_after() { do_action('alienship_header_after'); }
+function alienship_menu_top() { do_action('alienship_menu_top'); }
+function alienship_menu_main() { do_action('alienship_menu_main'); }
+function alienship_menu_bottom() { do_action('alienship_menu_bottom'); }
 
 // 404.php, archive.php, author.php content*.php index.php, page*.php, search.php, single.php
 function alienship_content_before() { do_action('alienship_content_before'); }
@@ -15,6 +18,7 @@ function alienship_post_before() { do_action('alienship_post_before'); }
 function alienship_post_after() { do_action('alienship_post_after'); }
 function alienship_post_inside_before() { do_action('alienship_post_inside_before'); }
 function alienship_post_inside_after() { do_action('alienship_post_inside_after'); }
+function alienship_post_inside_after_home() { do_action('alienship_post_inside_after_home'); }
 function alienship_loop_before() { do_action('alienship_loop_before'); }
 function alienship_loop_after() { do_action('alienship_loop_after'); }
 function alienship_sidebar_before() { do_action('alienship_sidebar_before'); }

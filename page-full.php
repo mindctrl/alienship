@@ -23,7 +23,5 @@ get_header(); ?>
       <?php alienship_content_after(); ?>
       </div><!-- #content -->
     </div><!-- #primary -->
-<?php alienship_sidebar_before(); ?>
 <?php get_sidebar(); ?>
-<?php alienship_sidebar_after(); ?>
 <?php get_footer(); ?>

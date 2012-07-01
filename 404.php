@@ -43,13 +43,8 @@ get_header(); ?>
       </article><!-- #post-0 -->
     <?php alienship_content_after(); ?>
     </div><!-- #content -->
-    <?php alienship_sidebar_before(); ?>
-    <div id="sidebar" class="<?php echo apply_filters('alienship_sidebar_container_class', 'span3'); ?>">
-      <?php alienship_sidebar_inside_before(); ?>
       <?php get_sidebar(); ?>
-      <?php alienship_sidebar_inside_after(); ?>
-    </div><!-- #sidebar -->
-    <?php alienship_sidebar_after(); ?>
+  </div><!-- .row-fluid -->
   </div><!-- #primary -->
 
 <?php get_footer(); ?>

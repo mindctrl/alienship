@@ -1,4 +1,15 @@
 == Change log ==
+Version .75 - July 2, 2012
+--------------------------
+- Changed post/page title display heading to be more accurate and SEO friendly. Post/page titles are now H1 when viewing single, and H2 when listed on index, archives, etc. Also the post title is no longer linked on the single view. No point in linking to itself.
+- Changed featured posts grid titles to H2.
+- Changed assistive text from H1 to H3.
+- Site title now uses H1 on home page, and p tag on other pages.
+- Added alienship_entry_title function for displaying post/page titles to reduce duplicate code in templates.
+- Moved all sidebar related code to sidebar.php and removed it from the various templates.
+
+
+
 Version .74 - June 28, 2012
 ---------------------------
 - Added filters: alienship_breadcrumb_container_class, alienship_posted_on_filter, and alienship_post_author_filter.

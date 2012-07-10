@@ -45,7 +45,6 @@ function alienship_setup() {
 
   /* Header image */
   locate_template('/inc/header-image.php', true);
-  alienship_setup_custom_header();
 
     /* Load theme options framework */
   locate_template('/inc/options-panel.php', true);
@@ -64,7 +63,7 @@ function alienship_setup() {
   /* PHPMailer rewrite */
   locate_template('/inc/phpmailer-rewrite.php', true);
 
-  
+
   /**
    * Make theme available for translation
    * Translations can be filed in the /languages/ directory

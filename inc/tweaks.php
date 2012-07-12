@@ -104,9 +104,11 @@ add_action('wp_before_admin_bar_render', 'alienship_remove_admin_bar_logo', 0);
 
 
 /* Style the excerpt continuation */
-function alienship_excerpt_more($more) {
-       global $post;
-  return ' ... <a href="'. get_permalink($post->ID) . '">'. __( 'Continue Reading ', 'alienship' ) .' &rarr;</a>';
+if ( ! function_exists( 'alienship_excerpt_more') ) {
+  function alienship_excerpt_more($more) {
+    global $post;
+    return ' ... <a href="'. get_permalink($post->ID) . '">'. __( 'Continue Reading ', 'alienship' ) .' &rarr;</a>';
+  }
 }
 add_filter('excerpt_more', 'alienship_excerpt_more');
 

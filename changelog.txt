@@ -1,4 +1,12 @@
 == Change log ==
+Version .76 - July 10, 2012
+---------------------------
+- Added "article blockquote p.callout" class for calling out quotes in posts with different styling from regular blockquotes.
+- Moved alienship_setup_custom_header to after_setup_theme hook instead of calling the function directly in functions.php.
+- Added id to search header and title.
+
+
+
 Version .75 - July 2, 2012
 --------------------------
 - Changed post/page title display heading to be more accurate and SEO friendly. Post/page titles are now H1 when viewing single, and H2 when listed on index, archives, etc. Also the post title is no longer linked on the single view. No point in linking to itself.

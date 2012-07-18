@@ -40,44 +40,48 @@ if( file_exists( get_template_directory() . '/custom/custom.css' ) && !is_child_
 
 <?php if ( of_get_option('alienship_show_top_navbar',1) ) {
   get_template_part( '/inc/parts/menu', 'top' );
-} ?>
+}
 
-<!-- Site title and description in masthead -->
-<div id="page" class="container-fluid hfeed">
-  <?php do_action( 'before' ); ?>
-  <?php alienship_header_before(); ?>
-	<header id="masthead" role="banner">
-    <?php alienship_header_inside(); ?>
-    <?php alienship_header_title_and_description(); ?>
-    <?php
-      // Check to see if the header image has been removed
-      $header_image = get_header_image();
-      if ( ! empty( $header_image ) ) :
-    ?>
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+if ( !is_page_template( 'page-hero.php' ) ) { ?>
+
+  <!-- Site title and description in masthead -->
+  <div id="page" class="container-fluid hfeed">
+    <?php do_action( 'before' ); ?>
+    <?php alienship_header_before(); ?>
+  	<header id="masthead" role="banner">
+      <?php alienship_header_inside(); ?>
+      <?php alienship_header_title_and_description(); ?>
       <?php
-        // The header image
-        // Check if this is a post or page, if it has a thumbnail, and if it's a big one
-        if ( is_singular() &&
-            has_post_thumbnail( $post->ID ) &&
-            ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH, HEADER_IMAGE_WIDTH ) ) ) && $image[1] >= HEADER_IMAGE_WIDTH ) :
-          // Houston, we have a new header image!
-          echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-        else : ?>
-        <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" class="header-image" alt="" />
-      <?php endif; // end check for featured image or standard header ?>
-    </a>
-    <?php endif; // end check for removed header image ?>
+        // Check to see if the header image has been removed
+        $header_image = get_header_image();
+        if ( ! empty( $header_image ) ) :
+      ?>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <?php
+          // The header image
+          // Check if this is a post or page, if it has a thumbnail, and if it's a big one
+          if ( is_singular() &&
+              has_post_thumbnail( $post->ID ) &&
+              ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH, HEADER_IMAGE_WIDTH ) ) ) && $image[1] >= HEADER_IMAGE_WIDTH ) :
+            // Houston, we have a new header image!
+            echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+          else : ?>
+          <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" class="header-image" alt="" />
+        <?php endif; // end check for featured image or standard header ?>
+      </a>
+      <?php endif; // end check for removed header image ?>
 
-<!-- End Site title and description in masthead -->
+  <!-- End Site title and description in masthead -->
 
-  <?php if ( has_nav_menu('main') ) {
-    get_template_part( '/inc/parts/menu', 'main' );
-  } ?>
-  </header><!-- #masthead -->
-  <?php alienship_header_after(); ?>
+    <?php if ( has_nav_menu('main') ) {
+      get_template_part( '/inc/parts/menu', 'main' );
+    } ?>
+    </header><!-- #masthead -->
+    <?php alienship_header_after(); ?>
 
-  <?php if ( function_exists('alienship_breadcrumbs') && !is_front_page() ) { alienship_breadcrumbs(); } ?>
+    <?php if ( function_exists('alienship_breadcrumbs') && !is_front_page() ) { alienship_breadcrumbs(); } ?>
+
+<?php } // !is_page_template( 'page-hero.php' ) ?>
 
   <?php alienship_main_before(); ?>
   <div id="main">

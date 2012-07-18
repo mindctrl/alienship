@@ -48,7 +48,7 @@ function alienship_setup_custom_header() {
     add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
   }
 }
-add_action( 'after_setup_theme', 'alienship_setup_custom_header' );
+add_action( 'init', 'alienship_setup_custom_header' );
 
 
 /* Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI. */

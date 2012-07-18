@@ -41,7 +41,7 @@ if( file_exists( get_template_directory() . '/custom/custom.css' ) && !is_child_
 <?php if ( of_get_option('alienship_show_top_navbar',1) ) {
   get_template_part( '/inc/parts/menu', 'top' );
 }
-
+/* If not using Hero template, do header image and menu stuff */
 if ( !is_page_template( 'page-hero.php' ) ) { ?>
 
   <!-- Site title and description in masthead -->
@@ -51,25 +51,43 @@ if ( !is_page_template( 'page-hero.php' ) ) { ?>
   	<header id="masthead" role="banner">
       <?php alienship_header_inside(); ?>
       <?php alienship_header_title_and_description(); ?>
+
+    <?php
+      // Check for header image
+      $header_image = get_header_image();
+      if ( $header_image ) :
+        if ( function_exists( 'get_custom_header' ) ) {
+          // We need to figure out what the minimum width should be for our featured image.
+          // This result would be the suggested width if the theme were to implement flexible widths.
+          $header_image_width = get_theme_support( 'custom-header', 'width' );
+          $header_image_height = get_theme_support( 'custom-header', 'height' );
+        } else {
+          // Compatibility with versions of WordPress prior to 3.4.
+          $header_image_width = HEADER_IMAGE_WIDTH;
+        }
+    ?>
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
       <?php
-        // Check to see if the header image has been removed
-        $header_image = get_header_image();
-        if ( ! empty( $header_image ) ) :
-      ?>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <?php
-          // The header image
-          // Check if this is a post or page, if it has a thumbnail, and if it's a big one
-          if ( is_singular() &&
-              has_post_thumbnail( $post->ID ) &&
-              ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( HEADER_IMAGE_WIDTH, HEADER_IMAGE_WIDTH ) ) ) && $image[1] >= HEADER_IMAGE_WIDTH ) :
-            // Houston, we have a new header image!
-            echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-          else : ?>
-          <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" class="header-image" alt="" />
-        <?php endif; // end check for featured image or standard header ?>
-      </a>
-      <?php endif; // end check for removed header image ?>
+        // The header image
+        // Check if this is a post or page, if it has a thumbnail, and if it's a big one
+        if ( is_singular() && has_post_thumbnail( $post->ID ) &&
+            ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_height ) ) ) && $image[1] >= $header_image_width ) :
+          // Houston, we have a new header image!
+          echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+          else :
+            if ( function_exists( 'get_custom_header' ) ) {
+              $header_image_width  = get_custom_header()->width;
+              $header_image_height = get_custom_header()->height;
+            } else {
+              // Compatibility with versions of WordPress prior to 3.4.
+              $header_image_width  = HEADER_IMAGE_WIDTH;
+              $header_image_height = HEADER_IMAGE_HEIGHT;
+            }
+        ?>
+        <img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" class="header-image" alt="" />
+      <?php endif; // end check for featured image or standard header ?>
+    </a>
+    <?php endif; // end check for header image ?>
 
   <!-- End Site title and description in masthead -->
 

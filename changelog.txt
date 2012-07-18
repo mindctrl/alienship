@@ -1,4 +1,13 @@
 == Change log ==
+Version .77 - July 18, 2012
+---------------------------
+- Removed header-hero.php and moved logic into header.php.
+- Reworked header image code in preparation for dropping support for WP versions before 3.4.
+- Updated HTML5Shiv.
+- Fixed font size for H2 in featured posts grid.
+
+
+
 Version .76 - July 10, 2012
 ---------------------------
 - Added "article blockquote p.callout" class for calling out quotes in posts with different styling from regular blockquotes.

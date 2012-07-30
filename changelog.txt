@@ -1,4 +1,9 @@
 == Change log ==
+Version .78 - July 29, 2012
+---------------------------
+- Added per-post/page theme layout support.
+
+
 Version .77 - July 18, 2012
 ---------------------------
 - Removed header-hero.php and moved logic into header.php.

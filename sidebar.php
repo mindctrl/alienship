@@ -6,6 +6,8 @@
  * @since Alien Ship 0.1
  */
 ?>
+<?php if ( current_theme_supports( 'theme-layouts' ) && !is_admin() && 'layout-1c' !== theme_layouts_get_layout() || !current_theme_supports( 'theme-layouts' ) ) { ?>
+
 <?php alienship_sidebar_before(); ?>
   <div id="sidebar" class="<?php echo apply_filters('alienship_sidebar_container_class', 'span3'); ?>">
     <?php alienship_sidebar_inside_before(); ?>
@@ -38,3 +40,5 @@
     <?php alienship_sidebar_inside_after(); ?>
   </div><!-- #sidebar -->
 <?php alienship_sidebar_after(); ?>
+
+<?php } //endif ?>

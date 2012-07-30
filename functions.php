@@ -60,6 +60,10 @@ function alienship_setup() {
   /* Load Bootstrap javascript */
   locate_template('/inc/bootstrap-js.php', true);
 
+  /* Load Theme Layouts extension and add theme support for desired layouts */
+  locate_template('/inc/theme-layouts.php', true);
+  add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ) );
+
   /* PHPMailer rewrite */
   locate_template('/inc/phpmailer-rewrite.php', true);
 

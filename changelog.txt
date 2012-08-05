@@ -1,4 +1,16 @@
 == Change log ==
+Version .80 - August 5, 2012
+----------------------------
+- Added Dutch translation
+
+
+
+Version .79 - August 2, 2012
+----------------------------
+- Blockquote style tweaks
+- Quote post format style tweaks
+
+
 Version .78 - July 29, 2012
 ---------------------------
 - Added per-post/page theme layout support.

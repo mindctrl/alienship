@@ -27,7 +27,7 @@
           <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
             <form role="search" class="navbar-search pull-right" action="<?php echo site_url(); ?>" id="searchform" method="get">
               <label class="assistive-text" for="s">Search</label>
-              <input type="text" placeholder="Search ..." id="s" name="s" class="search-query">
+              <input type="text" placeholder="Search ..." value="<?php echo esc_attr( get_search_query() ); ?>" id="s" name="s" class="search-query">
               <input type="submit" value="Search" id="searchsubmit" name="submit" class="btn btn-primary">
             </form>
           <?php } // end if search bar ?>

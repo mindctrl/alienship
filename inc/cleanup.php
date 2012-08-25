@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
  * Clean up header output
  * @package Alien Ship
  * @since Alien Ship 0.3
@@ -15,8 +15,6 @@ endif;
 
 if ( ! function_exists( 'alienship_head_cleanup' ) ):
 function alienship_head_cleanup() {
-  remove_action('wp_head', 'feed_links', 2);
-  remove_action('wp_head', 'feed_links_extra', 3);
   remove_action('wp_head', 'rsd_link');
   remove_action('wp_head', 'wlwmanifest_link');
   remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);

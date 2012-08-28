@@ -1,4 +1,12 @@
 == Change log ==
+Version .81 - August 28, 2012
+-----------------------------
+- Added current search query to search input boxes
+- Stopped disabling RSS feed links in WordPress header output (inc/cleanup.php)
+- Added Brazilian Portuguese translation. Thanks to Ivo Reali for contributing!
+
+
+
 Version .80 - August 5, 2012
 ----------------------------
 - Added Dutch translation

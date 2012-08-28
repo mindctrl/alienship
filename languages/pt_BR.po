@@ -1,0 +1,653 @@
+# Copyright (C) 2012 John Parris
+# This file is distributed under the GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Alien Ship 0.72\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/alienship\n"
+"POT-Creation-Date: 2012-08-28 12:11:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-08-28 13:48-0300\n"
+"Last-Translator: Ivo Camargo <iv@uol.com.br>\n"
+"Language-Team: Ivo Reali\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Essa p&aacute;gina n&atilde;o pode ser encontrada."
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try a search or one "
+"of the links below?"
+msgstr ""
+"Aparentemente n&atilde;o h&aacute; conte&uacute;do aqui. Por que n&atilde;o "
+"tentar uma procura ou um dos links abaixo?"
+
+#: 404.php:28
+msgid "Most Used Categories"
+msgstr "Categorias mais Utilizadas"
+
+#. translators: %1$s: smilie
+#: 404.php:36
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Tente procurar nos arquivos mensais. %1$s"
+
+#: admin/options-framework.php:239
+msgid "Save Options"
+msgstr "Salvar Op&ccedil;&otilde;es"
+
+#: admin/options-framework.php:240
+msgid "Restore Defaults"
+msgstr "Restaurar padr&otilde;es"
+
+#: admin/options-framework.php:240
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+"Clique OK para resetar. Quaisquer configura&ccedil;&otilde;es do tema "
+"ser&atilde;o apagadas!"
+
+#: admin/options-framework.php:272
+msgid "Default options restored."
+msgstr "As Op&ccedil;&otilde;es padr&atilde;o foram restauradas."
+
+#: admin/options-framework.php:313
+msgid "Options saved."
+msgstr "As Op&ccedil;&otilde;es foram salvas."
+
+#: admin/options-framework.php:371
+msgid "Theme Options"
+msgstr "Op&ccedil;&otilde;es do Tema"
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr "Op&ccedil;&otilde;es do Container Interno do Framework"
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Upload"
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Ver o Arquivo"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Galeria"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr "Arquivos enviados anteriormente"
+
+#: author.php:29 inc/template-tags.php:356
+msgid "Author Archives: %s"
+msgstr "Arquivos por Autor: %s"
+
+#: comments.php:16
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Esta publica&ccedil;&atilde;o &eacute; protegida. Entre com a senha para ver "
+"qualquer coment&aacute;rio."
+
+#: comments.php:32
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Um coment&aacute;rio no &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Coment&aacute;rios no &ldquo;%2$s&rdquo;"
+
+#: comments.php:39 comments.php:59
+msgid "Comment navigation"
+msgstr "Navega&ccedil;&atilde;o dos Coment&aacute;rios"
+
+#: comments.php:40 comments.php:60
+msgid "&larr; Older Comments"
+msgstr "&larr; Coment&aacute;rios Antigos"
+
+#: comments.php:41 comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr "Novos Coment&aacute;rios &rarr;"
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr "Os Coment&aacute;rios est&atilde;o fechados."
+
+#: comments.php:81
+msgid "Leave a Reply"
+msgstr "Deixe uma Resposta"
+
+#: comments.php:81
+msgid "Leave a Reply to %s"
+msgstr "Deixe uma Resposta para %s"
+
+#: comments.php:84
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+"Voc&ecirc; deve estar <a href=\"%s\">logado</a> para publicar um "
+"coment&aacute;rio"
+
+#: comments.php:88
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr "Logado como <a href=\"%s/wp-admin/profile.php\">%s</a>."
+
+#: comments.php:88
+msgid "Log out of this account"
+msgstr "Desconectar"
+
+#: comments.php:88
+msgid "Log out &raquo;"
+msgstr "Desconectar &raquo;"
+
+#: comments.php:91
+msgid "Name"
+msgstr "Nome"
+
+#: comments.php:91 comments.php:96
+msgid " (required)"
+msgstr "(obrigat&oacute;rio)"
+
+#: comments.php:96
+msgid "Email (will not be published)"
+msgstr "Email (n&atilde;o ser&aacute; publicado)"
+
+#: comments.php:101
+msgid "Website"
+msgstr "Site"
+
+#: comments.php:108
+msgid "Comment"
+msgstr "Coment&aacute;rio"
+
+#: comments.php:113
+msgid "Submit Comment"
+msgstr "Publicar Coment&aacute;rio"
+
+#: footer-hero.php:17
+msgid "Edit page"
+msgstr "Editar p&aacute;gina"
+
+#: functions.php:169
+msgid ""
+"Dropdown menus work a little differently in Alien Ship. They do not activate "
+"on mouse hover, but on click instead. This means that the top/parent menu "
+"item does not click through to a page, but only activates the dropdown. "
+"Also, the nested menus only go one level deep (Parent > Sub item and NOT "
+"Parent > Sub item > Sub sub item. Design your menus with this in mind. For "
+"more information, read the <a href=\"http://www.johnparris.com/alienship/"
+"documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a "
+"href=\"%1$s\">Hide this notice</a>"
+msgstr ""
+"Menus DropDown funcionam um pouco diferente no Alien Ship. Eles n&atilde;o "
+"s&atilde;o ativados com mouse hover, mas sim por cliques. Isto significa que "
+"o item principal do menu n&atilde;o te leva para uma p&aacute;gina, ele "
+"apenas ativa o dropdown. Os sub-menus apenas v&atilde;o um n&iacute;vel a "
+"mais (Principal > sub-menu e NÃO principal > sub item > sub sub item). Pense "
+"nos teu menus com esse conceito em mente. Para maiores informa&ccedil;"
+"&otilde;es, leia a <a href=\"http://www.johnparris.com/alienship/"
+"documentation\" target=\"_blank\">documenta&ccedil;&atilde;o do Alien Ship</"
+"a> online.  | <a href=\"%1$s\">Esconde esta mensagem</a>"
+
+#: image.php:23
+msgid ""
+"Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
+"\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
+"%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+"\"gallery\">%7$s</a>"
+msgstr ""
+"Publicado em <span class=\"entry-date\"><abbr class=\"published\" title="
+"\"%1$s\">%2$s</abbr></span> &agrave; <a href=\"%3$s\" title=\"Link para a "
+"imagem original\">%4$s &times; %5$s</a> em <a href=\"%6$s\" title=\"Retornar "
+"para %7$s\" rel=\"galeria\">%7$s</a>"
+
+#: image.php:33 image.php:104 inc/parts/content-link.php:34
+#: inc/parts/content-page.php:20 inc/parts/content-quote.php:29
+#: inc/parts/content-standard.php:30 inc/parts/content-status.php:27
+#: inc/parts/content.php:37
+msgid "Edit"
+msgstr "Editar"
+
+#: image.php:39
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: image.php:42
+msgid "Next &rarr;"
+msgstr "Pr&oacute;ximo &rarr;"
+
+#: image.php:91 inc/parts/content-link.php:20 inc/parts/content-page.php:19
+#: inc/parts/content-quote.php:16 inc/parts/content-standard.php:16
+#: inc/parts/content-status.php:14 inc/parts/content.php:21
+msgid "Pages:"
+msgstr "P&aacute;ginas:"
+
+#: image.php:96
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Publicar um "
+"coment&aacute;rio\">Publicar um coment&aacute;rio</a> ou deixar um "
+"trackback: <a class=\"trackback-link\" href=\"%s\" title=\"URL do trackback "
+"do seu artigo\" rel=\"trackback\">URL do trackback</a>."
+
+#: image.php:98
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+"Os coment&aacute;rios est&atilde;o fechados mas voc&ecirc; pode deixar um "
+"trackback: <a class=\"trackback-link\" href=\"%s\" title=\"URL do trackback "
+"do seu artigo\" rel=\"trackback\">URL do trackback</a>."
+
+#: image.php:100
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+"Os Trackbacks est&atilde;o fechados, mas voc&ecirc; pode <a class=\"comment-"
+"link\" href=\"#respond\" title=\"Deixar um coment&aacute;rio\">deixar um "
+"coment&aacute;rio</a>."
+
+#: image.php:102
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Os coment&aacute;rios e trackbacks est&atilde;o fechados."
+
+#: inc/breadcrumbs.php:64
+msgid "Home"
+msgstr "Home"
+
+#: inc/breadcrumbs.php:312
+msgid "g:i a"
+msgstr ""
+
+#: inc/breadcrumbs.php:315
+msgid "Minute %1$s"
+msgstr ""
+
+#: inc/breadcrumbs.php:315
+msgid "i"
+msgstr ""
+
+#: inc/breadcrumbs.php:318
+msgid "g a"
+msgstr ""
+
+#: inc/breadcrumbs.php:329 inc/breadcrumbs.php:335 inc/breadcrumbs.php:340
+#: inc/breadcrumbs.php:345 inc/breadcrumbs.php:410
+msgid "Y"
+msgstr ""
+
+#: inc/breadcrumbs.php:330 inc/breadcrumbs.php:341 inc/breadcrumbs.php:414
+msgid "F"
+msgstr ""
+
+#: inc/breadcrumbs.php:331 inc/breadcrumbs.php:418
+msgid "d"
+msgstr ""
+
+#: inc/breadcrumbs.php:336
+msgid "Week %1$s"
+msgstr "Semana %1$s"
+
+#: inc/breadcrumbs.php:336
+msgid "W"
+msgstr ""
+
+#: inc/breadcrumbs.php:352
+msgid "Search results for &quot;%1$s&quot;"
+msgstr "Resultados da pesquisa por &quot;%1$s&quot;"
+
+#: inc/breadcrumbs.php:356
+msgid "Content Not Found"
+msgstr "Conte&uacute;do n&atilde;o encontrado"
+
+#: inc/breadcrumbs.php:414
+msgid "F Y"
+msgstr ""
+
+#: inc/breadcrumbs.php:418
+msgid "F j, Y"
+msgstr "j F Y"
+
+#. translators: header image description
+#: inc/header-image.php:60
+msgid "Shore"
+msgstr ""
+
+#. translators: header image description
+#: inc/header-image.php:66
+msgid "Trolley"
+msgstr ""
+
+#. translators: header image description
+#: inc/header-image.php:72
+msgid "Chessboard"
+msgstr ""
+
+#. translators: header image description
+#: inc/header-image.php:78
+msgid "Lanterns"
+msgstr ""
+
+#: inc/menus.php:6
+msgid "Top Menu"
+msgstr ""
+
+#: inc/menus.php:7
+msgid "Main Menu"
+msgstr "Menu Principal"
+
+#: inc/menus.php:8
+msgid "Bottom Menu"
+msgstr "Menu do rodap&eacute;"
+
+#: inc/old-breadcrumbs.php:101
+msgid " Page"
+msgstr " P&aacute;gina"
+
+#: inc/parts/content-featured.php:8 inc/parts/content-fp-grid.php:9
+#: inc/parts/content-fp-grid.php:13 inc/parts/content-link.php:15
+#: inc/parts/content-page.php:13 inc/parts/content-standard.php:11
+#: inc/template-tags.php:20
+msgid "Link to %s"
+msgstr "Link para %s"
+
+#: inc/parts/content-fp-grid.php:20
+msgid "<span class=\"edit-link\"><i class=\"icon-pencil pull-right\"></i>"
+msgstr ""
+
+#: inc/parts/content-link.php:31 inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27 inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "Leave a comment"
+msgstr "Deixar uma resposta"
+
+#: inc/parts/content-link.php:31 inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27 inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "1 Comment"
+msgstr "1 Coment&aacute;rio"
+
+#: inc/parts/content-link.php:31 inc/parts/content-quote.php:26
+#: inc/parts/content-standard.php:27 inc/parts/content-status.php:24
+#: inc/parts/content.php:34
+msgid "% Comments"
+msgstr "% Coment&aacute;rios"
+
+#: inc/parts/content-none.php:11
+msgid "Nothing Found"
+msgstr "Nada Encontrado"
+
+#: inc/parts/content-none.php:15
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Parece que n&atilde;o podemos achar o que voc&ecirc; estava procurando. "
+"Talvez usando o formul&aacute;rio de procura possa ajudar."
+
+#: inc/parts/content.php:11
+msgid " Link to %s"
+msgstr "Link para %s"
+
+#: inc/parts/content.php:20
+msgid ""
+"<button class=\"btn btn-mini\">Read More <i class=\"icon-arrow-right\"></i></"
+"button>"
+msgstr ""
+"<button class=\"btn btn-mini\">Leia mais <i class=\"icon-arrow-right\"></i></"
+"button>"
+
+#: inc/parts/title.php:30
+msgid "Page %s"
+msgstr "P&aacute;gina %s"
+
+#: inc/sidebars.php:11
+msgid "Sidebar"
+msgstr "Barra Lateral"
+
+#: inc/sidebars.php:12
+msgid "The main widget area displayed in the sidebar."
+msgstr "A &aacute;rea principal do widget exibida na barra lateral"
+
+#: inc/sidebars.php:21
+msgid "Hero Widgets"
+msgstr "Widgets Hero"
+
+#: inc/sidebars.php:22
+msgid "Displayed on pages created with the Hero template"
+msgstr "Exibido em p&aacute;ginas criadas com o modelo Hero"
+
+#: inc/sidebars.php:31
+msgid "Footer"
+msgstr ""
+
+#: inc/sidebars.php:32
+msgid "The footer widget area displayed after all content."
+msgstr ""
+"A &aacute;rea de widget no rodap&eacute; exibida depois de todo conte&uacute;"
+"do."
+
+#: inc/sidebars.php:41
+msgid "Footer 2"
+msgstr "Rodap&eacute; 2"
+
+#: inc/sidebars.php:42
+msgid "The second footer widget area, displayed below the Footer widget area."
+msgstr ""
+"A segunda &aacute;rea de widget no rodap&eacute;, exibida depois da &aacute;"
+"rea de rodap&eacute; do widget."
+
+#: inc/sidebars.php:76 inc/widgets/widget-login-form.php:167
+msgid "Username"
+msgstr "Nome de usu&aacute;rio"
+
+#: inc/sidebars.php:77 inc/widgets/widget-login-form.php:168
+msgid "Password"
+msgstr "Senha"
+
+#: inc/sidebars.php:78 inc/widgets/widget-login-form.php:170
+msgid "Remember Me"
+msgstr "Lembrar me"
+
+#: inc/sidebars.php:79 inc/widgets/widget-login-form.php:166
+#: inc/widgets/widget-login-form.php:169
+msgid "Log In"
+msgstr "Conectar"
+
+#: inc/template-tags.php:49
+msgid "Post navigation"
+msgstr "Navega&ccedil;&atilde;o das publica&ccedil;&otilde;es"
+
+#: inc/template-tags.php:53
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:54
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:59
+msgid "Next page <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Pr&oacute;xima p&aacute;gina <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:63
+msgid "<span class=\"meta-nav\">&larr;</span> Previous page"
+msgstr "<span class=\"meta-nav\">&larr;</span> P&aacute;gina anterior"
+
+#: inc/template-tags.php:88
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:88 inc/template-tags.php:111
+msgid "(Edit)"
+msgstr "(Editar)"
+
+#: inc/template-tags.php:98
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:101
+msgid "Your comment is awaiting moderation."
+msgstr "O seu coment&aacute;rio est&aacute; esperando para ser autorizado."
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:109
+msgid "%1$s at %2$s"
+msgstr "le %1$s &agrave; %2$s"
+
+#: inc/template-tags.php:138
+msgid ""
+"<span class=\"byline\"><i class=\"icon-user\"></i> <span class=\"author vcard"
+"\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</"
+"a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:140
+msgid "View all posts by %s"
+msgstr "Ver todas as publica&ccedil;&otilde;es de %s"
+
+#: inc/template-tags.php:155
+msgid ""
+"<i class=\"icon-calendar\" title=\"Published date\"></i> <a href=\"%1$s\" "
+"title=\"%2$s\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
+"time></a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span>"
+msgstr ""
+"<i class=\"icon-calendar\" title=\"Publi&eacute; le\"></i> <a href=\"%1$s\" "
+"title=\"%2$s\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</"
+"time></a><span class=\"sep\">&nbsp; &nbsp; &nbsp;</span>"
+
+#: inc/template-tags.php:350
+msgid "Category Archives: %s"
+msgstr "Arquivos por Categoria: %s"
+
+#: inc/template-tags.php:353
+msgid "Tag Archives: %s"
+msgstr "Arquivos por Tags: %s"
+
+#: inc/template-tags.php:359
+msgid "Daily Archives: %s"
+msgstr "Arquivos por dia: %s"
+
+#: inc/template-tags.php:362
+msgid "Monthly Archives: %s"
+msgstr "Arquivos por m&ecirc;s: %s"
+
+#: inc/template-tags.php:365
+msgid "Yearly Archives: %s"
+msgstr "Arquivos por ano: %s"
+
+#: inc/template-tags.php:368 sidebar.php:18
+msgid "Archives"
+msgstr "Arquivos"
+
+#: inc/tweaks.php:109
+msgid "Continue Reading "
+msgstr "Continuar Lendo"
+
+#: inc/widgets/widget-login-form.php:23
+msgid "A widget that allows users to log into your site."
+msgstr ""
+"Um widget que permitir&aacute; que usu&aacute;rios se logem no teu site."
+
+#: inc/widgets/widget-login-form.php:34
+msgid "Login Form"
+msgstr "Formul&aacute;rio de Login"
+
+#: inc/widgets/widget-login-form.php:180
+msgid "Please log into the site."
+msgstr "Por favor fa&ccedil;a no login no site."
+
+#: inc/widgets/widget-login-form.php:181
+msgid "Logged in as"
+msgstr "Conectado como"
+
+#: inc/widgets/widget-login-form.php:193
+msgid "Title:"
+msgstr "T&iacute;tulo:"
+
+#: inc/widgets/widget-login-form.php:243
+msgid "\"Remember me\" checkbox?"
+msgstr "Caixa de sele&ccedil;&atilde;o \"Se lembra de mim ?\""
+
+#: inc/widgets/widget-login-form.php:247
+msgid "Check \"remember me\"?"
+msgstr "Selecionar \"Se lembra de mim\" ?"
+
+#: inc/widgets/widget-login-form.php:251
+msgid "Display avatar?"
+msgstr "Exibir avatar?"
+
+#: inc/widgets/widget-login-form.php:254
+msgid "Logged out text:"
+msgstr "Mensagem para quando desconectar:"
+
+#: inc/widgets/widget-login-form.php:259
+msgid "Logged in text:"
+msgstr "Mensagem para quando fizer o login:"
+
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr "Resultados da pesquisa para: %s"
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr "Procurar"
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr "Procurar &hellip;"
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr "Meta"
+
+#. Theme Name of the plugin/theme
+msgid "Alien Ship"
+msgstr "Alien Ship"
+
+#. #-#-#-#-#  alienship.pot (Alien Ship 0.70)  #-#-#-#-#
+#. Theme URI of the plugin/theme
+#. #-#-#-#-#  alienship.pot (Alien Ship 0.70)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.johnparris.com/alienship/"
+msgstr "http://www.johnparris.com/alienship/"
+
+#. Description of the plugin/theme
+msgid "Alien Ship is an HTML5 responsive starter theme for WordPress."
+msgstr "Alien Ship &eacute; um tema base HTML5 para WordPress."
+
+#. Author of the plugin/theme
+msgid "John Parris"
+msgstr "John Parris"
+
+#. Tags of the plugin/theme
+msgid ""
+"blue, green, silver, red, orange, white, black, light, dark, one-column, two-"
+"columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-"
+"header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-"
+"language-support, microformats, featured-images, post-formats"
+msgstr ""
+"azul, verde, prata, vermelho, laranja, branco, preto, claro, escuro, uma "
+"coluna, duas colunas, barra a direita, largura fixa, largura vari&aacute;"
+"vel, cores personalizadas, cabe&ccedil;alho personalizado, menu "
+"personalizado, coment&aacute;rios nivelados,  compat&iacute;vel com "
+"tradu&ccedil;&otilde;es, sticky posts, suporte a linguas, microformatos, "
+"imagens destacadas, diferentes formatos para publica&ccedil;&otilde;es"
+
+#. Template Name of the plugin/theme
+msgid "Full width. No sidebar."
+msgstr "Largura todal. Sem barra lateral."
+
+#. Template Name of the plugin/theme
+msgid "Full width"
+msgstr "Largura total"
+
+#. Template Name of the plugin/theme
+msgid "Hero"
+msgstr "Hero"

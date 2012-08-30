@@ -12,7 +12,7 @@ function alienship_widgets_init() {
     'description' => __( 'The main widget area displayed in the sidebar.', 'alienship' ),
     'id' => 'sidebar-1',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget' => "</aside>",
+    'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
   ) );
@@ -22,7 +22,7 @@ function alienship_widgets_init() {
     'description' => __( 'Displayed on pages created with the Hero template', 'alienship' ),
     'id' => 'herowidgets-1',
     'before_widget' => '<div class="span4">',
-    'after_widget' => "</div>",
+    'after_widget' => '</div>',
     'before_title' => '<h2 class="widget-title">',
     'after_title' => '</h2>',
   ) );
@@ -32,7 +32,7 @@ function alienship_widgets_init() {
     'description' => __( 'The footer widget area displayed after all content.', 'alienship' ),
     'id' => 'footer-1',
     'before_widget' => '<div class="span4">',
-    'after_widget' => "</div>",
+    'after_widget' => '</div>',
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
   ) );
@@ -42,7 +42,7 @@ function alienship_widgets_init() {
     'description' => __( 'The second footer widget area, displayed below the Footer widget area.', 'alienship' ),
     'id' => 'footer-2',
     'before_widget' => '<div class="span4">',
-    'after_widget' => "</div>",
+    'after_widget' => '</div>',
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
   ) );

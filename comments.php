@@ -114,7 +114,6 @@
   <?php comment_id_fields(); ?>
   <?php do_action('comment_form', $post->ID); ?>
 </form>
-<?php do_action( 'alienship_after_comment_form' ); ?>
 <?php } // if registration required and not logged in ?>
 </section><!-- #respond -->
 <?php } ?>

@@ -9,7 +9,7 @@ get_header(); ?>
 
       <div id="main-row" class="row-fluid">
 
-        <?php do_action (' alienship_content_before' ); ?>
+        <?php do_action ( 'alienship_content_before' ); ?>
         <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
         <?php if ( have_posts() ) :
 
@@ -49,7 +49,7 @@ get_header(); ?>
         <?php /* Start the Loop */ ?>
 
         <?php while ( have_posts() ) : the_post(); ?>
-          <?php do_action (' alienship_loop_before' ); ?>
+          <?php do_action ( 'alienship_loop_before' ); ?>
           <?php
             /* Include the Post-Format-specific template for the content.
              * If you want to overload this in a child theme then include a file

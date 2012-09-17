@@ -1,5 +1,5 @@
 /* =============================================================
- * bootstrap-scrollspy.js v2.0.2
+ * bootstrap-scrollspy.js v2.1.2
  * http://twitter.github.com/bootstrap/javascript.html#scrollspy
  * =============================================================
  * Copyright 2012 Twitter, Inc.
@@ -23,19 +23,19 @@
   "use strict"; // jshint ;_;
 
 
-  /* SCROLLSPY CLASS DEFINITION
-   * ========================== */
+ /* SCROLLSPY CLASS DEFINITION
+  * ========================== */
 
-  function ScrollSpy( element, options) {
+  function ScrollSpy(element, options) {
     var process = $.proxy(this.process, this)
       , $element = $(element).is('body') ? $(window) : $(element)
       , href
     this.options = $.extend({}, $.fn.scrollspy.defaults, options)
-    this.$scrollElement = $element.on('scroll.scroll.data-api', process)
+    this.$scrollElement = $element.on('scroll.scroll-spy.data-api', process)
     this.selector = (this.options.target
       || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
       || '') + ' .nav li > a'
-    this.$body = $('body').on('click.scroll.data-api', this.selector, process)
+    this.$body = $('body')
     this.refresh()
     this.process()
   }
@@ -54,10 +54,11 @@
         $targets = this.$body
           .find(this.selector)
           .map(function () {
-            var href = $(this).attr('href')
+            var $el = $(this)
+              , href = $el.data('target') || $el.attr('href')
               , $href = /^#\w/.test(href) && $(href)
             return ( $href
-              && href.length
+              && $href.length
               && [[ $href.position().top, href ]] ) || null
           })
           .sort(function (a, b) { return a[0] - b[0] })
@@ -91,6 +92,7 @@
 
     , activate: function (target) {
         var active
+          , selector
 
         this.activeTarget = target
 
@@ -98,11 +100,15 @@
           .parent('.active')
           .removeClass('active')
 
-        active = $(this.selector + '[href="' + target + '"]')
+        selector = this.selector
+          + '[data-target="' + target + '"],'
+          + this.selector + '[href="' + target + '"]'
+
+        active = $(selector)
           .parent('li')
           .addClass('active')
 
-        if (active.parent('.dropdown-menu'))  {
+        if (active.parent('.dropdown-menu').length)  {
           active = active.closest('li.dropdown').addClass('active')
         }
 
@@ -115,7 +121,7 @@
  /* SCROLLSPY PLUGIN DEFINITION
   * =========================== */
 
-  $.fn.scrollspy = function ( option ) {
+  $.fn.scrollspy = function (option) {
     return this.each(function () {
       var $this = $(this)
         , data = $this.data('scrollspy')
@@ -135,7 +141,7 @@
  /* SCROLLSPY DATA-API
   * ================== */
 
-  $(function () {
+  $(window).on('load', function () {
     $('[data-spy="scroll"]').each(function () {
       var $spy = $(this)
       $spy.scrollspy($spy.data())

@@ -1,5 +1,5 @@
 /* =============================================================
- * bootstrap-collapse.js v2.0.2
+ * bootstrap-collapse.js v2.1.2
  * http://twitter.github.com/bootstrap/javascript.html#collapse
  * =============================================================
  * Copyright 2012 Twitter, Inc.
@@ -67,7 +67,7 @@
 
       this.$element[dimension](0)
       this.transition('addClass', $.Event('show'), 'shown')
-      this.$element[dimension](this.$element[0][scroll])
+      $.support.transition && this.$element[dimension](this.$element[0][scroll])
     }
 
   , hide: function () {
@@ -95,7 +95,7 @@
   , transition: function (method, startEvent, completeEvent) {
       var that = this
         , complete = function () {
-            if (startEvent == 'show') that.reset()
+            if (startEvent.type == 'show') that.reset()
             that.transitioning = 0
             that.$element.trigger(completeEvent)
           }
@@ -144,12 +144,13 @@
   * ==================== */
 
   $(function () {
-    $('body').on('click.collapse.data-api', '[data-toggle=collapse]', function ( e ) {
+    $('body').on('click.collapse.data-api', '[data-toggle=collapse]', function (e) {
       var $this = $(this), href
         , target = $this.attr('data-target')
           || e.preventDefault()
           || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
         , option = $(target).data('collapse') ? 'toggle' : $this.data()
+      $this[$(target).hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
       $(target).collapse(option)
     })
   })

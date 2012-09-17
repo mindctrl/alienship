@@ -306,6 +306,12 @@ function optionsframework_options() {
             "std" => "1",
             "type" => "checkbox");
 
+  $options[] = array( "name" => "Affix Menus",
+            "desc" => "Add support for affix menus. Default is disabled.",
+            "id" => "alienship_affix_plugin",
+            "std" => "0",
+            "type" => "checkbox");
+
   $options[] = array( "name" => "Scrollspy",
             "desc" => "Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position. Default setting is disabled.",
             "id" => "alienship_scrollspy_plugin",

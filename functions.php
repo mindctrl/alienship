@@ -91,45 +91,14 @@ if( file_exists( get_template_directory() . '/custom/custom_functions.php' ) && 
 }
 
 
-/* Change footer text in admin dashboard */
-function alienship_change_admin_footer_content () {
-  $alienship_admin_footer_text = 'Copyright &copy ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.';
-  return apply_filters( 'alienship_admin_footer_text', $alienship_admin_footer_text );
-}
-add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
-
-
 /*
- * Allow "a", "embed" and "script" tags in theme options textareas
+ * Allow "a", "embed" and "script" tags in theme options text boxes
  */
 function optionscheck_change_sanitize() {
-  remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
-  add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
   remove_filter( 'of_sanitize_text', 'sanitize_text_field' );
   add_filter( 'of_sanitize_text', 'custom_sanitize_text' );
 }
-add_action('admin_init','optionscheck_change_sanitize', 100);
-
-function custom_sanitize_textarea($input) {
-  global $allowedposttags;
-  $custom_allowedtags["embed"] = array(
-    "src" => array(),
-    "type" => array(),
-    "allowfullscreen" => array(),
-    "allowscriptaccess" => array(),
-    "height" => array(),
-        "width" => array()
-    );
-  $custom_allowedtags["a"] = array(
-    "href" => array(),
-    "target" => array(),
-    "id" => array(),
-    "class" => array() );
-    $custom_allowedtags["script"] = array();
-    $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
-    $output = wp_kses( $input, $custom_allowedtags);
-  return $output;
-}
+add_action( 'admin_init','optionscheck_change_sanitize', 100 );
 
 function custom_sanitize_text($input) {
   global $allowedposttags;
@@ -210,31 +179,23 @@ endif;
  *
  */
 function alienship_rss_dashboard_widget() {
-  if ( function_exists('fetch_feed') ) {
-    include_once (ABSPATH . WPINC . '/feed.php'); // include the required file
-    $feed = fetch_feed('http://www.johnparris.com/alienship/feed/'); // specify the source feed
-    $limit = $feed->get_item_quantity(3); // specify number of items
-    $items = $feed->get_items(0, $limit); // create an array of items
-  }
-  if ( $limit == 0 ) echo '<div>The RSS Feed is either empty or currently unavailable.</div>'; // fallback message
-  else foreach ($items as $item) : ?>
-
-  <h4 style="margin-bottom: 0;">
-  <a href="<?php echo $item->get_permalink(); ?>" title="<?php echo $item->get_date('j F Y @ g:i a'); ?>" target="_blank">
-  <?php echo $item->get_title(); ?>
-  </a>
-  </h4>
-  <p style="margin-top: 0.5em;">
-  <?php echo wp_html_excerpt(substr($item->get_description(), 0, 200), 200) . ' [...]'; ?>
-  </p>
-  <?php endforeach;
+  echo '<div class="rss-widget">';
+  wp_widget_rss_output( array(
+    'url' => 'http://www.johnparris.com/alienship/feed',
+    'title' => 'Alien Ship News',
+    'items' => 3,
+    'show_summary' => 1,
+    'show_author' => 0,
+    'show_date' => 1
+  ) );
+  echo '</div>';
 }
-/* Load custom dashboard widget
- * Add your custom widget functions here to have them load. */
+
 function alienship_custom_dashboard_widgets() {
-  wp_add_dashboard_widget('alienship_rss_dashboard_widget', 'Alien Ship News', 'alienship_rss_dashboard_widget');
+  wp_add_dashboard_widget( 'dashboard_custom_feed', 'Alien Ship News', 'alienship_rss_dashboard_widget' );
 }
 add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
+
 
 /* Set RSS update time to every 6 hours */
 add_filter( 'wp_feed_cache_transient_lifetime', create_function('$a', 'return 21600;') );

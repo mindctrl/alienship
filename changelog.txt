@@ -1,4 +1,12 @@
 == Change log ==
+Version .91 - September 17, 2012
+--------------------------------
+- Fixed bug in duplicate featured posts setting. Thanks to Tobias Bäthge for the bug report.
+- Fixed spacing typos on do_action hooks.
+- Updated Bootstrap JS.
+- Removed function that changes admin dashboard footer text.
+
+
 Version .90 - September 16, 2012
 --------------------------------
 ** Major changes here in preparation for 1.0 release. Lots more to come.

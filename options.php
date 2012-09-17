@@ -189,17 +189,6 @@ function optionsframework_options() {
             "desc" => "Miscellaneous design options.",
             "type" => "info");
 
-  $options[] = array( "name" => "Enable custom image on login page?",
-            "desc" => "Enable this option and upload an image below to display a custom image on the login/register page. This replaces the default WordPress image. Default is disabled.",
-            "id" => "alienship_custom_login_image",
-            "std" => "0",
-            "type" => "checkbox");
-
-  $options[] = array( "name" => "Upload a custom image for the login page",
-            "desc" => "Upload an image to use as a custom image on the login/register page. FOR BEST RESULTS: upload an image that is 274 x 63 pixels.",
-            "id" => "alienship_custom_login_image_file",
-            "type" => "upload");
-
   $options[] = array( "name" => "Hide admin bar for all users?",
             "desc" => "Enable this option to hide the WordPress admin bar on the front end for all users (including admins). Default setting is disabled.",
             "id" => "alienship_disable_admin_bar",

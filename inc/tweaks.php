@@ -50,7 +50,9 @@ endif;
 /*
  * Custom image, link, and title on login/register page
  * ----------------------------------------------------
- * @since Alien Ship .50
+ * @since .50
+ * @deprecated .91
+ * TODO Delete this feature in 1.1.0.
  */
 
 /* Custom permalink for login page image */
@@ -73,6 +75,7 @@ if ( ! function_exists( 'alienship_custom_login_image_title' ) ) {
 if ( of_get_option( 'alienship_custom_login_image' ) ) {
   if ( ! function_exists( 'alienship_custom_login_image' ) ) {
     function alienship_custom_login_image() {
+      _deprecated_function( __FUNCTION__, '.91', 'the <a href="http://wordpress.org/extend/plugins/login-logo/" target="_blank">Login Logo plugin</a>' );
       echo '<style type="text/css">
       .login h1 a { background-image:url( "'.of_get_option( 'alienship_custom_login_image_file' ).'" ) !important; }
       </style>';

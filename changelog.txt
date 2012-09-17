@@ -1,4 +1,20 @@
 == Change log ==
+Version .90 - September 16, 2012
+--------------------------------
+** Major changes here in preparation for 1.0 release. Lots more to come.
+- Removed hooks.php and changed all hooks in all templates to do_action( 'hook_name' ).
+- Updated Bootstrap to 2.1.2-wip.
+- Updated nav menu walker to allow for Parent > Sub > Sub items that was introduced in Bootstrap 2.1.
+- Added filters alienship_top_navbar_class and alienship_main_navbar_class to allow for easy class changes on menus.
+- Removed PHPMailer rewrite function and Customize Outgoing Emails options.
+- Removed function that only shows WordPress update nag to admins.
+- Removed analytics option in theme options panel.
+- Removed function that kills the WordPress logo and dropdown menu in the admin bar.
+- Started process of removing pluggable functions where appropriate and adding filters to allow for modification.
+- Added alienship_admin_footer_text filter.
+
+
+
 Version .81 - August 28, 2012
 -----------------------------
 - Added current search query to search input boxes

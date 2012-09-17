@@ -10,7 +10,7 @@ get_header(); ?>
 
     <section id="primary">
       <div class="row-fluid">
-      <?php do_action ( 'alienship_content_before' ); ?>
+      <?php do_action( 'alienship_content_before' ); ?>
       <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
 
       <?php if ( have_posts() ) : ?>
@@ -40,7 +40,7 @@ get_header(); ?>
 
         <?php /* Start the Loop */ ?>
         <?php while ( have_posts() ) : the_post(); ?>
-          <?php do_action ( 'alienship_loop_before' ); ?>
+          <?php do_action( 'alienship_loop_before' ); ?>
           <?php
             /* Include the Post-Format-specific template for the content.
              * If you want to overload this in a child theme then include a file
@@ -51,7 +51,7 @@ get_header(); ?>
             $format = 'standard';
             get_template_part( '/inc/parts/content', $format );
           ?>
-          <?php do_action ( 'alienship_loop_after' ); ?>
+          <?php do_action( 'alienship_loop_after' ); ?>
         <?php endwhile; ?>
 
       <?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts? ?>
@@ -61,7 +61,7 @@ get_header(); ?>
       <?php /* No results */ get_template_part( '/inc/parts/content', 'none' ); ?>
 
       <?php endif; ?>
-      <?php do_action ( 'alienship_content_after' ); ?>
+      <?php do_action( 'alienship_content_after' ); ?>
       </div><!-- #content -->
         <?php get_sidebar(); ?>
       </div><!-- .row-fluid -->

@@ -8,9 +8,9 @@
 ?>
 <?php alienship_get_first_link(); // get the link from the post body
 global $link_url; global $post_content; ?>
-<?php do_action ( 'alienship_post_before' ); ?>
+<?php do_action( 'alienship_post_before' ); ?>
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <?php do_action ( 'alienship_post_inside_before' ); ?>
+  <?php do_action( 'alienship_post_inside_before' ); ?>
   <header class="entry-header">
     <h2 class="entry-title"><a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php echo $link_url; ?>"><?php the_title(); ?>&rarr;</a></h2>
   </header><!-- .entry-header -->
@@ -30,6 +30,6 @@ global $link_url; global $post_content; ?>
     edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); // display the edit link
     ?>
   </footer><!-- .entry-meta -->
-  <?php do_action ( 'alienship_post_inside_after' ); ?>
+  <?php do_action( 'alienship_post_inside_after' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
-<?php do_action ( 'alienship_post_after' ); ?>
+<?php do_action( 'alienship_post_after' ); ?>

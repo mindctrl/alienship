@@ -9,139 +9,69 @@
  ) );
 
 
- /* Custom Walker stuff - Credit to Roots Theme  */
- /* class alienship_Nav_Walker extends Walker_Nav_Menu {
-  function check_current($val) {
-    return preg_match('/(current-)/', $val);
-  }
-
-  function start_el(&$output, $item, $depth, $args) {
-    global $wp_query;
-    $indent = ($depth) ? str_repeat("\t", $depth) : '';
-
-    $slug = sanitize_title($item->title);
-
-    $class_names = $value = '';
-    $classes = empty($item->classes) ? array() : (array) $item->classes;
-
-    $classes = array_filter($classes, array(&$this, 'check_current'));
-
-    $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
-    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
-    $id = apply_filters('nav_menu_item_id', 'menu-' . $slug, $item, $args);
-    $id = strlen($id) ? ' id="' . esc_attr( $id ) . '"' : '';
-
-    $output .= $indent . '<li' . $id . $class_names . '>';
-
-    $attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) .'"' : '';
-    $attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target    ) .'"' : '';
-    $attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn       ) .'"' : '';
-    $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url       ) .'"' : '';
-
-    $item_output = $args->before;
-    $item_output .= '<a'. $attributes .'>';
-    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-    $item_output .= '</a>';
-    $item_output .= $args->after;
-
-    $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-  }
-} */
-
-/* Custom Walker for Top Menu */
+/* Custom Walker for Top and Main menus */
 class alienship_Navbar_Nav_Walker extends Walker_Nav_Menu {
-  function check_current($val) {
-    return preg_match('/(current-)|current_page_parent|active|dropdown/', $val);
+
+  public $dropdown_enqueued;
+
+  /**
+   * Check if required script queued.
+   */
+  function __construct() {
+
+    $this->dropdown_enqueued = wp_script_is( 'bootstrap-dropdown', 'queue' );
   }
 
-  function start_lvl(&$output, $depth) {
-    $output .= "\n<ul class=\"dropdown-menu\">\n";
+  /**
+   * Adjust classes for individual menu items.
+   */
+  function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
+
+    if ( $element->current )
+      $element->classes[] = 'active';
+
+    $element->is_dropdown = ! empty( $children_elements[$element->ID] );
+
+    if ( $element->is_dropdown ) {
+
+      if( 0 == $depth  )
+        $element->classes[] = 'dropdown';
+      elseif( 1 == $depth )
+        $element->classes[] = 'dropdown-submenu';
+    }
+
+    parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
   }
 
-  function start_el(&$output, $item, $depth, $args) {
-    global $wp_query;
-    $indent = ($depth) ? str_repeat("\t", $depth) : '';
+  /**
+   * Enqueue script and set class for list.
+   */
+  function start_lvl( &$output, $depth ) {
 
-    $slug = sanitize_title($item->title);
-
-    $li_attributes = '';
-    $class_names = $value = '';
-
-    $classes = empty($item->classes) ? array() : (array) $item->classes;
-
-    if (in_array('current_page_parent', $classes)) {
-      $classes[] = 'active';
+    if ( ! $this->dropdown_enqueued ) {
+      wp_enqueue_script( 'bootstrap-dropdown' );
+      $this->dropdown_enqueued = true;
     }
 
-    if ($args->has_children) {
-      $classes[]      = 'dropdown';
-      $li_attributes .= ' data-dropdown="dropdown"';
-    }
-    $classes[] = ($item->current) ? 'active' : '';
-    $classes = array_filter($classes, array(&$this, 'check_current'));
-
-    $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
-    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
-    $id = apply_filters('nav_menu_item_id', 'menu-' . $slug, $item, $args);
-    $id = strlen($id) ? ' id="' . esc_attr( $id ) . '"' : '';
-
-    $output .= $indent . '<li' . $id . $class_names . $li_attributes . '>';
-
-    $attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) .'"'    : '';
-    $attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target    ) .'"'    : '';
-    $attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn       ) .'"'    : '';
-    $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url       ) .'"'    : '';
-    $attributes .= ($args->has_children)      ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
-
-    $item_output = $args->before;
-    $item_output .= '<a'. $attributes .'>';
-    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-    $item_output .= ($args->has_children) ? ' <b class="caret"></b>' : '';
-    $item_output .= '</a>';
-    $item_output .= $args->after;
-
-    $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    $indent  = str_repeat( "\t", $depth );
+    $class   = ( $depth < 2 ) ? 'dropdown-menu' : 'unstyled';
+    $output .= "\n{$indent}<ul class='{$class}'>\n";
   }
-  function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-    if (!$element) { return; }
 
-    $id_field = $this->db_fields['id'];
+  /**
+   * Adjust markup for top level dropdown menu item.
+   */
+  function start_el( &$output, $item, $depth, $args ) {
 
-    // display this element
-    if (is_array($args[0])) {
-      $args[0]['has_children'] = !empty($children_elements[$element->$id_field]);
-    } elseif (is_object($args[0])) {
-      $args[0]->has_children = !empty($children_elements[$element->$id_field]);
-    }
-    $cb_args = array_merge(array(&$output, $element, $depth), $args);
-    call_user_func_array(array(&$this, 'start_el'), $cb_args);
+    $item_html = '';
+    parent::start_el( $item_html, $item, $depth, $args );
 
-    $id = $element->$id_field;
-
-    // descend only when the depth is right and there are childrens for this element
-    if (($max_depth == 0 || $max_depth > $depth+1) && isset($children_elements[$id])) {
-      foreach ($children_elements[$id] as $child) {
-        if (!isset($newlevel)) {
-          $newlevel = true;
-          // start the child delimiter
-          $cb_args = array_merge(array(&$output, $depth), $args);
-          call_user_func_array(array(&$this, 'start_lvl'), $cb_args);
-        }
-        $this->display_element($child, $children_elements, $max_depth, $depth + 1, $args, $output);
-      }
-      unset($children_elements[$id]);
+    if ( $item->is_dropdown && ( 0 == $depth ) ) {
+      $item_html = str_replace( '<a', '<a class="dropdown-toggle" data-toggle="dropdown"', $item_html );
+      $item_html = str_replace( '</a>', '<b class="caret"></b></a>', $item_html );
+      $item_html = str_replace( esc_attr( $item->url ), '#', $item_html );
     }
 
-    if (isset($newlevel) && $newlevel) {
-      // end the child delimiter
-      $cb_args = array_merge(array(&$output, $depth), $args);
-      call_user_func_array(array(&$this, 'end_lvl'), $cb_args);
-    }
-
-    // end this element
-    $cb_args = array_merge(array(&$output, $element, $depth), $args);
-    call_user_func_array(array(&$this, 'end_el'), $cb_args);
+    $output .= $item_html;
   }
 }

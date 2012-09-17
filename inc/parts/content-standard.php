@@ -4,14 +4,14 @@
  * @since Alien Ship 0.1
  */
 ?>
-<?php alienship_post_before(); ?>
+<?php do_action (' alienship_post_before' ); ?>
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <?php alienship_post_inside_before(); ?>
+  <?php do_action (' alienship_post_inside_before' ); ?>
 
   <?php alienship_entry_title(); ?>
 
   <div class="entry-content">
-    <?php alienship_content(); ?>
+    <?php do_action( 'alienship_content' ); ?>
     <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
   </div><!-- .entry-content -->
 
@@ -25,6 +25,6 @@
     edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link">&nbsp;&nbsp;<i class="icon-pencil"></i>&nbsp;', '</span>' ); // display the edit link
     ?>
   </footer><!-- .entry-meta -->
-  <?php alienship_post_inside_after(); ?>
+  <?php do_action (' alienship_post_inside_after' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
-<?php alienship_post_after(); ?>
+<?php do_action (' alienship_post_after' ); ?>

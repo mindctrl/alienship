@@ -14,19 +14,19 @@
 get_header(); ?>
 
 <!-- Main -->
-  <?php alienship_content_before(); ?>
+  <?php do_action( 'alienship_content_before' ); ?>
   <div class="row-fluid">
     <div id="content" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
 
         <?php while ( have_posts() ) : the_post(); ?>
-            <?php alienship_loop_before(); ?>
+            <?php do_action( 'alienship_loop_before' ); ?>
             <?php get_template_part( '/inc/parts/content', 'page' ); ?>
-            <?php alienship_loop_after(); ?>
+            <?php do_action( 'alienship_loop_after' ); ?>
             <?php comments_template( '', true ); ?>
 
             <?php endwhile; // end of the loop. ?>
 
-    <?php alienship_content_after(); ?>
+    <?php do_action( 'alienship_content_after' ); ?>
     </div><!-- #content -->
     <?php get_sidebar(); ?>
   </div><!-- .row-fluid -->

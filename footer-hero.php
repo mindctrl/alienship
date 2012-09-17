@@ -8,9 +8,9 @@
  * @since Alien Ship 0.1
  */
 ?>
-<?php alienship_footer_before(); ?>
+<?php do_action (' alienship_footer_before' ); ?>
 <footer id="colophon" role="contentinfo">
-  <?php alienship_footer_inside(); ?>
+  <?php do_action (' alienship_footer_inside ' ); ?>
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span5">
@@ -26,7 +26,7 @@
     </div><!-- row-fluid -->
   </div><!-- container-fluid -->
 </footer><!-- #colophon -->
-<?php alienship_footer_after(); ?>
+<?php do_action (' alienship_footer_after' ); ?>
 <script type="text/javascript">
 // Enable Bootstrap popover //
 jQuery(function() {
@@ -35,11 +35,8 @@ jQuery(function() {
 });
 </script>
 
-<?php if ( of_get_option('alienship_analytics') ) {
-  echo '' . of_get_option('alienship_analytics_code') . '';
-} ?>
-
 <?php wp_footer('hero'); ?>
-<?php alienship_footer(); ?>
+
+<?php do_action( 'alienship_footer' ); ?>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
  * Alien Ship shortcodes
  *
  * @package Alien Ship
@@ -29,8 +29,8 @@ endif;
 
 
 /* =Badges
------------------------------------------------ 
-* [badge] shortcode. Options for type are default, success, warning, error, info, and inverse. If a type of not specified, default is used. 
+-----------------------------------------------
+* [badge] shortcode. Options for type are default, success, warning, error, info, and inverse. If a type of not specified, default is used.
 * Example: [badge type="important"]1[/badge] */
 if ( ! function_exists( 'alienship_badge' ) ):
 function alienship_badge($atts, $content = null) {
@@ -54,7 +54,7 @@ endif;
 if ( ! function_exists( 'alienship_button' ) ):
 function alienship_button($atts, $content = null) {
    extract(shortcode_atts(array('link' => '#', 'type' => '', 'size' => 'medium'), $atts));
-   
+
    if (empty($type)) {
     $type = "btn";
    } else {
@@ -75,7 +75,7 @@ endif;
 
 
 /* =Featured Posts Carousel
------------------------------------------------ 
+-----------------------------------------------
 * [featured-posts] shortcode. Options are tag, max, width, and height. Defaults: tag="featured" max="3" width="745" height="350".
 * Example: [featured-posts tag="featured" max="3"] This will feature up to 3 posts tagged "featured". */
 if ( ! function_exists( 'alienship_featured_posts_shortcode' ) ):
@@ -105,11 +105,11 @@ function alienship_featured_posts_shortcode( $atts, $content = null ) {
   } else {
     $height = ''.$height.'';
   }
-  
+
   $featuredquery = 'posts_per_page=' . absint( $max );
   $featuredquery .= '&tag=' . $tag;
   $featured_query_shortcode = new WP_Query( $featuredquery );
-  
+
   if ( $featured_query_shortcode->have_posts() ) { ?>
     <!-- Featured listings -->
     <div style="width:<?php echo $width;?>px; max-width: 100%">
@@ -154,8 +154,8 @@ endif;
 
 
 /* =Labels
------------------------------------------------ 
-* [label] shortcode. Options for type= are "default", important", "info", "success", "warning", and "inverse". If a type of not specified, default is used. 
+-----------------------------------------------
+* [label] shortcode. Options for type= are "default", important", "info", "success", "warning", and "inverse". If a type of not specified, default is used.
 * Example: [label type="important"]Label text[/label] */
 if ( ! function_exists( 'alienship_label' ) ):
 function alienship_label($atts, $content = null) {
@@ -179,7 +179,7 @@ function alienship_login_form( $atts, $content = null ) {
   extract( shortcode_atts( array(
     'redirect' => ''
     ), $atts ) );
- 
+
   if (!is_user_logged_in()) {
       if($redirect) {
           $redirect_url = $redirect;
@@ -196,7 +196,7 @@ add_shortcode('loginform', 'alienship_login_form');
 
 
 /* =Panels
------------------------------------------------ 
+-----------------------------------------------
 * [panel] shortcode. Columns defaults to 6. You can specify columns in the shortcode.
 * Example: [panel columns="4"]Your panel text here.[/panel] */
 if ( ! function_exists( 'alienship_panel' ) ):

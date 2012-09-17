@@ -12,9 +12,9 @@ get_header(); ?>
 
     <section id="primary">
       <div class="row-fluid">
-      <?php alienship_content_before(); ?>
+      <?php do_action ( 'alienship_content_before' ); ?>
       <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
-      <?php alienship_archive_page_title(); ?>
+      <?php do_action ( 'alienship_archive_page_title' ); ?>
       <?php
       alienship_archive_sticky_posts(); // sticky post query ?>
       <?php if ( have_posts() ) : ?>
@@ -53,7 +53,7 @@ get_header(); ?>
 
         <?php /* Start the Loop */ ?>
         <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-          <?php alienship_loop_before(); ?>
+          <?php do_action ( 'alienship_loop_before' ); ?>
           <?php
             /* Include the Post-Format-specific template for the content.
              * If you want to overload this in a child theme then include a file
@@ -63,7 +63,7 @@ get_header(); ?>
             if ( false === $format )
             $format = 'standard';
             get_template_part( '/inc/parts/content', $format ); ?>
-          <?php alienship_loop_after(); ?>
+          <?php do_action ( 'alienship_loop_after' ); ?>
         <?php endwhile; ?>
       <?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } ?>
 
@@ -72,7 +72,7 @@ get_header(); ?>
       <?php /* No results */ get_template_part( '/inc/parts/content', 'none' ); ?>
 
       <?php endif; ?>
-      <?php alienship_content_after(); ?>
+      <?php do_action ( 'alienship_content_after' ); ?>
       </div><!-- #content -->
         <?php get_sidebar(); ?>
       </div><!-- .row-fluid -->

@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-<?php alienship_content_before(); ?>
+<?php do_action (' alienship_content_before' ); ?>
   <div id="primary">
     <div class="row-fluid">
       <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
@@ -41,7 +41,7 @@ get_header(); ?>
 
         </div><!-- .entry-content -->
       </article><!-- #post-0 -->
-    <?php alienship_content_after(); ?>
+    <?php do_action (' alienship_content_after' ); ?>
     </div><!-- #content -->
       <?php get_sidebar(); ?>
   </div><!-- .row-fluid -->

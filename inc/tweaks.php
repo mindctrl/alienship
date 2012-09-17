@@ -90,19 +90,6 @@ if ( of_get_option( 'alienship_disable_admin_bar' ) ) {
 }
 
 
-/* Remove WordPress logo and dropdown menu from admin bar
- * @since Alien Ship .50
- */
-if ( ! function_exists( 'alienship_remove_admin_bar_logo') ) {
-  function alienship_remove_admin_bar_logo() {
-    global $wp_admin_bar;
-    $wp_admin_bar->remove_menu('wp-logo');
-  }
-}
-add_action('wp_before_admin_bar_render', 'alienship_remove_admin_bar_logo', 0);
-
-
-
 /* Style the excerpt continuation */
 if ( ! function_exists( 'alienship_excerpt_more') ) {
   function alienship_excerpt_more($more) {

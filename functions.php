@@ -31,9 +31,6 @@ function alienship_setup() {
   /* Clean up header output */
   locate_template('/inc/cleanup.php', true);
 
-  /* Hooks */
-  locate_template('/inc/hooks.php', true);
-
   /* Register the navigation menus. */
   locate_template('/inc/menus.php', true);
 
@@ -63,10 +60,6 @@ function alienship_setup() {
   /* Load Theme Layouts extension and add theme support for desired layouts */
   locate_template('/inc/theme-layouts.php', true);
   add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ) );
-
-  /* PHPMailer rewrite */
-  locate_template('/inc/phpmailer-rewrite.php', true);
-
 
   /**
    * Make theme available for translation
@@ -99,10 +92,9 @@ if( file_exists( get_template_directory() . '/custom/custom_functions.php' ) && 
 
 
 /* Change footer text in admin dashboard */
-if ( ! function_exists( 'alienship_change_admin_footer_content' ) ) {
-  function alienship_change_admin_footer_content () {
-    echo 'Copyright &copy ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.';
-  }
+function alienship_change_admin_footer_content () {
+  $alienship_admin_footer_text = 'Copyright &copy ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.';
+  return apply_filters( 'alienship_admin_footer_text', $alienship_admin_footer_text );
 }
 add_filter('admin_footer_text', 'alienship_change_admin_footer_content');
 
@@ -152,17 +144,6 @@ function custom_sanitize_text($input) {
 }
 
 
-
-/* Only show WordPress update nag to admins */
-function alienship_proper_update_nag() {
-  if ( !current_user_can( 'manage_options' ) ) {
-    remove_action ( 'admin_notices', 'update_nag', 3 );
-  }
-}
-add_action ( 'admin_notices', 'alienship_proper_update_nag', 1 );
-
-
-
 /* Display a notice about menu functionality */
 function alienship_admin_notice_menus() {
   global $current_user ;
@@ -171,7 +152,7 @@ function alienship_admin_notice_menus() {
     /* Check that we're an admin, that we're on the menus page, and that the user hasn't already ignored the message */
   if ( current_user_can('administrator') && $pagenow =='nav-menus.php' && ! get_user_meta($user_id, 'alienship_admin_notice_menus_ignore_notice') ) {
     echo '<div class="updated"><p>';
-    printf(__('Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Also, the nested menus only go one level deep (Parent > Sub item and NOT Parent > Sub item > Sub sub item. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide this notice</a>'), '?alienship_admin_notice_menus_ignore=0');
+    printf(__('Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide this notice</a>'), '?alienship_admin_notice_menus_ignore=0');
     echo "</p></div>";
   }
 }
@@ -257,16 +238,3 @@ add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
 
 /* Set RSS update time to every 6 hours */
 add_filter( 'wp_feed_cache_transient_lifetime', create_function('$a', 'return 21600;') );
-
-/* Allow PHP in widgets
- * Used for testing. Potentially dangerous. Uncomment at your own risk. */
-/* function alienship_execute_php_in_widgets($html){
-     if(strpos($html,"<"."?php")!==false){
-          ob_start();
-          eval("?".">".$html);
-          $html=ob_get_contents();
-          ob_end_clean();
-     }
-     return $html;
-}
-add_filter('widget_text','alienship_execute_php_in_widgets',100); */

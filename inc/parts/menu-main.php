@@ -8,7 +8,7 @@
 ?>
 <!-- Main menu -->
     <div id="main-nav">
-      <div class="navbar">
+      <div class="<?php echo apply_filters( 'alienship_main_navbar_class' , 'navbar navbar-inverse'); ?>">
         <div class="navbar-inner">
           <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse-main">

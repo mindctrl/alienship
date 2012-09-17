@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Displays all of the <head> section and everything up to <div id="main">
  *
  * @package Alien Ship
  * @since Alien Ship 0.1
@@ -31,7 +31,7 @@ if( file_exists( get_template_directory() . '/custom/custom.css' ) && !is_child_
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
-<?php alienship_head(); ?>
+<?php do_action (' alienship_head' ); ?>
 <?php wp_head(); ?>
 </head>
 
@@ -47,9 +47,9 @@ if ( !is_page_template( 'page-hero.php' ) ) { ?>
   <!-- Site title and description in masthead -->
   <div id="page" class="container-fluid hfeed">
     <?php do_action( 'before' ); ?>
-    <?php alienship_header_before(); ?>
+    <?php do_action (' alienship_header_before' ); ?>
   	<header id="masthead" role="banner">
-      <?php alienship_header_inside(); ?>
+      <?php do_action (' alienship_header_inside' ); ?>
       <?php alienship_header_title_and_description(); ?>
 
     <?php
@@ -95,11 +95,11 @@ if ( !is_page_template( 'page-hero.php' ) ) { ?>
       get_template_part( '/inc/parts/menu', 'main' );
     } ?>
     </header><!-- #masthead -->
-    <?php alienship_header_after(); ?>
+    <?php do_action (' alienship_header_after' ); ?>
 
     <?php if ( function_exists('alienship_breadcrumbs') && !is_front_page() ) { alienship_breadcrumbs(); } ?>
 
 <?php } // !is_page_template( 'page-hero.php' ) ?>
 
-  <?php alienship_main_before(); ?>
+  <?php do_action (' alienship_main_before' ); ?>
   <div id="main">

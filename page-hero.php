@@ -11,9 +11,9 @@ get_header('hero'); ?>
 <div class="container">
   <div class="hero-unit">
     <?php while ( have_posts() ) : the_post(); ?>
-    <?php alienship_loop_before(); ?>
+    <?php do_action( 'alienship_loop_before' ); ?>
     <?php get_template_part( '/inc/parts/content', 'heropage' ); ?>
-    <?php alienship_loop_after(); ?>
+    <?php do_action( 'alienship_loop_after' ); ?>
     <?php endwhile; // end of the loop. ?>
   </div><!-- /hero-unit -->
   <div class="row">

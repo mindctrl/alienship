@@ -8,44 +8,48 @@
 get_header(); ?>
 
       <div id="main-row" class="row-fluid">
-        <?php alienship_content_before(); ?>
+
+        <?php do_action (' alienship_content_before' ); ?>
         <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
+        <?php if ( have_posts() ) :
 
-      <?php if ( have_posts() ) : ?>
+          if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts?
 
-        <?php if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts? ?>
+            /**
+             * Featured Posts
+             */
+            if ( of_get_option('alienship_featured_posts') ) {
 
-        <?php if ( of_get_option('alienship_featured_posts') ) {
-          if ( of_get_option('alienship_featured_posts_display_type',1) == "1" ) { alienship_featured_posts_slider();
-            } else { alienship_featured_posts_grid(); }
-          } // if (of_get_option('alienship_featured_posts') ) ?>
+              if ( of_get_option('alienship_featured_posts_display_type',1) == "1" ) {
+                alienship_featured_posts_slider();
+              } else {
+                alienship_featured_posts_grid(); }
 
-        <?php
-        /* Check to see if we should duplicate featured posts in the body
-         *
-         * Do not display */
-        if ( of_get_option('alienship_featured_posts') && of_get_option('alienship_featured_posts_show_dupes') == "0" ) {
-          $args = array(
-            'tag__not_in' => array ( of_get_option('alienship_featured_posts_tag') ),
-            'paged' => $paged
-            );
-          $query = new WP_Query( $args );
+              /**
+               * Show or hide featured posts in the main body
+               *
+               * Do not duplicate featured posts */
+              if ( of_get_option('alienship_featured_posts_show_dupes') == "0" ) {
+                global $wp_query;
+                $wp_query->set( 'tag__not_in', array( of_get_option( 'alienship_featured_posts_tag' ) ) );
+                $wp_query->get_posts();
+              }
 
-        } else {
+              /* Duplicate featured posts */
+              if ( of_get_option('alienship_featured_posts_show_dupes') == "1" ) {
+                global $wp_query;
+                $wp_query->set( 'post_status', 'publish' );
+                $wp_query->get_posts();
+              }
 
-          /* Duplicate featured posts (Show all posts) */
-          $args = array(
-            'post_status' => 'publish',
-            'paged' => $paged
-            );
-          $query = new WP_Query( $args );
+            } // if (of_get_option('alienship_featured_posts') ) ?>
 
-        } ?>
+
 
         <?php /* Start the Loop */ ?>
 
         <?php while ( have_posts() ) : the_post(); ?>
-          <?php alienship_loop_before(); ?>
+          <?php do_action (' alienship_loop_before' ); ?>
           <?php
             /* Include the Post-Format-specific template for the content.
              * If you want to overload this in a child theme then include a file
@@ -56,7 +60,7 @@ get_header(); ?>
             $format = 'standard';
             get_template_part( '/inc/parts/content', $format );
           ?>
-          <?php alienship_loop_after(); ?>
+          <?php do_action ( 'alienship_loop_after' ); ?>
         <?php endwhile; ?>
 
         <?php if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts? ?>
@@ -66,7 +70,7 @@ get_header(); ?>
       <?php /* No results */ get_template_part( '/inc/parts/content', 'none' ); ?>
 
       <?php endif; ?>
-        <?php alienship_content_after(); ?>
+        <?php do_action ( 'alienship_content_after' ); ?>
         </div><!-- #content -->
         <?php get_sidebar(); ?>
       </div><!-- .row-fluid -->

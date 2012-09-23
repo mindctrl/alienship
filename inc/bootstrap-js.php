@@ -42,6 +42,20 @@ function alienship_bootstrap_js_loader() {
 
   if ( of_get_option('alienship_popovers_plugin',1) ) {
     wp_enqueue_script('popover.js', get_template_directory_uri().'/js/bootstrap-popover.js', array('tooltip.js'),'2.12', true );
+
+    function alienship_enable_popovers() { ?>
+      <script type="text/javascript">
+      // Enable Bootstrap popover //
+        jQuery(function() {
+          jQuery("a[rel=popover]")
+          .popover()
+          .click(function(e) {
+          e.preventDefault()
+          })
+        });
+      </script>
+    <?php } //alienship_enable_popovers
+    add_action( 'wp_footer', 'alienship_enable_popovers' );
   }
 
   if ( of_get_option('alienship_buttons_plugin',1) ) {

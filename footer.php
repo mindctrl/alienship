@@ -39,13 +39,6 @@
   </div><!-- container-fluid -->
 </footer><!-- #colophon -->
 <?php do_action( 'alienship_footer_after' ); ?>
-<script type="text/javascript">
-// Enable Bootstrap popover //
-jQuery(function() {
-    // jQuery('a[rel].btn').popover();
-    jQuery("a[rel='popover']").popover();
-});
-</script>
 
 <?php wp_footer(); ?>
 

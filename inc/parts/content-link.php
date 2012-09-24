@@ -17,7 +17,7 @@ global $link_url; global $post_content; ?>
 
   <div class="entry-content">
     <?php echo $post_content; // displays post content without the link ?>
-    <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
+    <?php alienship_wp_link_pages(); ?>
   </div><!-- .entry-content -->
 
   <footer class="entry-meta">

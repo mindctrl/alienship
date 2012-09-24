@@ -12,7 +12,7 @@
 
   <div class="entry-content">
     <?php do_action( 'alienship_content' ); ?>
-    <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>' ) ); ?>
+    <?php alienship_wp_link_pages(); ?>
   </div><!-- .entry-content -->
 
   <footer class="entry-meta">

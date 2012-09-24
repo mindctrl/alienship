@@ -18,8 +18,7 @@ function alienship_excerpt_or_content() {
     if ( has_post_thumbnail() ) {
       global $post; ?>
       <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php echo get_the_post_thumbnail($post->ID, 'thumbnail', array('class' => 'alignleft', 'title' => "")); ?></a>
-    <?php } // has_post_thumbnail ?>
-    <?php
+    <?php } // has_post_thumbnail
     the_excerpt();
   } else {
     the_content();
@@ -36,7 +35,7 @@ if ( ! function_exists( 'alienship_entry_title' ) ):
  * @since Alien Ship .75
  */
 function alienship_entry_title() {
-  if ( is_single() || is_page() ) { ?>
+  if ( is_singular() ) { ?>
     <header class="entry-header">
       <h1 class="entry-title"><?php the_title(); ?></h1>
     </header><!-- .entry-header -->
@@ -450,19 +449,19 @@ function alienship_archive_sticky_posts() {
     if (is_category() ) {
       $cat_ID = get_query_var('cat');
       $sticky_args = array (
-        'post__in' => $sticky,
-        'cat' => $cat_ID,
+        'post__in'    => $sticky,
+        'cat'         => $cat_ID,
         'post_status' => 'publish',
-        'paged' => $paged
+        'paged'       => $paged
       );
 
     } elseif (is_tag() ) {
       $current_tag = single_tag_title("", false);
         $sticky_args = array(
-          'post__in' => $sticky,
+          'post__in'     => $sticky,
           'tag_slug__in' => array($current_tag),
-          'post_status' => 'publish',
-          'paged' => $paged
+          'post_status'  => 'publish',
+          'paged'        => $paged
         );
     }
   if ( ! empty( $sticky_args ) ):
@@ -495,21 +494,21 @@ function alienship_archive_get_posts() {
   if ( is_category() ) {
     $cat_ID = get_query_var('cat');
     $args = array(
-      'cat' => $cat_ID,
-      'post_status' => 'publish',
-      'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
+      'cat'                 => $cat_ID,
+      'post_status'         => 'publish',
+      'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
       'ignore_sticky_posts' => 1,
-      'paged' => $paged
+      'paged'               => $paged
       );
     $wp_query = new WP_Query( $args );
   } elseif (is_tag() ) {
       $current_tag = single_tag_title("", false);
       $args = array(
-        'tag_slug__in' => array($current_tag),
-        'post_status' => 'publish',
-        'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
+        'tag_slug__in'        => array( $current_tag ),
+        'post_status'         => 'publish',
+        'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
         'ignore_sticky_posts' => 1,
-        'paged' => $paged
+        'paged'               => $paged
         );
       $wp_query = new WP_Query( $args );
   } else {
@@ -540,59 +539,21 @@ function alienship_get_first_link() {
 }
 endif;
 
-/*
-function alienship_page_nav($before = '', $after = '') {
-  global $wpdb, $wp_query;
-  $request = $wp_query->request;
-  $posts_per_page = intval(get_query_var('posts_per_page'));
-  $paged = intval(get_query_var('paged'));
-  $numposts = $wp_query->found_posts;
-  $max_page = $wp_query->max_num_pages;
-  if ( $numposts <= $posts_per_page ) { return; }
-  if(empty($paged) || $paged == 0) {
-    $paged = 1;
-  }
-  $pages_to_show = 4;
-  $pages_to_show_minus_1 = $pages_to_show-1;
-  $half_page_start = floor($pages_to_show_minus_1/2);
-  $half_page_end = ceil($pages_to_show_minus_1/2);
-  $start_page = $paged - $half_page_start;
-  if($start_page <= 0) {
-    $start_page = 1;
-  }
-  $end_page = $paged + $half_page_end;
-  if(($end_page - $start_page) != $pages_to_show_minus_1) {
-    $end_page = $start_page + $pages_to_show_minus_1;
-  }
-  if($end_page > $max_page) {
-    $start_page = $max_page - $pages_to_show_minus_1;
-    $end_page = $max_page;
-  }
-  if($start_page <= 0) {
-    $start_page = 1;
-  }
-  echo $before.'<nav id="numbered-nav-below" class="pagination"><ul class="alienship_page_nav">'."";
-  if ($start_page >= 2 && $pages_to_show < $max_page) {
-    $first_page_text = "First";
-    echo '<li class="alienship-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
-  }
-  echo '<li class="alienship-prev-link">';
-  previous_posts_link('&laquo;');
-  echo '</li>';
-  for($i = $start_page; $i  <= $end_page; $i++) {
-    if($i == $paged) {
-      echo '<li class="alienship-current-page-link active">'.$i.'</li>';
-    } else {
-      echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
-    }
-  }
-  echo '<li class="alienship-next-link">';
-  next_posts_link('&raquo;');
-  echo '</li>';
-  if ($end_page < $max_page) {
-    $last_page_text = "Last";
-    echo '<li class="alienship-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
-  }
-  echo '</ul></nav>'.$after."";
+
+
+/**
+ * Hack the markup from wp_link_pages to be semantic unordered list.
+ * I hate everything about this, but until I find a better way...
+ */
+function alienship_wp_link_pages() {
+  global $paged_page_nav;
+  /* Get our initial links */
+  $paged_page_nav = wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>', 'echo' => false ) );
+
+  /* Rearrange things */
+  $paged_page_nav = str_replace( '<a', '<li><a', $paged_page_nav );
+  $paged_page_nav = str_replace( '</a>', '</a></li>', $paged_page_nav );
+  $paged_page_nav = str_replace( '"><li>', '">', $paged_page_nav );
+
+  echo $paged_page_nav;
 }
-*/

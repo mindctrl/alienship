@@ -8,43 +8,43 @@
 if ( ! function_exists( 'alienship_widgets_init' ) ):
 function alienship_widgets_init() {
   register_sidebar( array(
-    'name' => __( 'Sidebar', 'alienship' ),
-    'description' => __( 'The main widget area displayed in the sidebar.', 'alienship' ),
-    'id' => 'sidebar-1',
+    'name'          => __( 'Sidebar', 'alienship' ),
+    'description'   => __( 'The main widget area displayed in the sidebar.', 'alienship' ),
+    'id'            => 'sidebar-1',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
   ) );
 
   register_sidebar( array(
-    'name' => __( 'Hero Widgets', 'alienship' ),
-    'description' => __( 'Displayed on pages created with the Hero template', 'alienship' ),
-    'id' => 'herowidgets-1',
+    'name'          => __( 'Hero Widgets', 'alienship' ),
+    'description'   => __( 'Displayed on pages created with the Hero template', 'alienship' ),
+    'id'            => 'herowidgets-1',
     'before_widget' => '<div class="span4">',
-    'after_widget' => '</div>',
-    'before_title' => '<h2 class="widget-title">',
-    'after_title' => '</h2>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
   ) );
 
   register_sidebar( array(
-    'name' => __( 'Footer', 'alienship' ),
-    'description' => __( 'The footer widget area displayed after all content.', 'alienship' ),
-    'id' => 'footer-1',
+    'name'          => __( 'Footer', 'alienship' ),
+    'description'   => __( 'The footer widget area displayed after all content.', 'alienship' ),
+    'id'            => 'footer-1',
     'before_widget' => '<div class="span4">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
   ) );
 
   register_sidebar( array(
-    'name' => __( 'Footer 2', 'alienship' ),
-    'description' => __( 'The second footer widget area, displayed below the Footer widget area.', 'alienship' ),
-    'id' => 'footer-2',
+    'name'          => __( 'Footer 2', 'alienship' ),
+    'description'   => __( 'The second footer widget area, displayed below the Footer widget area.', 'alienship' ),
+    'id'            => 'footer-2',
     'before_widget' => '<div class="span4">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3 class="widget-title">',
-    'after_title' => '</h3>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
   ) );
 }
 add_action( 'widgets_init', 'alienship_widgets_init' );
@@ -71,17 +71,17 @@ endif;
 if ( ! function_exists( 'alienship_wp_login_form' ) ):
 function alienship_wp_login_form( $args = array() ) {
   $defaults = array( 'echo' => true,
-            'redirect' => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], // Default redirect is back to the current page
-            'form_id' => 'loginform',
+            'redirect'       => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], // Default redirect is back to the current page
+            'form_id'        => 'loginform',
             'label_username' => __( 'Username', 'alienship' ),
             'label_password' => __( 'Password', 'alienship' ),
             'label_remember' => __( 'Remember Me', 'alienship' ),
-            'label_log_in' => __( 'Log In', 'alienship' ),
-            'id_username' => 'user_login',
-            'id_password' => 'user_pass',
-            'id_remember' => 'rememberme',
-            'id_submit' => 'wp-submit',
-            'remember' => true,
+            'label_log_in'   => __( 'Log In', 'alienship' ),
+            'id_username'    => 'user_login',
+            'id_password'    => 'user_pass',
+            'id_remember'    => 'rememberme',
+            'id_submit'      => 'wp-submit',
+            'remember'       => true,
             'value_username' => '',
             'value_remember' => false, // Set this to true to default the "Remember me" checkbox to checked
           );

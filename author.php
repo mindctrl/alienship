@@ -11,7 +11,7 @@ get_header(); ?>
     <section id="primary">
       <div class="row-fluid">
       <?php do_action( 'alienship_content_before' ); ?>
-      <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
+      <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'span9' ); ?>">
 
       <?php if ( have_posts() ) : ?>
 

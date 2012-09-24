@@ -1,10 +1,18 @@
 == Change log ==
+Version .92 -
+--------------------------------
+- Fixed popovers that broke when upgrading Bootstrap.
+- Temp hacked the post pagination links that broke when upgrading Bootstrap.
+- Reworked the CSS so that it's enqueued using the WordPress preferred method.
+
+
 Version .91 - September 17, 2012
 --------------------------------
-- Fixed bug in duplicate featured posts setting. Thanks to Tobias Bäthge for the bug report.
-- Fixed spacing typos on do_action hooks.
+- Fixed bug in duplicate featured posts setting.
+- Fixed spacing typos on do_action hooks. Thanks to Tobias Bäthge for the bug report.
 - Updated Bootstrap JS.
 - Removed function that changes admin dashboard footer text.
+- Deprecated the login logo function and removed the Theme Option. It will continue to work until version 1.1.0 to give time to move to another solution. Try Mark Jaquith's Login Logo plugin. http://wordpress.org/extend/plugins/login-logo/
 
 
 Version .90 - September 16, 2012

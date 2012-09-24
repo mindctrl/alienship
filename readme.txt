@@ -11,11 +11,8 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Fix post pagination.
-+ Move tooltip jquery to a helper .js and enqueue with other scripts
 + Update options.php to have textdomain. (Wait for 1.0?)
 + Update header image code in header.php
-+ Check featured posts dupe code. (excluding tags).
 + Update content.php to use alienship_content. Move is_search logic into alienship_content. Remove the_excerpt and the_content from content.php
 + More framework stuff.
 + Add support for TinyMCE for Bootstrap elements.

@@ -13,7 +13,7 @@ get_header(); ?>
     <section id="primary">
       <div class="row-fluid">
       <?php do_action( 'alienship_content_before' ); ?>
-      <div id="content" role="main" class="<?php echo apply_filters('alienship_content_container_class', 'span9'); ?>">
+      <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'span9' ); ?>">
       <?php do_action( 'alienship_archive_page_title' ); ?>
       <?php
       alienship_archive_sticky_posts(); // sticky post query ?>
@@ -28,22 +28,22 @@ get_header(); ?>
         if ( is_category() && ! empty($sticky) ) {
           $cat_ID = get_query_var('cat');
           $args = array(
-            'cat' => $cat_ID,
-            'post_status' => 'publish',
-            'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
+            'cat'                 => $cat_ID,
+            'post_status'         => 'publish',
+            'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
             'ignore_sticky_posts' => 1,
-            'paged' => $paged
+            'paged'               => $paged
             );
           $wp_query = new WP_Query( $args );
         }
         elseif (is_tag() && ! empty($sticky) ) {
           $current_tag = single_tag_title("", false);
           $args = array(
-            'tag_slug__in' => array($current_tag),
-            'post_status' => 'publish',
-            'post__not_in' => array_merge($do_not_duplicate,get_option( 'sticky_posts' )),
+            'tag_slug__in'        => array($current_tag),
+            'post_status'         => 'publish',
+            'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
             'ignore_sticky_posts' => 1,
-            'paged' => $paged
+            'paged'               => $paged
             );
           $wp_query = new WP_Query( $args );
         } else {

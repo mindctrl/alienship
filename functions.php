@@ -54,6 +54,9 @@ function alienship_setup() {
   /* Custom functions that act independently of the theme templates */
   locate_template('/inc/tweaks.php', true);
 
+  /* Load the CSS */
+  locate_template('/inc/stylesheets.php', true);
+
   /* Load Bootstrap javascript */
   locate_template('/inc/bootstrap-js.php', true);
 

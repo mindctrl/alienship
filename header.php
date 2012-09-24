@@ -14,17 +14,6 @@
 <?php get_template_part( '/inc/parts/meta' ); ?>
 <?php get_template_part( '/inc/parts/title' ); ?>
 
-<?php /* Load Bootstrap CSS */
-locate_template('/inc/bootstrap-css.php', true); ?>
-
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
-
-<?php
-/* Check for custom.css and if it exists and we're not using a child theme, load it. */
-if( file_exists( get_template_directory() . '/custom/custom.css' ) && !is_child_theme()) {
-  echo '<link rel="stylesheet" type="text/css" media="all" href="' . get_template_directory_uri() . '/custom/custom.css" />';
-} ?>
-
 <?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 
 <!--[if lt IE 9]>

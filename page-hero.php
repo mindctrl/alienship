@@ -16,10 +16,12 @@ get_header('hero'); ?>
     <?php do_action( 'alienship_loop_after' ); ?>
     <?php endwhile; // end of the loop. ?>
   </div><!-- /hero-unit -->
-  <div class="row">
-    <?php get_sidebar('hero'); ?><p>&nbsp;</p>
-    <div class="clear"></div>
-  </div><!-- /row -->
+  <div id="hero-widgets-row" class="row">
+    <div id="hero-widgets-container" class="widget widget-area" role="complementary">
+      <?php do_action( 'before_sidebar' ); ?>
+      <?php dynamic_sidebar( 'herowidgets-1' ) ?>
+    </div><!-- #hero-widgets-container -->
+  </div><!-- #hero-widgets-row -->
   </div><!-- /container -->
 
 </div><!-- #main -->

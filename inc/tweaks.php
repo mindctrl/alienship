@@ -9,20 +9,24 @@
  */
 
 
-/*  @since Alien Ship 0.3
- * We don't need to self-close these tags in html5: <img>, <input> */
+/**
+ * We don't need to self-close these tags in html5: <img>, <input>
+ * @since Alien Ship 0.3
+ */
 if ( ! function_exists( 'alienship_remove_self_closing_tags' ) ):
-function alienship_remove_self_closing_tags($input) {
+function alienship_remove_self_closing_tags( $input ) {
   return str_replace(' />', '>', $input);
 }
-add_filter('get_avatar', 'alienship_remove_self_closing_tags');
-add_filter('comment_id_fields', 'alienship_remove_self_closing_tags');
-add_filter('post_thumbnail_html', 'alienship_remove_self_closing_tags');
+add_filter( 'get_avatar', 'alienship_remove_self_closing_tags' );
+add_filter( 'comment_id_fields', 'alienship_remove_self_closing_tags' );
+add_filter( 'post_thumbnail_html', 'alienship_remove_self_closing_tags' );
 endif;
 
 
-/* Pretty search URL. Changes /?s=foo to /search/foo. http://txfx.net/wordpress-plugins/nice-search/
- * @since Alien Ship 0.3 */
+/**
+ * Pretty search URL. Changes /?s=foo to /search/foo. http://txfx.net/wordpress-plugins/nice-search/
+ * @since Alien Ship 0.3
+ */
 if ( ! function_exists( 'alienship_nice_search_redirect' ) ):
 function alienship_nice_search_redirect() {
   if ( is_search() && get_option('permalink_structure') != '' && strpos( $_SERVER['REQUEST_URI'], '/wp-admin/' ) === false && strpos( $_SERVER['REQUEST_URI'], '/search/' ) === false ) {
@@ -47,7 +51,7 @@ endif;
 
 
 
-/*
+/**
  * Custom image, link, and title on login/register page
  * ----------------------------------------------------
  * @since .50
@@ -82,14 +86,6 @@ if ( of_get_option( 'alienship_custom_login_image' ) ) {
     }
   }
 add_action('login_head', 'alienship_custom_login_image');
-}
-
-
-/* Option to disable admin bar display on front end for all users.
- * @since Alien Ship .50
- */
-if ( of_get_option( 'alienship_disable_admin_bar' ) ) {
-  add_filter('show_admin_bar', '__return_false');
 }
 
 

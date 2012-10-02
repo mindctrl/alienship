@@ -189,12 +189,6 @@ function optionsframework_options() {
             "desc" => "Miscellaneous design options.",
             "type" => "info");
 
-  $options[] = array( "name" => "Hide admin bar for all users?",
-            "desc" => "Enable this option to hide the WordPress admin bar on the front end for all users (including admins). Default setting is disabled.",
-            "id" => "alienship_disable_admin_bar",
-            "std" => "0",
-            "type" => "checkbox");
-
   $options[] = array( "name" => "Enable Responsive Design?",
             "desc" => "Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don't need it, uncheck this box to turn it off.",
             "id" => "alienship_responsive",

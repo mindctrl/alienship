@@ -232,7 +232,7 @@ function alienship_post_tags() {
   global $alienship_design;
   $post_tags = get_the_tags();
   if ( $post_tags ) {
-    echo '<span class="tag-links"><span class="sep">&nbsp; &nbsp;</span><i class="icon-tags" title="Tags"></i>&nbsp;' . "\n";
+    echo '<span class="tags-links"><span class="sep">&nbsp; &nbsp;</span><i class="icon-tags" title="Tags"></i>&nbsp;' . "\n";
     $num_tags = count( $post_tags );
     $tag_count = 1;
     $nofollow = ' nofollow'; // tell search engines to not index tag url
@@ -442,24 +442,23 @@ if ( ! function_exists('alienship_archive_sticky_posts') ):
 function alienship_archive_sticky_posts() {
   $sticky = get_option( 'sticky_posts' );
   if ( ! empty( $sticky ) ) {
-    global $do_not_duplicate;
-    global $page, $paged;
+    global $do_not_duplicate, $page, $paged;
     $do_not_duplicate = array();
 
-    if (is_category() ) {
-      $cat_ID = get_query_var('cat');
-      $sticky_args = array (
+    if ( is_category() ) {
+      $cat_ID = get_query_var( 'cat' );
+      $sticky_args = array(
         'post__in'    => $sticky,
         'cat'         => $cat_ID,
         'post_status' => 'publish',
         'paged'       => $paged
       );
 
-    } elseif (is_tag() ) {
-      $current_tag = single_tag_title("", false);
+    } elseif ( is_tag() ) {
+      $current_tag = single_tag_title( "", false );
         $sticky_args = array(
           'post__in'     => $sticky,
-          'tag_slug__in' => array($current_tag),
+          'tag_slug__in' => array( $current_tag ),
           'post_status'  => 'publish',
           'paged'        => $paged
         );
@@ -469,7 +468,7 @@ function alienship_archive_sticky_posts() {
     if ( $sticky_posts->have_posts() ):
       global $post;
       while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
-        array_push($do_not_duplicate, $post->ID);
+        array_push( $do_not_duplicate, $post->ID );
         $format = get_post_format();
         if ( false === $format )
         $format = 'standard';
@@ -489,10 +488,10 @@ if ( ! function_exists('alienship_archive_get_posts') ):
  * @since Alien Ship .594
  */
 function alienship_archive_get_posts() {
-  global $do_not_duplicate;
-  global $page, $paged;
+  global $do_not_duplicate, $page, $paged;
+
   if ( is_category() ) {
-    $cat_ID = get_query_var('cat');
+    $cat_ID = get_query_var( 'cat' );
     $args = array(
       'cat'                 => $cat_ID,
       'post_status'         => 'publish',
@@ -502,7 +501,7 @@ function alienship_archive_get_posts() {
       );
     $wp_query = new WP_Query( $args );
   } elseif (is_tag() ) {
-      $current_tag = single_tag_title("", false);
+      $current_tag = single_tag_title( "", false );
       $args = array(
         'tag_slug__in'        => array( $current_tag ),
         'post_status'         => 'publish',
@@ -518,24 +517,23 @@ function alienship_archive_get_posts() {
 endif;
 
 
-if ( ! function_exists('alienship_get_first_link') ):
+if ( ! function_exists( 'alienship_get_first_link' ) ):
 /**
  * Get the first link in a post
  * Used to link the title to external links on the "Link" post format
  * @since Alien Ship .64
  */
 function alienship_get_first_link() {
-  global $link_url;
-  global $post_content;
+  global $link_url, $post_content;
   $content = get_the_content();
-  $link_start = stristr($content, "http" );
-  $link_end = stristr($link_start, "\n");
+  $link_start = stristr( $content, "http" );
+  $link_end = stristr( $link_start, "\n" );
   if ( ! strlen( $link_end ) == 0 ):
   $link_url = substr($link_start, 0, -(strlen($link_end) + 1));
   else:
   $link_url = $link_start;
   endif;
-  $post_content = substr($content, strlen($link_url));
+  $post_content = substr( $content, strlen( $link_url ) );
 }
 endif;
 

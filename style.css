@@ -784,7 +784,7 @@ img.aligncenter {
 
 /* Transform text to uppercase on the post category and tag labels/links */
 .cat-links > a.label,
-.tag-links > a.label {
+.tags-links > a.label {
   font-size: 11px;
   text-transform: uppercase;
 }

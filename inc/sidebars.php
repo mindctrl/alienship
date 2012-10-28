@@ -70,7 +70,8 @@ endif;
 /* Alien Ship custom login form */
 if ( ! function_exists( 'alienship_wp_login_form' ) ):
 function alienship_wp_login_form( $args = array() ) {
-  $defaults = array( 'echo' => true,
+  $defaults = array(
+            'echo'           => true,
             'redirect'       => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], // Default redirect is back to the current page
             'form_id'        => 'loginform',
             'label_username' => __( 'Username', 'alienship' ),

@@ -4,6 +4,8 @@ Version .92 -
 - Fixed popovers that broke when upgrading Bootstrap.
 - Temp hacked the post pagination links that broke when upgrading Bootstrap.
 - Reworked the CSS so that it's enqueued using the WordPress preferred method.
+- Cleaned up the Hero page template. Removed sidebar-hero.php and moved code the page-hero.php.
+- Removed option to hide admin bar for all users.
 
 
 Version .91 - September 17, 2012

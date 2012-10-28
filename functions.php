@@ -3,7 +3,11 @@
  * Alien Ship functions and definitions
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
+ * @subpackage Functions
+ * @author John Parris
+ * @copyright Copyright (c) 2012, John Parris
+ * @link http://www.johnparris.com/alienship/
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /**

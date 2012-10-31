@@ -9,7 +9,7 @@
  */
 ?>
 <?php do_action( 'alienship_footer_before' ); ?>
-<footer id="colophon" role="contentinfo">
+<footer class="colophon" id="colophon" role="contentinfo">
   <?php do_action( 'alienship_footer_inside ' ); ?>
   <div class="container-fluid">
     <div class="row-fluid">

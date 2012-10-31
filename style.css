@@ -149,10 +149,6 @@ body.logged-in > div.navbar-fixed-top {
   width: auto;
 }
 
-.btn-navbar > a.btn {
-  text-shadow: 0px;
-}
-
 /* Increase the Bootstrap default top/bottom padding of dropdown links */
 .dropdown-menu li > a {
   padding: 6px 15px;
@@ -727,14 +723,14 @@ div#innergrid > a > img {
 /* End of featured posts grid */
 
 
-/* Put a border above copyright info and bottom menu in footer. Center info. Pad it. */
-body > footer {
+/* Copyright / bottom menu area */
+.colophon {
 	border-top: solid 1px #ccc;
-	padding: 7px 0px 7px 0px;
+	padding: 7px 0px;
 	text-align: center;
 }
 
-.page-template-page-hero-php > footer {
+.page-template-page-hero-php .colophon {
   margin-top: 50px;
 }
 
@@ -997,15 +993,10 @@ input#s {
   }
   /* Pad the #page */
   #page,
-  body.page-template-page-hero-php > #main {
+  .page-template-page-hero-php #main {
     padding-left: 10px;
     padding-right: 10px;
   }
-  /* div.nav-collapse > ul.nav,
-  div.nav-collapse > form.navbar-search {
-    position: relative;
-    bottom: 28px;
-  } */
 }
 
 /*  --------------------------------------------------

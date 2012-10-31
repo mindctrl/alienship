@@ -240,7 +240,7 @@ if ( ! function_exists( 'alienship_do_post_tags' ) ):
 function alienship_do_post_tags() {
   $post_tags = get_the_tags();
   if ( $post_tags ) {
-    echo '<span class="tags-links"><span class="sep">&nbsp; &nbsp;</span><i class="icon-tags" title="Tags"></i>&nbsp;' . "\n";
+    echo '<span class="tags-links"><i class="icon-tags" title="Tags"></i>' . "\n";
     $num_tags = count( $post_tags );
     $tag_count = 1;
     $nofollow = ' nofollow'; // tell search engines to not index tag url
@@ -299,7 +299,7 @@ if ( ! function_exists( 'alienship_do_post_comments_link' ) ):
  */
  function alienship_do_post_comments_link() {
   if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-    <span class="comments-link"><i class="icon-comment"></i>&nbsp;<?php comments_popup_link( __( 'Leave a comment', 'alienship' ), __( '1 Comment', 'alienship' ), __( '% Comments', 'alienship' ) ); ?></span>
+    <span class="comments-link"><i class="icon-comment"></i><?php comments_popup_link( __( ' Leave a comment', 'alienship' ), __( ' 1 Comment', 'alienship' ), __( ' % Comments', 'alienship' ) ); ?></span>
   <?php endif;
  }
  add_action( 'alienship_post_comments_link', 'alienship_do_post_comments_link' );

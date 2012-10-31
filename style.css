@@ -968,6 +968,11 @@ input#s {
 }
 
 @media only screen and (max-width: 979px) {
+  /* Temp fix for dropdown menus */
+  .nav-collapse .dropdown-menu {
+    display: block;
+  }
+
   /* Improve font size and spacing on dropdown menu on mobile/tablets */
   .navbar .nav > li > a, .navbar .dropdown-menu a {
     font-size: 18px;

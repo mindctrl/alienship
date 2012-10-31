@@ -154,7 +154,7 @@ body.logged-in > div.navbar-fixed-top {
 }
 
 /* Increase the Bootstrap default top/bottom padding of dropdown links */
-.dropdown-menu a {
+.dropdown-menu li > a {
   padding: 6px 15px;
 }
 

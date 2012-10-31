@@ -10,7 +10,7 @@
   <div class="<?php echo apply_filters( 'alienship_top_navbar_class' , 'navbar navbar-inverse'); ?>">
     <div class="navbar-inner">
       <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-menu">
           <span></span>
           <span class="icon-bar-text">Menu</span>
           <span></span>
@@ -23,7 +23,7 @@
           <?php } // alienship_desc_in_navbar ?>
         </div><!-- /#navbar-brand -->
         <?php } // site name in navbar ?>
-        <div class="nav-collapse">
+        <div class="nav-collapse top-menu">
           <?php if ( of_get_option('alienship_search_bar', '1') ) { ?>
             <form role="search" class="navbar-search pull-right" action="<?php echo site_url(); ?>" id="searchform" method="get">
               <label class="assistive-text" for="s">Search</label>

@@ -10,11 +10,6 @@
 /**
  * Setup the WordPress core custom header feature.
  *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- * Use feature detection of get_custom_header() which was introduced
- * in WordPress 3.4.
- *
  * @uses alienship_header_style()
  * @uses alienship_admin_header_style()
  * @uses alienship_admin_header_image()

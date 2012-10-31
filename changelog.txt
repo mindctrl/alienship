@@ -1,11 +1,19 @@
 == Change log ==
-Version .92 -
---------------------------------
+Version .92 - October 31, 2012
+------------------------------
 - Fixed popovers that broke when upgrading Bootstrap.
 - Temp hacked the post pagination links that broke when upgrading Bootstrap.
 - Reworked the CSS so that it's enqueued using the WordPress preferred method.
 - Cleaned up the Hero page template. Removed sidebar-hero.php and moved code the page-hero.php.
 - Removed option to hide admin bar for all users.
+- Clean up in template-tags.php.
+- Moved some template tags to actions.
+- Updated Bootstrap to 2.2.1
+- Removed support for WP versions before 3.4 in header image library.
+- Removed default/demo header images.
+- Minor CSS cleanup.
+- Removed old CSS layout file in layouts folder.
+
 
 
 Version .91 - September 17, 2012

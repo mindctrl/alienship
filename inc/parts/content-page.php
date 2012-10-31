@@ -10,7 +10,7 @@
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php do_action( 'alienship_post_inside_before' ); ?>
 
-  <?php alienship_entry_title(); ?>
+  <?php do_action( 'alienship_entry_title' ); ?>
 
   <div class="entry-content">
     <?php the_content(); ?>

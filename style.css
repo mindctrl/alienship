@@ -789,6 +789,13 @@ img.aligncenter {
   text-transform: uppercase;
 }
 
+.byline,
+.cat-links,
+.comments-link,
+.published-date {
+  margin-right: 10px;
+}
+
 /* Clear */
 .clear {
   clear: both;

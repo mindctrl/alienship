@@ -16,7 +16,7 @@
       } ?>
     </div><!-- #innergrid -->
     <div id="grid-footer">
-      <p id="grid-footer-meta"><?php if (of_get_option('alienship_published_date',1) ) { alienship_posted_on(); } ?>
+      <p id="grid-footer-meta"><?php if (of_get_option('alienship_published_date',1) ) { do_action( 'alienship_posted_on' ); } ?>
       <?php edit_post_link( __( '<span class="edit-link"><i class="icon-pencil pull-right"></i>', 'alienship' ), '', '</span>' ); ?>
       </p>
     </div><!-- #grid-footer -->

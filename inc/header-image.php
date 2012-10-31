@@ -1,7 +1,8 @@
 <?php
 /* Custom Header Support
  *
- * @since Alien Ship .53
+ * @package Alien Ship
+ * @since .69
  *
  * Credit to WordPress team for code used from Twenty Eleven and P2 themes.
  */
@@ -18,8 +19,6 @@
  * @uses alienship_admin_header_style()
  * @uses alienship_admin_header_image()
  *
- * @package Alien Ship
- * @since Alien Ship .69
  */
 
 function alienship_setup_custom_header() {
@@ -37,47 +36,9 @@ function alienship_setup_custom_header() {
 
   $args = apply_filters( 'alienship_custom_header_args', $args );
 
-  if ( function_exists( 'get_custom_header' ) ) {
-    add_theme_support( 'custom-header', $args );
-  } else {
-    /* Compatibility for versions of WordPress prior to 3.4. */
-    define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
-    define( 'HEADER_IMAGE',        $args['default-image'] );
-    define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
-    define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
-    add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
-  }
+  add_theme_support( 'custom-header', $args );
 }
 add_action( 'init', 'alienship_setup_custom_header' );
-
-
-/* Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI. */
-  register_default_headers( array(
-    'shore' => array(
-      'url' => '%s/img/headers/shore.jpg',
-      'thumbnail_url' => '%s/img/headers/shore-thumbnail.jpg',
-      /* translators: header image description */
-      'description' => __( 'Shore', 'alienship' )
-    ),
-    'trolley' => array(
-      'url' => '%s/img/headers/trolley.jpg',
-      'thumbnail_url' => '%s/img/headers/trolley-thumbnail.jpg',
-      /* translators: header image description */
-      'description' => __( 'Trolley', 'alienship' )
-    ),
-    'chessboard' => array(
-      'url' => '%s/img/headers/chessboard.jpg',
-      'thumbnail_url' => '%s/img/headers/chessboard-thumbnail.jpg',
-      /* translators: header image description */
-      'description' => __( 'Chessboard', 'alienship' )
-    ),
-    'lanterns' => array(
-      'url' => '%s/img/headers/lanterns.jpg',
-      'thumbnail_url' => '%s/img/headers/lanterns-thumbnail.jpg',
-      /* translators: header image description */
-      'description' => __( 'Lanterns', 'alienship' )
-    )
-  ) );
 
 
 
@@ -85,7 +46,7 @@ if ( ! function_exists( 'alienship_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @since Alien Ship .53
+ * @since .53
  */
 function alienship_header_style() {
 
@@ -128,7 +89,7 @@ if ( ! function_exists( 'alienship_admin_header_style' ) ) :
  *
  * Referenced via alienship_setup_custom_header and add_custom_image_header().
  *
- * @since Alien Ship .53
+ * @since .53
  */
 function alienship_admin_header_style() {
 ?>
@@ -180,7 +141,7 @@ if ( ! function_exists( 'alienship_admin_header_image' ) ) :
  *
  * Referenced via alienship_setup_custom_header and add_custom_image_header().
  *
- * @since Alien Ship .53
+ * @since .53
  */
 function alienship_admin_header_image() { ?>
   <div id="headimg">

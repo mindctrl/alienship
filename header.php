@@ -45,16 +45,9 @@ if ( !is_page_template( 'page-hero.php' ) ) { ?>
       // Check for header image
       $header_image = get_header_image();
       if ( $header_image ) :
-        if ( function_exists( 'get_custom_header' ) ) {
-          // We need to figure out what the minimum width should be for our featured image.
-          // This result would be the suggested width if the theme were to implement flexible widths.
-          $header_image_width = get_theme_support( 'custom-header', 'width' );
-          $header_image_height = get_theme_support( 'custom-header', 'height' );
-        } else {
-          // Compatibility with versions of WordPress prior to 3.4.
-          $header_image_width = HEADER_IMAGE_WIDTH;
-        }
-    ?>
+        $header_image_width = get_theme_support( 'custom-header', 'width' );
+        $header_image_height = get_theme_support( 'custom-header', 'height' );
+      ?>
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
       <?php
         // The header image
@@ -64,15 +57,9 @@ if ( !is_page_template( 'page-hero.php' ) ) { ?>
           // Houston, we have a new header image!
           echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
           else :
-            if ( function_exists( 'get_custom_header' ) ) {
-              $header_image_width  = get_custom_header()->width;
-              $header_image_height = get_custom_header()->height;
-            } else {
-              // Compatibility with versions of WordPress prior to 3.4.
-              $header_image_width  = HEADER_IMAGE_WIDTH;
-              $header_image_height = HEADER_IMAGE_HEIGHT;
-            }
-        ?>
+            $header_image_width  = get_custom_header()->width;
+            $header_image_height = get_custom_header()->height;
+          ?>
         <img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" class="header-image" alt="" />
       <?php endif; // end check for featured image or standard header ?>
     </a>

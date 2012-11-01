@@ -1,12 +1,11 @@
 <?php
-/** Load Bootstrap javascript modules
+/**
+ * Load Bootstrap javascript modules
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
+ * @since 0.1
  */
 function alienship_bootstrap_js_loader() {
-  // Core Bootstrap plugins
-  // wp_enqueue_script('prettify.js', get_template_directory_uri().'/js/prettify.js', array('jquery'),'1.0', true );
 
   if ( of_get_option('alienship_transitions_plugin',1) ) {
     wp_enqueue_script('transition.js', get_template_directory_uri().'/js/bootstrap-transition.js', array('jquery'),'2.21', true );

@@ -10,16 +10,10 @@
 
   <?php do_action( 'alienship_entry_title' ); ?>
 
-  <?php if ( is_search() ) : // Only display Excerpts for Search ?>
-  <div class="entry-summary">
-    <?php the_excerpt(); ?>
-  </div><!-- .entry-summary -->
-  <?php else : ?>
   <div class="entry-content">
-    <?php the_content( __( '<button class="btn btn-mini">Read More <i class="icon-arrow-right"></i></button>', 'alienship' ) ); ?>
+    <?php do_action( 'alienship_content' ); ?>
     <?php alienship_wp_link_pages(); ?>
-  </div><!-- .entry-content -->
-  <?php endif; ?>
+  </div>
 
   <footer class="entry-meta">
     <?php if ( 'post' == get_post_type() ) : ?>

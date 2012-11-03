@@ -12,7 +12,7 @@ if ( ! function_exists( 'alienship_excerpt_or_content' ) ):
  * @since .593
  */
 function alienship_excerpt_or_content() {
-  if ( !is_singular() && of_get_option( 'alienship_archive_display', "full" ) == "excerpt" ) {
+  if ( !is_singular() && of_get_option( 'alienship_archive_display', "full" ) == "excerpt" || is_search() ) {
     if ( has_post_thumbnail() ) {
       global $post; ?>
       <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'alignleft', 'title' => "" ) ); ?></a>

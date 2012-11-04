@@ -28,7 +28,7 @@
 </footer><!-- #colophon -->
 <?php do_action( 'alienship_footer_after' ); ?>
 
-<?php wp_footer('hero'); ?>
+<?php wp_footer(); ?>
 
 <?php do_action( 'alienship_footer' ); ?>
 </body>

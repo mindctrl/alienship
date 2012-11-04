@@ -734,8 +734,50 @@ div#innergrid > a > img {
 	text-align: center;
 }
 
+/* Page Templates */
 .page-template-page-hero-php .colophon {
   margin-top: 50px;
+}
+
+.page-template-page-marketing-php {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.container-narrow,
+.page-template-page-marketing-php .footer {
+  margin: 0 auto;
+  max-width: 700px;
+}
+#marketing-header {
+  clear: none;
+  font-size: 24px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+.page-template-page-marketing-php .entry-content {
+  padding: 0;
+}
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+}
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+.marketing {
+  margin: 60px 0;
+}
+.marketing h4 {
+  font-size: 18px;
+}
+.marketing div + h4 {
+  margin-top: 28px;
 }
 
 /* Text meant only for screen readers */

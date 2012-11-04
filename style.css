@@ -776,8 +776,8 @@ div#innergrid > a > img {
 .marketing h4 {
   font-size: 18px;
 }
-.marketing div + h4 {
-  margin-top: 28px;
+#marketing-bottom-wrap {
+  margin-top: -28px;
 }
 
 /* Text meant only for screen readers */

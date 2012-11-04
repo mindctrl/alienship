@@ -31,8 +31,8 @@ function alienship_widgets_init() {
     'name'          => __( 'Marketing Page', 'alienship' ),
     'description'   => __( 'Displayed on pages created with the Marketing template. This is the top row and widgets should be used in pairs (2 widgets here).', 'alienship' ),
     'id'            => 'marketingwidgets-1',
-    'before_widget' => '',
-    'after_widget'  => '',
+    'before_widget' => '<div class="span6">',
+    'after_widget'  => '</div>',
     'before_title'  => '<h4 class="widget-title">',
     'after_title'   => '</h4>',
   ) );
@@ -41,8 +41,8 @@ function alienship_widgets_init() {
     'name'          => __( 'Marketing Page 2', 'alienship' ),
     'description'   => __( 'Displayed on pages created with the Marketing template. This is the bottom row and widgets should be used in pairs (2 widgets in each row).', 'alienship' ),
     'id'            => 'marketingwidgets-2',
-    'before_widget' => '',
-    'after_widget'  => '',
+    'before_widget' => '<div class="span6">',
+    'after_widget'  => '</div>',
     'before_title'  => '<h4 class="widget-title">',
     'after_title'   => '</h4>',
   ) );

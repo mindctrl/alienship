@@ -28,14 +28,20 @@
 
       <hr>
 
-      <div id="marketing-widgets-row" class="row-fluid marketing">
-        <div id="marketing-widgets-top" class="span6">
+      <div id="marketing-widgets-top-row" class="row-fluid marketing">
+
+        <div id="marketing-top-wrap" class="span12">
           <?php dynamic_sidebar( 'marketingwidgets-1' ); ?>
         </div>
 
-        <div id="marketing-widgets-bottom" class="span6">
+      </div><!-- /.marketing -->
+
+      <div id="marketing-widgets-bottom-row" class="row-fluid marketing">
+
+        <div id="marketing-bottom-wrap" class="span12">
           <?php dynamic_sidebar( 'marketingwidgets-2' ); ?>
         </div>
+
       </div><!-- /.marketing -->
 
 

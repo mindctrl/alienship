@@ -428,12 +428,18 @@ div#content > article {
 }
 /* End of Theme layouts */
 
-article > .entry-content,
-article > .entry-content p {
+.entry-content,
+.entry-summary,
+.entry-content p,
+.entry-summary p {
   font-family: "Helvetica Neue", Helvetica;
   font-size: 15px;
   font-weight: 300;
   line-height: 1.625;
+}
+
+.hero-unit .entry-content p {
+  font-size: 18px;
 }
 
 .entry-content li {
@@ -605,8 +611,8 @@ h2.entry-title {
     border-style: solid;
     border-width: 1px 1px 1px 0;
     float: left;
-    line-height: 38px;
-    padding: 0 14px;
+    line-height: 28px;
+    padding: 0 12px;
     text-decoration: none;
   }
 
@@ -853,26 +859,27 @@ img.aligncenter {
 ------------------------------------ */
 
 /* Quote post format */
-article.format-quote {
+.format-quote {
     background: url("img/quote.png") no-repeat scroll left top;
     background-size: 20px 20px;
 }
 
-article.format-quote .entry-content {
-  padding: 1em 0;
+.format-quote .entry-content,
+.format-quote .entry-summary {
+  padding: 1.5em 0;
 }
 
-article.format-quote cite {
+.format-quote cite {
     margin-top: 10px;
     font-style: italic;
 }
 
-article.format-quote blockquote {
+.format-quote blockquote {
   border-left: 0;
   margin: 0 0 18px 15px;
 }
 
-article.format-quote blockquote p {
+.format-quote blockquote p {
   font-size: 1em;
   font-style: italic;
   line-height: 23px;
@@ -880,8 +887,9 @@ article.format-quote blockquote p {
 }
 
 /* Status post format */
-article.format-status .entry-content > p {
-  font-size: 20px !important;
+.format-status .entry-content > p,
+.format-status .entry-summary > p {
+  font-size: 20px;
 }
 
 /* Panels inspired by Zurb Foundation
@@ -1019,7 +1027,10 @@ input#s {
   .nav-collapse .dropdown-menu {
     display: block;
   }
-
+  /* Marketing template */
+  .page-template-page-marketing-php {
+    padding: 0 15px 40px 15px;
+  }
   /* Improve font size and spacing on dropdown menu on mobile/tablets */
   .navbar .nav > li > a, .navbar .dropdown-menu a {
     font-size: 18px;

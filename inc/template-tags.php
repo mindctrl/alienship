@@ -12,15 +12,43 @@ if ( ! function_exists( 'alienship_excerpt_or_content' ) ):
  * @since .593
  */
 function alienship_excerpt_or_content() {
-  if ( !is_singular() && of_get_option( 'alienship_archive_display', "full" ) == "excerpt" || is_search() ) {
-    if ( has_post_thumbnail() ) {
-      global $post; ?>
-      <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'alignleft', 'title' => "" ) ); ?></a>
-    <?php } // has_post_thumbnail
-    the_excerpt();
-  } else {
-    the_content();
-  }
+  if ( !is_singular() && of_get_option( 'alienship_archive_display', "full" ) == "excerpt" || is_search() ) { ?>
+
+    <div class="entry-summary">
+      <?php if ( has_post_thumbnail() && ! has_post_format( 'quote' ) ) { global $post; ?>
+        <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'alignleft', 'title' => "" ) ); ?></a>
+      <?php } // has_post_thumbnail
+
+      if ( has_post_format( 'quote' ) ) { ?>
+        <blockquote>
+      <?php } //has_post_format
+
+      the_excerpt();
+
+      if ( has_post_format( 'quote' ) ) { ?>
+        </blockquote>
+      <?php } //has_post_format ?>
+
+    </div><!-- /.entry-summary -->
+
+  <?php } else { ?>
+
+    <div class="entry-content">
+
+      <?php if ( has_post_format( 'quote' ) ) { ?>
+        <blockquote>
+      <?php } //has_post_format
+
+      the_content();
+
+      if ( has_post_format( 'quote' ) ) { ?>
+      </blockquote>
+      <?php } //has_post_format
+
+      alienship_wp_link_pages(); ?>
+    </div><!-- /.entry-content -->
+
+  <?php }
 }
 add_action( 'alienship_content', 'alienship_excerpt_or_content' );
 endif;

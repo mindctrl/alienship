@@ -10,10 +10,7 @@
 
   <?php do_action( 'alienship_entry_title' ); ?>
 
-  <div class="entry-content">
     <?php do_action( 'alienship_content' ); ?>
-    <?php alienship_wp_link_pages(); ?>
-  </div>
 
   <footer class="entry-meta">
     <?php if ( 'post' == get_post_type() ) : ?>

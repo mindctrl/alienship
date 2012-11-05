@@ -9,10 +9,8 @@
   <?php do_action( 'alienship_post_before' ); ?>
   <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php do_action( 'alienship_post_inside_before' ); ?>
-    <div class="entry-content">
-        <p><?php do_action( 'alienship_content' ); ?></p>
-      <?php alienship_wp_link_pages(); ?>
-    </div><!-- .entry-content -->
+
+    <?php do_action( 'alienship_content' ); ?>
 
     <footer class="entry-meta">
     <?php

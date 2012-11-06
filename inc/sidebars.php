@@ -79,8 +79,15 @@ function alienship_register_widgets() {
   /* Load the login form widget file */
   locate_template('/inc/widgets/widget-login-form.php', true);
 
+  /* Load the nav list menu widget */
+  locate_template('/inc/widgets/widget-nav-list-menu.php', true);
+
   /* Register the login form widget */
   register_widget( 'alienship_Widget_Login' );
+
+  /* Register the nav list menu widget */
+  register_widget( 'Nav_List_Menu_Widget' );
+
 }
 add_action( 'widgets_init', 'alienship_register_widgets' );
 endif;

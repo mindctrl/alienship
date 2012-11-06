@@ -1,4 +1,22 @@
 == Change log ==
+Version .93 - November 6, 2012
+------------------------------
+- Removed unused javascript library
+- Miscellaneous clean up.
+- Removed shortcodes from theme. Download shortcodes plugin at http://www.johnparris.com/wordpress-plugins/alienship-shortcodes/
+- Added is_search logic to alienship_excerpt_or_content function.
+- Added Marketing page template.
+- Added Status page template that shows posts of the Status post format.
+- Template and CSS cleanup.
+- Added Nav List Custom Menu widget. Props to Andrey Savchenko (Rarst) for this widget.
+- Corrected textdomain in login form widget.
+- Cleaned up Edit link styling in template parts.
+- Removed label formatting from category and tag links.
+- Added translation support for Theme Options page and rebuilt alienship.pot file. More work to do here.
+- Added German translation. Thanks to Klaus Mohn for the translation!
+
+
+
 Version .92 - October 31, 2012
 ------------------------------
 - Fixed popovers that broke when upgrading Bootstrap.

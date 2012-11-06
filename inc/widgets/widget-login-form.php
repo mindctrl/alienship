@@ -163,7 +163,7 @@ class alienship_Widget_Login extends WP_Widget {
 
 		/* Set up the default form values. */
 		$defaults = array(
-			'title' => esc_attr__( 'Log In', 'alienship' ), 
+			'title' => esc_attr__( 'Log In', 'alienship' ),
 			'label_username' => esc_attr__( 'Username', 'alienship' ),
 			'label_password' => esc_attr__( 'Password', 'alienship' ),
 			'label_log_in' => esc_attr__( 'Log In', 'alienship' ),
@@ -239,16 +239,16 @@ class alienship_Widget_Login extends WP_Widget {
 		<div style="float: right; width: 31%;">
 
 		<p>
-			<input class="checkbox" type="checkbox" <?php checked( $instance['remember'], true ); ?> id="<?php echo $this->get_field_id( 'remember' ); ?>" name="<?php echo $this->get_field_name( 'remember' ); ?>" /> 
+			<input class="checkbox" type="checkbox" <?php checked( $instance['remember'], true ); ?> id="<?php echo $this->get_field_id( 'remember' ); ?>" name="<?php echo $this->get_field_name( 'remember' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'remember' ); ?>"><?php _e( '"Remember me" checkbox?', 'alienship' ); ?> <code>remember</code></label>
 		</p>
 		<p>
-			<input class="checkbox" type="checkbox" <?php checked( $instance['value_remember'], true ); ?> id="<?php echo $this->get_field_id( 'value_remember' ); ?>" name="<?php echo $this->get_field_name( 'value_remember' ); ?>" /> 
+			<input class="checkbox" type="checkbox" <?php checked( $instance['value_remember'], true ); ?> id="<?php echo $this->get_field_id( 'value_remember' ); ?>" name="<?php echo $this->get_field_name( 'value_remember' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'value_remember' ); ?>"><?php _e( 'Check "remember me"?', 'alienship' ); ?> <code>value_remember</code></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'show_avatar' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['show_avatar'], true ); ?> id="<?php echo $this->get_field_id( 'show_avatar' ); ?>" name="<?php echo $this->get_field_name( 'show_avatar' ); ?>" /> <?php _e('Display avatar?', 'widgets-reloaded'); ?></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['show_avatar'], true ); ?> id="<?php echo $this->get_field_id( 'show_avatar' ); ?>" name="<?php echo $this->get_field_name( 'show_avatar' ); ?>" /> <?php _e('Display avatar?', 'alienship'); ?></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'logged_out_text' ); ?>"><?php _e( 'Logged out text:', 'alienship' ); ?></label>

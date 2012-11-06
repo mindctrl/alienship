@@ -524,7 +524,12 @@ img.avatar {
   max-width: 100%;
 }
 
-/* Fix carousel images */
+/* Carousel */
+.home #featured-carousel {
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 45px;
+  padding-bottom: 30px;
+}
 .carousel-inner > .item > a > img {
   border: 0;
   border-radius: 0;

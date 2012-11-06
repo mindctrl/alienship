@@ -298,7 +298,7 @@ if ( ! function_exists( 'alienship_do_post_categories' ) ):
 function alienship_do_post_categories() {
   $post_categories = get_the_category();
   if ( $post_categories ) {
-    echo "\t<span class=\"cat-links\"><i class=\"icon-folder-open\" title=\"Categories\"></i>&nbsp;\n";
+    echo "\t<span class=\"cat-links\"><i class=\"icon-folder-open\" title=\"Categories\"></i>\n";
     $num_categories = count( $post_categories );
     $category_count = 1;
     foreach ( $post_categories as $category ) {

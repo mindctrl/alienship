@@ -1,0 +1,728 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Alien Ship v0.92\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-11-03 14:59:57+0000\n"
+"Last-Translator: KMO <support@kmo-web.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:17
+#@ alienship
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Hoppla! Die Seite konnte nicht gefunden werden."
+
+#: 404.php:21
+#@ alienship
+msgid "It looks like nothing was found at this location. Maybe try a search or one of the links below?"
+msgstr "Leider wurde unter dieser Adresse nichts gefunden. Versuche es mit der Suche oder einem der Links unten."
+
+#: 404.php:28
+#@ alienship
+msgid "Most Used Categories"
+msgstr "Meist genutzte Kategorien"
+
+#. translators: %1$s: smilie
+#: 404.php:36
+#, php-format
+#@ alienship
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Versuche in den monatlichen Archiven nach zu sehen. %1$s"
+
+#: admin/options-framework.php:239
+#@ default
+msgid "Save Options"
+msgstr "Optionen speichern"
+
+#: admin/options-framework.php:240
+#@ default
+msgid "Restore Defaults"
+msgstr "Default Einstellungen wieder herstellen"
+
+#: admin/options-framework.php:240
+#@ default
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Klicke OK zur Wiederherstellung. Alle Theme Einstellungen gehen verloren!"
+
+#: admin/options-framework.php:272
+#@ optionsframework
+msgid "Default options restored."
+msgstr "Default Optionen wieder hergestellt."
+
+#: admin/options-framework.php:313
+#@ optionsframework
+msgid "Options saved."
+msgstr "Optionen gespeichert."
+
+#: admin/options-framework.php:371
+#@ default
+msgid "Theme Options"
+msgstr "Theme Optionen"
+
+#: admin/options-medialibrary-uploader.php:26
+#@ default
+msgid "Options Framework Internal Container"
+msgstr "Options Framework interner Container"
+
+#: admin/options-medialibrary-uploader.php:128
+#@ default
+msgid "Upload"
+msgstr "Hochladen"
+
+#: admin/options-medialibrary-uploader.php:151
+#@ optionsframework
+msgid "View File"
+msgstr "Datei anzeigen"
+
+#: admin/options-medialibrary-uploader.php:288
+#@ optionsframework
+msgid "Gallery"
+msgstr "Galerie"
+
+#: admin/options-medialibrary-uploader.php:288
+#@ optionsframework
+msgid "Previously Uploaded"
+msgstr "Bereits hochgeladen"
+
+#: author.php:29
+#: inc/template-tags.php:401
+#, php-format
+#@ alienship
+msgid "Author Archives: %s"
+msgstr "Autoren Archiv: %s"
+
+#: comments.php:16
+#@ alienship
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Dieser Beitrag ist mit einem Passwort geschützt. Gebe das Passwort ein um die Kommentare zu lesen."
+
+#: comments.php:32
+#, php-format
+#@ alienship
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39
+#: comments.php:59
+#@ alienship
+msgid "Comment navigation"
+msgstr "Kommentar Navigation"
+
+#: comments.php:40
+#: comments.php:60
+#@ alienship
+msgid "&larr; Older Comments"
+msgstr "&larr; Ältere Kommentare"
+
+#: comments.php:41
+#: comments.php:61
+#@ alienship
+msgid "Newer Comments &rarr;"
+msgstr "Neuere Kommentare &rarr;"
+
+#: comments.php:72
+#@ alienship
+msgid "Comments are closed."
+msgstr "Kommentare geschlossen."
+
+#: comments.php:81
+#@ alienship
+msgid "Leave a Reply"
+msgstr "Schreibe eine Antwort"
+
+#: comments.php:81
+#, php-format
+#@ alienship
+msgid "Leave a Reply to %s"
+msgstr "Schreibe eine Antwort zu %s"
+
+#: comments.php:84
+#, php-format
+#@ alienship
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Du mußt Dich <a href=\"%s\">einloggen</a> um einen Kommentar zu schreiben."
+
+#: comments.php:88
+#, php-format
+#@ alienship
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr "Eingeloggt als <a href=\"%s/wp-admin/profile.php\">%s</a>."
+
+#: comments.php:88
+#@ alienship
+msgid "Log out of this account"
+msgstr "Von diesem Konto abmelden"
+
+#: comments.php:88
+#@ alienship
+msgid "Log out &raquo;"
+msgstr "Abmelden &raquo;"
+
+#: comments.php:91
+#@ alienship
+msgid "Name"
+msgstr "Name"
+
+#: comments.php:91
+#: comments.php:96
+#@ alienship
+msgid " (required)"
+msgstr "(erforderlich)"
+
+#: comments.php:96
+#@ alienship
+msgid "Email (will not be published)"
+msgstr "Email (wird nicht veröffentlicht)"
+
+#: comments.php:101
+#@ alienship
+msgid "Website"
+msgstr "Webseite"
+
+#: comments.php:108
+#@ alienship
+msgid "Comment"
+msgstr "Kommentar"
+
+#: comments.php:113
+#@ alienship
+msgid "Submit Comment"
+msgstr "Kommentar senden"
+
+#: footer-hero.php:17
+#@ alienship
+msgid "Edit page"
+msgstr "Seite bearbeiten"
+
+#: functions.php:127
+#, php-format
+#@ default
+msgid "Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Design your menus with this in mind. For more information, read the <a href=\"http://www.johnparris.com/alienship/documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a href=\"%1$s\">Hide this notice</a>"
+msgstr "Dropdown Menüs arbeiten ein wenig anders in Alien Ship. Sie aktivieren sich nicht bei Überfahren mit der Maus sondern müssen angeklickt werden. Dies bedeutet, dass der Eltern-Menüeintrag bei einem Klick nicht auf eine Seite verlinkt sondern das Dropdown Menü aktiviert. Beachte dies beim Erstellen Deiner Menüs. Für weitere Informationen lese die <a href=\"http://www.johnparris.com/alienship/documentation\" target=\"_blank\">Alien Ship Dokumentation</a> online. | <a href=\"%1$s\">Notiz verbergen</a>"
+
+#: image.php:23
+#, php-format
+#@ alienship
+msgid "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr "Veröffentlicht <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> auf <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+
+#: image.php:33
+#: image.php:104
+#: inc/parts/content-link.php:30
+#: inc/parts/content-page.php:19
+#: inc/parts/content-quote.php:25
+#: inc/parts/content-standard.php:25
+#: inc/parts/content-status.php:23
+#: inc/parts/content.php:32
+#@ alienship
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: image.php:39
+#@ alienship
+msgid "&larr; Previous"
+msgstr "&larr; Zurück"
+
+#: image.php:42
+#@ alienship
+msgid "Next &rarr;"
+msgstr "Weiter &arr;"
+
+#: image.php:96
+#, php-format
+#@ alienship
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Schreibe einen Kommentar</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:98
+#, php-format
+#@ alienship
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Die Kommentarfunktion ist geschlossen aber Du kannst einen Trackback hinterlassen: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL zu Deinem Artikel\" rel=\"trackback\">Trackback URL</a>"
+
+#: image.php:100
+#@ alienship
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Trackbacks sind geschlossen aber Du kannst einen <a class=\"comment-link\" href=\"#respond\" title=\"Schreibe einen Kommentar\">Kommentar schreiben</a>."
+
+#: image.php:102
+#@ alienship
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Kommentare und Trackbacks sind derzeit geschlossen."
+
+#: inc/breadcrumbs.php:64
+#@ alienship
+msgid "Home"
+msgstr "Home"
+
+#: inc/breadcrumbs.php:312
+#@ alienship
+msgid "g:i a"
+msgstr "g:i a"
+
+#: inc/breadcrumbs.php:315
+#, php-format
+#@ alienship
+msgid "Minute %1$s"
+msgstr "Minute %1$s"
+
+#: inc/breadcrumbs.php:315
+#@ alienship
+msgid "i"
+msgstr "i"
+
+#: inc/breadcrumbs.php:318
+#@ alienship
+msgid "g a"
+msgstr "g a"
+
+#: inc/breadcrumbs.php:329
+#: inc/breadcrumbs.php:335
+#: inc/breadcrumbs.php:340
+#: inc/breadcrumbs.php:345
+#: inc/breadcrumbs.php:410
+#@ alienship
+msgid "Y"
+msgstr "Y"
+
+#: inc/breadcrumbs.php:330
+#: inc/breadcrumbs.php:341
+#: inc/breadcrumbs.php:414
+#@ alienship
+msgid "F"
+msgstr "F"
+
+#: inc/breadcrumbs.php:331
+#: inc/breadcrumbs.php:418
+#@ alienship
+msgid "d"
+msgstr "d"
+
+#: inc/breadcrumbs.php:336
+#, php-format
+#@ alienship
+msgid "Week %1$s"
+msgstr "Woche %1$s"
+
+#: inc/breadcrumbs.php:336
+#@ alienship
+msgid "W"
+msgstr "W"
+
+#: inc/breadcrumbs.php:352
+#, php-format
+#@ alienship
+msgid "Search results for &quot;%1$s&quot;"
+msgstr "Suchergebnisse für &quot;%1$s&quot;"
+
+#: inc/breadcrumbs.php:356
+#@ alienship
+msgid "Content Not Found"
+msgstr "Inhalt nicht gefunden"
+
+#: inc/breadcrumbs.php:414
+#@ alienship
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/breadcrumbs.php:418
+#@ alienship
+msgid "F j, Y"
+msgstr "F j, Y"
+
+#. translators: header image description
+#: inc/header-image.php:60
+#@ alienship
+msgid "Shore"
+msgstr "Ufer"
+
+#. translators: header image description
+#: inc/header-image.php:66
+#@ alienship
+msgid "Trolley"
+msgstr "Straßenbahn"
+
+#. translators: header image description
+#: inc/header-image.php:72
+#@ alienship
+msgid "Chessboard"
+msgstr "Schachbrett"
+
+#. translators: header image description
+#: inc/header-image.php:78
+#@ alienship
+msgid "Lanterns"
+msgstr "Laternen"
+
+#: inc/menus.php:6
+#@ alienship
+msgid "Top Menu"
+msgstr "Topmenü"
+
+#: inc/menus.php:7
+#@ alienship
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: inc/menus.php:8
+#@ alienship
+msgid "Bottom Menu"
+msgstr "Seitenende Menü"
+
+#: inc/parts/content-featured.php:8
+#: inc/parts/content-fp-grid.php:9
+#: inc/parts/content-fp-grid.php:13
+#: inc/parts/content-link.php:15
+#: inc/template-tags.php:20
+#: inc/template-tags.php:44
+#, php-format
+#@ alienship
+msgid "Link to %s"
+msgstr "Link zu %s"
+
+#: inc/parts/content-fp-grid.php:20
+#@ alienship
+msgid "<span class=\"edit-link\"><i class=\"icon-pencil pull-right\"></i>"
+msgstr "<span class=\"edit-link\"><i class=\"icon-pencil pull-right\"></i>"
+
+#: inc/parts/content-none.php:11
+#@ alienship
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: inc/parts/content-none.php:15
+#@ alienship
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Leider konnte die gesuchte Seite nicht gefunden werden. Vielleicht hilft die Suchfunktion weiter."
+
+#: inc/parts/content.php:19
+#@ alienship
+msgid "<button class=\"btn btn-mini\">Read More <i class=\"icon-arrow-right\"></i></button>"
+msgstr "<button class=\"btn btn-mini\">Weiter lesen <i class=\"icon-arrow-right\"></i></button>"
+
+#: inc/parts/title.php:30
+#, php-format
+#@ alienship
+msgid "Page %s"
+msgstr "Seite %s"
+
+#: inc/sidebars.php:11
+#@ alienship
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: inc/sidebars.php:12
+#@ alienship
+msgid "The main widget area displayed in the sidebar."
+msgstr "Der primäre Widget Bereich, angezeigt in der Seitenleiste."
+
+#: inc/sidebars.php:21
+#@ alienship
+msgid "Hero Widgets"
+msgstr "Hero Widgets"
+
+#: inc/sidebars.php:22
+#@ alienship
+msgid "Displayed on pages created with the Hero template"
+msgstr "Wird auf Seiten angezeigt die mit dem Hero Template erstellt wurden."
+
+#: inc/sidebars.php:31
+#@ alienship
+msgid "Footer"
+msgstr "Fußzeile"
+
+#: inc/sidebars.php:32
+#@ alienship
+msgid "The footer widget area displayed after all content."
+msgstr "Der Fußzeilen Widget Bereich wird am unteren Ende der Seite angezeigt."
+
+#: inc/sidebars.php:41
+#@ alienship
+msgid "Footer 2"
+msgstr "Fußzeile 2"
+
+#: inc/sidebars.php:42
+#@ alienship
+msgid "The second footer widget area, displayed below the Footer widget area."
+msgstr "Der zweite Fußzeilen Widget Bereich wird unterhalb des Fußzeilen Widget Bereichs angezeigt."
+
+#: inc/sidebars.php:76
+#: inc/widgets/widget-login-form.php:167
+#@ alienship
+msgid "Username"
+msgstr "Benutzername"
+
+#: inc/sidebars.php:77
+#: inc/widgets/widget-login-form.php:168
+#@ alienship
+msgid "Password"
+msgstr "Passwort"
+
+#: inc/sidebars.php:78
+#: inc/widgets/widget-login-form.php:170
+#@ alienship
+msgid "Remember Me"
+msgstr "Merken"
+
+#: inc/sidebars.php:79
+#: inc/widgets/widget-login-form.php:166
+#: inc/widgets/widget-login-form.php:169
+#@ alienship
+msgid "Log In"
+msgstr "Einloggen"
+
+#: inc/template-tags.php:68
+#@ alienship
+msgid "Post navigation"
+msgstr "Beitragsnavigation"
+
+#: inc/template-tags.php:72
+#@ alienship
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:73
+#@ alienship
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:78
+#@ alienship
+msgid "Next page <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nächste Seite <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:82
+#@ alienship
+msgid "<span class=\"meta-nav\">&larr;</span> Previous page"
+msgstr "<span class=\"meta-nav\">&larr;</span> Vorherige Seite"
+
+#: inc/template-tags.php:109
+#@ alienship
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template-tags.php:109
+#: inc/template-tags.php:132
+#@ alienship
+msgid "(Edit)"
+msgstr "(Bearbeiten)"
+
+#: inc/template-tags.php:119
+#, php-format
+#@ alienship
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:122
+#@ alienship
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Moderation."
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:130
+#, php-format
+#@ alienship
+msgid "%1$s at %2$s"
+msgstr "%1$s um %2$s"
+
+#: inc/template-tags.php:161
+#, php-format
+#@ alienship
+msgid "View all posts by %s"
+msgstr "Zeige alle Beiträge von %s"
+
+#: inc/template-tags.php:291
+#@ alienship
+msgid "Leave a comment"
+msgstr "Schreibe einen Kommentar"
+
+#: inc/template-tags.php:291
+#@ alienship
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: inc/template-tags.php:291
+#@ alienship
+msgid "% Comments"
+msgstr "%s Kommentare"
+
+#: inc/template-tags.php:395
+#, php-format
+#@ alienship
+msgid "Category Archives: %s"
+msgstr "Kategoriearchiv: %s"
+
+#: inc/template-tags.php:398
+#, php-format
+#@ alienship
+msgid "Tag Archives: %s"
+msgstr "Schlagwortarchiv: %s"
+
+#: inc/template-tags.php:404
+#, php-format
+#@ alienship
+msgid "Daily Archives: %s"
+msgstr "Tagesarchiv: %s"
+
+#: inc/template-tags.php:407
+#, php-format
+#@ alienship
+msgid "Monthly Archives: %s"
+msgstr "Monatsarchiv: %s"
+
+#: inc/template-tags.php:410
+#, php-format
+#@ alienship
+msgid "Yearly Archives: %s"
+msgstr "Jahresarchiv: %s"
+
+#: inc/template-tags.php:413
+#: sidebar.php:23
+#@ alienship
+msgid "Archives"
+msgstr "Archiv"
+
+#: inc/template-tags.php:551
+#@ alienship
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: inc/theme-layouts.php:295
+#@ theme-layouts
+msgid "Default"
+msgstr "Default"
+
+#: inc/theme-layouts.php:296
+#@ theme-layouts
+msgid "One Column"
+msgstr "Eine Spalte"
+
+#: inc/theme-layouts.php:297
+#@ theme-layouts
+msgid "Two Columns, Left"
+msgstr "Zwei Spalten, links"
+
+#: inc/theme-layouts.php:298
+#@ theme-layouts
+msgid "Two Columns, Right"
+msgstr "Zwei Spalten, rechts"
+
+#: inc/theme-layouts.php:299
+#@ theme-layouts
+msgid "Three Columns, Left"
+msgstr "Drei Spalten, links"
+
+#: inc/theme-layouts.php:300
+#@ theme-layouts
+msgid "Three Columns, Right"
+msgstr "Drei Spalten, rechts"
+
+#: inc/theme-layouts.php:301
+#@ theme-layouts
+msgid "Three Columns, Center"
+msgstr "Drei Spalten, Mitte"
+
+#: inc/theme-layouts.php:377
+#: inc/theme-layouts.php:485
+#@ theme-layouts
+msgid "Layout"
+msgstr "Layout"
+
+#: inc/theme-layouts.php:404
+#@ theme-layouts
+msgid "Layout is a theme-specific structure for the single view of the post."
+msgstr "Das Layout ist eine Theme spezifische Struktur für die Einzelansicht des Beitrags."
+
+#: inc/tweaks.php:100
+#@ alienship
+msgid "Continue Reading "
+msgstr "Weiter lesen"
+
+#: inc/widgets/widget-login-form.php:23
+#@ alienship
+msgid "A widget that allows users to log into your site."
+msgstr "Ein Widget, dass Deinen Besuchern den Login auf Deiner Seite ermöglicht."
+
+#: inc/widgets/widget-login-form.php:34
+#@ alienship
+msgid "Login Form"
+msgstr "Login Formular"
+
+#: inc/widgets/widget-login-form.php:180
+#@ alienship
+msgid "Please log into the site."
+msgstr "Bitte logge Dich ein."
+
+#: inc/widgets/widget-login-form.php:181
+#@ alienship
+msgid "Logged in as"
+msgstr "Angemeldet als"
+
+#: inc/widgets/widget-login-form.php:193
+#@ alienship
+msgid "Title:"
+msgstr "Titel:"
+
+#: inc/widgets/widget-login-form.php:243
+#@ alienship
+msgid "\"Remember me\" checkbox?"
+msgstr "\"Merken\" checkbox?"
+
+#: inc/widgets/widget-login-form.php:247
+#@ alienship
+msgid "Check \"remember me\"?"
+msgstr "Check \"remember me\"?"
+
+#: inc/widgets/widget-login-form.php:251
+#@ widgets-reloaded
+msgid "Display avatar?"
+msgstr "Avatar anzeigen?"
+
+#: inc/widgets/widget-login-form.php:254
+#@ alienship
+msgid "Logged out text:"
+msgstr "Abmeldetext:"
+
+#: inc/widgets/widget-login-form.php:259
+#@ alienship
+msgid "Logged in text:"
+msgstr "Anmeldetext:"
+
+#: search.php:19
+#, php-format
+#@ alienship
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: searchform.php:10
+#: searchform.php:12
+#@ alienship
+msgid "Search"
+msgstr "Suche"
+
+#: searchform.php:11
+#@ alienship
+msgid "Search &hellip;"
+msgstr "Suche &hellip;"
+
+#: sidebar.php:30
+#@ alienship
+msgid "Meta"
+msgstr "Meta"
+

@@ -16,7 +16,7 @@
     <?php the_content(); ?>
     <div class="clear">&nbsp;</div>
     <?php alienship_wp_link_pages(); ?>
-    <?php edit_post_link( __( 'Edit', 'alienship' ), '<span class="edit-link"><i class="icon-pencil"></i>&nbsp;', '</span>' ); ?>
+    <?php edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="icon-pencil"></i>', '</span>' ); ?>
     <?php do_action( 'alienship_post_inside_after' ); ?>
   </div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

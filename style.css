@@ -890,9 +890,8 @@ img.aligncenter {
 }
 
 /* Status post format */
-.format-status .entry-content > p,
-.format-status .entry-summary > p {
-  font-size: 20px;
+.format-status p {
+  font-size: 18px;
 }
 
 /* Panels inspired by Zurb Foundation

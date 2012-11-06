@@ -749,6 +749,9 @@ div#innergrid > a > img {
   padding-top: 20px;
   padding-bottom: 40px;
 }
+.page-template-page-marketing-php .lead {
+  font-size: 21px;
+}
 .container-narrow,
 .page-template-page-marketing-php .footer {
   margin: 0 auto;

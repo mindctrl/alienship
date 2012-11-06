@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Alien Ship 0.93\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/alienship\n"
-"POT-Creation-Date: 2012-11-06 16:30:36+00:00\n"
+"POT-Creation-Date: 2012-11-06 22:22:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1009,6 +1009,148 @@ msgid ""
 "350 pixels."
 msgstr ""
 
+#: options.php:344
+msgid "Theme Plugins"
+msgstr ""
+
+#: options.php:349
+msgid "Javascript Plugins Information"
+msgstr ""
+
+#: options.php:350
+msgid ""
+"Read the description provided with each plugin. Some of these plugins "
+"require another plugin to function properly (Example: Carousel requires "
+"Transitions for the animation to work). Disable any plugins that you aren't "
+"using."
+msgstr ""
+
+#: options.php:355
+msgid "Transitions"
+msgstr ""
+
+#: options.php:356
+msgid ""
+"Transitions are used to animate things such as the carousel, modals, fade "
+"out alerts, etc. * Required for animation in plugins."
+msgstr ""
+
+#: options.php:363
+msgid "Alerts"
+msgstr ""
+
+#: options.php:364
+msgid ""
+"The alert plugin is a tiny class for adding close functionality to alerts. * "
+"Requires Transitions if you want them to fade out on close."
+msgstr ""
+
+#: options.php:371
+msgid "Modals"
+msgstr ""
+
+#: options.php:372
+msgid ""
+"Message boxes that slide down and fade in from the top of the page. Default "
+"setting is disabled. * Requires Transitions to function properly."
+msgstr ""
+
+#: options.php:379
+msgid "Dropdown Menus"
+msgstr ""
+
+#: options.php:380
+msgid "Add dropdown menus in the navbar, tabs, and pills."
+msgstr ""
+
+#: options.php:387
+msgid "Affix Menus"
+msgstr ""
+
+#: options.php:388
+msgid "Add support for affix menus. Default is disabled."
+msgstr ""
+
+#: options.php:395
+msgid "Scrollspy"
+msgstr ""
+
+#: options.php:396
+msgid ""
+"Use scrollspy to automatically update the links in your navbar to show the "
+"current active link based on scroll position. Default setting is disabled."
+msgstr ""
+
+#: options.php:403
+msgid "Tabs"
+msgstr ""
+
+#: options.php:404
+msgid ""
+"Make tabs and pills more useful by allowing them to toggle through tabbable "
+"panes of content."
+msgstr ""
+
+#: options.php:411
+msgid "Tooltips"
+msgstr ""
+
+#: options.php:412
+msgid ""
+"Tooltips that use CSS3 for animations and data-attributes for local title "
+"storage."
+msgstr ""
+
+#: options.php:419
+msgid "Popovers"
+msgstr ""
+
+#: options.php:420
+msgid ""
+"Add small overlays of content, like those on the iPad, to any element for "
+"housing secondary information. * Requires Tooltips."
+msgstr ""
+
+#: options.php:427
+msgid "Buttons"
+msgstr ""
+
+#: options.php:428
+msgid ""
+"Do more with buttons. Control button states or create groups of buttons for "
+"more components like toolbars."
+msgstr ""
+
+#: options.php:435
+msgid "Collapse"
+msgstr ""
+
+#: options.php:436
+msgid ""
+"Get base styles and flexible support for collapsible components like "
+"accordions and navigation."
+msgstr ""
+
+#: options.php:443
+msgid "Carousel"
+msgstr ""
+
+#: options.php:444
+msgid ""
+"Create a merry-go-round of any content you wish to provide in an interactive "
+"slideshow of content. * Required for Featured Posts."
+msgstr ""
+
+#: options.php:451
+msgid "Typeahead"
+msgstr ""
+
+#: options.php:452
+msgid ""
+"A basic, easily extended plugin for quickly creating elegant typeaheads with "
+"any form text input. Default setting is disabled."
+msgstr ""
+
 #: search.php:19
 msgid "Search Results for: %s"
 msgstr ""
@@ -1042,14 +1184,6 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "John Parris"
-msgstr ""
-
-#. Tags of the plugin/theme
-msgid ""
-"blue, green, silver, red, orange, white, black, light, dark, one-column, two-"
-"columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-"
-"header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-"
-"language-support, microformats, featured-images, post-formats"
 msgstr ""
 
 #. Template Name of the plugin/theme

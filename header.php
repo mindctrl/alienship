@@ -12,7 +12,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <?php get_template_part( '/inc/parts/meta' ); ?>
-<?php get_template_part( '/inc/parts/title' ); ?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 <?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 

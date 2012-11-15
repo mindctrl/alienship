@@ -232,3 +232,20 @@ function alienship_wp_title( $title, $sep ) {
   return $title;
 }
 add_filter( 'wp_title', 'alienship_wp_title', 10, 2 );
+
+
+
+/**
+ * Define theme layouts
+ * @since .94
+ */
+function alienship_layouts_strings() {
+    $strings = array(
+      'default'           => __( 'Default', 'alienship' ),
+      '2c-l'              => __( 'Content left. Sidebar right.', 'alienship' ),
+      '2c-r'              => __( 'Content right. Sidebar left.', 'alienship' ),
+      '1c'                => __( 'Full width. No sidebar.', 'alienship' ),
+    );
+    return $strings;
+}
+add_filter( 'theme_layouts_strings', 'alienship_layouts_strings' );

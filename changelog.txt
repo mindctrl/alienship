@@ -1,4 +1,14 @@
 == Change log ==
+Version .94 - Under development
+-------------------------------
+- Moved title code to a filter. Removed inc/parts/title.php.
+- Clarified descriptions in the Layout metabox in the post editor.
+- Renamed two filters category_archive_meta and tag_archive_meta. Now prefixed with alienship_*
+- Fixed dropdown issue in Bootstrap dropdown library that affected iOS devices
+- Moved local font load to css/fonts.css, which is only loaded if add_theme_support( 'alienship-local-fonts' ) is added.
+
+
+
 Version .93 - November 6, 2012
 ------------------------------
 - Removed unused javascript library

@@ -6,7 +6,6 @@
  * @since 1.0
  */
 
-
 /* Load Bootstrap CSS */
 function alienship_bootstrap_styles() {
     wp_enqueue_style( 'bootstrap', alienship_locate_template_uri( 'css/bootstrap.min.css' ), array(), '2.12', 'all' );
@@ -22,6 +21,11 @@ add_action( 'wp_enqueue_scripts', 'alienship_bootstrap_styles', 1 );
 
 /* Load theme styles */
 function alienship_theme_styles() {
+  /* Load local fonts if theme supports */
+    if ( current_theme_supports( 'alienship-local-fonts' ) ) {
+      wp_enqueue_style( 'alienship-local-fonts', alienship_locate_template_uri( 'css/fonts.css' ) );
+    }
+
     wp_enqueue_style( 'alienship-style', get_stylesheet_uri() );
 
     /* Check for custom.css and if it exists and we're not using a child theme, load it. */
@@ -30,4 +34,4 @@ function alienship_theme_styles() {
     }
 
 }
-add_action( 'wp_enqueue_scripts', 'alienship_theme_styles', 2 );
+add_action( 'wp_enqueue_scripts', 'alienship_theme_styles', 100 );

@@ -34,8 +34,11 @@ function alienship_excerpt_or_content() {
   <?php } else { ?>
 
     <div class="entry-content">
+      <?php if ( has_post_thumbnail() && ! has_post_format( 'quote' ) ) { global $post; ?>
+        <a href="<?php echo get_attachment_link( get_post_thumbnail_id() ); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'medium', array( 'class' => 'alignright' ) ); ?></a>
+      <?php } // has_post_thumbnail
 
-      <?php if ( has_post_format( 'quote' ) ) { ?>
+      if ( has_post_format( 'quote' ) ) { ?>
         <blockquote>
       <?php } //has_post_format
 
@@ -97,7 +100,7 @@ function alienship_content_nav( $nav_id ) {
 
   <nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
     <h3 class="assistive-text"><?php _e( 'Post navigation', 'alienship' ); ?></h3>
-
+    <ul>
   <?php if ( is_single() ) : // navigation links for single posts ?>
 
     <?php previous_post_link( '<li class="nav-previous pull-left">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'alienship' ) . '</span> %title' ); ?>
@@ -114,7 +117,7 @@ function alienship_content_nav( $nav_id ) {
     <?php endif; ?>
 
   <?php endif; ?>
-
+    </ul>
   </nav><!-- #<?php echo $nav_id; ?> -->
   <?php
 }

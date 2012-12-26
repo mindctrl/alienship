@@ -4,7 +4,7 @@
  */
 ?>
   <li>
-    <div class="innergrid" style="float: none">
+    <div class="innergrid">
     <header>
       <h2 class="grid-header"><a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
     </header>

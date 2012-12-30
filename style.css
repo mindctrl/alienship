@@ -655,6 +655,7 @@ ul#featured-posts-grid > li > header > h4 {
 
 .innergrid {
   height: 85%;
+  float: none;
   padding: 0 10px 12px;
 }
 

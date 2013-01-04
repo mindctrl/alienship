@@ -6,7 +6,10 @@ Version .94 - Under development
 - Renamed two filters category_archive_meta and tag_archive_meta. Now prefixed with alienship_*
 - Fixed dropdown issue in Bootstrap dropdown library that affected iOS devices
 - Moved local font load to css/fonts.css, which is only loaded if add_theme_support( 'alienship-local-fonts' ) is added.
-
+- Resolved duplicate ids in featured posts grids.
+- Added missing <ul> element in content nav links.
+- Removed pubdate from time elements in template-tags.php.
+- Cleaned up comments.php.
 
 
 Version .93 - November 6, 2012

@@ -76,45 +76,32 @@
 
 <?php
   // If comments are open
-  if (comments_open()) { ?>
+  if ( comments_open() ) { ?>
   <section id="respond">
-    <h3><?php comment_form_title(__('Leave a Reply', 'alienship'), __('Leave a Reply to %s', 'alienship')); ?></h3>
-    <p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
-    <?php if (get_option('comment_registration') && !is_user_logged_in()) { ?>
-      <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'alienship'), wp_login_url(get_permalink())); ?></p>
-    <?php } else { ?>
-<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-  <?php if (is_user_logged_in()) { ?>
-    <p><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'alienship'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'alienship'); ?>"><?php _e('Log out &raquo;', 'alienship'); ?></a></p>
-  <?php } else { ?>
+    <?php
+    $req = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $required_text = sprintf( ' ' . __('Required fields are marked %s', 'alienship'), '<span class="required">*</span>' );
+    $comment_form_args = array(
+      'id_form'              => 'commentform',
+      'id_submit'            => 'commentsubmit',
+      'title_reply'          => __( 'Leave a Reply', 'alienship' ),
+      'title_reply_to'       => __( 'Leave a Reply to %s', 'alienship' ),
+      'cancel_reply_link'    => __( 'Cancel Reply', 'alienship' ),
+      'label_submit'         => __( 'Post Comment', 'alienship' ),
+      'comment_field'        => '<label for="comment" class="comment-label">' . _x( 'Comment', 'noun', 'alienship' ) . '</label><div class="input-prepend"><span class="add-on"><i class="icon-comment"></i></span><textarea class="input-large" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>',
+      'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+      'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>',
+      'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.', 'alienship' ) . ( $req ? $required_text : '' ) . '</p>',
+      'comment_notes_after'  => '',
+      'fields'               => apply_filters( 'comment_form_default_fields', array(
+                                              'author' => '' . '<label for="author" class="comment-label">' . __( 'Name', 'alienship' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<div class="input-prepend"><span class="add-on"><i class="icon-user"></i> </span><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div>',
+                                              'email'  => '<label for="email" class="comment-label">' . __( 'Email', 'alienship' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i> </span><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div>',
+                                              'url'    => '<label for="url" class="comment-label">' . __( 'Website', 'alienship' ) . '</label>' . '<div class="input-prepend"><span class="add-on"><i class="icon-home"></i> </span><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>' )
+                                              )
+                );
 
-    <label for="author" class="control-label"><?php _e('Name', 'alienship'); if ($req) _e(' (required)', 'alienship'); ?></label>
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon-user"></i> </span><input type="text" class="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?>>
-    </div><!-- /input-prepend -->
-
-    <label for="email" class="control-group"><?php _e('Email (will not be published)', 'alienship'); if ($req) _e(' (required)', 'alienship'); ?></label>
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon-envelope"></i> </span><input type="email" class="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?>>
-    </div><!-- /input-prepend -->
-
-    <label for="url" class="control-label"><?php _e('Website', 'alienship'); ?></label>
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon-home"></i> </span><input type="url" class="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3">
-    </div><!-- /input-prepend -->
-
-  <?php } ?>
-
-  <label for="comment" class="control-label"><?php _e('Comment', 'alienship'); ?></label>
-  <div class="input-prepend">
-  <span class="add-on"><i class="icon-comment"></i> </span><textarea name="comment" id="comment" class="input-large" rows="6" tabindex="4"></textarea>
-  </div><!-- /input-prepend -->
-
-  <input name="submit" class="btn btn-primary" type="submit" id="submit" tabindex="5" value="<?php _e('Submit Comment', 'alienship'); ?>">
-  <?php comment_id_fields(); ?>
-  <?php do_action('comment_form', $post->ID); ?>
-</form>
-<?php } // if registration required and not logged in ?>
-</section><!-- #respond -->
-<?php } ?>
+    comment_form( $comment_form_args ); ?>
+  </section><!-- #respond -->
+<?php } //comments_open ?>
 </div>

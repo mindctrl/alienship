@@ -244,6 +244,9 @@ dl.nav.mobile dd.current-menu-item a,
   font-size: 12px;
 }
 
+.comment-label {
+  display: inline;
+}
 /* Style comment reply link as a button */
 .comment-reply-link {
   -moz-border-bottom-colors: none;

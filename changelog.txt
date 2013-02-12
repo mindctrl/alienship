@@ -1,5 +1,5 @@
 == Change log ==
-Version .94 - Under development
+Version .94 - February 11, 2013
 -------------------------------
 - Moved title code to a filter. Removed inc/parts/title.php.
 - Clarified descriptions in the Layout metabox in the post editor.

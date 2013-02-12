@@ -10,6 +10,7 @@ Version .94 - Under development
 - Added missing <ul> element in content nav links.
 - Removed pubdate from time elements in template-tags.php.
 - Cleaned up comments.php.
+- Update to Bootstrap 2.3.0
 
 
 Version .93 - November 6, 2012

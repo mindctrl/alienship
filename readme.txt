@@ -11,11 +11,10 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
++ Change widget area colors. Reverse title and link colors.
 + Go through all TODO items
-+ More framework stuff.
 + Add support for TinyMCE for Bootstrap elements.
 + Add grid support to featured posts shortcode.
-+ Style sticky posts.
 + Finish styling each post format. Left to do are: aside, gallery, image, video, audio, and chat.
 + HTML5 validation on post pagination links.
 + Finish larger glyphs.
@@ -74,16 +73,6 @@ https://wpcom-themes.svn.automattic.com/_s/
 Alien Ship Copyright and License
 ---------------------------------------------
 
-Copyright 2012 John Parris
+Copyright John Parris
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this work except in compliance with the License.
-You may obtain a copy of the License in the LICENSE file, or at:
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+License included in license.txt

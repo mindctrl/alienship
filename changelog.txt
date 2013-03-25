@@ -1,4 +1,16 @@
 == Change log ==
+Version .95 - March 24, 2013
+----------------------------
+- Removed support for custom.css. Use a child theme instead. If you've used custom.css, just copy it all to a child theme style.css and you'll get the same effect.
+- Removed support for custom_functions.php. Use a child theme instead.
+- Removed Open Sans font files.
+- Cleaned up style loading in inc/stylesheets.php.
+- Return early in comments.php if comments closed.
+- Clean up style.css.
+- Minor styling update to wp_title.
+
+
+
 Version .94 - February 11, 2013
 -------------------------------
 - Moved title code to a filter. Removed inc/parts/title.php.

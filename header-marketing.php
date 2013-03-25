@@ -11,7 +11,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <?php get_template_part( '/inc/parts/meta' ); ?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<title><?php wp_title( '&#8226;', true, 'right' ); ?></title>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->

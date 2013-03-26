@@ -1,4 +1,10 @@
 == Change log ==
+Version .951 - March 26, 2013
+-----------------------------
+- Fix comments.php issue
+
+
+
 Version .95 - March 24, 2013
 ----------------------------
 - Removed support for custom.css. Use a child theme instead. If you've used custom.css, just copy it all to a child theme style.css and you'll get the same effect.

@@ -4,7 +4,7 @@ Theme URI: http://www.johnparris.com/alienship/
 Author: John Parris
 Author URI: http://www.johnparris.com/alienship/
 Description: Alien Ship is a responsive starter theme for WordPress.
-Version: 0.95
+Version: 1.0-beta
 License: GNU General Public License
 License URI: license.txt
 Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-language-support, microformats, featured-images, post-formats
@@ -47,15 +47,6 @@ h6 {
 
 /* Navigation
 ----------------------------------------------- */
-
-/* body.logged-in > div.navbar-fixed-top {
-margin-top:28px;
-} */
-
-body.logged-in > div #page,
-body.logged-in > div.navbar-fixed-top {
-  top: 28px !important;
-}
 
 /* Remove the rounded edges from the navbar */
 .navbar-inner {
@@ -953,6 +944,26 @@ input#s {
 }
 
 @media only screen and (max-width: 767px) {
+  /* Pad the #page */
+  #page,
+  .page-template-page-hero-php #main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* Marketing template */
+  .page-template-page-marketing-php {
+    padding: 0 15px 40px 15px;
+  }
+  /* Improve font size and spacing on dropdown menu on mobile/tablets */
+  .navbar .nav > li > a, .navbar .dropdown-menu a {
+    font-size: 18px;
+    font-weight: normal;
+    padding: 15px 20px;
+  }
+  /* Fix navbar top margin in responsive when admin bar is showing */
+  body.logged-in > div.navbar-fixed-top {
+    margin-top: 0px;
+  }
   /* Change Hero styling to better fit on mobile devices */
   .hero-unit {
     background-color: #f5f5f5;
@@ -976,48 +987,8 @@ input#s {
     line-height: 27px;
     padding: 1px;
   }
-
 }
 
-@media only screen and (max-width: 979px) {
-  /* Temp fix for dropdown menus */
-  .nav-collapse .dropdown-menu {
-    display: block;
-  }
-  /* Marketing template */
-  .page-template-page-marketing-php {
-    padding: 0 15px 40px 15px;
-  }
-  /* Improve font size and spacing on dropdown menu on mobile/tablets */
-  .navbar .nav > li > a, .navbar .dropdown-menu a {
-    font-size: 18px;
-    font-size: 1rem;
-    font-weight: normal;
-    padding: 15px 20px;
-  }
-  /* Fix navbar top margin in responsive when admin bar is showing */
-  body.logged-in > div.navbar-fixed-top {
-    margin-top: 0px;
-  }
-}
-
-/* Override default Bootstrap body padding and navbar margins */
-@media (max-width: 767px) {
-  body {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .navbar {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  /* Pad the #page */
-  #page,
-  .page-template-page-hero-php #main {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
 
 /*  --------------------------------------------------
   :: Block grids - Thanks to Zurb Foundation

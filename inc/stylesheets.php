@@ -14,11 +14,6 @@ function alienship_theme_styles() {
     /* Load core Bootstrap CSS */
     wp_enqueue_style( 'bootstrap', alienship_locate_template_uri( 'css/bootstrap.min.css' ), array(), $alienship['Version'], 'all' );
 
-    /* Load responsive Bootstrap if enabled */
-    if ( of_get_option( 'alienship_responsive', 1 ) ) {
-        wp_enqueue_style( 'bootstrap-responsive', alienship_locate_template_uri( 'css/bootstrap-responsive.min.css' ), array( 'bootstrap' ), $alienship['Version'], 'all' );
-    }
-
     /* Load theme styles */
     wp_enqueue_style( 'alienship-style', get_stylesheet_uri(), array( 'bootstrap' ), $alienship['Version'], 'all' );
 }

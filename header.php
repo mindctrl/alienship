@@ -34,7 +34,7 @@
 if ( !is_page_template( 'page-hero.php' ) ) { ?>
 
   <!-- Site title and description in masthead -->
-  <div id="page" class="container-fluid hfeed">
+  <div id="page" class="container hfeed">
     <?php do_action( 'before' ); ?>
     <?php do_action( 'alienship_header_before' ); ?>
   	<header id="masthead" role="banner">

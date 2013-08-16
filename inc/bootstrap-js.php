@@ -7,7 +7,9 @@
  */
 function alienship_bootstrap_js_loader() {
 
-  if ( of_get_option('alienship_transitions_plugin',1) ) {
+  wp_enqueue_script( 'bootstrap.js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.0.0-wip', true );
+
+  /*if ( of_get_option('alienship_transitions_plugin',1) ) {
     wp_enqueue_script('transition.js', get_template_directory_uri().'/js/bootstrap-transition.js', array('jquery'),'2.21', true );
   }
 
@@ -71,7 +73,7 @@ function alienship_bootstrap_js_loader() {
 
   if ( of_get_option('alienship_typeahead_plugin') ) {
     wp_enqueue_script('typeahead.js', get_template_directory_uri().'/js/bootstrap-typeahead.js', array('jquery'),'2.21', true );
-  }
+  }*/
 
   wp_enqueue_script('alienship_page-links.js', get_template_directory_uri().'/js/alienship_page-links.js', array('jquery'),'1.0', true);
 

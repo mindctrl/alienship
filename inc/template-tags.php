@@ -397,8 +397,8 @@ if ( ! function_exists( 'alienship_featured_posts_slider' ) ):
 function alienship_featured_posts_slider() {
   $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
   <?php if ( $featured_query->have_posts() ) {
-    echo "\t<div class=\"row-fluid\">";
-      echo "\t<div class=\"span12\">";
+    echo "\t<div class=\"row\">";
+      echo "\t<div class=\"col-lg-12\">";
         echo "\t<div id=\"featured-carousel\" class=\"carousel slide\">";
           echo "\t<div class=\"carousel-inner\">"; ?>
             <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
@@ -410,8 +410,8 @@ function alienship_featured_posts_slider() {
           <?php echo "\t<a class=\"left carousel-control\" href=\"#featured-carousel\" data-slide=\"prev\">&lsaquo;</a>";
           echo "\t<a class=\"right carousel-control\" href=\"#featured-carousel\" data-slide=\"next\">&rsaquo;</a>";
         echo "\t</div><!-- #featured-carousel -->";
-      echo "\t</div><!-- .span12 -->";
-    echo "\t</div><!-- .row-fluid -->"; ?>
+      echo "\t</div><!-- .col-lg-12 -->";
+    echo "\t</div><!-- .row -->"; ?>
       <script type="text/javascript">
         jQuery(function() {
           // Activate the first carousel item //

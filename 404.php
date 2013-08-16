@@ -9,8 +9,8 @@
 get_header(); ?>
 <?php do_action( 'alienship_content_before' ); ?>
   <div id="primary">
-    <div class="row-fluid">
-      <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'span9' ); ?>">
+    <div class="row">
+      <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
 
       <article id="post-0" class="post error404 not-found">
         <header class="entry-header">
@@ -44,7 +44,7 @@ get_header(); ?>
     <?php do_action( 'alienship_content_after' ); ?>
     </div><!-- #content -->
       <?php get_sidebar(); ?>
-  </div><!-- .row-fluid -->
+  </div><!-- .row -->
   </div><!-- #primary -->
 
 <?php get_footer(); ?>

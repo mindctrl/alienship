@@ -7,10 +7,10 @@
 
 get_header(); ?>
 
-      <div id="main-row" class="row-fluid">
+      <div id="main-row" class="row">
 
         <?php do_action( 'alienship_content_before' ); ?>
-        <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'span9' ); ?>">
+        <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
         <?php if ( have_posts() ) :
 
           if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts?
@@ -73,5 +73,5 @@ get_header(); ?>
         <?php do_action( 'alienship_content_after' ); ?>
         </div><!-- #content -->
         <?php get_sidebar(); ?>
-      </div><!-- .row-fluid -->
+      </div><!-- .row -->
     <?php get_footer(); ?>

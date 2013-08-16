@@ -12,8 +12,8 @@ get_header(); ?>
 
 <!-- Main -->
   <?php do_action( 'alienship_content_before' ); ?>
-  <div class="row-fluid">
-    <div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'span9' ); ?>">
+  <div class="row">
+    <div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
 
       <?php
       $status_posts = get_posts( array(
@@ -38,5 +38,5 @@ get_header(); ?>
     <?php do_action( 'alienship_content_after' ); ?>
     </div><!-- #content -->
     <?php get_sidebar(); ?>
-  </div><!-- .row-fluid -->
+  </div><!-- .row -->
 <?php get_footer(); ?>

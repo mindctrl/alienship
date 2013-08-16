@@ -9,9 +9,9 @@
 get_header(); ?>
 
     <div id="primary">
-      <div class="row-fluid">
+      <div class="row">
         <?php do_action( 'alienship_content_before' ); ?>
-        <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'span9' ); ?>">
+        <div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
 
           <?php while ( have_posts() ) : the_post(); ?>
 
@@ -36,6 +36,6 @@ get_header(); ?>
         <?php do_action( 'alienship_content_after' ); ?>
         </div><!-- #content -->
         <?php get_sidebar(); ?>
-      </div><!-- .row-fluid -->
+      </div><!-- .row -->
     </div><!-- #primary -->
 <?php get_footer(); ?>

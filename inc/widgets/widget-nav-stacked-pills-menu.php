@@ -1,22 +1,23 @@
 <?php
 /**
- * Menu widget with Bootstrap nav list markup. Credit to Andrey Savchenko for this widget.
+ * Menu widget with Bootstrap Stacked Pills markup.
+ * Credit to Andrey Savchenko for the original version of this widget
  *
  * @package Alien Ship
  * @subpackage Widgets
  * @since .93
  */
-class Nav_List_Menu_Widget extends WP_Nav_Menu_Widget {
+class Nav_Stacked_Pills_Menu_Widget extends WP_Nav_Menu_Widget {
 
   private $instance;
 
   function __construct() {
 
     WP_Widget::__construct(
-      'nav_list_menu',
-      __( 'Custom Menu: Nav List', 'alienship' ),
+      'nav_stacked_pills_menu',
+      __( 'Custom Menu: Stacked Pills', 'alienship' ),
       array(
-        'description' => __( 'Custom menu widget using Nav List styling', 'alienship' )
+        'description' => __( 'Custom menu widget using Nav Stacked Pills styling', 'alienship' )
       )
     );
   }
@@ -34,14 +35,14 @@ class Nav_List_Menu_Widget extends WP_Nav_Menu_Widget {
   function wp_nav_menu_args( $args ) {
 
     $args['container_class'] = empty( $this->instance['well'] ) ? '' : 'well';
-    $args['menu_class']      = 'menu nav nav-list';
+    $args['menu_class']      = 'menu nav nav-pills nav-stacked';
 
-    return apply_filters( 'nav_list_menu_args', $args );
+    return apply_filters( 'nav_stacked_pills_menu_args', $args );
   }
 
   function wp_nav_menu( $nav_menu ) {
 
-    $nav_menu = str_replace( '"sub-menu"', '"sub-menu nav nav-list"', $nav_menu );
+    $nav_menu = str_replace( '"sub-menu"', '"sub-menu nav nav-pills nav-stacked"', $nav_menu );
     $nav_menu = str_replace( 'current-menu-item', 'current-menu-item active', $nav_menu );
 
     return $nav_menu;

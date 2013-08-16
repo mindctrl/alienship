@@ -12,22 +12,27 @@
  */
 
 get_header(); ?>
-
 <!-- Main -->
-  <?php do_action( 'alienship_content_before' ); ?>
-  <div class="row">
-    <div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
+	<?php do_action( 'alienship_content_before' ); ?>
+	<div class="row">
+		<div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
 
-        <?php while ( have_posts() ) : the_post(); ?>
-            <?php do_action( 'alienship_loop_before' ); ?>
-            <?php get_template_part( '/inc/parts/content', 'page' ); ?>
-            <?php do_action( 'alienship_loop_after' ); ?>
-            <?php comments_template( '', true ); ?>
+			<?php
+			while ( have_posts() ) : the_post();
 
-            <?php endwhile; // end of the loop. ?>
+				do_action( 'alienship_loop_before' );
 
-    <?php do_action( 'alienship_content_after' ); ?>
-    </div><!-- #content -->
-    <?php get_sidebar(); ?>
-  </div><!-- .row -->
+				get_template_part( '/inc/parts/content', 'page' );
+
+				do_action( 'alienship_loop_after' );
+
+				comments_template( '', true );
+
+			endwhile;
+
+		do_action( 'alienship_content_after' ); ?>
+		</div><!-- #content -->
+
+		<?php get_sidebar(); ?>
+	</div><!-- .row -->
 <?php get_footer(); ?>

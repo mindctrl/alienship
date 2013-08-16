@@ -66,17 +66,6 @@ function optionsframework_options() {
       'type' => 'info'
     );
 
-  /* $options[] = array( 'name' => "Show logo image in Top Menu navigation bar?",
-            'desc' => "Check this box to show a logo image in the Top Menu navigation bar. Upload your logo image below. Default is disabled.",
-            'id' => "alienship_logo_in_navbar",
-            'std' => '0',
-            'type' => 'checkbox');
-
-  $options[] = array( 'name' => "Upload a logo image for the Top Menu navigation bar.",
-            'desc' => "Upload an image to use as a logo image in the Top Menu navigation bar. Note: You must enable the option above for this image to be displayed. FOR BEST RESULTS: upload an image that isn't too large.",
-            'id' => "alienship_logo_in_navbar_file",
-            'type' => "upload"); */
-
   $options[] = array(
       'name' => __( 'Show Top Menu navigation bar?', 'alienship' ),
       'desc' => __( 'Displays the top navbar on your site, even if there\'s no menu assigned in Appearance > Menu. Uncheck this box to hide it. Default is enabled.', 'alienship' ),

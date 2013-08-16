@@ -20,11 +20,11 @@
 
     <div class="<?php echo apply_filters( 'alienship_top_navbar_class', 'collapse navbar-collapse navbar-ex1-collapse' ); ?>">
       <?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
-      <form class="navbar-form navbar-right" role="search">
+      <form id="searchform" class="navbar-form navbar-right" role="search" action="<?php echo site_url(); ?>" method="get">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input id="s" name="s" type="text" class="form-control" placeholder="Search" value="<?php echo esc_attr( get_search_query() ); ?>">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
   </nav>

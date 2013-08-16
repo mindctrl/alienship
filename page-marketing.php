@@ -7,43 +7,37 @@
  * @since .93
  */
 
-  get_header( 'marketing' ); ?>
+get_header( 'marketing' ); ?>
 
-    <div class="container-narrow">
+	<div class="container-narrow">
 
-      <div class="masthead">
+		<div class="masthead">
+			<?php get_template_part( '/inc/parts/menu', 'marketing-top' ); ?>
+			<h3 id="marketing-header" class="muted"><?php echo apply_filters( 'alienship_marketing_page_header_name', get_bloginfo('name') ); ?></h3>
+		</div><!-- /.masthead -->
 
-        <?php get_template_part( '/inc/parts/menu', 'marketing-top' ); ?>
-        <h3 id="marketing-header" class="muted"><?php echo apply_filters( 'alienship_marketing_page_header_name', get_bloginfo('name') ); ?></h3>
+		<hr>
 
-      </div><!-- /.masthead -->
+		<div class="jumbotron">
+			<?php
+			while ( have_posts() ) : the_post();
+				get_template_part( '/inc/parts/content', 'marketing-page' );
+			endwhile; ?>
+		</div>
 
-      <hr>
+		<hr>
 
-      <div class="jumbotron">
-        <?php while ( have_posts() ) : the_post();
-        get_template_part( '/inc/parts/content', 'marketing-page' );
-        endwhile; ?>
-      </div><!-- /.jumbotron -->
+		<div id="marketing-widgets-top-row" class="row marketing">
+			<div id="marketing-top-wrap" class="col-lg-12">
+				<?php dynamic_sidebar( 'marketingwidgets-1' ); ?>
+			</div>
+		</div><!-- /.marketing -->
 
-      <hr>
+		<div id="marketing-widgets-bottom-row" class="row marketing">
+			<div id="marketing-bottom-wrap" class="col-lg-12">
+				<?php dynamic_sidebar( 'marketingwidgets-2' ); ?>
+			</div>
+		</div><!-- /.marketing -->
 
-      <div id="marketing-widgets-top-row" class="row marketing">
-
-        <div id="marketing-top-wrap" class="col-lg-12">
-          <?php dynamic_sidebar( 'marketingwidgets-1' ); ?>
-        </div>
-
-      </div><!-- /.marketing -->
-
-      <div id="marketing-widgets-bottom-row" class="row marketing">
-
-        <div id="marketing-bottom-wrap" class="col-lg-12">
-          <?php dynamic_sidebar( 'marketingwidgets-2' ); ?>
-        </div>
-
-      </div><!-- /.marketing -->
-
-
-    </div><!-- /.container-narrow -->
-    <?php get_footer( 'marketing' ); ?>
+	</div><!-- /.container-narrow -->
+<?php get_footer( 'marketing' ); ?>

@@ -9,34 +9,33 @@
  */
 
 get_header(); ?>
-
 <!-- Main -->
-  <?php do_action( 'alienship_content_before' ); ?>
-  <div class="row">
-    <div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
+	<?php do_action( 'alienship_content_before' ); ?>
+	<div class="row">
+		<div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
 
-      <?php
-      $status_posts = get_posts( array(
-          'tax_query' => array(
-              array(
-                'taxonomy' => 'post_format',
-                'field'    => 'slug',
-                'terms'    => array( 'post-format-status' ),
-                'operator' => 'IN'
-              )
-          )
-      ) );
+			<?php
+				$status_posts = get_posts( array(
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'post_format',
+							'field'    => 'slug',
+							'terms'    => array( 'post-format-status' ),
+							'operator' => 'IN'
+						)
+					)
+				) );
 
-      global $post;
+			global $post;
 
-      foreach( (array) $status_posts as $post ) {
-        setup_postdata( $post );
-        get_template_part( '/inc/parts/content', 'status' );
-        // comments_template( '', true );
-      } ?>
+			foreach( (array) $status_posts as $post ) {
+				setup_postdata( $post );
+				get_template_part( '/inc/parts/content', 'status' );
+			}
 
-    <?php do_action( 'alienship_content_after' ); ?>
-    </div><!-- #content -->
-    <?php get_sidebar(); ?>
-  </div><!-- .row -->
+		do_action( 'alienship_content_after' ); ?>
+		</div><!-- #content -->
+
+		<?php get_sidebar(); ?>
+	</div><!-- .row -->
 <?php get_footer(); ?>

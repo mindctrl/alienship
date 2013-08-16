@@ -51,8 +51,8 @@ function alienship_widgets_init() {
     'name'          => __( 'Footer', 'alienship' ),
     'description'   => __( 'The footer widget area displayed after all content.', 'alienship' ),
     'id'            => 'footer-1',
-    'before_widget' => '<div class="col-lg-4">',
-    'after_widget'  => '</div>',
+    'before_widget' => '',
+    'after_widget'  => '',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
   ) );
@@ -61,8 +61,18 @@ function alienship_widgets_init() {
     'name'          => __( 'Footer 2', 'alienship' ),
     'description'   => __( 'The second footer widget area, displayed below the Footer widget area.', 'alienship' ),
     'id'            => 'footer-2',
-    'before_widget' => '<div class="col-lg-4">',
-    'after_widget'  => '</div>',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => __( 'Footer 3', 'alienship' ),
+    'description'   => __( 'The third footer widget area, displayed below the Footer widget area.', 'alienship' ),
+    'id'            => 'footer-3',
+    'before_widget' => '',
+    'after_widget'  => '',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
   ) );
@@ -79,14 +89,14 @@ function alienship_register_widgets() {
   /* Load the login form widget file */
   locate_template('/inc/widgets/widget-login-form.php', true);
 
-  /* Load the nav list menu widget */
-  locate_template('/inc/widgets/widget-nav-list-menu.php', true);
+  /* Load the stacked pills menu widget */
+  locate_template('/inc/widgets/widget-nav-stacked-pills-menu.php', true);
 
   /* Register the login form widget */
   register_widget( 'alienship_Widget_Login' );
 
   /* Register the nav list menu widget */
-  register_widget( 'Nav_List_Menu_Widget' );
+  register_widget( 'Nav_Stacked_Pills_Menu_Widget' );
 
 }
 add_action( 'widgets_init', 'alienship_register_widgets' );

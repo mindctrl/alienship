@@ -7,24 +7,32 @@
  * @package Alien Ship
  * @since Alien Ship 0.1
  */
-?>
-<?php do_action( 'alienship_footer_before' ); ?>
+
+do_action( 'alienship_footer_before' ); ?>
 <footer class="colophon" id="colophon" role="contentinfo">
-  <?php do_action( 'alienship_footer_inside ' ); ?>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <?php edit_post_link( __( 'Edit page', 'alienship' ), '<span class="edit-link"><i class="icon-pencil"></i>&nbsp;', ' - </span>' ); ?>
-        <?php if ( of_get_option('alienship_custom_footer_toggle') ) {
-          echo '' . of_get_option('alienship_custom_footer_text') . '';
-        } else {
-          echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
-      </div><!-- span6 -->
-      <div class="col-lg-6">
-        <?php if ( has_nav_menu( 'bottom' ) ) { wp_nav_menu(array('theme_location' => 'bottom', 'container' => false, 'menu_class' =>  'footer-nav mobile')); } ?>
-      </div>
-    </div><!-- row -->
-  </div><!-- container -->
+
+	<?php do_action( 'alienship_footer_inside ' ); ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+
+				<?php edit_post_link( __( 'Edit page', 'alienship' ), '<span class="edit-link"><i class="icon-pencil"></i>&nbsp;', ' - </span>' );
+				if ( of_get_option('alienship_custom_footer_toggle') ) {
+					echo '' . of_get_option('alienship_custom_footer_text') . '';
+				} else {
+					echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
+
+			</div><!-- col-lg-6 -->
+
+			<div class="col-lg-6">
+
+				<?php if ( has_nav_menu( 'bottom' ) ) {
+					wp_nav_menu( array( 'theme_location' => 'bottom', 'container' => false, 'menu_class' =>  'footer-nav mobile' ) );
+				} ?>
+
+			</div>
+		</div><!-- row -->
+	</div><!-- container -->
 </footer><!-- #colophon -->
 <?php do_action( 'alienship_footer_after' ); ?>
 

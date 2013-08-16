@@ -8,20 +8,24 @@
  */
 
 get_header(); ?>
-  <?php do_action( 'alienship_content_before' ); ?>
-    <div id="primary">
-      <div id="content" role="main">
+	<?php do_action( 'alienship_content_before' ); ?>
+	<div id="primary">
+		<div id="content" role="main">
 
-        <?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) : the_post();
 
-          <?php do_action( 'alienship_loop_before' ); ?>
-          <?php get_template_part( '/inc/parts/content', 'page' ); ?>
-          <?php do_action( 'alienship_loop_after' ); ?>
-          <?php comments_template( '', true ); ?>
+				do_action( 'alienship_loop_before' );
 
-        <?php endwhile; // end of the loop. ?>
+				get_template_part( '/inc/parts/content', 'page' );
 
-      <?php do_action( 'alienship_content_after' ); ?>
-      </div><!-- #content -->
-    </div><!-- #primary -->
+				do_action( 'alienship_loop_after' );
+
+				comments_template( '', true );
+
+			endwhile;
+
+		do_action( 'alienship_content_after' ); ?>
+		</div><!-- #content -->
+	</div><!-- #primary -->
 <?php get_footer(); ?>

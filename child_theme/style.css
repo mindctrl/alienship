@@ -16,9 +16,7 @@ http://codex.wordpress.org/Child_Themes
 
 /*
 ---------------------------------------------------------------------
-Import Alien Ship's style.css file. If you don't want to import
-any of Alien Ship's styles, delete the import line below and
-write your own. Either way, put your child theme styles in this file.
+Uncomment the following line to import Alien Ship's style.css file.
 ---------------------------------------------------------------------
 */
-@import url("../alienship/style.css");
+/* @import url("../alienship/style.css"); */

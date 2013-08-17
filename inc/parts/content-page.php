@@ -13,10 +13,13 @@
 	do_action( 'alienship_entry_title' ); ?>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<div class="clear">&nbsp;</div>
-		<?php alienship_wp_link_pages();
+		<?php
+		the_content();
+
+		alienship_wp_link_pages();
+
 		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="icon-pencil"></i>', '</span>' );
+
 		do_action( 'alienship_post_inside_after' ); ?>
 	</div><!-- .entry-content -->
 

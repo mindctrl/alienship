@@ -8,10 +8,11 @@
 ?>
 	<?php do_action( 'alienship_post_before' ); ?>
 	<article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php
-		do_action( 'alienship_post_inside_before' );
+		<?php do_action( 'alienship_post_inside_before' ); ?>
 
-		do_action( 'alienship_content' ); ?>
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div>
 
 		<footer class="entry-meta">
 			<?php

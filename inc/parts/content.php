@@ -9,9 +9,11 @@
 	<?php
 	do_action( 'alienship_post_inside_before' );
 
-	do_action( 'alienship_entry_title' );
+	do_action( 'alienship_entry_title' ); ?>
 
-	do_action( 'alienship_content' ); ?>
+	<div class="entry-content">
+		<?php the_content(); ?>
+	</div>
 
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : ?>

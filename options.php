@@ -83,14 +83,6 @@ function optionsframework_options() {
     );
 
   $options[] = array(
-      'name' => __( 'Show site description in Top Menu navigation bar?', 'alienship' ),
-      'desc' => __( 'Check this box to show site description in Top Menu navigation bar. NOTE: Enabling this option will shift your nav menu to the right to make room for the site description. Site description is hidden on mobile devices. Default setting is disabled.', 'alienship' ),
-      'id'   => 'alienship_desc_in_navbar',
-      'std'  => '0',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
       'name' => __( 'Show search bar in Top Menu navigation bar?', 'alienship' ),
       'desc' => __( 'Default is enabled. Uncheck this box to turn it off.', 'alienship' ),
       'id'   => 'alienship_search_bar',
@@ -329,7 +321,7 @@ function optionsframework_options() {
 
 
   /* Theme plugin heading */
-  $options[] = array(
+  /*$options[] = array(
       'name' => __( 'Theme Plugins', 'alienship' ),
       'type' => 'heading'
     );
@@ -442,7 +434,7 @@ function optionsframework_options() {
       'id'   => 'alienship_typeahead_plugin',
       'std'  => '0',
       'type' => 'checkbox'
-    );
+    );*/
 
 
   return $options;

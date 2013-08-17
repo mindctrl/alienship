@@ -496,8 +496,8 @@ function alienship_featured_posts_slider() {
 						endwhile; ?>
 
 					</div><!-- .carousel-inner -->
-					<a class="left carousel-control" href="#featured-carousel" data-slide="prev">&lsaquo;</a>
-					<a class="right carousel-control" href="#featured-carousel" data-slide="next">&rsaquo;</a>
+					<a class="left carousel-control" href="#featured-carousel" data-slide="prev"><span class="icon-prev"></span></a>
+					<a class="right carousel-control" href="#featured-carousel" data-slide="next"><span class="icon-next"></span></a>
 				</div><!-- #featured-carousel -->
 			</div><!-- .col-lg-12 -->
 		</div><!-- .row -->

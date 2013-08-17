@@ -15,7 +15,9 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
+			<?php if (of_get_option('alienship_name_in_navbar',1) ) { ?>
+				<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
+			<?php } ?>
 		</div>
 
 		<div class="<?php echo apply_filters( 'alienship_top_navbar_class', 'collapse navbar-collapse navbar-ex1-collapse' ); ?>">

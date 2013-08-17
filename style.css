@@ -12,8 +12,6 @@ Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, t
 
 /* Fonts
 ---------------------------- */
-
-
 h1 {
   font-size: 30px;
   line-height: 36px;
@@ -47,63 +45,9 @@ h6 {
 
 /* Navigation
 ----------------------------------------------- */
-
-/* Remove the rounded edges from the navbar */
-.navbar-inner {
-  border-radius: 0px 0px 0px 0px;
-}
-
-/* Fix submenu flyouts when pulled right */
-.navbar .pull-right > li > .dropdown-menu .dropdown-menu {
-  border-radius: 0 6px 6px 6px;
-  left: 100%;
-  margin-left: -1px;
-}
-
-@media only screen and (max-width: 979px) {
-  /* Adjust margins on submenu flyouts when pulled right */
-  .navbar .pull-right > li > .dropdown-menu .dropdown-menu {
-    margin-left: 15px;
-  }
-}
-
-/* Set rounded edges on Main Menu navbar */
-#main-nav > .navbar .navbar-inner {
-  border-radius: 4px;
-}
-
-/* Change width of responsive menu button to match width of "Menu" text */
-.btn-navbar .icon-bar {
-  width: 35px;
-}
-
-/* Style "Menu" text in responsive menu button */
-.navbar-inverse .btn-navbar .icon-bar-text {
-  color: #F5F5F5;
-  display: block;
-  text-align: center;
-  text-shadow: 0 0 0em;
-  vertical-align: middle;
-  width: auto;
-}
-
-/* Increase the Bootstrap default top/bottom padding of dropdown links */
+/* Increase the padding of dropdown links */
 .dropdown-menu li > a {
   padding: 6px 15px;
-}
-
-/* Site description */
-.navbar .brand-desc {
-    color: #FFFFFF;
-    float: left;
-    font-size: 13px;
-    font-weight: 200;
-    line-height: 1;
-    margin-left: -20px;
-    padding-bottom: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 14px;
 }
 
 /* Numbered page navigation*/
@@ -112,27 +56,12 @@ h6 {
 }
 
 /* Footer Nav / Bottom Menu */
-.footer-section {
-  font-size: 1.3rem;
-  font-weight: normal;
-  padding-bottom: 10px;
-  padding-top: 20px;
-}
-
 .footer-nav li {
   display: block;
   float: right;
   margin-bottom: 0;
   padding-left: 3%;
 }
-
-/* Main Menu */
-@media (max-width: 480px) {
-  .nav-collapse-main {
-    -webkit-transform: translate3d(0, 0, 0);
-  }
-}
-/* End of Main Menu */
 
 /* Mobile Footer Nav */
 @media only screen and (max-width: 767px) {
@@ -215,11 +144,11 @@ dl.nav.mobile dd.current-menu-item a,
 
 /* Style the comments
  ---------------------------------------*/
- #comments {
+#comments {
   border-top: 1px solid #EEEEEE;
   margin: 40px 0 0 1px;
   padding: 40px 0 0;
- }
+}
 
 .comment.thread-even > article {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
@@ -328,14 +257,7 @@ div.comment-author > img.avatar {
 ----------------------------------------------- */
 #page {
   margin: 0px auto;
-  max-width: 940px;
-}
-
-/* The content wrapper home page called in index.php */
-#main {
-  clear: both;
-  margin-bottom: 10px;
-  overflow: hidden;
+  max-width: 1140px;
 }
 
 #main-row {
@@ -343,11 +265,8 @@ div.comment-author > img.avatar {
 }
 
 /* The article wrapper that displays the content of a post/page/whatever */
-div#content > article {
-    clear: both;
-    margin: 0 0 18px;
-    padding-bottom: 30px;
-    overflow: hidden;
+article {
+  margin: 0 0 50px;
 }
 
 /*Theme layouts
@@ -374,9 +293,9 @@ div#content > article {
 .entry-content p,
 .entry-summary p {
   font-family: "Helvetica Neue", Helvetica;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 1.625;
+  line-height: 1.8;
 }
 
 .hero-unit .entry-content p {
@@ -385,14 +304,6 @@ div#content > article {
 
 .entry-content li {
   line-height: 1.625;
-}
-
-article blockquote p.callout {
-  font-family: Georgia, Serif;
-  font-size: 1.2em;
-  font-style: italic;
-  line-height: 1.5em;
-  margin: 10px 10px 10px 0;
 }
 
 ol > li {
@@ -455,22 +366,13 @@ img.wp-post-image {
 img.header-image,
 img.wp-post-image,
 img.avatar {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.45);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
   height: auto;
   max-width: 100%;
 }
 
+/* Featured Posts
+---------------------------------- */
 /* Carousel */
-.home #featured-carousel {
-  border-bottom: 1px solid #EEE;
-  margin-bottom: 45px;
-  padding-bottom: 30px;
-}
 .carousel-inner > .item > a > img {
   border: 0;
   border-radius: 0;
@@ -486,13 +388,57 @@ img.avatar {
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    clear: both;
+/* Featured posts grid */
+ul#featured-posts-grid > li {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  display: block;
+  height: auto;
+  float: left;
+  background-color: #EEEEEE;
+  margin-bottom: 25px;
+  padding-bottom: 2px;
 }
 
-h3, h4, h5, h6 {
-    line-height: 36px;
+ul#featured-posts-grid > li > header > h4 {
+  line-height: 18px;
 }
+
+.innergrid {
+  height: 85%;
+  float: none;
+  padding: 0 10px 12px;
+}
+
+.innergrid > p {
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.innergrid > a > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.grid-header {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.grid-footer-meta {
+  font-size: 12px; text-align: center;
+  margin-bottom: .125em;
+}
+/* End of featured posts grid */
 
 .alert strong {
   font-size: 1.15em;
@@ -559,7 +505,7 @@ h2.entry-title {
     line-height: 1.428571429;
     padding: 6px 12px;
     text-decoration: none;
-  }
+}
 
 .pagination li.active:first-child,
 .pagination > ul > a:first-child {
@@ -625,59 +571,6 @@ p img,
   left: 10px;
   top: 7px;
 }
-
-/* Featured posts grid */
-ul#featured-posts-grid > li {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  display: block;
-  height: auto;
-  float: left;
-  background-color: #EEEEEE;
-  margin-bottom: 25px;
-  padding-bottom: 2px;
-}
-
-ul#featured-posts-grid > li > header > h4 {
-  line-height: 18px;
-}
-
-.innergrid {
-  height: 85%;
-  float: none;
-  padding: 0 10px 12px;
-}
-
-.innergrid > p {
-  line-height: 24px;
-  margin-bottom: 0;
-}
-
-.innergrid > a > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-}
-
-.grid-header {
-  font-size: 14px;
-  line-height: 18px;
-  margin: 0;
-  padding-bottom: 5px;
-  text-align: center;
-}
-
-.grid-footer-meta {
-  font-size: 12px; text-align: center;
-  margin-bottom: .125em;
-}
-/* End of featured posts grid */
-
 
 /* Copyright / bottom menu area */
 .colophon {
@@ -863,9 +756,6 @@ img.aligncenter {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
 }
-/* End of Panels
------------------------------------------------ */
-
 
 /* Widgets
 ----------------------------------------------- */

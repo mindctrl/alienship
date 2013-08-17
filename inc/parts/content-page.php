@@ -8,16 +8,17 @@
 ?>
 <?php do_action( 'alienship_post_before' ); ?>
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <?php do_action( 'alienship_post_inside_before' ); ?>
+	<?php do_action( 'alienship_post_inside_before' );
 
-  <?php do_action( 'alienship_entry_title' ); ?>
+	do_action( 'alienship_entry_title' ); ?>
 
-  <div class="entry-content">
-    <?php the_content(); ?>
-    <div class="clear">&nbsp;</div>
-    <?php alienship_wp_link_pages(); ?>
-    <?php edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="icon-pencil"></i>', '</span>' ); ?>
-    <?php do_action( 'alienship_post_inside_after' ); ?>
-  </div><!-- .entry-content -->
+	<div class="entry-content">
+		<?php the_content(); ?>
+		<div class="clear">&nbsp;</div>
+		<?php alienship_wp_link_pages();
+		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="icon-pencil"></i>', '</span>' );
+		do_action( 'alienship_post_inside_after' ); ?>
+	</div><!-- .entry-content -->
+
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php do_action( 'alienship_post_after' ); ?>

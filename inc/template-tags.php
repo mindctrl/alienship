@@ -251,50 +251,53 @@ if ( ! function_exists( 'alienship_comment' ) ) :
  * @since 0.1
  */
 function alienship_comment( $comment, $args, $depth ) {
-  $GLOBALS['comment'] = $comment;
-  switch ( $comment->comment_type ) :
-	case 'pingback' :
-	case 'trackback' :
-  ?>
-  <li class="post pingback">
-	<p><?php _e( 'Pingback:', 'alienship' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'alienship' ), ' ' ); ?></p>
-  <?php
-	  break;
-	default :
-  ?>
-  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-	<article id="comment-<?php comment_ID(); ?>" class="comment">
-	  <footer>
-		<div class="comment-author vcard">
-		  <?php echo get_avatar( $comment, 40 ); ?>
-		  <?php printf( __( '%s', 'alienship' ), sprintf( '<cite class="name">%s</cite>', get_comment_author_link() ) ); ?>
-		</div><!-- .comment-author .vcard -->
-		<?php if ( $comment->comment_approved == '0' ) : ?>
-		  <em><?php _e( 'Your comment is awaiting moderation.', 'alienship' ); ?></em>
-		  <br />
-		<?php endif; ?>
 
-		<div class="comment-meta commentmetadata">
-		  <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
-		  <?php
-			/* translators: 1: date, 2: time */
-			printf( __( '%1$s at %2$s', 'alienship' ), get_comment_date(), get_comment_time() ); ?>
-		  </time></a>
-		  <?php edit_comment_link( __( '(Edit)', 'alienship' ), ' ' );
-		  ?>
-		</div><!-- .comment-meta .commentmetadata -->
-	  </footer>
+	$GLOBALS['comment'] = $comment;
+	switch ( $comment->comment_type ) :
+		case 'pingback' :
+		case 'trackback' :
+		?>
+			<li class="post pingback">
+			<p><?php _e( 'Pingback:', 'alienship' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'alienship' ), ' ' ); ?></p>
+			<?php
+			break;
 
-	  <div class="comment-content"><?php comment_text(); ?></div>
+		default :
+		?>
+			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+				<article id="comment-<?php comment_ID(); ?>" class="comment">
+					<footer>
+						<div class="comment-author vcard">
+							<?php echo get_avatar( $comment, 40 ); ?>
+							<?php printf( __( '%s', 'alienship' ), sprintf( '<cite class="name">%s</cite>', get_comment_author_link() ) ); ?>
+						</div><!-- .comment-author .vcard -->
 
-	  <div class="reply">
-		<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-	  </div><!-- .reply -->
-	</article><!-- #comment-## -->
+						<?php if ( $comment->comment_approved == '0' ) : ?>
+							<em><?php _e( 'Your comment is awaiting moderation.', 'alienship' ); ?></em>
+							<br />
+						<?php endif; ?>
 
-  <?php
-	  break;
-  endswitch;
+						<div class="comment-meta commentmetadata">
+							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+								<time datetime="<?php comment_time( 'c' ); ?>">
+									<?php
+									/* translators: 1: date, 2: time */
+									printf( __( '%1$s at %2$s', 'alienship' ), get_comment_date(), get_comment_time() ); ?>
+								</time>
+							</a>
+							<?php edit_comment_link( __( '(Edit)', 'alienship' ), ' ' ); ?>
+						</div><!-- .comment-meta .commentmetadata -->
+					</footer>
+
+					<div class="comment-content"><?php comment_text(); ?></div>
+						<div class="reply">
+							<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+						</div><!-- .reply -->
+				</article><!-- #comment-## -->
+
+		<?php
+		break;
+	endswitch;
 }
 endif; // ends check for alienship_comment()
 
@@ -307,11 +310,12 @@ if ( ! function_exists( 'alienship_do_post_author' ) ) :
  * @since 0.59
  */
 function alienship_do_post_author() {
-  printf( __( '<span class="byline"><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
-	esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-	esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
-	esc_html( get_the_author() )
-  );
+
+	printf( __( '<span class="byline"><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
+		esc_html( get_the_author() )
+	);
 }
 add_action( 'alienship_post_author', 'alienship_do_post_author' );
 endif;
@@ -325,12 +329,13 @@ if ( ! function_exists( 'alienship_do_posted_on' ) ) :
  * @since 0.1
  */
 function alienship_do_posted_on() {
-  printf( __( '<span class="published-date"><i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
-	esc_url( get_permalink() ),
-	esc_attr( get_the_time() ),
-	esc_attr( get_the_date( 'c' ) ),
-	esc_html( get_the_date() )
-  );
+
+	printf( __( '<span class="published-date"><i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
 }
 add_action( 'alienship_posted_on', 'alienship_do_posted_on' );
 endif;
@@ -343,25 +348,30 @@ endif;
  * @since 0.1
  */
 function alienship_categorized_blog() {
-  if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-	// Create an array of all the categories that are attached to posts
-	$all_the_cool_cats = get_categories( array(
-	  'hide_empty' => 1,
-	) );
 
-	// Count the number of categories that are attached to the posts
-	$all_the_cool_cats = count( $all_the_cool_cats );
+	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 
-	set_transient( 'all_the_cool_cats', $all_the_cool_cats );
-  }
+		// Create an array of all the categories that are attached to posts
+		$all_the_cool_cats = get_categories( array(
+			'hide_empty' => 1,
+		) );
 
-  if ( '1' != $all_the_cool_cats ) {
-	// This blog has more than 1 category so alienship_categorized_blog should return true
-	return true;
-  } else {
-	// This blog has only 1 category so alienship_categorized_blog should return false
-	return false;
-  }
+		// Count the number of categories that are attached to the posts
+		$all_the_cool_cats = count( $all_the_cool_cats );
+
+		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+	}
+
+	if ( '1' != $all_the_cool_cats ) {
+
+		// This blog has more than 1 category so alienship_categorized_blog should return true
+		return true;
+
+	} else {
+
+		// This blog has only 1 category so alienship_categorized_blog should return false
+		return false;
+	}
 }
 
 
@@ -372,8 +382,8 @@ function alienship_categorized_blog() {
  * @since 0.1
  */
 function alienship_category_transient_flusher() {
-  // Like, beat it. Dig?
-  delete_transient( 'all_the_cool_cats' );
+
+	delete_transient( 'all_the_cool_cats' );
 }
 add_action( 'edit_category', 'alienship_category_transient_flusher' );
 add_action( 'save_post', 'alienship_category_transient_flusher' );
@@ -386,24 +396,27 @@ if ( ! function_exists( 'alienship_do_post_tags' ) ):
  * @since 0.3
  */
 function alienship_do_post_tags() {
-  $post_tags = get_the_tags();
-  if ( $post_tags ) {
-	echo '<span class="tags-links"><i class="icon-tags" title="Tags"></i>' . "\n";
-	$num_tags = count( $post_tags );
-	$tag_count = 1;
-	$nofollow = ' nofollow'; // tell search engines to not index tag url
-	foreach( $post_tags as $tag ) {
-	$html_before = '<a href="' . get_tag_link($tag->term_id) . '" rel="tag'.$nofollow.'" class="tag-text">';
-	$html_after = '</a>';
-	if ( $tag_count < $num_tags )
-	  $sep = ", \n";
-	elseif ( $tag_count == $num_tags )
-	$sep = "\n";
-	echo $html_before . $tag->name . $html_after . $sep;
-	$tag_count++;
+
+	$post_tags = get_the_tags();
+	if ( $post_tags ) {
+
+		echo '<span class="tags-links"><i class="icon-tags" title="Tags"></i>' . "\n";
+		$num_tags = count( $post_tags );
+		$tag_count = 1;
+		$nofollow = ' nofollow'; // tell search engines to not index tag url
+
+		foreach( $post_tags as $tag ) {
+			$html_before = '<a href="' . get_tag_link($tag->term_id) . '" rel="tag'.$nofollow.'" class="tag-text">';
+			$html_after = '</a>';
+		if ( $tag_count < $num_tags )
+			$sep = ", \n";
+		elseif ( $tag_count == $num_tags )
+			$sep = "\n";
+			echo $html_before . $tag->name . $html_after . $sep;
+			$tag_count++;
+		}
+		echo '</span>' . "\n";
 	}
-	echo '</span>' . "\n";
-  }
 }
 add_action( 'alienship_post_tags', 'alienship_do_post_tags' );
 endif;
@@ -416,24 +429,26 @@ if ( ! function_exists( 'alienship_do_post_categories' ) ):
  * @since 0.3
  */
 function alienship_do_post_categories() {
-  $post_categories = get_the_category();
-  if ( $post_categories ) {
-	echo "\t<span class=\"cat-links\"><i class=\"icon-folder-open\" title=\"Categories\"></i>\n";
-	$num_categories = count( $post_categories );
-	$category_count = 1;
-	foreach ( $post_categories as $category ) {
-	// "category tag" is only proposed at this point - $html_before = "\t\t<a href=\"" . get_category_link($category->term_id) . "\" rel=\"category tag\" class=\"label\">";
-	$html_before = "\t\t<a href=\"" . get_category_link( $category->term_id ) . "\" class=\"cat-text\">";
-	$html_after = '</a>';
-	if ( $category_count < $num_categories )
-	  $sep = ", \n";
-	elseif ( $category_count == $num_categories )
-	$sep = "\n";
-	echo $html_before . $category->name . $html_after . $sep;
-	$category_count++;
+
+	$post_categories = get_the_category();
+	if ( $post_categories ) {
+
+		echo '<span class="cat-links"><i class="icon-folder-open" title="Categories"></i>' . "\n";
+		$num_categories = count( $post_categories );
+		$category_count = 1;
+
+		foreach ( $post_categories as $category ) {
+			$html_before = '<a href="' . get_category_link( $category->term_id ) . '" class="cat-text">';
+			$html_after = '</a>';
+			if ( $category_count < $num_categories )
+				$sep = ", \n";
+			elseif ( $category_count == $num_categories )
+				$sep = "\n";
+				echo $html_before . $category->name . $html_after . $sep;
+				$category_count++;
+			}
+		echo '</span>' . "\n";
 	}
-	echo "\t\t\t</span>\n";
-  }
 }
 add_action( 'alienship_post_categories', 'alienship_do_post_categories' );
 endif;
@@ -445,13 +460,17 @@ if ( ! function_exists( 'alienship_do_post_comments_link' ) ):
  * Display the "Leave a comment" message
  * @since .74
  */
- function alienship_do_post_comments_link() {
-  if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-	<span class="comments-link"><i class="icon-comment"></i><?php comments_popup_link( __( ' Leave a comment', 'alienship' ), __( ' 1 Comment', 'alienship' ), __( ' % Comments', 'alienship' ) ); ?></span>
-  <?php endif;
- }
- add_action( 'alienship_post_comments_link', 'alienship_do_post_comments_link' );
- endif;
+function alienship_do_post_comments_link() {
+
+	if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) { ?>
+		<span class="comments-link">
+			<i class="icon-comment"></i>
+			<?php comments_popup_link( __( ' Leave a comment', 'alienship' ), __( ' 1 Comment', 'alienship' ), __( ' % Comments', 'alienship' ) ); ?>
+		</span>
+	<?php }
+}
+add_action( 'alienship_post_comments_link', 'alienship_do_post_comments_link' );
+endif;
 
 
 
@@ -461,26 +480,29 @@ if ( ! function_exists( 'alienship_header_title_and_description' ) ):
  * @since .55
  */
 function alienship_header_title_and_description() {
-  $home_url = esc_url( home_url( '/' ) );
-  $site_name = esc_attr( get_bloginfo( 'name', 'display' ) );
-  $site_description = get_bloginfo( 'description' );
-  if ( !is_front_page() || !is_home() ) {
-  echo <<<TITLE_AND_DESC
-	<hgroup>
-	  <p id="site-title" class="site-title"><span><a href="{$home_url}" title="{$site_name}" rel="home">{$site_name}</a></span></p>
-	  <p id="site-description" class="site-description">{$site_description}</p>
-	</hgroup>
-TITLE_AND_DESC;
-  }
-  else {
-  echo <<<TITLE_AND_DESC
-	<hgroup>
-	  <h1 id="site-title" class="site-title"><span><a href="{$home_url}" title="{$site_name}" rel="home">{$site_name}</a></span></h1>
-	  <h2 id="site-description" class="site-description">{$site_description}</h2>
-	</hgroup>
-TITLE_AND_DESC;
-  }
-} endif;
+
+	if ( !is_front_page() || !is_home() ) { ?>
+		<hgroup>
+			<p id="site-title" class="site-title">
+				<span>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+				</span>
+			</p>
+			<p id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></p>
+		</hgroup>
+
+	<?php } else { ?>
+
+		<hgroup>
+			<h1 id="site-title" class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+			</h1>
+			<h2 id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></h2>
+		</hgroup>
+
+	<?php }
+}
+endif;
 
 
 
@@ -490,17 +512,18 @@ if ( ! function_exists( 'alienship_featured_posts_grid' ) ):
  * @since .59
  */
 function alienship_featured_posts_grid() {
-  $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
-  <?php if ( $featured_query->have_posts() ) {
-  echo "\t<ul id=\"featured-posts-grid\" class=\"block-grid mobile two-up\">"; ?>
 
-  <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
+	$featured_query = new WP_Query( 'tag_id=' . of_get_option( 'alienship_featured_posts_tag' ) . '&posts_per_page=' . of_get_option( 'alienship_featured_posts_maxnum' ) . '' );
 
-	<?php get_template_part( '/inc/parts/content', 'fp-grid' ); ?>
+	if ( $featured_query->have_posts() ) { ?>
+		<ul id="featured-posts-grid" class="block-grid mobile two-up">
 
-  <?php endwhile; ?>
-  <?php echo "</ul>";
-  }
+			<?php while ( $featured_query->have_posts() ) : $featured_query->the_post();
+				get_template_part( '/inc/parts/content', 'fp-grid' );
+			endwhile; ?>
+
+		</ul>
+	<?php }
 }
 endif;
 
@@ -512,32 +535,35 @@ if ( ! function_exists( 'alienship_featured_posts_slider' ) ):
  * @since .59 (The function. The feature @since .4)
  */
 function alienship_featured_posts_slider() {
-  $featured_query = new WP_Query( 'tag_id='.of_get_option('alienship_featured_posts_tag').'&posts_per_page='.of_get_option('alienship_featured_posts_maxnum').'' ); ?>
-  <?php if ( $featured_query->have_posts() ) {
-	echo "\t<div class=\"row\">";
-	  echo "\t<div class=\"col-lg-12\">";
-		echo "\t<div id=\"featured-carousel\" class=\"carousel slide\">";
-		  echo "\t<div class=\"carousel-inner\">"; ?>
-			<?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
 
-			<?php get_template_part( '/inc/parts/content', 'featured' ); ?>
+	$featured_query = new WP_Query( 'tag_id=' . of_get_option( 'alienship_featured_posts_tag' ) . '&posts_per_page=' . of_get_option( 'alienship_featured_posts_maxnum' ) . '' );
 
-			<?php endwhile; ?>
-		  <?php echo "\t</div><!-- .carousel-inner -->"; ?>
-		  <?php echo "\t<a class=\"left carousel-control\" href=\"#featured-carousel\" data-slide=\"prev\">&lsaquo;</a>";
-		  echo "\t<a class=\"right carousel-control\" href=\"#featured-carousel\" data-slide=\"next\">&rsaquo;</a>";
-		echo "\t</div><!-- #featured-carousel -->";
-	  echo "\t</div><!-- .col-lg-12 -->";
-	echo "\t</div><!-- .row -->"; ?>
-	  <script type="text/javascript">
-		jQuery(function() {
-		  // Activate the first carousel item //
-		  jQuery("div.item:first").addClass("active");
-		  // Start the Carousel //
-		  jQuery('.carousel').carousel();
-		});
-	  </script>
-	  <?php } // if(have_posts()) ?>
+	if ( $featured_query->have_posts() ) { ?>
+		<div class="row">
+			<div class="col-lg-12">
+				<div id="featured-carousel" class="carousel slide">
+					<div class="carousel-inner">
+
+						<?php while ( $featured_query->have_posts() ) : $featured_query->the_post();
+							get_template_part( '/inc/parts/content', 'featured' );
+						endwhile; ?>
+
+					</div><!-- .carousel-inner -->
+					<a class="left carousel-control" href="#featured-carousel" data-slide="prev">&lsaquo;</a>
+					<a class="right carousel-control" href="#featured-carousel" data-slide="next">&rsaquo;</a>
+				</div><!-- #featured-carousel -->
+			</div><!-- .col-lg-12 -->
+		</div><!-- .row -->
+
+		<script type="text/javascript">
+			jQuery(function() {
+				// Activate the first carousel item //
+				jQuery("div.item:first").addClass("active");
+				// Start the Carousel //
+				jQuery('.carousel').carousel();
+			});
+		</script>
+	<?php } // if(have_posts()) ?>
 	  <!-- End featured listings -->
 <?php }
 endif;
@@ -550,47 +576,47 @@ if ( ! function_exists( 'alienship_do_archive_page_title' ) ):
  * @since .592
  */
 function alienship_do_archive_page_title() { ?>
-<header class="page-header">
-  <h1 class="page-title">
-  <?php
-  if ( is_category() ) {
-	printf( __( 'Category Archives: %s', 'alienship' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+	<header class="page-header">
+		<h1 class="page-title">
+			<?php
+			if ( is_category() ) {
+				printf( __( 'Category Archives: %s', 'alienship' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
-  } elseif ( is_tag() ) {
-	printf( __( 'Tag Archives: %s', 'alienship' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+			} elseif ( is_tag() ) {
+				printf( __( 'Tag Archives: %s', 'alienship' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
-  } elseif ( is_author() ) {
-	printf( __( 'Author Archives: %s', 'alienship' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+			} elseif ( is_author() ) {
+				printf( __( 'Author Archives: %s', 'alienship' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 
-  } elseif ( is_day() ) {
-	printf( __( 'Daily Archives: %s', 'alienship' ), '<span>' . get_the_date() . '</span>' );
+			} elseif ( is_day() ) {
+				printf( __( 'Daily Archives: %s', 'alienship' ), '<span>' . get_the_date() . '</span>' );
 
-  } elseif ( is_month() ) {
-	printf( __( 'Monthly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+			} elseif ( is_month() ) {
+				printf( __( 'Monthly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
-  } elseif ( is_year() ) {
-	printf( __( 'Yearly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+			} elseif ( is_year() ) {
+				printf( __( 'Yearly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
-  } else {
-	_e( 'Archives', 'alienship' );
+			} else {
+				_e( 'Archives', 'alienship' );
 
-  } ?>
-  </h1>
-	<?php
-	if ( is_category() ) {
-	  // show an optional category description
-	  $category_description = category_description();
-	  if ( ! empty( $category_description ) )
-		echo apply_filters( 'alienship_category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
+			} ?>
+		</h1>
 
-	} elseif ( is_tag() ) {
-	  // show an optional tag description
-	  $tag_description = tag_description();
-	  if ( ! empty( $tag_description ) )
-		echo apply_filters( 'alienship_tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
-	}
-  ?>
-</header>
+		<?php
+		if ( is_category() ) {
+			// show an optional category description
+			$category_description = category_description();
+			if ( ! empty( $category_description ) )
+				echo apply_filters( 'alienship_category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
+
+			} elseif ( is_tag() ) {
+				// show an optional tag description
+				$tag_description = tag_description();
+				if ( ! empty( $tag_description ) )
+					echo apply_filters( 'alienship_tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
+			} ?>
+	</header>
 <?php }
 add_action( 'alienship_archive_page_title', 'alienship_do_archive_page_title' );
 endif;
@@ -603,43 +629,47 @@ if ( ! function_exists( 'alienship_archive_sticky_posts' ) ):
  * @since .594
  */
 function alienship_archive_sticky_posts() {
-  $sticky = get_option( 'sticky_posts' );
-  if ( ! empty( $sticky ) ) {
-	global $do_not_duplicate, $page, $paged;
-	$do_not_duplicate = array();
 
-	if ( is_category() ) {
-	  $cat_ID = get_query_var( 'cat' );
-	  $sticky_args = array(
-		'post__in'    => $sticky,
-		'cat'         => $cat_ID,
-		'post_status' => 'publish',
-		'paged'       => $paged
-	  );
+	$sticky = get_option( 'sticky_posts' );
+	if ( ! empty( $sticky ) ) {
+		global $do_not_duplicate, $page, $paged;
+		$do_not_duplicate = array();
 
-	} elseif ( is_tag() ) {
-	  $current_tag = single_tag_title( "", false );
-		$sticky_args = array(
-		  'post__in'     => $sticky,
-		  'tag_slug__in' => array( $current_tag ),
-		  'post_status'  => 'publish',
-		  'paged'        => $paged
-		);
-	}
-  if ( ! empty( $sticky_args ) ):
-  $sticky_posts = new WP_Query( $sticky_args );
-	if ( $sticky_posts->have_posts() ):
-	  global $post;
-	  while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
-		array_push( $do_not_duplicate, $post->ID );
-		$format = get_post_format();
-		if ( false === $format )
-		$format = 'standard';
-		get_template_part( '/inc/parts/content', $format );
-	  endwhile;
-	endif; // if have posts
-	endif; // if ( ! empty( $sticky_args ) )
-  } //if not empty sticky
+		if ( is_category() ) {
+			$cat_ID = get_query_var( 'cat' );
+			$sticky_args = array(
+				'post__in'    => $sticky,
+				'cat'         => $cat_ID,
+				'post_status' => 'publish',
+				'paged'       => $paged
+			);
+
+		} elseif ( is_tag() ) {
+			$current_tag = single_tag_title( "", false );
+			$sticky_args = array(
+				'post__in'     => $sticky,
+				'tag_slug__in' => array( $current_tag ),
+				'post_status'  => 'publish',
+				'paged'        => $paged
+			);
+		}
+
+		if ( ! empty( $sticky_args ) ):
+			$sticky_posts = new WP_Query( $sticky_args );
+
+			if ( $sticky_posts->have_posts() ):
+				global $post;
+
+				while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
+					array_push( $do_not_duplicate, $post->ID );
+					$format = get_post_format();
+					if ( false === $format )
+					$format = 'standard';
+					get_template_part( '/inc/parts/content', $format );
+				endwhile;
+			endif; // if have posts
+		endif; // if ( ! empty( $sticky_args ) )
+	} //if not empty sticky
 }
 endif;
 
@@ -651,33 +681,37 @@ if ( ! function_exists( 'alienship_archive_get_posts' ) ):
  * @since .594
  */
 function alienship_archive_get_posts() {
-  global $do_not_duplicate, $page, $paged;
 
-  if ( is_category() ) {
-	$cat_ID = get_query_var( 'cat' );
-	$args = array(
-	  'cat'                 => $cat_ID,
-	  'post_status'         => 'publish',
-	  'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-	  'ignore_sticky_posts' => 1,
-	  'paged'               => $paged
-	  );
-	$wp_query = new WP_Query( $args );
-  } elseif (is_tag() ) {
-	  $current_tag = single_tag_title( "", false );
-	  $args = array(
-		'tag_slug__in'        => array( $current_tag ),
-		'post_status'         => 'publish',
-		'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-		'ignore_sticky_posts' => 1,
-		'paged'               => $paged
+	global $do_not_duplicate, $page, $paged;
+
+	if ( is_category() ) {
+		$cat_ID = get_query_var( 'cat' );
+		$args = array(
+			'cat'                 => $cat_ID,
+			'post_status'         => 'publish',
+			'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
+			'ignore_sticky_posts' => 1,
+			'paged'               => $paged
 		);
-	  $wp_query = new WP_Query( $args );
-  } else {
+		$wp_query = new WP_Query( $args );
+
+	} elseif (is_tag() ) {
+		$current_tag = single_tag_title( "", false );
+		$args = array(
+			'tag_slug__in'        => array( $current_tag ),
+			'post_status'         => 'publish',
+			'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
+			'ignore_sticky_posts' => 1,
+			'paged'               => $paged
+		);
+		$wp_query = new WP_Query( $args );
+
+	} else {
 	  new WP_Query();
-  }
+	}
 }
 endif;
+
 
 
 if ( ! function_exists( 'alienship_get_first_link' ) ):
@@ -687,16 +721,19 @@ if ( ! function_exists( 'alienship_get_first_link' ) ):
  * @since .64
  */
 function alienship_get_first_link() {
-  global $link_url, $post_content;
-  $content = get_the_content();
-  $link_start = stristr( $content, "http" );
-  $link_end = stristr( $link_start, "\n" );
-  if ( ! strlen( $link_end ) == 0 ):
-	$link_url = substr($link_start, 0, -(strlen($link_end) + 1));
-  else:
-	$link_url = $link_start;
-  endif;
-  $post_content = substr( $content, strlen( $link_url ) );
+
+	global $link_url, $post_content;
+	$content = get_the_content();
+	$link_start = stristr( $content, "http" );
+	$link_end = stristr( $link_start, "\n" );
+
+	if ( ! strlen( $link_end ) == 0 ) {
+		$link_url = substr($link_start, 0, -(strlen($link_end) + 1));
+	} else {
+		$link_url = $link_start;
+	}
+
+	$post_content = substr( $content, strlen( $link_url ) );
 }
 endif;
 
@@ -707,14 +744,16 @@ endif;
  * I hate everything about this, but until I find a better way...
  */
 function alienship_wp_link_pages() {
-  global $paged_page_nav;
-  /* Get our initial links */
-  $paged_page_nav = wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<div class="pagination"><ul>', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul></div>', 'echo' => false ) );
 
-  /* Rearrange things */
-  $paged_page_nav = str_replace( '<a', '<li><a', $paged_page_nav );
-  $paged_page_nav = str_replace( '</a>', '</a></li>', $paged_page_nav );
-  $paged_page_nav = str_replace( '"><li>', '">', $paged_page_nav );
+	global $paged_page_nav;
 
-  echo $paged_page_nav;
+	// Get our initial links
+	$paged_page_nav = wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<br><ul class="pagination">', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul>', 'echo' => false ) );
+
+	// Rearrange things
+	$paged_page_nav = str_replace( '<a', '<li><a', $paged_page_nav );
+	$paged_page_nav = str_replace( '</a>', '</a></li>', $paged_page_nav );
+	$paged_page_nav = str_replace( '"><li>', '">', $paged_page_nav );
+
+	echo $paged_page_nav;
 }

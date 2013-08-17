@@ -556,8 +556,8 @@ h2.entry-title {
     border-style: solid;
     border-width: 1px 1px 1px 0;
     float: left;
-    line-height: 28px;
-    padding: 0 12px;
+    line-height: 1.428571429;
+    padding: 6px 12px;
     text-decoration: none;
   }
 

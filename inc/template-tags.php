@@ -250,45 +250,6 @@ endif; // ends check for alienship_comment()
 
 
 
-if ( ! function_exists( 'alienship_do_post_author' ) ) :
-/**
- * Prints HTML with meta information for the current post's author.
- *
- * @since 0.59
- */
-function alienship_do_post_author() {
-
-	printf( __( '<span class="byline"><i class="glyphicon glyphicon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
-		esc_html( get_the_author() )
-	);
-}
-add_action( 'alienship_post_author', 'alienship_do_post_author' );
-endif;
-
-
-
-if ( ! function_exists( 'alienship_do_posted_on' ) ) :
-/**
- * Prints HTML with date posted information for the current post.
- *
- * @since 0.1
- */
-function alienship_do_posted_on() {
-
-	printf( __( '<span class="published-date"><i class="glyphicon glyphicon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
-}
-add_action( 'alienship_posted_on', 'alienship_do_posted_on' );
-endif;
-
-
-
 /**
  * Returns true if a blog has more than 1 category
  *
@@ -337,6 +298,45 @@ add_action( 'save_post', 'alienship_category_transient_flusher' );
 
 
 
+if ( ! function_exists( 'alienship_do_post_author' ) ) :
+/**
+ * Prints HTML with meta information for the current post's author.
+ *
+ * @since 0.59
+ */
+function alienship_do_post_author() {
+
+	printf( __( '<span class="byline"><i class="glyphicon glyphicon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
+		esc_html( get_the_author() )
+	);
+}
+add_action( 'alienship_post_author', 'alienship_do_post_author' );
+endif;
+
+
+
+if ( ! function_exists( 'alienship_do_posted_on' ) ) :
+/**
+ * Prints HTML with date posted information for the current post.
+ *
+ * @since 0.1
+ */
+function alienship_do_posted_on() {
+
+	printf( __( '<span class="published-date"><i class="glyphicon glyphicon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+}
+add_action( 'alienship_posted_on', 'alienship_do_posted_on' );
+endif;
+
+
+
 if ( ! function_exists( 'alienship_do_post_tags' ) ):
 /**
  * Customize the list of tags displayed on index and on a post
@@ -347,22 +347,23 @@ function alienship_do_post_tags() {
 	$post_tags = get_the_tags();
 	if ( $post_tags ) {
 
-		echo '<span class="tags-links"><i class="glyphicon glyphicon-tags" title="Tags"></i>' . "\n";
+		echo '<span class="tags-links"><i class="glyphicon glyphicon-tags" title="Tags"></i> ';
 		$num_tags = count( $post_tags );
 		$tag_count = 1;
-		$nofollow = ' nofollow'; // tell search engines to not index tag url
 
 		foreach( $post_tags as $tag ) {
-			$html_before = '<a href="' . get_tag_link($tag->term_id) . '" rel="tag'.$nofollow.'" class="tag-text">';
+			$html_before = '<a href="' . get_tag_link($tag->term_id) . '" rel="tag nofollow" class="tag-text">';
 			$html_after = '</a>';
-		if ( $tag_count < $num_tags )
-			$sep = ", \n";
-		elseif ( $tag_count == $num_tags )
-			$sep = "\n";
+
+			if ( $tag_count < $num_tags )
+				$sep = ', ';
+			elseif ( $tag_count == $num_tags )
+				$sep = '';
+
 			echo $html_before . $tag->name . $html_after . $sep;
 			$tag_count++;
 		}
-		echo '</span>' . "\n";
+		echo '</span>';
 	}
 }
 add_action( 'alienship_post_tags', 'alienship_do_post_tags' );
@@ -380,21 +381,22 @@ function alienship_do_post_categories() {
 	$post_categories = get_the_category();
 	if ( $post_categories ) {
 
-		echo '<span class="cat-links"><i class="glyphicon glyphicon-folder-open" title="Categories"></i>' . "\n";
+		echo '<span class="cat-links"><i class="glyphicon glyphicon-folder-open" title="Categories"></i> ';
 		$num_categories = count( $post_categories );
 		$category_count = 1;
 
 		foreach ( $post_categories as $category ) {
 			$html_before = '<a href="' . get_category_link( $category->term_id ) . '" class="cat-text">';
 			$html_after = '</a>';
+
 			if ( $category_count < $num_categories )
-				$sep = ", \n";
+				$sep = ', ';
 			elseif ( $category_count == $num_categories )
-				$sep = "\n";
+				$sep = '';
 				echo $html_before . $category->name . $html_after . $sep;
 				$category_count++;
 			}
-		echo '</span>' . "\n";
+		echo '</span>';
 	}
 }
 add_action( 'alienship_post_categories', 'alienship_do_post_categories' );
@@ -675,7 +677,7 @@ function alienship_get_first_link() {
 	$link_end = stristr( $link_start, "\n" );
 
 	if ( ! strlen( $link_end ) == 0 ) {
-		$link_url = substr($link_start, 0, -(strlen($link_end) + 1));
+		$link_url = substr( $link_start, 0, -( strlen( $link_end ) + 1 ) );
 	} else {
 		$link_url = $link_start;
 	}

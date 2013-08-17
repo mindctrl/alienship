@@ -12,6 +12,7 @@
 	</div><!-- #main -->
 	<?php do_action( 'alienship_main_after' );
 
+	// Footer widgets
 	alienship_do_sidebar( 'footer' ); ?>
 
 </div><!-- #page -->

@@ -31,7 +31,7 @@ do_action( 'alienship_post_before' ); ?>
 		if (of_get_option('alienship_post_categories',1) && is_single() || of_get_option('alienship_post_categories_posts_page',1) && !is_single() ) { do_action( 'alienship_post_categories' ); } // show post categories?
 		if (of_get_option('alienship_post_tags',1) && is_single() || of_get_option('alienship_post_tags_posts_page',1) && !is_single() ) { do_action( 'alienship_post_tags' ); } // show post tags?
 		if (of_get_option('alienship_post_comments_link',1) ) { do_action( 'alienship_post_comments_link' ); }
-		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="icon-pencil"></i>', '</span>' ); // display the edit link
+		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="glyphicon glyphicon-pencil"></i>', '</span>' ); // display the edit link
 		?>
 	</footer><!-- .entry-meta -->
 

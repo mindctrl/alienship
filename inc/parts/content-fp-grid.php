@@ -21,7 +21,7 @@
 		<div class="grid-footer">
 			<p class="grid-footer-meta">
 				<?php if (of_get_option('alienship_published_date',1) ) { do_action( 'alienship_posted_on' ); }
-				edit_post_link( __( '<span class="edit-link pull-right"><i class="icon-pencil"></i>', 'alienship' ), '', '</span>' ); ?>
+				edit_post_link( __( '<span class="edit-link pull-right"><i class="glyphicon glyphicon-pencil"></i>', 'alienship' ), '', '</span>' ); ?>
 			</p>
 		</div><!-- #grid-footer -->
 	</li>

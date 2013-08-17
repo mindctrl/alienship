@@ -258,7 +258,7 @@ if ( ! function_exists( 'alienship_do_post_author' ) ) :
  */
 function alienship_do_post_author() {
 
-	printf( __( '<span class="byline"><i class="icon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
+	printf( __( '<span class="byline"><i class="glyphicon glyphicon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
 		esc_html( get_the_author() )
@@ -277,7 +277,7 @@ if ( ! function_exists( 'alienship_do_posted_on' ) ) :
  */
 function alienship_do_posted_on() {
 
-	printf( __( '<span class="published-date"><i class="icon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
+	printf( __( '<span class="published-date"><i class="glyphicon glyphicon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -347,7 +347,7 @@ function alienship_do_post_tags() {
 	$post_tags = get_the_tags();
 	if ( $post_tags ) {
 
-		echo '<span class="tags-links"><i class="icon-tags" title="Tags"></i>' . "\n";
+		echo '<span class="tags-links"><i class="glyphicon glyphicon-tags" title="Tags"></i>' . "\n";
 		$num_tags = count( $post_tags );
 		$tag_count = 1;
 		$nofollow = ' nofollow'; // tell search engines to not index tag url
@@ -380,7 +380,7 @@ function alienship_do_post_categories() {
 	$post_categories = get_the_category();
 	if ( $post_categories ) {
 
-		echo '<span class="cat-links"><i class="icon-folder-open" title="Categories"></i>' . "\n";
+		echo '<span class="cat-links"><i class="glyphicon glyphicon-folder-open" title="Categories"></i>' . "\n";
 		$num_categories = count( $post_categories );
 		$category_count = 1;
 
@@ -411,7 +411,7 @@ function alienship_do_post_comments_link() {
 
 	if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) { ?>
 		<span class="comments-link">
-			<i class="icon-comment"></i>
+			<i class="glyphicon glyphicon-comment"></i>
 			<?php comments_popup_link( __( ' Leave a comment', 'alienship' ), __( ' 1 Comment', 'alienship' ), __( ' % Comments', 'alienship' ) ); ?>
 		</span>
 	<?php }

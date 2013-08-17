@@ -18,7 +18,7 @@
 
 		alienship_wp_link_pages();
 
-		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="icon-pencil"></i>', '</span>' );
+		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="glyphicon glyphicon-pencil"></i>', '</span>' );
 
 		do_action( 'alienship_post_inside_after' ); ?>
 	</div><!-- .entry-content -->

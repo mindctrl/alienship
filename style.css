@@ -89,8 +89,8 @@ dl.nav.mobile dd {
 }
 
 ul.footer-nav.mobile li a:hover {
-  background-color: #0088CC;
-  color: #ffffff;
+  background-color: #08c;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -145,7 +145,7 @@ dl.nav.mobile dd.current-menu-item a,
 /* Style the comments
  ---------------------------------------*/
 #comments {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #eee;
   margin: 40px 0 0 1px;
   padding: 40px 0 0;
 }
@@ -174,15 +174,15 @@ dl.nav.mobile dd.current-menu-item a,
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
-  background-color: #F5F5F5;
-  background-image: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(center top , #ffffff, #e6e6e6);
   background-repeat: repeat-x;
-  border-color: #CCCCCC #CCCCCC #B3B3B3;
+  border-color: #cccccc #cccccc #b3b3b3;
   border-radius: 4px 4px 4px 4px;
   border-style: solid;
   border-width: 1px;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-  color: #333333;
+  color: #333;
   cursor: pointer;
   display: inline-block;
   font-size: 11px;
@@ -196,10 +196,10 @@ dl.nav.mobile dd.current-menu-item a,
 
 /* Hover effect for comment reply button */
 .comment-reply-link:hover {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   background-position: 0 -15px;
   -moz-transition: background-position 0.1s linear 0s;
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -224,7 +224,7 @@ div.comment-content {
 }
 
 div.comment-author > img.avatar {
-  background: none repeat scroll 0 0 #FFFFFF;
+  background: none repeat scroll 0 0 #fff;
   margin-right: 0.846em;
   padding: 3px;
   vertical-align: middle;
@@ -235,7 +235,7 @@ div.comment-author > img.avatar {
 }
 
 #comments ul.children li {
-  border-top: 1px solid #E6E6E6;
+  border-top: 1px solid #e6e6e6;
   list-style-type: none;
 }
 
@@ -246,7 +246,7 @@ div.comment-author > img.avatar {
 }
 
 .bypostauthor > article img.avatar {
-  border-bottom: 4px solid #46A546;
+  border-bottom: 4px solid #46a546;
 }
 /* End of comments
 ---------------------------------------------------- */
@@ -352,7 +352,7 @@ img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"],
 #content .gallery .gallery-icon img {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #ddd;
   height: auto;
   padding: 6px;
 }
@@ -380,14 +380,6 @@ img.avatar {
   padding: 0;
 }
 
-.carousel-control {
-  background-color: transparent;
-  border: 0 none;
-  font-family: "Helvetica Neue";
-  font-size: 100px;
-  text-shadow: 0 1px 1px rgba(0,0,0,.4);
-}
-
 /* Featured posts grid */
 ul#featured-posts-grid > li {
   -webkit-border-radius: 4px;
@@ -399,7 +391,7 @@ ul#featured-posts-grid > li {
   display: block;
   height: auto;
   float: left;
-  background-color: #EEEEEE;
+  background-color: #eee;
   margin-bottom: 25px;
   padding-bottom: 2px;
 }
@@ -492,13 +484,13 @@ h2.entry-title {
 
 /* Page links */
 .pagination li.active {
-    background-color: #EEEEEE;
+    background-color: #eee;
     -moz-border-bottom-colors: none;
     -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    border-color: #DDDDDD;
+    border-color: #ddd;
     border-style: solid;
     border-width: 1px 1px 1px 0;
     float: left;
@@ -512,18 +504,11 @@ h2.entry-title {
   border-left-width: 1px;
 }
 
-/* Meta data displayed within a post header */
-header .entry-meta {
-  text-transform: uppercase;
-  font-size: 11px;
-}
-
 /* The meta data displayed within a post footer. */
 footer.entry-meta {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #eee;
   clear: both;
-  font-size: 11px;
-  margin-bottom: 7px;
+  font-size: 12px;
   padding-bottom: 15px;
   text-transform: uppercase;
 }
@@ -535,41 +520,24 @@ p img,
 
 /* WordPress image captions */
 .wp-caption {
-  background: #eee;
-  margin-bottom: 1.625em;
-  max-width: 96%;
-  padding: 9px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5em;
+  max-width: 100%;
 }
 
 .wp-caption img {
   display: block;
-  margin: 0 auto;
+  margin: 1.2% auto 0;
   max-width: 98%;
 }
 
 .wp-caption .wp-caption-text,
 .gallery-caption {
   color: #666;
-  font-family: Georgia, serif;
   font-size: 12px;
-}
-
-.wp-caption .wp-caption-text {
-  margin-bottom: 0.6em;
-  padding: 10px 0 5px 40px;
-  position: relative;
-}
-
-.wp-caption .wp-caption-text:before {
-  color: #666;
-  content: '\2014';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: bold;
-  margin-right: 5px;
-  position: absolute;
-  left: 10px;
-  top: 7px;
+  margin-bottom: 0.8075em 0;
+  padding: 10px 0 0 10px;
 }
 
 /* Copyright / bottom menu area */

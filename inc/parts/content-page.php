@@ -14,7 +14,7 @@
 
 	<div class="entry-content">
 		<?php
-		the_content();
+		the_content( __( 'Continue Reading &rarr;', 'alienship' ) );
 
 		alienship_wp_link_pages();
 

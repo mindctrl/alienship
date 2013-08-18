@@ -12,7 +12,7 @@
 
 		<div class="entry-content">
 			<blockquote>
-				<?php the_content(); ?>
+				<?php the_content( __( 'Continue Reading &rarr;', 'alienship' ) ); ?>
 			</blockquote>
 		</div>
 

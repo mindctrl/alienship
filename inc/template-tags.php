@@ -162,22 +162,24 @@ function alienship_content_nav( $nav_id ) {
 	?>
 
 	<nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h3 class="assistive-text"><?php _e( 'Post navigation', 'alienship' ); ?></h3>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'alienship' ); ?></h3>
 		<ul>
 		<?php
-		if ( is_single() ) : // navigation links for single posts
+		if ( is_single() ) : // navigation links for single posts ?>
 
-			previous_post_link( '<li class="nav-previous pull-left">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'alienship' ) . '</span> %title' );
-			next_post_link( '<li class="nav-next pull-right">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'alienship' ) . '</span>' );
+			<ul class="pager">
+				<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&laquo;', 'Previous post link', 'alienship' ) . '</span> %title' );
+				next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&raquo;', 'Next post link', 'alienship' ) . '</span>' ); ?>
+			</ul>
 
-		elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
+		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 
 		if ( get_next_posts_link() ) : ?>
-			<li class="nav-previous pull-right"><?php next_posts_link( __( 'Next page <span class="meta-nav">&rarr;</span>', 'alienship' ) ); ?></li>
+			<li class="pull-right"><?php next_posts_link( __( 'Next page <span class="meta-nav">&raquo;</span>', 'alienship' ) ); ?></li>
 		<?php endif;
 
 		if ( get_previous_posts_link() ) : ?>
-			<li class="nav-next pull-left"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Previous page', 'alienship' ) ); ?></li>
+			<li class="pull-left"><?php previous_posts_link( __( '<span class="meta-nav">&laquo;</span> Previous page', 'alienship' ) ); ?></li>
 		<?php endif;
 
 		endif; ?>
@@ -194,57 +196,52 @@ if ( ! function_exists( 'alienship_comment' ) ) :
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since 0.1
  */
 function alienship_comment( $comment, $args, $depth ) {
-
 	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-		?>
-			<li class="post pingback">
-			<p><?php _e( 'Pingback:', 'alienship' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'alienship' ), ' ' ); ?></p>
-			<?php
-			break;
 
-		default :
-		?>
-			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-				<article id="comment-<?php comment_ID(); ?>" class="comment">
-					<footer>
-						<div class="comment-author vcard">
-							<?php echo get_avatar( $comment, 40 ); ?>
-							<?php printf( __( '%s', 'alienship' ), sprintf( '<cite class="name">%s</cite>', get_comment_author_link() ) ); ?>
-						</div><!-- .comment-author .vcard -->
+	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
-						<?php if ( $comment->comment_approved == '0' ) : ?>
-							<em><?php _e( 'Your comment is awaiting moderation.', 'alienship' ); ?></em>
-							<br />
-						<?php endif; ?>
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+		<div class="comment-body">
+			<?php _e( 'Pingback:', 'alienship' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'alienship' ), '<span class="edit-link">', '</span>' ); ?>
+		</div>
 
-						<div class="comment-meta commentmetadata">
-							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-								<time datetime="<?php comment_time( 'c' ); ?>">
-									<?php
-									/* translators: 1: date, 2: time */
-									printf( __( '%1$s at %2$s', 'alienship' ), get_comment_date(), get_comment_time() ); ?>
-								</time>
-							</a>
-							<?php edit_comment_link( __( '(Edit)', 'alienship' ), ' ' ); ?>
-						</div><!-- .comment-meta .commentmetadata -->
-					</footer>
+	<?php else : ?>
 
-					<div class="comment-content"><?php comment_text(); ?></div>
-						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-						</div><!-- .reply -->
-				</article><!-- #comment-## -->
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'alienship' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				</div><!-- .comment-author -->
 
-		<?php
-		break;
-	endswitch;
+				<div class="comment-metadata">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+						<time datetime="<?php comment_time( 'c' ); ?>">
+							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'alienship' ), get_comment_date(), get_comment_time() ); ?>
+						</time>
+					</a>
+					<?php edit_comment_link( __( 'Edit', 'alienship' ), '<span class="edit-link">', '</span>' ); ?>
+				</div><!-- .comment-metadata -->
+
+				<?php if ( '0' == $comment->comment_approved ) : ?>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'alienship' ); ?></p>
+				<?php endif; ?>
+			</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<?php comment_text(); ?>
+			</div><!-- .comment-content -->
+
+			<div class="reply">
+				<?php comment_reply_link( array_merge( $args, array( 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			</div><!-- .reply -->
+		</article><!-- .comment-body -->
+
+	<?php
+	endif;
 }
 endif; // ends check for alienship_comment()
 

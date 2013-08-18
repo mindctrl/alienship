@@ -26,6 +26,20 @@ endif;
 
 
 
+if ( ! function_exists( 'alienship_comment_reply_link' ) ):
+/**
+ * Style comment reply links as buttons
+ * @since 1.0
+ */
+function alienship_comment_reply_link( $link ) {
+
+	return str_replace( 'comment-reply-link', 'btn btn-default btn-xs', $link );
+}
+add_filter( 'comment_reply_link', 'alienship_comment_reply_link' );
+endif;
+
+
+
 if ( ! function_exists( 'alienship_nice_search_redirect' ) ):
 /**
  * Pretty search URL. Changes /?s=foo to /search/foo. http://txfx.net/wordpress-plugins/nice-search/

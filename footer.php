@@ -23,12 +23,12 @@
 	<?php do_action( 'alienship_footer_inside' ); ?>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-5">
+			<div class="col-lg-6">
 				<?php if ( of_get_option('alienship_custom_footer_toggle') ) {
 					echo '' . of_get_option('alienship_custom_footer_text') . '';
 				} else {
 					echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
-			</div><!-- .col-lg-5 -->
+			</div><!-- .col-lg-6 -->
 
 			<div class="col-lg-6">
 				<?php if ( has_nav_menu( 'bottom' ) ) { wp_nav_menu(array('theme_location' => 'bottom', 'container' => false, 'menu_class' =>  'footer-nav mobile')); } ?>

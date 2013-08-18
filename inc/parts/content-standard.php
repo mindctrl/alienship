@@ -15,7 +15,7 @@ do_action( 'alienship_post_before' ); ?>
 		<?php if ( has_post_thumbnail() ) { ?>
 			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'alignleft', 'title' => "" ) ); ?></a>
 		<?php }
-		the_content();
+		the_content( __( 'Continue Reading &rarr;', 'alienship' ) );
 
 		alienship_wp_link_pages(); ?>
 	</div>

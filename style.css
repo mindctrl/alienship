@@ -69,13 +69,15 @@ ul.footer-nav.mobile,
 dl.nav.mobile {
   border-bottom: 1px solid #ccc;
   height: auto;
-  margin: 20px -10px 40px;
+  margin: 0 auto;
   max-width: 100%;
+  padding: 10px 0 0;
   width: auto;
 }
 ul.footer-nav.mobile li {
   float: none;
   height: auto;
+  padding-left: 0;
   padding-right: 0;
 }
 
@@ -105,7 +107,6 @@ dl.nav.mobile dd a {
   color: #555;
   display: block;
   font-size: 15px;
-  font-size: 1.0rem;
   height: auto;
   line-height: 1;
   margin: 0;
@@ -150,9 +151,14 @@ dl.nav.mobile dd.current-menu-item a,
   padding: 40px 0 0;
 }
 
-.comment.thread-even > article {
+.thread-even > .comment-body {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.comment-body {
+  margin-bottom: 20px;
+  padding: 7px 7px 7px 10px;
 }
 
 #comments cite {
@@ -164,55 +170,10 @@ dl.nav.mobile dd.current-menu-item a,
   font-size: 12px;
 }
 
-.comment-label {
-  display: inline;
-}
-/* Style comment reply link as a button */
-.comment-reply-link {
-  -moz-border-bottom-colors: none;
-  -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(center top , #ffffff, #e6e6e6);
-  background-repeat: repeat-x;
-  border-color: #cccccc #cccccc #b3b3b3;
-  border-radius: 4px 4px 4px 4px;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-  color: #333;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 11px;
-  line-height: 14px;
-  margin-bottom: 0;
-  padding: 2px 6px;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  vertical-align: middle;
-}
-
-/* Hover effect for comment reply button */
-.comment-reply-link:hover {
-  background-color: #e6e6e6;
-  background-position: 0 -15px;
-  -moz-transition: background-position 0.1s linear 0s;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
 /* Pad the comment list */
 div.reply,
-.commentlist {
+.comment-list {
   padding-bottom: 7px;
-}
-
-article.comment {
-  margin-bottom: 20px;
-  padding: 7px;
 }
 
 div.comment-author {
@@ -240,13 +201,15 @@ div.comment-author > img.avatar {
 }
 
 /* Highlight comments made by the post author */
-.bypostauthor > article.comment {
+.bypostauthor > article {
   background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
-  padding-left: 10px;
 }
 
 .bypostauthor > article img.avatar {
   border-bottom: 4px solid #46a546;
+}
+.form-allowed-tags code {
+  white-space: normal;
 }
 /* End of comments
 ---------------------------------------------------- */
@@ -512,6 +475,9 @@ footer.entry-meta {
   padding-bottom: 15px;
   text-transform: uppercase;
 }
+.entry-meta .glyphicon {
+  margin-right: 4px;
+}
 
 p img,
 .wp-caption {
@@ -597,10 +563,30 @@ p img,
 }
 
 /* Text meant only for screen readers */
-.assistive-text {
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar */
 }
 
 /* Alignment */
@@ -640,13 +626,6 @@ img.aligncenter {
   margin-bottom: 1em;
 }
 
-/* Transform text to uppercase on the post category and tag labels/links */
-.cat-links > a.label,
-.tags-links > a.label {
-  font-size: 11px;
-  text-transform: uppercase;
-}
-
 .byline,
 .cat-links,
 .comments-link,
@@ -655,16 +634,22 @@ img.aligncenter {
   margin-right: 10px;
 }
 
-/* Clear */
-.clear {
-  clear: both;
-  display: block;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+  content: '';
+  display: table;
 }
 
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+  clear: both;
+}
 /* Post formats
 ------------------------------------ */
 
@@ -690,10 +675,7 @@ img.aligncenter {
 }
 
 .format-quote blockquote p {
-  font-size: 1em;
   font-style: italic;
-  line-height: 23px;
-  margin-bottom: 10px;
 }
 
 /* Status post format */

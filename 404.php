@@ -10,7 +10,7 @@ get_header(); ?>
 <?php do_action( 'alienship_content_before' ); ?>
 	<div id="primary">
 		<div class="row">
-			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
+			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
 
 				<article id="post-0" class="post error404 not-found">
 					<header class="entry-header">

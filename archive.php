@@ -13,7 +13,7 @@ get_header(); ?>
 	<section id="primary">
 		<div class="row">
 			<?php do_action( 'alienship_content_before' ); ?>
-			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
+			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
 				<?php do_action( 'alienship_archive_page_title' );
 				alienship_archive_sticky_posts(); // sticky post query
 				if ( have_posts() ) {

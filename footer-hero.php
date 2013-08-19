@@ -14,7 +14,7 @@ do_action( 'alienship_footer_before' ); ?>
 	<?php do_action( 'alienship_footer_inside ' ); ?>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-sm-6">
 
 				<?php edit_post_link( __( 'Edit page', 'alienship' ), '<span class="edit-link"><i class="glyphicon glyphicon-pencil"></i>&nbsp;', ' - </span>' );
 				if ( of_get_option('alienship_custom_footer_toggle') ) {
@@ -22,9 +22,9 @@ do_action( 'alienship_footer_before' ); ?>
 				} else {
 					echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
 
-			</div><!-- col-lg-6 -->
+			</div><!-- col-sm-6 -->
 
-			<div class="col-lg-6">
+			<div class="col-sm-6">
 
 				<?php if ( has_nav_menu( 'bottom' ) ) {
 					wp_nav_menu( array( 'theme_location' => 'bottom', 'container' => false, 'menu_class' =>  'footer-nav mobile' ) );

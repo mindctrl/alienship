@@ -35,19 +35,19 @@ function alienship_sidebar_class( $prefix = false ) {
 
 	switch ( $count ) {
 		case '1':
-			$class = ' col-lg-12';
+			$class = ' col-sm-12';
 			break;
 
 		case '2':
-			$class = ' col-lg-6';
+			$class = ' col-sm-6';
 			break;
 
 		case '3':
-			$class = ' col-lg-4';
+			$class = ' col-sm-4';
 			break;
 
 		case '4':
-			$class = ' col-lg-3';
+			$class = ' col-sm-3';
 			break;
 	}
 
@@ -77,7 +77,7 @@ function alienship_do_sidebar( $prefix = false ) {
 		if ( $sidebar_class ): ?>
 
 			<div class="<?php echo $prefix; ?>-sidebar-row row">
-				<div id="<?php echo $prefix; ?>-sidebar-wrapper" class="complementary col-lg-12 <?php echo $prefix; ?>-wrapper">
+				<div id="<?php echo $prefix; ?>-sidebar-wrapper" class="complementary col-sm-12 <?php echo $prefix; ?>-wrapper">
 					<?php do_action( 'alienship_sidebar_container_inside_top' );
 
 					if ( is_active_sidebar( $prefix.'-1' ) ): ?>
@@ -486,7 +486,7 @@ function alienship_featured_posts_slider() {
 
 	if ( $featured_query->have_posts() ) { ?>
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-sm-12">
 				<div id="featured-carousel" class="carousel slide">
 					<div class="carousel-inner">
 
@@ -498,7 +498,7 @@ function alienship_featured_posts_slider() {
 					<a class="left carousel-control" href="#featured-carousel" data-slide="prev"><span class="icon-prev"></span></a>
 					<a class="right carousel-control" href="#featured-carousel" data-slide="next"><span class="icon-next"></span></a>
 				</div><!-- #featured-carousel -->
-			</div><!-- .col-lg-12 -->
+			</div><!-- .col-sm-12 -->
 		</div><!-- .row -->
 
 		<script type="text/javascript">

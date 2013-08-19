@@ -713,17 +713,17 @@ img.aligncenter {
 .widget {
 	margin: 0 0 1.5em;
 }
-
+.widget ul {
+  padding: 0 0 0 15px;
+}
 .widget li {
   font-size: 13px;
   margin-bottom: 2px;
 }
-
 .widget a,
 .footerwidget a {
   line-height: 21px;
 }
-
 .widget select,
 .widget input {
   max-width: 95%;
@@ -795,6 +795,9 @@ input#s {
     padding: 0 15px 40px 15px;
   }
   /* Improve font size and spacing on dropdown menu on mobile/tablets */
+  .navbar-nav .open .dropdown-menu > li > a {
+    padding: 12px 15px 12px 25px;
+  }
   .navbar .nav > li > a, .navbar .dropdown-menu a {
     font-size: 18px;
     font-weight: normal;

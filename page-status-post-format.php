@@ -12,7 +12,7 @@ get_header(); ?>
 <!-- Main -->
 	<?php do_action( 'alienship_content_before' ); ?>
 	<div class="row">
-		<div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-lg-9' ); ?>">
+		<div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
 
 			<?php
 				$status_posts = get_posts( array(

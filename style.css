@@ -45,6 +45,9 @@ h6 {
 
 /* Navigation
 ----------------------------------------------- */
+.admin-bar .navbar-fixed-top {
+  top: 28px;
+}
 /* Increase the padding of dropdown links */
 .dropdown-menu li > a {
   padding: 6px 15px;
@@ -510,6 +513,9 @@ p img,
 }
 
 /* Page Templates */
+.page-template-page-hero-php .navbar {
+  margin-bottom: 0;
+}
 .page-template-page-hero-php .colophon {
   margin-top: 50px;
 }
@@ -794,10 +800,6 @@ input#s {
     font-size: 18px;
     font-weight: normal;
     padding: 15px 20px;
-  }
-  /* Fix navbar top margin in responsive when admin bar is showing */
-  body.logged-in > div.navbar-fixed-top {
-    margin-top: 0px;
   }
 }
 

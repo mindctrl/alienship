@@ -6,8 +6,8 @@
  * @since Alien Ship 0.70
  */
 ?>
-<!-- Load Top Menu -->
-	<nav class="navbar" role="navigation">
+<!-- Top Menu -->
+	<nav class="<?php echo apply_filters( 'alienship_top_navbar_class' , 'navbar' ); ?>" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">Toggle navigation</span>

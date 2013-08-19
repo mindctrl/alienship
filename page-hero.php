@@ -8,8 +8,8 @@
  */
 
 get_header('hero'); ?>
-	<div class="container">
-		<div class="jumbotron">
+	<div class="jumbotron">
+		<div class="container">
 			<?php
 			while ( have_posts() ) : the_post();
 
@@ -20,13 +20,14 @@ get_header('hero'); ?>
 				do_action( 'alienship_loop_after' );
 
 			endwhile; ?>
-		</div><!-- /jumbotron -->
+		</div><!-- /container -->
+	</div><!-- /jumbotron -->
 
-		<div id="hero-widgets-container" class="widget widget-area" role="complementary">
-			<?php
-			do_action( 'before_sidebar' );
-			alienship_do_sidebar( 'herowidgets' ); ?>
-		</div>
-	</div><!-- /container -->
+	<div id="hero-widgets-container" class="widget widget-area" role="complementary">
+		<?php
+		do_action( 'before_sidebar' );
+		alienship_do_sidebar( 'herowidgets' ); ?>
+	</div>
+
 </div><!-- #main -->
 <?php get_footer('hero'); ?>

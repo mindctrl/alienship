@@ -17,7 +17,7 @@ do_action( 'alienship_post_before' ); ?>
 		<?php }
 		the_content( __( 'Continue Reading &rarr;', 'alienship' ) );
 
-		alienship_wp_link_pages(); ?>
+		wp_link_pages(); ?>
 	</div>
 
 	<footer class="entry-meta">

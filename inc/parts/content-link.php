@@ -21,7 +21,7 @@ do_action( 'alienship_post_before' ); ?>
 
 	<div class="entry-content">
 		<?php echo $post_content; // displays post content without the link
-		alienship_wp_link_pages(); ?>
+		wp_link_pages(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">

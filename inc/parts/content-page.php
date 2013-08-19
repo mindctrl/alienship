@@ -16,7 +16,7 @@
 		<?php
 		the_content( __( 'Continue Reading &rarr;', 'alienship' ) );
 
-		alienship_wp_link_pages();
+		wp_link_pages();
 
 		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="glyphicon glyphicon-pencil"></i>', '</span>' );
 

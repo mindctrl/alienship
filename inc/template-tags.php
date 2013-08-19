@@ -685,27 +685,6 @@ endif;
 
 
 
-/**
- * Hack the markup from wp_link_pages to be semantic unordered list.
- * I hate everything about this, but until I find a better way...
- */
-function alienship_wp_link_pages() {
-
-	global $paged_page_nav;
-
-	// Get our initial links
-	$paged_page_nav = wp_link_pages( array( 'before' => '' . __( 'Pages:', 'alienship' ) .'<br><ul class="pagination">', 'link_before' => '<li>', 'link_after' => '</li>', 'after' => '</ul>', 'echo' => false ) );
-
-	// Rearrange things
-	$paged_page_nav = str_replace( '<a', '<li><a', $paged_page_nav );
-	$paged_page_nav = str_replace( '</a>', '</a></li>', $paged_page_nav );
-	$paged_page_nav = str_replace( '"><li>', '">', $paged_page_nav );
-
-	echo $paged_page_nav;
-}
-
-
-
 if ( ! function_exists( 'alienship_the_attached_image' ) ) :
 /**
  * Prints the attached image with a link to the next attached image.

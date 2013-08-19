@@ -57,7 +57,7 @@ get_header(); ?>
 
 						<?php
 						the_content();
-						alienship_wp_link_pages();
+						wp_link_pages();
 						?>
 					</div><!-- .entry-content -->
 

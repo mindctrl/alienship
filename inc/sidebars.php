@@ -23,8 +23,28 @@ function alienship_widgets_init() {
 		'name'          => __( 'Hero Widgets', 'alienship' ),
 		'description'   => __( 'Displayed on pages created with the Hero template', 'alienship' ),
 		'id'            => 'herowidgets-1',
-		'before_widget' => '<div class="col-sm-4">',
-		'after_widget'  => '</div>',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Hero Widgets 2', 'alienship' ),
+		'description'   => __( 'Displayed on pages created with the Hero template', 'alienship' ),
+		'id'            => 'herowidgets-2',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Hero Widgets 3', 'alienship' ),
+		'description'   => __( 'Displayed on pages created with the Hero template', 'alienship' ),
+		'id'            => 'herowidgets-3',
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );

@@ -261,10 +261,6 @@ article {
   line-height: 1.8;
 }
 
-.hero-unit .entry-content p {
-  font-size: 18px;
-}
-
 .entry-content li {
   line-height: 1.625;
 }
@@ -540,10 +536,6 @@ p img,
 .page-template-page-marketing-php .entry-content {
   padding: 0;
 }
-.jumbotron {
-  margin: 60px 0;
-  text-align: center;
-}
 .jumbotron h1 {
   font-size: 72px;
   line-height: 1;
@@ -806,29 +798,6 @@ input#s {
   /* Fix navbar top margin in responsive when admin bar is showing */
   body.logged-in > div.navbar-fixed-top {
     margin-top: 0px;
-  }
-  /* Change Hero styling to better fit on mobile devices */
-  .hero-unit {
-    background-color: #f5f5f5;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    padding: 5px;
-  }
-
-  .hero-unit h1 {
-    font-size: 50px;
-    letter-spacing: -1px;
-    line-height: 1;
-    margin-bottom: 0;
-  }
-
-  .hero-unit p {
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 27px;
-    padding: 1px;
   }
 }
 

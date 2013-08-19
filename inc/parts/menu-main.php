@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="<?php echo apply_filters( 'alienship_top_navbar_class', 'collapse navbar-collapse navbar-ex2-collapse' ); ?>">
-			<?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
 		</div>
 	</nav>
 <!-- End Main menu -->

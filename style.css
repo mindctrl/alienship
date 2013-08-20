@@ -52,12 +52,6 @@ h6 {
 .dropdown-menu li > a {
   padding: 6px 15px;
 }
-
-/* Numbered page navigation*/
-#numbered-nav-below {
-  text-align: center;
-}
-
 /* Footer Nav / Bottom Menu */
 .footer-nav li {
   display: block;
@@ -65,7 +59,6 @@ h6 {
   margin-bottom: 0;
   padding-left: 3%;
 }
-
 /* Mobile Footer Nav */
 @media only screen and (max-width: 767px) {
 ul.footer-nav.mobile,
@@ -83,22 +76,18 @@ ul.footer-nav.mobile li {
   padding-left: 0;
   padding-right: 0;
 }
-
 dl.nav.mobile dt {
   display: none;
 }
-
 dl.nav.mobile dd {
   float: none;
   height: auto;
 }
-
 ul.footer-nav.mobile li a:hover {
   background-color: #08c;
   color: #fff;
   text-decoration: none;
 }
-
 ul.footer-nav.mobile li a,
 dl.nav.mobile dd a {
   border: solid 0 #ccc;
@@ -116,14 +105,12 @@ dl.nav.mobile dd a {
   padding: 18px 20px;
   width: auto;
 }
-
 ul.footer-nav.mobile li a.active,
 dl.nav.mobile dd a.active {
   border-width: 1px 0 0;
   height: auto;
   margin: 0;
 }
-
 ul.footer-nav.mobile li.current-menu-item a,
 dl.nav.mobile dd.current-menu-item a,
 .nice.tabs.mobile dd.current-menu-item a {
@@ -140,74 +127,59 @@ dl.nav.mobile dd.current-menu-item a,
 ----------------------------------------------- */
 
 /* Various design elements
--------------------------- */
+--------------------------------------- */
 
-.sticky {
 
-}
-
-/* Style the comments
+/* Comments
  ---------------------------------------*/
 #comments {
   border-top: 1px solid #eee;
   margin: 40px 0 0 1px;
   padding: 40px 0 0;
 }
-
 .thread-even > .comment-body {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
-
 .comment-body {
   margin-bottom: 20px;
   padding: 7px 7px 7px 10px;
 }
-
 #comments cite {
   font-size: 15px;
   font-weight: bold;
 }
-
 #comments .comment-meta {
   font-size: 12px;
 }
-
 /* Pad the comment list */
 div.reply,
 .comment-list {
   padding-bottom: 7px;
 }
-
 div.comment-author {
   margin-bottom: 7px;
 }
-
 div.comment-content {
   margin-top: 7px;
 }
-
 div.comment-author > img.avatar {
   background: none repeat scroll 0 0 #fff;
   margin-right: 0.846em;
   padding: 3px;
   vertical-align: middle;
 }
-
 #comments ul.children {
   margin-left: 20px;
 }
-
 #comments ul.children li {
   border-top: 1px solid #e6e6e6;
   list-style-type: none;
 }
-
 /* Highlight comments made by the post author */
 .bypostauthor > article {
   background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
 }
-
 .bypostauthor > article img.avatar {
   border-bottom: 4px solid #46a546;
 }
@@ -218,18 +190,15 @@ div.comment-author > img.avatar {
 ---------------------------------------------------- */
 
 
-
 /* Page / Wrapper / Content
 ----------------------------------------------- */
 #page {
   margin: 0px auto;
   max-width: 1140px;
 }
-
 #main-row {
   margin-top: 10px;
 }
-
 /* The article wrapper that displays the content of a post/page/whatever */
 article {
   margin: 0 0 50px;
@@ -243,7 +212,6 @@ article {
   margin-right: 0;
   width: 100%;
 }
-
 /* Two columns: sidebar left, content right. */
 .layout-2c-r #content {
     float: right;
@@ -258,16 +226,13 @@ article {
 .entry-summary,
 .entry-content p,
 .entry-summary p {
-  font-family: "Helvetica Neue", Helvetica;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.8;
 }
-
 .entry-content li {
   line-height: 1.625;
 }
-
 ol > li {
   margin-left: .20em;
 }
@@ -276,18 +241,15 @@ ol > li {
 hgroup {
 	margin-bottom: 10px;
 }
-
 header#masthead {
   padding-bottom: 20px;
 }
-
 p.site-title {
   font-size: 30px;
   font-weight: bold;
   line-height: 36px;
   margin-bottom: 0;
 }
-
 p.site-description {
   font-size: 24px;
   font-weight: bold;
@@ -300,16 +262,14 @@ ins {
   background: #fff9c0;
   text-decoration: none;
 }
-
 p {
   margin-bottom: 1.625em;
 }
-
 /* a small bottom margin prevents content floating under images */
 p img {
   margin-bottom: 0.5em;
+  margin-top: 0.4em;
 }
-
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"],
@@ -318,18 +278,41 @@ img[class*="attachment-"],
   height: auto;
   padding: 6px;
 }
-
 img.wp-post-image {
   border: 0;
   height: auto;
   padding: 0;
 }
-
+/* Fluid images for posts, comments, and widgets */
 img.header-image,
 img.wp-post-image,
-img.avatar {
+img.avatar,
+.entry-content img,
+.comment-content img,
+.widget img {
   height: auto;
   max-width: 100%;
+}
+
+/* WordPress image captions */
+.wp-caption {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5em;
+  margin-top: 0.4em;
+  max-width: 100%;
+}
+.wp-caption img {
+  display: block;
+  margin: 1.2% auto 0;
+  max-width: 98%;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 0.8075em 0;
+  padding: 10px 0 0 10px;
 }
 
 /* Featured Posts
@@ -357,29 +340,24 @@ ul#featured-posts-grid > li {
   margin-bottom: 25px;
   padding-bottom: 2px;
 }
-
 ul#featured-posts-grid > li > header > h4 {
   line-height: 18px;
 }
-
 .innergrid {
   height: 85%;
   float: none;
   padding: 0 10px 12px;
 }
-
 .innergrid > p {
   line-height: 24px;
   margin-bottom: 0;
 }
-
 .innergrid > a > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
 }
-
 .grid-header {
   font-size: 14px;
   line-height: 18px;
@@ -387,7 +365,6 @@ ul#featured-posts-grid > li > header > h4 {
   padding-bottom: 5px;
   text-align: center;
 }
-
 .grid-footer-meta {
   font-size: 12px; text-align: center;
   margin-bottom: .125em;
@@ -402,31 +379,21 @@ ul#featured-posts-grid > li > header > h4 {
 .entry-content {
   padding: 15px 0;
 }
-
 .entry-content h1,
 .entry-content h2,
 .comment-content h1,
 .comment-content h2 {
   margin: 0 0 .8125em;
 }
-
 /* Remove margins from page-header that get set above if used inside a post/page */
 .page-header h1,
 .page-header h2 {
   margin: 0;
 }
-
 /* Space out the archives descriptions from the names */
 .page-header .taxonomy-description p {
   font-size: 1.15em;
   margin: 10px 3px;
-}
-
-/* Fluid images for posts, comments, and widgets */
-.entry-content img,
-.comment-content img,
-.widget img {
-  max-width: 100%;
 }
 
 /* Titles in archive/index */
@@ -444,28 +411,6 @@ h2.entry-title {
   padding: 7px 0;
 }
 
-/* Page links */
-.pagination li.active {
-    background-color: #eee;
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none 100% 100% 100% 100% / 1 1 1 1 / 0 0 0 0 stretch stretch;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: #ddd;
-    border-style: solid;
-    border-width: 1px 1px 1px 0;
-    float: left;
-    line-height: 1.428571429;
-    padding: 6px 12px;
-    text-decoration: none;
-}
-
-.pagination li.active:first-child,
-.pagination > ul > a:first-child {
-  border-left-width: 1px;
-}
-
 /* The meta data displayed within a post footer. */
 footer.entry-meta {
   border-bottom: 1px solid #eee;
@@ -476,33 +421,6 @@ footer.entry-meta {
 }
 .entry-meta .glyphicon {
   margin-right: 4px;
-}
-
-p img,
-.wp-caption {
-  margin-top: 0.4em;
-}
-
-/* WordPress image captions */
-.wp-caption {
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-  margin-bottom: 1.5em;
-  max-width: 100%;
-}
-
-.wp-caption img {
-  display: block;
-  margin: 1.2% auto 0;
-  max-width: 98%;
-}
-
-.wp-caption .wp-caption-text,
-.gallery-caption {
-  color: #666;
-  font-size: 12px;
-  margin-bottom: 0.8075em 0;
-  padding: 10px 0 0 10px;
 }
 
 /* Copyright / bottom menu area */
@@ -565,7 +483,6 @@ p img,
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
-
 .screen-reader-text:hover,
 .screen-reader-text:active,
 .screen-reader-text:focus {
@@ -593,30 +510,25 @@ p img,
   float: left;
   margin-right: 1.625em;
 }
-
 .alignright {
   display: inline;
   float: right;
   margin-left: 1.625em;
 }
-
 .aligncenter {
   clear: both;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
 img.alignright {
   float:right;
   margin: 0 0 1em 1em;
 }
-
 img.alignleft {
   float:left;
   margin:0 1em 1em 0;
 }
-
 img.aligncenter {
   display: block;
   margin-left: auto;
@@ -656,22 +568,18 @@ img.aligncenter {
     background: url("img/quote.png") no-repeat scroll left top;
     background-size: 20px 20px;
 }
-
 .format-quote .entry-content,
 .format-quote .entry-summary {
   padding: 1.5em 0;
 }
-
 .format-quote cite {
     margin-top: 10px;
     font-style: italic;
 }
-
 .format-quote blockquote {
   border-left: 0;
   margin: 0 0 18px 15px;
 }
-
 .format-quote blockquote p {
   font-style: italic;
 }
@@ -702,17 +610,14 @@ img.aligncenter {
 .widget input {
   max-width: 95%;
 }
-
 .widget a:hover,
 .footerwidget a:hover {
   background-color: #EEEEEE;
   text-decoration: none;
 }
-
 .footerwidget {
   padding: 0px 0px 25px 0px;
 }
-
 .footerwidget p.entry-title {
   margin-bottom: 9px;
 }

@@ -7,7 +7,7 @@
  */
 ?>
 <!-- Top Menu -->
-	<nav class="<?php echo apply_filters( 'alienship_top_navbar_class' , 'navbar' ); ?>" role="navigation">
+	<nav class="<?php echo apply_filters( 'alienship_top_navbar_class' , 'navbar navbar-default' ); ?>" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">Toggle navigation</span>

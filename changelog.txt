@@ -1,4 +1,14 @@
 == Change log ==
+Version 1.0 - Under development
+-------------------------------
+- Updated to Bootstrap 3 final.
+- Updated the HTML5 shiv script for older IE versions.
+- Converted from spaces to tabs in all files.
+- Removed Chrome Frame references from outdated browser message.
+- A lot of general maintenance and cleanup.
+
+
+
 Version .951 - March 26, 2013
 -----------------------------
 - Fix comments.php issue

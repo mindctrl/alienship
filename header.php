@@ -17,7 +17,7 @@
 		<?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 
 		<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
 		<![endif]-->
 
 		<?php wp_head(); ?>

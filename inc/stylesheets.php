@@ -15,9 +15,6 @@ function alienship_theme_styles() {
 	// Load core Bootstrap CSS
 	wp_enqueue_style( 'bootstrap', alienship_locate_template_uri( 'css/bootstrap.min.css' ), array(), $alienship['Version'], 'all' );
 
-	// Load Bootstrap Glyphicons
-	wp_enqueue_style( 'glyphicons', alienship_locate_template_uri( 'css/bootstrap-glyphicons.css' ), array(), $alienship['Version'], 'all' );
-
 	/* Load theme styles */
 	wp_enqueue_style( 'alienship-style', get_stylesheet_uri(), array( 'bootstrap' ), $alienship['Version'], 'all' );
 }

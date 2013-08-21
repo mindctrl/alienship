@@ -15,7 +15,7 @@ get_header('hero'); ?>
 
 				do_action( 'alienship_loop_before' );
 
-				get_template_part( '/inc/parts/content', 'heropage' );
+				get_template_part( '/templates/parts/content', 'heropage' );
 
 				do_action( 'alienship_loop_after' );
 

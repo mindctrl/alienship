@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<?php get_template_part( '/inc/parts/meta' ); ?>
+		<?php get_template_part( '/templates/parts/meta' ); ?>
 		<title><?php wp_title( '&#8226;', true, 'right' ); ?></title>
 
 		<?php if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
@@ -29,11 +29,11 @@
 
 	<?php
 	if ( of_get_option('alienship_show_top_navbar',1) ) {
-		get_template_part( '/inc/parts/menu', 'top' );
+		get_template_part( '/templates/parts/menu', 'top' );
 	}
 
 	// If not using Hero template, do header image and menu stuff
-	if ( ! is_page_template( 'page-hero.php' ) ) { ?>
+	if ( ! is_page_template( 'templates/page-hero.php' ) ) { ?>
 
 		<div id="page" class="container hfeed">
 
@@ -67,14 +67,14 @@
 				<?php endif; // end check for header image ?>
 
 				<?php if ( has_nav_menu('main') ) {
-					get_template_part( '/inc/parts/menu', 'main' );
+					get_template_part( '/templates/parts/menu', 'main' );
 				} ?>
 			</header><!-- #masthead -->
 			<?php do_action( 'alienship_header_after' ); ?>
 
 			<?php if ( function_exists('alienship_breadcrumbs') && !is_front_page() ) { alienship_breadcrumbs(); } ?>
 
-	<?php } // !is_page_template( 'page-hero.php' ) ?>
+	<?php } // !is_page_template( 'templates/page-hero.php' ) ?>
 
 	<?php do_action( 'alienship_main_before' ); ?>
 	<div id="main">

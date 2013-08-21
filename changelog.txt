@@ -1,11 +1,14 @@
 == Change log ==
 Version 1.0 - Under development
 -------------------------------
+- NOTE: Not backwards compatible with previous versions.
 - Updated to Bootstrap 3 final.
 - Updated the HTML5 shiv script for older IE versions.
 - Converted from spaces to tabs in all files.
 - Removed Chrome Frame references from outdated browser message.
 - A lot of general maintenance and cleanup.
+- Moved page templates to templates/ folder. This will disassociate existing page template assignments if you upgrade.
+- Moved template parts from inc/parts/ to templates/parts.
 
 
 

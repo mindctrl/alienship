@@ -17,7 +17,7 @@ get_header(); ?>
 
 				do_action( 'alienship_loop_before' );
 
-				get_template_part( '/inc/parts/content', 'page' );
+				get_template_part( '/templates/parts/content', 'page' );
 
 				do_action( 'alienship_loop_after' );
 

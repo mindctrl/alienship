@@ -438,22 +438,22 @@ footer.entry-meta {
 }
 
 /* Page Templates */
-.page-template-page-hero-php .navbar {
+.page-template-templatespage-hero-php .navbar {
   margin-bottom: 0;
 }
-.page-template-page-hero-php .colophon {
+.page-template-templatespage-hero-php .colophon {
   margin-top: 50px;
 }
 
-.page-template-page-marketing-php {
+.page-template-templatespage-marketing-php {
   padding-top: 20px;
   padding-bottom: 40px;
 }
-.page-template-page-marketing-php .lead {
+.page-template-templatespage-marketing-php .lead {
   font-size: 21px;
 }
 .container-narrow,
-.page-template-page-marketing-php .footer {
+.page-template-templatespage-marketing-php .footer {
   margin: 0 auto;
   max-width: 700px;
 }
@@ -464,7 +464,7 @@ footer.entry-meta {
 .container-narrow > hr {
   margin: 30px 0;
 }
-.page-template-page-marketing-php .entry-content {
+.page-template-templatespage-marketing-php .entry-content {
   padding: 0;
 }
 .jumbotron h1 {
@@ -672,12 +672,12 @@ input#s {
 @media only screen and (max-width: 767px) {
   /* Pad the #page */
   #page,
-  .page-template-page-hero-php #main {
+  ..page-template-templatespage-hero-php #main {
     padding-left: 10px;
     padding-right: 10px;
   }
   /* Marketing template */
-  .page-template-page-marketing-php {
+  .page-template-templatespage-marketing-php {
     padding: 0 15px 40px 15px;
   }
   /* Improve font size and spacing on dropdown menu on mobile/tablets */

@@ -12,7 +12,7 @@ get_header( 'marketing' ); ?>
 	<div class="container-narrow">
 
 		<div class="masthead">
-			<?php get_template_part( '/inc/parts/menu', 'marketing-top' ); ?>
+			<?php get_template_part( '/templates/parts/menu', 'marketing-top' ); ?>
 			<h3 id="marketing-header" class="muted"><?php echo apply_filters( 'alienship_marketing_page_header_name', get_bloginfo('name') ); ?></h3>
 		</div><!-- /.masthead -->
 
@@ -21,7 +21,7 @@ get_header( 'marketing' ); ?>
 		<div class="jumbotron">
 			<?php
 			while ( have_posts() ) : the_post();
-				get_template_part( '/inc/parts/content', 'marketing-page' );
+				get_template_part( '/templates/parts/content', 'marketing-page' );
 			endwhile; ?>
 		</div>
 

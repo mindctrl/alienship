@@ -30,7 +30,7 @@ get_header(); ?>
 
 			foreach( (array) $status_posts as $post ) {
 				setup_postdata( $post );
-				get_template_part( '/inc/parts/content', 'status' );
+				get_template_part( '/templates/parts/content', 'status' );
 			}
 
 		do_action( 'alienship_content_after' ); ?>

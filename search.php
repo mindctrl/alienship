@@ -31,7 +31,7 @@ get_header(); ?>
 						$format = get_post_format();
 						if ( false === $format )
 							$format = 'standard';
-						get_template_part( '/inc/parts/content', $format );
+						get_template_part( '/templates/parts/content', $format );
 
 						do_action( 'alienship_loop_after' );
 
@@ -42,7 +42,7 @@ get_header(); ?>
 				} else {
 
 					// No results
-					get_template_part( '/inc/parts/content', 'none' );
+					get_template_part( '/templates/parts/content', 'none' );
 
 				} //have_posts
 

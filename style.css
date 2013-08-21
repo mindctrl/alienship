@@ -222,16 +222,23 @@ article {
 }
 /* End of Theme layouts */
 
+.browsehappy {
+  margin-bottom: 0;
+  text-align: center;
+}
+.browsehappy .alert-link {
+  text-decoration: underline;
+}
 .entry-content,
 .entry-summary,
 .entry-content p,
 .entry-summary p {
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.667em;
 }
 .entry-content li {
-  line-height: 1.625;
+  line-height: 1.625em;
 }
 ol > li {
   margin-left: .20em;

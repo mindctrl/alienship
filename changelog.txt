@@ -7,7 +7,7 @@ Version 1.0 - Under development
 - Converted from spaces to tabs in all files.
 - Removed Chrome Frame references from outdated browser message.
 - A lot of general maintenance and cleanup.
-- Moved page templates to templates/ folder. This will disassociate existing page template assignments if you upgrade.
+- Moved page templates to templates/ folder. This will unassign existing page template assignments when you upgrade if you were already using the beta.
 - Moved template parts from inc/parts/ to templates/parts.
 
 

@@ -11,15 +11,10 @@ If you would like to contribute, please fork it and submit your pull requests. T
 Task List
 ---------
 
-+ Change widget area colors. Reverse title and link colors.
-+ Go through all TODO items
 + Add support for TinyMCE for Bootstrap elements.
 + Add grid support to featured posts shortcode.
-+ Finish styling each post format. Left to do are: aside, gallery, image, video, audio, and chat.
-+ HTML5 validation on post pagination links.
 + Post templates - Future release.
 + More widget areas? Page widget template. 404 page widget.
-+ Clean up code and fix validation issues
 + Avatar and author bio display
 + Documentation
 

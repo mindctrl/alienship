@@ -233,7 +233,7 @@ article {
 .entry-summary,
 .entry-content p,
 .entry-summary p {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 300;
   line-height: 1.667em;
 }
@@ -593,7 +593,7 @@ img.aligncenter {
 
 /* Status post format */
 .format-status p {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 /* Widgets

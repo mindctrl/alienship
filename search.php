@@ -28,10 +28,7 @@ get_header(); ?>
 
 						do_action( 'alienship_loop_before' );
 
-						$format = get_post_format();
-						if ( false === $format )
-							$format = 'standard';
-						get_template_part( '/templates/parts/content', $format );
+						get_template_part( '/templates/parts/content', 'search' );
 
 						do_action( 'alienship_loop_after' );
 

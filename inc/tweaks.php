@@ -77,8 +77,7 @@ if ( ! function_exists( 'alienship_excerpt_more') ):
  */
 function alienship_excerpt_more( $more ) {
 
-	global $post;
-	return ' ... <a href="'. get_permalink($post->ID) . '">'. __( 'Continue Reading ', 'alienship' ) .' &rarr;</a>';
+	return ' ... <a href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading ', 'alienship' ) .' &raquo;</a>';
 }
 add_filter('excerpt_more', 'alienship_excerpt_more');
 endif;

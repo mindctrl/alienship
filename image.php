@@ -35,8 +35,8 @@ get_header(); ?>
 
 						<nav role="navigation" id="image-navigation" class="image-navigation">
 							<ul class="pager">
-								<li><?php previous_image_link( false, __( '&larr; Previous', 'alienship' ) ); ?></li>
-								<li><?php next_image_link( false, __( 'Next &rarr;', 'alienship' ) ); ?></li>
+								<li><?php previous_image_link( false, __( '&laquo; Previous', 'alienship' ) ); ?></li>
+								<li><?php next_image_link( false, __( 'Next &raquo;', 'alienship' ) ); ?></li>
 							</ul>
 						</nav>
 					</header>

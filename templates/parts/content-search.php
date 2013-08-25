@@ -16,15 +16,15 @@ do_action( 'alienship_post_before' ); ?>
 			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'alignleft', 'title' => "" ) ); ?></a>
 		<?php }
 
-		// Show full content on certain post formats
-		if ( has_post_format( array( 'image', 'gallery', 'video', 'audio' ) ) ) {
-			the_content( __( 'Continue Reading &rarr;', 'alienship' ) );
+		// Show full content on certain post formats if it doesn't have an excerpt.
+		if ( has_post_format( array( 'image', 'gallery', 'video', 'audio' ) )  && ! has_excerpt() ) {
+			the_content( __( 'Continue Reading &raquo;', 'alienship' ) );
 
 		// Show only excerpt on the rest.
 		} else {
-			the_excerpt( __( 'Continue Reading &rarr;', 'alienship' ) );
-
-		}
+			the_excerpt( __( 'Continue Reading &raquo;', 'alienship' ) ); ?>
+			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e( 'Continue Reading &raquo;', 'alienship' ); ?></a>
+		<?php }
 
 		wp_link_pages(); ?>
 	</div>

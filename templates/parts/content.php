@@ -12,7 +12,7 @@
 	do_action( 'alienship_entry_title' ); ?>
 
 	<div class="entry-content">
-		<?php the_content( __( 'Continue Reading &rarr;', 'alienship' ) ); ?>
+		<?php the_content( __( 'Continue Reading &raquo;', 'alienship' ) ); ?>
 	</div>
 
 	<footer class="entry-meta">

@@ -5,8 +5,8 @@
  * If the identifier changes, it'll appear as if the options have been reset.
  *
  */
-
 function optionsframework_option_name() {
+
   // This gets the theme name from the stylesheet
   $themename = get_option( 'stylesheet' );
   $themename = preg_replace("/\W/", "_", strtolower($themename) );
@@ -16,12 +16,13 @@ function optionsframework_option_name() {
   update_option('optionsframework', $optionsframework_settings);
 }
 
+
+
 /**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
  * When creating the "id" fields, make sure to use all lowercase and no spaces.
  *
  */
-
 function optionsframework_options() {
 
   // Pull all the categories into an array
@@ -253,6 +254,18 @@ function optionsframework_options() {
           '4' => __( 'Four', 'alienship' ),
           '5' => __( 'Five', 'alienship' ),
           '6' => __( 'Six', 'alienship' )
+      )
+    );
+
+  $options[] = array(
+      'name'    => __( 'Captions' ,'alienship' ),
+      'desc'    => __( 'Show post titles as captions with slider images. Default is Show.', 'alienship' ),
+      'id'      => 'alienship_featured_posts_captions',
+      'std'     => '1',
+      'type'    => 'radio',
+      'options' => array(
+          '1' => __( 'Show slide captions', 'alienship' ),
+          '0' => __( 'Hide slide captions', 'alienship' )
       )
     );
 

@@ -20,8 +20,9 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
 		<![endif]-->
 
-		<?php wp_head(); ?>
-		<?php do_action( 'alienship_head' ); ?>
+		<?php
+		wp_head();
+		do_action( 'alienship_head' ); ?>
 	</head>
 
 <body <?php body_class(); ?>>
@@ -37,44 +38,55 @@
 
 		<div id="page" class="container hfeed">
 
-			<?php do_action( 'before' ); ?>
 			<?php do_action( 'alienship_header_before' ); ?>
 			<header id="masthead" role="banner">
-				<?php do_action( 'alienship_header_inside' ); ?>
-				<?php alienship_header_title_and_description(); ?>
-
 				<?php
+				do_action( 'alienship_header_inside' );
+				alienship_header_title_and_description();
+
 				// Check for header image
 				$header_image = get_header_image();
-				if ( $header_image ) :
+				global $featured_header_image;
+
+				// We have a header image
+				if ( $header_image ) {
+
 					$header_image_width = get_theme_support( 'custom-header', 'width' );
-					$header_image_height = get_theme_support( 'custom-header', 'height' );
-				?>
+					$header_image_height = get_theme_support( 'custom-header', 'height' ); ?>
+
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<?php
-						// The header image
 						// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-						if ( is_singular() && has_post_thumbnail( $post->ID ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_height ) ) ) && $image[1] >= $header_image_width ) :
-							// Houston, we have a new header image!
-							echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-						else :
-							$header_image_width  = get_custom_header()->width;
-							$header_image_height = get_custom_header()->height;
-						?>
-							<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" class="header-image" alt="" />
-						<?php endif; // end check for featured image or standard header ?>
-					</a>
-				<?php endif; // end check for header image ?>
+						if ( is_singular() && has_post_thumbnail( $post->ID ) /* $src, $width, $height */ && ( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_height ) ) ) && $image[1] >= $header_image_width ) {
 
-				<?php if ( has_nav_menu('main') ) {
+							// We have a LARGE image
+							$featured_header_image = 'yes';
+							echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+
+						} else {
+
+							$featured_header_image = 'no';
+							$header_image_width  = get_custom_header()->width;
+							$header_image_height = get_custom_header()->height; ?>
+							<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" class="header-image" alt="" />
+						<?php } ?>
+					</a>
+
+				<?php // end check for header image
+				} else {
+					// We didn't have a header image enabled at all
+					$featured_header_image = 'no';
+				}
+
+				if ( has_nav_menu('main') ) {
 					get_template_part( '/templates/parts/menu', 'main' );
 				} ?>
 			</header><!-- #masthead -->
-			<?php do_action( 'alienship_header_after' ); ?>
+			<?php do_action( 'alienship_header_after' );
 
-			<?php if ( function_exists('alienship_breadcrumbs') && !is_front_page() ) { alienship_breadcrumbs(); } ?>
+			if ( function_exists('alienship_breadcrumbs') && !is_front_page() ) { alienship_breadcrumbs(); }
 
-	<?php } // !is_page_template( 'templates/page-hero.php' ) ?>
+	} // !is_page_template( 'templates/page-hero.php' )
 
-	<?php do_action( 'alienship_main_before' ); ?>
+	do_action( 'alienship_main_before' ); ?>
 	<div id="main">

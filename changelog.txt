@@ -9,6 +9,7 @@ Version 1.0 - Under development
 - A lot of general maintenance and cleanup.
 - Moved page templates to templates/ folder. This will unassign existing page template assignments when you upgrade if you were already using the beta.
 - Moved template parts from inc/parts/ to templates/parts.
+- Added option to disable featured post slide captions.
 
 
 

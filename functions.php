@@ -159,7 +159,7 @@ if ( ! function_exists( 'alienship_locate_template_uri' ) ):
  * Retrieve the URI of the highest priority template file that exists.
  *
  * Searches in the stylesheet directory before the template directory so themes
- * which inherit from a parent theme can just overload one file.
+ * which inherit from a parent theme can just override one file.
  *
  * @param string|array $template_names Template file(s) to search for, in order.
  * @return string The URI of the file if one is located.

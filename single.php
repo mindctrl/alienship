@@ -21,7 +21,7 @@ get_header(); ?>
 					do_action( 'alienship_loop_before' );
 
 					/* Include the Post-Format-specific template for the content.
-					 * If you want to overload this in a child theme then include a file
+					 * If you want to override this in a child theme then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					$format = get_post_format();

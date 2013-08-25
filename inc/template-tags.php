@@ -556,18 +556,11 @@ function alienship_do_archive_page_title() { ?>
 		</h1>
 
 		<?php
-		if ( is_category() ) {
-			// show an optional category description
-			$category_description = category_description();
-			if ( ! empty( $category_description ) )
-				echo apply_filters( 'alienship_category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
+		// show an optional category description
+		$term_description = term_description();
+		if ( ! empty( $term_description ) )
+			printf( '<div class="taxonomy-description">%s</div>', $term_description ); ?>
 
-			} elseif ( is_tag() ) {
-				// show an optional tag description
-				$tag_description = tag_description();
-				if ( ! empty( $tag_description ) )
-					echo apply_filters( 'alienship_tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
-			} ?>
 	</header>
 <?php }
 add_action( 'alienship_archive_page_title', 'alienship_do_archive_page_title' );

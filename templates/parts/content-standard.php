@@ -42,15 +42,19 @@ do_action( 'alienship_post_before' ); ?>
 
 		<?php }
 
-		if ( has_excerpt() && ! is_singular() ) {
+		if ( ! is_singular() ) {
 
-			the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e( 'Continue Reading &raquo;', 'alienship' ); ?></a>
+			// Show excerpts on non-singular views
+			the_excerpt();
 
-		<?php } else {
+			if ( has_excerpt() ) { // We have to add a link below manual excerpts since WP doesn't. ?>
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e( 'Continue Reading &raquo;', 'alienship' ); ?></a>
+			<?php }
 
-			the_content( __( 'Continue Reading &raquo;', 'alienship' ) );
+		} else {
 
+			// Leaving full content on singular views
+			the_content();
 		}
 
 		wp_link_pages(); ?>

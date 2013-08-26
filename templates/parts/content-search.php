@@ -22,7 +22,7 @@ do_action( 'alienship_post_before' ); ?>
 
 		// Show only excerpt on the rest.
 		} else {
-			the_excerpt( __( 'Continue Reading &raquo;', 'alienship' ) ); ?>
+			the_excerpt(); ?>
 			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e( 'Continue Reading &raquo;', 'alienship' ); ?></a>
 		<?php }
 

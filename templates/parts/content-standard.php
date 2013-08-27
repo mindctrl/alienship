@@ -53,7 +53,7 @@ do_action( 'alienship_post_before' ); ?>
 
 		} else {
 
-			// Leaving full content on singular views
+			// Show full content on singular views
 			the_content();
 		}
 

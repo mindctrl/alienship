@@ -270,6 +270,18 @@ function optionsframework_options() {
     );
 
   $options[] = array(
+      'name'    => __( 'Indicators' ,'alienship' ),
+      'desc'    => __( 'Show indicators at the bottom of the slider that show the current slideshow position and allow for navigation between slides. Default is Hide.', 'alienship' ),
+      'id'      => 'alienship_featured_posts_indicators',
+      'std'     => '0',
+      'type'    => 'radio',
+      'options' => array(
+          '1' => __( 'Show slide indicators', 'alienship' ),
+          '0' => __( 'Hide slide indicators', 'alienship' )
+      )
+    );
+
+  $options[] = array(
       'name'    => __( 'Duplicate featured posts' ,'alienship' ),
       'desc'    => __( 'Show posts from the featured content section in the rest of the body. Default is Hide.', 'alienship' ),
       'id'      => 'alienship_featured_posts_show_dupes',

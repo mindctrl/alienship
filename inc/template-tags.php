@@ -494,6 +494,23 @@ function alienship_featured_posts_slider() {
 		<div class="row">
 			<div class="col-sm-12">
 				<div id="featured-carousel" class="carousel slide">
+
+				<?php // Featured post indicators?
+				if ( of_get_option( 'alienship_featured_posts_indicators', 0 ) ) { ?>
+					<ol class="carousel-indicators">
+
+					<?php
+						$indicators = $featured_query->post_count;
+						$count = 0;
+						while ( $count != $indicators ) {
+							echo '<li data-target="#featured-carousel" data-slide-to="' . $count . '"></li>';
+							$count++;
+						}
+					?>
+
+					</ol>
+				<?php } // alienship_featured_posts_indicators ?>
+
 					<div class="carousel-inner">
 
 						<?php while ( $featured_query->have_posts() ) : $featured_query->the_post();
@@ -511,6 +528,7 @@ function alienship_featured_posts_slider() {
 			jQuery(function() {
 				// Activate the first carousel item //
 				jQuery("div.item:first").addClass("active");
+				jQuery("ol.carousel-indicators").children("li:first").addClass("active");
 				// Start the Carousel //
 				jQuery('.carousel').carousel();
 			});
@@ -518,6 +536,7 @@ function alienship_featured_posts_slider() {
 	<?php } // if(have_posts()) ?>
 	  <!-- End featured listings -->
 <?php }
+
 endif;
 
 

@@ -77,6 +77,10 @@ function alienship_setup() {
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
+	// Add support for custom backgrounds
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'ffffff',
+	) );
 
 	// Add support for post-thumbnails
 	add_theme_support( 'post-thumbnails' );

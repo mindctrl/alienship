@@ -251,17 +251,17 @@ hgroup {
 header#masthead {
   padding-bottom: 20px;
 }
-p.site-title {
+.site-title {
   font-size: 30px;
   font-weight: bold;
   line-height: 36px;
   margin-bottom: 0;
 }
-p.site-description {
+.site-description {
   font-size: 24px;
   font-weight: bold;
   line-height: 36px;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 mark,
@@ -654,13 +654,9 @@ input#s {
 /* Responsive layout
 ---------------------------------------------- */
 @media only screen and (max-width: 480px) {
-  /* Reduce font sizes on mobile */
-  h1 { font-size: 30px !important; line-height: 1.3; }
-  h2 { font-size: 25px !important; line-height: 1.3; }
-  h2.grid-header { font-size: 14px !important; }
-  h3 { font-size: 20px !important; line-height: 1.3; }
- .navbar .brand { font-size: 17px !important; margin-left: -20px; }
- .btn-navbar { margin-right: -10px; }
+  h2.grid-header {
+    font-size: 14px !important;
+  }
 }
 
 @media only screen and (max-width: 767px) {

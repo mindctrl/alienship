@@ -118,7 +118,7 @@ function optionsframework_options() {
   // Miscellaneous text options
   $options[] = array(
       'name' => __( 'Miscellaneous Text', 'alienship' ),
-      'desc' => __( 'Miscellaneous text items, such as site name and description and custom footer text.', 'alienship' ),
+      'desc' => __( 'Miscellaneous text options.', 'alienship' ),
       'type' => 'info'
     );
 

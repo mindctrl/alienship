@@ -110,6 +110,7 @@ add_action( 'admin_init','optionscheck_change_sanitize', 100 );
 function custom_sanitize_text( $input ) {
 
 	global $allowedposttags;
+
 	$custom_allowedtags["a"] = array(
 		"href"   => array(),
 		"target" => array(),
@@ -117,8 +118,8 @@ function custom_sanitize_text( $input ) {
 		"class"  => array()
 	);
 
-	$custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
-	$output = wp_kses( $input, $custom_allowedtags);
+	$custom_allowedtags = array_merge( $custom_allowedtags, $allowedposttags );
+	$output = wp_kses( $input, $custom_allowedtags );
 	return $output;
 }
 
@@ -127,14 +128,13 @@ function custom_sanitize_text( $input ) {
 // Display a notice about menu functionality
 function alienship_admin_notice_menus() {
 
-	global $current_user ;
-	global $pagenow;
+	global $current_user, $pagenow;
 	$user_id = $current_user->ID;
 
 	// Check that we're an admin, that we're on the menus page, and that the user hasn't already ignored the message
-	if ( current_user_can('administrator') && $pagenow =='nav-menus.php' && ! get_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice' ) ) {
+	if ( current_user_can( 'administrator' ) && $pagenow =='nav-menus.php' && ! get_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice' ) ) {
 		echo '<div class="updated"><p>';
-		printf( __( 'Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide this notice</a>' ), '?alienship_admin_notice_menus_ignore=0' );
+		printf( __( 'Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Sub-menus are not supported. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide this notice</a>' ), '?alienship_admin_notice_menus_ignore=0' );
 		echo "</p></div>";
 	}
 }
@@ -148,7 +148,7 @@ function alienship_admin_notice_menus_ignore() {
 	$user_id = $current_user->ID;
 
 	// If user clicks to ignore the notice, add that to their user meta
-	if ( isset( $_GET['alienship_admin_notice_menus_ignore']) && '0' == $_GET['alienship_admin_notice_menus_ignore'] ) {
+	if ( isset( $_GET['alienship_admin_notice_menus_ignore'] ) && '0' == $_GET['alienship_admin_notice_menus_ignore'] ) {
 		add_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice', 'true', true );
 	}
 }

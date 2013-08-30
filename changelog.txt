@@ -11,6 +11,9 @@ Version 1.0 - Under development
 - Moved template parts from inc/parts/ to templates/parts.
 - Added option to enable/disable featured post slide captions.
 - Added featured post indicators with option to enable/disable them.
+- Added support for custom backgrounds.
+- Updated breadcrumb library. Thanks to Justin Tadlock for this great extension.
+- Removed the Marketing Page template.
 
 
 

@@ -7,7 +7,7 @@
  */
 
 
-/* Load our styles */
+// Load frontend theme styles
 function alienship_theme_styles() {
 
 	$alienship = wp_get_theme();
@@ -19,3 +19,12 @@ function alienship_theme_styles() {
 	wp_enqueue_style( 'alienship-style', get_stylesheet_uri(), array( 'bootstrap' ), $alienship['Version'], 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'alienship_theme_styles' );
+
+
+
+// Load admin styles
+function alienship_admin_styles() {
+
+	wp_enqueue_style( 'alienship-admin-style', alienship_locate_template_uri( 'css/admin.css' ), array(), '1.0.0', 'all' );
+}
+add_action( 'admin_enqueue_scripts', 'alienship_admin_styles' );

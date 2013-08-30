@@ -1,0 +1,9 @@
+#optionsframework .group .section {
+	padding: 10px 10px 25px;
+}
+.section .heading {
+	font-size: 1.1em;
+}
+.section-info .heading {
+	font-size: 1.4em;
+}

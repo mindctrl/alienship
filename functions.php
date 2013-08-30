@@ -49,7 +49,6 @@ function alienship_setup() {
 
 	// Breadcrumbs
 	if ( of_get_option( 'alienship_breadcrumbs',1) ) {
-		//locate_template( '/inc/breadcrumbs.php', true );
 		locate_template( '/inc/breadcrumb-trail.php', true );
 	}
 

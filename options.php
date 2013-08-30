@@ -5,8 +5,8 @@
  * If the identifier changes, it'll appear as if the options have been reset.
  *
  */
-
 function optionsframework_option_name() {
+
   // This gets the theme name from the stylesheet
   $themename = get_option( 'stylesheet' );
   $themename = preg_replace("/\W/", "_", strtolower($themename) );
@@ -16,12 +16,13 @@ function optionsframework_option_name() {
   update_option('optionsframework', $optionsframework_settings);
 }
 
+
+
 /**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
  * When creating the "id" fields, make sure to use all lowercase and no spaces.
  *
  */
-
 function optionsframework_options() {
 
   // Pull all the categories into an array
@@ -66,17 +67,6 @@ function optionsframework_options() {
       'type' => 'info'
     );
 
-  /* $options[] = array( 'name' => "Show logo image in Top Menu navigation bar?",
-            'desc' => "Check this box to show a logo image in the Top Menu navigation bar. Upload your logo image below. Default is disabled.",
-            'id' => "alienship_logo_in_navbar",
-            'std' => '0',
-            'type' => 'checkbox');
-
-  $options[] = array( 'name' => "Upload a logo image for the Top Menu navigation bar.",
-            'desc' => "Upload an image to use as a logo image in the Top Menu navigation bar. Note: You must enable the option above for this image to be displayed. FOR BEST RESULTS: upload an image that isn't too large.",
-            'id' => "alienship_logo_in_navbar_file",
-            'type' => "upload"); */
-
   $options[] = array(
       'name' => __( 'Show Top Menu navigation bar?', 'alienship' ),
       'desc' => __( 'Displays the top navbar on your site, even if there\'s no menu assigned in Appearance > Menu. Uncheck this box to hide it. Default is enabled.', 'alienship' ),
@@ -90,14 +80,6 @@ function optionsframework_options() {
       'desc' => __( 'Default is enabled. Uncheck this box to hide site name in Top Menu navigation bar.', 'alienship' ),
       'id'   => 'alienship_name_in_navbar',
       'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Show site description in Top Menu navigation bar?', 'alienship' ),
-      'desc' => __( 'Check this box to show site description in Top Menu navigation bar. NOTE: Enabling this option will shift your nav menu to the right to make room for the site description. Site description is hidden on mobile devices. Default setting is disabled.', 'alienship' ),
-      'id'   => 'alienship_desc_in_navbar',
-      'std'  => '0',
       'type' => 'checkbox'
     );
 
@@ -136,7 +118,7 @@ function optionsframework_options() {
   // Miscellaneous text options
   $options[] = array(
       'name' => __( 'Miscellaneous Text', 'alienship' ),
-      'desc' => __( 'Miscellaneous text items, such as site name and description and custom footer text.', 'alienship' ),
+      'desc' => __( 'Miscellaneous text options.', 'alienship' ),
       'type' => 'info'
     );
 
@@ -160,18 +142,6 @@ function optionsframework_options() {
       'name' => __( 'Posts and Pages', 'alienship' ),
       'desc' => __( 'Options related to the display of posts and pages, like excerpts and post meta information (published date, author, categories, and tags - is displayed on each post to provide your readers with information). Use the options below to control what is displayed.', 'alienship' ),
       'type' => 'info'
-    );
-
-  $options[] = array(
-      'name'    => __( 'Display full content or excerpts on index, search, and archive type pages?', 'alienship' ),
-      'desc'    => __( 'Excerpt shows a short snippet of your post, and full content shows it all. The default setting is Show entire post.', 'alienship' ),
-      'id'      => 'alienship_archive_display',
-      'std'     => 'full',
-      'type'    => 'radio',
-      'options' => array(
-          'full'    => __( 'Show entire post', 'alienship' ),
-          'excerpt' => __( 'Show post excerpt', 'alienship' )
-      )
     );
 
   $options[] = array(
@@ -229,21 +199,6 @@ function optionsframework_options() {
       'std'  => '1',
       'type' => 'checkbox'
     );
-
-  $options[] = array(
-      'name' => __( 'Miscellaneous', 'alienship' ),
-      'desc' => __( 'Miscellaneous design options.', 'alienship' ),
-      'type' => 'info'
-    );
-
-  $options[] = array(
-      'name' => __( 'Enable Responsive Design?', 'alienship' ),
-      'desc' => __( 'Responsive design allows your site and its components to scale according to a range of resolutions and devices to provide a consistent experience. In other words, it looks good on computers, tablets, and smartphones. Default is enabled. If you don\'t need it, uncheck this box to turn it off.', 'alienship' ),
-      'id'   => 'alienship_responsive',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
 
   // Featured Posts tab
   $options[] = array(
@@ -303,6 +258,30 @@ function optionsframework_options() {
     );
 
   $options[] = array(
+      'name'    => __( 'Captions' ,'alienship' ),
+      'desc'    => __( 'Show post titles as captions with slider images. Default is Show.', 'alienship' ),
+      'id'      => 'alienship_featured_posts_captions',
+      'std'     => '1',
+      'type'    => 'radio',
+      'options' => array(
+          '1' => __( 'Show slide captions', 'alienship' ),
+          '0' => __( 'Hide slide captions', 'alienship' )
+      )
+    );
+
+  $options[] = array(
+      'name'    => __( 'Indicators' ,'alienship' ),
+      'desc'    => __( 'Show indicators at the bottom of the slider that show the current slideshow position and allow for navigation between slides. Default is Hide.', 'alienship' ),
+      'id'      => 'alienship_featured_posts_indicators',
+      'std'     => '0',
+      'type'    => 'radio',
+      'options' => array(
+          '1' => __( 'Show slide indicators', 'alienship' ),
+          '0' => __( 'Hide slide indicators', 'alienship' )
+      )
+    );
+
+  $options[] = array(
       'name'    => __( 'Duplicate featured posts' ,'alienship' ),
       'desc'    => __( 'Show posts from the featured content section in the rest of the body. Default is Hide.', 'alienship' ),
       'id'      => 'alienship_featured_posts_show_dupes',
@@ -322,9 +301,9 @@ function optionsframework_options() {
 
   $options[] = array(
       'name'  => __( 'Featured post image width', 'alienship' ),
-      'desc'  => __( 'Enter the width (in pixels) you want the featured images to be. Default is 745 pixels.', 'alienship' ),
+      'desc'  => __( 'Enter the width (in pixels) you want the featured images to be. Default is 850 pixels.', 'alienship' ),
       'id'    => 'alienship_featured_posts_image_width',
-      'std'   => '745',
+      'std'   => '850',
       'class' => 'mini',
       'type'  => 'text'
     );
@@ -337,124 +316,6 @@ function optionsframework_options() {
       'class' => 'mini',
       'type'  => 'text'
     );
-
-
-  /* Theme plugin heading */
-  $options[] = array(
-      'name' => __( 'Theme Plugins', 'alienship' ),
-      'type' => 'heading'
-    );
-
-  $options[] = array(
-      'name' => __( 'Javascript Plugins Information', 'alienship' ),
-      'desc' => __( 'Read the description provided with each plugin. Some of these plugins require another plugin to function properly (Example: Carousel requires Transitions for the animation to work). Disable any plugins that you aren\'t using.', 'alienship' ),
-      'type' => 'info'
-    );
-
-  $options[] = array(
-      'name' => __( 'Transitions' ),
-      'desc' => __( 'Transitions are used to animate things such as the carousel, modals, fade out alerts, etc. * Required for animation in plugins.', 'alienship' ),
-      'id'   => 'alienship_transitions_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Alerts', 'alienship' ),
-      'desc' => __( 'The alert plugin is a tiny class for adding close functionality to alerts. * Requires Transitions if you want them to fade out on close.', 'alienship' ),
-      'id'   => 'alienship_alerts_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Modals', 'alienship' ),
-      'desc' => __( 'Message boxes that slide down and fade in from the top of the page. Default setting is disabled. * Requires Transitions to function properly.', 'alienship' ),
-      'id'   => 'alienship_modals_plugin',
-      'std'  => '0',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Dropdown Menus', 'alienship' ),
-      'desc' => __( 'Add dropdown menus in the navbar, tabs, and pills.', 'alienship' ),
-      'id'   => 'alienship_dropdowns_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Affix Menus', 'alienship' ),
-      'desc' => __( 'Add support for affix menus. Default is disabled.', 'alienship' ),
-      'id'   => 'alienship_affix_plugin',
-      'std'  => '0',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Scrollspy', 'alienship' ),
-      'desc' => __( 'Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position. Default setting is disabled.', 'alienship' ),
-      'id'   => 'alienship_scrollspy_plugin',
-      'std'  => '0',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Tabs', 'alienship' ),
-      'desc' => __( 'Make tabs and pills more useful by allowing them to toggle through tabbable panes of content.', 'alienship' ),
-      'id'   => 'alienship_tabs_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Tooltips', 'alienship' ),
-      'desc' => __( 'Tooltips that use CSS3 for animations and data-attributes for local title storage.', 'alienship' ),
-      'id'   => 'alienship_tooltips_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Popovers', 'alienship' ),
-      'desc' => __( 'Add small overlays of content, like those on the iPad, to any element for housing secondary information. * Requires Tooltips.', 'alienship' ),
-      'id'   => 'alienship_popovers_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Buttons', 'alienship' ),
-      'desc' => __( 'Do more with buttons. Control button states or create groups of buttons for more components like toolbars.', 'alienship' ),
-      'id'   => 'alienship_buttons_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Collapse', 'alienship' ),
-      'desc' => __( 'Get base styles and flexible support for collapsible components like accordions and navigation.', 'alienship' ),
-      'id'   => 'alienship_collapse_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Carousel', 'alienship' ),
-      'desc' => __( 'Create a merry-go-round of any content you wish to provide in an interactive slideshow of content. * Required for Featured Posts.', 'alienship' ),
-      'id'   => 'alienship_carousel_plugin',
-      'std'  => '1',
-      'type' => 'checkbox'
-    );
-
-  $options[] = array(
-      'name' => __( 'Typeahead', 'alienship' ),
-      'desc' => __( 'A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input. Default setting is disabled.', 'alienship' ),
-      'id'   => 'alienship_typeahead_plugin',
-      'std'  => '0',
-      'type' => 'checkbox'
-    );
-
 
   return $options;
 

@@ -1,14 +1,14 @@
-# Copyright (C) 2012 John Parris
+# Copyright (C) 2013 John Parris
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Alien Ship 0.93\n"
+"Project-Id-Version: Alien Ship 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/alienship\n"
-"POT-Creation-Date: 2012-11-06 22:22:03+00:00\n"
+"POT-Creation-Date: 2013-08-30 01:49:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -31,143 +31,203 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: admin/options-framework.php:239
-msgid "Save Options"
-msgstr ""
-
-#: admin/options-framework.php:240
-msgid "Restore Defaults"
-msgstr ""
-
-#: admin/options-framework.php:240
-msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
-
-#: admin/options-framework.php:272
-msgid "Default options restored."
-msgstr ""
-
-#: admin/options-framework.php:313
-msgid "Options saved."
-msgstr ""
-
-#: admin/options-framework.php:371
+#: admin/options-framework.php:182 admin/options-framework.php:183
+#: admin/options-framework.php:412
 msgid "Theme Options"
 msgstr ""
 
-#: admin/options-medialibrary-uploader.php:26
-msgid "Options Framework Internal Container"
+#: admin/options-framework.php:228
+msgid "Clear"
 msgstr ""
 
-#: admin/options-medialibrary-uploader.php:128
+#: admin/options-framework.php:229 functions.php:263 inc/theme-layouts.php:295
+msgid "Default"
+msgstr ""
+
+#: admin/options-framework.php:230
+msgid "Select Color"
+msgstr ""
+
+#: admin/options-framework.php:275
+msgid "Save Options"
+msgstr ""
+
+#: admin/options-framework.php:276
+msgid "Restore Defaults"
+msgstr ""
+
+#: admin/options-framework.php:276
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: admin/options-framework.php:308
+msgid "Default options restored."
+msgstr ""
+
+#: admin/options-framework.php:362
+msgid "Options saved."
+msgstr ""
+
+#: admin/options-media-uploader.php:51
+msgid "No file chosen"
+msgstr ""
+
+#: admin/options-media-uploader.php:54 admin/options-media-uploader.php:113
 msgid "Upload"
 msgstr ""
 
-#: admin/options-medialibrary-uploader.php:151
+#: admin/options-media-uploader.php:56 admin/options-media-uploader.php:114
+msgid "Remove"
+msgstr ""
+
+#: admin/options-media-uploader.php:59
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: admin/options-media-uploader.php:83
 msgid "View File"
 msgstr ""
 
-#: admin/options-medialibrary-uploader.php:288
-msgid "Gallery"
+#: admin/options-sanitize.php:232
+msgid "No Repeat"
 msgstr ""
 
-#: admin/options-medialibrary-uploader.php:288
-msgid "Previously Uploaded"
+#: admin/options-sanitize.php:233
+msgid "Repeat Horizontally"
 msgstr ""
 
-#: author.php:29 inc/template-tags.php:443
-#: library/functions/template-tags.php:401
+#: admin/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: admin/options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: admin/options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: admin/options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: admin/options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: admin/options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: admin/options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: admin/options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: admin/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: admin/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: admin/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: admin/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: admin/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: admin/options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: admin/options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: admin/options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: admin/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+
+#: author.php:27 inc/template-tags.php:560
 msgid "Author Archives: %s"
 msgstr ""
 
-#: comments.php:16
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-
-#: comments.php:32
+#: comments.php:29
+msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:39 comments.php:59
+#: comments.php:36 comments.php:58
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:40 comments.php:60
-msgid "&larr; Older Comments"
+#: comments.php:38
+msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:41 comments.php:61
-msgid "Newer Comments &rarr;"
+#: comments.php:39
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: comments.php:60
+msgid "Older Comments &raquo;"
+msgstr ""
+
+#: comments.php:61
+msgid "&laquo; Newer Comments"
 msgstr ""
 
 #: comments.php:72
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:81
-msgid "Leave a Reply"
-msgstr ""
-
-#: comments.php:81
-msgid "Leave a Reply to %s"
-msgstr ""
-
-#: comments.php:84
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-
-#: comments.php:88
-msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
-msgstr ""
-
-#: comments.php:88
-msgid "Log out of this account"
-msgstr ""
-
-#: comments.php:88
-msgid "Log out &raquo;"
-msgstr ""
-
-#: comments.php:91
-msgid "Name"
-msgstr ""
-
-#: comments.php:91 comments.php:96
-msgid " (required)"
-msgstr ""
-
-#: comments.php:96
-msgid "Email (will not be published)"
-msgstr ""
-
-#: comments.php:101
-msgid "Website"
-msgstr ""
-
-#: comments.php:108
-msgid "Comment"
-msgstr ""
-
-#: comments.php:113
-msgid "Submit Comment"
-msgstr ""
-
-#: footer-hero.php:17
+#: footer-hero.php:19
 msgid "Edit page"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:137
 msgid ""
 "Dropdown menus work a little differently in Alien Ship. They do not activate "
 "on mouse hover, but on click instead. This means that the top/parent menu "
-"item does not click through to a page, but only activates the dropdown. "
-"Design your menus with this in mind. For more information, read the <a href="
-"\"http://www.johnparris.com/alienship/documentation\" target=\"_blank"
-"\">Alien Ship documentation</a> online. | <a href=\"%1$s\">Hide this notice</"
-"a>"
+"item does not click through to a page, but only activates the dropdown. Sub-"
+"menus are not supported. Design your menus with this in mind. For more "
+"information, read the <a href=\"http://www.johnparris.com/alienship/"
+"documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a "
+"href=\"%1$s\">Hide this notice</a>"
+msgstr ""
+
+#: functions.php:248
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:264
+msgid "Content left. Sidebar right."
+msgstr ""
+
+#: functions.php:265
+msgid "Content right. Sidebar left."
+msgstr ""
+
+#: functions.php:266
+msgid "Full width. No sidebar."
 msgstr ""
 
 #: image.php:23
@@ -175,372 +235,323 @@ msgid ""
 "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
 "\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
 "%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
-"\"gallery\">%7$s</a>"
+"\"gallery\">%8$s</a>"
 msgstr ""
 
-#: image.php:33 image.php:104
+#: image.php:33 image.php:80 inc/breadcrumb-trail.php:1122
+#: inc/breadcrumb-trail.php:1158 inc/breadcrumb-trail.php:1175
+#: inc/breadcrumb-trail.php:1206 inc/template-tags.php:207
+#: inc/template-tags.php:226
 msgid "Edit"
 msgstr ""
 
+#: image.php:38
+msgid "&laquo; Previous"
+msgstr ""
+
 #: image.php:39
-msgid "&larr; Previous"
+msgid "Next &raquo;"
 msgstr ""
 
-#: image.php:42
-msgid "Next &rarr;"
-msgstr ""
-
-#: image.php:96
+#: image.php:67
 msgid ""
 "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
 "comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
 
-#: image.php:98
+#: image.php:70
 msgid ""
 "Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
 "\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
 "\">Trackback URL</a>."
 msgstr ""
 
-#: image.php:100
+#: image.php:73
 msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
 
-#: image.php:102
+#: image.php:76
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
-#: inc/breadcrumbs.php:64 library/extensions/breadcrumb-trail.php:64
+#: inc/breadcrumb-trail.php:175
+msgid "Browse:"
+msgstr ""
+
+#: inc/breadcrumb-trail.php:176
 msgid "Home"
 msgstr ""
 
-#: inc/breadcrumbs.php:312 library/extensions/breadcrumb-trail.php:312
+#: inc/breadcrumb-trail.php:177
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: inc/breadcrumb-trail.php:178
+msgid "404 Not Found"
+msgstr ""
+
+#: inc/breadcrumb-trail.php:179
+msgid "Page %d"
+msgstr ""
+
+#: inc/breadcrumb-trail.php:180 inc/template-tags.php:572
+msgid "Archives"
+msgstr ""
+
+#: inc/breadcrumb-trail.php:181
 msgid "g:i a"
 msgstr ""
 
-#: inc/breadcrumbs.php:315 library/extensions/breadcrumb-trail.php:315
-msgid "Minute %1$s"
+#: inc/breadcrumb-trail.php:182
+msgid "Minute %d"
 msgstr ""
 
-#: inc/breadcrumbs.php:315 library/extensions/breadcrumb-trail.php:315
-msgid "i"
-msgstr ""
-
-#: inc/breadcrumbs.php:318 library/extensions/breadcrumb-trail.php:318
+#: inc/breadcrumb-trail.php:183
 msgid "g a"
 msgstr ""
 
-#: inc/breadcrumbs.php:329 inc/breadcrumbs.php:335 inc/breadcrumbs.php:340
-#: inc/breadcrumbs.php:345 inc/breadcrumbs.php:410
-#: library/extensions/breadcrumb-trail.php:329
-#: library/extensions/breadcrumb-trail.php:335
-#: library/extensions/breadcrumb-trail.php:340
-#: library/extensions/breadcrumb-trail.php:345
-#: library/extensions/breadcrumb-trail.php:410
-msgid "Y"
-msgstr ""
-
-#: inc/breadcrumbs.php:330 inc/breadcrumbs.php:341 inc/breadcrumbs.php:414
-#: library/extensions/breadcrumb-trail.php:330
-#: library/extensions/breadcrumb-trail.php:341
-#: library/extensions/breadcrumb-trail.php:414
-msgid "F"
-msgstr ""
-
-#: inc/breadcrumbs.php:331 inc/breadcrumbs.php:418
-#: library/extensions/breadcrumb-trail.php:331
-#: library/extensions/breadcrumb-trail.php:418
+#: inc/breadcrumb-trail.php:184
 msgid "d"
 msgstr ""
 
-#: inc/breadcrumbs.php:336 library/extensions/breadcrumb-trail.php:336
-msgid "Week %1$s"
+#: inc/breadcrumb-trail.php:185
+msgid "Week %d"
 msgstr ""
 
-#: inc/breadcrumbs.php:336 library/extensions/breadcrumb-trail.php:336
-msgid "W"
+#: inc/breadcrumb-trail.php:186
+msgid "F"
 msgstr ""
 
-#: inc/breadcrumbs.php:352 library/extensions/breadcrumb-trail.php:352
-msgid "Search results for &quot;%1$s&quot;"
+#: inc/breadcrumb-trail.php:187 inc/breadcrumb-trail.php:1027
+msgid "Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:356 library/extensions/breadcrumb-trail.php:356
-msgid "Content Not Found"
-msgstr ""
-
-#: inc/breadcrumbs.php:414 library/extensions/breadcrumb-trail.php:414
+#: inc/breadcrumb-trail.php:1031
 msgid "F Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:418 library/extensions/breadcrumb-trail.php:418
+#: inc/breadcrumb-trail.php:1035
 msgid "F j, Y"
 msgstr ""
 
-#: inc/menus.php:6 new_functions.php:161
+#: inc/breadcrumb-trail.php:1150
+msgid "Split"
+msgstr ""
+
+#: inc/breadcrumb-trail.php:1154
+msgid "Merge"
+msgstr ""
+
+#: inc/menus.php:6
 msgid "Top Menu"
 msgstr ""
 
-#: inc/menus.php:7 new_functions.php:162
+#: inc/menus.php:7
 msgid "Main Menu"
 msgstr ""
 
-#: inc/menus.php:8 new_functions.php:163
+#: inc/menus.php:8
 msgid "Bottom Menu"
 msgstr ""
 
-#: inc/menus.php:9
-msgid "Marketing Menu"
+#: inc/sidebars.php:13
+msgid "Primary Sidebar"
 msgstr ""
 
-#: inc/parts/content-featured.php:8 inc/parts/content-fp-grid.php:9
-#: inc/parts/content-fp-grid.php:13 inc/parts/content-link.php:15
-#: inc/template-tags.php:19 library/functions/template-tags.php:19
-#: library/functions/template-tags.php:44
-msgid "Link to %s"
-msgstr ""
-
-#: inc/parts/content-fp-grid.php:20
-msgid "<span class=\"edit-link pull-right\"><i class=\"icon-pencil\"></i>"
-msgstr ""
-
-#: inc/parts/content-link.php:30 inc/parts/content-page.php:19
-#: inc/parts/content-quote.php:21 inc/parts/content-standard.php:22
-#: inc/parts/content-status.php:21 inc/parts/content.php:23
-msgid " Edit"
-msgstr ""
-
-#: inc/parts/content-none.php:11
-msgid "Nothing Found"
-msgstr ""
-
-#: inc/parts/content-none.php:15
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: inc/parts/title.php:30
-msgid "Page %s"
-msgstr ""
-
-#: inc/sidebars.php:11
-msgid "Sidebar"
-msgstr ""
-
-#: inc/sidebars.php:12
+#: inc/sidebars.php:14
 msgid "The main widget area displayed in the sidebar."
 msgstr ""
 
-#: inc/sidebars.php:21
+#: inc/sidebars.php:23
 msgid "Hero Widgets"
 msgstr ""
 
-#: inc/sidebars.php:22
+#: inc/sidebars.php:24 inc/sidebars.php:34 inc/sidebars.php:44
 msgid "Displayed on pages created with the Hero template"
 msgstr ""
 
-#: inc/sidebars.php:31
-msgid "Marketing Page"
+#: inc/sidebars.php:33
+msgid "Hero Widgets 2"
 msgstr ""
 
-#: inc/sidebars.php:32
-msgid ""
-"Displayed on pages created with the Marketing template. This is the top row "
-"and widgets should be used in pairs (2 widgets here)."
+#: inc/sidebars.php:43
+msgid "Hero Widgets 3"
 msgstr ""
 
-#: inc/sidebars.php:41
-msgid "Marketing Page 2"
+#: inc/sidebars.php:53
+msgid "Footer 1"
 msgstr ""
 
-#: inc/sidebars.php:42
-msgid ""
-"Displayed on pages created with the Marketing template. This is the bottom "
-"row and widgets should be used in pairs (2 widgets in each row)."
-msgstr ""
-
-#: inc/sidebars.php:51
-msgid "Footer"
-msgstr ""
-
-#: inc/sidebars.php:52
+#: inc/sidebars.php:54
 msgid "The footer widget area displayed after all content."
 msgstr ""
 
-#: inc/sidebars.php:61
+#: inc/sidebars.php:63
 msgid "Footer 2"
 msgstr ""
 
-#: inc/sidebars.php:62
+#: inc/sidebars.php:64
 msgid "The second footer widget area, displayed below the Footer widget area."
 msgstr ""
 
-#: inc/sidebars.php:104 inc/widgets/widget-login-form.php:167
+#: inc/sidebars.php:73
+msgid "Footer 3"
+msgstr ""
+
+#: inc/sidebars.php:74
+msgid "The third footer widget area, displayed below the Footer widget area."
+msgstr ""
+
+#: inc/sidebars.php:116 inc/widgets/widget-login-form.php:167
 msgid "Username"
 msgstr ""
 
-#: inc/sidebars.php:105 inc/widgets/widget-login-form.php:168
+#: inc/sidebars.php:117 inc/widgets/widget-login-form.php:168
 msgid "Password"
 msgstr ""
 
-#: inc/sidebars.php:106 inc/widgets/widget-login-form.php:170
+#: inc/sidebars.php:118 inc/widgets/widget-login-form.php:170
 msgid "Remember Me"
 msgstr ""
 
-#: inc/sidebars.php:107 inc/widgets/widget-login-form.php:166
+#: inc/sidebars.php:119 inc/widgets/widget-login-form.php:166
 #: inc/widgets/widget-login-form.php:169
 msgid "Log In"
 msgstr ""
 
-#: inc/template-tags.php:99 library/functions/template-tags.php:68
+#: inc/template-tags.php:18
+msgid "You must specify a prefix when using alienship_sidebar_class."
+msgstr ""
+
+#: inc/template-tags.php:69
+msgid "You must specify a prefix when using alienship_do_sidebar."
+msgstr ""
+
+#: inc/template-tags.php:165
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:103 library/functions/template-tags.php:72
+#: inc/template-tags.php:171
 msgctxt "Previous post link"
-msgid "&larr;"
+msgid "&laquo;"
 msgstr ""
 
-#: inc/template-tags.php:104 library/functions/template-tags.php:73
+#: inc/template-tags.php:172
 msgctxt "Next post link"
-msgid "&rarr;"
+msgid "&raquo;"
 msgstr ""
 
-#: inc/template-tags.php:109 library/functions/template-tags.php:78
-msgid "Next page <span class=\"meta-nav\">&rarr;</span>"
+#: inc/template-tags.php:178
+msgid "Next page <span class=\"meta-nav\">&raquo;</span>"
 msgstr ""
 
-#: inc/template-tags.php:113 library/functions/template-tags.php:82
-msgid "<span class=\"meta-nav\">&larr;</span> Previous page"
+#: inc/template-tags.php:182
+msgid "<span class=\"meta-nav\">&laquo;</span> Previous page"
 msgstr ""
 
-#: inc/template-tags.php:140 library/functions/template-tags.php:109
+#: inc/template-tags.php:207
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:140 inc/template-tags.php:163
-#: library/functions/template-tags.php:109
-#: library/functions/template-tags.php:132
-msgid "(Edit)"
+#: inc/template-tags.php:217
+msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/template-tags.php:150 library/functions/template-tags.php:119
-msgid "%s"
-msgstr ""
-
-#: inc/template-tags.php:153 library/functions/template-tags.php:122
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#. translators: 1: date, 2: time
-#: inc/template-tags.php:161 library/functions/template-tags.php:130
+#: inc/template-tags.php:223
+msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:190
-msgid ""
-"<span class=\"byline\"><i class=\"icon-user\"></i> <span class=\"author vcard"
-"\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</"
-"a></span></span>"
+#: inc/template-tags.php:230
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:192 library/functions/template-tags.php:161
+#: inc/template-tags.php:312
+msgid ""
+"<span class=\"byline\"><i class=\"glyphicon glyphicon-user\"></i> <span "
+"class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" "
+"rel=\"author\">%3$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:314
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:208
+#: inc/template-tags.php:331
 msgid ""
-"<span class=\"published-date\"><i class=\"icon-calendar\" title=\"Published "
-"date\"></i> <a href=\"%1$s\" title=\"%2$s\"><time class=\"entry-date\" "
-"datetime=\"%3$s\" pubdate>%4$s</time></a></span>"
+"<span class=\"published-date\"><i class=\"glyphicon glyphicon-calendar\" "
+"title=\"Published date\"></i> <a href=\"%1$s\" title=\"%2$s\"><time class="
+"\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span>"
 msgstr ""
 
-#: inc/template-tags.php:330 library/functions/template-tags.php:291
+#: inc/template-tags.php:420
 msgid " Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:330 library/functions/template-tags.php:291
+#: inc/template-tags.php:420
 msgid " 1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:330 library/functions/template-tags.php:291
+#: inc/template-tags.php:420
 msgid " % Comments"
 msgstr ""
 
-#: inc/template-tags.php:437 library/functions/template-tags.php:395
+#: inc/template-tags.php:554
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:440 library/functions/template-tags.php:398
+#: inc/template-tags.php:557
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:446 library/functions/template-tags.php:404
+#: inc/template-tags.php:563
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:449 library/functions/template-tags.php:407
+#: inc/template-tags.php:566
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:452 library/functions/template-tags.php:410
+#: inc/template-tags.php:569
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:455 library/functions/template-tags.php:413
-#: sidebar.php:23
-msgid "Archives"
-msgstr ""
-
-#: inc/template-tags.php:592
-msgid "Pages:"
-msgstr ""
-
-#: inc/theme-layouts.php:295 library/extensions/theme-layouts.php:328
-msgid "Default"
-msgstr ""
-
-#: inc/theme-layouts.php:296 library/extensions/theme-layouts.php:329
+#: inc/theme-layouts.php:296
 msgid "One Column"
 msgstr ""
 
-#: inc/theme-layouts.php:297 library/extensions/theme-layouts.php:330
+#: inc/theme-layouts.php:297
 msgid "Two Columns, Left"
 msgstr ""
 
-#: inc/theme-layouts.php:298 library/extensions/theme-layouts.php:331
+#: inc/theme-layouts.php:298
 msgid "Two Columns, Right"
 msgstr ""
 
-#: inc/theme-layouts.php:299 library/extensions/theme-layouts.php:332
+#: inc/theme-layouts.php:299
 msgid "Three Columns, Left"
 msgstr ""
 
-#: inc/theme-layouts.php:300 library/extensions/theme-layouts.php:333
+#: inc/theme-layouts.php:300
 msgid "Three Columns, Right"
 msgstr ""
 
-#: inc/theme-layouts.php:301 library/extensions/theme-layouts.php:334
+#: inc/theme-layouts.php:301
 msgid "Three Columns, Center"
 msgstr ""
 
 #: inc/theme-layouts.php:377 inc/theme-layouts.php:485
-#: library/extensions/theme-layouts.php:410
-#: library/extensions/theme-layouts.php:516
-#: library/extensions/theme-layouts.php:599
 msgid "Layout"
 msgstr ""
 
-#: inc/theme-layouts.php:404 library/extensions/theme-layouts.php:436
+#: inc/theme-layouts.php:404
 msgid "Layout is a theme-specific structure for the single view of the post."
 msgstr ""
 
-#: inc/tweaks.php:96
+#: inc/tweaks.php:80
 msgid "Continue Reading "
 msgstr ""
 
@@ -584,169 +595,131 @@ msgstr ""
 msgid "Logged in text:"
 msgstr ""
 
-#: inc/widgets/widget-nav-list-menu.php:17
-msgid "Custom Menu: Nav List"
+#: inc/widgets/widget-nav-stacked-pills-menu.php:18
+msgid "Custom Menu: Stacked Pills"
 msgstr ""
 
-#: inc/widgets/widget-nav-list-menu.php:19
-msgid "Custom menu widget using Nav List styling"
+#: inc/widgets/widget-nav-stacked-pills-menu.php:20
+msgid "Custom menu widget using Nav Stacked Pills styling"
 msgstr ""
 
-#: inc/widgets/widget-nav-list-menu.php:65
+#: inc/widgets/widget-nav-stacked-pills-menu.php:66
 msgid "\"well\" Container"
 msgstr ""
 
-#: library/extensions/theme-layouts.php:632
-msgid "Global Layout"
-msgstr ""
-
-#: library/functions/menus.php:37
-msgctxt "nav menu location"
-msgid "Top Menu"
-msgstr ""
-
-#: library/functions/menus.php:41
-msgctxt "nav menu location"
-msgid "Header Menu"
-msgstr ""
-
-#: library/functions/menus.php:45
-msgctxt "nav menu location"
-msgid "Main Menu"
-msgstr ""
-
-#: library/functions/menus.php:49
-msgctxt "nav menu location"
-msgid "Bottom Menu"
-msgstr ""
-
-#: options.php:37
+#: options.php:38
 msgid "Select a tag:"
 msgstr ""
 
-#: options.php:45
+#: options.php:46
 msgid "Select a page:"
 msgstr ""
 
-#: options.php:57
+#: options.php:58
 msgid "Display Options"
 msgstr ""
 
-#: options.php:64
+#: options.php:65
 msgid "Navigation Elements"
 msgstr ""
 
-#: options.php:65
+#: options.php:66
 msgid ""
 "Top navbar, breadcrumb navigation, and content navigation design options"
 msgstr ""
 
-#: options.php:81
+#: options.php:71
 msgid "Show Top Menu navigation bar?"
 msgstr ""
 
-#: options.php:82
+#: options.php:72
 msgid ""
 "Displays the top navbar on your site, even if there's no menu assigned in "
 "Appearance > Menu. Uncheck this box to hide it. Default is enabled."
 msgstr ""
 
-#: options.php:89
+#: options.php:79
 msgid "Show site name in Top Menu navigation bar?"
 msgstr ""
 
-#: options.php:90
+#: options.php:80
 msgid ""
 "Default is enabled. Uncheck this box to hide site name in Top Menu "
 "navigation bar."
 msgstr ""
 
-#: options.php:97
-msgid "Show site description in Top Menu navigation bar?"
-msgstr ""
-
-#: options.php:98
-msgid ""
-"Check this box to show site description in Top Menu navigation bar. NOTE: "
-"Enabling this option will shift your nav menu to the right to make room for "
-"the site description. Site description is hidden on mobile devices. Default "
-"setting is disabled."
-msgstr ""
-
-#: options.php:105
+#: options.php:87
 msgid "Show search bar in Top Menu navigation bar?"
 msgstr ""
 
-#: options.php:106
+#: options.php:88
 msgid "Default is enabled. Uncheck this box to turn it off."
 msgstr ""
 
-#: options.php:113
+#: options.php:95
 msgid "Show Breadcrumb Navigation?"
 msgstr ""
 
-#: options.php:114
+#: options.php:96
 msgid "Default is show. Uncheck this box to hide breadcrumbs."
 msgstr ""
 
-#: options.php:121
+#: options.php:103
 msgid "Show content navigation above posts?"
 msgstr ""
 
-#: options.php:122
+#: options.php:104
 msgid ""
 "Displays links to next and previous posts above the current post and above "
 "the posts on the index page. Default is hide. Check this box to show content "
 "nav above posts."
 msgstr ""
 
-#: options.php:129
+#: options.php:111
 msgid "Show content navigation below posts?"
 msgstr ""
 
-#: options.php:130
+#: options.php:112
 msgid ""
 "Displays links to next and previous posts below the current post and below "
 "the posts on the index page. Default is show. Uncheck this box to hide "
 "content nav above posts."
 msgstr ""
 
-#: options.php:138
+#: options.php:120
 msgid "Miscellaneous Text"
 msgstr ""
 
-#: options.php:139
-msgid ""
-"Miscellaneous text items, such as site name and description and custom "
-"footer text."
+#: options.php:121
+msgid "Miscellaneous text options."
 msgstr ""
 
-#: options.php:144
+#: options.php:126
 msgid "Show custom footer text?"
 msgstr ""
 
-#: options.php:145
+#: options.php:127
 msgid ""
 "Default is disabled. Check this box to use custom footer text. Fill in your "
 "text below."
 msgstr ""
 
-#: options.php:152
+#: options.php:134
 msgid "Custom footer text"
 msgstr ""
 
-#: options.php:153
+#: options.php:135
 msgid ""
 "Enter the text here that you would like displayed at the bottom of your "
 "site. This setting will be ignored if you do not enable \"Show custom footer "
 "text\" above."
 msgstr ""
 
-#: options.php:160
+#: options.php:142
 msgid "Posts and Pages"
 msgstr ""
 
-#: options.php:161
+#: options.php:143
 msgid ""
 "Options related to the display of posts and pages, like excerpts and post "
 "meta information (published date, author, categories, and tags - is "
@@ -754,126 +727,87 @@ msgid ""
 "options below to control what is displayed."
 msgstr ""
 
-#: options.php:166
-msgid ""
-"Display full content or excerpts on index, search, and archive type pages?"
-msgstr ""
-
-#: options.php:167
-msgid ""
-"Excerpt shows a short snippet of your post, and full content shows it all. "
-"The default setting is Show entire post."
-msgstr ""
-
-#: options.php:172
-msgid "Show entire post"
-msgstr ""
-
-#: options.php:173
-msgid "Show post excerpt"
-msgstr ""
-
-#: options.php:178
+#: options.php:148
 msgid "Show post author?"
 msgstr ""
 
-#: options.php:179
+#: options.php:149
 msgid ""
 "Displays the post author. Default is show. Uncheck this box to hide the post "
 "author."
 msgstr ""
 
-#: options.php:186
+#: options.php:156
 msgid "Show published date?"
 msgstr ""
 
-#: options.php:187
+#: options.php:157
 msgid ""
 "Displays the date the article was posted. Default is show. Uncheck this box "
 "to hide post published date."
 msgstr ""
 
-#: options.php:194
+#: options.php:164
 msgid "Show post categories?"
 msgstr ""
 
-#: options.php:195
+#: options.php:165
 msgid ""
 "Displays the categories in which a post was published. Default is show. "
 "Uncheck this box to hide post categories."
 msgstr ""
 
-#: options.php:202
+#: options.php:172
 msgid "Show post categories on the index/posts page?"
 msgstr ""
 
-#: options.php:203
+#: options.php:173
 msgid ""
 "Displays the post categories on the index/posts page - as defined in "
 "Settings > Reading. Default is show. Uncheck this box to hide post "
 "categories on the index/posts page."
 msgstr ""
 
-#: options.php:210
+#: options.php:180
 msgid "Show post tags?"
 msgstr ""
 
-#: options.php:211
+#: options.php:181
 msgid ""
 "Displays the tags attached to a post. Default is show. Uncheck this box to "
 "hide post tags."
 msgstr ""
 
-#: options.php:218
+#: options.php:188
 msgid "Show post tags on the index/posts page?"
 msgstr ""
 
-#: options.php:219
+#: options.php:189
 msgid ""
 "Displays the post tags on the index/posts page - as defined in Settings > "
 "Reading. Default is show. Uncheck this box to hide post tags on the index/"
 "posts page."
 msgstr ""
 
-#: options.php:226
+#: options.php:196
 msgid "Show link for # of comments / Leave a comment?"
 msgstr ""
 
-#: options.php:227
+#: options.php:197
 msgid ""
 "Displays the number of comments and/or a Leave a comment message on posts. "
 "Default is show. Uncheck this box to hide."
 msgstr ""
 
-#: options.php:234
-msgid "Miscellaneous"
-msgstr ""
-
-#: options.php:235
-msgid "Miscellaneous design options."
-msgstr ""
-
-#: options.php:240
-msgid "Enable Responsive Design?"
-msgstr ""
-
-#: options.php:241
-msgid ""
-"Responsive design allows your site and its components to scale according to "
-"a range of resolutions and devices to provide a consistent experience. In "
-"other words, it looks good on computers, tablets, and smartphones. Default "
-"is enabled. If you don't need it, uncheck this box to turn it off."
-msgstr ""
-
-#: options.php:250
+#: options.php:205
 msgid "Featured Posts"
 msgstr ""
 
-#: options.php:255
+#: options.php:210
 msgid "Featured Posts Information"
 msgstr ""
 
-#: options.php:256
+#: options.php:211
 msgid ""
 "This feature displays certain posts in a photo slider or in a block grid at "
 "the top of your post index. This is a good way to make special content stand "
@@ -882,39 +816,39 @@ msgid ""
 "editor!"
 msgstr ""
 
-#: options.php:261
+#: options.php:216
 msgid "Enable Featured Posts?"
 msgstr ""
 
-#: options.php:262
+#: options.php:217
 msgid ""
 "Check this box to turn on featured posts functionality. Set the options "
 "below to determine how your featured posts will work. Default is disabled."
 msgstr ""
 
-#: options.php:269
+#: options.php:224
 msgid "Display Featured Posts in a slider or in a grid?"
 msgstr ""
 
-#: options.php:270
+#: options.php:225
 msgid ""
 "Displays your featured posts in either a photo slider or a block grid. The "
 "default setting is Slider."
 msgstr ""
 
-#: options.php:275
+#: options.php:230
 msgid "Slider"
 msgstr ""
 
-#: options.php:276
+#: options.php:231
 msgid "Grid"
 msgstr ""
 
-#: options.php:281
+#: options.php:236
 msgid "Featured Posts Tag"
 msgstr ""
 
-#: options.php:282
+#: options.php:237
 msgid ""
 "The tag you select here determines which posts show in the featured posts "
 "slider or grid. Example: if you were to select the moo tag, posts tagged "
@@ -922,64 +856,98 @@ msgid ""
 "the post editor!"
 msgstr ""
 
-#: options.php:290
+#: options.php:245
 msgid "Maximum # of Featured Posts to display"
 msgstr ""
 
-#: options.php:291
+#: options.php:246
 msgid ""
 "Select the maximum number of posts you want to display in the featured posts "
 "slider or grid. The default is three. NOTE: The grid displays two posts per "
 "row. For best results, select an even number here."
 msgstr ""
 
-#: options.php:296
+#: options.php:251
 msgid "One"
 msgstr ""
 
-#: options.php:297
+#: options.php:252
 msgid "Two"
 msgstr ""
 
-#: options.php:298
+#: options.php:253
 msgid "Three"
 msgstr ""
 
-#: options.php:299
+#: options.php:254
 msgid "Four"
 msgstr ""
 
-#: options.php:300
+#: options.php:255
 msgid "Five"
 msgstr ""
 
-#: options.php:301
+#: options.php:256
 msgid "Six"
 msgstr ""
 
-#: options.php:306
+#: options.php:261
+msgid "Captions"
+msgstr ""
+
+#: options.php:262
+msgid "Show post titles as captions with slider images. Default is Show."
+msgstr ""
+
+#: options.php:267
+msgid "Show slide captions"
+msgstr ""
+
+#: options.php:268
+msgid "Hide slide captions"
+msgstr ""
+
+#: options.php:273
+msgid "Indicators"
+msgstr ""
+
+#: options.php:274
+msgid ""
+"Show indicators at the bottom of the slider that show the current slideshow "
+"position and allow for navigation between slides. Default is Hide."
+msgstr ""
+
+#: options.php:279
+msgid "Show slide indicators"
+msgstr ""
+
+#: options.php:280
+msgid "Hide slide indicators"
+msgstr ""
+
+#: options.php:285
 msgid "Duplicate featured posts"
 msgstr ""
 
-#: options.php:307
+#: options.php:286
 msgid ""
 "Show posts from the featured content section in the rest of the body. "
 "Default is Hide."
 msgstr ""
 
-#: options.php:312
+#: options.php:291
 msgid "Show duplicate posts"
 msgstr ""
 
-#: options.php:313
+#: options.php:292
 msgid "Hide duplicate posts"
 msgstr ""
 
-#: options.php:318
+#: options.php:297
 msgid "Featured Posts Images"
 msgstr ""
 
-#: options.php:319
+#: options.php:298
 msgid ""
 "A note about images: For best results, all of your images should be the same "
 "size (preferably the size you set below). If they are not the same size, "
@@ -989,169 +957,27 @@ msgid ""
 "sizes."
 msgstr ""
 
-#: options.php:324
+#: options.php:303
 msgid "Featured post image width"
 msgstr ""
 
-#: options.php:325
+#: options.php:304
 msgid ""
 "Enter the width (in pixels) you want the featured images to be. Default is "
-"745 pixels."
+"850 pixels."
 msgstr ""
 
-#: options.php:333
+#: options.php:312
 msgid "Featured post image height"
 msgstr ""
 
-#: options.php:334
+#: options.php:313
 msgid ""
 "Enter the height (in pixels) you want the featured images to be. Default is "
 "350 pixels."
 msgstr ""
 
-#: options.php:344
-msgid "Theme Plugins"
-msgstr ""
-
-#: options.php:349
-msgid "Javascript Plugins Information"
-msgstr ""
-
-#: options.php:350
-msgid ""
-"Read the description provided with each plugin. Some of these plugins "
-"require another plugin to function properly (Example: Carousel requires "
-"Transitions for the animation to work). Disable any plugins that you aren't "
-"using."
-msgstr ""
-
-#: options.php:355
-msgid "Transitions"
-msgstr ""
-
-#: options.php:356
-msgid ""
-"Transitions are used to animate things such as the carousel, modals, fade "
-"out alerts, etc. * Required for animation in plugins."
-msgstr ""
-
-#: options.php:363
-msgid "Alerts"
-msgstr ""
-
-#: options.php:364
-msgid ""
-"The alert plugin is a tiny class for adding close functionality to alerts. * "
-"Requires Transitions if you want them to fade out on close."
-msgstr ""
-
-#: options.php:371
-msgid "Modals"
-msgstr ""
-
-#: options.php:372
-msgid ""
-"Message boxes that slide down and fade in from the top of the page. Default "
-"setting is disabled. * Requires Transitions to function properly."
-msgstr ""
-
-#: options.php:379
-msgid "Dropdown Menus"
-msgstr ""
-
-#: options.php:380
-msgid "Add dropdown menus in the navbar, tabs, and pills."
-msgstr ""
-
-#: options.php:387
-msgid "Affix Menus"
-msgstr ""
-
-#: options.php:388
-msgid "Add support for affix menus. Default is disabled."
-msgstr ""
-
-#: options.php:395
-msgid "Scrollspy"
-msgstr ""
-
-#: options.php:396
-msgid ""
-"Use scrollspy to automatically update the links in your navbar to show the "
-"current active link based on scroll position. Default setting is disabled."
-msgstr ""
-
-#: options.php:403
-msgid "Tabs"
-msgstr ""
-
-#: options.php:404
-msgid ""
-"Make tabs and pills more useful by allowing them to toggle through tabbable "
-"panes of content."
-msgstr ""
-
-#: options.php:411
-msgid "Tooltips"
-msgstr ""
-
-#: options.php:412
-msgid ""
-"Tooltips that use CSS3 for animations and data-attributes for local title "
-"storage."
-msgstr ""
-
-#: options.php:419
-msgid "Popovers"
-msgstr ""
-
-#: options.php:420
-msgid ""
-"Add small overlays of content, like those on the iPad, to any element for "
-"housing secondary information. * Requires Tooltips."
-msgstr ""
-
-#: options.php:427
-msgid "Buttons"
-msgstr ""
-
-#: options.php:428
-msgid ""
-"Do more with buttons. Control button states or create groups of buttons for "
-"more components like toolbars."
-msgstr ""
-
-#: options.php:435
-msgid "Collapse"
-msgstr ""
-
-#: options.php:436
-msgid ""
-"Get base styles and flexible support for collapsible components like "
-"accordions and navigation."
-msgstr ""
-
-#: options.php:443
-msgid "Carousel"
-msgstr ""
-
-#: options.php:444
-msgid ""
-"Create a merry-go-round of any content you wish to provide in an interactive "
-"slideshow of content. * Required for Featured Posts."
-msgstr ""
-
-#: options.php:451
-msgid "Typeahead"
-msgstr ""
-
-#: options.php:452
-msgid ""
-"A basic, easily extended plugin for quickly creating elegant typeaheads with "
-"any form text input. Default setting is disabled."
-msgstr ""
-
-#: search.php:19
+#: search.php:20
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -1163,17 +989,51 @@ msgstr ""
 msgid "Search &hellip;"
 msgstr ""
 
-#: sidebar.php:30
-msgid "Meta"
+#: templates/parts/content-featured.php:8
+#: templates/parts/content-fp-grid.php:10
+#: templates/parts/content-fp-grid.php:15 templates/parts/content-link.php:19
+#: templates/parts/content-search.php:16 templates/parts/content-search.php:26
+#: templates/parts/content-standard.php:39
+#: templates/parts/content-standard.php:51
+msgid "Link to %s"
+msgstr ""
+
+#: templates/parts/content-fp-grid.php:24
+msgid ""
+"<span class=\"edit-link pull-right\"><i class=\"glyphicon glyphicon-pencil"
+"\"></i>"
+msgstr ""
+
+#: templates/parts/content-link.php:34 templates/parts/content-page.php:21
+#: templates/parts/content-quote.php:25 templates/parts/content-search.php:39
+#: templates/parts/content-standard.php:70
+#: templates/parts/content-status.php:23 templates/parts/content.php:26
+msgid " Edit"
+msgstr ""
+
+#: templates/parts/content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: templates/parts/content-none.php:15
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: templates/parts/content-page.php:17 templates/parts/content-quote.php:15
+#: templates/parts/content-search.php:21 templates/parts/content-search.php:26
+#: templates/parts/content-standard.php:51 templates/parts/content.php:15
+msgid "Continue Reading &raquo;"
 msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Alien Ship"
 msgstr ""
 
-#. #-#-#-#-#  alienship.pot (Alien Ship 0.93)  #-#-#-#-#
+#. #-#-#-#-#  alienship.pot (Alien Ship 1.0.0)  #-#-#-#-#
 #. Theme URI of the plugin/theme
-#. #-#-#-#-#  alienship.pot (Alien Ship 0.93)  #-#-#-#-#
+#. #-#-#-#-#  alienship.pot (Alien Ship 1.0.0)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "http://www.johnparris.com/alienship/"
 msgstr ""
@@ -1192,12 +1052,4 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Hero"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Marketing"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Status Posts"
 msgstr ""

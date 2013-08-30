@@ -5,17 +5,18 @@
  */
 
 function optionsframework_tabs() {
-
-	$optionsframework_settings = get_option('optionsframework');
-	$options = optionsframework_options();
+	$counter = 0;
+	$options =& _optionsframework_options();
 	$menu = '';
 
-	foreach ($options as $value) {
+	foreach ( $options as $value ) {
 		// Heading for Navigation
-		if ($value['type'] == "heading") {
-			$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($value['name']) );
-			$jquery_click_hook = "of-option-" . $jquery_click_hook;
-			$menu .= '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" class="nav-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $value['name'] ) . '</a>';
+		if ( $value['type'] == "heading" ) {
+			$counter++;
+			$class = '';
+			$class = ! empty( $value['id'] ) ? $value['id'] : $value['name'];
+			$class = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($class) ) . '-tab';
+			$menu .= '<a id="options-group-'.  $counter . '-tab" class="nav-tab ' . $class .'" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#options-group-'.  $counter ) . '">' . esc_html( $value['name'] ) . '</a>';
 		}
 	}
 
@@ -29,25 +30,24 @@ function optionsframework_tabs() {
 function optionsframework_fields() {
 
 	global $allowedtags;
-	$optionsframework_settings = get_option('optionsframework');
+	$optionsframework_settings = get_option( 'optionsframework' );
 
 	// Gets the unique option id
 	if ( isset( $optionsframework_settings['id'] ) ) {
 		$option_name = $optionsframework_settings['id'];
 	}
 	else {
-		$option_name = 'optionsframework';
+		$option_name = 'options_framework_theme';
 	};
 
 	$settings = get_option($option_name);
-	$options = optionsframework_options();
+	$options =& _optionsframework_options();
 
 	$counter = 0;
 	$menu = '';
 
 	foreach ( $options as $value ) {
 
-		$counter++;
 		$val = '';
 		$select_value = '';
 		$checked = '';
@@ -57,11 +57,11 @@ function optionsframework_fields() {
 		if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
 
 			// Keep all ids lowercase with no spaces
-			$value['id'] = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($value['id']) );
+			$value['id'] = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower( $value['id'] ) );
 
 			$id = 'section-' . $value['id'];
 
-			$class = 'section ';
+			$class = 'section';
 			if ( isset( $value['type'] ) ) {
 				$class .= ' section-' . $value['type'];
 			}
@@ -110,6 +110,11 @@ function optionsframework_fields() {
 			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
 			break;
 
+		// Password input
+		case 'password':
+			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="password" value="' . esc_attr( $val ) . '" />';
+			break;
+
 		// Textarea
 		case 'textarea':
 			$rows = '8';
@@ -126,7 +131,7 @@ function optionsframework_fields() {
 			break;
 
 		// Select Box
-		case ($value['type'] == 'select'):
+		case 'select':
 			$output .= '<select class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
 
 			foreach ($value['options'] as $key => $option ) {
@@ -193,60 +198,92 @@ function optionsframework_fields() {
 
 		// Color picker
 		case "color":
-			$output .= '<div id="' . esc_attr( $value['id'] . '_picker' ) . '" class="colorSelector"><div style="' . esc_attr( 'background-color:' . $val ) . '"></div></div>';
-			$output .= '<input class="of-color" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '" type="text" value="' . esc_attr( $val ) . '" />';
+			$default_color = '';
+			if ( isset($value['std']) ) {
+				if ( $val !=  $value['std'] )
+					$default_color = ' data-default-color="' .$value['std'] . '" ';
+			}
+			$output .= '<input name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '" class="of-color"  type="text" value="' . esc_attr( $val ) . '"' . $default_color .' />';
+ 	
 			break;
 
 		// Uploader
 		case "upload":
-			$output .= optionsframework_medialibrary_uploader( $value['id'], $val, null );
+			$output .= optionsframework_uploader( $value['id'], $val, null );
+			
 			break;
 
 		// Typography
 		case 'typography':
-
-			$typography_stored = $val;
+		
+			unset( $font_size, $font_style, $font_face, $font_color );
+		
+			$typography_defaults = array(
+				'size' => '',
+				'face' => '',
+				'style' => '',
+				'color' => ''
+			);
+			
+			$typography_stored = wp_parse_args( $val, $typography_defaults );
+			
+			$typography_options = array(
+				'sizes' => of_recognized_font_sizes(),
+				'faces' => of_recognized_font_faces(),
+				'styles' => of_recognized_font_styles(),
+				'color' => true
+			);
+			
+			if ( isset( $value['options'] ) ) {
+				$typography_options = wp_parse_args( $value['options'], $typography_options );
+			}
 
 			// Font Size
-			$output .= '<select class="of-typography of-typography-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][size]' ) . '" id="' . esc_attr( $value['id'] . '_size' ) . '">';
-			for ($i = 9; $i < 71; $i++) {
-				$size = $i . 'px';
-				$output .= '<option value="' . esc_attr( $size ) . '" ' . selected( $typography_stored['size'], $size, false ) . '>' . esc_html( $size ) . '</option>';
+			if ( $typography_options['sizes'] ) {
+				$font_size = '<select class="of-typography of-typography-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][size]' ) . '" id="' . esc_attr( $value['id'] . '_size' ) . '">';
+				$sizes = $typography_options['sizes'];
+				foreach ( $sizes as $i ) {
+					$size = $i . 'px';
+					$font_size .= '<option value="' . esc_attr( $size ) . '" ' . selected( $typography_stored['size'], $size, false ) . '>' . esc_html( $size ) . '</option>';
+				}
+				$font_size .= '</select>';
 			}
-			$output .= '</select>';
 
 			// Font Face
-			$output .= '<select class="of-typography of-typography-face" name="' . esc_attr( $option_name . '[' . $value['id'] . '][face]' ) . '" id="' . esc_attr( $value['id'] . '_face' ) . '">';
-
-			$faces = of_recognized_font_faces();
-			foreach ( $faces as $key => $face ) {
-				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['face'], $key, false ) . '>' . esc_html( $face ) . '</option>';
+			if ( $typography_options['faces'] ) {
+				$font_face = '<select class="of-typography of-typography-face" name="' . esc_attr( $option_name . '[' . $value['id'] . '][face]' ) . '" id="' . esc_attr( $value['id'] . '_face' ) . '">';
+				$faces = $typography_options['faces'];
+				foreach ( $faces as $key => $face ) {
+					$font_face .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['face'], $key, false ) . '>' . esc_html( $face ) . '</option>';
+				}
+				$font_face .= '</select>';
 			}
 
-			$output .= '</select>';
-
-			// Font Weight
-			$output .= '<select class="of-typography of-typography-weight" name="' . esc_attr( $option_name . '[' . $value['id'] . '][weight]' ) . '" id="' . esc_attr( $value['id'] . '_weight' ) . '">';
-
-			$weights = of_recognized_font_weights();
-			foreach ( $weights as $key => $weight ) {
-				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['weight'], $key, false ) . '>' . $weight .'</option>';
+			// Font Styles
+			if ( $typography_options['styles'] ) {
+				$font_style = '<select class="of-typography of-typography-style" name="'.$option_name.'['.$value['id'].'][style]" id="'. $value['id'].'_style">';
+				$styles = $typography_options['styles'];
+				foreach ( $styles as $key => $style ) {
+					$font_style .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['style'], $key, false ) . '>'. $style .'</option>';
+				}
+				$font_style .= '</select>';
 			}
-			$output .= '</select>';
-
-			// Font Style
-			$output .= '<select class="of-typography of-typography-style" name="' . esc_attr( $option_name . '[' . $value['id'] . '][style]' ) . '" id="' . esc_attr( $value['id'] . '_style' ) . '">';
-
-			$styles = of_recognized_font_styles();
-			foreach ( $styles as $key => $style ) {
-				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['style'], $key, false ) . '>'. $style .'</option>';
-			}
-			$output .= '</select>';
 
 			// Font Color
-			$output .= '<div id="' . esc_attr( $value['id'] ) . '_color_picker" class="colorSelector"><div style="' . esc_attr( 'background-color:' . $typography_stored['color'] ) . '"></div></div>';
-			$output .= '<input class="of-color of-typography of-typography-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $typography_stored['color'] ) . '" />';
-
+			if ( $typography_options['color'] ) {
+				$default_color = '';
+				if ( isset( $value['std']['color'] ) ) {
+					if ( $val !=  $value['std']['color'] )
+						$default_color = ' data-default-color="' .$value['std']['color'] . '" ';
+				}
+				$font_color = '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" class="of-color of-typography-color  type="text" value="' . esc_attr( $typography_stored['color'] ) . '"' . $default_color .' />';
+			}
+	
+			// Allow modification/injection of typography fields
+			$typography_fields = compact( 'font_size', 'font_face', 'font_style', 'font_color' );
+			$typography_fields = apply_filters( 'of_typography_fields', $typography_fields, $typography_stored, $option_name, $value );
+			$output .= implode( '', $typography_fields );
+			
 			break;
 
 		// Background
@@ -255,15 +292,20 @@ function optionsframework_fields() {
 			$background = $val;
 
 			// Background Color
-			$output .= '<div id="' . esc_attr( $value['id'] ) . '_color_picker" class="colorSelector"><div style="' . esc_attr( 'background-color:' . $background['color'] ) . '"></div></div>';
-			$output .= '<input class="of-color of-background of-background-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $background['color'] ) . '" />';
+			$default_color = '';
+			if ( isset( $value['std']['color'] ) ) {
+				if ( $val !=  $value['std']['color'] )
+					$default_color = ' data-default-color="' .$value['std']['color'] . '" ';
+			}
+			$output .= '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" class="of-color of-background-color"  type="text" value="' . esc_attr( $background['color'] ) . '"' . $default_color .' />';
 
-			// Background Image - New AJAX Uploader using Media Library
+			// Background Image
 			if (!isset($background['image'])) {
 				$background['image'] = '';
 			}
-
-			$output .= optionsframework_medialibrary_uploader( $value['id'], $background['image'], null, '',0,'image');
+			
+			$output .= optionsframework_uploader( $value['id'], $background['image'], null, esc_attr( $option_name . '[' . $value['id'] . '][image]' ) );
+			
 			$class = 'of-background-properties';
 			if ( '' == $background['image'] ) {
 				$class .= ' hide';
@@ -299,10 +341,10 @@ function optionsframework_fields() {
 			$output .= '</div>';
 
 			break;
-
+			
 		// Editor
 		case 'editor':
-			$output .= '<div class="explain">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
+			$output .= '<div class="explain">' . wp_kses( $explain_value, $allowedtags ) . '</div>'."\n";
 			echo $output;
 			$textarea_name = esc_attr( $option_name . '[' . $value['id'] . ']' );
 			$default_editor_settings = array(
@@ -314,14 +356,18 @@ function optionsframework_fields() {
 			if ( isset( $value['settings'] ) ) {
 				$editor_settings = $value['settings'];
 			}
-			$editor_settings = array_merge($editor_settings, $default_editor_settings);
+			$editor_settings = array_merge( $default_editor_settings, $editor_settings );
 			wp_editor( $val, $value['id'], $editor_settings );
 			$output = '';
 			break;
 
 		// Info
 		case "info":
+			$id = '';
 			$class = 'section';
+			if ( isset( $value['id'] ) ) {
+				$id = 'id="' . esc_attr( $value['id'] ) . '" ';
+			}
 			if ( isset( $value['type'] ) ) {
 				$class .= ' section-' . $value['type'];
 			}
@@ -329,7 +375,7 @@ function optionsframework_fields() {
 				$class .= ' ' . $value['class'];
 			}
 
-			$output .= '<div class="' . esc_attr( $class ) . '">' . "\n";
+			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
 			if ( isset($value['name']) ) {
 				$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
 			}
@@ -341,13 +387,14 @@ function optionsframework_fields() {
 
 		// Heading for Navigation
 		case "heading":
+			$counter++;
 			if ($counter >= 2) {
 				$output .= '</div>'."\n";
 			}
-			$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($value['name']) );
-			$jquery_click_hook = "of-option-" . $jquery_click_hook;
-			$menu .= '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" class="nav-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $value['name'] ) . '</a>';
-			$output .= '<div class="group" id="' . esc_attr( $jquery_click_hook ) . '">';
+			$class = '';
+			$class = ! empty( $value['id'] ) ? $value['id'] : $value['name'];
+			$class = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($class) );
+			$output .= '<div id="options-group-' . $counter . '" class="group ' . $class . '">';
 			$output .= '<h3>' . esc_html( $value['name'] ) . '</h3>' . "\n";
 			break;
 		}

@@ -84,7 +84,9 @@
 			</header><!-- #masthead -->
 			<?php do_action( 'alienship_header_after' );
 
-			if ( function_exists('alienship_breadcrumbs') && !is_front_page() ) { alienship_breadcrumbs(); }
+			if ( function_exists( 'breadcrumb_trail' ) && !is_front_page() ) {
+				breadcrumb_trail( array( 'container' => 'div', 'separator' => '/', 'show_browse' => false ) );
+			}
 
 	} // !is_page_template( 'templates/page-hero.php' )
 

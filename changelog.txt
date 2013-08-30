@@ -1,5 +1,5 @@
 == Change log ==
-Version 1.0 - Under development
+Version 1.0.0 - August 29, 2013
 -------------------------------
 - NOTE: Not backwards compatible with previous versions.
 - Updated to Bootstrap 3 final.
@@ -14,6 +14,7 @@ Version 1.0 - Under development
 - Added support for custom backgrounds.
 - Updated breadcrumb library. Thanks to Justin Tadlock for this great extension.
 - Removed the Marketing Page template.
+- Removed all old language files since there have been so many changes. Theme translations are appreciated and very welcome.
 
 
 

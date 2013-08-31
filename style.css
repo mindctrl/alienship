@@ -470,6 +470,9 @@ footer.entry-meta {
 .page-template-templatespage-hero-php .colophon {
   margin-top: 50px;
 }
+#hero-widgets-container {
+  margin: 0 auto;
+}
 .jumbotron h1 {
   font-size: 72px;
   line-height: 1;

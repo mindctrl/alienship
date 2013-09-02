@@ -95,16 +95,15 @@ dl.nav.mobile dd a {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  border-width: 1px 0 0;
   color: #555;
   display: block;
   font-size: 15px;
-  height: auto;
   line-height: 1;
-  margin: 0;
   padding: 18px 20px;
   width: auto;
 }
+ul.footer-nav.mobile li a,
+dl.nav.mobile dd a,
 ul.footer-nav.mobile li a.active,
 dl.nav.mobile dd a.active {
   border-width: 1px 0 0;
@@ -251,17 +250,15 @@ hgroup {
 header#masthead {
   padding-bottom: 20px;
 }
-.site-title {
+.site-title,
+.site-description {
   font-size: 30px;
   font-weight: bold;
   line-height: 36px;
-  margin-bottom: 0;
+  margin: 0;
 }
 .site-description {
   font-size: 24px;
-  font-weight: bold;
-  line-height: 36px;
-  margin: 0;
 }
 
 mark,
@@ -277,28 +274,23 @@ p img {
   margin-bottom: 0.5em;
   margin-top: 0.4em;
 }
-img[class*="align"],
-img[class*="wp-image-"],
-img[class*="attachment-"],
 #content .gallery .gallery-icon img {
   border: 1px solid #ddd;
   height: auto;
   padding: 6px;
 }
-img.wp-post-image {
-  border: 0;
-  height: auto;
-  padding: 0;
-}
-/* Fluid images for posts, comments, and widgets */
 img.header-image,
 img.wp-post-image,
 img.avatar,
-.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"],
 .comment-content img,
 .widget img {
+  border: 0;
   height: auto;
   max-width: 100%;
+  padding: 0;
 }
 
 /* WordPress image captions */
@@ -455,10 +447,18 @@ footer.entry-meta {
 .entry-meta .glyphicon {
   margin-right: 4px;
 }
+.byline,
+.cat-links,
+.comments-link,
+.published-date,
+.tags-links {
+  margin-right: 10px;
+}
 
 /* Copyright / bottom menu area */
 .colophon {
 	border-top: solid 1px #ccc;
+  margin-top: 50px;
 	padding: 7px 0px;
 	text-align: center;
 }
@@ -522,30 +522,7 @@ footer.entry-meta {
 .aligncenter {
   clear: both;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-img.alignright {
-  float:right;
-  margin: 0 0 1em 1em;
-}
-img.alignleft {
-  float:left;
-  margin:0 1em 1em 0;
-}
-img.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1em;
-}
-
-.byline,
-.cat-links,
-.comments-link,
-.published-date,
-.tags-links {
-  margin-right: 10px;
+  margin: 0 auto;
 }
 
 /* Clearing */

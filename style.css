@@ -7,7 +7,6 @@ Description: Alien Ship is a responsive starter theme for WordPress.
 Version: 1.0.1-beta
 License: GNU General Public License
 License URI: license.txt
-Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-language-support, microformats, featured-images, post-formats
 */
 
 /* Fonts
@@ -228,6 +227,10 @@ article {
 .browsehappy .alert-link {
   text-decoration: underline;
 }
+/* Post/page and comment content */
+.entry-content {
+  padding: 15px 0;
+}
 .entry-content,
 .entry-summary,
 .entry-content p,
@@ -293,7 +296,7 @@ img[class*="attachment-"],
   padding: 0;
 }
 
-/* WordPress image captions */
+/* Image captions */
 .wp-caption {
   background: #f5f5f5;
   border: 1px solid #ccc;
@@ -400,16 +403,6 @@ ul#featured-posts-grid > li > header > h4 {
   font-size: 1.15em;
 }
 
-/* Post/page and comment content */
-.entry-content {
-  padding: 15px 0;
-}
-.entry-content h1,
-.entry-content h2,
-.comment-content h1,
-.comment-content h2 {
-  margin: 0 0 .8125em;
-}
 /* Remove margins from page-header that get set above if used inside a post/page */
 .page-header h1,
 .page-header h2 {
@@ -546,16 +539,13 @@ footer.entry-meta {
 
 /* Quote post format */
 .format-quote {
-    background: url("img/quote.png") no-repeat scroll left top;
-    background-size: 20px 20px;
-}
-.format-quote .entry-content,
-.format-quote .entry-summary {
-  padding: 1.5em 0;
+  background: url("img/quote.png") no-repeat scroll left top;
+  background-size: 20px 20px;
+  margin-top: 15px;
+  padding: 10px 0 0;
 }
 .format-quote cite {
-    margin-top: 10px;
-    font-style: italic;
+  font-style: italic;
 }
 .format-quote blockquote {
   border-left: 0;
@@ -563,11 +553,6 @@ footer.entry-meta {
 }
 .format-quote blockquote p {
   font-style: italic;
-}
-
-/* Status post format */
-.format-status p {
-  font-size: 17px;
 }
 
 /* Widgets

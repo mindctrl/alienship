@@ -27,7 +27,7 @@ do_action( 'alienship_footer_before' ); ?>
 			<div class="col-sm-6">
 
 				<?php if ( has_nav_menu( 'bottom' ) ) {
-					wp_nav_menu( array( 'theme_location' => 'bottom', 'container' => false, 'menu_class' =>  'footer-nav mobile' ) );
+					wp_nav_menu( array( 'theme_location' => 'bottom', 'container' => false, 'menu_class' => 'footer-nav mobile' ) );
 				} ?>
 
 			</div>

@@ -75,12 +75,12 @@ get_header(); ?>
 					// No results
 					get_template_part( '/templates/parts/content', 'none' );
 
-	  			} //have_posts
-	  			do_action( 'alienship_content_after' ); ?>
-	  		</div><!-- #content -->
+				} //have_posts
+				do_action( 'alienship_content_after' ); ?>
+			</div><!-- #content -->
 
 		<?php get_sidebar(); ?>
-	  </div><!-- .row -->
+		</div><!-- .row -->
 	</section><!-- #primary -->
 
 <?php get_footer(); ?>

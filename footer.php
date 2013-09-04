@@ -31,7 +31,7 @@
 			</div><!-- .col-sm-6 -->
 
 			<div class="col-sm-6">
-				<?php if ( has_nav_menu( 'bottom' ) ) { wp_nav_menu(array('theme_location' => 'bottom', 'container' => false, 'menu_class' =>  'footer-nav mobile')); } ?>
+				<?php if ( has_nav_menu( 'bottom' ) ) { wp_nav_menu(array('theme_location' => 'bottom', 'container' => false, 'menu_class' => 'footer-nav mobile')); } ?>
 			</div>
 		</div><!-- row -->
 	</div><!-- container -->

@@ -70,8 +70,17 @@ if ( post_password_required() )
     if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
   ?>
     <p class="no-comments"><?php _e( 'Comments are closed.', 'alienship' ); ?></p>
-  <?php endif; ?>
+  <?php endif;
 
-  <?php comment_form(); ?>
+  $args = array(
+    'comment_field' => '<p class="comment-form-comment"><label for="comment">Comment</label> <textarea class="form-control" id="comment" name="comment" cols="35" rows="12" aria-required="true"></textarea></p>',
+    'fields'        => array(
+        'author' => '<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input class="form-control input-comment-author" id="author" name="author" type="text" value="" size="30" aria-required="true"></p>',
+        'email'  => '<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input class="form-control input-comment-email" id="email" name="email" type="text" value="" size="30" aria-required="true"></p>',
+        'url'    => '<p class="comment-form-url"><label for="url">Website</label> <input class="form-control input-comment-url" id="url" name="url" type="text" value="" size="30"></p>',
+    ),
+  );
+
+  comment_form( $args ); ?>
 
 </div><!-- #comments -->

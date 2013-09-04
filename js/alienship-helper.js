@@ -5,4 +5,7 @@ jQuery(document).ready(function(){
 	// Style the search widget input
 	jQuery( 'input#s' ).addClass( 'form-control' );
 
+	// Style the comments button
+	jQuery( 'input#submit' ).addClass( 'btn btn-default' );
+
 });

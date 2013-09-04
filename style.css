@@ -9,31 +9,13 @@ License: GNU General Public License
 License URI: license.txt
 */
 
-/* Fonts
+/* Typography
 ---------------------------- */
-h1 {
-	font-size: 30px;
-	line-height: 36px;
+.entry-title {
+	line-height: 40px;
 }
-h2 {
-	font-size: 24px;
-	line-height: 36px;
-}
-h3 {
+.widget-title {
 	font-size: 18px;
-	line-height: 27px;
-}
-h4, h5, h6 {
-	line-height: 18px;
-}
-h4 {
-	font-size: 14px;
-}
-h5 {
-	font-size: 12px;
-}
-h6 {
-	font-size: 11px;
 }
 
 /* Navigation
@@ -160,6 +142,11 @@ div.comment-author > img.avatar {
 }
 .form-allowed-tags code {
 	white-space: normal;
+}
+.input-comment-author,
+.input-comment-email,
+.input-comment-url {
+	width: 35%;
 }
 /* End of comments
 ---------------------------------------------------- */

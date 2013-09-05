@@ -434,23 +434,19 @@ if ( ! function_exists( 'alienship_header_title_and_description' ) ):
 function alienship_header_title_and_description() {
 
 	if ( !is_front_page() || !is_home() ) { ?>
-		<hgroup>
-			<p id="site-title" class="site-title">
-				<span>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-				</span>
-			</p>
-			<p id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></p>
-		</hgroup>
+		<p id="site-title" class="site-title">
+			<span>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+			</span>
+		</p>
+		<p id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></p>
 
 	<?php } else { ?>
 
-		<hgroup>
-			<h1 id="site-title" class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-			</h1>
-			<h2 id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></h2>
-		</hgroup>
+		<h1 id="site-title" class="site-title">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+		</h1>
+		<h2 id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></h2>
 
 	<?php }
 }

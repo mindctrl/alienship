@@ -34,7 +34,7 @@ get_header(); ?>
 					   */
 					  rewind_posts();
 
-					if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts?
+					alienship_content_nav( 'nav-above' ); // display content nav above posts?
 
 					// Start the Loop
 					while ( have_posts() ) : the_post();
@@ -53,7 +53,7 @@ get_header(); ?>
 					endwhile;
 
 					// Show navigation below post content
-					if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); }
+					alienship_content_nav( 'nav-below' );
 
 				} else {
 

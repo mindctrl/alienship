@@ -20,7 +20,7 @@ get_header(); ?>
 
 					rewind_posts();
 
-					if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); }
+					alienship_content_nav( 'nav-above' );
 
 					// do the main query without stickies
 					$sticky = get_option( 'sticky_posts' );
@@ -68,7 +68,7 @@ get_header(); ?>
 					endwhile;
 
 					// Show navigation below post content
-					if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); }
+					alienship_content_nav( 'nav-below' );
 
 				} else {
 

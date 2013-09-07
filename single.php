@@ -16,7 +16,7 @@ get_header(); ?>
 				<?php
 				while ( have_posts() ) : the_post();
 
-					if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts?
+					alienship_content_nav( 'nav-above' ); // display content nav above posts?
 
 					do_action( 'alienship_loop_before' );
 
@@ -31,7 +31,7 @@ get_header(); ?>
 
 					do_action( 'alienship_loop_after' );
 
-					if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts?
+					alienship_content_nav( 'nav-below' ); // display content nav below posts?
 
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || '0' != get_comments_number() )

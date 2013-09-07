@@ -12,7 +12,7 @@ get_header(); ?>
 			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
 				<?php if ( have_posts() ) {
 
-					if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts?
+					alienship_content_nav( 'nav-above' ); // display content nav above posts
 
 					/**
 					 * Featured Posts
@@ -61,7 +61,7 @@ get_header(); ?>
 					do_action( 'alienship_loop_after' );
 				endwhile;
 
-				if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts?
+				alienship_content_nav( 'nav-below' ); // display content nav below posts?
 
 			} else {
 

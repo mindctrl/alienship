@@ -130,7 +130,7 @@ div.comment-author > img.avatar {
 .bypostauthor > article {
 	background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
 }
-.bypostauthor > article img.avatar {
+.bypostauthor > article .avatar {
 	border-bottom: 4px solid #46a546;
 }
 .form-allowed-tags code {

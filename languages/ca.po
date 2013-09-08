@@ -1,0 +1,1204 @@
+# Copyright (C) 2013 John Parris
+# This file is distributed under the GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Alien Ship 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/alienship\n"
+"POT-Creation-Date: 2013-08-30 01:49:41+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-09-08 23:50+0100\n"
+"Last-Translator: cestbibi <jjcjulien@gmail.com>\n"
+"Language-Team: LANGUAGE <socialtotal@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: Catalan\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ui! No s&apos;ha trobat aquesta p&aacute;gina"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search or one of the links below?"
+msgstr "Sembla que no es va trobar res en aquest lloc. Potser intenta una recerca o un dels enlla&ccedil;os de sota?"
+
+#: 404.php:28
+msgid "Most Used Categories"
+msgstr "Categories m&eacute;s usades"
+
+#. translators: %1$s: smilie
+#: 404.php:36
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Intenta cercar als arxius mensuals. %1$s"
+
+#: admin/options-framework.php:182 admin/options-framework.php:183
+#: admin/options-framework.php:412
+msgid "Theme Options"
+msgstr "Opcions del Tema"
+
+#: admin/options-framework.php:228
+msgid "Clear"
+msgstr "Buidar"
+
+#: admin/options-framework.php:229 functions.php:263 inc/theme-layouts.php:295
+msgid "Default"
+msgstr "Per defecte"
+
+#: admin/options-framework.php:230
+msgid "Select Color"
+msgstr "Seleccionar Color"
+
+#: admin/options-framework.php:275
+msgid "Save Options"
+msgstr "Desar Opcions"
+
+#: admin/options-framework.php:276
+msgid "Restore Defaults"
+msgstr "Restaurar valors predeterminats"
+
+#: admin/options-framework.php:276
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+"Premeu D&apos;acord per reiniciar. Qualsevol configuraci&oacute; del tema es "
+"perdra!"
+
+#: admin/options-framework.php:308
+msgid "Default options restored."
+msgstr "Les opcions per defecte s&apos;han restaurat."
+
+#: admin/options-framework.php:362
+msgid "Options saved."
+msgstr "Opcions desades."
+
+#: admin/options-media-uploader.php:51
+msgid "No file chosen"
+msgstr "No s'ha escullit cap fitxer"
+
+#: admin/options-media-uploader.php:54 admin/options-media-uploader.php:113
+msgid "Upload"
+msgstr "Pujar"
+
+#: admin/options-media-uploader.php:56 admin/options-media-uploader.php:114
+msgid "Remove"
+msgstr "Treure"
+
+#: admin/options-media-uploader.php:59
+msgid "Upgrade your version of WordPress for full media support."
+msgstr "Actualitza la versi&oacute; del WordPress per admetre suport. "
+
+#: admin/options-media-uploader.php:83
+msgid "View File"
+msgstr "Veure Fitxer"
+
+#: admin/options-sanitize.php:232
+msgid "No Repeat"
+msgstr "No Repetir"
+
+#: admin/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr "Repetir Horizontalment"
+
+#: admin/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr "Repetir Verticalment"
+
+#: admin/options-sanitize.php:235
+msgid "Repeat All"
+msgstr "Repetir Tot"
+
+#: admin/options-sanitize.php:248
+msgid "Top Left"
+msgstr "Part Superior Esquerra"
+
+#: admin/options-sanitize.php:249
+msgid "Top Center"
+msgstr "Part Superior Central"
+
+#: admin/options-sanitize.php:250
+msgid "Top Right"
+msgstr "Part Superior Dreta"
+
+#: admin/options-sanitize.php:251
+msgid "Middle Left"
+msgstr "Centre Esquerra"
+
+#: admin/options-sanitize.php:252
+msgid "Middle Center"
+msgstr "Centre"
+
+#: admin/options-sanitize.php:253
+msgid "Middle Right"
+msgstr "Centre Dret"
+
+#: admin/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr "Part Inferior Esquerra"
+
+#: admin/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr "Part Inferior Centre"
+
+#: admin/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr "Part Inferior Dreta"
+
+#: admin/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr "Despla&ccedil;ament Normal"
+
+#: admin/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr "Fixat"
+
+#: admin/options-sanitize.php:344
+msgid "Normal"
+msgstr "Normal"
+
+#: admin/options-sanitize.php:345
+msgid "Italic"
+msgstr "Cursiva"
+
+#: admin/options-sanitize.php:346
+msgid "Bold"
+msgstr "Negreta"
+
+#: admin/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr "Negreta Cursiva"
+
+#: author.php:27 inc/template-tags.php:560
+msgid "Author Archives: %s"
+msgstr "Arxius de l&apos;Autor: %s"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un pensament sobre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensaments sobre &ldquo;%2$s&rdquo;"
+
+#: comments.php:36 comments.php:58
+msgid "Comment navigation"
+msgstr "Navegaci&oacute; de comentaris"
+
+#: comments.php:38
+msgid "&laquo; Older Comments"
+msgstr "&laquo; Comentaris m&eacute;s antics"
+
+#: comments.php:39
+msgid "Newer Comments &raquo;"
+msgstr "Comentaris m&eacute;s recents &raquo;"
+
+#: comments.php:60
+msgid "Older Comments &raquo;"
+msgstr "Comentaris m&eacute;s antics &raquo;"
+
+#: comments.php:61
+msgid "&laquo; Newer Comments"
+msgstr "&laquo; Newer Comments"
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr "Els comentaris estan tancats."
+
+#: footer-hero.php:19
+msgid "Edit page"
+msgstr "Edita la p&agrave;gina"
+
+#: functions.php:137
+msgid ""
+"Dropdown menus work a little differently in Alien Ship. They do not activate "
+"on mouse hover, but on click instead. This means that the top/parent menu "
+"item does not click through to a page, but only activates the dropdown. Sub-"
+"menus are not supported. Design your menus with this in mind. For more "
+"information, read the <a href=\"http://www.johnparris.com/alienship/"
+"documentation\" target=\"_blank\">Alien Ship documentation</a> online. | <a "
+"href=\"%1$s\">Hide this notice</a>"
+msgstr ""
+"Els men&uacute;s desplegables treballen una mica diferent en Alien Ship. No "
+"s&apos;activen en passar el ratol&iacute; a sobre, per&ograve; fent-i clic a "
+"sobre. Aix&ograve; significa que fent clic a la part superior/element del "
+"men&uacute; primari, no enlla&ccedil;a a cap p&agrave;gina, per&ograve; "
+"nom&eacute;s activa al men&uacute; desplegable. A m&eacute;s, els men&uacute;"
+"s imbricats nom&eacute;s van un nivell de profunditat (Pare> Sub item i NO "
+"Pares> Sub item> Sub sub item. Dissenya les men&uacute;s amb aix&ograve; en "
+"ment. Per obtenir m&eacute;s informaci&oacute;, consulteu la <a href="
+"\"http://www.johnparris.com/alienship/documentation\" target=\"_blank\"> "
+"documentaci&oacute; Alien Ship</a> en l&iacute;nia. | <a href=\"%1$s\"> "
+"amaga aquest av&iacute;s</a>"
+
+#: functions.php:248
+msgid "Page %s"
+msgstr "P&agrave;gina"
+
+#: functions.php:264
+msgid "Content left. Sidebar right."
+msgstr "Contingut a la esquerra. Barra lateral a la dreta."
+
+#: functions.php:265
+msgid "Content right. Sidebar left."
+msgstr "Contingut a la dreta. Barra lateral a la esquerra."
+
+#: functions.php:266
+msgid "Full width. No sidebar."
+msgstr "Ample total. Sense barra lateral."
+
+#: image.php:23
+msgid ""
+"Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
+"\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
+"%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+"\"gallery\">%8$s</a>"
+msgstr ""
+"Publicat <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">"
+"%2$s</abbr></span> al <a href=\"%3$s\" title=\"Link to full-size image\">"
+"%4$s &times; %5$s</a> en <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+"\"gallery\">%7$s</a>"
+
+#: image.php:33 image.php:80 inc/breadcrumb-trail.php:1122
+#: inc/breadcrumb-trail.php:1158 inc/breadcrumb-trail.php:1175
+#: inc/breadcrumb-trail.php:1206 inc/template-tags.php:207
+#: inc/template-tags.php:226
+msgid "Edit"
+msgstr "Edita"
+
+#: image.php:38
+msgid "&laquo; Previous"
+msgstr "&laquo; Anterior"
+
+#: image.php:39
+msgid "Next &raquo;"
+msgstr "Seg&uuml;ent &raquo;"
+
+#: image.php:67
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Publica "
+"un comentari</a> o deixa un retroenllaEnlla&ccedil;: <a class=\"trackback-"
+"link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Enlla&ccedil; del RetroenllaEnlla&ccedil; </a>."
+
+#: image.php:70
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+"Els comentaris estan tancats, per&ograve; podeu deixar un "
+"retroenllaEnlla&ccedil;: <a class=\"trackback-link\" href=\"%s\" title="
+"\"Trackback URL for your post\" rel=\"trackback\">Enlla&ccedil; del "
+"RetroenllaEnlla&ccedil;</a>."
+
+#: image.php:73
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+"Els RetroenllaEnlla&ccedil;os estan tancats, per&ograve; es pot <a class="
+"\"comment-link\" href=\"#respond\" title=\"Post a comment\">publicar un "
+"comentari</a>."
+
+#: image.php:76
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Ambd&oacute;s comentaris i RetroenllaEnlla&ccedil;os estan tancats."
+
+#: inc/breadcrumb-trail.php:175
+msgid "Browse:"
+msgstr "Navega"
+
+#: inc/breadcrumb-trail.php:176
+msgid "Home"
+msgstr "Inici"
+
+#: inc/breadcrumb-trail.php:177
+msgid "Search results for \"%s\""
+msgstr "Resultats de la cerca per \"%s\""
+
+#: inc/breadcrumb-trail.php:178
+msgid "404 Not Found"
+msgstr "404 No s'ha Trobat"
+
+#: inc/breadcrumb-trail.php:179
+msgid "Page %d"
+msgstr "P&agrave;gina %d"
+
+#: inc/breadcrumb-trail.php:180 inc/template-tags.php:572
+msgid "Archives"
+msgstr "Arxius"
+
+#: inc/breadcrumb-trail.php:181
+msgid "g:i a"
+msgstr "g:i a"
+
+#: inc/breadcrumb-trail.php:182
+msgid "Minute %d"
+msgstr "Minut %d"
+
+#: inc/breadcrumb-trail.php:183
+msgid "g a"
+msgstr "g a"
+
+#: inc/breadcrumb-trail.php:184
+msgid "d"
+msgstr "d"
+
+#: inc/breadcrumb-trail.php:185
+msgid "Week %d"
+msgstr "Setmana %d"
+
+#: inc/breadcrumb-trail.php:186
+msgid "F"
+msgstr "F"
+
+#: inc/breadcrumb-trail.php:187 inc/breadcrumb-trail.php:1027
+msgid "Y"
+msgstr "Y"
+
+#: inc/breadcrumb-trail.php:1031
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/breadcrumb-trail.php:1035
+msgid "F j, Y"
+msgstr "j de F del Y"
+
+#: inc/breadcrumb-trail.php:1150
+msgid "Split"
+msgstr "Divideix"
+
+#: inc/breadcrumb-trail.php:1154
+msgid "Merge"
+msgstr "Fusiona"
+
+#: inc/menus.php:6
+msgid "Top Menu"
+msgstr "Men&uacute; Superior"
+
+#: inc/menus.php:7
+msgid "Main Menu"
+msgstr "Men&uacute; Principal"
+
+#: inc/menus.php:8
+msgid "Bottom Menu"
+msgstr "Men&uacute; Inferior"
+
+#: inc/sidebars.php:13
+msgid "Primary Sidebar"
+msgstr "Barra lateral Principal"
+
+#: inc/sidebars.php:14
+msgid "The main widget area displayed in the sidebar."
+msgstr "L&apos;&agrave;rea giny principal que apareix a la barra lateral."
+
+#: inc/sidebars.php:23
+msgid "Hero Widgets"
+msgstr "Ginys Hero"
+
+#: inc/sidebars.php:24 inc/sidebars.php:34 inc/sidebars.php:44
+msgid "Displayed on pages created with the Hero template"
+msgstr "Es mostra a les p&agrave;gines creades amb la plantilla Hero"
+
+#: inc/sidebars.php:33
+msgid "Hero Widgets 2"
+msgstr "Ginys 2 Hero"
+
+#: inc/sidebars.php:43
+msgid "Hero Widgets 3"
+msgstr "Ginys 3 Hero"
+
+#: inc/sidebars.php:53
+msgid "Footer 1"
+msgstr "Peu de p&agrave;gina 1"
+
+#: inc/sidebars.php:54
+msgid "The footer widget area displayed after all content."
+msgstr ""
+"El giny de &agrave;rea de peu de p&agrave;gina que apareix despr&eacute;s de "
+"tot el contingut."
+
+#: inc/sidebars.php:63
+msgid "Footer 2"
+msgstr "Peu de p&agrave;gina 2"
+
+#: inc/sidebars.php:64
+msgid "The second footer widget area, displayed below the Footer widget area."
+msgstr ""
+"La segona &agrave;rea giny de peu de p&agrave;gina, que apareix sota l&apos;"
+"&agrave;rea de giny de peu de p&agrave;gina."
+
+#: inc/sidebars.php:73
+msgid "Footer 3"
+msgstr "Peu de p&agrave;gina 3"
+
+#: inc/sidebars.php:74
+msgid "The third footer widget area, displayed below the Footer widget area."
+msgstr ""
+"La tercera &agrave;rea giny de peu de p&agrave;gina, que apareix sota l&apos;"
+"&agrave;rea de giny de peu de p&agrave;gina."
+
+#: inc/sidebars.php:116 inc/widgets/widget-login-form.php:167
+msgid "Username"
+msgstr "Nom d&apos;usuari"
+
+#: inc/sidebars.php:117 inc/widgets/widget-login-form.php:168
+msgid "Password"
+msgstr "Contrasenya"
+
+#: inc/sidebars.php:118 inc/widgets/widget-login-form.php:170
+msgid "Remember Me"
+msgstr "Recorda&apos;m"
+
+#: inc/sidebars.php:119 inc/widgets/widget-login-form.php:166
+#: inc/widgets/widget-login-form.php:169
+msgid "Log In"
+msgstr "Accedir"
+
+#: inc/template-tags.php:18
+msgid "You must specify a prefix when using alienship_sidebar_class."
+msgstr ""
+"S'ha d&apos;especificar un prefix quan utilitzes alienship_sidebar_class."
+
+#: inc/template-tags.php:69
+msgid "You must specify a prefix when using alienship_do_sidebar."
+msgstr "S'ha d&apos;especificar un prefix quan utilitzes alienship_do_sidebar."
+
+#: inc/template-tags.php:165
+msgid "Post navigation"
+msgstr "Navegaci&oacute; d&apos;Entrades"
+
+#: inc/template-tags.php:171
+msgctxt "Previous post link"
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: inc/template-tags.php:172
+msgctxt "Next post link"
+msgid "&raquo;"
+msgstr "&laquo;"
+
+#: inc/template-tags.php:178
+msgid "Next page <span class=\"meta-nav\">&raquo;</span>"
+msgstr "P&agrave;gina seg&uuml;ent <span class=\"meta-nav\">&raquo;</span>"
+
+#: inc/template-tags.php:182
+msgid "<span class=\"meta-nav\">&laquo;</span> Previous page"
+msgstr "<span class=\"meta-nav\">&laquo;</span> p&agrave;gina anterior"
+
+#: inc/template-tags.php:207
+msgid "Pingback:"
+msgstr "Pingback"
+
+#: inc/template-tags.php:217
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">diu:</span>"
+
+#: inc/template-tags.php:223
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s at %2$s"
+
+#: inc/template-tags.php:230
+msgid "Your comment is awaiting moderation."
+msgstr "El teu comentari est&agrave; en espera de moderaci&oacute;."
+
+#: inc/template-tags.php:312
+msgid ""
+"<span class=\"byline\"><i class=\"glyphicon glyphicon-user\"></i> <span "
+"class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" "
+"rel=\"author\">%3$s</a></span></span>"
+msgstr ""
+"<span class=\"byline\"><i class=\"glyphicon glyphicon-user\"></i> <span "
+"class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" "
+"rel=\"author\">%3$s</a></span></span>"
+
+#: inc/template-tags.php:314
+msgid "View all posts by %s"
+msgstr "Veure totes les entrades de %s"
+
+#: inc/template-tags.php:331
+msgid ""
+"<span class=\"published-date\"><i class=\"glyphicon glyphicon-calendar\" "
+"title=\"Published date\"></i> <a href=\"%1$s\" title=\"%2$s\"><time class="
+"\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span>"
+msgstr ""
+"<span class=\"published-date\"><i class=\"glyphicon glyphicon-calendar\" "
+"title=\"Published date\"></i> <a href=\"%1$s\" title=\"%2$s\"><time class="
+"\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span>"
+
+#: inc/template-tags.php:420
+msgid " Leave a comment"
+msgstr "Deixa un comentari"
+
+#: inc/template-tags.php:420
+msgid " 1 Comment"
+msgstr "1 Comentari"
+
+#: inc/template-tags.php:420
+msgid " % Comments"
+msgstr "% Comentaris"
+
+#: inc/template-tags.php:554
+msgid "Category Archives: %s"
+msgstr "Arxius per categoria: %s"
+
+#: inc/template-tags.php:557
+msgid "Tag Archives: %s"
+msgstr "Arxius per Etiqueta: %s"
+
+#: inc/template-tags.php:563
+msgid "Daily Archives: %s"
+msgstr "Arxius per Dia: %s"
+
+#: inc/template-tags.php:566
+msgid "Monthly Archives: %s"
+msgstr "Arxius per Mes: %s"
+
+#: inc/template-tags.php:569
+msgid "Yearly Archives: %s"
+msgstr "Arxius per Any: %s"
+
+#: inc/theme-layouts.php:296
+msgid "One Column"
+msgstr "Una Columna"
+
+#: inc/theme-layouts.php:297
+msgid "Two Columns, Left"
+msgstr "Dos columnes, Esquerra"
+
+#: inc/theme-layouts.php:298
+msgid "Two Columns, Right"
+msgstr "Dos columnes, Dreta"
+
+#: inc/theme-layouts.php:299
+msgid "Three Columns, Left"
+msgstr "Tres Columnes, Esquerra"
+
+#: inc/theme-layouts.php:300
+msgid "Three Columns, Right"
+msgstr "Tres Columnes, Dreta"
+
+#: inc/theme-layouts.php:301
+msgid "Three Columns, Center"
+msgstr "Tres Columnes, Mitg"
+
+#: inc/theme-layouts.php:377 inc/theme-layouts.php:485
+msgid "Layout"
+msgstr "Disposici&oacute;"
+
+#: inc/theme-layouts.php:404
+msgid "Layout is a theme-specific structure for the single view of the post."
+msgstr ""
+"La disposici&oacute; es espec&iacute;fica a la estructura del tema  per a la "
+"vitsualitzaci&oacute; unica de la entrada."
+
+#: inc/tweaks.php:80
+msgid "Continue Reading "
+msgstr "Segueix Llegint"
+
+#: inc/widgets/widget-login-form.php:23
+msgid "A widget that allows users to log into your site."
+msgstr "Un giny que permet als usuaris iniciar sessi&oacute; al teu lloc web."
+
+#: inc/widgets/widget-login-form.php:34
+msgid "Login Form"
+msgstr "Formulari de Connecci&oacute;"
+
+#: inc/widgets/widget-login-form.php:180
+msgid "Please log into the site."
+msgstr "Si us plau, connecteu vos al lloc web."
+
+#: inc/widgets/widget-login-form.php:181
+msgid "Logged in as"
+msgstr "Connectat com"
+
+#: inc/widgets/widget-login-form.php:193
+msgid "Title:"
+msgstr "T&iacute;tol"
+
+#: inc/widgets/widget-login-form.php:243
+msgid "\"Remember me\" checkbox?"
+msgstr "Casella \"Recorda&apos;m\"?"
+
+#: inc/widgets/widget-login-form.php:247
+msgid "Check \"remember me\"?"
+msgstr "Valida \"Recorda&apos;m\"?"
+
+#: inc/widgets/widget-login-form.php:251
+msgid "Display avatar?"
+msgstr "Mostra l&apos;avatar?"
+
+#: inc/widgets/widget-login-form.php:254
+msgid "Logged out text:"
+msgstr "Texte de desconnectat:"
+
+#: inc/widgets/widget-login-form.php:259
+msgid "Logged in text:"
+msgstr "Texte de connectat:"
+
+#: inc/widgets/widget-nav-stacked-pills-menu.php:18
+msgid "Custom Menu: Stacked Pills"
+msgstr "Men&uacute; Personalitzat: Pastilles Apilades"
+
+#: inc/widgets/widget-nav-stacked-pills-menu.php:20
+msgid "Custom menu widget using Nav Stacked Pills styling"
+msgstr ""
+"Men&uacute; personalitzat que utilitza l&apos;estil de navegaci&oacute; de "
+"pastilles apilades"
+
+#: inc/widgets/widget-nav-stacked-pills-menu.php:66
+msgid "\"well\" Container"
+msgstr "Contenidor \"well\""
+
+#: options.php:38
+msgid "Select a tag:"
+msgstr "Selecciona una etiqueta:"
+
+#: options.php:46
+msgid "Select a page:"
+msgstr "Selecciona una p&aacute;gina:"
+
+#: options.php:58
+msgid "Display Options"
+msgstr "Opcions de Presentaci&oacute;"
+
+#: options.php:65
+msgid "Navigation Elements"
+msgstr "Elements de Navegaci&oacute;"
+
+#: options.php:66
+msgid ""
+"Top navbar, breadcrumb navigation, and content navigation design options"
+msgstr ""
+"Opcions de disseny de la barra de navegaci&oacute; superior, ruta de "
+"navegaci&oacute; y contingut de navegaci&oacute;"
+
+#: options.php:71
+msgid "Show Top Menu navigation bar?"
+msgstr "Mostrar el Men&uacute;  Superior a la barra de navegaci&oacute; ?"
+
+#: options.php:72
+msgid ""
+"Displays the top navbar on your site, even if there's no menu assigned in "
+"Appearance > Menu. Uncheck this box to hide it. Default is enabled."
+msgstr ""
+"Mostra la barra de navegaci&oacute; superior al lloc web, fins i tot si no "
+"hi ha men&uacute; assignat a Aparença> Men&uacute;. Desactiveu aquesta "
+"casella per amagar-ho. Per defecte est&agrave; activat."
+
+#: options.php:79
+msgid "Show site name in Top Menu navigation bar?"
+msgstr ""
+"Mostrar el nom del lloc web a la barra  Superior de navegaci&oacute; del "
+"Men&uacute; ?"
+
+#: options.php:80
+msgid ""
+"Default is enabled. Uncheck this box to hide site name in Top Menu "
+"navigation bar."
+msgstr ""
+"Per defecte est&agrave; activat. Desactiveu aquesta casella per ocultar el "
+"nom del lloc web a la barra Superior de navegaci&oacute; del Men&uacute;."
+
+#: options.php:87
+msgid "Show search bar in Top Menu navigation bar?"
+msgstr ""
+"Mostrar el quadre de cerca a la barra  Superior de navegaci&oacute; del "
+"Men&uacute;"
+
+#: options.php:88
+msgid "Default is enabled. Uncheck this box to turn it off."
+msgstr ""
+"Per defecte est&agrave; activat. Desactiveu aquesta casella per desactivar-"
+"la."
+
+#: options.php:95
+msgid "Show Breadcrumb Navigation?"
+msgstr "Mostrar la Barra de Navegaci&oacute;?"
+
+#: options.php:96
+msgid "Default is show. Uncheck this box to hide breadcrumbs."
+msgstr ""
+"Es mostra per defecte. Desactiveu aquesta casella per amagar la Barra de "
+"Navegaci&oacute; ."
+
+#: options.php:103
+msgid "Show content navigation above posts?"
+msgstr "Mostra la navegaci&oacute; del contigut per sobre de les entrades ?"
+
+#: options.php:104
+msgid ""
+"Displays links to next and previous posts above the current post and above "
+"the posts on the index page. Default is hide. Check this box to show content "
+"nav above posts."
+msgstr ""
+"Mostra enlla&ccedil;os a missatges anteriors i posteriors sobre les entrades "
+"actuals i per sobre de les entrades de la p&agrave;gina d&apos;&iacute;ndex. "
+"Amagat per defecte. Marqueu aquesta casella per mostrar la navegaci&oacute; "
+"del contingut per sobre de les entrades."
+
+#: options.php:111
+msgid "Show content navigation below posts?"
+msgstr "Mostra la navegaci&oacute; del contigut per sota de les entrades ?"
+
+#: options.php:112
+msgid ""
+"Displays links to next and previous posts below the current post and below "
+"the posts on the index page. Default is show. Uncheck this box to hide "
+"content nav above posts."
+msgstr ""
+"Mostra enlla&ccedil;os a missatges anteriors i posteriors sota les entrades "
+"actuals i per sota de les entrades de la p&agrave;gina d&apos;&iacute;ndex. "
+"Mostrat per defecte. Marqueu aquesta casella per amagar la navegaci&oacute; "
+"del contingut per sobre de les entrades."
+
+#: options.php:120
+msgid "Miscellaneous Text"
+msgstr "Text Miscel·lani"
+
+#: options.php:121
+msgid "Miscellaneous text options."
+msgstr "Opcions de text Miscel·lani"
+
+#: options.php:126
+msgid "Show custom footer text?"
+msgstr "Mostrar text personalitzat al peu de p&agrave;gina?"
+
+#: options.php:127
+msgid ""
+"Default is disabled. Check this box to use custom footer text. Fill in your "
+"text below."
+msgstr ""
+"Per defecte est&agrave; desactivat. Marqueu aquesta casella per utilitzar el "
+"text de peu de p&agrave;gina personalitzat. Introdu&iuml;u el text a "
+"continuaci&oacute;."
+
+#: options.php:134
+msgid "Custom footer text"
+msgstr "Text personalitzat del peu de p&agrave;gina"
+
+#: options.php:135
+msgid ""
+"Enter the text here that you would like displayed at the bottom of your "
+"site. This setting will be ignored if you do not enable \"Show custom footer "
+"text\" above."
+msgstr ""
+"Escriu aqu&iacute; el text que t&apos;agradaria que apareix&egrave;s a la "
+"part inferior de la p&agrave;gina. Aquest ajust sera ignorat si no habilitas "
+"\"Mostrar text personalitzat al peu de p&agrave;gina \" anterior."
+
+#: options.php:142
+msgid "Posts and Pages"
+msgstr "Entrades i P&agrave;gines"
+
+#: options.php:143
+msgid ""
+"Options related to the display of posts and pages, like excerpts and post "
+"meta information (published date, author, categories, and tags - is "
+"displayed on each post to provide your readers with information). Use the "
+"options below to control what is displayed."
+msgstr ""
+"Opcions relacionades amb la visualitzaci&oacute; de missatges i p&agrave;"
+"gines, com extractes i  informaci&oacute; meta de l&apos;entrada (data de "
+"publicaci&oacute;, autor, categories i etiquetes - es mostra en cada entrada "
+"i proporciona informaci&oacute; als seus lectors). Utilitzeu les seg&iuml;"
+"ents opcions per controlar el que es mostrara."
+
+#: options.php:148
+msgid "Show post author?"
+msgstr "Mostrar l&apos;autor de l&apos;entrada?"
+
+#: options.php:149
+msgid ""
+"Displays the post author. Default is show. Uncheck this box to hide the post "
+"author."
+msgstr ""
+"Mostra l&apos;autor de l&apos;entrada. Mostrat per defecte. Desactiveu "
+"aquesta casella per amagar l&apos;autor de l&apos;entrada ."
+
+#: options.php:156
+msgid "Show published date?"
+msgstr "Mostrar la data de publicaci&oacute;?"
+
+#: options.php:157
+msgid ""
+"Displays the date the article was posted. Default is show. Uncheck this box "
+"to hide post published date."
+msgstr ""
+"Mostra la data de publicaci&oacute; de l&apos;article. Mostrat per defecte. "
+"Desactiveu aquesta casella per amagar la data de publicaci&oacute; de l&apos;"
+"entrada."
+
+#: options.php:164
+msgid "Show post categories?"
+msgstr "Mostrar la categoria de l&apos;entrada?"
+
+#: options.php:165
+msgid ""
+"Displays the categories in which a post was published. Default is show. "
+"Uncheck this box to hide post categories."
+msgstr ""
+"Mostra la categoria de publicaci&oacute; de l&apos;article. Mostrat per "
+"defecte. Desactiveu aquesta casella per amagar la categoria de l&apos;"
+"entrada."
+
+#: options.php:172
+msgid "Show post categories on the index/posts page?"
+msgstr "Mostrar la categoria a la p&agrave;gina d&apos;index/entrades?"
+
+#: options.php:173
+msgid ""
+"Displays the post categories on the index/posts page - as defined in "
+"Settings > Reading. Default is show. Uncheck this box to hide post "
+"categories on the index/posts page."
+msgstr ""
+"Mostra les categories a la p&agrave;gina d&apos;index/entrades - com es "
+"defineix a Configuració> Lectura. Mostrat per defecte. Desactiveu aquesta "
+"casella per ocultar  les categories a la p&agrave;gina d&apos;index/entrades."
+
+#: options.php:180
+msgid "Show post tags?"
+msgstr "Mostrar les etiquetes de les entrades?"
+
+#: options.php:181
+msgid ""
+"Displays the tags attached to a post. Default is show. Uncheck this box to "
+"hide post tags."
+msgstr ""
+"Mostra les etiquetes de l&apos;entrada. Mostrat per defecte. Desactiveu "
+"aquesta casella per ocultar les etiquestes de les entrades."
+
+#: options.php:188
+msgid "Show post tags on the index/posts page?"
+msgstr "Mostrar les etiquetes de la p&agrave;gina d&apos;index/entrades?"
+
+#: options.php:189
+msgid ""
+"Displays the post tags on the index/posts page - as defined in Settings > "
+"Reading. Default is show. Uncheck this box to hide post tags on the index/"
+"posts page."
+msgstr ""
+"Mostra les etiquetes a la p&agrave;gina d&apos;index/entrades - com es "
+"defineix a Configuració> Lectura. Mostrat per defecte. Desactiveu aquesta "
+"casella per ocultar  les etiquetes a la p&agrave;gina d&apos;index/entrades."
+
+#: options.php:196
+msgid "Show link for # of comments / Leave a comment?"
+msgstr ""
+"Mostrar enlla&ccedil; per el n&uacute;mero de comentaris / deixa un "
+"comentari?"
+
+#: options.php:197
+msgid ""
+"Displays the number of comments and/or a Leave a comment message on posts. "
+"Default is show. Uncheck this box to hide."
+msgstr ""
+"Mostra  el n&uacute;mero de comentaris i/o deixa un missatge de comentari a "
+"les entrades. Mostrat per defecte. Desactiveu aquesta casella per ocultar-lo."
+
+#: options.php:205
+msgid "Featured Posts"
+msgstr "Entrades Destacades"
+
+#: options.php:210
+msgid "Featured Posts Information"
+msgstr "Informaci&oacute; de les Entrades destacades"
+
+#: options.php:211
+msgid ""
+"This feature displays certain posts in a photo slider or in a block grid at "
+"the top of your post index. This is a good way to make special content stand "
+"out. You can feature any post here, according to the criteria you choose "
+"below. Don't forget to assign featured images to your posts in the post "
+"editor!"
+msgstr ""
+"Aquesta funci&oacute; mostra alguns missatges amb una presentaci&oacute;  de "
+"diapositives o amb una quadr&iacute; cula de blocs a la part superior de la "
+"p&agrave;gina d&apos;&iacute;ndex. Aquesta &eacute;s una bona manera de fer "
+"que el contingut especial destaqui. Pots presentar qualsevol entrada "
+"aqu&iacute;, d&apos;acord amb els criteris que tri&iuml;s a "
+"continuaci&oacute; . No t&apos;oblidis d&apos;assignar imatges destacades a "
+"les teves entrades a l&apos;editor d&apos;entrades!"
+
+#: options.php:216
+msgid "Enable Featured Posts?"
+msgstr "Activar Entrades Destacades?"
+
+#: options.php:217
+msgid ""
+"Check this box to turn on featured posts functionality. Set the options "
+"below to determine how your featured posts will work. Default is disabled."
+msgstr ""
+"Marca aquesta casella per activar la funcionalitat d&apos;Entrades "
+"Destacades. Configura les opcions seg&uuml;ents per determinar com "
+"funcionaran les teves entrades destacades. Per defecte est&agrave; "
+"desactivat."
+
+#: options.php:224
+msgid "Display Featured Posts in a slider or in a grid?"
+msgstr ""
+"Mostra les Entrades Destacades amb una presentaci&oacute;  de diapositives o "
+"amb una quadr&iacute;cula de blocs?"
+
+#: options.php:225
+msgid ""
+"Displays your featured posts in either a photo slider or a block grid. The "
+"default setting is Slider."
+msgstr ""
+"Mostra les teves entrades destacades o amb una presentaci&oacute;  de "
+"diapositives, o amb una quadr&iacute;cula de blocs. El valor per defecte "
+"&eacute;s amb presentaci&oacute;  de diapositives"
+
+#: options.php:230
+msgid "Slider"
+msgstr "Presentaci&oacute;  de diapositives"
+
+#: options.php:231
+msgid "Grid"
+msgstr "Quadr&iacute;cula de blocs"
+
+#: options.php:236
+msgid "Featured Posts Tag"
+msgstr "Etiqueta de les Entrades Destacades"
+
+#: options.php:237
+msgid ""
+"The tag you select here determines which posts show in the featured posts "
+"slider or grid. Example: if you were to select the moo tag, posts tagged "
+"with moo would be displayed. Don't forget to attach your featured images in "
+"the post editor!"
+msgstr ""
+"L&apos;etiqueta que seleccionis aqu&iacute; determina quines entrades "
+"mostrar amb la presentaci&oacute;  de diapositives, o amb la quadr&iacute;"
+"cula de blocs. Exemple: si esculls l&apos;etiqueta moo, es mostraran les "
+"entrades etiquetades amb moo. No oblidis adjuntar les teves imatges "
+"destacades amb l&apos;editor d&apos;entrades!"
+
+#: options.php:245
+msgid "Maximum # of Featured Posts to display"
+msgstr "N&uacute;mero m&agrave;xim d&apos;Entrades Destacades per mostrar"
+
+#: options.php:246
+msgid ""
+"Select the maximum number of posts you want to display in the featured posts "
+"slider or grid. The default is three. NOTE: The grid displays two posts per "
+"row. For best results, select an even number here."
+msgstr ""
+"Selecciona el n&ugrave;mero m&agrave;xim d&apos;entrades que vols mostrar "
+"amb la presentaci&oacute;  de diapositives, o amb laquadr&iacute;cula de "
+"blocs. Per defecte es mostren tres. NOTA: La quadr&iacute;cula mostra dos "
+"missatges per fila. Per obtenir els millors resultats, selecciona un nombre "
+"parell aqu&iacute;."
+
+#: options.php:251
+msgid "One"
+msgstr "Una"
+
+#: options.php:252
+msgid "Two"
+msgstr "Dues"
+
+#: options.php:253
+msgid "Three"
+msgstr "Tres"
+
+#: options.php:254
+msgid "Four"
+msgstr "Quatre"
+
+#: options.php:255
+msgid "Five"
+msgstr "Cinq"
+
+#: options.php:256
+msgid "Six"
+msgstr "Sis"
+
+#: options.php:261
+msgid "Captions"
+msgstr "Llegenda"
+
+#: options.php:262
+msgid "Show post titles as captions with slider images. Default is Show."
+msgstr ""
+"Mostra els t&iacute;tuls com llegendes de les entrades amb la "
+"presentaci&oacute; de diapositives. Mostrat per defecte."
+
+#: options.php:267
+msgid "Show slide captions"
+msgstr "Mostra les llegendes de les diapositives"
+
+#: options.php:268
+msgid "Hide slide captions"
+msgstr "Amaga les llegendes de les diapositives"
+
+#: options.php:273
+msgid "Indicators"
+msgstr "Indicadors"
+
+#: options.php:274
+msgid ""
+"Show indicators at the bottom of the slider that show the current slideshow "
+"position and allow for navigation between slides. Default is Hide."
+msgstr ""
+"Mostra els indicadors a la part inferior de les diapositives. Mostren la "
+"posici&oacute; actual de presentaci&oacute; i permeten la navegaci&oacute; "
+"entre les diapositives. Amagat per defecte."
+
+#: options.php:279
+msgid "Show slide indicators"
+msgstr "Mostra els indicadors a les diapositives"
+
+#: options.php:280
+msgid "Hide slide indicators"
+msgstr "Amaga els indicadors a les diapositives"
+
+#: options.php:285
+msgid "Duplicate featured posts"
+msgstr "Duplica les entrades destacades"
+
+#: options.php:286
+msgid ""
+"Show posts from the featured content section in the rest of the body. "
+"Default is Hide."
+msgstr ""
+"Mostra entrades de la secci&oacute; de les entrades destacades al reste del "
+"cos. Amagat per defecte"
+
+#: options.php:291
+msgid "Show duplicate posts"
+msgstr "Mostra les entrades duplicades"
+
+#: options.php:292
+msgid "Hide duplicate posts"
+msgstr "Amaga les entrades duplicades"
+
+#: options.php:297
+msgid "Featured Posts Images"
+msgstr "Imatges de les Entrades Destacades"
+
+#: options.php:298
+msgid ""
+"A note about images: For best results, all of your images should be the same "
+"size (preferably the size you set below). If they are not the same size, "
+"your content will not look as good. For example: the photo slider will "
+"display images of varying sizes, but when it does the slider resizes itself "
+"between each slide. The grid will not display evenly if images are different "
+"sizes."
+msgstr ""
+"Una nota sobre les imatges: Per obtenir els millors resultats, totes les "
+"imatges han de ser de la mateixa mida (preferentment amb la mateixa  mida "
+"que l&apos;establida a continuac&oacute;). Si no s&oacute;n de la mateixa "
+"mida, el contingut no es veur&aacute; tan b&eacute;. Per exemple: la "
+"presentaci&oacute; de diapositives mostrar&agrave; imatges de diferents "
+"mides, per&ograve; quan ho fa la presentaci&oacute; de diapositives canviara "
+"de mida entre cadascuna de les diapositives. La quadr&iacute;cula no es "
+"mostrar&agrave; uniforme si les imatges s&oacute;n de diferents mides."
+
+#: options.php:303
+msgid "Featured post image width"
+msgstr "Ample d&apos;imatge de les Entrades Destacades"
+
+#: options.php:304
+msgid ""
+"Enter the width (in pixels) you want the featured images to be. Default is "
+"850 pixels."
+msgstr ""
+"Introdueix l&apos;amplada (en p&iacute;xels) que vols que les imatges "
+"destacades siguin. Per defecte son 850 p&iacute;xels."
+
+#: options.php:312
+msgid "Featured post image height"
+msgstr "Al&ccedil;ada d&apos;imatge de les Entrades Destacades"
+
+#: options.php:313
+msgid ""
+"Enter the height (in pixels) you want the featured images to be. Default is "
+"350 pixels."
+msgstr ""
+"Introdueix l&apos;al&ccedil;ada (en p&iacute;xels) que vols que les imatges "
+"destacades siguin. Per defecte son 350 p&iacute;xels"
+
+#: search.php:20
+msgid "Search Results for: %s"
+msgstr "Resultats de la recerca per: %s"
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr "Cercar"
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr "Cercar &hellip;"
+
+#: templates/parts/content-featured.php:8
+#: templates/parts/content-fp-grid.php:10
+#: templates/parts/content-fp-grid.php:15 templates/parts/content-link.php:19
+#: templates/parts/content-search.php:16 templates/parts/content-search.php:26
+#: templates/parts/content-standard.php:39
+#: templates/parts/content-standard.php:51
+msgid "Link to %s"
+msgstr "Enlla&ccedil; a %s"
+
+#: templates/parts/content-fp-grid.php:24
+msgid ""
+"<span class=\"edit-link pull-right\"><i class=\"glyphicon glyphicon-pencil"
+"\"></i>"
+msgstr ""
+"<span class=\"edit-link pull-right\"><i class=\"glyphicon glyphicon-pencil"
+"\"></i>"
+
+#: templates/parts/content-link.php:34 templates/parts/content-page.php:21
+#: templates/parts/content-quote.php:25 templates/parts/content-search.php:39
+#: templates/parts/content-standard.php:70
+#: templates/parts/content-status.php:23 templates/parts/content.php:26
+msgid " Edit"
+msgstr "Edita"
+
+#: templates/parts/content-none.php:11
+msgid "Nothing Found"
+msgstr "No s&apos;ha trobat res"
+
+#: templates/parts/content-none.php:15
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Sembla que no s&apos;ha trobat el que estabas buscant. Potser una cerca pot "
+"ajudar."
+
+#: templates/parts/content-page.php:17 templates/parts/content-quote.php:15
+#: templates/parts/content-search.php:21 templates/parts/content-search.php:26
+#: templates/parts/content-standard.php:51 templates/parts/content.php:15
+msgid "Continue Reading &raquo;"
+msgstr "Segueix Llegint"
+
+#. Theme Name of the plugin/theme
+msgid "Alien Ship"
+msgstr "Alien Ship"
+
+#. #-#-#-#-#  alienship.pot (Alien Ship 1.0.0)  #-#-#-#-#
+#. Theme URI of the plugin/theme
+#. #-#-#-#-#  alienship.pot (Alien Ship 1.0.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.johnparris.com/alienship/"
+msgstr "http://www.johnparris.com/alienship/"
+
+#. Description of the plugin/theme
+msgid "Alien Ship is a responsive starter theme for WordPress."
+msgstr "Alien Ship es un tema base flexible per WordPress."
+
+#. Author of the plugin/theme
+msgid "John Parris"
+msgstr "John Parris"
+
+#. Template Name of the plugin/theme
+msgid "Full width"
+msgstr "Ample total"
+
+#. Template Name of the plugin/theme
+msgid "Hero"
+msgstr "Hero"

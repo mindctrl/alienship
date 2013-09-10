@@ -67,7 +67,8 @@ do_action( 'alienship_post_before' ); ?>
 		do_action( 'alienship_post_categories' ); // show post categories
 		do_action( 'alienship_post_tags' ); // show post tags
 		do_action( 'alienship_post_comments_link' ); // show comment link
-		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="glyphicon glyphicon-pencil"></i>', '</span>' ); // display the edit link ?>
+		edit_post_link( __( ' Edit', 'alienship' ), '<span class="edit-link pull-right"><i class="glyphicon glyphicon-pencil"></i>', '</span>' ); // display the edit link
+		?>
 	</footer>
 
 	<?php do_action( 'alienship_post_inside_after' ); ?>

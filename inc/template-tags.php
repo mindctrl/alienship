@@ -568,6 +568,7 @@ if ( ! function_exists( 'alienship_do_archive_page_title' ) ):
  * @since .592
  */
 function alienship_do_archive_page_title() { ?>
+
 	<header class="page-header">
 		<h1 class="page-title">
 			<?php
@@ -704,8 +705,11 @@ if ( ! function_exists( 'alienship_get_first_link' ) ):
  * Get the first link in a post
  * Used to link the title to external links on the "Link" post format
  * @since .64
+ * @deprecated since 1.0.1. Use 'alienship_link_format_helper' instead.
  */
 function alienship_get_first_link() {
+
+	_deprecated_function( __FUNCTION__, '1.0.1', 'alienship_link_format_helper()' );
 
 	global $link_url, $post_content;
 	$content = get_the_content();
@@ -719,6 +723,45 @@ function alienship_get_first_link() {
 	}
 
 	$post_content = substr( $content, strlen( $link_url ) );
+}
+endif;
+
+
+
+if ( ! function_exists( 'alienship_link_format_helper' ) ) :
+/**
+ * Returns the first post link and/or post content without the link.
+ * Used for the "Link" post format.
+ *
+ * @since 1.0.1
+ * @param string $output "link" or "post_content"
+ * @return string Link or Post Content without link.
+ */
+function alienship_link_format_helper( $output = false ) {
+
+	if ( ! $output )
+		_doing_it_wrong( __FUNCTION__, __( 'You must specify the output you want - either "link" or "post_content".', 'alienship' ), '1.0.1' );
+		return;
+
+	$post_content = get_the_content();
+	$link_start = stristr( $post_content, "http" );
+	$link_end   = stristr( $link_start, "\n" );
+
+	if ( ! strlen( $link_end ) == 0 ) {
+		$link_url = substr( $link_start, 0, -( strlen( $link_end ) +1 ) );
+	} else {
+		$link_url = $link_start;
+	}
+
+	$post_content = substr( $post_content, strlen( $link_url ) );
+
+	// Return the first link in the post content
+	if ( 'link' == $output )
+		return $link_url;
+
+	// Return the post content without the first link
+	if ( 'post_content' == $output )
+		return $post_content;
 }
 endif;
 

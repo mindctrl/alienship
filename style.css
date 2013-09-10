@@ -491,11 +491,13 @@ ins {
 	padding: 0 0 0 15px;
 }
 .widget li {
-	font-size: 13px;
-	margin-bottom: 2px;
+	margin-bottom: 5px;
 }
-.widget a {
-	line-height: 21px;
+.widget .nav-stacked {
+	padding: 0;
+}
+.widget .nav-stacked li {
+	margin-bottom: 0;
 }
 .widget select,
 .widget input {

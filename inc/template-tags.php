@@ -59,9 +59,11 @@ function alienship_sidebar_class( $prefix = false ) {
 
 /**
  * Determines the theme layout and active sidebars, and prints the HTML structure
- * with appropriate grid classes depending on which are activated
+ * with appropriate grid classes depending on which are activated.
  *
  * @since 1.0
+ * @uses alienship_sidebar_class()
+ * @param string $prefix Prefix of the widget to be displayed. Example: "footer" for footer-1, footer-2, etc.
  */
 function alienship_do_sidebar( $prefix = false ) {
 

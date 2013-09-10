@@ -741,14 +741,13 @@ function alienship_link_format_helper( $output = false ) {
 
 	if ( ! $output )
 		_doing_it_wrong( __FUNCTION__, __( 'You must specify the output you want - either "link" or "post_content".', 'alienship' ), '1.0.1' );
-		return;
 
 	$post_content = get_the_content();
 	$link_start = stristr( $post_content, "http" );
-	$link_end   = stristr( $link_start, "\n" );
+	$link_end = stristr( $link_start, "\n" );
 
 	if ( ! strlen( $link_end ) == 0 ) {
-		$link_url = substr( $link_start, 0, -( strlen( $link_end ) +1 ) );
+		$link_url = substr( $link_start, 0, -( strlen( $link_end ) + 1 ) );
 	} else {
 		$link_url = $link_start;
 	}

@@ -27,7 +27,7 @@
 				<?php if ( of_get_option('alienship_custom_footer_toggle') ) {
 					echo '' . of_get_option('alienship_custom_footer_text') . '';
 				} else {
-					echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
+					echo '&copy; ' . date('Y') . ' ' . get_bloginfo('name'); } ?>
 			</div><!-- .col-sm-6 -->
 
 			<div class="col-sm-6">

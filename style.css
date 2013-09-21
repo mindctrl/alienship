@@ -263,8 +263,7 @@ img[class*="attachment-"],
 .wp-caption .wp-caption-text,
 .gallery-caption {
 	color: #666;
-	font-size: 12px;
-	margin-bottom: 0.8075em;
+	margin: 0.8075em 0;
 	padding: 10px 0 0 10px;
 }
 

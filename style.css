@@ -264,7 +264,7 @@ img[class*="attachment-"],
 .gallery-caption {
 	color: #666;
 	font-size: 12px;
-	margin-bottom: 0.8075em 0;
+	margin-bottom: 0.8075em;
 	padding: 10px 0 0 10px;
 }
 

@@ -486,24 +486,15 @@ ins {
 .widget .nav-stacked li {
 	margin-bottom: 0;
 }
-.widget select,
-.widget input {
-	max-width: 95%;
-}
 .widget a:hover {
 	background-color: #EEEEEE;
 	text-decoration: none;
 }
 
 /* Hide search widget submit button */
-#searchsubmit {
+#searchsubmit,
+.search-form input[type=submit] {
 	display: none;
-}
-
-/* Shorten the search widget input */
-input#s {
-	padding-right: 0;
-	width: 95%;
 }
 
 #logout-link-widget {

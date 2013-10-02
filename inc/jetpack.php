@@ -12,9 +12,9 @@
  */
 
 add_theme_support( 'infinite-scroll', array(
-	'container'  => 'content',
-	'footer'     => false,
-	'render'     => 'alienship_infinite_scroll_init',
+	'container' => 'content',
+	'footer'    => false,
+	'render'    => 'alienship_infinite_scroll_init',
 ) );
 
 
@@ -23,8 +23,8 @@ add_theme_support( 'infinite-scroll', array(
  * Loop for Infinite Scroll
  */
 function alienship_infinite_scroll_init() {
-    while ( have_posts() ) :
-        the_post();
-        get_template_part( '/templates/parts/content', get_post_format() );
-    endwhile;
+	while ( have_posts() ) :
+		the_post();
+		get_template_part( '/templates/parts/content', get_post_format() );
+	endwhile;
 }

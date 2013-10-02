@@ -88,37 +88,33 @@ License URI: license.txt
  ---------------------------------------*/
 #comments {
 	border-top: 1px solid #eee;
-	margin: 40px 0 0 1px;
-	padding: 40px 0 0;
+	padding-top: 40px;
 }
 .thread-even > .comment-body {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 .comment-body {
 	margin-bottom: 20px;
-	padding: 7px 7px 7px 10px;
+	padding: 15px;
 }
 #comments cite {
 	font-size: 15px;
 	font-weight: bold;
 }
-#comments .comment-meta {
+.comment-meta {
 	font-size: 12px;
 }
-div.reply,
 .comment-list {
 	padding-bottom: 7px;
 }
-div.comment-author {
+.comment-author {
 	margin-bottom: 7px;
 }
-div.comment-content {
+.comment-content {
 	margin-top: 7px;
 }
-div.comment-author > img.avatar {
-	background: none repeat scroll 0 0 #fff;
-	margin-right: 0.846em;
+.comment-author > .avatar {
+	margin-right: 1em;
 }
 #comments ul.children {
 	margin-left: 20px;

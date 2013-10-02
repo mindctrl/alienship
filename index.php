@@ -53,10 +53,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					$format = get_post_format();
-					if ( false === $format )
-						$format = 'standard';
-					get_template_part( '/templates/parts/content', $format );
+					get_template_part( '/templates/parts/content', get_post_format() );
 
 					do_action( 'alienship_loop_after' );
 				endwhile;

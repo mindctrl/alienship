@@ -650,10 +650,7 @@ function alienship_archive_sticky_posts() {
 
 				while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
 					array_push( $do_not_duplicate, $post->ID );
-					$format = get_post_format();
-					if ( false === $format )
-					$format = 'standard';
-					get_template_part( '/templates/parts/content', $format );
+					get_template_part( '/templates/parts/content', get_post_format() );
 				endwhile;
 			endif; // if have posts
 		endif; // if ( ! empty( $sticky_args ) )

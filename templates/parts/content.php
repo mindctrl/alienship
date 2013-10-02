@@ -13,47 +13,34 @@ do_action( 'alienship_post_before' ); ?>
 
 	<div class="entry-content">
 		<?php
-		global $featured_header_image;
 
-		// If we have a featured image and it's not a fatty
-		if ( has_post_thumbnail() && $featured_header_image == 'no' ) {
-
-			$size = '';
-			$align = '';
-
-			// Do medium, aligned right on singular views
-			if ( is_singular() ) {
-
-				$size = 'medium';
-				$align = 'alignright';
-
-			// Do thumbnail, aligned left on archive views
-			} else {
-
-				$size = 'thumbnail';
-				$align = 'alignleft';
-
-			} ?>
-
-
-			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>">
-				<?php echo get_the_post_thumbnail( $post->ID, $size, array( 'class' => $align, 'title' => "" ) ); ?>
-			</a>
-
-		<?php }
-
+		// On archive views, display post thumbnail, if available, and excerpt.
 		if ( ! is_singular() ) {
 
-			// Show excerpts on non-singular views
+			if ( has_post_thumbnail() ) { ?>
+
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>">
+					<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'alignleft', 'title' => "" ) ); ?>
+				</a>
+			<?php
+			} // has_post_thumbnail()
+
 			the_excerpt();
 
-			if ( has_excerpt() ) { // We have to add a link below manual excerpts since WP doesn't. ?>
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e( 'Continue Reading &raquo;', 'alienship' ); ?></a>
-			<?php }
+		} // if ( ! is_singular() )
 
-		} else {
+		// On singular views, display post thumbnails in the post body if it's not big enough to be a header image
+		else {
 
-			// Show full content on singular views
+			global $featured_header_image;
+			if ( has_post_thumbnail() && 'no' == $featured_header_image ) { ?>
+
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>">
+					<?php echo get_the_post_thumbnail( $post->ID, 'medium', array( 'class' => 'alignright', 'title' => "" ) ); ?>
+				</a>
+			<?php
+			}
+
 			the_content();
 		}
 

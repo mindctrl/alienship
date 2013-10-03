@@ -25,7 +25,7 @@ get_header(); ?>
 					// do the main query without stickies
 					$sticky = get_option( 'sticky_posts' );
 
-					if ( is_category() && ! empty($sticky) ) {
+					if ( is_category() && ! empty( $sticky ) ) {
 						$cat_ID = get_query_var('cat');
 						$args = array(
 							'cat'                 => $cat_ID,
@@ -36,20 +36,21 @@ get_header(); ?>
 						);
 						$wp_query = new WP_Query( $args );
 					}
-					elseif (is_tag() && ! empty($sticky) ) {
-						$current_tag = single_tag_title("", false);
+					elseif (is_tag() && ! empty( $sticky ) ) {
+						$current_tag = get_queried_object_id();
 						$args = array(
-							'tag_slug__in'        => array($current_tag),
+							'tag_id'              => $current_tag,
 							'post_status'         => 'publish',
 							'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
 							'ignore_sticky_posts' => 1,
 							'paged'               => $paged
 						);
-					  $wp_query = new WP_Query( $args );
-					} else {
-					  new WP_Query();
-					}
+						$wp_query = new WP_Query( $args );
 
+					}
+					else {
+						new WP_Query();
+					}
 
 					// Start the Loop
 					while ( $wp_query->have_posts() ) : $wp_query->the_post();

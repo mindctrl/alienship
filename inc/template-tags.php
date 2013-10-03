@@ -633,10 +633,10 @@ function alienship_archive_sticky_posts() {
 			);
 
 		} elseif ( is_tag() ) {
-			$current_tag = single_tag_title( "", false );
+			$current_tag = get_queried_object_id();
 			$sticky_args = array(
 				'post__in'     => $sticky,
-				'tag_slug__in' => array( $current_tag ),
+				'tag_id'       => $current_tag,
 				'post_status'  => 'publish',
 				'paged'        => $paged
 			);

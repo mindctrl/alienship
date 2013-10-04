@@ -59,9 +59,11 @@ function alienship_sidebar_class( $prefix = false ) {
 
 /**
  * Determines the theme layout and active sidebars, and prints the HTML structure
- * with appropriate grid classes depending on which are activated
+ * with appropriate grid classes depending on which are activated.
  *
  * @since 1.0
+ * @uses alienship_sidebar_class()
+ * @param string $prefix Prefix of the widget to be displayed. Example: "footer" for footer-1, footer-2, etc.
  */
 function alienship_do_sidebar( $prefix = false ) {
 
@@ -152,6 +154,11 @@ if ( ! function_exists( 'alienship_content_nav' ) ):
  * @since 0.1
  */
 function alienship_content_nav( $nav_id ) {
+
+	// Return early if theme options are set to hide nav
+	if ( 'nav-below' == $nav_id && ! of_get_option( 'alienship_content_nav_below', 1 )
+	|| 'nav-above' == $nav_id && ! of_get_option( 'alienship_content_nav_above' ) )
+		return;
 
 	global $wp_query;
 
@@ -309,6 +316,10 @@ if ( ! function_exists( 'alienship_do_post_author' ) ) :
  */
 function alienship_do_post_author() {
 
+	// Return early if theme options are set to hide author
+	if ( ! of_get_option('alienship_post_author', 1 ) )
+		return;
+
 	printf( __( '<span class="byline"><i class="glyphicon glyphicon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
@@ -328,6 +339,10 @@ if ( ! function_exists( 'alienship_do_posted_on' ) ) :
  */
 function alienship_do_posted_on() {
 
+	// Return early if theme options are set to hide date
+	if ( ! of_get_option( 'alienship_published_date', 1 ) )
+		return;
+
 	printf( __( '<span class="published-date"><i class="glyphicon glyphicon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -346,6 +361,10 @@ if ( ! function_exists( 'alienship_do_post_tags' ) ):
  * @since 0.3
  */
 function alienship_do_post_tags() {
+
+	// Return early if theme options are set to hide tags
+	if ( ! of_get_option( 'alienship_post_tags', 1 ) && is_single() || ! of_get_option( 'alienship_post_tags_posts_page', 1 ) && ! is_single() )
+		return;
 
 	$post_tags = get_the_tags();
 	if ( $post_tags ) {
@@ -381,6 +400,10 @@ if ( ! function_exists( 'alienship_do_post_categories' ) ):
  */
 function alienship_do_post_categories() {
 
+	// Return early if theme options are set to hide categories
+	if ( ! of_get_option( 'alienship_post_categories', 1 ) && is_single() || ! of_get_option( 'alienship_post_categories_posts_page', 1 ) && ! is_single() )
+		return;
+
 	$post_categories = get_the_category();
 	if ( $post_categories ) {
 
@@ -414,6 +437,10 @@ if ( ! function_exists( 'alienship_do_post_comments_link' ) ):
  */
 function alienship_do_post_comments_link() {
 
+	// Return early if theme options are set to hide comment link
+	if ( ! of_get_option( 'alienship_post_comments_link', 1 ) )
+		return;
+
 	if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) { ?>
 		<span class="comments-link">
 			<i class="glyphicon glyphicon-comment"></i>
@@ -434,23 +461,19 @@ if ( ! function_exists( 'alienship_header_title_and_description' ) ):
 function alienship_header_title_and_description() {
 
 	if ( !is_front_page() || !is_home() ) { ?>
-		<hgroup>
-			<p id="site-title" class="site-title">
-				<span>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-				</span>
-			</p>
-			<p id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></p>
-		</hgroup>
+		<p id="site-title" class="site-title">
+			<span>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+			</span>
+		</p>
+		<p id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></p>
 
 	<?php } else { ?>
 
-		<hgroup>
-			<h1 id="site-title" class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-			</h1>
-			<h2 id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></h2>
-		</hgroup>
+		<h1 id="site-title" class="site-title">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+		</h1>
+		<h2 id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></h2>
 
 	<?php }
 }
@@ -547,6 +570,7 @@ if ( ! function_exists( 'alienship_do_archive_page_title' ) ):
  * @since .592
  */
 function alienship_do_archive_page_title() { ?>
+
 	<header class="page-header">
 		<h1 class="page-title">
 			<?php
@@ -609,10 +633,10 @@ function alienship_archive_sticky_posts() {
 			);
 
 		} elseif ( is_tag() ) {
-			$current_tag = single_tag_title( "", false );
+			$current_tag = get_queried_object_id();
 			$sticky_args = array(
 				'post__in'     => $sticky,
-				'tag_slug__in' => array( $current_tag ),
+				'tag_id'       => $current_tag,
 				'post_status'  => 'publish',
 				'paged'        => $paged
 			);
@@ -626,10 +650,7 @@ function alienship_archive_sticky_posts() {
 
 				while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
 					array_push( $do_not_duplicate, $post->ID );
-					$format = get_post_format();
-					if ( false === $format )
-					$format = 'standard';
-					get_template_part( '/templates/parts/content', $format );
+					get_template_part( '/templates/parts/content', get_post_format() );
 				endwhile;
 			endif; // if have posts
 		endif; // if ( ! empty( $sticky_args ) )
@@ -683,8 +704,11 @@ if ( ! function_exists( 'alienship_get_first_link' ) ):
  * Get the first link in a post
  * Used to link the title to external links on the "Link" post format
  * @since .64
+ * @deprecated since 1.0.1. Use 'alienship_link_format_helper' instead.
  */
 function alienship_get_first_link() {
+
+	_deprecated_function( __FUNCTION__, '1.0.1', 'alienship_link_format_helper()' );
 
 	global $link_url, $post_content;
 	$content = get_the_content();
@@ -698,6 +722,44 @@ function alienship_get_first_link() {
 	}
 
 	$post_content = substr( $content, strlen( $link_url ) );
+}
+endif;
+
+
+
+if ( ! function_exists( 'alienship_link_format_helper' ) ) :
+/**
+ * Returns the first post link and/or post content without the link.
+ * Used for the "Link" post format.
+ *
+ * @since 1.0.1
+ * @param string $output "link" or "post_content"
+ * @return string Link or Post Content without link.
+ */
+function alienship_link_format_helper( $output = false ) {
+
+	if ( ! $output )
+		_doing_it_wrong( __FUNCTION__, __( 'You must specify the output you want - either "link" or "post_content".', 'alienship' ), '1.0.1' );
+
+	$post_content = get_the_content();
+	$link_start = stristr( $post_content, "http" );
+	$link_end = stristr( $link_start, "\n" );
+
+	if ( ! strlen( $link_end ) == 0 ) {
+		$link_url = substr( $link_start, 0, -( strlen( $link_end ) + 1 ) );
+	} else {
+		$link_url = $link_start;
+	}
+
+	$post_content = substr( $post_content, strlen( $link_url ) );
+
+	// Return the first link in the post content
+	if ( 'link' == $output )
+		return $link_url;
+
+	// Return the post content without the first link
+	if ( 'post_content' == $output )
+		return $post_content;
 }
 endif;
 

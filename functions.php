@@ -85,9 +85,12 @@ function alienship_setup() {
 	// Add support for post-thumbnails
 	add_theme_support( 'post-thumbnails' );
 
-
 	// Add support for post formats. To be styled in later release.
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+
+	// Load Jetpack related support if needed.
+	if ( class_exists( 'Jetpack' ) )
+		locate_template( '/inc/jetpack.php', true );
 
 }
 endif; // alienship_setup

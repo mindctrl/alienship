@@ -4,124 +4,79 @@ Theme URI: http://www.johnparris.com/alienship/
 Author: John Parris
 Author URI: http://www.johnparris.com/alienship/
 Description: Alien Ship is a responsive starter theme for WordPress.
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License
 License URI: license.txt
-Tags: blue, green, silver, red, orange, white, black, light, dark, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, rtl-language-support, microformats, featured-images, post-formats
 */
 
-/* Fonts
+/* Typography
 ---------------------------- */
-h1 {
-  font-size: 30px;
-  line-height: 36px;
+.entry-title {
+	line-height: 40px;
+	word-wrap: break-word;
 }
-
-h2 {
-  font-size: 24px;
-  line-height: 36px;
-}
-
-h3 {
-  font-size: 18px;
-  line-height: 27px;
-}
-
-h4, h5, h6 {
-  line-height: 18px;
-}
-
-h4 {
-  font-size: 14px;
-}
-
-h5 {
-  font-size: 12px;
-}
-
-h6 {
-  font-size: 11px;
+.widget-title {
+	font-size: 18px;
 }
 
 /* Navigation
 ----------------------------------------------- */
 .admin-bar .navbar-fixed-top {
-  top: 28px;
+	top: 28px;
 }
 /* Increase the padding of dropdown links */
 .dropdown-menu li > a {
-  padding: 6px 15px;
+	padding: 6px 15px;
 }
 /* Footer Nav / Bottom Menu */
 .footer-nav li {
-  display: block;
-  float: right;
-  margin-bottom: 0;
-  padding-left: 3%;
+	display: block;
+	float: right;
+	margin-bottom: 0;
+	padding-left: 3%;
 }
 /* Mobile Footer Nav */
 @media only screen and (max-width: 767px) {
-ul.footer-nav.mobile,
-dl.nav.mobile {
-  border-bottom: 1px solid #ccc;
-  height: auto;
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 10px 0 0;
-  width: auto;
-}
-ul.footer-nav.mobile li {
-  float: none;
-  height: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-dl.nav.mobile dt {
-  display: none;
-}
-dl.nav.mobile dd {
-  float: none;
-  height: auto;
-}
-ul.footer-nav.mobile li a:hover {
-  background-color: #08c;
-  color: #fff;
-  text-decoration: none;
-}
-ul.footer-nav.mobile li a,
-dl.nav.mobile dd a {
-  border: solid 0 #ccc;
-  -webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  border-width: 1px 0 0;
-  color: #555;
-  display: block;
-  font-size: 15px;
-  height: auto;
-  line-height: 1;
-  margin: 0;
-  padding: 18px 20px;
-  width: auto;
-}
-ul.footer-nav.mobile li a.active,
-dl.nav.mobile dd a.active {
-  border-width: 1px 0 0;
-  height: auto;
-  margin: 0;
-}
-ul.footer-nav.mobile li.current-menu-item a,
-dl.nav.mobile dd.current-menu-item a,
-.nice.tabs.mobile dd.current-menu-item a {
-  background: #00a6fc;
-  border: none;
-  color: #fff;
-  height: auto;
-  margin: 0;
-  position: static;
-  top: 0px;
-  }
+	.footer-nav.mobile {
+		border-bottom: 1px solid #ccc;
+		height: auto;
+		margin: 0 auto;
+		max-width: 100%;
+		padding: 10px 0 0;
+		width: auto;
+	}
+	.footer-nav.mobile li {
+		float: none;
+		height: auto;
+		padding: 0;
+	}
+	.footer-nav.mobile li a:hover {
+		background-color: #2a6496;
+		color: #fff;
+		text-decoration: none;
+	}
+	.footer-nav.mobile li a {
+		border: solid 0 #ccc;
+		color: #555;
+		display: block;
+		font-size: 15px;
+		padding: 18px 20px;
+		width: auto;
+	}
+	.footer-nav.mobile li a,
+	.footer-nav.mobile li a.active {
+		border-width: 1px 0 0;
+		height: auto;
+		margin: 0;
+	}
+	.footer-nav.mobile li.current-menu-item a {
+		background: #428bca;
+		border: none;
+		color: #fff;
+		margin: 0;
+		position: static;
+		top: 0px;
+	}
 }
 /* End of Navigation
 ----------------------------------------------- */
@@ -133,416 +88,267 @@ dl.nav.mobile dd.current-menu-item a,
 /* Comments
  ---------------------------------------*/
 #comments {
-  border-top: 1px solid #eee;
-  margin: 40px 0 0 1px;
-  padding: 40px 0 0;
+	border-top: 1px solid #eee;
+	padding-top: 40px;
 }
 .thread-even > .comment-body {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
 }
 .comment-body {
-  margin-bottom: 20px;
-  padding: 7px 7px 7px 10px;
+	margin-bottom: 20px;
+	padding: 15px;
 }
 #comments cite {
-  font-size: 15px;
-  font-weight: bold;
+	font-size: 15px;
+	font-weight: bold;
 }
-#comments .comment-meta {
-  font-size: 12px;
+.comment-meta {
+	font-size: 12px;
 }
-/* Pad the comment list */
-div.reply,
 .comment-list {
-  padding-bottom: 7px;
+	padding-bottom: 7px;
 }
-div.comment-author {
-  margin-bottom: 7px;
+.comment-author {
+	margin-bottom: 7px;
 }
-div.comment-content {
-  margin-top: 7px;
+.comment-content {
+	margin-top: 7px;
 }
-div.comment-author > img.avatar {
-  background: none repeat scroll 0 0 #fff;
-  margin-right: 0.846em;
-  padding: 3px;
-  vertical-align: middle;
+.comment-author > .avatar {
+	margin-right: 1em;
 }
 #comments ul.children {
-  margin-left: 20px;
+	margin-left: 20px;
 }
 #comments ul.children li {
-  border-top: 1px solid #e6e6e6;
-  list-style-type: none;
+	border-top: 1px solid #e6e6e6;
+	list-style-type: none;
 }
-/* Highlight comments made by the post author */
 .bypostauthor > article {
-  background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
+	background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
 }
-.bypostauthor > article img.avatar {
-  border-bottom: 4px solid #46a546;
+.bypostauthor > article .avatar {
+	border-bottom: 4px solid #46a546;
 }
 .form-allowed-tags code {
-  white-space: normal;
+	white-space: normal;
+}
+.input-comment-author,
+.input-comment-email,
+.input-comment-url {
+	width: 35%;
 }
 /* End of comments
----------------------------------------------------- */
+----------------------------------------------- */
 
 
 /* Page / Wrapper / Content
 ----------------------------------------------- */
+#masthead {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+}
+.site-title,
+.site-description {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 36px;
+	margin: 0;
+}
+.site-description {
+	font-size: 24px;
+}
+
 #page {
-  margin: 0px auto;
-  max-width: 1140px;
+	margin: 0px auto;
+	max-width: 1140px;
 }
 #main-row {
-  margin-top: 10px;
+	margin-top: 10px;
 }
+
 /* The article wrapper that displays the content of a post/page/whatever */
 article {
-  margin: 0 0 50px;
+	margin: 0 0 50px;
+}
+/* Post/page and comment content */
+.entry-content {
+	padding: 15px 0;
+	word-wrap: break-word;
+}
+.entry-content,
+.entry-summary,
+.entry-content p,
+.entry-summary p {
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 1.667em;
+}
+p {
+	margin-bottom: 1.625em;
+}
+/* Remove margins from page-header that get set above if used inside a post/page */
+.page-header h1,
+.page-header h2 {
+	margin: 0;
+}
+/* Space out the archives descriptions from the names */
+.page-header .taxonomy-description p {
+	font-size: 1.15em;
+	margin: 10px 3px;
+}
+
+/* Pads the paging links within a post or page */
+.page-links {
+	padding: 7px 0;
+}
+
+/* The meta data displayed within a post footer. */
+footer.entry-meta {
+	border-bottom: 1px solid #eee;
+	clear: both;
+	font-size: 12px;
+	padding-bottom: 15px;
+	text-transform: uppercase;
+}
+.entry-meta .glyphicon {
+	margin-right: 4px;
+}
+.byline,
+.cat-links,
+.comments-link,
+.published-date,
+.tags-links {
+	margin-right: 10px;
+}
+
+/* Images */
+p img {
+	margin-bottom: 0.5em;
+	margin-top: 0.4em;
+}
+#content .gallery .gallery-icon img {
+	border: 1px solid #ddd;
+	height: auto;
+	padding: 6px;
+}
+img.header-image,
+img.wp-post-image,
+img.avatar,
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"],
+.comment-content img,
+.widget img {
+	height: auto;
+	max-width: 100%;
+	padding: 0;
+}
+
+/* Image captions */
+.wp-caption {
+	background: #f5f5f5;
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	margin-top: 0.4em;
+	max-width: 100%;
+}
+.wp-caption img {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+	color: #666;
+	margin: 0.8075em 0;
+	padding: 10px 0 0 10px;
 }
 
 /*Theme layouts
 ----------------------- */
 /* One column */
 .layout-1c #content {
-  float: none;
-  margin-right: 0;
-  width: 100%;
+	float: none;
+	margin-right: 0;
+	width: 100%;
 }
 /* Two columns: sidebar left, content right. */
 .layout-2c-r #content {
-    float: right;
+	float: right;
 }
 .layout-2c-r #sidebar {
-    float: left;
-    margin-left: 0;
+	float: left;
+	margin-left: 0;
 }
 /* End of Theme layouts */
-
-.browsehappy {
-  margin-bottom: 0;
-  text-align: center;
-}
-.browsehappy .alert-link {
-  text-decoration: underline;
-}
-.entry-content,
-.entry-summary,
-.entry-content p,
-.entry-summary p {
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.667em;
-}
-.entry-content li {
-  line-height: 1.625em;
-}
-ol > li {
-  margin-left: .20em;
-}
-
-/* hgroup is the header area that contains the site title and description. */
-hgroup {
-	margin-bottom: 10px;
-}
-header#masthead {
-  padding-bottom: 20px;
-}
-.site-title {
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 36px;
-  margin-bottom: 0;
-}
-.site-description {
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 36px;
-  margin: 0;
-}
-
-mark,
-ins {
-  background: #fff9c0;
-  text-decoration: none;
-}
-p {
-  margin-bottom: 1.625em;
-}
-/* a small bottom margin prevents content floating under images */
-p img {
-  margin-bottom: 0.5em;
-  margin-top: 0.4em;
-}
-img[class*="align"],
-img[class*="wp-image-"],
-img[class*="attachment-"],
-#content .gallery .gallery-icon img {
-  border: 1px solid #ddd;
-  height: auto;
-  padding: 6px;
-}
-img.wp-post-image {
-  border: 0;
-  height: auto;
-  padding: 0;
-}
-/* Fluid images for posts, comments, and widgets */
-img.header-image,
-img.wp-post-image,
-img.avatar,
-.entry-content img,
-.comment-content img,
-.widget img {
-  height: auto;
-  max-width: 100%;
-}
-
-/* WordPress image captions */
-.wp-caption {
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-  margin-bottom: 1.5em;
-  margin-top: 0.4em;
-  max-width: 100%;
-}
-.wp-caption img {
-  display: block;
-  margin: 1.2% auto 0;
-  max-width: 98%;
-}
-.wp-caption .wp-caption-text,
-.gallery-caption {
-  color: #666;
-  font-size: 12px;
-  margin-bottom: 0.8075em 0;
-  padding: 10px 0 0 10px;
-}
-
-/* Featured Posts
----------------------------------- */
-/* Carousel */
-@media only screen and (max-width: 767px) {
-  .carousel-caption {
-    position: static;
-  }
-}
-.carousel-indicators {
-  bottom: -10px;
-}
-.carousel-indicators li,
-.carousel-indicators .active {
-  height: 8px;
-  width: 8px;
-  margin: 2px;
-}
-.carousel-caption {
-  background: #333;
-  background: rgba(0, 0, 0, 0.55);
-  bottom: 0;
-  left: 0;
-  padding: 2px 0 7px;
-  width: 100%;
-}
-.carousel-caption h3 {
-  margin-bottom: 12px;
-  margin-top: 10px;
-}
-.carousel-inner > .item > a > img {
-  border: 0;
-  border-radius: 0;
-  max-width: 100%;
-  padding: 0;
-}
-
-/* Featured posts grid */
-ul#featured-posts-grid > li {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  display: block;
-  height: auto;
-  float: left;
-  background-color: #eee;
-  margin-bottom: 25px;
-  padding-bottom: 2px;
-}
-ul#featured-posts-grid > li > header > h4 {
-  line-height: 18px;
-}
-.innergrid {
-  height: 85%;
-  float: none;
-  padding: 0 10px 12px;
-}
-.innergrid > p {
-  line-height: 24px;
-  margin-bottom: 0;
-}
-.innergrid > a > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-}
-.grid-header {
-  font-size: 14px;
-  line-height: 18px;
-  margin: 0;
-  padding-bottom: 5px;
-  text-align: center;
-}
-.grid-footer-meta {
-  font-size: 12px; text-align: center;
-  margin-bottom: .125em;
-}
-/* End of featured posts grid */
-
-.alert strong {
-  font-size: 1.15em;
-}
-
-/* Post/page and comment content */
-.entry-content {
-  padding: 15px 0;
-}
-.entry-content h1,
-.entry-content h2,
-.comment-content h1,
-.comment-content h2 {
-  margin: 0 0 .8125em;
-}
-/* Remove margins from page-header that get set above if used inside a post/page */
-.page-header h1,
-.page-header h2 {
-  margin: 0;
-}
-/* Space out the archives descriptions from the names */
-.page-header .taxonomy-description p {
-  font-size: 1.15em;
-  margin: 10px 3px;
-}
-
-/* Titles in archive/index */
-h2.entry-title {
-  margin-bottom: 0;
-}
-
-/* Remove hover underlining from post/page title link */
-.entry-title a:hover {
-  text-decoration: none;
-}
-
-/* Pads the paging links within a post or page */
-.page-links {
-  padding: 7px 0;
-}
-
-/* The meta data displayed within a post footer. */
-footer.entry-meta {
-  border-bottom: 1px solid #eee;
-  clear: both;
-  font-size: 12px;
-  padding-bottom: 15px;
-  text-transform: uppercase;
-}
-.entry-meta .glyphicon {
-  margin-right: 4px;
-}
 
 /* Copyright / bottom menu area */
 .colophon {
 	border-top: solid 1px #ccc;
+	margin-top: 50px;
 	padding: 7px 0px;
 	text-align: center;
 }
+.browsehappy {
+	margin-bottom: 0;
+	text-align: center;
+}
+.browsehappy .alert-link {
+	text-decoration: underline;
+}
 
-/* Page Templates */
-.page-template-templatespage-hero-php .navbar {
-  margin-bottom: 0;
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
 }
-.page-template-templatespage-hero-php .colophon {
-  margin-top: 50px;
-}
-.jumbotron h1 {
-  font-size: 72px;
-  line-height: 1;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+
+.alert strong {
+	font-size: 1.15em;
 }
 
 /* Text meant only for screen readers */
 .screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
 }
 .screen-reader-text:hover,
 .screen-reader-text:active,
 .screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  color: #21759b;
-  display: block;
-  font-size: 14px;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000; /* Above WP toolbar */
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
 }
 
 /* Alignment */
 .alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.625em;
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
 }
 .alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.625em;
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
 }
 .aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-img.alignright {
-  float:right;
-  margin: 0 0 1em 1em;
-}
-img.alignleft {
-  float:left;
-  margin:0 1em 1em 0;
-}
-img.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1em;
-}
-
-.byline,
-.cat-links,
-.comments-link,
-.published-date,
-.tags-links {
-  margin-right: 10px;
+	clear: both;
+	display: block;
+	margin: 0 auto;
 }
 
 /* Clearing */
@@ -552,42 +358,113 @@ img.aligncenter {
 [class*="content"]:after,
 [class*="site"]:before,
 [class*="site"]:after {
-  content: '';
-  display: table;
+	content: '';
+	display: table;
 }
 
 .clear:after,
 [class*="content"]:after,
 [class*="site"]:after {
-  clear: both;
+	clear: both;
 }
+/* Featured Posts
+---------------------------------- */
+/* Carousel */
+@media only screen and (max-width: 767px) {
+	.carousel-caption {
+		position: static;
+	}
+}
+.carousel-indicators {
+	bottom: -10px;
+}
+.carousel-indicators li,
+.carousel-indicators .active {
+	height: 8px;
+	width: 8px;
+	margin: 2px;
+}
+.carousel-caption {
+	background: #333;
+	background: rgba(0, 0, 0, 0.55);
+	bottom: 0;
+	left: 0;
+	padding: 2px 0 7px;
+	width: 100%;
+}
+.carousel-caption h3 {
+	font-size: 18px;
+	margin-bottom: 12px;
+	margin-top: 10px;
+}
+
+/* Featured posts grid */
+#featured-posts-grid {
+	padding-left: 0;
+}
+#featured-posts-grid li {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+	background-color: #eee;
+	margin-bottom: 25px;
+	padding-bottom: 2px;
+}
+.innergrid {
+	height: 85%;
+	float: none;
+	padding: 0 10px 12px;
+}
+.innergrid img {
+	margin: 0 auto;
+	max-width: 100%;
+}
+.grid-header {
+	font-size: 14px;
+	margin: 0;
+	padding-bottom: 8px;
+	text-align: center;
+}
+.grid-header .entry-title {
+	line-height: inherit;
+}
+.grid-footer-meta {
+	font-size: 12px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+/* End of featured posts grid */
+
+/* Page Templates */
+.page-template-templatespage-hero-php .navbar {
+	margin-bottom: 0;
+}
+#hero-widgets-container {
+	margin: 0 auto;
+}
+
 /* Post formats
 ------------------------------------ */
 
 /* Quote post format */
 .format-quote {
-    background: url("img/quote.png") no-repeat scroll left top;
-    background-size: 20px 20px;
-}
-.format-quote .entry-content,
-.format-quote .entry-summary {
-  padding: 1.5em 0;
+	background: url("img/quote.png") no-repeat scroll left top;
+	background-size: 20px 20px;
+	margin-top: 15px;
+	padding: 10px 0 0;
 }
 .format-quote cite {
-    margin-top: 10px;
-    font-style: italic;
+	font-style: italic;
 }
 .format-quote blockquote {
-  border-left: 0;
-  margin: 0 0 18px 15px;
+	border-left: 0;
+	margin: 0 0 18px 15px;
 }
 .format-quote blockquote p {
-  font-style: italic;
-}
-
-/* Status post format */
-.format-status p {
-  font-size: 17px;
+	font-style: italic;
 }
 
 /* Widgets
@@ -595,57 +472,43 @@ img.aligncenter {
 
 .widget {
 	margin: 0 0 1.5em;
+	word-wrap: break-word;
 }
 .widget ul {
-  padding: 0 0 0 15px;
+	padding: 0 0 0 15px;
 }
 .widget li {
-  font-size: 13px;
-  margin-bottom: 2px;
+	margin-bottom: 5px;
 }
-.widget a,
-.footerwidget a {
-  line-height: 21px;
+.widget .nav-stacked {
+	padding: 0;
 }
-.widget select,
-.widget input {
-  max-width: 95%;
+.widget .nav-stacked li {
+	margin-bottom: 0;
 }
-.widget a:hover,
-.footerwidget a:hover {
-  background-color: #EEEEEE;
-  text-decoration: none;
-}
-.footerwidget {
-  padding: 0px 0px 25px 0px;
-}
-.footerwidget p.entry-title {
-  margin-bottom: 9px;
+.widget a:hover {
+	background-color: #EEEEEE;
+	text-decoration: none;
 }
 
 /* Hide search widget submit button */
-#searchsubmit {
+#searchsubmit,
+.search-form input[type=submit] {
 	display: none;
 }
 
-/* Shorten the search widget input */
-input#s {
-  padding-right: 0;
-  width: 95%;
-}
-
 #logout-link-widget {
-  font-size: 11px;
+	font-size: 11px;
 }
 
 .alienship-login-form .login-username,
 .alienship-login-form .login-password {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .alienship-login-form .login-remember input {
-  float: left;
-  margin-right: 5px
+	float: left;
+	margin-right: 5px
 }
 /* End of Widgets
 ---------------------------------------------- */
@@ -654,111 +517,106 @@ input#s {
 /* Responsive layout
 ---------------------------------------------- */
 @media only screen and (max-width: 480px) {
-  h2.grid-header {
-    font-size: 14px !important;
-  }
+	h2.grid-header {
+		font-size: 14px !important;
+	}
 }
 
 @media only screen and (max-width: 767px) {
-  /* Pad the #page */
-  #page,
-  .page-template-templatespage-hero-php #main {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  /* Improve font size and spacing on dropdown menu on mobile/tablets */
-  .navbar-nav .open .dropdown-menu > li > a {
-    padding: 12px 15px 12px 25px;
-  }
-  .navbar .nav > li > a, .navbar .dropdown-menu a {
-    font-size: 18px;
-    font-weight: normal;
-    padding: 15px 20px;
-  }
+	/* Improve font size and spacing on dropdown menu on mobile/tablets */
+	.navbar-nav .open .dropdown-menu > li > a {
+		padding: 12px 15px 12px 25px;
+	}
+	.navbar .nav > li > a, .navbar .dropdown-menu a {
+		font-size: 18px;
+		font-weight: normal;
+		padding: 15px 20px;
+	}
 }
 
 
-/*  --------------------------------------------------
-  :: Block grids - Thanks to Zurb Foundation
-  http://foundation.zurb.com/
+/*	--------------------------------------------------
+	:: Block grids - Thanks to Zurb Foundation
+	http://foundation.zurb.com/
 
-  These are 2-up, 3-up, 4-up and 5-up ULs, suited
-  for repeating blocks of content. Add 'mobile' to
-  them to switch them just like the layout grid
-  (one item per line) on phones
+	These are 2-up, 3-up, 4-up and 5-up ULs, suited
+	for repeating blocks of content. Add 'mobile' to
+	them to switch them just like the layout grid
+	(one item per line) on phones
 
-  For IE7/8 compatibility block-grid items need to be
-  the same height. You can optionally uncomment the
-  lines below to support arbitrary height, but know
-  that IE7/8 do not support :nth-child.
-  -------------------------------------------------- */
+	For IE7/8 compatibility block-grid items need to be
+	the same height. You can optionally uncomment the
+	lines below to support arbitrary height, but know
+	that IE7/8 do not support :nth-child.
+	-------------------------------------------------- */
 
-  .block-grid {
-    display: block;
-    overflow: hidden;
-  }
+.block-grid {
+	display: block;
+	overflow: hidden;
+}
 
-  .block-grid > li {
-    display: block;
-    float: left;
-    height: auto;
-    margin-bottom: 12px;
-    padding: 10px 0;
-  }
+.block-grid > li {
+	display: block;
+	float: left;
+	height: auto;
+	margin-bottom: 12px;
+	padding: 10px 0;
+}
 
-  .block-grid > li > blockquote {
-    border-left: none;
-    padding: 0 15px;
-  }
+.block-grid > li > blockquote {
+	border-left: none;
+	padding: 0 15px;
+}
 
-  .block-grid.two-up {
-    margin-left: -4%;
-  }
+.block-grid.two-up {
+	margin-left: -4%;
+}
 
-  .block-grid.two-up > li {
-    margin-left: 4%;
-    width: 46%;
-  }
+.block-grid.two-up > li {
+	margin-left: 4%;
+	width: 46%;
+}
 
-  .block-grid.three-up {
-    margin-left: -2%;
-  }
+.block-grid.three-up {
+	margin-left: -2%;
+}
 
-  .block-grid.three-up > li {
-    margin-left: 2%;
-    width: 31.2%;
-  }
+.block-grid.three-up > li {
+	margin-left: 2%;
+	width: 31.2%;
+}
 
-  .block-grid.four-up {
-    margin-left: -2%;
-  }
+.block-grid.four-up {
+	margin-left: -2%;
+}
 
-  .block-grid.four-up > li {
-    margin-left: 2%;
-    width: 23%;
-  }
+.block-grid.four-up > li {
+	margin-left: 2%;
+	width: 23%;
+}
 
-  .block-grid.five-up {
-    margin-left: -1.5%;
-  }
+.block-grid.five-up {
+	margin-left: -1.5%;
+}
 
-  .block-grid.five-up > li {
-    margin-left: 1.5%;
-    width: 18.5%;
-  }
+.block-grid.five-up > li {
+	margin-left: 1.5%;
+	width: 18.5%;
+}
 
 /* --------------------------------------------------
-  :: Mobile Block Grids
-  -------------------------------------------------- */
+	:: Mobile Block Grids
+	-------------------------------------------------- */
 
-  @media only screen and (max-width: 767px) {
-    .block-grid.mobile {
-      margin-left: 0;
-    }
+@media only screen and (max-width: 767px) {
+	.block-grid.mobile {
+		margin-left: 0;
+		padding-left: 4%;
+	}
 
-    .block-grid.mobile > li {
-      float: none;
-      margin-left: 0;
-      width: 100%;
-    }
-  }
+	.block-grid.mobile > li {
+		float: none;
+		margin-left: 0;
+		width: 100%;
+	}
+}

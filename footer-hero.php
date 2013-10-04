@@ -20,14 +20,19 @@ do_action( 'alienship_footer_before' ); ?>
 				if ( of_get_option('alienship_custom_footer_toggle') ) {
 					echo '' . of_get_option('alienship_custom_footer_text') . '';
 				} else {
-					echo 'Copyright &copy; ' . date('Y') . ' ' . get_bloginfo('name') . '. All Rights Reserved.'; } ?>
+					echo '&copy; ' . date('Y') . ' ' . get_bloginfo('name'); } ?>
 
 			</div><!-- col-sm-6 -->
 
 			<div class="col-sm-6">
 
 				<?php if ( has_nav_menu( 'bottom' ) ) {
-					wp_nav_menu( array( 'theme_location' => 'bottom', 'container' => false, 'menu_class' =>  'footer-nav mobile' ) );
+					wp_nav_menu( array(
+						'theme_location' => 'bottom',
+						'container'      => false,
+						'menu_class'     => 'footer-nav mobile'
+						)
+					);
 				} ?>
 
 			</div>

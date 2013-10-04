@@ -24,7 +24,7 @@ get_header(); ?>
 					the_post(); ?>
 
 					<header class="page-header">
-		  				<h1 class="page-title author"><?php printf( __( 'Author Archives: %s', 'alienship' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+						<h1 class="page-title author"><?php printf( __( 'Author Archives: %s', 'alienship' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
 					</header>
 
 					<?php
@@ -34,7 +34,7 @@ get_header(); ?>
 					   */
 					  rewind_posts();
 
-	  				if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts?
+					alienship_content_nav( 'nav-above' ); // display content nav above posts?
 
 					// Start the Loop
 					while ( have_posts() ) : the_post();
@@ -44,16 +44,13 @@ get_header(); ?>
 						 * If you want to override this in a child theme then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						$format = get_post_format();
-						if ( false === $format )
-							$format = 'standard';
-						get_template_part( '/templates/parts/content', $format );
+						get_template_part( '/templates/parts/content', get_post_format() );
 
 						do_action( 'alienship_loop_after' );
 					endwhile;
 
 					// Show navigation below post content
-					if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); }
+					alienship_content_nav( 'nav-below' );
 
 				} else {
 

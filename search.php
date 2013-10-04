@@ -21,7 +21,7 @@ get_header(); ?>
 					</header>
 
 					<?php
-					if ( of_get_option('alienship_content_nav_above') ) { alienship_content_nav( 'nav-above' ); } // display content nav above posts?
+					alienship_content_nav( 'nav-above' ); // display content nav above posts?
 
 					// Start the Loop
 					while ( have_posts() ) : the_post();
@@ -34,7 +34,7 @@ get_header(); ?>
 
 					endwhile;
 
-					if ( of_get_option('alienship_content_nav_below',1) ) { alienship_content_nav( 'nav-below' ); } // display content nav below posts?
+					alienship_content_nav( 'nav-below' ); // display content nav below posts?
 
 				} else {
 

@@ -1,8 +1,7 @@
 jQuery(document).ready(function(){
-	// Style current page link
-	jQuery("ul.pagination").children("li:not(:has(a))").addClass("active");
-
-	// Style the search widget input
-	jQuery( 'input#s' ).addClass( 'form-control' );
-
+	// Style form controls
+	jQuery( type="select" ).addClass( 'form-control input-sm' );
+	jQuery( 'input#submit' ).addClass( 'btn btn-default' );
+	// Tables
+	jQuery( 'table' ).addClass( 'table' );
 });

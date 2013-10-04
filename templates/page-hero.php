@@ -23,7 +23,7 @@ get_header('hero'); ?>
 		</div><!-- /container -->
 	</div><!-- /jumbotron -->
 
-	<div id="hero-widgets-container" class="widget widget-area" role="complementary">
+	<div id="hero-widgets-container" class="widget widget-area container" role="complementary">
 		<?php
 		do_action( 'before_sidebar' );
 		alienship_do_sidebar( 'herowidgets' ); ?>

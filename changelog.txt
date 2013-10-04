@@ -1,4 +1,22 @@
 == Change log ==
+Version 1.1.0 - October 3, 2013
+-------------------------------
+- Removed old header file I forgot to delete when I removed the Marketing Page template.
+- Fixed minor horizontal scroll issue on small screens.
+- Minor style cleanup.
+- Improved comment form styling.
+- Added content-image.php template part for the Image post format.
+- Moved some theme option logic out of the templates and into template-tags.php.
+- Added Catalan translation. Thanks to JC Julien!
+- Improved handling of Link post format.
+- Updated content.php template part, removed content-standard.php, and simplified the logic surrounding the template part calls.
+- Added content-gallery.php template part to allow for better display of posts of the gallery post format.
+- Added support for Jetpack Infinite Scroll
+- Updated searchform.php and related CSS.
+- Fixed bug in archive display for tags that could result in posts not showing under certain circumstances.
+
+
+
 Version 1.0.0 - August 29, 2013
 -------------------------------
 - NOTE: Not backwards compatible with previous versions.

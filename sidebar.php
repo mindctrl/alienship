@@ -10,7 +10,7 @@
 
 	do_action( 'alienship_sidebar_before' ); ?>
 	<div id="sidebar" class="<?php echo apply_filters( 'alienship_sidebar_container_class', 'col-sm-3' ); ?>">
-		<?php do_action( 'alienship_sidebar_inside_before' ); ?>
+		<?php do_action( 'alienship_sidebar_top' ); ?>
 
 		<div id="secondary" class="<?php echo apply_filters( 'alienship_secondary_container_class', 'widget-area well' ); ?>" role="complementary">
 			<?php do_action( 'before_sidebar' );
@@ -19,7 +19,7 @@
 
 		</div><!-- #secondary .widget-area -->
 
-	<?php do_action( 'alienship_sidebar_inside_after' ); ?>
+	<?php do_action( 'alienship_sidebar_bottom' ); ?>
 	</div><!-- #sidebar -->
 	<?php do_action( 'alienship_sidebar_after' ); ?>
 

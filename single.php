@@ -34,12 +34,12 @@ get_header(); ?>
 					if ( comments_open() || '0' != get_comments_number() )
 						comments_template( '', true );
 
-				endwhile;
+				endwhile; ?>
 
-			do_action( 'alienship_content_after' ); ?>
 			</div><!-- #content -->
+			<?php do_action( 'alienship_content_after' );
 
-			<?php get_sidebar(); ?>
+			get_sidebar(); ?>
 		</div><!-- .row -->
 	</div><!-- #primary -->
 <?php get_footer(); ?>

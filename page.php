@@ -13,8 +13,8 @@
 
 get_header(); ?>
 <!-- Main -->
-	<?php do_action( 'alienship_content_before' ); ?>
 	<div class="row">
+		<?php do_action( 'alienship_content_before' ); ?>
 		<div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
 
 			<?php
@@ -29,10 +29,11 @@ get_header(); ?>
 				comments_template( '', true );
 
 			endwhile;
+			?>
 
-		do_action( 'alienship_content_after' ); ?>
 		</div><!-- #content -->
+		<?php do_action( 'alienship_content_after' );
 
-		<?php get_sidebar(); ?>
+		get_sidebar(); ?>
 	</div><!-- .row -->
 <?php get_footer(); ?>

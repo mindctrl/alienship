@@ -41,12 +41,12 @@ get_header(); ?>
 					// No results
 					get_template_part( '/templates/parts/content', 'none' );
 
-				} //have_posts
+				} //have_posts ?>
 
-			do_action( 'alienship_content_after' ); ?>
 			</div><!-- #content -->
+			<?php do_action( 'alienship_content_after' );
 
-			<?php get_sidebar(); ?>
+			get_sidebar(); ?>
 		</div><!-- .row -->
 	</section><!-- #primary -->
 

@@ -10,8 +10,8 @@
 
 do_action( 'alienship_footer_before' ); ?>
 <footer class="colophon" id="colophon" role="contentinfo">
+	<?php do_action( 'alienship_footer_top' ); ?>
 
-	<?php do_action( 'alienship_footer_inside ' ); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">
@@ -38,6 +38,8 @@ do_action( 'alienship_footer_before' ); ?>
 			</div>
 		</div><!-- row -->
 	</div><!-- container -->
+
+	<?php do_action( 'alienship_footer_bottom' ); ?>
 </footer><!-- #colophon -->
 <?php do_action( 'alienship_footer_after' ); ?>
 

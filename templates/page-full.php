@@ -8,8 +8,8 @@
  */
 
 get_header(); ?>
-	<?php do_action( 'alienship_content_before' ); ?>
 	<div id="primary">
+		<?php do_action( 'alienship_content_before' ); ?>
 		<div id="content" role="main">
 
 			<?php
@@ -23,9 +23,9 @@ get_header(); ?>
 
 				comments_template( '', true );
 
-			endwhile;
+			endwhile; ?>
 
-		do_action( 'alienship_content_after' ); ?>
 		</div><!-- #content -->
+		<?php do_action( 'alienship_content_after' ); ?>
 	</div><!-- #primary -->
 <?php get_footer(); ?>

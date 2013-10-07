@@ -4,7 +4,7 @@ Theme URI: http://www.johnparris.com/alienship/
 Author: John Parris
 Author URI: http://www.johnparris.com/alienship/
 Description: Alien Ship is a responsive starter theme for WordPress.
-Version: 1.1.0
+Version: 1.1.1-beta
 License: GNU General Public License
 License URI: license.txt
 */
@@ -204,14 +204,14 @@ p {
 }
 
 /* The meta data displayed within a post footer. */
-footer.entry-meta {
+.entry-footer {
 	border-bottom: 1px solid #eee;
 	clear: both;
 	font-size: 12px;
 	padding-bottom: 15px;
 	text-transform: uppercase;
 }
-.entry-meta .glyphicon {
+.entry-footer .glyphicon {
 	margin-right: 4px;
 }
 .byline,

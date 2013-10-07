@@ -211,6 +211,10 @@ p {
 	padding-bottom: 15px;
 	text-transform: uppercase;
 }
+.entry-footer,
+.entry-footer a {
+	color: #777;
+}
 .entry-footer .glyphicon {
 	margin-right: 4px;
 }

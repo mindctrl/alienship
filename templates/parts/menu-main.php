@@ -21,7 +21,16 @@
 		</div>
 
 		<div class="collapse navbar-collapse navbar-ex2-collapse">
-			<?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'main',
+				'depth'          => 2,
+				'container'      => false,
+				'menu_class'     => 'nav navbar-nav',
+				'walker'         => new wp_bootstrap_navwalker(),
+				'fallback_cb'    => 'wp_bootstrap_navwalker::fallback'
+				)
+			);
+			?>
 		</div>
 	</nav>
 <!-- End Main menu -->

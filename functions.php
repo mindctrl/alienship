@@ -37,6 +37,7 @@ function alienship_setup() {
 
 	// Register the navigation menus.
 	locate_template( '/inc/menus.php', true );
+	locate_template( '/inc/wp_bootstrap_navwalker.php', true );
 
 	// Register sidebars
 	locate_template( '/inc/sidebars.php', true );

@@ -272,16 +272,16 @@ img[class*="attachment-"],
 /*Theme layouts
 ----------------------- */
 /* One column */
-.layout-1c #content {
+.layout-1c #primary {
 	float: none;
 	margin-right: 0;
 	width: 100%;
 }
 /* Two columns: sidebar left, content right. */
-.layout-2c-r #content {
+.layout-2c-r #primary {
 	float: right;
 }
-.layout-2c-r #sidebar {
+.layout-2c-r #secondary {
 	float: left;
 	margin-left: 0;
 }

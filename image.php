@@ -9,8 +9,8 @@
 get_header(); ?>
 
 	<div id="primary" class="image-attachment">
-		<?php do_action( 'alienship_content_before' ); ?>
-		<div id="content" role="main">
+		<?php do_action( 'alienship_main_before' ); ?>
+		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -88,7 +88,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #content -->
+		</main><!-- #main -->
 		<?php do_action( 'alienship_content_after' ); ?>
 	</div><!-- #primary -->
 

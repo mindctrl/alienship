@@ -12,8 +12,9 @@
  */
 
 get_header(); ?>
-<!-- Main -->
+
 	<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-9' ); ?>">
+
 		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">
 
@@ -32,10 +33,9 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
-		<?php do_action( 'alienship_content_after' ); ?>
+		<?php do_action( 'alienship_main_after' ); ?>
 
 	</div><!-- #primary -->
 <?php
 get_sidebar();
-get_footer();
-?>
+get_footer(); ?>

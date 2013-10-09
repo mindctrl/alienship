@@ -46,6 +46,6 @@ get_header(); ?>
 		<?php do_action( 'alienship_main_after' ); ?>
 
 	</section><!-- #primary -->
-<?php get_sidebar();
-get_footer();
-?>
+<?php
+get_sidebar();
+get_footer(); ?>

@@ -22,6 +22,6 @@
 	<?php do_action( 'alienship_sidebar_after' ); ?>
 
 	</div><!-- #secondary -->
-	<?php do_action( 'alienship_secondary_after' ); ?>
+	<?php do_action( 'alienship_secondary_after' );
 
-<?php } //endif ?>
+} //endif ?>

@@ -41,10 +41,12 @@ do_action( 'alienship_footer_before' ); ?>
 
 	<?php do_action( 'alienship_footer_bottom' ); ?>
 </footer><!-- #colophon -->
-<?php do_action( 'alienship_footer_after' ); ?>
+<?php
+do_action( 'alienship_footer_after' );
 
-<?php wp_footer(); ?>
+wp_footer();
 
-<?php do_action( 'alienship_footer' ); ?>
+do_action( 'alienship_footer' ); ?>
+
 </body>
 </html>

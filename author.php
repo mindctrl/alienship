@@ -9,6 +9,7 @@
 get_header(); ?>
 
 	<section id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-9' ); ?>">
+
 		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">
 
@@ -27,11 +28,11 @@ get_header(); ?>
 				</header>
 
 				<?php
-				  /* Since we called the_post() above, we need to
-				   * rewind the loop back to the beginning that way
-				   * we can run the loop properly, in full.
-				   */
-				  rewind_posts();
+				/* Since we called the_post() above, we need to
+				 * rewind the loop back to the beginning that way
+				 * we can run the loop properly, in full.
+				 */
+				rewind_posts();
 
 				alienship_content_nav( 'nav-above' ); // display content nav above posts?
 
@@ -61,6 +62,6 @@ get_header(); ?>
 		<?php do_action( 'alienship_main_after' ); ?>
 
 	</section><!-- #primary -->
-<?php get_sidebar();
-get_footer();
-?>
+<?php
+get_sidebar();
+get_footer(); ?>

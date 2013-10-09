@@ -8,6 +8,7 @@
 
 get_header(); ?>
 	<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-9' ); ?>">
+
 		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">
 
@@ -19,9 +20,10 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search or one of the links below?', 'alienship' ); ?></p>
 
-					<?php get_search_form(); ?>
-
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+					<?php
+					get_search_form();
+					the_widget( 'WP_Widget_Recent_Posts' );
+					?>
 
 					<div class="widget">
 						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'alienship' ); ?></h2>
@@ -31,12 +33,11 @@ get_header(); ?>
 					</div>
 
 					<?php
-					/* translators: %1$s: smilie */
+					/* translators: %1$s: smiley */
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'alienship' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
-
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
 				</div><!-- .entry-content -->
 			</section><!-- .error-404 -->
@@ -47,5 +48,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 <?php
 get_sidebar();
-get_footer();
-?>
+get_footer(); ?>

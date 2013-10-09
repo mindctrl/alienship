@@ -11,7 +11,6 @@ do_action( 'alienship_post_before' ); ?>
 	do_action( 'alienship_entry_header' );
 	do_action( 'alienship_entry_content_before' );
 	?>
-
 	<div class="entry-content">
 
 	<?php

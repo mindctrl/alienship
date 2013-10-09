@@ -9,6 +9,7 @@
 get_header(); ?>
 
 	<div id="primary" class="image-attachment">
+
 		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">
 
@@ -89,7 +90,8 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
-		<?php do_action( 'alienship_content_after' ); ?>
+		<?php do_action( 'alienship_main_after' ); ?>
+
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

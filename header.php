@@ -55,8 +55,9 @@ do_action( 'alienship_head' ); ?>
 
 	} // !is_page_template( 'templates/page-hero.php' )
 
-	do_action( 'alienship_main_before' ); ?>
+	do_action( 'alienship_content_before' ); ?>
 	<div id="content" class="site-content row">
+
 	<?php if ( function_exists( 'breadcrumb_trail' ) && !is_front_page() )
 		breadcrumb_trail( array(
 			'container'   => 'div',

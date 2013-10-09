@@ -285,11 +285,10 @@ img[class*="attachment-"],
 /* End of Theme layouts */
 
 /* Copyright / bottom menu area */
-.colophon {
+.site-footer {
 	border-top: solid 1px #ccc;
 	margin-top: 50px;
 	padding: 7px 0px;
-	text-align: center;
 }
 .browsehappy {
 	margin-bottom: 0;
@@ -621,5 +620,8 @@ ins {
 		float: none;
 		margin-left: 0;
 		width: 100%;
+	}
+	.site-footer {
+		text-align: center;
 	}
 }

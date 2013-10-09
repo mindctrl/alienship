@@ -79,39 +79,36 @@ function alienship_do_sidebar( $prefix = false ) {
 		if ( $sidebar_class ): ?>
 
 			<div class="<?php echo $prefix; ?>-sidebar-row row">
-				<div id="<?php echo $prefix; ?>-sidebar-wrapper" class="complementary col-sm-12 <?php echo $prefix; ?>-wrapper">
-					<?php do_action( 'alienship_sidebar_container_inside_top' );
+				<?php do_action( 'alienship_sidebar_row_top' );
 
-					if ( is_active_sidebar( $prefix.'-1' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-1" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-1' ); ?>
-						</aside>
-					<?php endif;
-
-
-					if ( is_active_sidebar( $prefix.'-2' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-2" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-2' ); ?>
-						</aside>
-					<?php endif;
+				if ( is_active_sidebar( $prefix.'-1' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-1" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-1' ); ?>
+					</aside>
+				<?php endif;
 
 
-					if ( is_active_sidebar( $prefix.'-3' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-3" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-3' ); ?>
-						</aside>
-					<?php endif;
+				if ( is_active_sidebar( $prefix.'-2' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-2" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-2' ); ?>
+					</aside>
+				<?php endif;
 
 
-					if ( is_active_sidebar( $prefix.'-4' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-4" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-4' ); ?>
-						</aside>
-					<?php endif;
+				if ( is_active_sidebar( $prefix.'-3' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-3" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-3' ); ?>
+					</aside>
+				<?php endif;
 
-					do_action( 'alienship_sidebar_container_inside_bottom' ); ?>
-				</div> <!-- .complementary -->
-				<?php do_action( 'alienship_sidebar_container_after' ); ?>
+
+				if ( is_active_sidebar( $prefix.'-4' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-4" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-4' ); ?>
+					</aside>
+				<?php endif;
+
+				do_action( 'alienship_sidebar_row_bottom' ); ?>
 			</div><!-- .row -->
 
 		<?php endif; //$sidebar_class

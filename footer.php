@@ -9,8 +9,8 @@
  */
 ?>
 
-	</div><!-- #main -->
-	<?php do_action( 'alienship_main_after' );
+	</div><!-- #content -->
+	<?php do_action( 'alienship_content_after' );
 
 	// Footer widgets
 	alienship_do_sidebar( 'footer' ); ?>

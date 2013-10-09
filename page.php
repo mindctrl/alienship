@@ -13,9 +13,9 @@
 
 get_header(); ?>
 <!-- Main -->
-	<div class="row">
-		<?php do_action( 'alienship_content_before' ); ?>
-		<div id="content" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
+	<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-9' ); ?>">
+		<?php do_action( 'alienship_main_before' ); ?>
+		<main id="main" class="site-main" role="main">
 
 			<?php
 			while ( have_posts() ) : the_post();
@@ -31,9 +31,11 @@ get_header(); ?>
 			endwhile;
 			?>
 
-		</div><!-- #content -->
-		<?php do_action( 'alienship_content_after' );
+		</main><!-- #main -->
+		<?php do_action( 'alienship_content_after' ); ?>
 
-		get_sidebar(); ?>
-	</div><!-- .row -->
-<?php get_footer(); ?>
+	</div><!-- #primary -->
+<?php
+get_sidebar();
+get_footer();
+?>

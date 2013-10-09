@@ -8,46 +8,44 @@
 
 get_header(); ?>
 
-	<section id="primary">
-		<div class="row">
+	<section id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-9' ); ?>">
 
-			<?php do_action( 'alienship_content_before' ); ?>
-			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
+		<?php do_action( 'alienship_main_before' ); ?>
+		<main id="main" role="main" class="site-main">
 
-				<?php if ( have_posts() ) { ?>
+		<?php if ( have_posts() ) { ?>
 
-					<header id="search-results-header" class="page-header">
-						<h1 id="search-results-title" class="page-title"><?php printf( __( 'Search Results for: %s', 'alienship' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-					</header>
+			<header id="search-results-header" class="page-header">
+				<h1 id="search-results-title" class="page-title"><?php printf( __( 'Search Results for: %s', 'alienship' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			</header>
 
-					<?php
-					alienship_content_nav( 'nav-above' ); // display content nav above posts?
+			<?php
+			alienship_content_nav( 'nav-above' ); // display content nav above posts?
 
-					// Start the Loop
-					while ( have_posts() ) : the_post();
+			// Start the Loop
+			while ( have_posts() ) : the_post();
 
-						do_action( 'alienship_loop_before' );
+				do_action( 'alienship_loop_before' );
 
-						get_template_part( '/templates/parts/content', 'search' );
+				get_template_part( '/templates/parts/content', 'search' );
 
-						do_action( 'alienship_loop_after' );
+				do_action( 'alienship_loop_after' );
 
-					endwhile;
+			endwhile;
 
-					alienship_content_nav( 'nav-below' ); // display content nav below posts?
+			alienship_content_nav( 'nav-below' ); // display content nav below posts?
 
-				} else {
+		} else {
 
-					// No results
-					get_template_part( '/templates/parts/content', 'none' );
+			// No results
+			get_template_part( '/templates/parts/content', 'none' );
 
-				} //have_posts ?>
+		} //have_posts ?>
 
-			</div><!-- #content -->
-			<?php do_action( 'alienship_content_after' );
+		</main><!-- #main -->
+		<?php do_action( 'alienship_main_after' ); ?>
 
-			get_sidebar(); ?>
-		</div><!-- .row -->
 	</section><!-- #primary -->
-
-<?php get_footer(); ?>
+<?php get_sidebar();
+get_footer();
+?>

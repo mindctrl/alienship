@@ -442,6 +442,7 @@ ins {
 
 /* Page Templates */
 .page-template-templatespage-hero-php .navbar {
+	border-radius: 0;
 	margin-bottom: 0;
 }
 #hero-widgets-container {

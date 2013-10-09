@@ -545,7 +545,7 @@ function alienship_do_site_title() {
 	$site_name = sprintf( '<a href="%s" title="%s" rel="home">%s</a>', trailingslashit( home_url() ), esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
 
 	// Put it all together
-	$title = '<' . $element . ' class="site-title">' . $site_name . '</' . $element .'>';
+	$title = '<' . $element . ' id="site-title" class="site-title">' . $site_name . '</' . $element .'>';
 
 	// Echo the title
 	echo apply_filters( 'alienship_site_title_content', $title );
@@ -567,7 +567,7 @@ function alienship_do_site_description() {
 	$element = is_front_page() || is_home() ? 'h2' : 'p';
 
 	// Put it all together
-	$description = '<' . $element . ' class="site-description">' . esc_html( get_bloginfo( 'description' ) ) . '</' . $element . '>';
+	$description = '<' . $element . ' id="site-description" class="site-description">' . esc_html( get_bloginfo( 'description' ) ) . '</' . $element . '>';
 
 	// Echo the description
 	echo apply_filters( 'alienship_site_description_content', $description );

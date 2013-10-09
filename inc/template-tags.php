@@ -542,10 +542,10 @@ function alienship_do_site_title() {
 	$element = is_front_page() || is_home() ? 'h1' : 'p';
 
 	// Title content that goes inside wrapper
-	$site_name = sprintf( '<a href="%s" title="%s">%s</a>', trailingslashit( home_url() ), esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
+	$site_name = sprintf( '<a href="%s" title="%s" rel="home">%s</a>', trailingslashit( home_url() ), esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
 
 	// Put it all together
-	$title = '<' . $element . ' id="site-title" class="site-title">' . $site_name . '</' . $element .'>';
+	$title = '<' . $element . ' class="site-title">' . $site_name . '</' . $element .'>';
 
 	// Echo the title
 	echo apply_filters( 'alienship_site_title_content', $title );
@@ -567,7 +567,7 @@ function alienship_do_site_description() {
 	$element = is_front_page() || is_home() ? 'h2' : 'p';
 
 	// Put it all together
-	$description = '<' . $element . ' id="site-description" class="site-description">' . esc_html( get_bloginfo( 'description' ) ) . '</' . $element . '>';
+	$description = '<' . $element . ' class="site-description">' . esc_html( get_bloginfo( 'description' ) ) . '</' . $element . '>';
 
 	// Echo the description
 	echo apply_filters( 'alienship_site_description_content', $description );
@@ -954,16 +954,18 @@ function alienship_get_header_image() {
 				$output .= '<img src="' . get_header_image() . '" width="' . $header_image_width . '" height="' . $header_image_height . '" class="header-image" alt="">';
 			}
 		$output .= '</a>';
+
+		$header_image_attributes = array(
+			'width'    => $header_image_width,
+			'height'   => $header_image_height,
+			'featured' => $featured_header_image,
+			'output'   => $output,
+		);
+
+		return apply_filters( 'alienship_header_image_attributes', $header_image_attributes );
+
 	}
 
-
-	$header_image_attributes = array(
-		'width'    => $header_image_width,
-		'height'   => $header_image_height,
-		'featured' => $featured_header_image,
-		'output'   => $output,
-	);
-	return apply_filters( 'alienship_header_image_attributes', $header_image_attributes );
 }
 endif;
 
@@ -977,8 +979,9 @@ if( ! function_exists( 'alienship_do_header_image' ) ):
  */
 function alienship_do_header_image() {
 
-	$output = alienship_get_header_image( get_the_ID() );
-	echo apply_filters( 'alienship_header_image_output', $output['output'] );
+	$output = alienship_get_header_image();
+	if ( $output )
+		echo apply_filters( 'alienship_header_image_output', $output['output'] );
 }
 add_action( 'alienship_header_image', 'alienship_do_header_image' );
 endif;

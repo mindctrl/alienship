@@ -251,10 +251,8 @@ img[class*="attachment-"],
 
 /* Image captions */
 .wp-caption {
-	background: #f5f5f5;
 	border: 1px solid #ccc;
 	margin-bottom: 1.5em;
-	margin-top: 0.4em;
 	max-width: 100%;
 }
 .wp-caption img {
@@ -264,9 +262,8 @@ img[class*="attachment-"],
 }
 .wp-caption .wp-caption-text,
 .gallery-caption {
-	color: #666;
 	margin: 0.8075em 0;
-	padding: 10px 0 0 10px;
+	padding-left: 10px;
 }
 
 /*Theme layouts

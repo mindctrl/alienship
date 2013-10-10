@@ -48,6 +48,9 @@ function alienship_setup() {
 	// Load theme options framework
 	locate_template( '/inc/options-panel.php', true );
 
+	// Customizer
+	locate_template( '/inc/customizer.php', true );
+
 	// Breadcrumbs
 	if ( of_get_option( 'alienship_breadcrumbs',1) ) {
 		locate_template( '/inc/breadcrumb-trail.php', true );

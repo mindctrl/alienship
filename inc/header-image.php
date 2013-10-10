@@ -57,7 +57,7 @@ function alienship_header_style() {
  		?>
 		#site-title,
 		#site-description {
-			position: absolute !important;
+			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}

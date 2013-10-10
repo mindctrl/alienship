@@ -31,6 +31,28 @@
 			}
 		} );
 	} );
+
+	// Top Menu navigation bar
+	wp.customize( 'optionsframework_alienship[alienship_show_top_navbar]', function( value ) {
+		value.bind( function( to ) {
+			if ( false === to ) {
+				$( '.navbar' ).css( {
+					'display': 'none'
+				} );
+				$( '#page' ).css( {
+					'margin-top': '40px'
+				} );
+			} else {
+				$( '.navbar' ).css( {
+					'display': 'block'
+				} );
+				$( '#page' ).css( {
+					'margin-top': '20px'
+				} );
+			}
+		} );
+	} );
+
 	// Top Menu search bar
 	wp.customize( 'optionsframework_alienship[alienship_search_bar]', function( value ) {
 		value.bind( function( to ) {

@@ -24,6 +24,20 @@ function alienship_customize_register( $wp_customize ) {
 	/**
 	 * Navigation
 	 */
+	$wp_customize->add_setting( 'optionsframework_alienship[alienship_show_top_navbar]', array(
+		'default'    => '1',
+		'type'       => 'option',
+		'transport'  => 'postMessage',
+		'capability' => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( 'alienship_show_top_navbar', array(
+		'settings' => 'optionsframework_alienship[alienship_show_top_navbar]',
+		'label'    => __( 'Display the Top Menu navigation bar, even if there\'s no menu assigned.', 'alienship' ),
+		'section'  => 'nav',
+		'type'     => 'checkbox',
+	) );
+
 	$wp_customize->add_setting( 'optionsframework_alienship[alienship_search_bar]', array(
 		'default'    => '1',
 		'type'       => 'option',
@@ -34,7 +48,7 @@ function alienship_customize_register( $wp_customize ) {
 	// Add search bar control to nav section
 	$wp_customize->add_control( 'alienship_search_bar', array(
 		'settings' => 'optionsframework_alienship[alienship_search_bar]',
-		'label'    => __( 'Display search box in the Top Menu' ),
+		'label'    => __( 'Display search box in the Top Menu', 'alienship' ),
 		'section'  => 'nav',
 		'type'     => 'checkbox',
 	) );
@@ -60,7 +74,7 @@ function alienship_customize_register( $wp_customize ) {
 	// Add published date control
 	$wp_customize->add_control( 'alienship_published_date', array(
 		'settings' => 'optionsframework_alienship[alienship_published_date]',
-		'label'    => __( 'Display published date under each post' ),
+		'label'    => __( 'Display published date under each post', 'alienship' ),
 		'section'  => 'alienship_misc_options',
 		'type'     => 'checkbox',
 	) );
@@ -78,7 +92,7 @@ function alienship_customize_register( $wp_customize ) {
 	// Add post author control
 	$wp_customize->add_control( 'alienship_post_author', array(
 		'settings' => 'optionsframework_alienship[alienship_post_author]',
-		'label'    => __( 'Display post author name under each post' ),
+		'label'    => __( 'Display post author name under each post', 'alienship' ),
 		'section'  => 'alienship_misc_options',
 		'type'     => 'checkbox',
 	) );
@@ -96,7 +110,7 @@ function alienship_customize_register( $wp_customize ) {
 	// Add post category control
 	$wp_customize->add_control( 'alienship_post_categories', array(
 		'settings' => 'optionsframework_alienship[alienship_post_categories]',
-		'label'    => __( 'Display post categories under each post' ),
+		'label'    => __( 'Display post categories under each post', 'alienship' ),
 		'section'  => 'alienship_misc_options',
 		'type'     => 'checkbox',
 	) );
@@ -114,7 +128,7 @@ function alienship_customize_register( $wp_customize ) {
 	// Add post tags control
 	$wp_customize->add_control( 'alienship_post_tags', array(
 		'settings' => 'optionsframework_alienship[alienship_post_tags]',
-		'label'    => __( 'Display post tags under each post' ),
+		'label'    => __( 'Display post tags under each post', 'alienship' ),
 		'section'  => 'alienship_misc_options',
 		'type'     => 'checkbox',
 	) );
@@ -132,7 +146,7 @@ function alienship_customize_register( $wp_customize ) {
 	// Add post comments link control
 	$wp_customize->add_control( 'alienship_post_comments_link', array(
 		'settings' => 'optionsframework_alienship[alienship_post_comments_link]',
-		'label'    => __( 'Display "Leave a Comment" text under each post' ),
+		'label'    => __( 'Display "Leave a Comment" text under each post', 'alienship' ),
 		'section'  => 'alienship_misc_options',
 		'type'     => 'checkbox',
 	) );

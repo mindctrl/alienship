@@ -471,7 +471,10 @@ ins {
 
 /* Widgets
 ----------------------------------------------- */
-
+#sidebar {
+	background-color: #fafafa;
+	padding: 2em;
+}
 .widget {
 	margin: 0 0 1.5em;
 	word-wrap: break-word;

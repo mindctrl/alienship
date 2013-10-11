@@ -8,7 +8,19 @@ do_action( 'alienship_post_before' ); ?>
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	do_action( 'alienship_post_top' );
-	do_action( 'alienship_entry_header' );
+
+	if ( has_post_format( 'link' ) ) { ?>
+	<header class="entry-header">
+		<h2 class="entry-title">
+			<a class="entry-title" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" href="<?php echo alienship_link_format_helper( 'link' ); ?>">
+				<?php the_title(); ?>&rarr;
+			</a>
+		</h2>
+	</header><!-- .entry-header -->
+	<?php } else {
+
+		do_action( 'alienship_entry_header' );
+	}
 	do_action( 'alienship_entry_content_before' );
 	?>
 	<div class="entry-content">
@@ -23,7 +35,6 @@ do_action( 'alienship_post_before' ); ?>
 		// Show only excerpt on the rest.
 		} else {
 			the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e( 'Continue Reading &raquo;', 'alienship' ); ?></a>
 		<?php }
 
 		wp_link_pages(); ?>

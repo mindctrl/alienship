@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-	<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-9' ); ?>">
+	<div id="primary" class="col-sm-12">
 
 		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">

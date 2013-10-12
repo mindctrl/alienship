@@ -581,7 +581,11 @@ if ( ! function_exists( 'alienship_featured_posts_grid' ) ):
  */
 function alienship_featured_posts_grid() {
 
-	$featured_query = new WP_Query( 'tag_id=' . of_get_option( 'alienship_featured_posts_tag' ) . '&posts_per_page=' . of_get_option( 'alienship_featured_posts_maxnum' ) . '' );
+	$args = array(
+		'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
+		'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
+		);
+	$featured_query = new WP_Query( $args );
 
 	if ( $featured_query->have_posts() ) { ?>
 		<ul id="featured-posts-grid" class="block-grid mobile two-up">
@@ -604,7 +608,11 @@ if ( ! function_exists( 'alienship_featured_posts_slider' ) ):
  */
 function alienship_featured_posts_slider() {
 
-	$featured_query = new WP_Query( 'tag_id=' . of_get_option( 'alienship_featured_posts_tag' ) . '&posts_per_page=' . of_get_option( 'alienship_featured_posts_maxnum' ) . '' );
+	$args = array(
+		'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
+		'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
+		);
+	$featured_query = new WP_Query( $args );
 
 	if ( $featured_query->have_posts() ) { ?>
 		<div class="row">

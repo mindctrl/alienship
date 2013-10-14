@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Alien Ship 1.0.0\n"
+"Project-Id-Version: Alien Ship 1.2.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/alienship\n"
-"POT-Creation-Date: 2013-08-30 01:49:41+00:00\n"
+"POT-Creation-Date: 2013-10-14 14:02:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,20 +17,22 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:21
-msgid "It looks like nothing was found at this location. Maybe try a search or one of the links below?"
+msgid ""
+"It looks like nothing was found at this location. Maybe try a search or one "
+"of the links below?"
 msgstr ""
 
-#: 404.php:28
+#: 404.php:29
 msgid "Most Used Categories"
 msgstr ""
 
-#. translators: %1$s: smilie
-#: 404.php:36
+#. translators: %1$s: smiley
+#: 404.php:37
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #: admin/options-framework.php:182 admin/options-framework.php:183
-#: admin/options-framework.php:412
+#: admin/options-framework.php:412 inc/options.php:17 inc/options.php:18
 msgid "Theme Options"
 msgstr ""
 
@@ -38,7 +40,7 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: admin/options-framework.php:229 functions.php:263 inc/theme-layouts.php:295
+#: admin/options-framework.php:229 functions.php:271 inc/theme-layouts.php:295
 msgid "Default"
 msgstr ""
 
@@ -46,15 +48,15 @@ msgstr ""
 msgid "Select Color"
 msgstr ""
 
-#: admin/options-framework.php:275
+#: admin/options-framework.php:275 inc/options.php:63
 msgid "Save Options"
 msgstr ""
 
-#: admin/options-framework.php:276
+#: admin/options-framework.php:276 inc/options.php:64
 msgid "Restore Defaults"
 msgstr ""
 
-#: admin/options-framework.php:276
+#: admin/options-framework.php:276 inc/options.php:64
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
@@ -162,46 +164,46 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: author.php:27 inc/template-tags.php:560
+#: author.php:27 inc/template-tags.php:685
 msgid "Author Archives: %s"
 msgstr ""
 
-#: comments.php:29
+#: comments.php:26
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:36 comments.php:58
+#: comments.php:33 comments.php:55
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:38
+#: comments.php:35
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:39
+#: comments.php:36
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:60
+#: comments.php:57
 msgid "Older Comments &raquo;"
 msgstr ""
 
-#: comments.php:61
+#: comments.php:58
 msgid "&laquo; Newer Comments"
 msgstr ""
 
-#: comments.php:72
+#: comments.php:69
 msgid "Comments are closed."
 msgstr ""
 
-#: footer-hero.php:19
+#: footer-hero.php:29
 msgid "Edit page"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:145
 msgid ""
 "Dropdown menus work a little differently in Alien Ship. They do not activate "
 "on mouse hover, but on click instead. This means that the top/parent menu "
@@ -212,23 +214,23 @@ msgid ""
 "href=\"%1$s\">Hide this notice</a>"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:256
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:264
+#: functions.php:272
 msgid "Content left. Sidebar right."
 msgstr ""
 
-#: functions.php:265
+#: functions.php:273
 msgid "Content right. Sidebar left."
 msgstr ""
 
-#: functions.php:266
+#: functions.php:274
 msgid "Full width. No sidebar."
 msgstr ""
 
-#: image.php:23
+#: image.php:25
 msgid ""
 "Published <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s"
 "\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
@@ -236,42 +238,42 @@ msgid ""
 "\"gallery\">%8$s</a>"
 msgstr ""
 
-#: image.php:33 image.php:80 inc/breadcrumb-trail.php:1122
+#: image.php:35 image.php:84 inc/breadcrumb-trail.php:1122
 #: inc/breadcrumb-trail.php:1158 inc/breadcrumb-trail.php:1175
-#: inc/breadcrumb-trail.php:1206 inc/template-tags.php:207
-#: inc/template-tags.php:226
+#: inc/breadcrumb-trail.php:1206 inc/template-tags.php:233
+#: inc/template-tags.php:252
 msgid "Edit"
 msgstr ""
 
-#: image.php:38
+#: image.php:40
 msgid "&laquo; Previous"
 msgstr ""
 
-#: image.php:39
+#: image.php:41
 msgid "Next &raquo;"
 msgstr ""
 
-#: image.php:67
+#: image.php:71
 msgid ""
 "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
 "comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
 
-#: image.php:70
+#: image.php:74
 msgid ""
 "Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
 "\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
 "\">Trackback URL</a>."
 msgstr ""
 
-#: image.php:73
+#: image.php:77
 msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
 
-#: image.php:76
+#: image.php:80
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
@@ -295,7 +297,7 @@ msgstr ""
 msgid "Page %d"
 msgstr ""
 
-#: inc/breadcrumb-trail.php:180 inc/template-tags.php:572
+#: inc/breadcrumb-trail.php:180 inc/template-tags.php:697
 msgid "Archives"
 msgstr ""
 
@@ -341,6 +343,38 @@ msgstr ""
 
 #: inc/breadcrumb-trail.php:1154
 msgid "Merge"
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "Display the Top Menu navigation bar, even if there's no menu assigned."
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "Display search box in the Top Menu"
+msgstr ""
+
+#: inc/customizer.php:62
+msgid "Miscellaneous"
+msgstr ""
+
+#: inc/customizer.php:77
+msgid "Display published date under each post"
+msgstr ""
+
+#: inc/customizer.php:95
+msgid "Display post author name under each post"
+msgstr ""
+
+#: inc/customizer.php:113
+msgid "Display post categories under each post"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "Display post tags under each post"
+msgstr ""
+
+#: inc/customizer.php:149
+msgid "Display \"Leave a Comment\" text under each post"
 msgstr ""
 
 #: inc/menus.php:6
@@ -403,20 +437,20 @@ msgstr ""
 msgid "The third footer widget area, displayed below the Footer widget area."
 msgstr ""
 
-#: inc/sidebars.php:116 inc/widgets/widget-login-form.php:167
+#: inc/sidebars.php:116 inc/widgets/widget-login-form.php:166
 msgid "Username"
 msgstr ""
 
-#: inc/sidebars.php:117 inc/widgets/widget-login-form.php:168
+#: inc/sidebars.php:117 inc/widgets/widget-login-form.php:167
 msgid "Password"
 msgstr ""
 
-#: inc/sidebars.php:118 inc/widgets/widget-login-form.php:170
+#: inc/sidebars.php:118 inc/widgets/widget-login-form.php:169
 msgid "Remember Me"
 msgstr ""
 
-#: inc/sidebars.php:119 inc/widgets/widget-login-form.php:166
-#: inc/widgets/widget-login-form.php:169
+#: inc/sidebars.php:119 inc/widgets/widget-login-form.php:165
+#: inc/widgets/widget-login-form.php:168
 msgid "Log In"
 msgstr ""
 
@@ -424,97 +458,102 @@ msgstr ""
 msgid "You must specify a prefix when using alienship_sidebar_class."
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:71
 msgid "You must specify a prefix when using alienship_do_sidebar."
 msgstr ""
 
-#: inc/template-tags.php:165
+#: inc/template-tags.php:193
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:171
+#: inc/template-tags.php:198
 msgctxt "Previous post link"
 msgid "&laquo;"
 msgstr ""
 
-#: inc/template-tags.php:172
+#: inc/template-tags.php:199
 msgctxt "Next post link"
 msgid "&raquo;"
 msgstr ""
 
-#: inc/template-tags.php:178
+#: inc/template-tags.php:204
 msgid "Next page <span class=\"meta-nav\">&raquo;</span>"
 msgstr ""
 
-#: inc/template-tags.php:182
+#: inc/template-tags.php:208
 msgid "<span class=\"meta-nav\">&laquo;</span> Previous page"
 msgstr ""
 
-#: inc/template-tags.php:207
+#: inc/template-tags.php:233
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:217
+#: inc/template-tags.php:243
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/template-tags.php:223
+#: inc/template-tags.php:249
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:230
+#: inc/template-tags.php:256
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:312
-msgid ""
-"<span class=\"byline\"><i class=\"glyphicon glyphicon-user\"></i> <span "
-"class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" "
-"rel=\"author\">%3$s</a></span></span>"
-msgstr ""
-
-#: inc/template-tags.php:314
-msgid "View all posts by %s"
-msgstr ""
-
-#: inc/template-tags.php:331
+#: inc/template-tags.php:355
 msgid ""
 "<span class=\"published-date\"><i class=\"glyphicon glyphicon-calendar\" "
 "title=\"Published date\"></i> <a href=\"%1$s\" title=\"%2$s\"><time class="
 "\"entry-date\" datetime=\"%3$s\">%4$s</time></a></span>"
 msgstr ""
 
-#: inc/template-tags.php:420
+#: inc/template-tags.php:379
+msgid ""
+"<span class=\"byline\"><i class=\"glyphicon glyphicon-user\"></i> <span "
+"class=\"author vcard\"><a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" "
+"rel=\"author\">%3$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:381
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:479
 msgid " Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:420
+#: inc/template-tags.php:479
 msgid " 1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:420
+#: inc/template-tags.php:479
 msgid " % Comments"
 msgstr ""
 
-#: inc/template-tags.php:554
+#: inc/template-tags.php:679
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:557
+#: inc/template-tags.php:682
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:563
+#: inc/template-tags.php:688
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:566
+#: inc/template-tags.php:691
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:569
+#: inc/template-tags.php:694
 msgid "Yearly Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:843
+msgid ""
+"You must specify the output you want - either \"link\" or \"post_content\"."
 msgstr ""
 
 #: inc/theme-layouts.php:296
@@ -561,35 +600,35 @@ msgstr ""
 msgid "Login Form"
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:180
+#: inc/widgets/widget-login-form.php:179
 msgid "Please log into the site."
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:181
+#: inc/widgets/widget-login-form.php:180
 msgid "Logged in as"
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:193
+#: inc/widgets/widget-login-form.php:192
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:243
+#: inc/widgets/widget-login-form.php:242
 msgid "\"Remember me\" checkbox?"
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:247
+#: inc/widgets/widget-login-form.php:246
 msgid "Check \"remember me\"?"
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:251
+#: inc/widgets/widget-login-form.php:250
 msgid "Display avatar?"
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:254
+#: inc/widgets/widget-login-form.php:253
 msgid "Logged out text:"
 msgstr ""
 
-#: inc/widgets/widget-login-form.php:259
+#: inc/widgets/widget-login-form.php:258
 msgid "Logged in text:"
 msgstr ""
 
@@ -975,38 +1014,32 @@ msgid ""
 "350 pixels."
 msgstr ""
 
-#: search.php:20
+#: search.php:19
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:10 searchform.php:12
-msgid "Search"
+#: searchform.php:11
+msgctxt "label"
+msgid "Search:"
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
+msgctxt "placeholder"
 msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "submit button"
+msgid "Search"
 msgstr ""
 
 #: templates/parts/content-featured.php:8
 #: templates/parts/content-fp-grid.php:10
-#: templates/parts/content-fp-grid.php:15 templates/parts/content-link.php:19
-#: templates/parts/content-search.php:16 templates/parts/content-search.php:26
-#: templates/parts/content-standard.php:39
-#: templates/parts/content-standard.php:51
+#: templates/parts/content-fp-grid.php:15 templates/parts/content-image.php:20
+#: templates/parts/content-link.php:15 templates/parts/content-search.php:15
+#: templates/parts/content-search.php:28 templates/parts/content.php:22
+#: templates/parts/content.php:37
 msgid "Link to %s"
-msgstr ""
-
-#: templates/parts/content-fp-grid.php:24
-msgid ""
-"<span class=\"edit-link pull-right\"><i class=\"glyphicon glyphicon-pencil"
-"\"></i>"
-msgstr ""
-
-#: templates/parts/content-link.php:34 templates/parts/content-page.php:21
-#: templates/parts/content-quote.php:25 templates/parts/content-search.php:39
-#: templates/parts/content-standard.php:70
-#: templates/parts/content-status.php:23 templates/parts/content.php:26
-msgid " Edit"
 msgstr ""
 
 #: templates/parts/content-none.php:11
@@ -1019,19 +1052,26 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: templates/parts/content-page.php:17 templates/parts/content-quote.php:15
-#: templates/parts/content-search.php:21 templates/parts/content-search.php:26
-#: templates/parts/content-standard.php:51 templates/parts/content.php:15
+#: templates/parts/content-page.php:17 templates/parts/content-quote.php:17
+#: templates/parts/content-search.php:33
 msgid "Continue Reading &raquo;"
+msgstr ""
+
+#: templates/parts/content-page.php:21
+msgid " Edit"
+msgstr ""
+
+#: templates/parts/menu-top.php:37
+msgid "Search &hellip;"
 msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Alien Ship"
 msgstr ""
 
-#. #-#-#-#-#  alienship.pot (Alien Ship 1.0.0)  #-#-#-#-#
+#. #-#-#-#-#  alienship.pot (Alien Ship 1.2.0)  #-#-#-#-#
 #. Theme URI of the plugin/theme
-#. #-#-#-#-#  alienship.pot (Alien Ship 1.0.0)  #-#-#-#-#
+#. #-#-#-#-#  alienship.pot (Alien Ship 1.2.0)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "http://www.johnparris.com/alienship/"
 msgstr ""

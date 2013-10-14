@@ -2,83 +2,81 @@
 /**
  * The template for displaying Archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package Alien Ship
  * @since Alien Ship 0.1
  */
 
 get_header(); ?>
 
-	<section id="primary">
-		<div class="row">
-			<?php do_action( 'alienship_content_before' ); ?>
-			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
-				<?php do_action( 'alienship_archive_page_title' );
-				alienship_archive_sticky_posts(); // sticky post query
-				if ( have_posts() ) {
+	<section id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-8' ); ?>">
 
-					rewind_posts();
+		<?php do_action( 'alienship_main_before' ); ?>
+		<main id="main" class="site-main" role="main">
+			<?php
+			do_action( 'alienship_archive_page_title' );
+			alienship_archive_sticky_posts(); // sticky post query
+			if ( have_posts() ) {
 
-					alienship_content_nav( 'nav-above' );
+				rewind_posts();
 
-					// do the main query without stickies
-					$sticky = get_option( 'sticky_posts' );
+				alienship_content_nav( 'nav-above' );
 
-					if ( is_category() && ! empty( $sticky ) ) {
-						$cat_ID = get_query_var('cat');
-						$args = array(
-							'cat'                 => $cat_ID,
-							'post_status'         => 'publish',
-							'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-							'ignore_sticky_posts' => 1,
-							'paged'               => $paged
-						);
-						$wp_query = new WP_Query( $args );
-					}
-					elseif (is_tag() && ! empty( $sticky ) ) {
-						$current_tag = get_queried_object_id();
-						$args = array(
-							'tag_id'              => $current_tag,
-							'post_status'         => 'publish',
-							'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-							'ignore_sticky_posts' => 1,
-							'paged'               => $paged
-						);
-						$wp_query = new WP_Query( $args );
+				// do the main query without stickies
+				$sticky = get_option( 'sticky_posts' );
 
-					}
-					else {
-						new WP_Query();
-					}
+				if ( is_category() && ! empty( $sticky ) ) {
+					$cat_ID = get_query_var('cat');
+					$args = array(
+						'cat'                 => $cat_ID,
+						'post_status'         => 'publish',
+						'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
+						'ignore_sticky_posts' => 1,
+						'paged'               => $paged
+					);
+					$wp_query = new WP_Query( $args );
+				}
+				elseif (is_tag() && ! empty( $sticky ) ) {
+					$current_tag = get_queried_object_id();
+					$args = array(
+						'tag_id'              => $current_tag,
+						'post_status'         => 'publish',
+						'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
+						'ignore_sticky_posts' => 1,
+						'paged'               => $paged
+					);
+					$wp_query = new WP_Query( $args );
 
-					// Start the Loop
-					while ( $wp_query->have_posts() ) : $wp_query->the_post();
-						do_action( 'alienship_loop_before' );
+				}
+				else {
+					new WP_Query();
+				}
 
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( '/templates/parts/content', get_post_format() );
+				// Start the Loop
+				while ( $wp_query->have_posts() ) : $wp_query->the_post();
+					do_action( 'alienship_loop_before' );
 
-						do_action( 'alienship_loop_after' );
-					endwhile;
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( '/templates/parts/content', get_post_format() );
 
-					// Show navigation below post content
-					alienship_content_nav( 'nav-below' );
+					do_action( 'alienship_loop_after' );
+				endwhile;
 
-				} else {
+				// Show navigation below post content
+				alienship_content_nav( 'nav-below' );
 
-					// No results
-					get_template_part( '/templates/parts/content', 'none' );
+			} else {
 
-				} //have_posts
-				do_action( 'alienship_content_after' ); ?>
-			</div><!-- #content -->
+				// No results
+				get_template_part( '/templates/parts/content', 'none' );
 
-		<?php get_sidebar(); ?>
-		</div><!-- .row -->
+			} //have_posts ?>
+		</main><!-- #main -->
+		<?php do_action( 'alienship_main_after' ); ?>
+
 	</section><!-- #primary -->
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer(); ?>

@@ -4,7 +4,7 @@ Theme URI: http://www.johnparris.com/alienship/
 Author: John Parris
 Author URI: http://www.johnparris.com/alienship/
 Description: Alien Ship is a responsive starter theme for WordPress.
-Version: 1.1.0
+Version: 1.2.0
 License: GNU General Public License
 License URI: license.txt
 */
@@ -13,6 +13,7 @@ License URI: license.txt
 ---------------------------- */
 .entry-title {
 	line-height: 40px;
+	margin-bottom: 0;
 	word-wrap: break-word;
 }
 .widget-title {
@@ -161,7 +162,6 @@ License URI: license.txt
 
 #page {
 	margin: 0px auto;
-	max-width: 1140px;
 }
 #main-row {
 	margin-top: 10px;
@@ -204,14 +204,18 @@ p {
 }
 
 /* The meta data displayed within a post footer. */
-footer.entry-meta {
+.entry-footer {
 	border-bottom: 1px solid #eee;
 	clear: both;
 	font-size: 12px;
 	padding-bottom: 15px;
 	text-transform: uppercase;
 }
-.entry-meta .glyphicon {
+.entry-footer,
+.entry-footer a {
+	color: #777;
+}
+.entry-footer .glyphicon {
 	margin-right: 4px;
 }
 .byline,
@@ -247,10 +251,8 @@ img[class*="attachment-"],
 
 /* Image captions */
 .wp-caption {
-	background: #f5f5f5;
 	border: 1px solid #ccc;
 	margin-bottom: 1.5em;
-	margin-top: 0.4em;
 	max-width: 100%;
 }
 .wp-caption img {
@@ -260,35 +262,33 @@ img[class*="attachment-"],
 }
 .wp-caption .wp-caption-text,
 .gallery-caption {
-	color: #666;
 	margin: 0.8075em 0;
-	padding: 10px 0 0 10px;
+	padding-left: 10px;
 }
 
 /*Theme layouts
 ----------------------- */
 /* One column */
-.layout-1c #content {
+.layout-1c #primary {
 	float: none;
 	margin-right: 0;
 	width: 100%;
 }
 /* Two columns: sidebar left, content right. */
-.layout-2c-r #content {
+.layout-2c-r #primary {
 	float: right;
 }
-.layout-2c-r #sidebar {
+.layout-2c-r #secondary {
 	float: left;
 	margin-left: 0;
 }
 /* End of Theme layouts */
 
 /* Copyright / bottom menu area */
-.colophon {
+.site-footer {
 	border-top: solid 1px #ccc;
 	margin-top: 50px;
 	padding: 7px 0px;
-	text-align: center;
 }
 .browsehappy {
 	margin-bottom: 0;
@@ -403,13 +403,7 @@ ins {
 	padding-left: 0;
 }
 #featured-posts-grid li {
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-	background-color: #eee;
+	background-color: #F5F5F5;
 	margin-bottom: 25px;
 	padding-bottom: 2px;
 }
@@ -435,11 +429,13 @@ ins {
 	font-size: 12px;
 	margin-bottom: 5px;
 	text-align: center;
+	text-transform: uppercase;
 }
 /* End of featured posts grid */
 
 /* Page Templates */
 .page-template-templatespage-hero-php .navbar {
+	border-radius: 0;
 	margin-bottom: 0;
 }
 #hero-widgets-container {
@@ -469,7 +465,10 @@ ins {
 
 /* Widgets
 ----------------------------------------------- */
-
+#sidebar {
+	background-color: #fafafa;
+	padding: 2em;
+}
 .widget {
 	margin: 0 0 1.5em;
 	word-wrap: break-word;
@@ -618,5 +617,8 @@ ins {
 		float: none;
 		margin-left: 0;
 		width: 100%;
+	}
+	.site-footer {
+		text-align: center;
 	}
 }

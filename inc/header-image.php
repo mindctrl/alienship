@@ -17,7 +17,7 @@
  */
 function alienship_setup_custom_header() {
 	$args = array(
-		'width'                   => 1140,
+		'width'                   => 1170,
 		'height'                  => 400,
 		'default-image'           => '',
 		'default-text-color'      => '333',
@@ -57,7 +57,7 @@ function alienship_header_style() {
  		?>
 		#site-title,
 		#site-description {
-			position: absolute !important;
+			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
@@ -94,19 +94,20 @@ function alienship_admin_header_style() {
 	#headimg h1,
 	#desc {
 		font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+		font-weight: bold;
 	}
 	#headimg h1 {
 		margin: 0;
 	}
 	#headimg h1 a {
-		font-size: 32px;
+		font-size: 30px;
 		line-height: 36px;
 		text-decoration: none;
 	}
 	#desc {
-		font-size: 14px;
-		line-height: 23px;
-		padding: 0 0 3em;
+		font-size: 24px;
+		line-height: 36px;
+		padding: 0;
 	}
 	<?php
 	// If the user has set a custom color for the text use that

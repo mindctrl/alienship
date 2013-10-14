@@ -1,15 +1,17 @@
 <?php
 /**
  * The main template file.
+ *
  * @package Alien Ship
  * @since Alien Ship 0.1
  */
 
 get_header(); ?>
 
-		<div id="main-row" class="row">
-			<?php do_action( 'alienship_content_before' ); ?>
-			<div id="content" role="main" class="<?php echo apply_filters( 'alienship_content_container_class', 'col-sm-9' ); ?>">
+		<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-8' ); ?>">
+
+			<?php do_action( 'alienship_main_before' ); ?>
+			<main id="main" class="site-main" role="main">
 				<?php if ( have_posts() ) {
 
 					alienship_content_nav( 'nav-above' ); // display content nav above posts
@@ -65,10 +67,11 @@ get_header(); ?>
 				// No results
 				get_template_part( '/templates/parts/content', 'none' );
 
-			} //have_posts
-			do_action( 'alienship_content_after' ); ?>
-		</div><!-- #content -->
+			} //have_posts ?>
+		</main><!-- #main -->
+		<?php do_action( 'alienship_main_after' ); ?>
 
-		<?php get_sidebar(); ?>
-	</div><!-- .row -->
-<?php get_footer(); ?>
+	</div><!-- #primary -->
+<?php
+get_sidebar();
+get_footer(); ?>

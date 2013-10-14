@@ -29,5 +29,5 @@ get_header('hero'); ?>
 		alienship_do_sidebar( 'herowidgets' ); ?>
 	</div>
 
-</div><!-- #main -->
+</div><!-- #content -->
 <?php get_footer('hero'); ?>

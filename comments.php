@@ -19,9 +19,8 @@ if ( post_password_required() )
 	return;
 ?>
 
+<?php if ( have_comments() ) : ?>
 	<div id="comments" class="comments-area">
-
-	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
 			printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'alienship' ),
@@ -60,8 +59,8 @@ if ( post_password_required() )
 				</ul>
 			</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
-
-	<?php endif; // have_comments() ?>
+	</div><!-- #comments -->
+<?php endif; // have_comments() ?>
 
 	<?php
 	// If comments are closed and there are comments, let's leave a little note, shall we?
@@ -80,5 +79,3 @@ if ( post_password_required() )
 	);
 
 	comment_form( $args ); ?>
-
-</div><!-- #comments -->

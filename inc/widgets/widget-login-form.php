@@ -19,14 +19,14 @@ class alienship_Widget_Login extends WP_Widget {
 
 		/* Set up the widget options. */
 		$widget_options = array(
-			'classname' => 'login',
+			'classname'   => 'login',
 			'description' => esc_html__( 'A widget that allows users to log into your site.', 'alienship' )
 		);
 
 		/* Set up the widget control options. */
 		$control_options = array(
-			'width' => 800,
-			'height' => 350,
+			'width'   => 800,
+			'height'  => 350,
 			'id_base' => 'alienship-widget-login'
 		);
 
@@ -46,18 +46,18 @@ class alienship_Widget_Login extends WP_Widget {
 
 		/* Set up the arguments for wp_login_form(). */
 		$args = array(
-	 		'form_id' => 		!empty( $instance['form_id'] ) ? esc_attr( $instance['form_id'] ) : 'loginform',
-			'label_username' => 	esc_html( $instance['label_username'] ),
-			'label_password' =>	esc_html( $instance['label_password'] ),
-			'label_remember' => 	esc_html( $instance['label_remember'] ),
-			'label_log_in' =>		esc_html( $instance['label_log_in'] ),
-			'id_username' =>		esc_attr( $instance['id_username'] ),
-			'id_password' =>		esc_attr( $instance['id_password'] ),
-			'id_remember' =>		esc_attr( $instance['id_submit'] ),
-			'id_submit' =>		esc_attr( $instance['remember'] ),
-			'remember' =>		!empty( $instance['remember'] ) ? true : false,
-			'value_username' =>	esc_attr( $instance['value_username'] ),
-			'value_remember' =>	!empty( $instance['value_remember'] ) ? true : false,
+			'form_id'        => !empty( $instance['form_id'] ) ? esc_attr( $instance['form_id'] ) : 'loginform',
+			'label_username' => esc_html( $instance['label_username'] ),
+			'label_password' => esc_html( $instance['label_password'] ),
+			'label_remember' => esc_html( $instance['label_remember'] ),
+			'label_log_in'   => esc_html( $instance['label_log_in'] ),
+			'id_username'    => esc_attr( $instance['id_username'] ),
+			'id_password'    => esc_attr( $instance['id_password'] ),
+			'id_remember'    => esc_attr( $instance['id_submit'] ),
+			'id_submit'      => esc_attr( $instance['remember'] ),
+			'remember'       => !empty( $instance['remember'] ) ? true : false,
+			'value_username' => esc_attr( $instance['value_username'] ),
+			'value_remember' => !empty( $instance['value_remember'] ) ? true : false,
 			'echo' => false,
 		);
 
@@ -65,7 +65,7 @@ class alienship_Widget_Login extends WP_Widget {
 			$args['redirect'] = esc_url( $instance['redirect'] );
 
 		/* Get the logged in/out text. */
-		$logged_in_text = apply_filters( 'widget_text', $instance['logged_in_text'] );
+		$logged_in_text  = apply_filters( 'widget_text', $instance['logged_in_text'] );
 		$logged_out_text = apply_filters( 'widget_text', $instance['logged_out_text'] );
 
 		$show_avatar = !empty( $instance['show_avatar'] ) ? true : false;
@@ -127,27 +127,26 @@ class alienship_Widget_Login extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['title']          = strip_tags( $new_instance['title'] );
 		$instance['label_username'] = strip_tags( $new_instance['label_username'] );
 		$instance['label_password'] = strip_tags( $new_instance['label_password'] );
 		$instance['label_remember'] = strip_tags( $new_instance['label_remember'] );
-		$instance['label_log_in'] = strip_tags( $new_instance['label_log_in'] );
-		$instance['id_username'] = strip_tags( $new_instance['id_username'] );
-		$instance['id_password'] = strip_tags( $new_instance['id_password'] );
-		$instance['id_remember'] = strip_tags( $new_instance['id_remember'] );
-		$instance['id_submit'] = strip_tags( $new_instance['id_submit'] );
+		$instance['label_log_in']   = strip_tags( $new_instance['label_log_in'] );
+		$instance['id_username']    = strip_tags( $new_instance['id_username'] );
+		$instance['id_password']    = strip_tags( $new_instance['id_password'] );
+		$instance['id_remember']    = strip_tags( $new_instance['id_remember'] );
+		$instance['id_submit']      = strip_tags( $new_instance['id_submit'] );
 		$instance['value_username'] = strip_tags( $new_instance['value_username'] );
-
-		$instance['remember'] = ( isset( $new_instance['remember'] ) ? 1 : 0 );
+		$instance['remember']       = ( isset( $new_instance['remember'] ) ? 1 : 0 );
 		$instance['value_remember'] = ( isset( $new_instance['value_remember'] ) ? 1 : 0 );
-		$instance['show_avatar'] = ( isset( $new_instance['show_avatar'] ) ? 1 : 0 );
+		$instance['show_avatar']    = ( isset( $new_instance['show_avatar'] ) ? 1 : 0 );
 
 		if ( current_user_can('unfiltered_html') ) {
-			$instance['logged_in_text'] =  $new_instance['logged_in_text'];
-			$instance['logged_out_text'] =  $new_instance['logged_out_text'];
+			$instance['logged_in_text']  = $new_instance['logged_in_text'];
+			$instance['logged_out_text'] = $new_instance['logged_out_text'];
 		}
 		else {
-			$instance['logged_in_text'] = wp_filter_post_kses( $new_instance['logged_in_text'] );
+			$instance['logged_in_text']  = wp_filter_post_kses( $new_instance['logged_in_text'] );
 			$instance['logged_out_text'] = wp_filter_post_kses( $new_instance['logged_out_text'] );
 		}
 
@@ -163,28 +162,28 @@ class alienship_Widget_Login extends WP_Widget {
 
 		/* Set up the default form values. */
 		$defaults = array(
-			'title' => esc_attr__( 'Log In', 'alienship' ),
-			'label_username' => esc_attr__( 'Username', 'alienship' ),
-			'label_password' => esc_attr__( 'Password', 'alienship' ),
-			'label_log_in' => esc_attr__( 'Log In', 'alienship' ),
-			'label_remember' => esc_attr__('Remember Me', 'alienship' ),
-			'form_id' => 'loginform',
-			'id_username' => 'user_login',
-			'id_password' => 'user_pass',
-			'id_remember' => 'rememberme',
-			'id_submit' => 'wp-submit',
-			'remember' => true,
-			'value_remember' => false,
-			'value_username' => '',
-			'show_avatar' => true,
+			'title'           => esc_attr__( 'Log In', 'alienship' ),
+			'label_username'  => esc_attr__( 'Username', 'alienship' ),
+			'label_password'  => esc_attr__( 'Password', 'alienship' ),
+			'label_log_in'    => esc_attr__( 'Log In', 'alienship' ),
+			'label_remember'  => esc_attr__( 'Remember Me', 'alienship' ),
+			'form_id'         => 'loginform',
+			'id_username'     => 'user_login',
+			'id_password'     => 'user_pass',
+			'id_remember'     => 'rememberme',
+			'id_submit'       => 'wp-submit',
+			'remember'        => true,
+			'value_remember'  => false,
+			'value_username'  => '',
+			'show_avatar'     => true,
 			'logged_out_text' => esc_html__( 'Please log into the site.', 'alienship' ),
-			'logged_in_text' => esc_html__( 'Logged in as', 'alienship' )
+			'logged_in_text'  => esc_html__( 'Logged in as', 'alienship' )
 		);
 
 		/* Merge the user-selected arguments with the defaults. */
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
-		$logged_in_text = format_to_edit( $instance['logged_in_text'] );
+		$logged_in_text  = format_to_edit( $instance['logged_in_text'] );
 		$logged_out_text = format_to_edit( $instance['logged_out_text'] ); ?>
 
 		<div style="float: left; width: 31%; margin-right: 3.5%;">

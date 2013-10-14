@@ -71,7 +71,7 @@ function alienship_do_sidebar( $prefix = false ) {
 		_doing_it_wrong( __FUNCTION__, __( 'You must specify a prefix when using alienship_do_sidebar.', 'alienship' ), '1.0' );
 
 
-	if ( current_theme_supports( 'theme-layouts' ) && !is_admin() && 'layout-no-footer-widgets' !== theme_layouts_get_layout() || !current_theme_supports( 'theme-layouts' ) ):
+	if ( current_theme_supports( 'theme-layouts' ) && !is_admin() && 'layout-1c' !== theme_layouts_get_layout() || !current_theme_supports( 'theme-layouts' ) ):
 
 		// Get our grid class
 		$sidebar_class = alienship_sidebar_class( $prefix );
@@ -79,45 +79,55 @@ function alienship_do_sidebar( $prefix = false ) {
 		if ( $sidebar_class ): ?>
 
 			<div class="<?php echo $prefix; ?>-sidebar-row row">
-				<div id="<?php echo $prefix; ?>-sidebar-wrapper" class="complementary col-sm-12 <?php echo $prefix; ?>-wrapper">
-					<?php do_action( 'alienship_sidebar_container_inside_top' );
+				<?php do_action( 'alienship_sidebar_row_top' );
 
-					if ( is_active_sidebar( $prefix.'-1' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-1" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-1' ); ?>
-						</aside>
-					<?php endif;
-
-
-					if ( is_active_sidebar( $prefix.'-2' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-2" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-2' ); ?>
-						</aside>
-					<?php endif;
+				if ( is_active_sidebar( $prefix.'-1' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-1" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-1' ); ?>
+					</aside>
+				<?php endif;
 
 
-					if ( is_active_sidebar( $prefix.'-3' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-3" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-3' ); ?>
-						</aside>
-					<?php endif;
+				if ( is_active_sidebar( $prefix.'-2' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-2" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-2' ); ?>
+					</aside>
+				<?php endif;
 
 
-					if ( is_active_sidebar( $prefix.'-4' ) ): ?>
-						<aside id="<?php echo $prefix; ?>-sidebar-4" class="sidebar<?php echo $sidebar_class; ?>">
-							<?php dynamic_sidebar( $prefix.'-4' ); ?>
-						</aside>
-					<?php endif;
+				if ( is_active_sidebar( $prefix.'-3' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-3" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-3' ); ?>
+					</aside>
+				<?php endif;
 
-					do_action( 'alienship_sidebar_container_inside_bottom' ); ?>
-				</div> <!-- .complementary -->
-				<?php do_action( 'alienship_sidebar_container_after' ); ?>
+
+				if ( is_active_sidebar( $prefix.'-4' ) ): ?>
+					<aside id="<?php echo $prefix; ?>-sidebar-4" class="sidebar widget<?php echo $sidebar_class; ?>">
+						<?php dynamic_sidebar( $prefix.'-4' ); ?>
+					</aside>
+				<?php endif;
+
+				do_action( 'alienship_sidebar_row_bottom' ); ?>
 			</div><!-- .row -->
 
 		<?php endif; //$sidebar_class
 
 	endif; //current_theme_supports
 }
+
+
+
+/**
+ * Print the opening markup for the entry header.
+ *
+ * @since 1.2.0
+ *
+ */
+function alienship_entry_header_markup_open() {
+	echo '<header class="entry-header">';
+}
+add_action( 'alienship_entry_header', 'alienship_entry_header_markup_open', 5 );
 
 
 
@@ -129,21 +139,32 @@ function alienship_do_entry_title() {
 
 	$title = get_the_title();
 
-	if ( strlen( $title ) == 0 )
+	if ( 0 === mb_strlen( $title ) )
 		return;
 
 	if ( is_singular() ) {
-		$entry_title = '<header class="entry-header">';
-		$entry_title .= sprintf( '<h1 class="entry-title">%s</h1>', $title );
-		$entry_title .= '</header><!-- .entry-header -->';
+		$entry_title = sprintf( '<h1 class="entry-title">%s</h1>', $title );
+
 	} else {
-		$entry_title = '<header class="entry-header">';
-		$entry_title .= sprintf( '<h2 class="entry-title"><a class="entry-title" title="%s" rel="bookmark" href="%s">%s</a></h2>', the_title_attribute( 'echo=0' ), get_permalink(), $title );
-		$entry_title .= '</header><!-- .entry-header -->';
+		$entry_title = sprintf( '<h2 class="entry-title"><a class="entry-title" title="%s" rel="bookmark" href="%s">%s</a></h2>', the_title_attribute( 'echo=0' ), get_permalink(), $title );
+
 	}
 	echo apply_filters( 'alienship_entry_title_text', $entry_title );
 }
-add_action( 'alienship_entry_title', 'alienship_do_entry_title' );
+add_action( 'alienship_entry_header', 'alienship_do_entry_title' );
+
+
+
+/**
+ * Print the closing markup for the entry header.
+ *
+ * @since 1.2.0
+ */
+function alienship_entry_header_markup_close() {
+	echo '</header>';
+}
+add_action( 'alienship_entry_header', 'alienship_entry_header_markup_close', 15 );
+
 
 
 
@@ -170,24 +191,22 @@ function alienship_content_nav( $nav_id ) {
 
 	<nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'alienship' ); ?></h3>
-		<ul>
+		<ul class="pager">
 		<?php
-		if ( is_single() ) : // navigation links for single posts ?>
+		if ( is_single() ) : // navigation links for single posts
 
-			<ul class="pager">
-				<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&laquo;', 'Previous post link', 'alienship' ) . '</span> %title' );
-				next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&raquo;', 'Next post link', 'alienship' ) . '</span>' ); ?>
-			</ul>
+			previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&laquo;', 'Previous post link', 'alienship' ) . '</span> %title' );
+			next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&raquo;', 'Next post link', 'alienship' ) . '</span>' );
 
-		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
+		elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 
-		if ( get_next_posts_link() ) : ?>
-			<li class="pull-right"><?php next_posts_link( __( 'Next page <span class="meta-nav">&raquo;</span>', 'alienship' ) ); ?></li>
-		<?php endif;
+			if ( get_next_posts_link() ) : ?>
+				<li class="pull-right"><?php next_posts_link( __( 'Next page <span class="meta-nav">&raquo;</span>', 'alienship' ) ); ?></li>
+			<?php endif;
 
-		if ( get_previous_posts_link() ) : ?>
-			<li class="pull-left"><?php previous_posts_link( __( '<span class="meta-nav">&laquo;</span> Previous page', 'alienship' ) ); ?></li>
-		<?php endif;
+			if ( get_previous_posts_link() ) : ?>
+				<li class="pull-left"><?php previous_posts_link( __( '<span class="meta-nav">&laquo;</span> Previous page', 'alienship' ) ); ?></li>
+			<?php endif;
 
 		endif; ?>
 		</ul>
@@ -308,26 +327,16 @@ add_action( 'save_post', 'alienship_category_transient_flusher' );
 
 
 
-if ( ! function_exists( 'alienship_do_post_author' ) ) :
 /**
- * Prints HTML with meta information for the current post's author.
+ * Print the opening markup for the entry footer.
  *
- * @since 0.59
+ * @since 1.2.0
+ *
  */
-function alienship_do_post_author() {
-
-	// Return early if theme options are set to hide author
-	if ( ! of_get_option('alienship_post_author', 1 ) )
-		return;
-
-	printf( __( '<span class="byline"><i class="glyphicon glyphicon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
-		esc_html( get_the_author() )
-	);
+function alienship_entry_footer_markup_open() {
+	echo '<footer class="entry-footer">';
 }
-add_action( 'alienship_post_author', 'alienship_do_post_author' );
-endif;
+add_action( 'alienship_entry_footer', 'alienship_entry_footer_markup_open', 5 );
 
 
 
@@ -350,7 +359,67 @@ function alienship_do_posted_on() {
 		esc_html( get_the_date() )
 	);
 }
-add_action( 'alienship_posted_on', 'alienship_do_posted_on' );
+add_action( 'alienship_entry_footer', 'alienship_do_posted_on', 6 );
+endif;
+
+
+
+if ( ! function_exists( 'alienship_do_post_author' ) ) :
+/**
+ * Prints HTML with meta information for the current post's author.
+ *
+ * @since 0.59
+ */
+function alienship_do_post_author() {
+
+	// Return early if theme options are set to hide author
+	if ( ! of_get_option('alienship_post_author', 1 ) )
+		return;
+
+	printf( __( '<span class="byline"><i class="glyphicon glyphicon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
+		esc_html( get_the_author() )
+	);
+}
+add_action( 'alienship_entry_footer', 'alienship_do_post_author', 7 );
+endif;
+
+
+
+if ( ! function_exists( 'alienship_do_post_categories' ) ):
+/**
+ * Customize the list of categories displayed on index and on a post
+ * @since 0.3
+ */
+function alienship_do_post_categories() {
+
+	// Return early if theme options are set to hide categories
+	if ( ! of_get_option( 'alienship_post_categories', 1 ) && is_single() || ! of_get_option( 'alienship_post_categories_posts_page', 1 ) && ! is_single() )
+		return;
+
+	$post_categories = get_the_category();
+	if ( $post_categories ) {
+
+		echo '<span class="cat-links"><i class="glyphicon glyphicon-folder-open" title="Categories"></i> ';
+		$num_categories = count( $post_categories );
+		$category_count = 1;
+
+		foreach ( $post_categories as $category ) {
+			$html_before = '<a href="' . get_category_link( $category->term_id ) . '" class="cat-text">';
+			$html_after = '</a>';
+
+			if ( $category_count < $num_categories )
+				$sep = ', ';
+			elseif ( $category_count == $num_categories )
+				$sep = '';
+				echo $html_before . $category->name . $html_after . $sep;
+				$category_count++;
+			}
+		echo '</span>';
+	}
+}
+add_action( 'alienship_entry_footer', 'alienship_do_post_categories', 8 );
 endif;
 
 
@@ -388,44 +457,7 @@ function alienship_do_post_tags() {
 		echo '</span>';
 	}
 }
-add_action( 'alienship_post_tags', 'alienship_do_post_tags' );
-endif;
-
-
-
-if ( ! function_exists( 'alienship_do_post_categories' ) ):
-/**
- * Customize the list of categories displayed on index and on a post
- * @since 0.3
- */
-function alienship_do_post_categories() {
-
-	// Return early if theme options are set to hide categories
-	if ( ! of_get_option( 'alienship_post_categories', 1 ) && is_single() || ! of_get_option( 'alienship_post_categories_posts_page', 1 ) && ! is_single() )
-		return;
-
-	$post_categories = get_the_category();
-	if ( $post_categories ) {
-
-		echo '<span class="cat-links"><i class="glyphicon glyphicon-folder-open" title="Categories"></i> ';
-		$num_categories = count( $post_categories );
-		$category_count = 1;
-
-		foreach ( $post_categories as $category ) {
-			$html_before = '<a href="' . get_category_link( $category->term_id ) . '" class="cat-text">';
-			$html_after = '</a>';
-
-			if ( $category_count < $num_categories )
-				$sep = ', ';
-			elseif ( $category_count == $num_categories )
-				$sep = '';
-				echo $html_before . $category->name . $html_after . $sep;
-				$category_count++;
-			}
-		echo '</span>';
-	}
-}
-add_action( 'alienship_post_categories', 'alienship_do_post_categories' );
+add_action( 'alienship_entry_footer', 'alienship_do_post_tags', 9 );
 endif;
 
 
@@ -448,15 +480,29 @@ function alienship_do_post_comments_link() {
 		</span>
 	<?php }
 }
-add_action( 'alienship_post_comments_link', 'alienship_do_post_comments_link' );
+add_action( 'alienship_entry_footer', 'alienship_do_post_comments_link', 15 );
 endif;
+
+
+
+/**
+ * Print the closing markup for the entry header.
+ *
+ * @since 1.2.0
+ */
+function alienship_entry_footer_markup_close() {
+	echo '</footer>';
+}
+add_action( 'alienship_entry_footer', 'alienship_entry_footer_markup_close', 15 );
 
 
 
 if ( ! function_exists( 'alienship_header_title_and_description' ) ):
 /**
  * Display site title and description below Top Menu navbar
+ *
  * @since .55
+ * @deprecated since 1.1.1. Use do_action('alienship_site_title') and do_action('alienship_site_description') instead.
  */
 function alienship_header_title_and_description() {
 
@@ -481,6 +527,53 @@ endif;
 
 
 
+if ( ! function_exists( 'alienship_do_site_title' ) ):
+/**
+ * Displays site title at top of page
+ *
+ * @since 1.1.1
+ */
+function alienship_do_site_title() {
+
+	// Use H1 on home, paragraph elsewhere
+	$element = is_front_page() || is_home() ? 'h1' : 'p';
+
+	// Title content that goes inside wrapper
+	$site_name = sprintf( '<a href="%s" title="%s" rel="home">%s</a>', trailingslashit( home_url() ), esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
+
+	// Put it all together
+	$title = '<' . $element . ' id="site-title" class="site-title">' . $site_name . '</' . $element .'>';
+
+	// Echo the title
+	echo apply_filters( 'alienship_site_title_content', $title );
+}
+add_action( 'alienship_site_title', 'alienship_do_site_title' );
+endif;
+
+
+
+if( ! function_exists( 'alienship_do_site_description' ) ):
+/**
+ * Displays site description at top of page
+ *
+ * @since 1.1.1
+ */
+function alienship_do_site_description() {
+
+	// Use H2 on home, paragraph elsewhere
+	$element = is_front_page() || is_home() ? 'h2' : 'p';
+
+	// Put it all together
+	$description = '<' . $element . ' id="site-description" class="site-description">' . esc_html( get_bloginfo( 'description' ) ) . '</' . $element . '>';
+
+	// Echo the description
+	echo apply_filters( 'alienship_site_description_content', $description );
+}
+add_action( 'alienship_site_description', 'alienship_do_site_description' );
+endif;
+
+
+
 if ( ! function_exists( 'alienship_featured_posts_grid' ) ):
 /**
  * Display featured posts in a grid
@@ -488,7 +581,11 @@ if ( ! function_exists( 'alienship_featured_posts_grid' ) ):
  */
 function alienship_featured_posts_grid() {
 
-	$featured_query = new WP_Query( 'tag_id=' . of_get_option( 'alienship_featured_posts_tag' ) . '&posts_per_page=' . of_get_option( 'alienship_featured_posts_maxnum' ) . '' );
+	$args = array(
+		'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
+		'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
+		);
+	$featured_query = new WP_Query( $args );
 
 	if ( $featured_query->have_posts() ) { ?>
 		<ul id="featured-posts-grid" class="block-grid mobile two-up">
@@ -511,7 +608,11 @@ if ( ! function_exists( 'alienship_featured_posts_slider' ) ):
  */
 function alienship_featured_posts_slider() {
 
-	$featured_query = new WP_Query( 'tag_id=' . of_get_option( 'alienship_featured_posts_tag' ) . '&posts_per_page=' . of_get_option( 'alienship_featured_posts_maxnum' ) . '' );
+	$args = array(
+		'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
+		'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
+		);
+	$featured_query = new WP_Query( $args );
 
 	if ( $featured_query->have_posts() ) { ?>
 		<div class="row">
@@ -816,4 +917,76 @@ function alienship_the_attached_image() {
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
 }
+endif;
+
+
+
+if ( ! function_exists( 'alienship_get_header_image' ) ):
+/**
+ * Returns header image and accompanying markup
+ *
+ * @since 1.1.1
+ * @return array $header_image_attributes (filtered) Header image attributes
+ */
+function alienship_get_header_image() {
+
+	global $post;
+	$output = '';
+
+	// Get the header image
+	if ( get_header_image() ) {
+
+		$header_image_width = get_theme_support( 'custom-header', 'width' );
+		$header_image_height = get_theme_support( 'custom-header', 'height' );
+
+		$output = '<a href="' . esc_url( home_url( '/' ) ) . '">';
+
+			// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+			if ( is_singular() && has_post_thumbnail( $post->ID )
+				/* $src, $width, $height */
+				&& ( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_height ) ) )
+				&& $image[1] >= $header_image_width ) {
+
+				// We have a LARGE image
+				$featured_header_image = 'yes';
+				$output .= get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+
+			} else {
+
+				$featured_header_image = 'no';
+				$header_image_width  = get_custom_header()->width;
+				$header_image_height = get_custom_header()->height;
+				$output .= '<img src="' . get_header_image() . '" width="' . $header_image_width . '" height="' . $header_image_height . '" class="header-image" alt="">';
+			}
+		$output .= '</a>';
+
+		$header_image_attributes = array(
+			'width'    => $header_image_width,
+			'height'   => $header_image_height,
+			'featured' => $featured_header_image,
+			'output'   => $output,
+		);
+
+		return apply_filters( 'alienship_header_image_attributes', $header_image_attributes );
+
+	}
+
+}
+endif;
+
+
+
+if( ! function_exists( 'alienship_do_header_image' ) ):
+/**
+ * Echoes the header image and accompanying markup
+ *
+ * @since 1.1.1
+ */
+function alienship_do_header_image() {
+
+	$output = alienship_get_header_image();
+	if ( $output )
+		echo apply_filters( 'alienship_header_image_output', $output['output'] );
+}
+add_action( 'alienship_header_image', 'alienship_do_header_image' );
 endif;

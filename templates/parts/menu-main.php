@@ -7,7 +7,7 @@
  */
 ?>
 <!-- Main menu -->
-	<nav class="<?php echo apply_filters( 'alienship_main_navbar_class' , 'navbar navbar-default' ); ?>" role="navigation">
+	<nav class="<?php echo apply_filters( 'alienship_main_navbar_class' , 'navbar navbar-default main-navigation' ); ?>" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -21,7 +21,16 @@
 		</div>
 
 		<div class="collapse navbar-collapse navbar-ex2-collapse">
-			<?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) ); ?>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'main',
+				'depth'          => 2,
+				'container'      => false,
+				'menu_class'     => 'nav navbar-nav',
+				'walker'         => new wp_bootstrap_navwalker(),
+				'fallback_cb'    => 'wp_bootstrap_navwalker::fallback'
+				)
+			);
+			?>
 		</div>
 	</nav>
 <!-- End Main menu -->

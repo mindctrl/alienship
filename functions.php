@@ -37,6 +37,7 @@ function alienship_setup() {
 
 	// Register the navigation menus.
 	locate_template( '/inc/menus.php', true );
+	locate_template( '/inc/wp_bootstrap_navwalker.php', true );
 
 	// Register sidebars
 	locate_template( '/inc/sidebars.php', true );
@@ -46,6 +47,9 @@ function alienship_setup() {
 
 	// Load theme options framework
 	locate_template( '/inc/options-panel.php', true );
+
+	// Customizer
+	locate_template( '/inc/customizer.php', true );
 
 	// Breadcrumbs
 	if ( of_get_option( 'alienship_breadcrumbs',1) ) {
@@ -58,8 +62,8 @@ function alienship_setup() {
 	// Load the CSS
 	locate_template( '/inc/stylesheets.php', true );
 
-	// Load Bootstrap javascript
-	locate_template( '/inc/bootstrap-js.php', true );
+	// Load scripts
+	locate_template( '/inc/scripts.php', true );
 
 	// Load Theme Layouts extension and add theme support for desired layouts
 	locate_template( '/inc/theme-layouts.php', true );

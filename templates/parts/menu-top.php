@@ -7,7 +7,7 @@
  */
 ?>
 <!-- Top Menu -->
-	<nav class="<?php echo apply_filters( 'alienship_top_navbar_class' , 'navbar navbar-default' ); ?>" role="navigation">
+	<nav class="<?php echo apply_filters( 'alienship_top_navbar_class' , 'navbar navbar-default top-navigation' ); ?>" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -21,9 +21,17 @@
 		</div>
 
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<?php wp_nav_menu( array( 'theme_location' => 'top', 'container' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new alienship_Navbar_Nav_Walker(), 'fallback_cb' => false ) );
+			<?php wp_nav_menu( array(
+				'theme_location' => 'top',
+				'depth'          => 2,
+				'container'      => false,
+				'menu_class'     => 'nav navbar-nav',
+				'walker'         => new wp_bootstrap_navwalker(),
+				'fallback_cb'    => 'wp_bootstrap_navwalker::fallback'
+				)
+			);
 
-			if ( of_get_option('alienship_search_bar', '1') ) { ?>
+			if ( of_get_option( 'alienship_search_bar', '1' ) ) { ?>
 				<form id="searchform" class="navbar-form navbar-right" role="search" action="<?php echo site_url(); ?>" method="get">
 					<div class="form-group">
 						<input id="s" name="s" type="text" class="form-control" placeholder="<?php esc_attr_e( 'Search &hellip;', 'alienship' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>">

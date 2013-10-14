@@ -20,10 +20,7 @@
 
 		<div class="grid-footer">
 			<p class="grid-footer-meta">
-				<?php
-				do_action( 'alienship_posted_on' );
-				edit_post_link( __( '<span class="edit-link pull-right"><i class="glyphicon glyphicon-pencil"></i>', 'alienship' ), '', '</span>' );
-				?>
+				<?php alienship_do_posted_on(); ?>
 			</p>
 		</div><!-- #grid-footer -->
 	</li>

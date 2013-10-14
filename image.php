@@ -9,7 +9,9 @@
 get_header(); ?>
 
 	<div id="primary" class="image-attachment">
-		<div id="content" role="main">
+
+		<?php do_action( 'alienship_main_before' ); ?>
+		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -41,6 +43,7 @@ get_header(); ?>
 						</nav>
 					</header>
 
+					<?php do_action( 'alienship_entry_content_before' ); ?>
 					<div class="entry-content">
 
 						<div class="entry-attachment">
@@ -60,6 +63,7 @@ get_header(); ?>
 						wp_link_pages();
 						?>
 					</div><!-- .entry-content -->
+					<?php do_action( 'alienship_entry_content_after' ); ?>
 
 					<footer class="entry-meta">
 						<?php
@@ -85,7 +89,9 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #content -->
+		</main><!-- #main -->
+		<?php do_action( 'alienship_main_after' ); ?>
+
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

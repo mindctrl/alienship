@@ -12,5 +12,9 @@ function alienship_bootstrap_js_loader() {
 
 	// Bootstrap helper script
 	wp_enqueue_script( 'alienship-helper.js', alienship_locate_template_uri( 'js/alienship-helper.js' ), array('jquery'),'1.0.0', true);
+
+	// Comment reply script
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'alienship_bootstrap_js_loader' );

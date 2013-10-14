@@ -6,7 +6,14 @@ Version 1.2.0 - Under development
 - Moved comment reply script from header.php to /inc/scripts.php.
 - Refactored the featured image/header image code.
 - Implemented Edward McIntyre's great custom nav walker class, which supports glyphicons, dividers, dropdown headers, and links with a disabled state. See https://github.com/twittem/wp-bootstrap-navwalker for more info.
-
+- Refactored the HTML element structure of all templates.
+- Renamed some hooks and made them more consistent throughout the templates.
+- Brought back header-hero.php.
+- Added theme customizer support.
+- Changed #primary from 9 columns to 8 columns and #secondary from 3 columns to 4 columns.
+- Removed .well class from #sidebar.
+- Removed max-width: 1140px from #page. It now inherits max-width 1170px from the container class.
+- Changed the header image width to 1170px to match the #page change.
 
 
 

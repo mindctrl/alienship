@@ -1,6 +1,6 @@
 == Change log ==
-Version 1.2.0 - Under development
----------------------------------
+Version 1.2.0 - October 14, 2013
+--------------------------------
 - Started revamping the template tags and hooks system. Handling of entry title and entry meta template tags has been changed. Some template hooks have been renamed, and location of some has been changed to be more accurate and consistent.
 - Renamed /inc/bootstrap-js.php to /inc/scripts.php.
 - Moved comment reply script from header.php to /inc/scripts.php.

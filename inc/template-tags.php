@@ -395,7 +395,7 @@ if ( ! function_exists( 'alienship_do_post_categories' ) ):
 function alienship_do_post_categories() {
 
 	// Return early if theme options are set to hide categories
-	if ( ! of_get_option( 'alienship_post_categories', 1 ) && is_single() || ! of_get_option( 'alienship_post_categories_posts_page', 1 ) && ! is_single() )
+	if ( ! of_get_option( 'alienship_post_categories', 1 ) )
 		return;
 
 	$post_categories = get_the_category();
@@ -432,7 +432,7 @@ if ( ! function_exists( 'alienship_do_post_tags' ) ):
 function alienship_do_post_tags() {
 
 	// Return early if theme options are set to hide tags
-	if ( ! of_get_option( 'alienship_post_tags', 1 ) && is_single() || ! of_get_option( 'alienship_post_tags_posts_page', 1 ) && ! is_single() )
+	if ( ! of_get_option( 'alienship_post_tags', 1 ) )
 		return;
 
 	$post_tags = get_the_tags();

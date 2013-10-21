@@ -28,4 +28,4 @@ do_action( 'alienship_head' ); ?>
 		get_template_part( '/templates/parts/menu', 'top' );
 
 	do_action( 'alienship_content_before' ); ?>
-	<div id="content" class="site-content row">
+	<div id="content" class="site-content jumbotron">

@@ -11,6 +11,9 @@ License URI: license.txt
 
 /* Typography
 ---------------------------- */
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 .entry-title {
 	line-height: 40px;
 	margin-bottom: 0;
@@ -78,6 +81,9 @@ License URI: license.txt
 		position: static;
 		top: 0px;
 	}
+}
+.breadcrumb-trail {
+	padding: 8px 15px;
 }
 /* End of Navigation
 ----------------------------------------------- */
@@ -162,6 +168,7 @@ License URI: license.txt
 
 #page {
 	margin: 0px auto;
+	max-width: 1170px;
 }
 #main-row {
 	margin-top: 10px;

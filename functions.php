@@ -275,3 +275,19 @@ function alienship_layouts_strings() {
 	return $strings;
 }
 add_filter( 'theme_layouts_strings', 'alienship_layouts_strings' );
+
+
+
+/**
+ * Apply the theme stylesheet to the visual editor.
+ *
+ * @since 1.2.1
+ * @uses add_editor_style()
+ * @uses get_stylesheet_uri()
+ */
+function alienship_editor_styles() {
+
+	add_editor_style( get_stylesheet_uri() );
+	add_editor_style( 'css/bootstrap.min.css' );
+}
+add_action( 'init', 'alienship_editor_styles' );

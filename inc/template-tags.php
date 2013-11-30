@@ -395,7 +395,7 @@ if ( ! function_exists( 'alienship_do_post_categories' ) ):
 function alienship_do_post_categories() {
 
 	// Return early if theme options are set to hide categories
-	if ( ! of_get_option( 'alienship_post_categories', 1 ) && is_single() || ! of_get_option( 'alienship_post_categories_posts_page', 1 ) && ! is_single() )
+	if ( ! of_get_option( 'alienship_post_categories', 1 ) )
 		return;
 
 	$post_categories = get_the_category();
@@ -432,7 +432,7 @@ if ( ! function_exists( 'alienship_do_post_tags' ) ):
 function alienship_do_post_tags() {
 
 	// Return early if theme options are set to hide tags
-	if ( ! of_get_option( 'alienship_post_tags', 1 ) && is_single() || ! of_get_option( 'alienship_post_tags_posts_page', 1 ) && ! is_single() )
+	if ( ! of_get_option( 'alienship_post_tags', 1 ) )
 		return;
 
 	$post_tags = get_the_tags();
@@ -676,22 +676,49 @@ function alienship_do_archive_page_title() { ?>
 		<h1 class="page-title">
 			<?php
 			if ( is_category() ) {
-				printf( __( 'Category Archives: %s', 'alienship' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+				single_cat_title();
 
 			} elseif ( is_tag() ) {
-				printf( __( 'Tag Archives: %s', 'alienship' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+				single_tag_title();
 
 			} elseif ( is_author() ) {
-				printf( __( 'Author Archives: %s', 'alienship' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+				printf( __( 'Author: %s', 'alienship' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 
 			} elseif ( is_day() ) {
-				printf( __( 'Daily Archives: %s', 'alienship' ), '<span>' . get_the_date() . '</span>' );
+				printf( __( 'Day: %s', 'alienship' ), '<span>' . get_the_date() . '</span>' );
 
 			} elseif ( is_month() ) {
-				printf( __( 'Monthly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+				printf( __( 'Month: %s', 'alienship' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 			} elseif ( is_year() ) {
-				printf( __( 'Yearly Archives: %s', 'alienship' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+				printf( __( 'Year: %s', 'alienship' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+
+			} elseif ( is_tax( 'post_format', 'post-format-aside' ) ) {
+				_e( 'Asides', 'alienship' );
+
+			} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+				_e( 'Galleries', 'alienship');
+
+			} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+				_e( 'Images', 'alienship');
+
+			} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+				_e( 'Videos', 'alienship' );
+
+			} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+				_e( 'Quotes', 'alienship' );
+
+			} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+				_e( 'Links', 'alienship' );
+
+			} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+				_e( 'Statuses', 'alienship' );
+
+			} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+				_e( 'Audios', 'alienship' );
+
+			} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+				_e( 'Chats', 'alienship' );
 
 			} else {
 				_e( 'Archives', 'alienship' );

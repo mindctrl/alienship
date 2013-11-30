@@ -1,6 +1,20 @@
 == Change log ==
-Version 1.2.0 - Under development
+Version 1.2.1 - November 30, 2013
 ---------------------------------
+- Combined options for displaying post categories and tags on single and archive views.
+- Fixed horizontal scrollbar issue on Hero template
+- Added content-video.php template part for video post format.
+- Updated the alienship_archive_page_title template tag. Removed the word "archives" from the titles for a cleaner look. Added support for post format taxonomies.
+- Updated author.php template to use alienship_archive_page_title.
+- Minor style tweaks.
+- add_editor_style support to the visual editor.
+- Updated Bootstrap to 3.0.2.
+- Updated HTML5 Shiv to 3.7.0
+
+
+
+Version 1.2.0 - October 14, 2013
+--------------------------------
 - Started revamping the template tags and hooks system. Handling of entry title and entry meta template tags has been changed. Some template hooks have been renamed, and location of some has been changed to be more accurate and consistent.
 - Renamed /inc/bootstrap-js.php to /inc/scripts.php.
 - Moved comment reply script from header.php to /inc/scripts.php.

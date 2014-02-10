@@ -1,9 +1,7 @@
 <?php
-
 /*
  * Loads the Options Panel
  */
-
 if ( !function_exists( 'optionsframework_init' ) ) {
 
 	/* Set the file path based on whether we're in a child theme or parent theme */

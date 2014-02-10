@@ -1,12 +1,23 @@
 <?php
+/**
+ * @package   Options_Framework
+ * @author    Devin Price <devin@wptheming.com>
+ * @license   GPL-2.0+
+ * @link      http://wptheming.com
+ * @copyright 2013 WP Theming
+ */
 
 /* Text */
 
 add_filter( 'of_sanitize_text', 'sanitize_text_field' );
 
+/* Password */
+
+add_filter( 'of_sanitize_password', 'sanitize_text_field' );
+
 /* Textarea */
 
-function of_sanitize_textarea($input) {
+function of_sanitize_textarea(  $input) {
 	global $allowedposttags;
 	$output = wp_kses( $input, $allowedposttags);
 	return $output;
@@ -44,7 +55,7 @@ function of_sanitize_multicheck( $input, $option ) {
 	$output = '';
 	if ( is_array( $input ) ) {
 		foreach( $option['options'] as $key => $value ) {
-			$output[$key] = "0";
+			$output[$key] = false;
 		}
 		foreach( $input as $key => $value ) {
 			if ( array_key_exists( $key, $option['options'] ) && $value ) {
@@ -88,22 +99,20 @@ add_filter( 'of_sanitize_editor', 'of_sanitize_editor' );
 
 /* Allowed Tags */
 
-function of_sanitize_allowedtags($input) {
+function of_sanitize_allowedtags( $input ) {
 	global $allowedtags;
-	$output = wpautop(wp_kses( $input, $allowedtags));
+	$output = wpautop( wp_kses( $input, $allowedtags ) );
 	return $output;
 }
 
 /* Allowed Post Tags */
 
-function of_sanitize_allowedposttags($input) {
+function of_sanitize_allowedposttags( $input ) {
 	global $allowedposttags;
 	$output = wpautop(wp_kses( $input, $allowedposttags));
 	return $output;
 }
-
 add_filter( 'of_sanitize_info', 'of_sanitize_allowedposttags' );
-
 
 /* Check that the key value sent is valid */
 
@@ -229,10 +238,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'options_framework_theme' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'options_framework_theme' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'options_framework_theme' ),
-		'repeat'    => __( 'Repeat All', 'options_framework_theme' ),
+		'no-repeat' => __( 'No Repeat', 'textdomain' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'textdomain' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'textdomain' ),
+		'repeat'    => __( 'Repeat All', 'textdomain' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -245,15 +254,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'options_framework_theme' ),
-		'top center'    => __( 'Top Center', 'options_framework_theme' ),
-		'top right'     => __( 'Top Right', 'options_framework_theme' ),
-		'center left'   => __( 'Middle Left', 'options_framework_theme' ),
-		'center center' => __( 'Middle Center', 'options_framework_theme' ),
-		'center right'  => __( 'Middle Right', 'options_framework_theme' ),
-		'bottom left'   => __( 'Bottom Left', 'options_framework_theme' ),
-		'bottom center' => __( 'Bottom Center', 'options_framework_theme' ),
-		'bottom right'  => __( 'Bottom Right', 'options_framework_theme')
+		'top left'      => __( 'Top Left', 'textdomain' ),
+		'top center'    => __( 'Top Center', 'textdomain' ),
+		'top right'     => __( 'Top Right', 'textdomain' ),
+		'center left'   => __( 'Middle Left', 'textdomain' ),
+		'center center' => __( 'Middle Center', 'textdomain' ),
+		'center right'  => __( 'Middle Right', 'textdomain' ),
+		'bottom left'   => __( 'Bottom Left', 'textdomain' ),
+		'bottom center' => __( 'Bottom Center', 'textdomain' ),
+		'bottom right'  => __( 'Bottom Right', 'textdomain')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -266,8 +275,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'options_framework_theme' ),
-		'fixed'  => __( 'Fixed in Place', 'options_framework_theme')
+		'scroll' => __( 'Scroll Normally', 'textdomain' ),
+		'fixed'  => __( 'Fixed in Place', 'textdomain')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -325,7 +334,7 @@ function of_recognized_font_faces() {
 		'tahoma'    => 'Tahoma, Geneva',
 		'palatino'  => 'Palatino',
 		'helvetica' => 'Helvetica*'
-	);
+		);
 	return apply_filters( 'of_recognized_font_faces', $default );
 }
 
@@ -341,11 +350,11 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'options_framework_theme' ),
-		'italic'      => __( 'Italic', 'options_framework_theme' ),
-		'bold'        => __( 'Bold', 'options_framework_theme' ),
-		'bold italic' => __( 'Bold Italic', 'options_framework_theme' )
-	);
+		'normal'      => __( 'Normal', 'textdomain' ),
+		'italic'      => __( 'Italic', 'textdomain' ),
+		'bold'        => __( 'Bold', 'textdomain' ),
+		'bold italic' => __( 'Bold Italic', 'textdomain' )
+		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }
 

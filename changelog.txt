@@ -1,4 +1,12 @@
 == Change log ==
+Version 1.2.3 - February 10, 2014
+---------------------------------
+- Changed header image from 1170px width to 1140px width to account for the 30px of padding the .container class on #page.
+- Updated fixed navbar position for WP 3.8 change.
+- Minor style updates.
+- Updated Options Framework to work well with WP 3.8
+
+
 Version 1.2.2 - December 9, 2013
 --------------------------------
 - Updated Bootstrap to 3.0.3

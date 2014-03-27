@@ -71,7 +71,7 @@ function alienship_do_sidebar( $prefix = false ) {
 		_doing_it_wrong( __FUNCTION__, __( 'You must specify a prefix when using alienship_do_sidebar.', 'alienship' ), '1.0' );
 
 
-	if ( current_theme_supports( 'theme-layouts' ) && !is_admin() && 'layout-1c' !== theme_layouts_get_layout() || !current_theme_supports( 'theme-layouts' ) ):
+	if ( current_theme_supports( 'theme-layouts' ) && 'layout-1c' !== theme_layouts_get_layout() || 'footer' == $prefix || !current_theme_supports( 'theme-layouts' ) ):
 
 		// Get our grid class
 		$sidebar_class = alienship_sidebar_class( $prefix );

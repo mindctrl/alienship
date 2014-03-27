@@ -14,42 +14,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<?php
 			do_action( 'alienship_archive_page_title' );
-			alienship_archive_sticky_posts(); // sticky post query
+
 			if ( have_posts() ) {
 
-				rewind_posts();
-
 				alienship_content_nav( 'nav-above' );
-
-				// do the main query without stickies
-				$sticky = get_option( 'sticky_posts' );
-
-				if ( is_category() && ! empty( $sticky ) ) {
-					$cat_ID = get_query_var('cat');
-					$args = array(
-						'cat'                 => $cat_ID,
-						'post_status'         => 'publish',
-						'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-						'ignore_sticky_posts' => 1,
-						'paged'               => $paged
-					);
-					$wp_query = new WP_Query( $args );
-				}
-				elseif (is_tag() && ! empty( $sticky ) ) {
-					$current_tag = get_queried_object_id();
-					$args = array(
-						'tag_id'              => $current_tag,
-						'post_status'         => 'publish',
-						'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-						'ignore_sticky_posts' => 1,
-						'paged'               => $paged
-					);
-					$wp_query = new WP_Query( $args );
-
-				}
-				else {
-					new WP_Query();
-				}
 
 				// Start the Loop
 				while ( $wp_query->have_posts() ) : $wp_query->the_post();

@@ -1,11 +1,11 @@
 == Change log ==
-Version 1.2.4 - Under development
----------------------------------
+Version 1.2.4 - March 27, 2014
+------------------------------
 - Update Bootstrap to 3.1.1
 - Removed archive sticky posts functionality.
 - Added transient caching to the featured posts query.
 - Clarified theme layout strings and removed redundant "default".
-
+- Footer widgets now display in full-width post layout.
 
 
 Version 1.2.3 - February 10, 2014

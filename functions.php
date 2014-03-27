@@ -67,7 +67,7 @@ function alienship_setup() {
 
 	// Load Theme Layouts extension and add theme support for desired layouts
 	locate_template( '/inc/theme-layouts.php', true );
-	add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ) );
+	add_theme_support( 'theme-layouts', array( '2c-r', '1c' ) );
 
 	/**
 	 * Make theme available for translation
@@ -267,8 +267,7 @@ add_filter( 'wp_title', 'alienship_wp_title', 10, 2 );
 function alienship_layouts_strings() {
 
 	$strings = array(
-		'default'           => __( 'Default', 'alienship' ),
-		'2c-l'              => __( 'Content left. Sidebar right.', 'alienship' ),
+		'default'           => __( 'Content left. Sidebar right.', 'alienship' ),
 		'2c-r'              => __( 'Content right. Sidebar left.', 'alienship' ),
 		'1c'                => __( 'Full width. No sidebar.', 'alienship' ),
 	);
@@ -291,3 +290,18 @@ function alienship_editor_styles() {
 	add_editor_style( 'css/bootstrap.min.css' );
 }
 add_action( 'init', 'alienship_editor_styles' );
+
+
+
+/**
+ * Deletes featured posts transient
+ *
+ * @since 1.2.4
+ */
+function alienship_delete_transients() {
+
+	delete_transient( 'alienship_featured_posts' );
+}
+add_action( 'save_post', 'alienship_delete_transients' );
+add_action( 'wp_trash_post', 'alienship_delete_transients' );
+add_action( 'delete_post', 'alienship_delete_transients' );

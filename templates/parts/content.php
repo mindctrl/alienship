@@ -32,7 +32,7 @@ do_action( 'alienship_post_before' ); ?>
 		// On singular views, display post thumbnails in the post body if it's not big enough to be a header image
 		else {
 			$header_image = alienship_get_header_image( get_the_ID() );
-			if ( has_post_thumbnail() && 'no' == $header_image['featured'] ) { ?>
+			if ( has_post_thumbnail() && 'yes' != $header_image['featured'] ) { ?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Link to %s', 'alienship' ), the_title_attribute( 'echo=0' ) ); ?>">
 					<?php echo get_the_post_thumbnail( $post->ID, 'medium', array( 'class' => 'alignright', 'title' => "" ) ); ?>

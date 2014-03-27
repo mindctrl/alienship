@@ -71,7 +71,7 @@ function alienship_do_sidebar( $prefix = false ) {
 		_doing_it_wrong( __FUNCTION__, __( 'You must specify a prefix when using alienship_do_sidebar.', 'alienship' ), '1.0' );
 
 
-	if ( current_theme_supports( 'theme-layouts' ) && !is_admin() && 'layout-1c' !== theme_layouts_get_layout() || !current_theme_supports( 'theme-layouts' ) ):
+	if ( current_theme_supports( 'theme-layouts' ) && 'layout-1c' !== theme_layouts_get_layout() || 'footer' == $prefix || !current_theme_supports( 'theme-layouts' ) ):
 
 		// Get our grid class
 		$sidebar_class = alienship_sidebar_class( $prefix );
@@ -574,6 +574,31 @@ endif;
 
 
 
+/**
+ * Gets featured posts
+ *
+ * @since 1.2.4
+ */
+function alienship_get_featured_posts() {
+
+	// Check for cached featured posts
+	$featured_query = get_transient( 'alienship_featured_posts' );
+
+	if ( false == $featured_query ) {
+		// No featured posts in cache
+		$args = array(
+			'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
+			'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
+		);
+		$featured_query = new WP_Query( $args );
+
+		// Save featured posts in cache for one hour
+		set_transient( 'alienship_featured_posts', $featured_query, 3600 );
+	}
+	return $featured_query;
+}
+
+
 if ( ! function_exists( 'alienship_featured_posts_grid' ) ):
 /**
  * Display featured posts in a grid
@@ -581,11 +606,7 @@ if ( ! function_exists( 'alienship_featured_posts_grid' ) ):
  */
 function alienship_featured_posts_grid() {
 
-	$args = array(
-		'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
-		'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
-		);
-	$featured_query = new WP_Query( $args );
+	$featured_query = alienship_get_featured_posts();
 
 	if ( $featured_query->have_posts() ) { ?>
 		<ul id="featured-posts-grid" class="block-grid mobile two-up">
@@ -608,11 +629,7 @@ if ( ! function_exists( 'alienship_featured_posts_slider' ) ):
  */
 function alienship_featured_posts_slider() {
 
-	$args = array(
-		'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
-		'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
-		);
-	$featured_query = new WP_Query( $args );
+	$featured_query = alienship_get_featured_posts();
 
 	if ( $featured_query->have_posts() ) { ?>
 		<div class="row">
@@ -735,94 +752,6 @@ function alienship_do_archive_page_title() { ?>
 	</header>
 <?php }
 add_action( 'alienship_archive_page_title', 'alienship_do_archive_page_title' );
-endif;
-
-
-
-if ( ! function_exists( 'alienship_archive_sticky_posts' ) ):
-/**
- * Display sticky posts on archive pages
- * @since .594
- */
-function alienship_archive_sticky_posts() {
-
-	$sticky = get_option( 'sticky_posts' );
-	if ( ! empty( $sticky ) ) {
-		global $do_not_duplicate, $page, $paged;
-		$do_not_duplicate = array();
-
-		if ( is_category() ) {
-			$cat_ID = get_query_var( 'cat' );
-			$sticky_args = array(
-				'post__in'    => $sticky,
-				'cat'         => $cat_ID,
-				'post_status' => 'publish',
-				'paged'       => $paged
-			);
-
-		} elseif ( is_tag() ) {
-			$current_tag = get_queried_object_id();
-			$sticky_args = array(
-				'post__in'     => $sticky,
-				'tag_id'       => $current_tag,
-				'post_status'  => 'publish',
-				'paged'        => $paged
-			);
-		}
-
-		if ( ! empty( $sticky_args ) ):
-			$sticky_posts = new WP_Query( $sticky_args );
-
-			if ( $sticky_posts->have_posts() ):
-				global $post;
-
-				while ( $sticky_posts->have_posts() ) : $sticky_posts->the_post();
-					array_push( $do_not_duplicate, $post->ID );
-					get_template_part( '/templates/parts/content', get_post_format() );
-				endwhile;
-			endif; // if have posts
-		endif; // if ( ! empty( $sticky_args ) )
-	} //if not empty sticky
-}
-endif;
-
-
-
-if ( ! function_exists( 'alienship_archive_get_posts' ) ):
-/**
- * Display archive posts and exclude sticky posts
- * @since .594
- */
-function alienship_archive_get_posts() {
-
-	global $do_not_duplicate, $page, $paged;
-
-	if ( is_category() ) {
-		$cat_ID = get_query_var( 'cat' );
-		$args = array(
-			'cat'                 => $cat_ID,
-			'post_status'         => 'publish',
-			'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-			'ignore_sticky_posts' => 1,
-			'paged'               => $paged
-		);
-		$wp_query = new WP_Query( $args );
-
-	} elseif (is_tag() ) {
-		$current_tag = single_tag_title( "", false );
-		$args = array(
-			'tag_slug__in'        => array( $current_tag ),
-			'post_status'         => 'publish',
-			'post__not_in'        => array_merge( $do_not_duplicate, get_option( 'sticky_posts' ) ),
-			'ignore_sticky_posts' => 1,
-			'paged'               => $paged
-		);
-		$wp_query = new WP_Query( $args );
-
-	} else {
-	  new WP_Query();
-	}
-}
 endif;
 
 

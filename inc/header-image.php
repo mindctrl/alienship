@@ -17,7 +17,7 @@
  */
 function alienship_setup_custom_header() {
 	$args = array(
-		'width'                   => 1170,
+		'width'                   => 1140,
 		'height'                  => 400,
 		'default-image'           => '',
 		'default-text-color'      => '333',

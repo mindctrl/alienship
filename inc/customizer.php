@@ -160,6 +160,6 @@ add_action( 'customize_register', 'alienship_customize_register' );
  */
 function alienship_customize_preview_js() {
 
-	wp_enqueue_script( 'alienship_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.2.0', true );
+	wp_enqueue_script( 'alienship_customizer', get_template_directory_uri() . '/assets/javascripts/customizer.js', array( 'customize-preview' ), '1.2.0', true );
 }
 add_action( 'customize_preview_init', 'alienship_customize_preview_js' );

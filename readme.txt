@@ -1,6 +1,8 @@
 Alien Ship WordPress Theme
 --------------------------
-Alien Ship is a responsive starter theme for WordPress. It uses Twitter's Bootstrap version 3.x. It comes with core HTML, CSS, and Javascript for type, form, grids, navigation, buttons, dropdown menus, and more. Visit http://www.johnparris.com/alienship/ to see the theme in action, to download it, or to read the documentation.
+Alien Ship is a responsive starter theme for WordPress. It uses the Sass version of Bootstrap 3.x and includes a Gruntfile for compiling assets for production environments.
+
+Visit http://www.johnparris.com/alienship/ to see the theme in action, to download it, or to read the documentation.
 
 
 

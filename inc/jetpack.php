@@ -12,7 +12,7 @@
  */
 
 add_theme_support( 'infinite-scroll', array(
-	'container' => 'content',
+	'container' => 'main',
 	'footer'    => false,
 	'render'    => 'alienship_infinite_scroll_init',
 ) );

@@ -12,6 +12,8 @@ License URI: license.txt
 $font-size-base: 18px;
 $line-height-base: 1.667;
 $dropdown-menu-font-size: ceil(($font-size-base * 0.8));
+$site-title-size: floor(($font-size-base * 2));
+$site-description-size: floor(($font-size-base * 1.5));
 $icon-font-path: "assets/fonts/bootstrap/";
 
 @import "bootstrap";
@@ -25,6 +27,7 @@ $icon-font-path: "assets/fonts/bootstrap/";
 .navbar {
 	border-radius: 0;
 	font-size: $dropdown-menu-font-size;
+	margin-bottom: 0;
 }
 /* Dropdown menu items */
 .dropdown-menu {
@@ -159,18 +162,25 @@ $icon-font-path: "assets/fonts/bootstrap/";
 /* Page / Wrapper / Content
 ----------------------------------------------- */
 #masthead {
-	margin-bottom: 10px;
-	padding-bottom: 20px;
+	background-color: #008cba;
+	padding: 40px;
 }
 .site-title,
 .site-description {
-	font-size: 30px;
-	font-weight: bold;
+	font-size: $site-title-size;
+	font-weight: normal;
 	line-height: 36px;
 	margin: 0;
 }
+.site-title a {
+	color: #fff;
+}
 .site-description {
-	font-size: 24px;
+	/*font-size: 24px;*/
+	font-size: $site-description-size;
+}
+#page {
+	margin-top: 40px;
 }
 #main-row {
 	margin-top: 10px;
@@ -181,6 +191,7 @@ article {
 	margin: 0 0 50px;
 }
 .entry-title {
+	margin-top: 0;
 	word-wrap: break-word;
 }
 /* Post/page and comment content */

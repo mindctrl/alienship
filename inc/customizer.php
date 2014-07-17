@@ -38,21 +38,6 @@ function alienship_customize_register( $wp_customize ) {
 		'type'     => 'checkbox',
 	) );
 
-	$wp_customize->add_setting( 'optionsframework_alienship[alienship_search_bar]', array(
-		'default'    => '1',
-		'type'       => 'option',
-		'transport'  => 'postMessage',
-		'capability' => 'edit_theme_options',
-	) );
-
-	// Add search bar control to nav section
-	$wp_customize->add_control( 'alienship_search_bar', array(
-		'settings' => 'optionsframework_alienship[alienship_search_bar]',
-		'label'    => __( 'Display search box in the Top Menu', 'alienship' ),
-		'section'  => 'nav',
-		'type'     => 'checkbox',
-	) );
-
 
 
 	/**

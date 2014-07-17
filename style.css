@@ -6716,6 +6716,7 @@ button.close {
 .navbar {
   border-radius: 0;
   font-size: 15px;
+  margin-bottom: 0;
 }
 
 /* Dropdown menu items */
@@ -6873,20 +6874,29 @@ button.close {
 /* Page / Wrapper / Content
 ----------------------------------------------- */
 #masthead {
-  margin-bottom: 10px;
-  padding-bottom: 20px;
+  background-color: #008cba;
+  padding: 40px;
 }
 
 .site-title,
 .site-description {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: normal;
   line-height: 36px;
   margin: 0;
 }
 
+.site-title a {
+  color: #fff;
+}
+
 .site-description {
-  font-size: 24px;
+  /*font-size: 24px;*/
+  font-size: 27px;
+}
+
+#page {
+  margin-top: 40px;
 }
 
 #main-row {
@@ -6899,6 +6909,7 @@ article {
 }
 
 .entry-title {
+  margin-top: 0;
   word-wrap: break-word;
 }
 

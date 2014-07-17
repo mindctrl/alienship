@@ -27,28 +27,29 @@ do_action( 'alienship_head' ); ?>
 		get_template_part( '/templates/parts/menu', 'top' );
 	} ?>
 
+	<header id="masthead" class="site-header" role="banner">
+		<?php
+
+		/**
+		 * Display site title and description.
+		 * @see /inc/template-tags.php
+		 */
+		do_action( 'alienship_site_title' );
+		do_action( 'alienship_site_description' ); ?>
+	</header><!-- #masthead -->
+	<?php
+	// Main menu
+	if ( has_nav_menu('main') ) {
+		get_template_part( '/templates/parts/menu', 'main' );
+	} ?>
+
 	<div id="page" class="container hfeed site">
-		<header id="masthead" class="site-header" role="banner">
-			<?php
+		<div id="content" class="site-content row">
 
-			/**
-			 * Display site title and description.
-			 * @see /inc/template-tags.php
-			 */
-			do_action( 'alienship_site_title' );
-			do_action( 'alienship_site_description' );
-
-			// Main menu
-			if ( has_nav_menu('main') ) {
-				get_template_part( '/templates/parts/menu', 'main' );
-			} ?>
-		</header><!-- #masthead -->
-	<div id="content" class="site-content row">
-
-	<?php if ( function_exists( 'breadcrumb_trail' ) && !is_front_page() )
-		breadcrumb_trail( array(
-			'container'   => 'div',
-			'separator'   => '/',
-			'show_browse' => false
-			)
-		);
+		<?php if ( function_exists( 'breadcrumb_trail' ) && !is_front_page() )
+			breadcrumb_trail( array(
+				'container'   => 'div',
+				'separator'   => '/',
+				'show_browse' => false
+				)
+			);

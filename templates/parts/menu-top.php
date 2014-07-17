@@ -8,6 +8,7 @@
 ?>
 <!-- Top Menu -->
 	<nav class="<?php echo apply_filters( 'alienship_top_navbar_class' , 'navbar navbar-inverse top-navigation' ); ?>" role="navigation">
+		<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -29,5 +30,6 @@
 				)
 			); ?>
 		</div>
+	</div>
 	</nav>
 <!-- End Top Menu -->

@@ -55,10 +55,10 @@ function alienship_header_style() {
 		// Has the text been hidden?
 		if ( 'blank' == get_header_textcolor() ) :
  		?>
+ 		#masthead,
 		#site-title,
 		#site-description {
 			position: absolute;
-			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
  		<?php

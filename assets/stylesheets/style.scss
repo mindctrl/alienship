@@ -11,6 +11,7 @@ License URI: license.txt
 
 $font-size-base: 18px;
 $line-height-base: 1.667;
+$dropdown-menu-font-size: ceil(($font-size-base * 0.8));
 $icon-font-path: "assets/fonts/bootstrap/";
 
 @import "bootstrap";
@@ -21,8 +22,14 @@ $icon-font-path: "assets/fonts/bootstrap/";
 .admin-bar .navbar-fixed-top {
 	top: 32px;
 }
-
+.navbar {
+	border-radius: 0;
+	font-size: $dropdown-menu-font-size;
+}
 /* Dropdown menu items */
+.dropdown-menu {
+	font-size: $dropdown-menu-font-size;
+}
 .dropdown-menu li > a {
 	padding: 6px 15px;
 }

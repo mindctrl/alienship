@@ -6713,7 +6713,16 @@ button.close {
   top: 32px;
 }
 
+.navbar {
+  border-radius: 0;
+  font-size: 15px;
+}
+
 /* Dropdown menu items */
+.dropdown-menu {
+  font-size: 15px;
+}
+
 .dropdown-menu li > a {
   padding: 6px 15px;
 }

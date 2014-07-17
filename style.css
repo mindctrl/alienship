@@ -6786,6 +6786,18 @@ button.close {
   padding: 8px 15px;
 }
 
+.site-navigation ul {
+  list-style: none;
+}
+
+.site-navigation .previous {
+  float: left;
+}
+
+.site-navigation .next {
+  float: right;
+}
+
 /* End of Navigation
 ----------------------------------------------- */
 /* Comments

@@ -179,15 +179,15 @@ function alienship_content_nav( $nav_id ) {
 
 	global $wp_query;
 
-	$nav_class = 'site-navigation paging-navigation pager';
+	$nav_class = 'site-navigation paging-navigation';
 
 	if ( is_single() )
-		$nav_class = 'site-navigation post-navigation pager';
+		$nav_class = 'site-navigation post-navigation';
 	?>
 
 	<nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'alienship' ); ?></h3>
-		<ul class="pager">
+		<ul>
 		<?php
 		if ( is_single() ) : // navigation links for single posts
 

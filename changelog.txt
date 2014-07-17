@@ -5,6 +5,7 @@ Version 2.0.0 - Under development
 - Added Grunt support for compiling CSS and JS assets.
 - In development mode, the theme will enqueue CSS and JS files that have not been minified. For production, it enqueues minified assets.
 - Moved CSS, JS, image, and font assets under the assets folder.
+- Fixed issue where posts were displayed incorrectly when using Jetpack Infinite Scroll.
 -
 
 Version 1.2.5 - July 3, 2014

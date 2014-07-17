@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-	<div id="primary" class="col-sm-12">
+	<div id="primary" class="col-xs-12">
 
 		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">

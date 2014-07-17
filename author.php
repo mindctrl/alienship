@@ -41,7 +41,6 @@ get_header(); ?>
 
 			endif; ?>
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
 
 	</section><!-- #primary -->
 <?php

@@ -9,12 +9,8 @@
 get_header(); ?>
 
 		<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-xs-12 col-md-8' ); ?>">
-
-			<?php do_action( 'alienship_main_before' ); ?>
 			<main id="main" class="site-main" role="main">
 				<?php if ( have_posts() ) {
-
-					alienship_content_nav( 'nav-above' ); // display content nav above posts
 
 					/**
 					 * Featured Posts
@@ -69,8 +65,6 @@ get_header(); ?>
 
 			} //have_posts ?>
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
-
 	</div><!-- #primary -->
 <?php
 get_sidebar();

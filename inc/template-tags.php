@@ -79,9 +79,7 @@ function alienship_do_sidebar( $prefix = false ) {
 		if ( $sidebar_class ): ?>
 
 			<div class="<?php echo $prefix; ?>-sidebar-row row widget-area">
-				<?php do_action( 'alienship_sidebar_row_top' );
-
-				if ( is_active_sidebar( $prefix.'-1' ) ): ?>
+				<?php if ( is_active_sidebar( $prefix.'-1' ) ): ?>
 					<aside id="<?php echo $prefix; ?>-sidebar-1" class="sidebar widget<?php echo $sidebar_class; ?>">
 						<?php dynamic_sidebar( $prefix.'-1' ); ?>
 					</aside>
@@ -106,9 +104,7 @@ function alienship_do_sidebar( $prefix = false ) {
 					<aside id="<?php echo $prefix; ?>-sidebar-4" class="sidebar widget<?php echo $sidebar_class; ?>">
 						<?php dynamic_sidebar( $prefix.'-4' ); ?>
 					</aside>
-				<?php endif;
-
-				do_action( 'alienship_sidebar_row_bottom' ); ?>
+				<?php endif; ?>
 			</div><!-- .row -->
 
 		<?php endif; //$sidebar_class

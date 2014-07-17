@@ -6,6 +6,7 @@ Version 2.0.0 - Under development
 - In development mode, the theme will enqueue CSS and JS files that have not been minified. For production, it enqueues minified assets.
 - Moved CSS, JS, image, and font assets under the assets folder.
 - Fixed issue where posts were displayed incorrectly when using Jetpack Infinite Scroll.
+- Remove many of the action hooks placed throughout the templates. Add your own action hooks if needed.
 -
 
 Version 1.2.5 - July 3, 2014

@@ -78,7 +78,7 @@ function alienship_do_sidebar( $prefix = false ) {
 
 		if ( $sidebar_class ): ?>
 
-			<div class="<?php echo $prefix; ?>-sidebar-row row">
+			<div class="<?php echo $prefix; ?>-sidebar-row row widget-area">
 				<?php do_action( 'alienship_sidebar_row_top' );
 
 				if ( is_active_sidebar( $prefix.'-1' ) ): ?>

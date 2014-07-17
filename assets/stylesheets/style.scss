@@ -9,18 +9,12 @@ License: GNU General Public License
 License URI: license.txt
 */
 
-$font-size-base: 16px;
+$font-size-base: 18px;
 $line-height-base: 1.667;
 $icon-font-path: "assets/fonts/bootstrap/";
 
 @import "bootstrap";
 
-.entry-title {
-	word-wrap: break-word;
-}
-.widget-title {
-	font-size: 18px;
-}
 
 /* Navigation
 ----------------------------------------------- */
@@ -162,11 +156,6 @@ $icon-font-path: "assets/fonts/bootstrap/";
 .site-description {
 	font-size: 24px;
 }
-
-#page {
-	margin: 0px auto;
-	max-width: 1170px;
-}
 #main-row {
 	margin-top: 10px;
 }
@@ -174,6 +163,9 @@ $icon-font-path: "assets/fonts/bootstrap/";
 /* The article wrapper that displays the content of a post/page/whatever */
 article {
 	margin: 0 0 50px;
+}
+.entry-title {
+	word-wrap: break-word;
 }
 /* Post/page and comment content */
 .entry-content {
@@ -244,7 +236,11 @@ img[class*="attachment-"],
 	max-width: 100%;
 	padding: 0;
 }
-
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
 /* Image captions */
 .wp-caption {
 	border: 1px solid #ccc;
@@ -294,20 +290,13 @@ img[class*="attachment-"],
 	text-decoration: underline;
 }
 
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-.alert strong {
-	font-size: 1.15em;
-}
-
 /* Text meant only for screen readers */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }
 .screen-reader-text:hover,
 .screen-reader-text:active,
@@ -434,9 +423,6 @@ ins {
 	border-radius: 0;
 	margin-bottom: 0;
 }
-#hero-widgets-container {
-	margin: 0 auto;
-}
 
 /* Post formats
 ------------------------------------ */
@@ -463,11 +449,20 @@ ins {
 ----------------------------------------------- */
 #sidebar {
 	background-color: #fafafa;
+}
+.widget-area {
 	padding: 2em;
+	font-size: 16px;
+}
+#hero-widgets-container {
+	margin: 0 auto;
 }
 .widget {
 	margin: 0 0 1.5em;
 	word-wrap: break-word;
+}
+.widget-title {
+	font-size: 18px;
 }
 .widget ul {
 	padding: 0 0 0 15px;

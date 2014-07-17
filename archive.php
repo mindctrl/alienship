@@ -10,14 +10,15 @@ get_header(); ?>
 
 	<section id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-xs-12 col-md-8' ); ?>">
 
-		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">
 			<?php
+			/**
+			 * Print the archive page title.
+			 * See inc/template-tags.php
+			 */
 			do_action( 'alienship_archive_page_title' );
 
 			if ( have_posts() ) {
-
-				alienship_content_nav( 'nav-above' );
 
 				// Start the Loop
 				while ( $wp_query->have_posts() ) : $wp_query->the_post();
@@ -42,7 +43,6 @@ get_header(); ?>
 
 			} //have_posts ?>
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
 
 	</section><!-- #primary -->
 <?php

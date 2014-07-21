@@ -6789,6 +6789,7 @@ button.close {
 
 .site-navigation ul {
   list-style: none;
+  padding: 0;
 }
 
 .site-navigation .previous {

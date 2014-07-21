@@ -172,11 +172,6 @@ if ( ! function_exists( 'alienship_content_nav' ) ):
  */
 function alienship_content_nav( $nav_id ) {
 
-	// Return early if theme options are set to hide nav
-	if ( 'nav-below' == $nav_id && ! of_get_option( 'alienship_content_nav_below', 1 )
-	|| 'nav-above' == $nav_id && ! of_get_option( 'alienship_content_nav_above' ) )
-		return;
-
 	global $wp_query;
 
 	$nav_class = 'site-navigation paging-navigation';

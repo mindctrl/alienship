@@ -107,7 +107,6 @@ $icon-font-path: "assets/fonts/bootstrap/";
 /* Comments
  -----------------------------------------------*/
 #comments {
-	border-top: 1px solid #eee;
 	padding-top: 40px;
 }
 .thread-even > .comment-body {
@@ -196,6 +195,12 @@ article {
 	margin-top: 0;
 	word-wrap: break-word;
 }
+.entry-meta {
+	font-size: ceil(($font-size-base * 0.8));
+}
+.updated:not(.published) {
+	display: none;
+}
 /* Post/page and comment content */
 .entry-content {
 	padding: 15px 0;
@@ -225,6 +230,7 @@ p {
 	border-bottom: 1px solid #eee;
 	clear: both;
 	font-size: 12px;
+	min-height: 20px;
 	padding-bottom: 15px;
 	text-transform: uppercase;
 }

@@ -13,7 +13,7 @@
 		</a>
 	<?php }
 
-	do_action( 'alienship_entry_header' ); ?>
+	get_template_part( '/templates/parts/content-entry-header' ); ?>
 
 	<div class="entry-content">
 
@@ -22,5 +22,5 @@
 		wp_link_pages(); ?>
 	</div><!-- .entry-content -->
 
-	<?php do_action( 'alienship_entry_footer' ); ?>
+	<?php get_template_part( '/templates/parts/content-entry-footer' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

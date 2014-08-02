@@ -13,5 +13,5 @@
 			<?php the_content( __( 'Continue Reading &raquo;', 'alienship' ) ); ?>
 		</blockquote>
 	</div>
-	<?php do_action( 'alienship_entry_footer' ); ?>
+	<?php get_template_part( '/templates/parts/content-entry-footer' ); ?>
 </article><!-- #post -->

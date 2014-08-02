@@ -11,5 +11,5 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div>
-	<?php do_action( 'alienship_entry_footer' ); ?>
+	<?php get_template_part( '/templates/parts/content-entry-footer' ); ?>
 </article><!-- #post -->

@@ -8,7 +8,7 @@
 ?>
 
 <article role="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php do_action( 'alienship_entry_header' ); ?>
+	<?php get_template_part( '/templates/parts/content-entry-header' ); ?>
 
 	<div class="entry-content">
 		<?php

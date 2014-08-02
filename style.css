@@ -6806,7 +6806,6 @@ button.close {
 /* Comments
  -----------------------------------------------*/
 #comments {
-  border-top: 1px solid #eee;
   padding-top: 40px;
 }
 
@@ -6915,6 +6914,14 @@ article {
   word-wrap: break-word;
 }
 
+.entry-meta {
+  font-size: 15px;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
 /* Post/page and comment content */
 .entry-content {
   padding: 15px 0;
@@ -6947,6 +6954,7 @@ p {
   border-bottom: 1px solid #eee;
   clear: both;
   font-size: 12px;
+  min-height: 20px;
   padding-bottom: 15px;
   text-transform: uppercase;
 }

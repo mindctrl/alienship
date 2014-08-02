@@ -16,7 +16,7 @@
 	</header><!-- .entry-header -->
 	<?php } else {
 
-		do_action( 'alienship_entry_header' );
+		get_template_part( '/templates/parts/content-entry-header' );
 	} ?>
 	<div class="entry-content">
 		<?php if ( has_post_thumbnail() && ! has_post_format( 'gallery' ) ) { ?>
@@ -34,5 +34,5 @@
 
 		wp_link_pages(); ?>
 	</div>
-	<?php do_action( 'alienship_entry_footer' ); ?>
+	<?php get_template_part( '/templates/parts/content-entry-footer' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

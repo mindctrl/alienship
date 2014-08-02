@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-		<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-xs-12 col-md-8' ); ?>">
+		<div id="primary" class="content-area col-xs-12 col-md-8">
 			<main id="main" class="site-main" role="main">
 			<?php
 				if ( have_posts() ) :

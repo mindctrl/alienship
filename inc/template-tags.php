@@ -339,10 +339,6 @@ if ( ! function_exists( 'alienship_do_posted_on' ) ) :
  */
 function alienship_do_posted_on() {
 
-	// Return early if theme options are set to hide date
-	if ( ! of_get_option( 'alienship_published_date', 1 ) )
-		return;
-
 	printf( __( '<span class="published-date"><i class="glyphicon glyphicon-calendar" title="Published date"></i> <a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>', 'alienship' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -363,10 +359,6 @@ if ( ! function_exists( 'alienship_do_post_author' ) ) :
  */
 function alienship_do_post_author() {
 
-	// Return early if theme options are set to hide author
-	if ( ! of_get_option('alienship_post_author', 1 ) )
-		return;
-
 	printf( __( '<span class="byline"><i class="glyphicon glyphicon-user"></i> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'alienship' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'alienship' ), get_the_author() ) ),
@@ -384,10 +376,6 @@ if ( ! function_exists( 'alienship_do_post_categories' ) ):
  * @since 0.3
  */
 function alienship_do_post_categories() {
-
-	// Return early if theme options are set to hide categories
-	if ( ! of_get_option( 'alienship_post_categories', 1 ) )
-		return;
 
 	$post_categories = get_the_category();
 	if ( $post_categories ) {
@@ -422,10 +410,6 @@ if ( ! function_exists( 'alienship_do_post_tags' ) ):
  */
 function alienship_do_post_tags() {
 
-	// Return early if theme options are set to hide tags
-	if ( ! of_get_option( 'alienship_post_tags', 1 ) )
-		return;
-
 	$post_tags = get_the_tags();
 	if ( $post_tags ) {
 
@@ -459,10 +443,6 @@ if ( ! function_exists( 'alienship_do_post_comments_link' ) ):
  * @since .74
  */
 function alienship_do_post_comments_link() {
-
-	// Return early if theme options are set to hide comment link
-	if ( ! of_get_option( 'alienship_post_comments_link', 1 ) )
-		return;
 
 	if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) { ?>
 		<span class="comments-link">
@@ -561,114 +541,6 @@ function alienship_do_site_description() {
 	echo apply_filters( 'alienship_site_description_content', $description );
 }
 add_action( 'alienship_site_description', 'alienship_do_site_description' );
-endif;
-
-
-
-/**
- * Gets featured posts
- *
- * @since 1.2.4
- */
-function alienship_get_featured_posts() {
-
-	// Check for cached featured posts
-	$featured_query = get_transient( 'alienship_featured_posts' );
-
-	if ( false == $featured_query ) {
-		// No featured posts in cache
-		$args = array(
-			'tag_id'         => of_get_option( 'alienship_featured_posts_tag' ),
-			'posts_per_page' => of_get_option( 'alienship_featured_posts_maxnum' ),
-		);
-		$featured_query = new WP_Query( $args );
-
-		// Save featured posts in cache for one hour
-		set_transient( 'alienship_featured_posts', $featured_query, 3600 );
-	}
-	return $featured_query;
-}
-
-
-if ( ! function_exists( 'alienship_featured_posts_grid' ) ):
-/**
- * Display featured posts in a grid
- * @since .59
- */
-function alienship_featured_posts_grid() {
-
-	$featured_query = alienship_get_featured_posts();
-
-	if ( $featured_query->have_posts() ) { ?>
-		<ul id="featured-posts-grid" class="block-grid mobile two-up">
-
-			<?php while ( $featured_query->have_posts() ) : $featured_query->the_post();
-				get_template_part( '/templates/parts/content', 'fp-grid' );
-			endwhile; ?>
-
-		</ul>
-	<?php }
-}
-endif;
-
-
-
-if ( ! function_exists( 'alienship_featured_posts_slider' ) ):
-/**
- * Display featured posts in a slider
- * @since .59 (The function. The feature @since .4)
- */
-function alienship_featured_posts_slider() {
-
-	$featured_query = alienship_get_featured_posts();
-
-	if ( $featured_query->have_posts() ) { ?>
-		<div class="row">
-			<div class="col-sm-12">
-				<div id="featured-carousel" class="carousel slide">
-
-				<?php // Featured post indicators?
-				if ( of_get_option( 'alienship_featured_posts_indicators', 0 ) ) { ?>
-					<ol class="carousel-indicators">
-
-					<?php
-						$indicators = $featured_query->post_count;
-						$count = 0;
-						while ( $count != $indicators ) {
-							echo '<li data-target="#featured-carousel" data-slide-to="' . $count . '"></li>';
-							$count++;
-						}
-					?>
-
-					</ol>
-				<?php } // alienship_featured_posts_indicators ?>
-
-					<div class="carousel-inner">
-
-						<?php while ( $featured_query->have_posts() ) : $featured_query->the_post();
-							get_template_part( '/templates/parts/content', 'featured' );
-						endwhile; ?>
-
-					</div><!-- .carousel-inner -->
-					<a class="left carousel-control" href="#featured-carousel" data-slide="prev"><span class="icon-prev"></span></a>
-					<a class="right carousel-control" href="#featured-carousel" data-slide="next"><span class="icon-next"></span></a>
-				</div><!-- #featured-carousel -->
-			</div><!-- .col-sm-12 -->
-		</div><!-- .row -->
-
-		<script type="text/javascript">
-			jQuery(function() {
-				// Activate the first carousel item //
-				jQuery("div.item:first").addClass("active");
-				jQuery("ol.carousel-indicators").children("li:first").addClass("active");
-				// Start the Carousel //
-				jQuery('.carousel').carousel();
-			});
-		</script>
-	<?php } // if(have_posts()) ?>
-	  <!-- End featured listings -->
-<?php }
-
 endif;
 
 

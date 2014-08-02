@@ -10,60 +10,32 @@ get_header(); ?>
 
 		<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-xs-12 col-md-8' ); ?>">
 			<main id="main" class="site-main" role="main">
-				<?php if ( have_posts() ) {
+			<?php
+				if ( have_posts() ) :
 
-					/**
-					 * Featured Posts
-					 */
-					if ( of_get_option('alienship_featured_posts') ) {
+					// Start the Loop
+					while ( have_posts() ) : the_post();
 
-						if ( of_get_option( 'alienship_featured_posts_display_type', 1 ) == "1" ) {
-							alienship_featured_posts_slider();
-						} else {
-							alienship_featured_posts_grid();
-						}
+						do_action( 'alienship_loop_before' );
 
-						/**
-						 * Show or hide featured posts in the main post index
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme then include a file called content-___.php
+						 * (where ___ is the Post Format name) and that will be used instead.
 						 */
-						// Do not duplicate featured posts in the post index
-						if ( of_get_option( 'alienship_featured_posts_show_dupes' ) == "0" ) {
-							global $wp_query;
-							$wp_query->set( 'tag__not_in', array( of_get_option( 'alienship_featured_posts_tag' ) ) );
-							$wp_query->get_posts();
-						}
+						get_template_part( '/templates/parts/content', get_post_format() );
 
-						// Duplicate featured posts in the post index
-						if ( of_get_option( 'alienship_featured_posts_show_dupes' ) == "1" ) {
-							global $wp_query;
-							$wp_query->set( 'post_status', 'publish' );
-							$wp_query->get_posts();
-						}
+						do_action( 'alienship_loop_after' );
 
-					} // if (of_get_option('alienship_featured_posts') )
+					endwhile;
 
+					alienship_content_nav( 'nav-below' ); // display content nav below posts?
 
-				// Start the Loop
-				while ( have_posts() ) : the_post();
-					do_action( 'alienship_loop_before' );
+				else :
 
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( '/templates/parts/content', get_post_format() );
+					// No results
+					get_template_part( '/templates/parts/content', 'none' );
 
-					do_action( 'alienship_loop_after' );
-				endwhile;
-
-				alienship_content_nav( 'nav-below' ); // display content nav below posts?
-
-			} else {
-
-				// No results
-				get_template_part( '/templates/parts/content', 'none' );
-
-			} //have_posts ?>
+				endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php

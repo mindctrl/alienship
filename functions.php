@@ -45,14 +45,11 @@ function alienship_setup() {
 	// Custom header
 	locate_template( '/inc/custom-header.php', true );
 
-	// Load theme options framework
-	locate_template( '/inc/options-panel.php', true );
-
 	// Customizer
 	locate_template( '/inc/customizer.php', true );
 
 	// Breadcrumbs
-	if ( of_get_option( 'alienship_breadcrumbs',1) ) {
+	if ( get_option( 'alienship_breadcrumbs', false ) ) {
 		locate_template( '/inc/breadcrumb-trail.php', true );
 	}
 
@@ -289,18 +286,3 @@ function alienship_editor_styles() {
 	add_editor_style( 'css/bootstrap.min.css' );
 }
 add_action( 'init', 'alienship_editor_styles' );
-
-
-
-/**
- * Deletes featured posts transient
- *
- * @since 1.2.4
- */
-function alienship_delete_transients() {
-
-	delete_transient( 'alienship_featured_posts' );
-}
-add_action( 'save_post', 'alienship_delete_transients' );
-add_action( 'wp_trash_post', 'alienship_delete_transients' );
-add_action( 'delete_post', 'alienship_delete_transients' );

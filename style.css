@@ -6784,6 +6784,7 @@ button.close {
   }
 }
 .breadcrumb-trail {
+  font-size: 14px;
   padding: 8px 15px;
 }
 
@@ -7120,81 +7121,6 @@ ins {
   clear: both;
 }
 
-/* Featured Posts
----------------------------------- */
-/* Carousel */
-@media only screen and (max-width: 767px) {
-  .carousel-caption {
-    position: static;
-  }
-}
-.carousel-indicators {
-  bottom: -10px;
-}
-
-.carousel-indicators li,
-.carousel-indicators .active {
-  height: 8px;
-  width: 8px;
-  margin: 2px;
-}
-
-.carousel-caption {
-  background: #333;
-  background: rgba(0, 0, 0, 0.55);
-  bottom: 0;
-  left: 0;
-  padding: 2px 0 7px;
-  width: 100%;
-}
-
-.carousel-caption h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
-  margin-top: 10px;
-}
-
-/* Featured posts grid */
-#featured-posts-grid {
-  padding-left: 0;
-}
-
-#featured-posts-grid li {
-  background-color: #F5F5F5;
-  margin-bottom: 25px;
-  padding-bottom: 2px;
-}
-
-.innergrid {
-  height: 85%;
-  float: none;
-  padding: 0 10px 12px;
-}
-
-.innergrid img {
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-.grid-header {
-  font-size: 14px;
-  margin: 0;
-  padding-bottom: 8px;
-  text-align: center;
-}
-
-.grid-header .entry-title {
-  line-height: inherit;
-}
-
-.grid-footer-meta {
-  font-size: 12px;
-  margin-bottom: 5px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-/* End of featured posts grid */
 /* Page Templates */
 .page-template-templatespage-hero-php .navbar {
   border-radius: 0;

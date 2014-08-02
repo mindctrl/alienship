@@ -8,6 +8,7 @@ Version 2.0.0 - Under development
 - Fixed issue where posts were displayed incorrectly when using Jetpack Infinite Scroll.
 - Remove many of the action hooks placed throughout the templates. Add your own action hooks if needed.
 - Removed Theme Options
+- Remove "Nice Search" in inc/tweaks.php.
 -
 
 Version 1.2.5 - July 3, 2014

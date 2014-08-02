@@ -42,9 +42,6 @@ function alienship_setup() {
 	// Register sidebars
 	locate_template( '/inc/sidebars.php', true );
 
-	// Custom header
-	locate_template( '/inc/custom-header.php', true );
-
 	// Customizer
 	locate_template( '/inc/customizer.php', true );
 

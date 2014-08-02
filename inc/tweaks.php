@@ -2,8 +2,6 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * Eventually, some of the functionality here could be replaced by core features
- *
  * @package Alien Ship
  * @since Alien Ship 0.1
  */
@@ -36,37 +34,6 @@ function alienship_comment_reply_link( $link ) {
 	return str_replace( 'comment-reply-link', 'btn btn-default btn-xs', $link );
 }
 add_filter( 'comment_reply_link', 'alienship_comment_reply_link' );
-endif;
-
-
-
-if ( ! function_exists( 'alienship_nice_search_redirect' ) ):
-/**
- * Pretty search URL. Changes /?s=foo to /search/foo. http://txfx.net/wordpress-plugins/nice-search/
- * @since Alien Ship 0.3
- */
-function alienship_nice_search_redirect() {
-
-	if ( is_search() && get_option( 'permalink_structure' ) != '' && strpos( $_SERVER['REQUEST_URI'], '/wp-admin/' ) === false && strpos( $_SERVER['REQUEST_URI'], '/search/' ) === false ) {
-		wp_redirect( home_url( '/search/' . str_replace( array( ' ', '%20' ),  array( '+', '+' ), get_query_var( 's' ) ) ) );
-		exit();
-	}
-}
-add_action( 'template_redirect', 'alienship_nice_search_redirect' );
-endif;
-
-
-
-if ( ! function_exists( 'alienship_search_query' ) ):
-function alienship_search_query($escaped = true) {
-
-	$query = apply_filters( 'alienship_search_query', get_query_var( 's' ) );
-	if ($escaped) {
-		$query = esc_attr($query);
-	}
-	return urldecode($query);
-}
-add_filter('get_search_query', 'alienship_search_query');
 endif;
 
 

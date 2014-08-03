@@ -44,10 +44,11 @@ do_action( 'alienship_head' ); ?>
 	<div id="page" class="container hfeed site">
 		<div id="content" class="site-content row">
 
-		<?php if ( function_exists( 'breadcrumb_trail' ) && !is_front_page() )
+		<?php if ( function_exists( 'breadcrumb_trail' ) && !( is_front_page() || is_search() ) ) {
 			breadcrumb_trail( array(
 				'container'   => 'div',
 				'separator'   => '/',
 				'show_browse' => false
 				)
 			);
+		}

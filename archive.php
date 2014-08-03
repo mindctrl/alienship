@@ -16,7 +16,7 @@ get_header(); ?>
 			 * Print the archive page title.
 			 * See inc/template-tags.php
 			 */
-			do_action( 'alienship_archive_page_title' );
+			alienship_archive_page_title();
 
 			if ( have_posts() ) :
 

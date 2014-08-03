@@ -254,59 +254,12 @@ endif;
 
 
 
-if ( ! function_exists( 'alienship_do_site_title' ) ):
-/**
- * Displays site title at top of page
- *
- * @since 1.1.1
- */
-function alienship_do_site_title() {
-
-	// Use H1 on home, paragraph elsewhere
-	$element = is_front_page() || is_home() ? 'h1' : 'p';
-
-	// Title content that goes inside wrapper
-	$site_name = sprintf( '<a href="%s" title="%s" rel="home">%s</a>', trailingslashit( home_url() ), esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
-
-	// Put it all together
-	$title = '<' . $element . ' id="site-title" class="site-title">' . $site_name . '</' . $element .'>';
-
-	// Echo the title
-	echo apply_filters( 'alienship_site_title_content', $title );
-}
-add_action( 'alienship_site_title', 'alienship_do_site_title' );
-endif;
-
-
-
-if( ! function_exists( 'alienship_do_site_description' ) ):
-/**
- * Displays site description at top of page
- *
- * @since 1.1.1
- */
-function alienship_do_site_description() {
-
-	// Use H2 on home, paragraph elsewhere
-	$element = is_front_page() || is_home() ? 'h2' : 'p';
-
-	// Put it all together
-	$description = '<' . $element . ' id="site-description" class="site-description">' . esc_html( get_bloginfo( 'description' ) ) . '</' . $element . '>';
-
-	// Echo the description
-	echo apply_filters( 'alienship_site_description_content', $description );
-}
-add_action( 'alienship_site_description', 'alienship_do_site_description' );
-endif;
-
-
-
 if ( ! function_exists( 'alienship_do_archive_page_title' ) ):
 /**
  * Display page title on archive pages
  * @since .592
  */
-function alienship_do_archive_page_title() { ?>
+function alienship_archive_page_title() { ?>
 
 	<header class="page-header">
 		<h1 class="page-title">
@@ -370,7 +323,6 @@ function alienship_do_archive_page_title() { ?>
 
 	</header>
 <?php }
-add_action( 'alienship_archive_page_title', 'alienship_do_archive_page_title' );
 endif;
 
 

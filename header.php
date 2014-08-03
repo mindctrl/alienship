@@ -26,14 +26,10 @@ do_action( 'alienship_head' ); ?>
 	<?php get_template_part( '/templates/parts/menu', 'top' ); ?>
 
 	<header id="masthead" class="site-header" role="banner">
-		<?php
-
-		/**
-		 * Display site title and description.
-		 * @see /inc/template-tags.php
-		 */
-		do_action( 'alienship_site_title' );
-		do_action( 'alienship_site_description' ); ?>
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
 	</header><!-- #masthead -->
 	<?php
 	// Main menu

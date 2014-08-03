@@ -7,10 +7,18 @@
 <footer class="entry-footer">
 	<?php if( 'post' == get_post_type() ) :
 
-		/* translators: used between list items, there is a space after the comma */
+		/**
+		 * Get the categories for this post.
+		 *
+		 * Translators: The comma is used between each category. There is a space after the comma.
+		 */
 		$category_list = get_the_category_list( __( ', ', 'alienship' ) );
 
-		/* translators: used between list items, there is a space after the comma */
+		/**
+		 * Get the tags for this post.
+		 *
+		 * Translators: The comma is used between each tag. There is a space after the comma.
+		 */
 		$tag_list = get_the_tag_list( '', __( ', ', 'alienship' ) ); ?>
 
 		<span class="cat-links">

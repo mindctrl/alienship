@@ -9,7 +9,8 @@ Version 2.0.0 - Under development
 - Remove many of the action hooks placed throughout the templates. Add your own action hooks if needed.
 - Removed Theme Options
 - Remove "Nice Search" in inc/tweaks.php.
--
+- Moved post meta from action hooks to template parts.
+- General cleanup.
 
 Version 1.2.5 - July 3, 2014
 ----------------------------

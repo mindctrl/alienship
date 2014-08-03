@@ -78,31 +78,31 @@ function alienship_do_sidebar( $prefix = false ) {
 
 		if ( $sidebar_class ): ?>
 
-			<div class="<?php echo $prefix; ?>-sidebar-row row widget-area">
-				<?php if ( is_active_sidebar( $prefix.'-1' ) ): ?>
-					<aside id="<?php echo $prefix; ?>-sidebar-1" class="sidebar widget<?php echo $sidebar_class; ?>">
-						<?php dynamic_sidebar( $prefix.'-1' ); ?>
+			<div class="<?php echo esc_attr( $prefix ); ?>-sidebar-row row widget-area">
+				<?php if ( is_active_sidebar( esc_attr( $prefix ).'-1' ) ): ?>
+					<aside id="<?php echo esc_attr( $prefix ); ?>-sidebar-1" class="sidebar widget<?php echo esc_attr( $sidebar_class ); ?>">
+						<?php dynamic_sidebar( esc_attr( $prefix ).'-1' ); ?>
 					</aside>
 				<?php endif;
 
 
-				if ( is_active_sidebar( $prefix.'-2' ) ): ?>
-					<aside id="<?php echo $prefix; ?>-sidebar-2" class="sidebar widget<?php echo $sidebar_class; ?>">
-						<?php dynamic_sidebar( $prefix.'-2' ); ?>
+				if ( is_active_sidebar( esc_attr( $prefix ).'-2' ) ): ?>
+					<aside id="<?php echo esc_attr( $prefix ); ?>-sidebar-2" class="sidebar widget<?php echo esc_attr( $sidebar_class ); ?>">
+						<?php dynamic_sidebar( esc_attr( $prefix ).'-2' ); ?>
 					</aside>
 				<?php endif;
 
 
-				if ( is_active_sidebar( $prefix.'-3' ) ): ?>
-					<aside id="<?php echo $prefix; ?>-sidebar-3" class="sidebar widget<?php echo $sidebar_class; ?>">
-						<?php dynamic_sidebar( $prefix.'-3' ); ?>
+				if ( is_active_sidebar( esc_attr( $prefix ).'-3' ) ): ?>
+					<aside id="<?php echo esc_attr( $prefix ); ?>-sidebar-3" class="sidebar widget<?php echo esc_attr( $sidebar_class ); ?>">
+						<?php dynamic_sidebar( esc_attr( $prefix ).'-3' ); ?>
 					</aside>
 				<?php endif;
 
 
-				if ( is_active_sidebar( $prefix.'-4' ) ): ?>
-					<aside id="<?php echo $prefix; ?>-sidebar-4" class="sidebar widget<?php echo $sidebar_class; ?>">
-						<?php dynamic_sidebar( $prefix.'-4' ); ?>
+				if ( is_active_sidebar( esc_attr( $prefix ).'-4' ) ): ?>
+					<aside id="<?php echo esc_attr( $prefix ); ?>-sidebar-4" class="sidebar widget<?php echo esc_attr( $sidebar_class ); ?>">
+						<?php dynamic_sidebar( esc_attr( $prefix ).'-4' ); ?>
 					</aside>
 				<?php endif; ?>
 			</div><!-- .row -->

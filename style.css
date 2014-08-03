@@ -6723,12 +6723,10 @@ button.close {
 .dropdown-menu {
   font-size: 15px;
 }
-
 .dropdown-menu li > a {
   padding: 6px 15px;
 }
 
-/* Footer Menu */
 .footer-nav li {
   display: block;
   float: right;
@@ -6737,6 +6735,17 @@ button.close {
 }
 
 @media only screen and (max-width: 767px) {
+  /* Improve font size and spacing on dropdown menu on mobile/tablets */
+  .navbar-nav .open .dropdown-menu > li > a {
+    padding: 12px 15px 12px 25px;
+  }
+
+  .navbar .nav > li > a, .navbar .dropdown-menu a {
+    font-size: 18px;
+    font-weight: normal;
+    padding: 15px 20px;
+  }
+
   .footer-nav.mobile {
     border-bottom: 1px solid #ccc;
     height: auto;
@@ -6745,33 +6754,26 @@ button.close {
     padding: 10px 0 0;
     width: auto;
   }
-
   .footer-nav.mobile li {
     float: none;
     height: auto;
     padding: 0;
   }
-
+  .footer-nav.mobile li a {
+    border: solid 0 #ccc;
+    border-width: 1px 0 0;
+    color: #555;
+    display: block;
+    font-size: 15px;
+    height: auto;
+    margin: 0;
+    padding: 18px 20px;
+    width: auto;
+  }
   .footer-nav.mobile li a:hover {
     background-color: #2a6496;
     color: #fff;
     text-decoration: none;
-  }
-
-  .footer-nav.mobile li a {
-    border: solid 0 #ccc;
-    color: #555;
-    display: block;
-    font-size: 15px;
-    padding: 18px 20px;
-    width: auto;
-  }
-
-  .footer-nav.mobile li a,
-  .footer-nav.mobile li a.active {
-    border-width: 1px 0 0;
-    height: auto;
-    margin: 0;
   }
 
   .footer-nav.mobile li.current-menu-item a {
@@ -6784,93 +6786,22 @@ button.close {
   }
 }
 .breadcrumb-trail {
-  font-size: 14px;
-  padding: 8px 15px;
+  font-size: 15px;
+  padding: 1em;
 }
 
 .site-navigation ul {
   list-style: none;
   padding: 0;
 }
-
 .site-navigation .previous {
   float: left;
 }
-
 .site-navigation .next {
   float: right;
 }
 
 /* End of Navigation
------------------------------------------------ */
-/* Comments
- -----------------------------------------------*/
-#comments {
-  padding-top: 40px;
-}
-
-.thread-even > .comment-body {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
-}
-
-.comment-body {
-  margin-bottom: 20px;
-  padding: 15px;
-}
-
-#comments cite {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.comment-meta {
-  font-size: 12px;
-}
-
-.comment-list {
-  padding-bottom: 7px;
-}
-
-.comment-author {
-  margin-bottom: 7px;
-}
-
-.comment-content {
-  margin-top: 7px;
-}
-
-.comment-author > .avatar {
-  margin-right: 1em;
-}
-
-#comments ul.children {
-  margin-left: 20px;
-}
-
-#comments ul.children li {
-  border-top: 1px solid #e6e6e6;
-  list-style-type: none;
-}
-
-.bypostauthor > article {
-  background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
-}
-
-.bypostauthor > article .avatar {
-  border-bottom: 4px solid #46a546;
-}
-
-.form-allowed-tags code {
-  white-space: normal;
-}
-
-.input-comment-author,
-.input-comment-email,
-.input-comment-url {
-  width: 35%;
-}
-
-/* End of comments
 ----------------------------------------------- */
 /* Page / Wrapper / Content
 ----------------------------------------------- */
@@ -6892,7 +6823,6 @@ button.close {
 }
 
 .site-description {
-  /*font-size: 24px;*/
   font-size: 27px;
 }
 
@@ -7026,6 +6956,116 @@ ins {
   padding-left: 10px;
 }
 
+/* Page Templates */
+.page-template-templatespage-hero-php .navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+/* Post formats
+------------------------------------ */
+/* Quote post format */
+.format-quote {
+  background: url("assets/images/quote.png") no-repeat scroll left top;
+  background-size: 20px 20px;
+  margin-top: 15px;
+  padding: 10px 0 0;
+}
+.format-quote cite {
+  font-style: italic;
+}
+.format-quote blockquote {
+  border-left: 0;
+  margin: 0 0 18px 15px;
+}
+.format-quote blockquote p {
+  font-style: italic;
+}
+
+/* Comments
+ -----------------------------------------------*/
+#comments {
+  padding-top: 40px;
+}
+
+.thread-even > .comment-body {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
+}
+
+.comment-body {
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+#comments cite {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.comment-meta {
+  font-size: 12px;
+}
+
+.comment-list {
+  padding-bottom: 7px;
+}
+
+.comment-author {
+  margin-bottom: 7px;
+}
+
+.comment-content {
+  margin-top: 7px;
+}
+
+.comment-author > .avatar {
+  margin-right: 1em;
+}
+
+#comments ul.children {
+  margin-left: 20px;
+}
+
+#comments ul.children li {
+  border-top: 1px solid #e6e6e6;
+  list-style-type: none;
+}
+
+.bypostauthor > article {
+  background: none repeat scroll 0 0 rgba(70, 165, 70, 0.09);
+}
+
+.bypostauthor > article .avatar {
+  border-bottom: 4px solid #46a546;
+}
+
+.form-allowed-tags code {
+  white-space: normal;
+}
+
+.input-comment-author,
+.input-comment-email,
+.input-comment-url {
+  width: 35%;
+}
+
+/* End of comments
+----------------------------------------------- */
+/* Copyright / bottom menu area */
+.site-footer {
+  border-top: solid 1px #ccc;
+  margin-top: 50px;
+  padding: 7px 0px;
+}
+
+.browsehappy {
+  margin-bottom: 0;
+  text-align: center;
+}
+.browsehappy .alert-link {
+  text-decoration: underline;
+}
+
 /*Theme layouts
 ----------------------- */
 /* One column */
@@ -7039,29 +7079,12 @@ ins {
 .layout-2c-r #primary {
   float: right;
 }
-
 .layout-2c-r #secondary {
   float: left;
   margin-left: 0;
 }
 
 /* End of Theme layouts */
-/* Copyright / bottom menu area */
-.site-footer {
-  border-top: solid 1px #ccc;
-  margin-top: 50px;
-  padding: 7px 0px;
-}
-
-.browsehappy {
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.browsehappy .alert-link {
-  text-decoration: underline;
-}
-
 /* Text meant only for screen readers */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -7070,10 +7093,7 @@ ins {
   width: 1px;
   overflow: hidden;
 }
-
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -7129,35 +7149,6 @@ ins {
   clear: both;
 }
 
-/* Page Templates */
-.page-template-templatespage-hero-php .navbar {
-  border-radius: 0;
-  margin-bottom: 0;
-}
-
-/* Post formats
------------------------------------- */
-/* Quote post format */
-.format-quote {
-  background: url("assets/images/quote.png") no-repeat scroll left top;
-  background-size: 20px 20px;
-  margin-top: 15px;
-  padding: 10px 0 0;
-}
-
-.format-quote cite {
-  font-style: italic;
-}
-
-.format-quote blockquote {
-  border-left: 0;
-  margin: 0 0 18px 15px;
-}
-
-.format-quote blockquote p {
-  font-style: italic;
-}
-
 /* Widgets
 ----------------------------------------------- */
 #sidebar {
@@ -7177,30 +7168,26 @@ ins {
   margin: 0 0 1.5em;
   word-wrap: break-word;
 }
+.widget ul {
+  padding: 0 0 0 15px;
+}
+.widget li {
+  margin-bottom: 5px;
+}
+.widget a:hover {
+  background-color: #EEEEEE;
+  text-decoration: none;
+}
 
 .widget-title {
   font-size: 18px;
 }
 
-.widget ul {
-  padding: 0 0 0 15px;
-}
-
-.widget li {
-  margin-bottom: 5px;
-}
-
 .widget .nav-stacked {
   padding: 0;
 }
-
 .widget .nav-stacked li {
   margin-bottom: 0;
-}
-
-.widget a:hover {
-  background-color: #EEEEEE;
-  text-decoration: none;
 }
 
 /* Hide search widget submit button */
@@ -7225,26 +7212,7 @@ ins {
 
 /* End of Widgets
 ---------------------------------------------- */
-/* Responsive layout
----------------------------------------------- */
-@media only screen and (max-width: 480px) {
-  h2.grid-header {
-    font-size: 14px !important;
-  }
-}
-@media only screen and (max-width: 767px) {
-  /* Improve font size and spacing on dropdown menu on mobile/tablets */
-  .navbar-nav .open .dropdown-menu > li > a {
-    padding: 12px 15px 12px 25px;
-  }
-
-  .navbar .nav > li > a, .navbar .dropdown-menu a {
-    font-size: 18px;
-    font-weight: normal;
-    padding: 15px 20px;
-  }
-}
-/*	--------------------------------------------------
+/* --------------------------------------------------
 	:: Block grids - Thanks to Zurb Foundation
 	http://foundation.zurb.com/
 
@@ -7260,7 +7228,6 @@ ins {
   display: block;
   overflow: hidden;
 }
-
 .block-grid > li {
   display: block;
   float: left;
@@ -7268,7 +7235,6 @@ ins {
   margin-bottom: 12px;
   padding: 10px 0;
 }
-
 .block-grid > li > blockquote {
   border-left: none;
   padding: 0 15px;
@@ -7277,7 +7243,6 @@ ins {
 .block-grid.two-up {
   margin-left: -4%;
 }
-
 .block-grid.two-up > li {
   margin-left: 4%;
   width: 46%;
@@ -7286,7 +7251,6 @@ ins {
 .block-grid.three-up {
   margin-left: -2%;
 }
-
 .block-grid.three-up > li {
   margin-left: 2%;
   width: 31.2%;
@@ -7295,7 +7259,6 @@ ins {
 .block-grid.four-up {
   margin-left: -2%;
 }
-
 .block-grid.four-up > li {
   margin-left: 2%;
   width: 23%;
@@ -7304,21 +7267,16 @@ ins {
 .block-grid.five-up {
   margin-left: -1.5%;
 }
-
 .block-grid.five-up > li {
   margin-left: 1.5%;
   width: 18.5%;
 }
 
-/* --------------------------------------------------
-	:: Mobile Block Grids
-	-------------------------------------------------- */
 @media only screen and (max-width: 767px) {
   .block-grid.mobile {
     margin-left: 0;
     padding-left: 4%;
   }
-
   .block-grid.mobile > li {
     float: none;
     margin-left: 0;

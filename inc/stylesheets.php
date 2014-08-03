@@ -20,7 +20,7 @@ function alienship_theme_styles() {
 		wp_enqueue_style( 'alienship-style', get_stylesheet_uri(), array(), $alienship['Version'], 'all' );
 
 	} else {
-		wp_enqueue_style( 'alienship-style', alienship_locate_template_uri( '/style.min.css' ), array(), $alienship['Version'], 'all' );
+		wp_enqueue_style( 'alienship-style', alienship_locate_template_uri( 'style.min.css' ), array(), $alienship['Version'], 'all' );
 
 	}
 

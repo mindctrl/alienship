@@ -210,9 +210,9 @@ p {
 	margin-bottom: 1.625em;
 }
 /* Remove margins from page-header that get set above if used inside a post/page */
-.page-header h1,
-.page-header h2 {
-	margin: 0;
+.page-header,
+.page-header .page-title {
+	margin-top: 0;
 }
 /* Space out the archives descriptions from the names */
 .page-header .taxonomy-description p {

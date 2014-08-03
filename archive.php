@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-xs-12 col-md-8">
+	<section id="primary" class="content-area col-md-8">
 
 		<main id="main" class="site-main" role="main">
 			<?php

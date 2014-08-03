@@ -254,36 +254,6 @@ endif;
 
 
 
-if ( ! function_exists( 'alienship_header_title_and_description' ) ):
-/**
- * Display site title and description below Top Menu navbar
- *
- * @since .55
- * @deprecated since 1.1.1. Use do_action('alienship_site_title') and do_action('alienship_site_description') instead.
- */
-function alienship_header_title_and_description() {
-
-	if ( !is_front_page() || !is_home() ) { ?>
-		<p id="site-title" class="site-title">
-			<span>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-			</span>
-		</p>
-		<p id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></p>
-
-	<?php } else { ?>
-
-		<h1 id="site-title" class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-		</h1>
-		<h2 id="site-description" class="site-description"><?php echo get_bloginfo( 'description' ); ?></h2>
-
-	<?php }
-}
-endif;
-
-
-
 if ( ! function_exists( 'alienship_do_site_title' ) ):
 /**
  * Displays site title at top of page
@@ -401,34 +371,6 @@ function alienship_do_archive_page_title() { ?>
 	</header>
 <?php }
 add_action( 'alienship_archive_page_title', 'alienship_do_archive_page_title' );
-endif;
-
-
-
-if ( ! function_exists( 'alienship_get_first_link' ) ):
-/**
- * Get the first link in a post
- * Used to link the title to external links on the "Link" post format
- * @since .64
- * @deprecated since 1.0.1. Use 'alienship_link_format_helper' instead.
- */
-function alienship_get_first_link() {
-
-	_deprecated_function( __FUNCTION__, '1.0.1', 'alienship_link_format_helper()' );
-
-	global $link_url, $post_content;
-	$content = get_the_content();
-	$link_start = stristr( $content, "http" );
-	$link_end = stristr( $link_start, "\n" );
-
-	if ( ! strlen( $link_end ) == 0 ) {
-		$link_url = substr( $link_start, 0, -( strlen( $link_end ) + 1 ) );
-	} else {
-		$link_url = $link_start;
-	}
-
-	$post_content = substr( $content, strlen( $link_url ) );
-}
 endif;
 
 

@@ -95,37 +95,9 @@ add_action( 'after_setup_theme', 'alienship_setup' );
 
 
 
-/*
- * Allow "a", "embed" and "script" tags in theme options text boxes
+/**
+ * Displays a notice about menu functionality
  */
-function optionscheck_change_sanitize() {
-
-	remove_filter( 'of_sanitize_text', 'sanitize_text_field' );
-	add_filter( 'of_sanitize_text', 'custom_sanitize_text' );
-}
-add_action( 'admin_init','optionscheck_change_sanitize', 100 );
-
-
-
-function custom_sanitize_text( $input ) {
-
-	global $allowedposttags;
-
-	$custom_allowedtags["a"] = array(
-		"href"   => array(),
-		"target" => array(),
-		"id"     => array(),
-		"class"  => array()
-	);
-
-	$custom_allowedtags = array_merge( $custom_allowedtags, $allowedposttags );
-	$output = wp_kses( $input, $custom_allowedtags );
-	return $output;
-}
-
-
-
-// Display a notice about menu functionality
 function alienship_admin_notice_menus() {
 
 	global $current_user, $pagenow;
@@ -142,6 +114,10 @@ add_action( 'admin_notices', 'alienship_admin_notice_menus' );
 
 
 
+/**
+ * Saves a setting when a user ignores the menu functionality notice
+ * so it no longer shows it to that user.
+ */
 function alienship_admin_notice_menus_ignore() {
 
 	global $current_user;

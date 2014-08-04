@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 
 		autoprefixer: {
 			options: {
-				browsers: ['last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9', 'Android']
+				browsers: ['last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 9', 'android 2.3', 'android 4']
 			},
 			single_file: {
 				src: 'style.css',
@@ -72,9 +72,6 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			options: {
-				livereload: true,
-			},
 
 			scripts: {
 				files: ['assets/js/*.js'],
@@ -86,10 +83,17 @@ module.exports = function(grunt) {
 
 			css: {
 				files: ['assets/sass/*.scss'],
-				tasks: ['sass', 'cssmin', 'shell:grunt'],
+				tasks: ['sass', 'autoprefixer', 'cssmin', 'shell:grunt'],
+			},
+
+			livereload: {
 				options: {
-					spawn: false,
-				}
+					livereload: true
+				},
+				files: [
+					'style.css',
+					'style.min.css'
+				]
 			},
 
 		}

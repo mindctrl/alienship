@@ -1,5 +1,21 @@
 module.exports = function(grunt) {
 
+	var jsFileList = [
+		'assets/javascripts/bootstrap/transition.js',
+		'assets/javascripts/bootstrap/alert.js',
+		'assets/javascripts/bootstrap/button.js',
+		'assets/javascripts/bootstrap/carousel.js',
+		'assets/javascripts/bootstrap/collapse.js',
+		'assets/javascripts/bootstrap/dropdown.js',
+		'assets/javascripts/bootstrap/modal.js',
+		'assets/javascripts/bootstrap/tooltip.js',
+		'assets/javascripts/bootstrap/popover.js',
+		'assets/javascripts/bootstrap/scrollspy.js',
+		'assets/javascripts/bootstrap/tab.js',
+		'assets/javascripts/bootstrap/affix.js',
+		'assets/javascripts/alienship-helper.js',
+	];
+
 	// 1. All configuration goes here
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -7,19 +23,16 @@ module.exports = function(grunt) {
 		// Combine our javascript files into one
 		concat: {
 			dist: {
-				src: [
-					'assets/javascripts/bootstrap.js',   // Bootstrap
-					'assets/javascripts/alienship-helper.js' // Theme helper
-				],
-				dest: 'assets/javascripts/production.js',
+				src: [jsFileList],
+				dest: 'assets/javascripts/scripts.js',
 			}
 		},
 
 		// Minify javascript
 		uglify: {
 			build: {
-				src: 'assets/javascripts/production.js',
-				dest: 'assets/javascripts/production.min.js'
+				src: 'assets/javascripts/scripts.js',
+				dest: 'assets/javascripts/scripts.min.js'
 			}
 		},
 

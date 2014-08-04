@@ -16,17 +16,9 @@ function alienship_bootstrap_js_loader() {
 	if( 'true' == WP_DEBUG || 'true' == WP_LOCAL_DEV || 'true' == SCRIPT_DEBUG ) :
 
 		wp_enqueue_script(
-			'bootstrap',
-			alienship_locate_template_uri( 'assets/javascripts/bootstrap.js' ),
+			'scripts',
+			alienship_locate_template_uri( 'assets/javascripts/scripts.js' ),
 			array( 'jquery' ),
-			$alienship['Version'],
-			true
-		);
-
-		wp_enqueue_script(
-			'helper',
-			alienship_locate_template_uri( 'assets/javascripts/alienship-helper.js' ),
-			array( 'jquery', 'bootstrap' ),
 			$alienship['Version'],
 			true
 		);
@@ -34,8 +26,8 @@ function alienship_bootstrap_js_loader() {
 	else :
 
 		wp_enqueue_script(
-			'production.js',
-			alienship_locate_template_uri( 'assets/javascripts/production.min.js' ),
+			'scripts',
+			alienship_locate_template_uri( 'assets/javascripts/scripts.min.js' ),
 			array( 'jquery' ),
 			$alienship['Version'],
 			true

@@ -1,19 +1,19 @@
 module.exports = function(grunt) {
 
 	var jsFileList = [
-		'assets/javascripts/bootstrap/transition.js',
-		'assets/javascripts/bootstrap/alert.js',
-		'assets/javascripts/bootstrap/button.js',
-		'assets/javascripts/bootstrap/carousel.js',
-		'assets/javascripts/bootstrap/collapse.js',
-		'assets/javascripts/bootstrap/dropdown.js',
-		'assets/javascripts/bootstrap/modal.js',
-		'assets/javascripts/bootstrap/tooltip.js',
-		'assets/javascripts/bootstrap/popover.js',
-		'assets/javascripts/bootstrap/scrollspy.js',
-		'assets/javascripts/bootstrap/tab.js',
-		'assets/javascripts/bootstrap/affix.js',
-		'assets/javascripts/alienship-helper.js',
+		'assets/js/bootstrap/transition.js',
+		'assets/js/bootstrap/alert.js',
+		'assets/js/bootstrap/button.js',
+		'assets/js/bootstrap/carousel.js',
+		'assets/js/bootstrap/collapse.js',
+		'assets/js/bootstrap/dropdown.js',
+		'assets/js/bootstrap/modal.js',
+		'assets/js/bootstrap/tooltip.js',
+		'assets/js/bootstrap/popover.js',
+		'assets/js/bootstrap/scrollspy.js',
+		'assets/js/bootstrap/tab.js',
+		'assets/js/bootstrap/affix.js',
+		'assets/js/alienship-helper.js',
 	];
 
 	// 1. All configuration goes here
@@ -24,15 +24,15 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: [jsFileList],
-				dest: 'assets/javascripts/scripts.js',
+				dest: 'assets/js/scripts.js',
 			}
 		},
 
 		// Minify javascript
 		uglify: {
 			build: {
-				src: 'assets/javascripts/scripts.js',
-				dest: 'assets/javascripts/scripts.min.js'
+				src: 'assets/js/scripts.js',
+				dest: 'assets/js/scripts.min.js'
 			}
 		},
 
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 					style: 'expanded'
 				},
 				files: {
-					'style.css': 'assets/stylesheets/style.scss'
+					'style.css': 'assets/sass/style.scss'
 				}
 			}
 		},
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 			},
 
 			scripts: {
-				files: ['assets/javascripts/*.js'],
+				files: ['assets/js/*.js'],
 				tasks: ['concat', 'uglify', 'shell:grunt'],
 				options: {
 					spawn: false,
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 			},
 
 			css: {
-				files: ['assets/stylesheets/*.scss'],
+				files: ['assets/sass/*.scss'],
 				tasks: ['sass', 'cssmin', 'shell:grunt'],
 				options: {
 					spawn: false,

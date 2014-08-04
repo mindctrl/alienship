@@ -17,7 +17,7 @@ function alienship_bootstrap_js_loader() {
 
 		wp_enqueue_script(
 			'scripts',
-			alienship_locate_template_uri( 'assets/javascripts/scripts.js' ),
+			alienship_locate_template_uri( 'assets/js/scripts.js' ),
 			array( 'jquery' ),
 			$alienship['Version'],
 			true
@@ -27,7 +27,7 @@ function alienship_bootstrap_js_loader() {
 
 		wp_enqueue_script(
 			'scripts',
-			alienship_locate_template_uri( 'assets/javascripts/scripts.min.js' ),
+			alienship_locate_template_uri( 'assets/js/scripts.min.js' ),
 			array( 'jquery' ),
 			$alienship['Version'],
 			true

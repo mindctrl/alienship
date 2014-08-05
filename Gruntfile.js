@@ -65,17 +65,11 @@ module.exports = function(grunt) {
 			}
 		},
 
-		shell: {
-			grunt: {
-				command: 'afplay ~/Music/Grunt.aiff'
-			}
-		},
-
 		watch: {
 
 			scripts: {
 				files: ['assets/js/*.js'],
-				tasks: ['concat', 'uglify', 'shell:grunt'],
+				tasks: ['concat', 'uglify'],
 				options: {
 					spawn: false,
 				},
@@ -83,7 +77,7 @@ module.exports = function(grunt) {
 
 			css: {
 				files: ['assets/sass/*.scss'],
-				tasks: ['sass', 'autoprefixer', 'cssmin', 'shell:grunt'],
+				tasks: ['sass', 'autoprefixer', 'cssmin'],
 			},
 
 			livereload: {
@@ -107,10 +101,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-shell');
 
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'autoprefixer', 'watch', 'shell']);
+	grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'autoprefixer', 'watch']);
 
 };

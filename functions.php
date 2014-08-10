@@ -106,7 +106,7 @@ function alienship_admin_notice_menus() {
 	// Check that we're an admin, that we're on the menus page, and that the user hasn't already ignored the message
 	if ( current_user_can( 'administrator' ) && $pagenow =='nav-menus.php' && ! get_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice' ) ) {
 		echo '<div class="updated"><p>';
-		printf( __( 'Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Sub-menus are not supported. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide this notice</a>' ), '?alienship_admin_notice_menus_ignore=0' );
+		printf( __( 'A note about dropdown menus: They activate when clicked, not on mouse hover. This means that the top-level menu item does not click through to a page. It activates the dropdown. Also multi-level menus are not supported. Design your menus with this in mind. - <a href="%1$s">Hide this notice</a>' ), '?alienship_admin_notice_menus_ignore=0' );
 		echo "</p></div>";
 	}
 }
@@ -169,7 +169,9 @@ endif;
 /**
  * Alien Ship RSS Feed Dashboard Widget
  *
- * Retrieve the latest news from Alien Ship home page
+ * Retrieves the latest news from Alien Ship home page
+ * and outputs the admin dashboard widget.
+ *
  *
  * @since Alien Ship .63
  *
@@ -190,38 +192,44 @@ function alienship_rss_dashboard_widget() {
 
 
 
+/**
+ * Adds the admin dashboard widget containing the Alien Ship RSS Feed
+ */
 function alienship_custom_dashboard_widgets() {
 
-	wp_add_dashboard_widget( 'dashboard_custom_feed', 'Alien Ship News', 'alienship_rss_dashboard_widget' );
+	wp_add_dashboard_widget( 'alienship_custom_dashboard_feed', 'Alien Ship News', 'alienship_rss_dashboard_widget' );
 }
-add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
+add_action( 'wp_dashboard_setup', 'alienship_custom_dashboard_widgets' );
 
 
 
 /**
- * Creates the title based on current view
+ * Filters wp_title to print the <title> element based on current view.
  *
  * @since .94
  */
 function alienship_wp_title( $title, $sep ) {
 
-	global $paged, $page;
-
-	if ( is_feed() )
+	if ( is_feed() ) {
 		return $title;
+	}
 
-	// Add the site name.
+	global $page, $paged;
+
+	// Add the site name
 	$title .= get_bloginfo( 'name', 'display' );
 
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title .= " $sep $site_description";
+	}
 
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
+	// Add a page number if necessary:
+	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
+	}
 
 	return $title;
 }
@@ -236,9 +244,9 @@ add_filter( 'wp_title', 'alienship_wp_title', 10, 2 );
 function alienship_layouts_strings() {
 
 	$strings = array(
-		'default'           => __( 'Content left. Sidebar right.', 'alienship' ),
-		'2c-r'              => __( 'Content right. Sidebar left.', 'alienship' ),
-		'1c'                => __( 'Full width. No sidebar.', 'alienship' ),
+		'default' => __( 'Content left. Sidebar right.', 'alienship' ),
+		'2c-r'    => __( 'Content right. Sidebar left.', 'alienship' ),
+		'1c'      => __( 'Full width. No sidebar.', 'alienship' ),
 	);
 	return $strings;
 }
@@ -251,11 +259,9 @@ add_filter( 'theme_layouts_strings', 'alienship_layouts_strings' );
  *
  * @since 1.2.1
  * @uses add_editor_style()
- * @uses get_stylesheet_uri()
  */
 function alienship_editor_styles() {
 
-	add_editor_style( get_stylesheet_uri() );
-	add_editor_style( 'css/bootstrap.min.css' );
+	add_editor_style();
 }
 add_action( 'init', 'alienship_editor_styles' );

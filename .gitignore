@@ -34,7 +34,4 @@ nbproject
 .svn
 .CVS
 .idea
-docs/
-less/
-js/tests/
 node_modules/

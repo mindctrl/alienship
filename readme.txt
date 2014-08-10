@@ -4,9 +4,9 @@ Alien Ship is a responsive starter theme for WordPress. It uses the Sass version
 
 The theme ships with the full Bootstrap library for development purposes. For production environments you should only use the parts of the library you need. To remove styles you don't need, delete or comment out the lines in assets/sass/bootstrap.scss. To remove scripts you don't need, delete the lines from the top of Gruntfile.js so they're not compiled.
 
-Styles: The Gruntfile reads assets/sass/style.scss and compiles the Bootstrap and theme styles into style.css and style.min.css. In development environments, the theme loads style.css. In production environments it loads style.min.css for performance.
+Styles: Grunt reads assets/sass/style.scss and compiles the Bootstrap and theme styles into style.css and style.min.css. In development environments, the theme loads style.css. In production environments it loads style.min.css for performance.
 
-Scripts: The Gruntfile compiles the Bootstrap and theme javascript files into assets/js/scripts.js and assets/js/scripts.min.js. In development environments, the theme loads scripts.js. In production environments it loads scripts.min.js for performance.
+Scripts: Grunt compiles the Bootstrap and theme javascript files into assets/js/scripts.js and assets/js/scripts.min.js. In development environments, the theme loads scripts.js. In production environments it loads scripts.min.js for performance.
 
 Visit http://www.johnparris.com/alienship/ to see the theme in action, to download it, or to read the documentation.
 

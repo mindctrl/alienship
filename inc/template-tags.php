@@ -254,7 +254,7 @@ endif;
 
 
 
-if ( ! function_exists( 'alienship_do_archive_page_title' ) ):
+if ( ! function_exists( 'alienship_archive_page_title' ) ):
 /**
  * Display page title on archive pages
  * @since .592

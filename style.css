@@ -6714,13 +6714,13 @@ button.close {
 
 .navbar {
   border-radius: 0;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 0;
 }
 
 /* Dropdown menu items */
 .dropdown-menu {
-  font-size: 13px;
+  font-size: 15px;
 }
 .dropdown-menu li > a {
   padding: 6px 15px;
@@ -6763,7 +6763,7 @@ button.close {
     border-width: 1px 0 0;
     color: #555;
     display: block;
-    font-size: 13px;
+    font-size: 15px;
     height: auto;
     margin: 0;
     padding: 18px 20px;
@@ -6844,7 +6844,7 @@ article {
 }
 
 .entry-meta {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .updated:not(.published) {

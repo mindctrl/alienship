@@ -9,13 +9,7 @@ License: GNU General Public License
 License URI: license.txt
 */
 
-$font-size-base: 18px;
-$line-height-base: 1.667;
-$dropdown-menu-font-size: ceil(($font-size-base * 0.8));
-$site-title-size: floor(($font-size-base * 2));
-$site-description-size: floor(($font-size-base * 1.5));
-$icon-font-path: "assets/fonts/bootstrap/";
-
+@import "variables";
 @import "bootstrap";
 
 

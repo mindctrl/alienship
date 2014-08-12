@@ -99,3 +99,16 @@ function alienship_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'alienship_body_class' );
+
+
+
+/**
+ * Removes theme layout support from certain content types.
+ */
+function alienship_remove_theme_layout_support() {
+
+	// Remove theme layout support from certain post types
+	remove_post_type_support( 'attachment', 'theme-layouts' );
+	remove_post_type_support( 'page', 'theme-layouts' );
+}
+add_action( 'init', 'alienship_remove_theme_layout_support', 11 );

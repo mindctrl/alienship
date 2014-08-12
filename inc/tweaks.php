@@ -82,3 +82,20 @@ function alienship_setup_author() {
 	}
 }
 add_action( 'wp', 'alienship_setup_author' );
+
+
+
+/**
+ * Adds the page name to the body class.
+ * Used for targeting CSS.
+ */
+function alienship_body_class( $classes ) {
+
+	if( ! is_page() )
+		return $classes;
+
+	global $post;
+	$classes[] = $post->post_name;
+	return $classes;
+}
+add_filter( 'body_class', 'alienship_body_class' );

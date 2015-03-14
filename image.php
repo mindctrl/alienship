@@ -32,13 +32,6 @@ get_header(); ?>
 							);
 							edit_post_link( __( 'Edit', 'alienship' ), '<span class="sep">|</span> <span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
-
-						<nav role="navigation" id="image-navigation" class="image-navigation">
-							<ul class="pager">
-								<li><?php previous_image_link( false, __( '&laquo; Previous', 'alienship' ) ); ?></li>
-								<li><?php next_image_link( false, __( 'Next &raquo;', 'alienship' ) ); ?></li>
-							</ul>
-						</nav>
 					</header>
 
 					<div class="entry-content">
@@ -60,6 +53,13 @@ get_header(); ?>
 						wp_link_pages();
 						?>
 					</div><!-- .entry-content -->
+
+						<nav role="navigation" id="image-navigation" class="image-navigation">
+							<ul class="pager">
+								<li><?php previous_image_link( false, __( '&laquo; Previous', 'alienship' ) ); ?></li>
+								<li><?php next_image_link( false, __( 'Next &raquo;', 'alienship' ) ); ?></li>
+							</ul>
+						</nav>
 
 					<footer class="entry-meta">
 						<?php

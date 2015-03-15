@@ -23,15 +23,18 @@ do_action( 'alienship_head' ); ?>
 <body <?php body_class(); ?>>
 	<!--[if lt IE 9]><p class="browsehappy alert alert-danger">You are using an outdated browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-	<?php get_template_part( '/templates/parts/menu', 'top' ); ?>
+<?php
+	get_template_part( '/templates/parts/menu', 'top' );
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
-	</header><!-- #masthead -->
-	<?php
+	if( get_option( 'alienship_display_masthead', false ) ) : ?>
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div>
+		</header><!-- #masthead -->
+	<?php endif;
+
 	// Main menu
 	if ( has_nav_menu('main') ) {
 		get_template_part( '/templates/parts/menu', 'main' );

@@ -9,6 +9,18 @@
  */
 
 /**
+ * Sanitizes checkbox inputs
+ */
+function alienship_sanitize_checkbox( $input ) {
+	if( 1 == $input ) {
+		return 1;
+	} else {
+		return '';
+	}
+}
+
+
+/**
  * Add custom sections, controls, and settings to the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
@@ -31,10 +43,25 @@ function alienship_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'alienship_breadcrumbs', array(
-		'settings' => 'alienship_breadcrumbs',
-		'label'    => __( 'Display breadcrumb navigation?', 'alienship' ),
-		'section'  => 'nav',
-		'type'     => 'checkbox',
+		'settings'          => 'alienship_breadcrumbs',
+		'label'             => __( 'Display breadcrumb navigation?', 'alienship' ),
+		'section'           => 'nav',
+		'type'              => 'checkbox',
+		'sanitize_callback' => 'alienship_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_setting( 'alienship_display_masthead', array(
+		'default'    => false,
+		'type'       => 'option',
+		'capability' => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( 'alienship_display_masthead', array(
+		'settings'          => 'alienship_display_masthead',
+		'label'             => __( 'Check to display the site title and description in a larger banner at the top of your site.', 'alienship' ),
+		'section'           => 'title_tagline',
+		'type'              => 'checkbox',
+		'sanitize_callback' => 'alienship_sanitize_checkbox',
 	) );
 }
 add_action( 'customize_register', 'alienship_customize_register' );

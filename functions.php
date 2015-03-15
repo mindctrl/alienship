@@ -95,7 +95,7 @@ function alienship_setup() {
 	) );
 
 	// Feature content image size
-	add_image_size( 'featured-post', 1140, 600, true );
+	add_image_size( 'featured-post', 750, 395, true );
 
 	// Load Jetpack support
 	locate_template( '/inc/jetpack.php', true );

@@ -1,11 +1,11 @@
 <?php
 /**
- * Load Bootstrap javascript modules
+ * Loads the theme's javascript
  *
  * @package Alien Ship
  * @since 0.1
  */
-function alienship_bootstrap_js_loader() {
+function alienship_js_loader() {
 
 	$alienship = wp_get_theme();
 
@@ -24,7 +24,19 @@ function alienship_bootstrap_js_loader() {
 		);
 
 	// Comment reply script
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+
+	// Set some variables if we have featured content
+	if( is_front_page() && alienship_has_featured_posts() ) {
+		$featured_content = 'true';
+	} else {
+		$featured_content = 'false';
+	}
+
+	wp_localize_script( 'scripts', 'alienship_js_vars', array(
+		'featured_content' => $featured_content
+	) );
 }
-add_action( 'wp_enqueue_scripts', 'alienship_bootstrap_js_loader' );
+add_action( 'wp_enqueue_scripts', 'alienship_js_loader' );

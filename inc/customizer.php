@@ -36,7 +36,6 @@ function alienship_customize_register( $wp_customize ) {
 		'section'  => 'nav',
 		'type'     => 'checkbox',
 	) );
-
 }
 add_action( 'customize_register', 'alienship_customize_register' );
 

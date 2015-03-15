@@ -417,3 +417,38 @@ function alienship_the_attached_image() {
 	);
 }
 endif;
+
+
+
+/**
+ * Getter function for Featured Content Plugin.
+ *
+ * Taken from Twenty Fourteen theme
+ *
+ * @since Alien Ship 2.0
+ *
+ * @return array An array of WP_Post objects.
+ */
+function alienship_get_featured_posts() {
+	/**
+	 * Filter the featured posts to return.
+	 *
+	 * @since Alien Ship 2.0
+	 *
+	 * @param array|bool $posts Array of featured posts, otherwise false.
+	 */
+	return apply_filters( 'alienship_get_featured_posts', array() );
+}
+
+
+
+/**
+ * A helper conditional function that returns a boolean value.
+ *
+ * @since Alien Ship 2.0
+ *
+ * @return bool Whether there are featured posts.
+ */
+function alienship_has_featured_posts() {
+	return ! is_paged() && (bool) alienship_get_featured_posts();
+}

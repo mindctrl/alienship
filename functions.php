@@ -84,7 +84,18 @@ function alienship_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Add support for post formats. To be styled in later release.
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+	add_theme_support( 'post-formats', array(
+		'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'
+	) );
+
+	// Add support for featured content.
+	add_theme_support( 'featured-content', array(
+		'featured_content_filter' => 'alienship_get_featured_posts',
+		'max_posts' => 3,
+	) );
+
+	// Feature content image size
+	add_image_size( 'featured-post', 750, 395, true );
 
 	// Load Jetpack support
 	locate_template( '/inc/jetpack.php', true );
@@ -265,3 +276,15 @@ function alienship_editor_styles() {
 	add_editor_style();
 }
 add_action( 'init', 'alienship_editor_styles' );
+
+
+
+/**
+ * Add Featured Content functionality.
+ *
+ * To overwrite in a plugin, define your own Featured_Content class on or
+ * before the 'setup_theme' hook.
+ */
+if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
+	require get_template_directory() . '/inc/featured-content.php';
+}

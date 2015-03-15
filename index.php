@@ -11,6 +11,11 @@ get_header(); ?>
 		<div id="primary" class="content-area col-md-8">
 			<main id="main" class="site-main" role="main">
 			<?php
+				if( is_front_page() && alienship_has_featured_posts() ) {
+					// Load featured post content
+					get_template_part( '/templates/parts/featured-content' );
+				}
+
 				if ( have_posts() ) :
 
 					// Start the Loop

@@ -136,17 +136,17 @@ function alienship_content_nav( $nav_id ) {
 		<?php
 		if ( is_single() ) : // navigation links for single posts
 
-			previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&laquo;', 'Previous post link', 'alienship' ) . '</span> %title' );
-			next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&raquo;', 'Next post link', 'alienship' ) . '</span>' );
+			previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav glyphicon glyphicon-chevron-left"></span> %title' );
+			next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav glyphicon glyphicon-chevron-right"></span>' );
 
 		elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 
 			if ( get_next_posts_link() ) : ?>
-				<li class="pull-right"><?php next_posts_link( __( 'Next page <span class="meta-nav">&raquo;</span>', 'alienship' ) ); ?></li>
+				<li class="pull-right"><?php next_posts_link( __( 'Next page <span class="meta-nav glyphicon glyphicon-chevron-right"></span>', 'alienship' ) ); ?></li>
 			<?php endif;
 
 			if ( get_previous_posts_link() ) : ?>
-				<li class="pull-left"><?php previous_posts_link( __( '<span class="meta-nav">&laquo;</span> Previous page', 'alienship' ) ); ?></li>
+				<li class="pull-left"><?php previous_posts_link( __( '<span class="meta-nav glyphicon glyphicon-chevron-left"></span> Previous page', 'alienship' ) ); ?></li>
 			<?php endif;
 
 		endif; ?>

@@ -1,5 +1,5 @@
 == Change log ==
-Version 2.0.0 - Under development
+Version 2.0 - Under development
 ---------------------------------
 - Added Sass files.
 - Added Grunt support for compiling CSS and JS assets.
@@ -12,6 +12,7 @@ Version 2.0.0 - Under development
 - Removed the login form widget.
 - Moved post meta from action hooks to template parts.
 - General cleanup.
+- Updated Bootstrap to 3.3.2.
 
 
 Version 1.2.5 - July 3, 2014

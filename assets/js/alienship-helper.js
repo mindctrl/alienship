@@ -8,8 +8,7 @@
 
 		if(alienship_js_vars.featured_content === 'true') {
 			// Activate the Featured Content carousel
-			$('.carousel-inner .item:first').addClass('active');
-			$('.carousel-indicators li:first').addClass('active');
+			$('.carousel-inner .item:first, .carousel-indicators li:first').addClass('active');
 			$('.carousel').carousel({
 				interval: 7000
 			});

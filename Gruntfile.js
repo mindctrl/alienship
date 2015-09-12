@@ -68,7 +68,8 @@ module.exports = function(grunt) {
 		makepot: {
 			theme: {
 				options: {
-					type: 'wp-theme'
+					type: 'wp-theme',
+					domainPath: 'languages'
 				}
 			}
 		},

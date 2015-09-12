@@ -70,6 +70,14 @@ function alienship_setup() {
 	load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
 
 
+	/**
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
@@ -110,10 +118,9 @@ add_action( 'after_setup_theme', 'alienship_setup' );
 function alienship_admin_notice_menus() {
 
 	global $current_user, $pagenow;
-	$user_id = $current_user->ID;
 
 	// Check that we're an admin, that we're on the menus page, and that the user hasn't already ignored the message
-	if ( current_user_can( 'administrator' ) && $pagenow =='nav-menus.php' && ! get_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice' ) ) {
+	if ( current_user_can( 'administrator' ) && $pagenow =='nav-menus.php' && ! get_user_meta( $current_user->ID, 'alienship_admin_notice_menus_ignore_notice' ) ) {
 		echo '<div class="updated"><p>';
 		printf( __( 'A note about dropdown menus: They activate when clicked, not on mouse hover. This means that the top-level menu item does not click through to a page. It activates the dropdown. Also multi-level menus are not supported. Design your menus with this in mind. - <a href="%1$s">Hide this notice</a>' ), '?alienship_admin_notice_menus_ignore=0' );
 		echo "</p></div>";
@@ -129,12 +136,10 @@ add_action( 'admin_notices', 'alienship_admin_notice_menus' );
  */
 function alienship_admin_notice_menus_ignore() {
 
-	global $current_user;
-	$user_id = $current_user->ID;
-
 	// If user clicks to ignore the notice, add that to their user meta
 	if ( isset( $_GET['alienship_admin_notice_menus_ignore'] ) && '0' == $_GET['alienship_admin_notice_menus_ignore'] ) {
-		add_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice', 'true', true );
+		global $current_user;
+		add_user_meta( $current_user->ID, 'alienship_admin_notice_menus_ignore_notice', 'true', true );
 	}
 }
 add_action( 'admin_init', 'alienship_admin_notice_menus_ignore' );
@@ -143,12 +148,12 @@ add_action( 'admin_init', 'alienship_admin_notice_menus_ignore' );
 
 if ( ! function_exists( 'alienship_locate_template_uri' ) ):
 /**
- * Snatched from future release code in WordPress repo.
- *
  * Retrieve the URI of the highest priority template file that exists.
  *
  * Searches in the stylesheet directory before the template directory so themes
  * which inherit from a parent theme can just override one file.
+ *
+ * Snatched from future release code in WordPress repo.
  *
  * @param string|array $template_names Template file(s) to search for, in order.
  * @return string The URI of the file if one is located.
@@ -180,13 +185,15 @@ endif;
  *
  * Retrieves the latest news from Alien Ship home page
  * and outputs the admin dashboard widget.
+ *
+ * Change this to your own thing.
  */
 function alienship_rss_dashboard_widget() {
 
 	echo '<div class="rss-widget">';
 	wp_widget_rss_output( array(
 		'url'          => 'https://www.johnparris.com/alienship/feed',
-		'title'        => 'Alien Ship News',
+		'title'        => __( 'Alien Ship News', 'alienship' ),
 		'items'        => 3,
 		'show_summary' => 1,
 		'show_author'  => 0,
@@ -202,41 +209,9 @@ function alienship_rss_dashboard_widget() {
  */
 function alienship_custom_dashboard_widgets() {
 
-	wp_add_dashboard_widget( 'alienship_custom_dashboard_feed', 'Alien Ship News', 'alienship_rss_dashboard_widget' );
+	wp_add_dashboard_widget( 'alienship_custom_dashboard_feed', __( 'Alien Ship News', 'alienship' ), 'alienship_rss_dashboard_widget' );
 }
 add_action( 'wp_dashboard_setup', 'alienship_custom_dashboard_widgets' );
-
-
-
-/**
- * Filters wp_title to print the <title> element based on current view.
- */
-function alienship_wp_title( $title, $sep ) {
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	global $page, $paged;
-
-	// Add the site name
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
-
-	// Add a page number if necessary:
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'alienship_wp_title', 10, 2 );
 
 
 

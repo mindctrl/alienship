@@ -23,8 +23,8 @@ get_header(); ?>
 								esc_attr( get_the_time() ),
 								get_the_date(),
 								wp_get_attachment_url(),
-								$metadata['width'],
-								$metadata['height'],
+								esc_html( $metadata['width'] ),
+								esc_html( $metadata['height'] ),
 								esc_url( get_permalink( $post->post_parent ) ),
 								esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
 								get_the_title( $post->post_parent )

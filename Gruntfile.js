@@ -65,6 +65,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		makepot: {
+			theme: {
+				options: {
+					type: 'wp-theme'
+				}
+			}
+		},
+
 		watch: {
 
 			scripts: {
@@ -101,6 +109,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-wp-i18n');
 
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.

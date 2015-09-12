@@ -411,8 +411,6 @@ function alienship_get_featured_posts() {
 	/**
 	 * Filter the featured posts to return.
 	 *
-	 * @since Alien Ship 2.0
-	 *
 	 * @param array|bool $posts Array of featured posts, otherwise false.
 	 */
 	return apply_filters( 'alienship_get_featured_posts', array() );

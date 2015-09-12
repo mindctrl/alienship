@@ -78,7 +78,11 @@ class Featured_Content {
 			return;
 		}
 
-		$filter = $theme_support[0]['featured_content_filter'];
+		/**
+		 * Set the filter name based on what is set in functions.php
+		 * Default filter name = alienship_get_featured_posts
+		 */
+		$filter = (string) $theme_support[0]['featured_content_filter'];
 
 		// Theme can override the number of max posts.
 		if ( isset( $theme_support[0]['max_posts'] ) ) {

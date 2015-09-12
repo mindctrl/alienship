@@ -10,29 +10,15 @@
 			<div class="carousel-inner" role="listbox">
 
 				<?php
-					/**
-					 * Fires before the Alien Ship featured content.
-					 *
-					 * @since Alien Ship 2.0
-					 */
 					do_action( 'alienship_featured_posts_before' );
 
 					$featured_posts = alienship_get_featured_posts();
-					foreach ( (array) $featured_posts as $order => $post ) :
+
+					foreach ( (array) $featured_posts as $order => $post ) {
 						setup_postdata( $post );
-
-						// Include the featured content template.
 						get_template_part( '/templates/parts/content-featured-post' );
-					endforeach;
-				?>
+					}
 
-
-				<?php
-					/**
-					 * Fires after the Alien Ship featured content.
-					 *
-					 * @since Alien Ship 1.0
-					 */
 					do_action( 'alienship_featured_posts_after' );
 
 					wp_reset_postdata();
@@ -45,7 +31,7 @@
 				$indicators = count( $featured_posts );
 				$count = 0;
 				while ( $count != $indicators ) {
-					echo '<li data-target="#featured-carousel" data-slide-to="' . $count . '"></li>';
+					echo '<li data-target="#featured-carousel" data-slide-to="' . (int) $count . '"></li>';
 					$count++;
 				}
 			?>

@@ -88,8 +88,8 @@ function alienship_setup() {
 
 	// Add support for featured content.
 	add_theme_support( 'featured-content', array(
+		'max_posts'               => 3,
 		'featured_content_filter' => 'alienship_get_featured_posts',
-		'max_posts' => 3,
 	) );
 
 	// Feature content image size

@@ -1,8 +1,3 @@
-# Theme related files
-custom/custom.css
-custom/custom_functions.php
-new_functions.php
-
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -39,7 +34,4 @@ nbproject
 .svn
 .CVS
 .idea
-docs/
-less/
-js/tests/
 node_modules/

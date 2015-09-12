@@ -3,20 +3,16 @@
  * The template for displaying all single posts.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>
 
-	<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-8' ); ?>">
+	<div id="primary" class="content-area col-md-8">
 
-		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" role="main" class="site-main">
 
 		<?php
 		while ( have_posts() ) : the_post();
-
-			alienship_content_nav( 'nav-above' ); // display content nav above posts?
 
 			do_action( 'alienship_loop_before' );
 
@@ -37,7 +33,6 @@ get_header(); ?>
 			endwhile; ?>
 
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
 
 	</div><!-- #primary -->
 <?php

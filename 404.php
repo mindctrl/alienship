@@ -3,13 +3,11 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>
-	<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-8' ); ?>">
+	<div id="primary" class="content-area col-md-8">
 
-		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">
 
 			<section class="post error-404 not-found">
@@ -43,7 +41,6 @@ get_header(); ?>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
 
 	</div><!-- #primary -->
 <?php

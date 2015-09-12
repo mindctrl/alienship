@@ -3,14 +3,11 @@
  * The template for displaying Search Results pages.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>
 
-	<section id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-8' ); ?>">
-
-		<?php do_action( 'alienship_main_before' ); ?>
+	<section id="primary" class="content-area col-md-8">
 		<main id="main" role="main" class="site-main">
 
 		<?php if ( have_posts() ) { ?>
@@ -20,8 +17,6 @@ get_header(); ?>
 			</header>
 
 			<?php
-			alienship_content_nav( 'nav-above' ); // display content nav above posts?
-
 			// Start the Loop
 			while ( have_posts() ) : the_post();
 
@@ -43,8 +38,6 @@ get_header(); ?>
 		} //have_posts ?>
 
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
-
 	</section><!-- #primary -->
 <?php
 get_sidebar();

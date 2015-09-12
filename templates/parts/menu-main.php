@@ -3,7 +3,6 @@
  * The template used to load the Main Menu in header*.php
  *
  * @package Alien Ship
- * @since Alien Ship 0.70
  */
 ?>
 <!-- Main menu -->
@@ -15,9 +14,6 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<?php if (of_get_option('alienship_name_in_navbar',1) ) { ?>
-				<a class="navbar-brand" href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
-			<?php } ?>
 		</div>
 
 		<div class="collapse navbar-collapse navbar-ex2-collapse">

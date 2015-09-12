@@ -4,7 +4,6 @@
  * The template for displaying full-width Hero pages.
  *
  * @package Alien Ship
- * @since Alien Ship 0.2
  */
 
 get_header('hero'); ?>
@@ -23,9 +22,7 @@ get_header('hero'); ?>
 </div><!-- #content -->
 
 <div id="hero-widgets-container" class="widget widget-area container" role="complementary">
-	<?php
-	do_action( 'before_sidebar' );
-	alienship_do_sidebar( 'herowidgets' ); ?>
+	<?php alienship_do_sidebar( 'herowidgets' ); ?>
 </div>
 
 

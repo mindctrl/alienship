@@ -12,7 +12,6 @@
 
 /**
  * Set the content width based on the theme's design and stylesheet.
- * @since Alien Ship 0.1
  */
 if ( ! isset( $content_width ) )
 	$content_width = 940; // pixels
@@ -25,7 +24,6 @@ if ( ! function_exists( 'alienship_setup' ) ):
  * Note that this function is hooked into the after_setup_theme hook, which runs
  * before the init hook. The init hook is too late for some features, such as indicating
  * support for post thumbnails.
- * @since Alien Ship 0.1
  */
 function alienship_setup() {
 
@@ -42,17 +40,11 @@ function alienship_setup() {
 	// Register sidebars
 	locate_template( '/inc/sidebars.php', true );
 
-	// Header image
-	locate_template( '/inc/header-image.php', true );
-
-	// Load theme options framework
-	locate_template( '/inc/options-panel.php', true );
-
 	// Customizer
 	locate_template( '/inc/customizer.php', true );
 
 	// Breadcrumbs
-	if ( of_get_option( 'alienship_breadcrumbs',1) ) {
+	if ( get_option( 'alienship_breadcrumbs', false ) ) {
 		locate_template( '/inc/breadcrumb-trail.php', true );
 	}
 
@@ -78,6 +70,14 @@ function alienship_setup() {
 	load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
 
 
+	/**
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
@@ -90,11 +90,21 @@ function alienship_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Add support for post formats. To be styled in later release.
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+	add_theme_support( 'post-formats', array(
+		'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'
+	) );
 
-	// Load Jetpack related support if needed.
-	if ( class_exists( 'Jetpack' ) )
-		locate_template( '/inc/jetpack.php', true );
+	// Add support for featured content.
+	add_theme_support( 'featured-content', array(
+		'max_posts'               => 3,
+		'featured_content_filter' => 'alienship_get_featured_posts',
+	) );
+
+	// Feature content image size
+	add_image_size( 'featured-post', 750, 395, true );
+
+	// Load Jetpack support
+	locate_template( '/inc/jetpack.php', true );
 
 }
 endif; // alienship_setup
@@ -102,46 +112,17 @@ add_action( 'after_setup_theme', 'alienship_setup' );
 
 
 
-/*
- * Allow "a", "embed" and "script" tags in theme options text boxes
+/**
+ * Displays a notice about menu functionality
  */
-function optionscheck_change_sanitize() {
-
-	remove_filter( 'of_sanitize_text', 'sanitize_text_field' );
-	add_filter( 'of_sanitize_text', 'custom_sanitize_text' );
-}
-add_action( 'admin_init','optionscheck_change_sanitize', 100 );
-
-
-
-function custom_sanitize_text( $input ) {
-
-	global $allowedposttags;
-
-	$custom_allowedtags["a"] = array(
-		"href"   => array(),
-		"target" => array(),
-		"id"     => array(),
-		"class"  => array()
-	);
-
-	$custom_allowedtags = array_merge( $custom_allowedtags, $allowedposttags );
-	$output = wp_kses( $input, $custom_allowedtags );
-	return $output;
-}
-
-
-
-// Display a notice about menu functionality
 function alienship_admin_notice_menus() {
 
 	global $current_user, $pagenow;
-	$user_id = $current_user->ID;
 
 	// Check that we're an admin, that we're on the menus page, and that the user hasn't already ignored the message
-	if ( current_user_can( 'administrator' ) && $pagenow =='nav-menus.php' && ! get_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice' ) ) {
+	if ( current_user_can( 'administrator' ) && $pagenow =='nav-menus.php' && ! get_user_meta( $current_user->ID, 'alienship_admin_notice_menus_ignore_notice' ) ) {
 		echo '<div class="updated"><p>';
-		printf( __( 'Dropdown menus work a little differently in Alien Ship. They do not activate on mouse hover, but on click instead. This means that the top/parent menu item does not click through to a page, but only activates the dropdown. Sub-menus are not supported. Design your menus with this in mind. For more information, read the <a href="http://www.johnparris.com/alienship/documentation" target="_blank">Alien Ship documentation</a> online. | <a href="%1$s">Hide this notice</a>' ), '?alienship_admin_notice_menus_ignore=0' );
+		printf( __( 'A note about dropdown menus: They activate when clicked, not on mouse hover. This means that the top-level menu item does not click through to a page. It activates the dropdown. Also multi-level menus are not supported. Design your menus with this in mind. - <a href="%1$s">Hide this notice</a>' ), '?alienship_admin_notice_menus_ignore=0' );
 		echo "</p></div>";
 	}
 }
@@ -149,14 +130,16 @@ add_action( 'admin_notices', 'alienship_admin_notice_menus' );
 
 
 
+/**
+ * Saves a setting when a user ignores the menu functionality notice
+ * so it no longer shows it to that user.
+ */
 function alienship_admin_notice_menus_ignore() {
-
-	global $current_user;
-	$user_id = $current_user->ID;
 
 	// If user clicks to ignore the notice, add that to their user meta
 	if ( isset( $_GET['alienship_admin_notice_menus_ignore'] ) && '0' == $_GET['alienship_admin_notice_menus_ignore'] ) {
-		add_user_meta( $user_id, 'alienship_admin_notice_menus_ignore_notice', 'true', true );
+		global $current_user;
+		add_user_meta( $current_user->ID, 'alienship_admin_notice_menus_ignore_notice', 'true', true );
 	}
 }
 add_action( 'admin_init', 'alienship_admin_notice_menus_ignore' );
@@ -165,12 +148,12 @@ add_action( 'admin_init', 'alienship_admin_notice_menus_ignore' );
 
 if ( ! function_exists( 'alienship_locate_template_uri' ) ):
 /**
- * Snatched from future release code in WordPress repo.
- *
  * Retrieve the URI of the highest priority template file that exists.
  *
  * Searches in the stylesheet directory before the template directory so themes
  * which inherit from a parent theme can just override one file.
+ *
+ * Snatched from future release code in WordPress repo.
  *
  * @param string|array $template_names Template file(s) to search for, in order.
  * @return string The URI of the file if one is located.
@@ -200,17 +183,17 @@ endif;
 /**
  * Alien Ship RSS Feed Dashboard Widget
  *
- * Retrieve the latest news from Alien Ship home page
+ * Retrieves the latest news from Alien Ship home page
+ * and outputs the admin dashboard widget.
  *
- * @since Alien Ship .63
- *
+ * Change this to your own thing.
  */
 function alienship_rss_dashboard_widget() {
 
 	echo '<div class="rss-widget">';
 	wp_widget_rss_output( array(
-		'url'          => 'http://www.johnparris.com/alienship/feed',
-		'title'        => 'Alien Ship News',
+		'url'          => 'https://www.johnparris.com/alienship/feed',
+		'title'        => __( 'Alien Ship News', 'alienship' ),
 		'items'        => 3,
 		'show_summary' => 1,
 		'show_author'  => 0,
@@ -221,55 +204,26 @@ function alienship_rss_dashboard_widget() {
 
 
 
+/**
+ * Adds the admin dashboard widget containing the Alien Ship RSS Feed
+ */
 function alienship_custom_dashboard_widgets() {
 
-	wp_add_dashboard_widget( 'dashboard_custom_feed', 'Alien Ship News', 'alienship_rss_dashboard_widget' );
+	wp_add_dashboard_widget( 'alienship_custom_dashboard_feed', __( 'Alien Ship News', 'alienship' ), 'alienship_rss_dashboard_widget' );
 }
-add_action('wp_dashboard_setup', 'alienship_custom_dashboard_widgets');
-
-
-
-/**
- * Creates the title based on current view
- *
- * @since .94
- */
-function alienship_wp_title( $title, $sep ) {
-
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'alienship' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'alienship_wp_title', 10, 2 );
+add_action( 'wp_dashboard_setup', 'alienship_custom_dashboard_widgets' );
 
 
 
 /**
  * Define theme layouts
- * @since .94
  */
 function alienship_layouts_strings() {
 
 	$strings = array(
-		'default'           => __( 'Content left. Sidebar right.', 'alienship' ),
-		'2c-r'              => __( 'Content right. Sidebar left.', 'alienship' ),
-		'1c'                => __( 'Full width. No sidebar.', 'alienship' ),
+		'default' => __( 'Content left. Sidebar right.', 'alienship' ),
+		'2c-r'    => __( 'Content right. Sidebar left.', 'alienship' ),
+		'1c'      => __( 'Full width. No sidebar.', 'alienship' ),
 	);
 	return $strings;
 }
@@ -280,28 +234,22 @@ add_filter( 'theme_layouts_strings', 'alienship_layouts_strings' );
 /**
  * Apply the theme stylesheet to the visual editor.
  *
- * @since 1.2.1
  * @uses add_editor_style()
- * @uses get_stylesheet_uri()
  */
 function alienship_editor_styles() {
 
-	add_editor_style( get_stylesheet_uri() );
-	add_editor_style( 'css/bootstrap.min.css' );
+	add_editor_style();
 }
 add_action( 'init', 'alienship_editor_styles' );
 
 
 
 /**
- * Deletes featured posts transient
+ * Add Featured Content functionality.
  *
- * @since 1.2.4
+ * To overwrite in a plugin, define your own Featured_Content class on or
+ * before the 'setup_theme' hook.
  */
-function alienship_delete_transients() {
-
-	delete_transient( 'alienship_featured_posts' );
+if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
+	require get_template_directory() . '/inc/featured-content.php';
 }
-add_action( 'save_post', 'alienship_delete_transients' );
-add_action( 'wp_trash_post', 'alienship_delete_transients' );
-add_action( 'delete_post', 'alienship_delete_transients' );

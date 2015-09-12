@@ -5,7 +5,6 @@
  *
  * @package Alien Ship
  * @subpackage Widgets
- * @since .93
  */
 class Nav_Stacked_Pills_Menu_Widget extends WP_Nav_Menu_Widget {
 

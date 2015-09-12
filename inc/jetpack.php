@@ -3,7 +3,6 @@
  * Jetpack Related Features
  *
  * @package Alien Ship
- * @since 1.0.1
  */
 
 /**
@@ -12,7 +11,7 @@
  */
 
 add_theme_support( 'infinite-scroll', array(
-	'container' => 'content',
+	'container' => 'main',
 	'footer'    => false,
 	'render'    => 'alienship_infinite_scroll_init',
 ) );

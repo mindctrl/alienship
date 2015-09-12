@@ -1,20 +1,41 @@
 <?php
 /**
- * Load Bootstrap javascript modules
+ * Loads the theme's javascript
  *
  * @package Alien Ship
- * @since 0.1
  */
-function alienship_bootstrap_js_loader() {
+function alienship_js_loader() {
 
-	// Bootstrap JS components - Drop a custom build in your child theme's 'js' folder to override this one.
-	wp_enqueue_script( 'bootstrap.js', alienship_locate_template_uri( 'js/bootstrap.min.js' ), array( 'jquery' ), '3.1.1', true );
+	$alienship = wp_get_theme();
 
-	// Bootstrap helper script
-	wp_enqueue_script( 'alienship-helper.js', alienship_locate_template_uri( 'js/alienship-helper.js' ), array('jquery'),'1.0.0', true);
+	/**
+	 * Load the theme scripts
+	 * If we're on the local environment or WP_DEBUG is enabled, load unminified versions
+	 */
+	$script = ( 'true' == WP_DEBUG || 'true' == WP_LOCAL_DEV || 'true' == SCRIPT_DEBUG ) ? 'assets/js/scripts.js' : 'assets/js/scripts.min.js';
+
+		wp_enqueue_script(
+			'scripts',
+			alienship_locate_template_uri( $script ),
+			array( 'jquery' ),
+			$alienship['Version'],
+			true
+		);
 
 	// Comment reply script
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+
+	// Set some variables if we have featured content
+	if( is_front_page() && alienship_has_featured_posts() ) {
+		$featured_content = 'true';
+	} else {
+		$featured_content = 'false';
+	}
+
+	wp_localize_script( 'scripts', 'alienship_js_vars', array(
+		'featured_content' => $featured_content
+	) );
 }
-add_action( 'wp_enqueue_scripts', 'alienship_bootstrap_js_loader' );
+add_action( 'wp_enqueue_scripts', 'alienship_js_loader' );

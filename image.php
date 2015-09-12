@@ -3,14 +3,11 @@
  * The template for displaying image attachments.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>
 
 	<div id="primary" class="image-attachment">
-
-		<?php do_action( 'alienship_main_before' ); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -26,24 +23,16 @@ get_header(); ?>
 								esc_attr( get_the_time() ),
 								get_the_date(),
 								wp_get_attachment_url(),
-								$metadata['width'],
-								$metadata['height'],
+								esc_html( $metadata['width'] ),
+								esc_html( $metadata['height'] ),
 								esc_url( get_permalink( $post->post_parent ) ),
 								esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
 								get_the_title( $post->post_parent )
 							);
 							edit_post_link( __( 'Edit', 'alienship' ), '<span class="sep">|</span> <span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
-
-						<nav role="navigation" id="image-navigation" class="image-navigation">
-							<ul class="pager">
-								<li><?php previous_image_link( false, __( '&laquo; Previous', 'alienship' ) ); ?></li>
-								<li><?php next_image_link( false, __( 'Next &raquo;', 'alienship' ) ); ?></li>
-							</ul>
-						</nav>
 					</header>
 
-					<?php do_action( 'alienship_entry_content_before' ); ?>
 					<div class="entry-content">
 
 						<div class="entry-attachment">
@@ -63,7 +52,13 @@ get_header(); ?>
 						wp_link_pages();
 						?>
 					</div><!-- .entry-content -->
-					<?php do_action( 'alienship_entry_content_after' ); ?>
+
+						<nav role="navigation" id="image-navigation" class="image-navigation">
+							<ul class="pager">
+								<li><?php previous_image_link( false, __( '&laquo; Previous', 'alienship' ) ); ?></li>
+								<li><?php next_image_link( false, __( 'Next &raquo;', 'alienship' ) ); ?></li>
+							</ul>
+						</nav>
 
 					<footer class="entry-meta">
 						<?php
@@ -90,8 +85,6 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
-
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

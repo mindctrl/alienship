@@ -8,14 +8,11 @@
  * different template.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>
 
-	<div id="primary" class="<?php echo apply_filters( 'alienship_primary_container_class', 'content-area col-sm-8' ); ?>">
-
-		<?php do_action( 'alienship_main_before' ); ?>
+	<div id="primary" class="content-area col-md-8">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -33,8 +30,6 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
-		<?php do_action( 'alienship_main_after' ); ?>
-
 	</div><!-- #primary -->
 <?php
 get_sidebar();

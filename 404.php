@@ -3,7 +3,6 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>

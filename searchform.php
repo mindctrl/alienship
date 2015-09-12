@@ -3,7 +3,6 @@
  * The template for displaying search forms in Alien Ship
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">

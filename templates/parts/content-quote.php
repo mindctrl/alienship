@@ -3,7 +3,6 @@
  * The template for displaying posts in the Quote post format
  *
  * @package Alien Ship
- * @since Alien Ship 0.4
  */
 ?>
 

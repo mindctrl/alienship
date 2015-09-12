@@ -3,14 +3,11 @@
  * Custom template tags for this theme.
  *
  * @package Alien Ship
- * @since 0.1
  */
 
 
 /**
  * Count the number of active widgets to determine dynamic wrapper class
- *
- * @since 1.0
  */
 function alienship_sidebar_class( $prefix = false ) {
 
@@ -61,7 +58,6 @@ function alienship_sidebar_class( $prefix = false ) {
  * Determines the theme layout and active sidebars, and prints the HTML structure
  * with appropriate grid classes depending on which are activated.
  *
- * @since 1.0
  * @uses alienship_sidebar_class()
  * @param string $prefix Prefix of the widget to be displayed. Example: "footer" for footer-1, footer-2, etc.
  */
@@ -114,11 +110,8 @@ function alienship_do_sidebar( $prefix = false ) {
 
 
 
-if ( ! function_exists( 'alienship_content_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable
- *
- * @since 0.1
  */
 function alienship_content_nav( $nav_id ) {
 
@@ -154,11 +147,9 @@ function alienship_content_nav( $nav_id ) {
 	</nav><!-- #<?php echo $nav_id; ?> -->
 	<?php
 }
-endif; // alienship_content_nav
 
 
 
-if ( ! function_exists( 'alienship_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -216,11 +207,9 @@ function alienship_comment( $comment, $args, $depth ) {
 	<?php
 	endif;
 }
-endif; // ends check for alienship_comment()
 
 
 
-if ( ! function_exists( 'alienship_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
@@ -250,14 +239,11 @@ function alienship_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 
 }
-endif;
 
 
 
-if ( ! function_exists( 'alienship_archive_page_title' ) ):
 /**
  * Display page title on archive pages
- * @since .592
  */
 function alienship_archive_page_title() { ?>
 
@@ -323,16 +309,13 @@ function alienship_archive_page_title() { ?>
 
 	</header>
 <?php }
-endif;
 
 
 
-if ( ! function_exists( 'alienship_link_format_helper' ) ) :
 /**
  * Returns the first post link and/or post content without the link.
  * Used for the "Link" post format.
  *
- * @since 1.0.1
  * @param string $output "link" or "post_content"
  * @return string Link or Post Content without link.
  */
@@ -361,11 +344,9 @@ function alienship_link_format_helper( $output = false ) {
 	if ( 'post_content' == $output )
 		return $post_content;
 }
-endif;
 
 
 
-if ( ! function_exists( 'alienship_the_attached_image' ) ) :
 /**
  * Prints the attached image with a link to the next attached image.
  */
@@ -416,7 +397,6 @@ function alienship_the_attached_image() {
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
 }
-endif;
 
 
 
@@ -424,8 +404,6 @@ endif;
  * Getter function for Featured Content Plugin.
  *
  * Taken from Twenty Fourteen theme
- *
- * @since Alien Ship 2.0
  *
  * @return array An array of WP_Post objects.
  */
@@ -444,8 +422,6 @@ function alienship_get_featured_posts() {
 
 /**
  * A helper conditional function that returns a boolean value.
- *
- * @since Alien Ship 2.0
  *
  * @return bool Whether there are featured posts.
  */

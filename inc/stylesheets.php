@@ -3,11 +3,7 @@
  * Register and enqueue the front end CSS
  *
  * @package Alien Ship
- * @since 1.0
  */
-
-
-// Load frontend theme styles
 function alienship_theme_styles() {
 
 	$alienship = wp_get_theme();

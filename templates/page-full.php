@@ -4,7 +4,6 @@
  * The template for displaying full-width pages with no sidebar.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>

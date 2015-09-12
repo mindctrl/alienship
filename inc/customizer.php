@@ -5,7 +5,6 @@
  * Code adapted from Underscores theme (underscores.me) and Otto's great tutorial (ottopress.com)
  *
  * @package Alien Ship
- * @since 1.2.0
  */
 
 /**

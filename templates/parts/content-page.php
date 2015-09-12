@@ -3,7 +3,6 @@
  * The template used for displaying page content in page.php
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 ?>
 

@@ -3,7 +3,6 @@
  * The main template file.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>

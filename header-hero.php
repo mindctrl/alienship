@@ -5,7 +5,6 @@
  * Displays all of the <head> section and everything up to <div id="content">
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 ?>
 <!DOCTYPE html>

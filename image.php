@@ -3,7 +3,6 @@
  * The template for displaying image attachments.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 get_header(); ?>

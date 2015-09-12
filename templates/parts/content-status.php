@@ -3,7 +3,6 @@
  * The template for displaying posts in the Status post format
  *
  * @package Alien Ship
- * @since Alien Ship 0.64
  */
 ?>
 

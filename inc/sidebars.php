@@ -1,11 +1,8 @@
 <?php
-
-if ( ! function_exists( 'alienship_widgets_init' ) ):
 /**
  * Register widgetized areas and widgets
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 function alienship_widgets_init() {
 
@@ -80,7 +77,6 @@ function alienship_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'alienship_widgets_init' );
-endif;
 
 
 

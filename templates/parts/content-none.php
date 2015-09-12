@@ -3,7 +3,6 @@
  * The template used when no results are found. Used in archive.php, author.php, index.php, and search.php
  *
  * @package Alien Ship
- * @since Alien Ship 0.56
  */
 ?>
 <article id="post-0" class="post no-results not-found">

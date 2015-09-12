@@ -1,7 +1,6 @@
 <?php
 /**
  * Featured post content
- * @since Alien Ship 0.4
  */
 ?>
 	<div class="item">

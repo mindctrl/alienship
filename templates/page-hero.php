@@ -4,7 +4,6 @@
  * The template for displaying full-width Hero pages.
  *
  * @package Alien Ship
- * @since Alien Ship 0.2
  */
 
 get_header('hero'); ?>

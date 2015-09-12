@@ -3,7 +3,6 @@
  * Loads the theme's javascript
  *
  * @package Alien Ship
- * @since 0.1
  */
 function alienship_js_loader() {
 

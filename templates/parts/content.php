@@ -1,7 +1,6 @@
 <?php
 /**
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 ?>
 

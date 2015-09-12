@@ -12,7 +12,6 @@
 
 /**
  * Set the content width based on the theme's design and stylesheet.
- * @since Alien Ship 0.1
  */
 if ( ! isset( $content_width ) )
 	$content_width = 940; // pixels
@@ -25,7 +24,6 @@ if ( ! function_exists( 'alienship_setup' ) ):
  * Note that this function is hooked into the after_setup_theme hook, which runs
  * before the init hook. The init hook is too late for some features, such as indicating
  * support for post thumbnails.
- * @since Alien Ship 0.1
  */
 function alienship_setup() {
 
@@ -182,16 +180,12 @@ endif;
  *
  * Retrieves the latest news from Alien Ship home page
  * and outputs the admin dashboard widget.
- *
- *
- * @since Alien Ship .63
- *
  */
 function alienship_rss_dashboard_widget() {
 
 	echo '<div class="rss-widget">';
 	wp_widget_rss_output( array(
-		'url'          => 'http://www.johnparris.com/alienship/feed',
+		'url'          => 'https://www.johnparris.com/alienship/feed',
 		'title'        => 'Alien Ship News',
 		'items'        => 3,
 		'show_summary' => 1,
@@ -216,8 +210,6 @@ add_action( 'wp_dashboard_setup', 'alienship_custom_dashboard_widgets' );
 
 /**
  * Filters wp_title to print the <title> element based on current view.
- *
- * @since .94
  */
 function alienship_wp_title( $title, $sep ) {
 
@@ -250,7 +242,6 @@ add_filter( 'wp_title', 'alienship_wp_title', 10, 2 );
 
 /**
  * Define theme layouts
- * @since .94
  */
 function alienship_layouts_strings() {
 
@@ -268,7 +259,6 @@ add_filter( 'theme_layouts_strings', 'alienship_layouts_strings' );
 /**
  * Apply the theme stylesheet to the visual editor.
  *
- * @since 1.2.1
  * @uses add_editor_style()
  */
 function alienship_editor_styles() {

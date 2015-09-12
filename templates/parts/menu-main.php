@@ -3,7 +3,6 @@
  * The template used to load the Main Menu in header*.php
  *
  * @package Alien Ship
- * @since Alien Ship 0.70
  */
 ?>
 <!-- Main menu -->

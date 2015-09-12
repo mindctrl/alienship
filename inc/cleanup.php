@@ -2,7 +2,6 @@
 /**
  * Clean up header output
  * @package Alien Ship
- * @since Alien Ship 0.3
  */
 function alienship_head_cleanup() {
 

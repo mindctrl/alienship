@@ -3,12 +3,10 @@
  * Custom functions that act independently of the theme templates
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 
 /**
  * We don't need to self-close these tags in html5: <img>, <input>
- * @since Alien Ship 0.3
  */
 function alienship_remove_self_closing_tags( $input ) {
 
@@ -22,7 +20,6 @@ add_filter( 'post_thumbnail_html', 'alienship_remove_self_closing_tags' );
 
 /**
  * Style comment reply links as buttons
- * @since 1.0
  */
 function alienship_comment_reply_link( $link ) {
 
@@ -44,8 +41,6 @@ add_filter('excerpt_more', 'alienship_excerpt_more');
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
- *
- * @since Alien Ship 0.1
  */
 function alienship_enhanced_image_navigation( $url, $id ) {
 

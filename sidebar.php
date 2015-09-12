@@ -3,7 +3,6 @@
  * The Sidebar containing the main widget areas.
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 ?>
 <?php if ( current_theme_supports( 'theme-layouts' ) && 'layout-1c' !== theme_layouts_get_layout() || !current_theme_supports( 'theme-layouts' ) ) : ?>

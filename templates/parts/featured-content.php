@@ -1,8 +1,6 @@
 <?php
 /**
  * Template for display Featured Content
- *
- * @since Alien Ship 2.0
  */
 ?>
 <div class="row">

@@ -3,7 +3,6 @@
  * Jetpack Related Features
  *
  * @package Alien Ship
- * @since 1.0.1
  */
 
 /**

@@ -5,7 +5,6 @@
  * Contains the closing of the id=main div and all content after
  *
  * @package Alien Ship
- * @since Alien Ship 0.1
  */
 ?>
 <footer class="site-footer" id="colophon" role="contentinfo">

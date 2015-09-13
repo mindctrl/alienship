@@ -36,7 +36,7 @@ class Nav_Stacked_Pills_Menu_Widget extends WP_Nav_Menu_Widget {
 		$args['container_class'] = empty( $this->instance['well'] ) ? '' : 'well';
 		$args['menu_class']      = 'menu nav nav-pills nav-stacked';
 
-		return apply_filters( 'nav_stacked_pills_menu_args', $args );
+		return apply_filters( 'alienship_stacked_pills_menu_args', $args );
 	}
 
 	function wp_nav_menu( $nav_menu ) {

@@ -28,11 +28,16 @@ if ( ! isset( $content_width ) ) {
  */
 function alienship_setup() {
 
+	/**
+	 * Make theme available for translation
+	 * Translations can be filed in the /languages/ directory
+	 * If you're building a theme based on alienship, use a find and replace
+	 * to change 'alienship' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
+
 	// Custom template tags for this theme.
 	locate_template( '/inc/template-tags.php', true );
-
-	// Clean up header output
-	locate_template( '/inc/cleanup.php', true );
 
 	// Register the navigation menus.
 	locate_template( '/inc/menus.php', true );
@@ -56,15 +61,6 @@ function alienship_setup() {
 	// Load Theme Layouts extension and add theme support for desired layouts
 	locate_template( '/inc/theme-layouts.php', true );
 	add_theme_support( 'theme-layouts', array( '2c-r', '1c' ) );
-
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on alienship, use a find and replace
-	 * to change 'alienship' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'alienship', get_template_directory() . '/languages' );
-
 
 	/**
 	 * Let WordPress manage the document title.
@@ -100,7 +96,9 @@ function alienship_setup() {
 	add_image_size( 'featured-post', 750, 395, true );
 
 	// Load Jetpack support
-	locate_template( '/inc/jetpack.php', true );
+	if ( class_exists( 'Jetpack' ) ) {
+		locate_template( '/inc/jetpack.php', true );
+	}
 
 }
 add_action( 'after_setup_theme', 'alienship_setup' );

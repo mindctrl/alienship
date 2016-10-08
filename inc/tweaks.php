@@ -6,24 +6,10 @@
  */
 
 /**
- * We don't need to self-close these tags in html5: <img>, <input>
- */
-function alienship_remove_self_closing_tags( $input ) {
-
-	return str_replace(' />', '>', $input);
-}
-add_filter( 'get_avatar', 'alienship_remove_self_closing_tags' );
-add_filter( 'comment_id_fields', 'alienship_remove_self_closing_tags' );
-add_filter( 'post_thumbnail_html', 'alienship_remove_self_closing_tags' );
-
-
-
-/**
  * Style comment reply links as buttons
  */
 function alienship_comment_reply_link( $link ) {
-
-	return str_replace( 'comment-reply-link', 'btn btn-default btn-xs', $link );
+	return str_replace( 'comment-reply-link', 'comment-reply-link btn btn-default btn-xs', $link );
 }
 add_filter( 'comment_reply_link', 'alienship_comment_reply_link' );
 
@@ -32,8 +18,7 @@ add_filter( 'comment_reply_link', 'alienship_comment_reply_link' );
  * Style the excerpt continuation
  */
 function alienship_excerpt_more( $more ) {
-
-	return ' ... <a href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading ', 'alienship' ) .' &raquo;</a>';
+	return ' ... <a href="'. esc_url( get_permalink( get_the_ID() ) ) . '">'. __( 'Continue Reading ', 'alienship' ) .' &raquo;</a>';
 }
 add_filter('excerpt_more', 'alienship_excerpt_more');
 
@@ -86,8 +71,9 @@ add_action( 'wp', 'alienship_setup_author' );
  */
 function alienship_body_class( $classes ) {
 
-	if( ! is_page() )
+	if ( ! is_page() ) {
 		return $classes;
+	}
 
 	global $post;
 	$classes[] = $post->post_name;
@@ -107,3 +93,16 @@ function alienship_remove_theme_layout_support() {
 	remove_post_type_support( 'page', 'theme-layouts' );
 }
 add_action( 'init', 'alienship_remove_theme_layout_support', 11 );
+
+
+function alienship_tweak_the_archive_title( $title ) {
+
+	$title = str_replace( 'Category: ', '', $title );
+	$title = str_replace( 'Tag: ', '', $title );
+	$title = str_replace( 'Author: ', '', $title );
+	$title = str_replace( 'Year: ', '', $title );
+	$title = str_replace( 'Month: ', '', $title );
+	$title = str_replace( 'Day: ', '', $title );
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'alienship_tweak_the_archive_title' );

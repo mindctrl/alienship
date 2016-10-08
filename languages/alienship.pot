@@ -1,17 +1,17 @@
-# Copyright (C) 2015 John Parris
+# Copyright (C) 2016 John Parris
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Alien Ship 2.0\n"
+"Project-Id-Version: Alien Ship 2.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-09-12 21:57:25+00:00\n"
+"POT-Creation-Date: 2016-10-08 13:25:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
@@ -88,9 +88,7 @@ msgid ""
 "to %7$s\" rel=\"gallery\">%8$s</a>"
 msgstr ""
 
-#: image.php:32 image.php:79 inc/breadcrumb-trail.php:1122
-#: inc/breadcrumb-trail.php:1158 inc/breadcrumb-trail.php:1175
-#: inc/breadcrumb-trail.php:1206 inc/template-tags.php:165
+#: image.php:32 image.php:79 inc/template-tags.php:165
 #: inc/template-tags.php:184 templates/parts/content-entry-footer.php:45
 msgid "Edit"
 msgstr ""
@@ -125,74 +123,6 @@ msgstr ""
 
 #: image.php:75
 msgid "Both comments and trackbacks are currently closed."
-msgstr ""
-
-#: inc/breadcrumb-trail.php:175
-msgid "Browse:"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:176
-msgid "Home"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:177
-msgid "Search results for \"%s\""
-msgstr ""
-
-#: inc/breadcrumb-trail.php:178
-msgid "404 Not Found"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:179
-msgid "Page %d"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:180 inc/template-tags.php:299
-msgid "Archives"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:181
-msgid "g:i a"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:182
-msgid "Minute %d"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:183
-msgid "g a"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:184
-msgid "d"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:185
-msgid "Week %d"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:186
-msgid "F"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:187 inc/breadcrumb-trail.php:1027
-msgid "Y"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:1031
-msgid "F Y"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:1035
-msgid "F j, Y"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:1150
-msgid "Split"
-msgstr ""
-
-#: inc/breadcrumb-trail.php:1154
-msgid "Merge"
 msgstr ""
 
 #: inc/customizer.php:46
@@ -367,6 +297,10 @@ msgstr ""
 
 #: inc/template-tags.php:296
 msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:299
+msgid "Archives"
 msgstr ""
 
 #: inc/template-tags.php:325

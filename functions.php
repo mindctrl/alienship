@@ -13,11 +13,12 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
+if ( ! isset( $content_width ) ) {
 	$content_width = 940; // pixels
+}
 
 
-if ( ! function_exists( 'alienship_setup' ) ):
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -102,7 +103,6 @@ function alienship_setup() {
 	locate_template( '/inc/jetpack.php', true );
 
 }
-endif; // alienship_setup
 add_action( 'after_setup_theme', 'alienship_setup' );
 
 
@@ -141,7 +141,6 @@ add_action( 'admin_init', 'alienship_admin_notice_menus_ignore' );
 
 
 
-if ( ! function_exists( 'alienship_locate_template_uri' ) ):
 /**
  * Retrieve the URI of the highest priority template file that exists.
  *
@@ -171,7 +170,6 @@ function alienship_locate_template_uri( $template_names ) {
 
 	return $located;
 }
-endif;
 
 
 
